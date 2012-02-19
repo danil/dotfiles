@@ -1,0 +1,13 @@
+# This file is part of Danil Kutkevich <http://danil@kutkevich.org> home.
+# man git-config
+# <http://stackoverflow.com/questions/267761/what-does-your-gitconfig-contain>.
+
+# [core]
+#     pager = ""
+
+[user]
+	name = Danil Kutkevich
+	email = danil@kutkevich.org
+
+[color]
+    diff = always

@@ -1,0 +1,15 @@
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+# Write your default config options here!
+vo=gl
+#milhouse: vo=x11
+zoom=yes
+utf8 = "1"
+subcp = "utf8"
+fontconfig = "yes"
+font  = "verdana"
+heartbeat-cmd="xscreensaver-command -deactivate"
+# ass=1
+# subcp=enca:ru:en
+# subfont-text-scale="5"
+# subfont-blur="8"
+# subfont-outline="8"

@@ -1,0 +1,3 @@
+application/xml; /usr/bin/emacsclient -t '%s'
+image/png; /usr/bin/feh '%s'; /usr/bin/display '%s'
+application/msword; /usr/bin/abiword '%s'

@@ -1,0 +1,37 @@
+! Disable forward and back keys on ThinkPad T400
+! <http://streamreader.org/askubuntu/questions/24412/disable-xf86back-and-xf86forward-(back/forward-on->,
+! <http://rollingrelease.com/system/2010/09/xmodmap-hints-and-tips>
+! XF86Back.
+keycode 166 =
+! XF86Forward.
+keycode 167 =
+
+! This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+! Swap Caps_Lock and Control_L
+! <http://emacswiki.org/EmacsCrashTips#toc1>,
+! <http://emacswiki.org/MovingTheCtrlKey#toc3>.
+! <http://columbia.edu/~djv/docs/keyremap.html>.
+! Make the Caps Lock key be a Control key
+! <http://askubuntu.com/questions/23491/how-to-change-capslock-key-to-produce-a>.
+remove Lock = Caps_Lock
+add Control = Caps_Lock
+keysym Caps_Lock = Control_L
+
+! Make the Left Control key be a Caps Lock key.
+! remove Control = Control_L
+! add Lock = Control_L
+
+! <http://code.google.com/p/legacymicsnotes/wiki/ConfigFiles>,
+! <http://haskell.org/pipermail/xmonad/2007-December/003709.html>.
+! add mod1 = Alt_L
+! remove mod1 = Alt_R
+! add mod3 = Alt_R
+
+! ! hjkl
+! ! <http://superuser.com/questions/213051/remap-arrow-keys-to-winijkl-on-linux/228548#answer-228548>,
+! ! <http://superuser.com/questions/96299/mapping-superhjkl-to-arrow-keys-under-x/111968#answer-111968>/
+! keycode 133 = Mode_switch Super_L Super_L Super_L
+! keysym h = h H Left
+! keysym j = j J Down
+! keysym k = k K Up
+! keysym l = l L Right

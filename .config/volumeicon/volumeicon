@@ -1,0 +1,18 @@
+
+[StatusIcon]
+stepsize=5
+lmb_slider=false
+mmb_mute=false
+onclick=xterm -e 'alsamixer'
+theme=Blue Bar
+
+[Hotkeys]
+up_enabled=true
+down_enabled=true
+mute_enabled=true
+up=XF86AudioRaiseVolume
+down=XF86AudioLowerVolume
+mute=XF86AudioMute
+
+[Alsa]
+card=hw:0

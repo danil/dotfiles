@@ -1,0 +1,8 @@
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+# Firefox Emacs keybindings
+# <http://kb.mozillazine.org/Emacs_Keybindings_-_Firefox>.
+#gtk-key-theme-name = "Emacs"
+
+# Local Variables:
+# mode: conf
+# End:

@@ -1,0 +1,4 @@
+# <http://rvm.beginrescueend.com/workflow/rvmrc/>.
+# Make Flags, I have 1 cpu's so I might use 2 make threads:
+#frink:    export rvm_make_flags="-j4"
+#milhouse: export rvm_make_flags="-j2"

@@ -1,0 +1,63 @@
+;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+;; .stumpwmrc -- my own Stumpwm customizations.
+(in-package :stumpwm)
+
+;;; Variables.
+(defparameter X-TERM "urxvt"
+  "What shall be the command run when we want an X terminal?")
+(defparameter HOME-DIR (getenv "HOME"))
+(defparameter SHOW-CPU-LOAD "bin/show_cpu_load.sh")
+(defparameter SHOW-BATTERY-STATUS "bin/show_battery_status.sh")
+
+;; Change the prefix key to something else.
+;; Prefix "C-`".
+(set-prefix-key (kbd "C-quoteleft"))
+
+;; Terminal emulator.
+(define-key *root-map* (kbd "c") (concat "exec " X-TERM))
+
+;;; Commands
+;;; <http://paste.lisp.org/display/75796>.
+;; Select group and echo group nickname.
+;; ;; Show CPU load.
+;; (defcommand show-cpu-load () ()
+;;   (message "~a" (run-shell-command
+;;                  (concat HOME-DIR "/"  SHOW-CPU-LOAD) t)))
+;; ;; Query ACPI and show the battery's status.
+;; (defcommand show-battery-status () ()
+;;   (message "~a" (run-shell-command
+;;                  (concat HOME-DIR "/" SHOW-BATTERY-STATUS) t)))
+
+;; Groups.
+;; Fluxbox-style Alt-F# virtual desktop switching.
+(dotimes (i 13)
+  (unless (eq i 0) ; F0 is non-existant and will error.
+    (define-key *top-map*
+      (kbd (format nil "M-F~a" i))
+      (format nil "gselect ~a" i))))
+;; Rename the first group "Default" to "F1"
+;; <http://en.wikipedia.org/wiki/User:Gwern/.stumpwmrc>.
+(setf (group-name (first (screen-groups (current-screen)))) "F1")
+;; Create a new groups but do not switch to it.
+(gnewbg "F2")
+(gnewbg "F3")
+(gnewbg "F4")
+(gnewbg "F5")
+(gnewbg "F6")
+(gnewbg "F7")
+(gnewbg "F8")
+(gnewbg "F9")
+(gnewbg "F10")
+(gnewbg "F11")
+(gnewbg "F12")
+
+;;; Key binding.
+;; Groups (virtual desktops or workspaces)
+;; <http://nongnu.org/stumpwm/manual/stumpwm_8.html>.
+(define-key *top-map* (kbd "C-M-G") "vgroups")
+;; Mode Line <http://nongnu.org/stumpwm/manual/stumpwm_7.html>.
+(define-key *top-map* (kbd "C-M-M") "mode-line")
+;; CPU load.
+(define-key *root-map* (kbd "q") "show-cpu-load")
+;; Battery status.
+(define-key *root-map* (kbd "C-q") "show-battery-status")
