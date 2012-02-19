@@ -5,6 +5,10 @@ if [ -d ~/bin ] ; then
     PATH=~/bin:"${PATH}"
 fi
 
+if [ -d ~/local/bin ] ; then
+    PATH=~/local/bin:"${PATH}"
+fi
+
 # Tab completion
 # <http://en.gentoo-wiki.com/wiki/TAB-Completion#Installation>.
 [[ -f /etc/profile.d/bash-completion.sh ]] && source /etc/profile.d/bash-completion.sh
@@ -15,7 +19,7 @@ export PAGER="/usr/bin/less -I"
 export HISTSIZE=2000
 export HISTCONTROL=ignoredups
 # See /usr/share/terminfo/*/
-#export TERM=rxvt-256color
+# export TERM=rxvt-256color
 #export GIT_PAGER=""
 
 # Aliases.
@@ -34,3 +38,9 @@ fi
 export LUA_PATH="/home/danil/.luarocks/share/lua/5.1//?.lua;./?.lua;$LUA_PATH"
 export LUA_CPATH="/home/danil/.luarocks/lib/lua/5.1//?.so;./?.so;$LUA_CPATH"
 #export LUA_INIT="require 'luarocks.require'"
+
+# Node.js
+export NODE_PATH="$HOME/local:$HOME/local/lib/node_modules"
+if [ -d ~/node_modules/.bin ] ; then
+    PATH=~/node_modules/.bin:"${PATH}"
+fi

@@ -35,4 +35,4 @@ bindkey -d -k kD
 #term rxvt-88color
 #term rxvt-basic
 #term rxvt-color
-#term rxvt-unicode-256color
+term rxvt-unicode-256color

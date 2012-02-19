@@ -9,7 +9,7 @@ password =
 enable = false
 
 [filebrowser]
-pane_pos = 200
+pane_pos = 328
 uri = file:///
 
 [lyrics]
@@ -135,7 +135,7 @@ filesystem_album_width = 100
 filesystem_album_order = 3
 filesystem_genre_width = 100
 filesystem_genre_order = 4
-filesystem_#duration_width = 60
+filesystem_#duration_width = 114
 filesystem_#duration_order = 5
 filesystem_#added_width = 100
 filesystem_#added_order = 6
@@ -203,6 +203,32 @@ playlist_#skipcount_width = 100
 playlist_#skipcount_order = 11
 playlist_date_width = 100
 playlist_date_order = 12
+magnatune_#track_width = 25
+magnatune_#track_order = 0
+magnatune_title_width = 150
+magnatune_title_order = 1
+magnatune_artist_width = 100
+magnatune_artist_order = 2
+magnatune_album_width = 100
+magnatune_album_order = 3
+magnatune_genre_width = 100
+magnatune_genre_order = 4
+magnatune_#duration_width = 114
+magnatune_#duration_order = 5
+magnatune_#added_width = 100
+magnatune_#added_order = 6
+magnatune_#bitrate_width = 100
+magnatune_#bitrate_order = 7
+magnatune_#disc_width = 25
+magnatune_#disc_order = 8
+magnatune_#lastplayed_width = 100
+magnatune_#lastplayed_order = 9
+magnatune_#playcount_width = 100
+magnatune_#playcount_order = 10
+magnatune_#skipcount_width = 100
+magnatune_#skipcount_order = 11
+magnatune_date_width = 100
+magnatune_date_order = 12
 
 [player]
 crossfade_time = 3.0
@@ -211,23 +237,23 @@ crossfade_gapless_album = false
 vis = goom
 dynamic = true
 click_enqueue = false
-uri = http://www.jamendo.com/get/track/id/track/audio/redirect/19406/?aue=ogg2
-volume = 0.815038
+uri = lastfm://artist/Torley/similarartists
+volume = 0.003555
 enqueue = false
-state = paused
+state = stop
 crossfade = true
 queuewholealbum = false
-selected_track = 4
+selected_track = -1
 play_on_startup = false
-seek = 197
+seek = 0
 stop_track = -1
 
 [window]
 width = 1209
 state = normal
 right_layout = false
-pos_organizer = 184
-y = 278
+pos_organizer = 192
+y = 222
 x = 211
 view = 2
 pos_global_pane = 383
@@ -261,12 +287,12 @@ selected_index = (2, 0)
 [plugins]
 active_genericmanager = Brasero
 active_webradiomanager = Shoutcast
-active_sourcemanager = Jamendo
-	Lastfm Information
-	yooook
+active_sourcemanager = yooook
 	Filesystem Browser
-	Context
 	Magnatune
+	Context
+	Lastfm Information
+	Jamendo
 	Last.fm events
 active_lyricsmanager = 
 
@@ -338,6 +364,10 @@ audiocd_sort_order =
 local_col0_last_selected = 
 local_col1_last_selected = 
 podcast_local_col0_last_selected = 
-jamendo_col0_last_selected = chaos
+jamendo_col0_last_selected = 
 jamendo_col1_last_selected = 
+playlist = true
+magnatune = true
+magnatune_col0_last_selected = 
+magnatune_col1_last_selected = 
 
