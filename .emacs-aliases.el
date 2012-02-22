@@ -1,6 +1,13 @@
 ;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 ;(add-to-list 'load-path "~/share/emacs/site-lisp")
 
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(safe-local-variable-values (quote ((encoding . utf-8)))))
+
 ;;; el-get <http://github.com/dimitri/el-get>.
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 (require 'el-get)
