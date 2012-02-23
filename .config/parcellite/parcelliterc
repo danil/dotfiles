@@ -1,8 +1,8 @@
 
 [rc]
 use_copy=true
-use_primary=false
-synchronize=true
+use_primary=true
+synchronize=false
 save_history=true
 history_limit=25
 hyperlinks_only=false
