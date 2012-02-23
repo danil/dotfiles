@@ -16,7 +16,7 @@ Xft.rgba:      rgb
 *cursorUnderline: false
 *cursorBlink: false
 
-URxvt*geometry: 100x57
+URxvt*geometry: 100x50
 URxvt*scrollBar: true
 urxvt.scrollstyle: plain
 urxvt.scrollBar_right: true
