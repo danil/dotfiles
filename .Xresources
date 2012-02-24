@@ -47,7 +47,7 @@ URxvt*saveLines: 10000
 ! You can find them in </usr/lib/urxvt/perl/>.
 ! <http://wiki.archlinux.org/index.php/Rxvt-unicode#Automatic_Script_Management>.
 ! selection,option-popup,selection-popup,readline,clipboard,matcher
-URxvt*perl-ext-common: default,matcher,clipboard,searchable-scrollback
+URxvt*perl-ext-common: default,matcher,searchable-scrollback
 URxvt.searchable-scrollback: CM-F
 URxvt.tabbed.tabbar-fg: 0
 URxvt.tabbed.tabbar-bg: 15
