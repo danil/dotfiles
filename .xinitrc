@@ -45,7 +45,7 @@ feh --bg-center ~/local/share/backgrounds/gentoo-znurt-larry-abducted-1440x900.p
 
 function startup_applications {
     dbus-launch nautilus --no-default-window &
-    # argyll-dispwin ~/t400s_082409.icm &
+    argyll-dispwin ~/t400s_082409.icm &
     tint2 &
     parcellite &
     volumeicon &
