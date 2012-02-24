@@ -33,7 +33,7 @@ own_window_transparent yes
 # own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 own_window_type override
 
-double_buffer no
+double_buffer yes
 
 # Use Xft?
 # font 9x15
@@ -78,7 +78,7 @@ use_spacer none
 # show_graph_range no
 
 TEXT
-${font}$kernel ${hr 1}
+${font}Linux $kernel ${hr 1}
 Load ${goto 54}${loadavg}
 Uptime${goto 54}$uptime_short
 # Battery \

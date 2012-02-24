@@ -50,7 +50,7 @@ function startup_applications {
     parcellite &
     volumeicon &
     wicd-gtk --tray &
-    # conky &
+    conky &
     avant-window-navigator &
     empathy &
     # stardict &
