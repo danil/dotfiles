@@ -16,7 +16,7 @@ Xft.rgba:      rgb
 *cursorUnderline: false
 *cursorBlink: false
 
-URxvt*geometry: 100x57
+URxvt*geometry: 100x50
 URxvt*scrollBar: true
 urxvt.scrollstyle: plain
 urxvt.scrollBar_right: true
@@ -47,6 +47,7 @@ URxvt*saveLines: 10000
 ! You can find them in </usr/lib/urxvt/perl/>.
 ! <http://wiki.archlinux.org/index.php/Rxvt-unicode#Automatic_Script_Management>.
 ! selection,option-popup,selection-popup,readline,clipboard,matcher
+! URxvt.perl-lib: /home/danil/.urxvt/
 URxvt*perl-ext-common: default,matcher,searchable-scrollback
 URxvt.searchable-scrollback: CM-F
 URxvt.tabbed.tabbar-fg: 0

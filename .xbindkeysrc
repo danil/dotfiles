@@ -88,9 +88,6 @@
 # "/etc/init.d/net.wlan0 stop& xlock -mode deco& sleep 1; xset dpms force off"
 #    Control + Shift + Mod1 + h
 
-# "dmenu"
-#   Control + Shift + Mod1 + p
-
 # "show_date.sh"
 #   Control + Shift + Mod1 + a
 
@@ -105,7 +102,10 @@
 # "killall stalonetray; stalonetray"
 #   Control + Shift + Mod1 + r
 
-"fbrun"
+# "fbrun"
+#   Control + Shift + Mod1 + r
+
+"dmenu_run"
   Control + Shift + Mod1 + r
 
 # # Web browser.
