@@ -54,8 +54,8 @@ function startup_applications {
     avant-window-navigator &
     empathy &
     # stardict &
-    screenletsd --cli run ClockRing &
-    screenletsd --cli run ClearCalendar &
+    # screenletsd --cli run ClockRing &
+    # screenletsd --cli run ClearCalendar &
     screenletsd --cli run ClearWeather &
     screenletsd --cli run Calc &
 }
