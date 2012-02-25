@@ -99,7 +99,7 @@ function conky_clock_rings()
   settings_table = {
     {
       name='loadavg',
-      arg='1',
+      arg='2',
       max=1,
       bg_colour=0xffffff,
       bg_alpha=0.2,
