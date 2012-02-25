@@ -88,8 +88,8 @@ function conky_clock_rings()
   local xcr = conky_window.width - (radius + thickness / 2)
   local xcl = xcr - x_step
   local y_gap1 = 305
-  local y_gap2 = y_gap1 + 40
-  local y_gap3 = y_gap2 + 19
+  local y_gap2 = y_gap1 + 38
+  local y_gap3 = y_gap2 + 14
   local yc_row1 = y_gap1 + y_step * 1
   local yc_row2 = y_gap1 + y_step * 2
   local yc_row3 = y_gap2 + y_step * 3

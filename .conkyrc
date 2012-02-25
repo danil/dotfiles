@@ -62,9 +62,9 @@ lua_draw_hook_pre conky_widgets
 TEXT
 
 ${voffset 165}
+$alignc${time %B}
 ${lua_parse text_calendar}
 ${color}${font}
-
 $uptime_short Linux $kernel
 
 ${goto 12}${voffset 41}Load${goto 91}${voffset 4}CPU
@@ -74,11 +74,11 @@ ${voffset 6}
 ${goto 13}${voffset 1}${wireless_essid wlan0}
 ${goto 13}${voffset 1}${addr wlan0}${goto 93}${addr ppp0}
 
-${goto 13}${voffset 32}wlan${goto 93}ppp
+${goto 13}${voffset 27}wlan${goto 93}ppp
 ${goto 13}${totalup wlan0}${goto 93}${totalup ppp0}
 ${goto 13}${totaldown wlan0}${goto 93}${totaldown ppp0}
 ${goto 94}${voffset 3}${addr eth0}
-${goto 94}${voffset 44}eth
+${goto 94}${voffset 39}eth
 ${goto 94}${totalup eth0}
 ${goto 94}${totaldown eth0}
 
