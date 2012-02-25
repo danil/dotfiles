@@ -182,9 +182,10 @@ function conky_clock_rings()
       end_angle=180
     },
     {
-      name='fs_used_perc',
-      arg='/',
-      max=100,
+      name='diskio',
+      arg='',
+      max=43000000,
+      units_quirks_mode=true,
       bg_colour=0xffffff,
       bg_alpha=0.2,
       fg_colour=0xFFFFFF,
@@ -196,10 +197,9 @@ function conky_clock_rings()
       end_angle=180
     },
     {
-      name='diskio',
-      arg='',
-      max=43000000,
-      units_quirks_mode=true,
+      name='fs_used_perc',
+      arg='/',
+      max=100,
       bg_colour=0xffffff,
       bg_alpha=0.2,
       fg_colour=0xffffff,
