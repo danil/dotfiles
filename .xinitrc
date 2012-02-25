@@ -56,6 +56,8 @@ function startup_applications {
     # stardict &
     screenletsd --cli run ClockRing &
     screenletsd --cli run ClearCalendar &
+    screenletsd --cli run ClearWeather &
+    screenletsd --cli run Calc &
 }
 
 # The following variable defines the session which is started if the
