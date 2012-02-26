@@ -87,9 +87,9 @@ function conky_clock_rings()
   local x_step = step
   local xcr = conky_window.width - (radius + thickness / 2)
   local xcl = xcr - x_step
-  local y_gap1 = 305
-  local y_gap2 = y_gap1 + 38
-  local y_gap3 = y_gap2 + 14
+  local y_gap1 = 323
+  local y_gap2 = y_gap1 + 57
+  local y_gap3 = y_gap2 + 24
   local yc_row1 = y_gap1 + y_step * 1
   local yc_row2 = y_gap1 + y_step * 2
   local yc_row3 = y_gap2 + y_step * 3
@@ -288,7 +288,7 @@ function conky_clock_rings()
       bg_alpha=0.2,
       fg_colour=0xFFFFFF,
       fg_alpha=0.8,
-      x = xcr + 2, y = yc_row4 - 2,
+      x = xcl + 2, y = yc_row4 - 2,
       radius=30,
       thickness=12,
       start_angle=-90,
@@ -302,7 +302,7 @@ function conky_clock_rings()
       bg_alpha=0.2,
       fg_colour=0xffffff,
       fg_alpha=0.8,
-      x = xcr + 2, y = yc_row4 - 2,
+      x = xcl + 2, y = yc_row4 - 2,
       radius=16,
       thickness=12,
       start_angle=-90,

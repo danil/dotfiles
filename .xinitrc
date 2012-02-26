@@ -50,8 +50,9 @@ function startup_applications {
     parcellite &
     volumeicon &
     wicd-gtk --tray &
-    conky &
-    avant-window-navigator &
+    conky -c ~/.conky/conkyrc_calendar &
+    conky -c ~/.conky/conkyrc_top &
+   avant-window-navigator &
     empathy &
     # stardict &
     # screenletsd --cli run ClockRing &

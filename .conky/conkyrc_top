@@ -29,7 +29,7 @@
 # <http://ubuntuforums.org/showthread.php?t=1097133&page=3#post10452683>.
 
 background no
-update_interval 5.0
+update_interval 10.0
 
 # number of cpu samples to average set to 1 to disable averaging
 cpu_avg_samples 2
@@ -68,8 +68,8 @@ minimum_size 165 250
 maximum_width 165
 
 alignment tr
-gap_x 35
-gap_y 55
+gap_x 235
+gap_y 250
 
 # Graphics settings #
 draw_shades no
@@ -92,35 +92,47 @@ color0 c8c8c8
 color1 ffffff
 color2 ff9980
 
-# Lua Load  #
-lua_load ~/.conky/conky_widgets.lua  ~/.conky/clock.lua  ~/.conky/text_calendar.lua  ~/.conky/clock_rings.lua
-lua_draw_hook_pre conky_widgets
-
 TEXT
+CPU
+${top name 1}${alignr}${top cpu 1}
+${top name 2}${alignr}${top cpu 2}
+${top name 3}${alignr}${top cpu 3}
+${top name 4}${alignr}${top cpu 4}
+${top name 5}${alignr}${top cpu 5}
+${top name 6}${alignr}${top cpu 6}
+${top name 7}${alignr}${top cpu 7}
+${top name 8}${alignr}${top cpu 8}
+${top name 9}${alignr}${top cpu 9}
 
-${voffset 165}
-$alignc${time %B}
-${lua_parse text_calendar}
-${color}${font}
-$uptime_short Linux $kernel
+MEM
+${top_mem name 1}${alignr}${top_mem mem_res 1}
+${top_mem name 2}${alignr}${top_mem mem_res 2}
+${top_mem name 3}${alignr}${top_mem mem_res 3}
+${top_mem name 4}${alignr}${top_mem mem_res 4}
+${top_mem name 5}${alignr}${top_mem mem_res 5}
+${top_mem name 6}${alignr}${top_mem mem_res 6}
+${top_mem name 7}${alignr}${top_mem mem_res 7}
+${top_mem name 8}${alignr}${top_mem mem_res 8}
+${top_mem name 9}${alignr}${top_mem mem_res 9}
 
-${goto 12}${voffset 41}Load${goto 91}${voffset 4}CPU
-${goto 11}${voffset 64}RAM${goto 91}Disk
+TIME
+${top_time name 1}${alignr}${top_time time 1}
+${top_time name 2}${alignr}${top_time time 2}
+${top_time name 3}${alignr}${top_time time 3}
+${top_time name 4}${alignr}${top_time time 4}
+${top_time name 5}${alignr}${top_time time 5}
+${top_time name 6}${alignr}${top_time time 6}
+${top_time name 7}${alignr}${top_time time 7}
+${top_time name 8}${alignr}${top_time time 8}
+${top_time name 9}${alignr}${top_time time 9}
 
-${voffset 6}
-${goto 13}${voffset 1}${wireless_essid wlan0}
-${goto 13}${voffset 1}${addr wlan0}${goto 93}${addr ppp0}
-
-${goto 13}${voffset 27}wlan${goto 93}ppp
-${goto 13}${totalup wlan0}${goto 93}${totalup ppp0}
-${goto 13}${totaldown wlan0}${goto 93}${totaldown ppp0}
-${goto 94}${voffset 3}${addr eth0}
-${goto 94}${voffset 39}eth
-${goto 94}${totalup eth0}
-${goto 94}${totaldown eth0}
-
-${top name 1}${goto 70}${top cpu 1}${alignr}${top mem_res 1}
-${top name 2}${goto 70}${top cpu 2}${alignr}${top mem_res 2}
-${top name 3}${goto 70}${top cpu 3}${alignr}${top mem_res 3}
-${top name 4}${goto 70}${top cpu 4}${alignr}${top mem_res 4}
-${top name 5}${goto 70}${top cpu 5}${alignr}${top mem_res 5}
+IO
+${top_io name 1}${alignr}${top_io io_perc 1}
+${top_io name 2}${alignr}${top_io io_perc 2}
+${top_io name 3}${alignr}${top_io io_perc 3}
+${top_io name 4}${alignr}${top_io io_perc 4}
+${top_io name 5}${alignr}${top_io io_perc 5}
+${top_io name 6}${alignr}${top_io io_perc 6}
+${top_io name 7}${alignr}${top_io io_perc 7}
+${top_io name 8}${alignr}${top_io io_perc 8}
+${top_io name 9}${alignr}${top_io io_perc 9}
