@@ -68,8 +68,8 @@ minimum_size 165 250
 maximum_width 165
 
 alignment tr
-gap_x 235
-gap_y 250
+gap_x 250
+gap_y 405
 
 # Graphics settings #
 draw_shades no
@@ -125,14 +125,3 @@ ${top_time name 6}${alignr}${top_time time 6}
 ${top_time name 7}${alignr}${top_time time 7}
 ${top_time name 8}${alignr}${top_time time 8}
 ${top_time name 9}${alignr}${top_time time 9}
-
-IO
-${top_io name 1}${alignr}${top_io io_perc 1}
-${top_io name 2}${alignr}${top_io io_perc 2}
-${top_io name 3}${alignr}${top_io io_perc 3}
-${top_io name 4}${alignr}${top_io io_perc 4}
-${top_io name 5}${alignr}${top_io io_perc 5}
-${top_io name 6}${alignr}${top_io io_perc 6}
-${top_io name 7}${alignr}${top_io io_perc 7}
-${top_io name 8}${alignr}${top_io io_perc 8}
-${top_io name 9}${alignr}${top_io io_perc 9}
