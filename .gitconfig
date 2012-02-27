@@ -11,3 +11,5 @@
 
 [color]
     diff = always
+# [diff]
+# 	external = meld
