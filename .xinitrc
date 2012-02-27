@@ -50,12 +50,15 @@ function startup_applications {
     parcellite &
     volumeicon &
     wicd-gtk --tray &
-    conky &
+    # conky -c ~/.conky/conkyrc_calendar &
+    # conky -c ~/.conky/conkyrc_top &
     avant-window-navigator &
     empathy &
     # stardict &
-    screenletsd --cli run ClockRing &
-    screenletsd --cli run ClearCalendar &
+    # screenletsd --cli run ClockRing &
+    # screenletsd --cli run ClearCalendar &
+    screenletsd --cli run ClearWeather &
+    screenletsd --cli run Calc &
 }
 
 # The following variable defines the session which is started if the
