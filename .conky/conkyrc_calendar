@@ -103,16 +103,16 @@ ${lua_parse text_calendar}
 
 ${color}${font}${alignc}${voffset 5}$uptime_short $kernel
 
-${goto 13}${voffset 64}Load${goto 93}${voffset 4}CPU
+${goto 13}${voffset 64}Load${goto 93}${voffset 1}CPU
 ${goto 13}${voffset 64}MEM${goto 93}Disk
 
-${goto 13}${voffset 39}${wireless_essid wlan0}
+${goto 13}${voffset 41}${wireless_essid wlan0}
 ${goto 13}${voffset 1}${addr wlan0}${goto 93}${addr ppp0}
 
-${goto 13}${voffset 27}wlan${goto 93}ppp
-${goto 13}${totalup wlan0}${goto 93}${totalup ppp0}
-${goto 13}${totaldown wlan0}${goto 93}${totaldown ppp0}
-${goto 13}${voffset 14}${addr eth0}
-${goto 13}${voffset 39}eth
-${goto 13}${totalup eth0}
-${goto 13}${totaldown eth0}
+${goto 13}${voffset 29}wlan${goto 93}ppp
+${goto 13}${font Liberation Sans:Regular:size=7}u${totalup wlan0}${goto 93}u${totalup ppp0}
+${goto 13}${font Liberation Sans:Regular:size=7}d${totaldown wlan0}${goto 93}d${totaldown ppp0}
+${goto 13}${font}${voffset 14}${addr eth0}
+${goto 13}${voffset 41}eth
+${goto 13}${font Liberation Sans:Regular:size=7}u${totalup eth0}
+${goto 13}${font Liberation Sans:Regular:size=7}d${totaldown eth0}
