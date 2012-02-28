@@ -90,7 +90,7 @@ uppercase no
 default_color c8c8c8
 color0 c8c8c8
 color1 ffffff
-color2 ff9980
+color2 c2bf08
 
 # Lua Load  #
 lua_load ~/.conky/conky_widgets.lua  ~/.conky/clock.lua  ~/.conky/text_calendar.lua  ~/.conky/clock_rings.lua
