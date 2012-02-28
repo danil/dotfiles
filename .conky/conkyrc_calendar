@@ -110,9 +110,9 @@ ${goto 13}${voffset 41}${wireless_essid wlan0}
 ${goto 13}${voffset 1}${addr wlan0}${goto 93}${addr ppp0}
 
 ${goto 13}${voffset 29}wlan${goto 93}ppp
-${goto 13}${font Liberation Sans:Regular:size=7}u${totalup wlan0}${goto 93}u${totalup ppp0}
-${goto 13}${font Liberation Sans:Regular:size=7}d${totaldown wlan0}${goto 93}d${totaldown ppp0}
+${goto 13}${font Liberation Sans:Regular:size=7}U${totalup wlan0}${goto 93}U${totalup ppp0}
+${goto 13}${font Liberation Sans:Regular:size=7}D${totaldown wlan0}${goto 93}D${totaldown ppp0}
 ${goto 13}${font}${voffset 14}${addr eth0}
 ${goto 13}${voffset 41}eth
-${goto 13}${font Liberation Sans:Regular:size=7}u${totalup eth0}
-${goto 13}${font Liberation Sans:Regular:size=7}d${totaldown eth0}
+${goto 13}${font Liberation Sans:Regular:size=7}U${totalup eth0}
+${goto 13}${font Liberation Sans:Regular:size=7}D${totaldown eth0}
