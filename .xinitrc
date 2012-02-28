@@ -57,7 +57,7 @@ function startup_applications {
     # stardict &
     # screenletsd --cli run ClockRing &
     # screenletsd --cli run ClearCalendar &
-    screenletsd --cli run ClearWeather &
+    # screenletsd --cli run ClearWeather &
     screenletsd --cli run Calc &
 }
 
