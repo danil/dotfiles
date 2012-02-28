@@ -1,5 +1,5 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.14 for danil on Mon Dec  5 20:20:37 2011.
+# Written by xscreensaver-demo 5.15 for danil on Mon Feb 27 05:36:24 2012.
 # http://www.jwz.org/xscreensaver/
 
 timeout:	0:05:00
@@ -25,7 +25,7 @@ captureStderr:	True
 ignoreUninstalledPrograms:False
 font:		*-medium-r-*-140-*-m-*
 dpmsEnabled:	True
-dpmsQuickOff:	False
+dpmsQuickOff:	True
 dpmsStandby:	0:00:00
 dpmsSuspend:	0:00:00
 dpmsOff:	0:10:00
@@ -44,7 +44,7 @@ textProgram:	fortune
 textURL:	http://planet.gentoo.org/rss20.xml
 
 programs:								      \
-  GL: 				electricsheep --root 1			    \n\
+  any: 				electricsheep --root 1			    \n\
 				maze -root				    \n\
   GL: 				superquadrics -root			    \n\
 				attraction -root			    \n\
@@ -242,6 +242,9 @@ programs:								      \
   GL: 				photopile -root				    \n\
   GL: 				skytentacles -root			    \n\
   GL: 				rubikblocks -root			    \n\
+  GL: 				companioncube -root			    \n\
+  GL: 				hilbert -root				    \n\
+  GL: 				tronbit -root				    \n\
 
 
 pointerPollTime:    0:00:05
