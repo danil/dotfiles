@@ -93,7 +93,7 @@ color1 ffffff
 color2 ff9980
 
 TEXT
-CPU
+${alignc}CPU
 ${top name 1}${alignr}${top cpu 1}
 ${top name 2}${alignr}${top cpu 2}
 ${top name 3}${alignr}${top cpu 3}
@@ -104,7 +104,7 @@ ${top name 7}${alignr}${top cpu 7}
 ${top name 8}${alignr}${top cpu 8}
 ${top name 9}${alignr}${top cpu 9}
 
-MEM
+${alignc}MEM
 ${top_mem name 1}${alignr}${top_mem mem_res 1}
 ${top_mem name 2}${alignr}${top_mem mem_res 2}
 ${top_mem name 3}${alignr}${top_mem mem_res 3}
@@ -115,7 +115,7 @@ ${top_mem name 7}${alignr}${top_mem mem_res 7}
 ${top_mem name 8}${alignr}${top_mem mem_res 8}
 ${top_mem name 9}${alignr}${top_mem mem_res 9}
 
-TIME
+${alignc}Time
 ${top_time name 1}${alignr}${top_time time 1}
 ${top_time name 2}${alignr}${top_time time 2}
 ${top_time name 3}${alignr}${top_time time 3}
