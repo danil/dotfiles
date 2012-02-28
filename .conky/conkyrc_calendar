@@ -103,8 +103,8 @@ ${lua_parse text_calendar}
 
 ${color}${font}${alignc}${voffset 5}$uptime_short $kernel
 
-${goto 12}${voffset 64}Load${goto 91}${voffset 4}CPU
-${goto 11}${voffset 64}MEM${goto 91}Disk
+${goto 13}${voffset 64}Load${goto 93}${voffset 4}CPU
+${goto 13}${voffset 64}MEM${goto 93}Disk
 
 ${goto 13}${voffset 39}${wireless_essid wlan0}
 ${goto 13}${voffset 1}${addr wlan0}${goto 93}${addr ppp0}
