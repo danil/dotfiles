@@ -176,8 +176,8 @@ function conky_clock_rings()
       fg_colour=0xFFFFFF,
       fg_alpha=0.8,
       x = xcl + 2, y = yc_row2 - 2,
-      radius=30,
-      thickness=12,
+      radius=26,
+      thickness=22,
       start_angle=-90,
       end_angle=180
     },
@@ -190,8 +190,8 @@ function conky_clock_rings()
       fg_colour=0xffffff,
       fg_alpha=0.8,
       x = xcl + 2, y = yc_row2 - 2,
-      radius=16,
-      thickness=12,
+      radius=8,
+      thickness=10,
       start_angle=-90,
       end_angle=180
     },
@@ -205,8 +205,8 @@ function conky_clock_rings()
       fg_colour=0xFFFFFF,
       fg_alpha=0.8,
       x = xcr + 2, y = yc_row2 - 2,
-      radius=30,
-      thickness=12,
+      radius=26,
+      thickness=22,
       start_angle=-90,
       end_angle=180
     },
@@ -219,8 +219,8 @@ function conky_clock_rings()
       fg_colour=0xffffff,
       fg_alpha=0.8,
       x = xcr + 2, y = yc_row2 - 2,
-      radius=16,
-      thickness=12,
+      radius=8,
+      thickness=10,
       start_angle=-90,
       end_angle=180
     },
