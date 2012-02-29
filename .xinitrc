@@ -47,7 +47,7 @@ function startup_applications {
     dbus-launch nautilus --no-default-window &
     argyll-dispwin ~/t400s_082409.icm &
     tint2 &
-    parcellite &
+    # parcellite &
     volumeicon &
     wicd-gtk --tray &
     # conky -c ~/.conky/conkyrc_calendar &
@@ -58,7 +58,7 @@ function startup_applications {
     # screenletsd --cli run ClockRing &
     # screenletsd --cli run ClearCalendar &
     # screenletsd --cli run ClearWeather &
-    screenletsd --cli run Calc &
+    # screenletsd --cli run Calc &
 }
 
 # The following variable defines the session which is started if the
