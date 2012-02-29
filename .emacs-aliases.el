@@ -465,9 +465,9 @@
 (setq auto-mode-alist
       (cons '("/\\.curlrc\\'" . conf-mode) auto-mode-alist))
 (setq auto-mode-alist
-      (cons '("/\\conkyrc_calendar\\'" . conf-mode) auto-mode-alist))
+      (cons '("/conkyrc_calendar\\'" . conf-mode) auto-mode-alist))
 (setq auto-mode-alist
-      (cons '("/\\conkyrc_top\\'" . conf-mode) auto-mode-alist))
+      (cons '("/conkyrc_top\\'" . conf-mode) auto-mode-alist))
 
 ;;; Lisp.
 (setq auto-mode-alist
