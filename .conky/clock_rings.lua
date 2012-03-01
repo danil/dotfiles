@@ -114,7 +114,7 @@ function conky_clock_rings()
     {
       name='loadavg',
       arg='2',
-      max=2,
+      max=2.4,
       bg_colour=0xffffff,
       bg_alpha=0.2,
       fg_colour=0xffffff,
@@ -128,7 +128,7 @@ function conky_clock_rings()
     {
       name='loadavg',
       arg='3',
-      max=1,
+      max=1.6,
       bg_colour=0xffffff,
       bg_alpha=0.2,
       fg_colour=0xffffff,
