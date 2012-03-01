@@ -52,7 +52,7 @@ function startup_applications {
     wicd-gtk --tray &
     # conky -c ~/.conky/conkyrc_calendar &
     # conky -c ~/.conky/conkyrc_top &
-    avant-window-navigator &
+    dbus-launch avant-window-navigator &
     empathy &
     # stardict &
     # screenletsd --cli run ClockRing &
