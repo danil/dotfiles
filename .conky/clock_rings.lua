@@ -85,7 +85,7 @@ function conky_clock_rings()
   local step = true_diameter + 5
   local y_step = step
   local x_step = step
-  local xcr = conky_window.width - (radius + thickness / 2)
+  local xcr = conky_window.width - (radius + thickness / 2) - 1
   local xcl = xcr - x_step
   local y_gap1 = 323
   local y_gap2 = y_gap1 + 57
