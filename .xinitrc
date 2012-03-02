@@ -45,7 +45,7 @@ feh --bg-center ~/local/share/backgrounds/gentoo-znurt-larry-abducted-1440x900.p
 
 function startup_applications {
     dbus-launch nautilus --no-default-window &
-    if [[ `hostname -s` = "leela" ]]; then
+    if [[ `hostname -s` == "leela" ]]; then
         argyll-dispwin ~/t400s_082409.icm &
     fi
     tint2 &
