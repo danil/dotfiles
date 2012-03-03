@@ -468,6 +468,10 @@
       (cons '("/conkyrc_calendar\\'" . conf-mode) auto-mode-alist))
 (setq auto-mode-alist
       (cons '("/conkyrc_top\\'" . conf-mode) auto-mode-alist))
+(setq auto-mode-alist
+      (cons '("/portage/package\\.license\\'" . conf-mode) auto-mode-alist))
+(setq auto-mode-alist
+      (cons '("/share/applications/defaults\\.list\\'" . conf-mode) auto-mode-alist))
 
 ;;; Lisp.
 (setq auto-mode-alist
