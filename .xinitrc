@@ -49,7 +49,7 @@ function startup_applications {
         argyll-dispwin ~/t400s_082409.icm &
     fi
     tint2 &
-    # parcellite &
+    parcellite &
     dbus-launch volumeicon &
     dbus-launch gnome-power-manager &
     dbus-launch wicd-gtk --tray &
@@ -57,7 +57,7 @@ function startup_applications {
     # conky -c ~/.conky/conkyrc_top &
     dbus-launch avant-window-navigator &
     dbus-launch empathy &
-    # stardict &
+    stardict &
     # screenletsd --cli run ClockRing &
     # screenletsd --cli run ClearCalendar &
     # screenletsd --cli run ClearWeather &
