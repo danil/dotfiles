@@ -69,6 +69,27 @@
 "urxvtc"
   Control + Shift + Mod1 + c
 
+# Compiz viewports switch
+# <http://superuser.com/questions/264281/wmctrl-says-i-have-one-workspace-when-i-actually-have-four#answer-264502>.
+"wmctrl -o 0,0"
+  Control + Mod1 + 1
+"wmctrl -o 1440,0"
+  Control + Mod1 + 2
+"wmctrl -o 0,900"
+  Control + Mod1 + 3
+"wmctrl -o 1440,900"
+  Control + Mod1 + 4
+
+# # Compiz move active window to viewports.
+# "wmctrl -r :ACTIVE: -e 0,0,0,-1,-1"
+#   Control + Shift + Mod1 + 1
+# "wmctrl -r :ACTIVE: -e 0,1440,0,-1,-1"
+#   Control + Shift + Mod1 + 2
+# "wmctrl -r :ACTIVE: -e 0,0,899,-1,-1"
+#   Control + Shift + Mod1 + 3
+# "wmctrl -r :ACTIVE: -e 0,1440,899,-1,-1"
+#   Control + Shift + Mod1 + 4
+
 # Dim screen backlight.
 "sleep 0.5; xset dpms force off"
   Control + Shift + Mod1 + d
