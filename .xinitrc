@@ -50,17 +50,23 @@ function startup_applications {
     fi
     tint2 &
     # parcellite &
-    volumeicon &
-    wicd-gtk --tray &
+    dbus-launch volumeicon &
+    dbus-launch gnome-power-manager &
+    dbus-launch wicd-gtk --tray &
     # conky -c ~/.conky/conkyrc_calendar &
     # conky -c ~/.conky/conkyrc_top &
     dbus-launch avant-window-navigator &
-    empathy &
+    dbus-launch empathy &
     # stardict &
     # screenletsd --cli run ClockRing &
     # screenletsd --cli run ClearCalendar &
     # screenletsd --cli run ClearWeather &
     # screenletsd --cli run Calc &
+
+    # tint2 Double system tray icons
+    # <http://code.google.com/p/tint2/issues/detail?id=343#hc8>,
+    # <https://bbs.archlinux.org/viewtopic.php?id=111712>.
+    killall -SIGUSR1 tint2
 }
 
 # The following variable defines the session which is started if the
