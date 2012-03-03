@@ -93,7 +93,7 @@ color1 ffffff
 color2 c2a708
 
 # Lua Load  #
-lua_load ~/.conky/conky_widgets.lua  ~/.conky/clock.lua  ~/.conky/text_calendar.lua  ~/.conky/clock_rings.lua
+lua_load ~/.conky/conky_widgets.lua  ~/.conky/air_clock.lua  ~/.conky/text_calendar.lua  ~/.conky/clock_rings.lua
 lua_draw_hook_pre conky_widgets
 
 TEXT

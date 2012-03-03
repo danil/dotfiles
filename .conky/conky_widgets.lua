@@ -29,6 +29,6 @@ displayuserdata: 0x2386578
 
 function conky_widgets()
   if conky_window == nil then return end
-  conky_draw_clock()
+  conky_air_clock()
   conky_clock_rings()
 end
