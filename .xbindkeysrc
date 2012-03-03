@@ -84,6 +84,9 @@
 "wmctrl -o 1440,900"
   Control + Mod1 + 4
 
+# TODO:
+# <http://askubuntu.com/questions/20530/how-can-i-find-the-location-on-the-desktop-of-a-window-on-the-command-line>,
+# <http://unix.stackexchange.com/questions/14159/how-do-i-find-the-window-dimensions-and-position-accurately>.
 # # Compiz move active window to viewports
 # # <http://ubuntuforums.org/showthread.php?t=1045417#post7399123>.
 # "wmctrl -r :ACTIVE: -e 0,0,0,-1,-1"
