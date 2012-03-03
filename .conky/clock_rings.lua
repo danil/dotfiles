@@ -80,7 +80,7 @@ function conky_clock_rings()
   if conky_window == nil then return end
 
   local radius    = 25
-  local thickness = 25
+  local thickness = radius
   local true_diameter = (radius + thickness / 2) * 2
   local step = true_diameter + 5
   local y_step = step
@@ -322,6 +322,20 @@ function conky_clock_rings()
       start_angle=-90,
       end_angle=160
     },
+    {
+      name='battery_percent',
+      arg='',
+      max=100,
+      bg_colour=0xffffff,
+      bg_alpha=0.2,
+      fg_colour=0xFFFFFF,
+      fg_alpha=0.8,
+      x = xcr, y = yc_row4,
+      radius=radius,
+      thickness=thickness,
+      start_angle=-90,
+      end_angle=180
+    }
   }
 
   local function setup_rings(cr,pt)
