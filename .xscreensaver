@@ -1,5 +1,5 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.15 for danil on Sat Mar  3 20:23:41 2012.
+# Written by xscreensaver-demo 5.15 for danil on Sun Mar  4 02:57:39 2012.
 # http://www.jwz.org/xscreensaver/
 
 timeout:	0:05:00
@@ -35,7 +35,7 @@ chooseRandomImages: False
 imageDirectory:	
 
 mode:		one
-selected:	22
+selected:	0
 
 textMode:	file
 textLiteral:	XScreenSaver
@@ -44,7 +44,7 @@ textProgram:	fortune
 textURL:	http://planet.gentoo.org/rss20.xml
 
 programs:								      \
-  any: 				electricsheep --root 1			    \n\
+  GL: 				electricsheep --root 1			    \n\
 				maze -root				    \n\
   GL: 				superquadrics -root			    \n\
 				attraction -root			    \n\
