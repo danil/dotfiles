@@ -110,7 +110,7 @@ function conky_air_clock()
   cairo_set_line_width(cr, 1)
   cairo_stroke (cr)
 
-  -- Draw hours numbers.
+  -- Draw hours numbers <http://forum.learnfree.eu/viewtopic.php?f=9&t=422&start=105#p8436>.
   do
     t = {
       radius = clock_r,
