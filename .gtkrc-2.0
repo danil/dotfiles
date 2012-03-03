@@ -6,5 +6,3 @@ gtk-theme-name  = "Clearlooks"
 include "/home/danil/.gtkrc.mine"
 
 # -- THEME AUTO-WRITTEN DO NOT EDIT
-
-gtk-icon-theme-name = "gnome"
