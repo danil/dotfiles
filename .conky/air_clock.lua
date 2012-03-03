@@ -163,7 +163,7 @@ function conky_air_clock()
     -- выводим изображение
     cairo_stroke (cr)
 
-    cairo_set_source_rgba(cr, 0, 0, 0, 0.7)
+    cairo_set_source_rgba(cr, 0, 0, 0, 0.6)
     cairo_select_font_face(cr, t.font_name, slant, weight)
     cairo_set_font_size(cr, t.font_size)
     te=cairo_text_extents_t:create()
