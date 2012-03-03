@@ -84,7 +84,8 @@
 "wmctrl -o 1440,900"
   Control + Mod1 + 4
 
-# # Compiz move active window to viewports.
+# # Compiz move active window to viewports
+# # <http://ubuntuforums.org/showthread.php?t=1045417#post7399123>.
 # "wmctrl -r :ACTIVE: -e 0,0,0,-1,-1"
 #   Control + Shift + Mod1 + 1
 # "wmctrl -r :ACTIVE: -e 0,1440,0,-1,-1"
