@@ -8,6 +8,7 @@ Xft.hintstyle: hintfull
 Xft.rgba:      rgb
 *font:         xft:DejaVu Sans Mono:pixelsize=12:antialias=true:hinting=true:autohint=true
 
+! <https://wiki.archlinux.org/index.php/X11_Cursors>.
 Xcursor.theme: Vanilla-DMZ
 ! Xcursor.size: 48
 
