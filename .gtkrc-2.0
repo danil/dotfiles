@@ -1,8 +1,8 @@
-# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
-# Firefox Emacs keybindings
-# <http://kb.mozillazine.org/Emacs_Keybindings_-_Firefox>.
-#gtk-key-theme-name = "Emacs"
+# -- THEME AUTO-WRITTEN DO NOT EDIT
+include "/usr/share/themes/ClearlooksClassic/gtk-2.0/gtkrc"
 
-# Local Variables:
-# mode: conf
-# End:
+gtk-theme-name  = "ClearlooksClassic"
+
+include "/home/danil/.gtkrc.mine"
+
+# -- THEME AUTO-WRITTEN DO NOT EDIT
