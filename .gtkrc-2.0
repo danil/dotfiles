@@ -1,8 +1,10 @@
 # -- THEME AUTO-WRITTEN DO NOT EDIT
-include "/usr/share/themes/ClearlooksClassic/gtk-2.0/gtkrc"
+include "/usr/share/themes/Clearlooks/gtk-2.0/gtkrc"
 
-gtk-theme-name  = "ClearlooksClassic"
+gtk-theme-name  = "Clearlooks"
 
 include "/home/danil/.gtkrc.mine"
 
 # -- THEME AUTO-WRITTEN DO NOT EDIT
+
+gtk-icon-theme-name = "gnome"
