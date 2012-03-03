@@ -70,6 +70,7 @@
   Control + Shift + Mod1 + c
 
 # Show desktop
+# <http://ubuntuforums.org/showthread.php?t=1615199#td_post_10083165>.
 "showdesktop.sh"
   Control + Mod1 + d
 
