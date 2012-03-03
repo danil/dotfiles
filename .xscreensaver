@@ -1,5 +1,5 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.15 for danil on Mon Feb 27 05:36:24 2012.
+# Written by xscreensaver-demo 5.15 for danil on Sat Mar  3 20:23:41 2012.
 # http://www.jwz.org/xscreensaver/
 
 timeout:	0:05:00
@@ -24,8 +24,8 @@ fadeTicks:	20
 captureStderr:	True
 ignoreUninstalledPrograms:False
 font:		*-medium-r-*-140-*-m-*
-dpmsEnabled:	True
-dpmsQuickOff:	True
+dpmsEnabled:	False
+dpmsQuickOff:	False
 dpmsStandby:	0:00:00
 dpmsSuspend:	0:00:00
 dpmsOff:	0:10:00
