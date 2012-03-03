@@ -1,0 +1,5 @@
+[Default Applications]
+text/html=google-chrome.desktop
+application/x-trash=nautilus.desktop
+application/pdf=evince.desktop
+application/x-bittorrent=transmission-gtk.desktop
