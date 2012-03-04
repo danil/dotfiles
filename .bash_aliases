@@ -16,7 +16,7 @@ fi
 export EDITOR="/usr/bin/emacsclient -t"
 export ALTERNATE_EDITOR="/usr/bin/emacs"
 export PAGER="/usr/bin/less -I"
-export HISTSIZE=2000
+export HISTSIZE=10000
 export HISTCONTROL=ignoredups
 # See /usr/share/terminfo/*/
 # export TERM=rxvt-256color
