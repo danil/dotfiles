@@ -77,21 +77,12 @@ DEFAULT_SESSION=compiz-manager
 # Slim
 # <http://en.gentoo-wiki.com/wiki/SLiM#Preparing_for_multiple_sessions>.
 case $1 in
-    xmonad)
-        exec xmonad
-        ;;
-    stumpwm)
-        exec stumpwm
-        ;;
-    ratpoison)
-        exec ratpoison
-        ;;
-    fluxbox)
-        exec startfluxbox
-        ;;
     compiz)
         startup_applications
         exec $DEFAULT_SESSION
+        ;;
+    fluxbox)
+        exec startfluxbox
         ;;
     *)
         startup_applications
