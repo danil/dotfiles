@@ -227,7 +227,7 @@ function conky_clock_rings()
     {
       name='downspeedf',
       arg='wlan0',
-      max=1000,
+      max=2700,
       bg_colour=0xffffff,
       bg_alpha=0.2,
       fg_colour=0xFFFFFF,
@@ -241,7 +241,7 @@ function conky_clock_rings()
     {
       name='upspeedf',
       arg='wlan0',
-      max=2200,
+      max=2700,
       bg_colour=0xffffff,
       bg_alpha=0.2,
       fg_colour=0xffffff,

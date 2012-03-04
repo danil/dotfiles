@@ -7,3 +7,4 @@ application/x-trash=nautilus.desktop
 x-scheme-handler/trash=nautilus.desktop
 application/pdf=evince.desktop
 application/x-bittorrent=transmission-gtk.desktop
+text/comma-separated-values=libreoffice-calc.desktop
