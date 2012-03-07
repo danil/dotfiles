@@ -53,8 +53,8 @@ function startup_applications {
     dbus-launch volumeicon &
     dbus-launch gnome-power-manager &
     dbus-launch wicd-gtk --tray &
-    # conky -c ~/.conky/conkyrc_calendar &
-    # conky -c ~/.conky/conkyrc_top &
+    conky -c ~/.conky/conkyrc_calendar &
+    conky -c ~/.conky/conkyrc_top &
     dbus-launch avant-window-navigator &
     # dbus-launch empathy &
     dbus-launch gajim &
