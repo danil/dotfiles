@@ -54,10 +54,11 @@ text_buffer_size 2048
 temperature_unit fahrenheit
 
 # Window specifications #
-
+# <http://conky.sourceforge.net/config_settings.html>.
 own_window yes
 # own_window_class Conky
-own_window_type override
+# own_window_type override #with nautilus desktop
+own_window_type normal #without nautilus desktop
 own_window_transparent yes
 own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
 
