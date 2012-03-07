@@ -56,7 +56,8 @@ function startup_applications {
     # conky -c ~/.conky/conkyrc_calendar &
     # conky -c ~/.conky/conkyrc_top &
     dbus-launch avant-window-navigator &
-    dbus-launch empathy &
+    # dbus-launch empathy &
+    dbus-launch gajim &
     stardict &
     # screenletsd --cli run ClockRing &
     # screenletsd --cli run ClearCalendar &
