@@ -18,16 +18,19 @@ class DoTheShutdown:
     # Logout
     def logout(self, widget):
         os.system("skill -TERM $DESKTOP_SESSION")
+        gtk.main_quit()
 
     # Reboot
     def reboot(self, widget):
         # os.system("dbus-send --system --print-reply --dest=org.freedesktop.ConsoleKit /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Restart")
         os.system("sudo shutdown -r now")
+        gtk.main_quit()
 
     # Shutdown
     def shutdown(self, widget):
         # os.system("dbus-send --system --print-reply --dest=org.freedesktop.ConsoleKit /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Stop")
         os.system("sudo shutdown -h now")
+        gtk.main_quit()
 
     # S3 aka Suspend to RAM aka Sleep
     def suspend(self, widget):
