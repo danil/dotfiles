@@ -1,4 +1,5 @@
 ! This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+! `xrdb -merge ~/.Xresources`.
 
 ! <http://pastebin.com/LMBjmAfF>
 Xft.dpi:       96
@@ -52,12 +53,15 @@ URxvt*saveLines: 10000
 ! <http://wiki.archlinux.org/index.php/Rxvt-unicode#Automatic_Script_Management>.
 ! selection,option-popup,selection-popup,readline,clipboard,matcher
 ! URxvt.perl-lib: /home/danil/.urxvt/ext/
-URxvt*perl-ext-common: default,matcher,searchable-scrollback,clipboard
+URxvt*perl-ext-common: default,matcher,searchable-scrollback,clipboard,tabbed
 URxvt.searchable-scrollback: CM-F
 URxvt.tabbed.tabbar-fg: 0
 URxvt.tabbed.tabbar-bg: 15
 Urxvt.tabbed.tab-fg:    0
 URxvt.tabbed.tab-bg:    7
+! Tabbed only if more than one tab
+! <http://valentinvoigt.info/2011/04/urxvt-tabbed-nur-wenn-mehr-als-ein-tab>.
+URxvt.tabbed.hide-when-empty: true
 ! URxvt.tabbed.hide: true
 ! URxvt.tabbed.newButton: false
 
