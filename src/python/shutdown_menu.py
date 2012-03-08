@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# <https://bbs.archlinux.org/viewtopic.php?id=75365#p579926>,
+# <https://bbs.archlinux.org/viewtopic.php?pid=783507#p783507>.
 import pygtk
 pygtk.require('2.0')
 import gtk
