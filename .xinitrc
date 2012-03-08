@@ -41,7 +41,7 @@ killall xscreensaver 2>/dev/null
 xscreensaver -nosplash &
 
 urxvtd --fork --quiet
-# feh --bg-center ~/local/share/backgrounds/gentoo-znurt-larry-abducted-1440x900.png &
+feh --bg-center ~/local/share/backgrounds/gentoo-znurt-larry-abducted-1440x900.png &
 
 function startup_applications {
     dbus-launch nautilus --no-default-window &
