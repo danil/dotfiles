@@ -8,39 +8,41 @@ import os
 
 class DoTheShutdown:
 
-    # Cancel/exit.
+    # Cancel/exit
     def delete_event(self, widget, event, data=None):
         gtk.main_quit()
         return False
 
-    # Logout.
+    # Logout
     def logout(self, widget):
         os.system("skill -TERM $DESKTOP_SESSION")
 
-    # Reboot.
+    # Reboot
     def reboot(self, widget):
         # os.system("dbus-send --system --print-reply --dest=org.freedesktop.ConsoleKit /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Restart")
         os.system("sudo shutdown -r now")
 
-    # Shutdown.
+    # Shutdown
     def shutdown(self, widget):
         # os.system("dbus-send --system --print-reply --dest=org.freedesktop.ConsoleKit /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Stop")
         os.system("sudo shutdown -h now")
 
-    # S3 aka Suspend to RAM aka Sleep.
+    # S3 aka Suspend to RAM aka Sleep
     def suspend(self, widget):
         os.system("xscreensaver-command -lock && sudo hibernate-ram")
+        gtk.main_quit()
 
-    # Hibernate.
+    # Hibernate
     def hibernate(self, widget):
-        os.system("sudo hibernate")
+        os.system("xscreensaver-command -lock && sudo hibernate")
+        gtk.main_quit()
 
     def __init__(self):
         width = 100
 
         # Create a new window
         self.window = gtk.Window(gtk.WINDOW_TOPLEVEL)
-        self.window.set_title("Exit? Choose an option:")
+        self.window.set_title("Shut down")
         self.window.set_resizable(False)
         self.window.set_position(1)
         self.window.connect("delete_event", self.delete_event)
