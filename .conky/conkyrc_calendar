@@ -104,10 +104,12 @@ ${lua_parse text_calendar}
 
 ${color}${font}${alignc}${voffset 5}$uptime_short $kernel
 
-${goto 13}${voffset 64}Load${goto 93}${voffset 1}CPU
-${goto 13}${voffset 64}MEM${goto 93}Disk
+${goto 14}${voffset 62}${font Liberation Sans:Regular:size=7}${loadavg 1}${goto 93}${voffset 2}${font}CPU
+${goto 14}${voffset -7}${font Liberation Sans:Regular:size=7}${loadavg 2}
+${goto 14}${loadavg 3}
+${goto 13}${voffset 52}${font}MEM${goto 93}Disk
 
-${goto 13}${voffset 41}${wireless_essid wlan0}
+${goto 13}${voffset 38}${wireless_essid wlan0}
 ${goto 13}${voffset 1}${addr wlan0}${goto 93}${addr ppp0}
 
 ${goto 13}${voffset 29}wlan${goto 93}ppp
