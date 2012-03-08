@@ -80,13 +80,13 @@ DEFAULT_SESSION=compiz-manager
 case $1 in
     compiz)
         startup_applications
-        exec $DEFAULT_SESSION
+        exec dbus-launch $DEFAULT_SESSION
         ;;
     fluxbox)
         exec startfluxbox
         ;;
     *)
         startup_applications
-        exec $DEFAULT_SESSION
+        exec dbus-launch $DEFAULT_SESSION
         ;;
 esac
