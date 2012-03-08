@@ -95,7 +95,6 @@ function conky_clock_rings()
   local yc_row3 = y_gap2 + y_step * 3
   local yc_row4 = y_gap3 + y_step * 4
 
-
   settings_table = {
     {
       name='loadavg',
