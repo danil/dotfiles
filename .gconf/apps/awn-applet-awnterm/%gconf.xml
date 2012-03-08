@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <gconf>
-	<entry name="opacity" mtime="1331216804" type="float" value="0.69999998807907104"/>
-	<entry name="hide_on_unfocus" mtime="1331216804" type="bool" value="true"/>
-	<entry name="global_hotkey" mtime="1331216804" type="string">
+	<entry name="opacity" mtime="1331221789" type="float" value="0.69999998807907104"/>
+	<entry name="hide_on_unfocus" mtime="1331221789" type="bool" value="true"/>
+	<entry name="global_hotkey" mtime="1331221789" type="string">
 		<stringvalue></stringvalue>
 	</entry>
-	<entry name="bg_img" mtime="1331216804" type="string">
+	<entry name="bg_img" mtime="1331221789" type="string">
 		<stringvalue></stringvalue>
 	</entry>
-	<entry name="main_terminal" mtime="1331216804" type="string">
+	<entry name="main_terminal" mtime="1331221789" type="string">
 		<stringvalue>gnome-terminal</stringvalue>
 	</entry>
 </gconf>
