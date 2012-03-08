@@ -42,8 +42,14 @@ class DoTheShutdown:
         os.system("xscreensaver-command -lock && sudo hibernate")
         gtk.main_quit()
 
+    # Lock
+    def lock(self, widget):
+        os.system("xscreensaver-command -lock && sleep 1 && xset dpms force off")
+        gtk.main_quit()
+
     def __init__(self):
-        width = 100
+        border_width = 10
+        button_width = 100
 
         # Create a new window
         self.window = gtk.Window(gtk.WINDOW_TOPLEVEL)
@@ -63,8 +69,8 @@ class DoTheShutdown:
 
         # Create cancel button
         self.button1 = gtk.Button("Cancel")
-        self.button1.set_border_width(10)
-        self.button1.set_size_request(width,-1)
+        self.button1.set_border_width(border_width)
+        self.button1.set_size_request(button_width,-1)
         self.button1.connect("clicked", self.delete_event, "closed")
         self.box1.pack_start(self.button1, True, True, 0)
         self.button1.add_accelerator("clicked", accel_group,
@@ -75,18 +81,18 @@ class DoTheShutdown:
 
         # Create logout button
         self.button2 = gtk.Button("Logout")
-        self.button2.set_border_width(10)
-        self.button2.set_size_request(width,-1)
+        self.button2.set_border_width(border_width)
+        self.button2.set_size_request(button_width,-1)
         self.button2.connect("clicked", self.logout)
         self.box1.pack_start(self.button2, True, True, 0)
         self.button2.add_accelerator("clicked", accel_group,
-            gtk.gdk.keyval_from_name('l'), 0, 0)
+            gtk.gdk.keyval_from_name('o'), 0, 0)
         self.button2.show()
 
         # Create reboot button
         self.button3 = gtk.Button("Reboot")
-        self.button3.set_border_width(10)
-        self.button3.set_size_request(width,-1)
+        self.button3.set_border_width(border_width)
+        self.button3.set_size_request(button_width,-1)
         self.button3.connect("clicked", self.reboot)
         self.box1.pack_start(self.button3, True, True, 0)
         self.button3.add_accelerator("clicked", accel_group,
@@ -95,33 +101,43 @@ class DoTheShutdown:
 
         # Create shutdown button
         self.button4 = gtk.Button("Shutdown")
-        self.button4.set_border_width(10)
-        self.button4.set_size_request(width,-1)
+        self.button4.set_border_width(border_width)
+        self.button4.set_size_request(button_width,-1)
         self.button4.connect("clicked", self.shutdown)
         self.box1.pack_start(self.button4, True, True, 0)
         self.button4.add_accelerator("clicked", accel_group,
-            gtk.gdk.keyval_from_name('s'), 0, 0)
+            gtk.gdk.keyval_from_name('h'), 0, 0)
         self.button4.show()
 
         # Create suspend button
         self.button5 = gtk.Button("Suspend")
-        self.button5.set_border_width(10)
-        self.button5.set_size_request(width,-1)
+        self.button5.set_border_width(border_width)
+        self.button5.set_size_request(button_width,-1)
         self.button5.connect("clicked", self.suspend)
         self.box1.pack_start(self.button5, True, True, 0)
         self.button5.add_accelerator("clicked", accel_group,
-            gtk.gdk.keyval_from_name('h'), 0, 0)
+            gtk.gdk.keyval_from_name('s'), 0, 0)
         self.button5.show()
 
         # Create hibernate button
         self.button6 = gtk.Button("Hibernate")
-        self.button6.set_border_width(10)
-        self.button6.set_size_request(width,-1)
+        self.button6.set_border_width(border_width)
+        self.button6.set_size_request(button_width,-1)
         self.button6.connect("clicked", self.hibernate)
         self.box1.pack_start(self.button6, True, True, 0)
         self.button6.add_accelerator("clicked", accel_group,
-            gtk.gdk.keyval_from_name('h'), 0, 0)
+            gtk.gdk.keyval_from_name('i'), 0, 0)
         self.button6.show()
+
+        # Create lock button
+        self.button7 = gtk.Button("Lock")
+        self.button7.set_border_width(border_width)
+        self.button7.set_size_request(button_width,-1)
+        self.button7.connect("clicked", self.lock)
+        self.box1.pack_start(self.button7, True, True, 0)
+        self.button7.add_accelerator("clicked", accel_group,
+            gtk.gdk.keyval_from_name('l'), 0, 0)
+        self.button7.show()
 
         self.box1.show()
         self.window.show()
