@@ -103,14 +103,14 @@
 "sleep 0.5 && xset dpms force off"
   Control + Shift + Mod1 + d
 
-# Shutdown menu.
-"~/src/python/shutdown_menu.py"
-  Control + Shift + Mod1 + 0
-
 # Screensaver.
 # "xlock -mode deco & sleep 1 && xset dpms force off"
 "xscreensaver-command -lock && sleep 1 && xset dpms force off"
-  Control + Shift + Mod1 + 8
+  Control + Shift + Mod1 + l
+
+# Shutdown menu.
+"~/src/python/shutdown_menu.py"
+  Control + Shift + Mod1 + 0
 
 # S3 aka Suspend to RAM aka Sleep.
 # "xlock -mode deco& sudo hibernate-ram"
