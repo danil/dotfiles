@@ -472,6 +472,10 @@
       (cons '("/portage/package\\.license\\'" . conf-mode) auto-mode-alist))
 (setq auto-mode-alist
       (cons '("/share/applications/defaults\\.list\\'" . conf-mode) auto-mode-alist))
+(setq auto-mode-alist
+      (cons '("/etc/fstab\\'" . conf-mode) auto-mode-alist))
+(setq auto-mode-alist
+      (cons '("/etc/hosts\\'" . conf-mode) auto-mode-alist))
 
 ;;; Lisp.
 (setq auto-mode-alist
