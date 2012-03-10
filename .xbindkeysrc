@@ -178,6 +178,10 @@
 # "mocp --previous"
 #   Control + F7
 
+# tint2.
+"killall -SIGUSR1 tint2"
+  Control + Shift + Mod1 + t
+
 # # Listen
 # "listen --next"
 #   XF86AudioNext
