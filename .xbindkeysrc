@@ -180,7 +180,7 @@
 
 # tint2.
 "killall -SIGUSR1 tint2"
-  Control + Shift + Mod1 + t
+  Control + Shift + Mod1 + 2
 
 # # Listen
 # "listen --next"
