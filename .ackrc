@@ -6,6 +6,7 @@
 --type-add=css=.sass
 --type-add=shell=.awk,.sed
 --type-set=markdown=.md,.markdown
+--color-lineno=red
 
 # Ignore case distinctions in PATTERN, only if PATTERN contains no
 # upper case. Ignored if -i is specified.
