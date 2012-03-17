@@ -3,9 +3,9 @@
 	<entry name="show_desktop" mtime="1331212794" type="bool" value="false"/>
 	<entry name="start_with_toolbar" mtime="1320219940" type="bool" value="true"/>
 	<entry name="thumbnail_limit" mtime="1302436897" type="int" value="104857600"/>
-	<entry name="navigation_window_saved_maximized" mtime="1331628826" type="bool" value="false"/>
-	<entry name="navigation_window_saved_geometry" mtime="1331628826" type="string">
-		<stringvalue>947x785+-1+0</stringvalue>
+	<entry name="navigation_window_saved_maximized" mtime="1331998744" type="bool" value="false"/>
+	<entry name="navigation_window_saved_geometry" mtime="1331881589" type="string">
+		<stringvalue>947x785+329+23</stringvalue>
 	</entry>
 	<entry name="start_with_sidebar" mtime="1320228010" type="bool" value="true"/>
 	<entry name="sidebar_width" mtime="1331234198" type="int" value="105"/>
