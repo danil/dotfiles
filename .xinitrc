@@ -50,7 +50,8 @@ function startup_applications {
     fi
     tint2 &
     parcellite &
-    dbus-launch volumeicon &
+    # dbus-launch volumeicon &
+    dbus-launch volti &
     dbus-launch gnome-power-manager &
     dbus-launch wicd-gtk --tray &
     conky -c ~/.conky/conkyrc_calendar &
