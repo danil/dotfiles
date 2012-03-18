@@ -76,13 +76,13 @@
 
 # Compiz viewports switch
 # <http://superuser.com/questions/264281/wmctrl-says-i-have-one-workspace-when-i-actually-have-four#answer-264502>.
-"wmctrl -o 0,0"
+"wmctrl -o 0,0 && notify-send --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=900 '1' 'Desktop'"
   Control + Mod1 + 1
-"wmctrl -o 1440,0"
+"wmctrl -o 1440,0 && notify-send --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=900 '2' 'Desktop'"
   Control + Mod1 + 2
-"wmctrl -o 0,900"
+"wmctrl -o 0,900 && notify-send --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=900 '3' 'Desktop'"
   Control + Mod1 + 3
-"wmctrl -o 1440,900"
+"wmctrl -o 1440,900 && notify-send --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=900 '4' 'Desktop'"
   Control + Mod1 + 4
 
 # # TODO:
