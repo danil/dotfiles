@@ -1,5 +1,8 @@
 <?xml version="1.0"?>
 <gconf>
+	<entry name="popup_location" mtime="1332025623" type="string">
+		<stringvalue>bottom_right</stringvalue>
+	</entry>
 	<entry name="theme" mtime="1330864204" type="string">
 		<stringvalue>standard</stringvalue>
 	</entry>
