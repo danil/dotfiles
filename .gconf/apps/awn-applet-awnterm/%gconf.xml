@@ -2,8 +2,8 @@
 <gconf>
 	<entry name="opacity" mtime="1332146865" type="float" value="0.69999998807907104"/>
 	<entry name="hide_on_unfocus" mtime="1332146865" type="bool" value="true"/>
-	<entry name="global_hotkey" mtime="1332146865" type="string">
-		<stringvalue></stringvalue>
+	<entry name="global_hotkey" mtime="1332149033" type="string">
+		<stringvalue>&lt;Shift&gt;&lt;Control&gt;&lt;Alt&gt;&lt;Meta&gt;t</stringvalue>
 	</entry>
 	<entry name="bg_img" mtime="1332146865" type="string">
 		<stringvalue></stringvalue>
