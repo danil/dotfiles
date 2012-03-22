@@ -650,6 +650,25 @@
   (shell-command
    (format "%s -f %s/TAGS -e -R %s" path-to-ctags dir-name dir-name)))
 
+
+
+;; Mew is a mail reader for Emacs <http://mew.org>, <http://emacswiki.org/Mew>.
+(autoload 'mew "mew" nil t)
+(autoload 'mew-send "mew" nil t)
+;; ;; Optional setup (e.g. C-xm for sending a message):
+;; (autoload 'mew-user-agent-compose "mew" nil t)
+;; (if (boundp 'mail-user-agent)
+;;     (setq mail-user-agent 'mew-user-agent))
+;; (if (fboundp 'define-mail-user-agent)
+;;     (define-mail-user-agent
+;;       'mew-user-agent
+;;       'mew-user-agent-compose
+;;       'mew-draft-send-message
+;;       'mew-draft-kill
+;;       'mew-send-hook))
+
+
+
 ;;; DVC.
 ;(add-to-list 'load-path "~/share/emacs/site-lisp/dvc")
 ;(autoload 'dvc-status "dvc-load" nil t)
