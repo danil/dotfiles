@@ -30,6 +30,7 @@ alias ec='/usr/bin/emacsclient -t'
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 # RVM bash completion <http://beginrescueend.com/workflow/completion>.
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # Lua.
 if [ -d ~/.luarocks/bin ] ; then
