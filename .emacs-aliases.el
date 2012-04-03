@@ -285,6 +285,7 @@
          findr
          haml-mode
          haskell-mode
+         inf-ruby
          jump
          less
          lua-mode
