@@ -297,6 +297,7 @@
          rainbow-mode
          rhtml-mode
          rinari
+         ruby-mode
          sass-mode
          scss-mode
          window-numbering
@@ -523,6 +524,8 @@
       (cons '("/Gemfile\\'" . ruby-mode) auto-mode-alist))
 (setq auto-mode-alist
       (cons '("/Capfile\\'" . ruby-mode) auto-mode-alist))
+(setq auto-mode-alist
+      (cons '("/Guardfile\\'" . ruby-mode) auto-mode-alist))
 ;; (add-hook 'ruby-mode-hook 'ror-doc-lookup)
 (add-hook 'ruby-mode-hook
           (lambda () (interactive)
