@@ -1,0 +1,3 @@
+# Workaround for bundle install fails with SSL certificate verification error
+# <http://stackoverflow.com/questions/10246023/bundle-install-fails-with-ssl-certificate-verification-error#10250470>.
+:ssl_verify_mode: 0
