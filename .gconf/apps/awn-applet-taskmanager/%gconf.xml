@@ -6,7 +6,7 @@
 	<entry name="show_all_windows" mtime="1329986294" type="bool" value="true"/>
 	<entry name="intellihide_mode" mtime="1330632085" type="int" value="0"/>
 	<entry name="intellihide" mtime="1330632085" type="bool" value="true"/>
-	<entry name="launcher_paths" mtime="1334222811" type="list" ltype="string">
+	<entry name="launcher_paths" mtime="1334737278" type="list" ltype="string">
 		<li type="string">
 			<stringvalue>/home/danil/.config/awn/launchers/awn_launcher-1.desktop</stringvalue>
 		</li>
