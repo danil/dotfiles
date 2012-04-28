@@ -3,7 +3,7 @@
 # <http://pastie.textmate.org/1011847>.
 # Additional file types
 --type-add=ruby=.haml,.rsel
---type-add=css=.sass
+--type-add=css=.sass,.scss
 --type-add=shell=.awk,.sed
 --type-set=markdown=.md,.markdown
 --color-lineno=red
