@@ -81,13 +81,15 @@ DEFAULT_SESSION=compiz-manager
 case $1 in
     compiz)
         startup_applications
-        exec dbus-launch $DEFAULT_SESSION
+        # If mounting fails for normal users
+        # <https://wiki.archlinux.org/index.php/HAL#Mounting_fails_for_normal_users>.
+        exec ck-launch-session dbus-launch $DEFAULT_SESSION
         ;;
     fluxbox)
         exec startfluxbox
         ;;
     *)
         startup_applications
-        exec dbus-launch $DEFAULT_SESSION
+        exec ck-launch-session dbus-launch $DEFAULT_SESSION
         ;;
 esac
