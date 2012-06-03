@@ -200,6 +200,14 @@ function gmail_filtering()
                   mailbox:contain_field("List-Id", "thinking-sphinx.googlegroups.com")
    mailbox:move_messages(gmail.lists, result)
 
+   -- chaturbate.com messages filtering.
+   local mailbox = gmail.INBOX
+   local result = mailbox:is_unseen() *
+                  mailbox:contain_from("no-reply@chaturbate.com") *
+                  mailbox:contain_to("danil@kutkevich.org") *
+                  mailbox:contain_subject("Someone you follow is chaturbating")
+   mailbox:move_messages(gmail.chaturbate, result)
+
    -- Delete drafts after sending from Gmail All Mail.
    -- local mailbox = gmail["All Mail"]
    -- local result = mailbox:is_unseen() *
