@@ -157,6 +157,13 @@ function gmail_filtering()
    mailbox:mark_seen(result)
    mailbox:move_messages(gmail.bugs, result)
 
+   -- 42.molinos.ru messages filtering.
+   local mailbox = gmail.INBOX
+   local result = mailbox:is_unseen() *
+                  mailbox:contain_field("X-Redmine-Host", "42.molinos.ru") *
+                  mailbox:contain_from("admin@molinos.ru")
+   mailbox:move_messages(gmail.molinos, result)
+
    -- Molinos bugs messages filtering.
    local mailbox = gmail.INBOX
    local result = mailbox:is_unseen() *
