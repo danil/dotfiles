@@ -157,6 +157,13 @@ function gmail_filtering()
    mailbox:mark_seen(result)
    mailbox:move_messages(gmail.bugs, result)
 
+   -- Molinos bugs messages filtering.
+   local mailbox = gmail.INBOX
+   local result = mailbox:is_unseen() *
+                  mailbox:contain_from("notifier@juvelirtorg.spb.ru") *
+               mailbox:contain_subject("[Indicator Juvelirtorg]")
+   mailbox:move_messages(gmail.molinos, result)
+
    -- Linode alert annoying messages filtering.
    local mailbox = gmail.INBOX
    local result = mailbox:is_unseen() *
