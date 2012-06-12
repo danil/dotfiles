@@ -65,7 +65,7 @@ own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
 border_inner_margin 0
 border_outer_margin 0
 
-minimum_size 165 400
+minimum_size 165 150
 maximum_width 165
 
 alignment tr
