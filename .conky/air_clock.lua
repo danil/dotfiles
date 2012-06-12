@@ -17,8 +17,16 @@ Call this script in Conky using the following before TEXT (assuming you save thi
 ]]
 
 require 'cairo'
-function conky_air_clock()
+function conky_air_clock(options)
   if conky_window == nil then return end
+
+  options = options or {}
+  opts = {
+    format_24 = false,
+    time_zone_modifer = 0
+  }
+  for k,v in pairs(options) do opts[k] = v end
+
   local w = conky_window.width
   local h = conky_window.height
   local cs = cairo_xlib_surface_create(conky_window.display, conky_window.drawable, conky_window.visual, w, h)
@@ -50,13 +58,26 @@ function conky_air_clock()
 
   -- Grab time
 
-  local hours = os.date("%I")
+  local hours
+  if opts.format_24 then
+    hours = os.date("%H")
+  else
+    hours = os.date("%I")
+  end
+  hours = hours + opts.time_zone_modifer
   local mins = os.date("%M")
   local secs = os.date("%S")
 
   secs_arc = (2 * math.pi / 60) * secs
   mins_arc = (2 * math.pi / 60) * mins
-  hours_arc = (2 * math.pi / 12) * hours + mins_arc / 12
+  local number_of_hours
+  if opts.format_24 then
+    number_of_hours = 24
+  else
+    number_of_hours = 12
+  end
+  -- hours_arc = (2 * math.pi / 12) * hours + mins_arc / 12
+  hours_arc = (2 * math.pi / number_of_hours) * hours + mins_arc / number_of_hours
 
   -- Drop shadow
 
@@ -112,17 +133,52 @@ function conky_air_clock()
 
   -- Draw hours numbers <http://forum.learnfree.eu/viewtopic.php?f=9&t=422&start=105#p8436>.
   do
-    t = {
-      radius = clock_r,
-      x = xc,
-      y = yc,
-      font_name = "DejaVu Sans",
-      font_size = 14,
-      bold = true,
-      italic = false,
-      color = 0x000000,
-      alpha = 0.5
-    }
+    if opts.format_24 then
+      t = {
+        alpha = 0.5,
+        bold = false,
+        color = 0x000000,
+        division_hour_lenght = 0.87,
+        division_minute_lenght = 0.98,
+        font_name = "DejaVu Sans",
+        font_size = 9,
+        hand_hour_lenght = 0.53,
+        hand_minute_lenght = 0.67,
+        is_digits_enabled = true,
+        is_division_hour_enabled = true,
+        is_division_minute_enabled = false,
+        italic = false,
+        radius = clock_r,
+        radius_digit = 0.83,
+        radius_division_hour = clock_r*0.87,
+        x = xc,
+        y = yc
+      }
+    else
+      t = {
+        -- hand_hour_lenght = 0.62,
+        -- hand_minute_lenght = 0.84,
+        -- radius_digit = 0.78,
+        alpha = 0.5,
+        bold = false,
+        color = 0x000000,
+        division_hour_lenght = 0.95,
+        division_minute_lenght = 0.98,
+        font_name = "DejaVu Sans",
+        font_size = 10,
+        hand_hour_lenght = 0.53,
+        hand_minute_lenght = 0.67,
+        is_digits_enabled = true,
+        is_division_hour_enabled = false,
+        is_division_minute_enabled = false,
+        italic = false,
+        radius = clock_r,
+        radius_digit = 0.82,
+        radius_division_hour = clock_r,
+        x = xc,
+        y = yc
+      }
+    end
 
     local slant = CAIRO_FONT_SLANT_NORMAL
     local weight =CAIRO_FONT_WEIGHT_NORMAL
@@ -135,33 +191,39 @@ function conky_air_clock()
     -- добавляем часовые деления
     -- зададим цвет
     cairo_set_source_rgba(cr, rgb_to_r_g_b(t.color, t.alpha))
-    -- сбрасываем счетчик делений на 0
-    local i = 0
-    -- задаем расстояние между делениями
-    local winkel = math.rad(30)
-    -- выводим 12 делений
-    for i= 0, 11, 1 do
-      cairo_move_to(cr, t.x - math.sin(winkel*i)*t.radius, t.y - math.cos(winkel*i)*t.radius)
-      -- длину делений берем равной 0.1 от длины радиуса
-      cairo_line_to(cr, t.x - math.sin(winkel*i)*(t.radius*0.95), t.y - math.cos(winkel*i)*(t.radius*0.95))
 
+    if t.is_division_hour_enabled then
+      -- сбрасываем счетчик делений на 0
+      local i = 0
+      -- задаем расстояние между делениями
+      local winkel = math.rad(30)
+      -- выводим 12 делений
+      for i= 0, 11, 1 do
+        cairo_move_to(cr, t.x - math.sin(winkel*i)*t.radius_division_hour, t.y - math.cos(winkel*i)*t.radius_division_hour)
+        -- длину делений берем равной 0.1 от длины радиуса
+        cairo_line_to(cr, t.x - math.sin(winkel*i)*(t.radius_division_hour*t.division_hour_lenght), t.y - math.cos(winkel*i)*(t.radius_division_hour*t.division_hour_lenght))
+
+        -- выводим изображение
+        cairo_stroke (cr)
+      end
+    end
+
+    if t.is_division_minute_enabled then
+      -- добавляем минутные деления
+      -- сбрасываем счетчик делений на 0
+      local i = 0
+      -- задаем расстояние между делениями
+      -- local winkel = math.rad(6)
+      local winkel = math.rad(6)
+      -- выводим 60 делений
+      for i=0, 59, 1 do
+        cairo_move_to(cr, t.x - math.sin(winkel * i) * t.radius, t.y - math.cos(winkel * i) * t.radius)
+        -- длину делений берем равной 0.1 от длины радиуса
+        cairo_line_to(cr, t.x - math.sin(winkel * i) * (t.radius * t.division_minute_lenght), t.y - math.cos(winkel * i) * (t.radius*t.division_minute_lenght))
+      end
       -- выводим изображение
       cairo_stroke (cr)
     end
-
-    -- добавляем минутные деления
-    -- сбрасываем счетчик делений на 0
-    local i = 0
-    -- задаем расстояние между делениями
-    local winkel = math.rad(6)
-    -- выводим 12 делений
-    for i=0, 59, 1 do
-      cairo_move_to(cr, t.x - math.sin(winkel * i) * t.radius, t.y - math.cos(winkel * i) * t.radius)
-      -- длину делений берем равной 0.1 от длины радиуса
-      cairo_line_to(cr, t.x - math.sin(winkel * i) * (t.radius * 0.98), t.y - math.cos(winkel * i) * (t.radius*0.98))
-    end
-    -- выводим изображение
-    cairo_stroke (cr)
 
     cairo_set_source_rgba(cr, 0, 0, 0, 0.6)
     cairo_select_font_face(cr, t.font_name, slant, weight)
@@ -169,40 +231,56 @@ function conky_air_clock()
     te=cairo_text_extents_t:create()
     cairo_text_extents(cr,t.text,te)
 
-    -- переносим значения координат
-    cairo_translate(cr, t.x, t.y)
-    -- сбрасываем координаты цифр
-    local mx = 0
-    local my = 0
-    -- сбрасываем счетчик делений на 0
-    local i = 0
-    -- задаем расстояние между цифрами
-    local winkel = math.rad(30)
-    -- необходимо вывести цифра начиная с 1 и заканчивая 12
-    for i = 1, 12, 1 do
-      -- расчитываем координаты цифр
-      mov_x = math.sin(winkel*i)*(t.radius*0.78)
-      mov_y = math.cos(winkel*i)*(t.radius*0.78)
-      -- расчитываем ширину и высоту цифр
-      te=cairo_text_extents_t:create()
-      cairo_text_extents (cr,i,te)
-      -- вносим поправку на половину ширины и половину высоты цифр
-      mx = -te.width/2
-      my = -te.height/2-te.y_bearing
-      -- задаем координаты цифр
-      cairo_move_to(cr, mx + mov_x, my - mov_y)
-      -- выводим цифры
-      cairo_show_text(cr, i)
-    end
 
-    -- Restore state.
-    cairo_restore (cr)
+    if t.is_digits_enabled then
+      -- переносим значения координат
+      cairo_translate(cr, t.x, t.y)
+      -- сбрасываем координаты цифр
+      local mx = 0
+      local my = 0
+      -- сбрасываем счетчик делений на 0
+      local i = 0
+      -- задаем расстояние между цифрами
+      -- local winkel = math.rad(30)
+      local winkel
+      local number_of_hours
+      local step
+      if opts.format_24 then
+        -- необходимо вывести цифра начиная с 1 и заканчивая 23
+        number_of_hours = 23
+        step = 2
+        winkel = math.rad(15)
+      else
+        -- необходимо вывести цифра начиная с 1 и заканчивая 12
+        number_of_hours = 12
+        step = 1
+        winkel = math.rad(30)
+      end
+      for i = 1, number_of_hours, step do
+        -- расчитываем координаты цифр
+        mov_x = math.sin(winkel*i)*(t.radius*t.radius_digit)
+        mov_y = math.cos(winkel*i)*(t.radius*t.radius_digit)
+        -- расчитываем ширину и высоту цифр
+        te=cairo_text_extents_t:create()
+        cairo_text_extents (cr,i,te)
+        -- вносим поправку на половину ширины и половину высоты цифр
+        mx = -te.width/2
+        my = -te.height/2-te.y_bearing
+        -- задаем координаты цифр
+        cairo_move_to(cr, mx + mov_x, my - mov_y)
+        -- выводим цифры
+        cairo_show_text(cr, i)
+      end
+
+      -- Restore state.
+      cairo_restore (cr)
+    end
   end
 
   -- Draw hour hand
 
-  xh = xc + 0.62 * clock_r * math.sin(hours_arc)
-  yh = yc - 0.62 * clock_r * math.cos(hours_arc)
+  xh = xc + t.hand_hour_lenght * clock_r * math.sin(hours_arc)
+  yh = yc - t.hand_hour_lenght * clock_r * math.cos(hours_arc)
   cairo_move_to(cr, xc, yc)
   cairo_line_to(cr, xh, yh)
 
@@ -214,8 +292,8 @@ function conky_air_clock()
 
   -- Draw minute hand
 
-  xm = xc + 0.84 * clock_r * math.sin(mins_arc)
-  ym = yc - 0.84 * clock_r * math.cos(mins_arc)
+  xm = xc + t.hand_minute_lenght * clock_r * math.sin(mins_arc)
+  ym = yc - t.hand_minute_lenght * clock_r * math.cos(mins_arc)
   cairo_move_to(cr, xc, yc)
   cairo_line_to(cr, xm, ym)
 

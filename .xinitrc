@@ -56,6 +56,7 @@ function startup_applications {
     dbus-launch wicd-gtk --tray &
     conky -c ~/.conky/conkyrc_calendar &
     conky -c ~/.conky/conkyrc_top &
+    conky -c ~/.conky/conkyrc_clock_2 &
     dbus-launch avant-window-navigator &
     # dbus-launch empathy &
     dbus-launch gajim &
