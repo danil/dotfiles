@@ -1,11 +1,11 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.15 for danil on Sun Mar 18 02:24:23 2012.
+# Written by xscreensaver-demo 5.15 for danil on Sat May 12 16:04:33 2012.
 # http://www.jwz.org/xscreensaver/
 
 timeout:	0:05:00
 cycle:		0:00:00
 lock:		True
-lockTimeout:	0:10:00
+lockTimeout:	0:05:00
 passwdTimeout:	0:00:30
 visualID:	default
 installColormap:    True
