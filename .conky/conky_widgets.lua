@@ -1,4 +1,6 @@
 --[[
+Some debuging info
+
 conky_window:
 
 visual userdata: 0x2386478
@@ -29,6 +31,6 @@ displayuserdata: 0x2386578
 
 function conky_widgets()
   if conky_window == nil then return end
-  conky_air_clock()
+  conky_air_clock({format_24 = false})
   conky_clock_rings()
 end

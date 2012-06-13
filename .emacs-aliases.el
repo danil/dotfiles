@@ -285,6 +285,7 @@
          findr
          haml-mode
          haskell-mode
+         inf-ruby
          jump
          less
          lua-mode
@@ -296,6 +297,7 @@
          rainbow-mode
          rhtml-mode
          rinari
+         ruby-mode
          sass-mode
          scss-mode
          window-numbering

@@ -56,6 +56,7 @@ function startup_applications {
     dbus-launch wicd-gtk --tray &
     conky -c ~/.conky/conkyrc_calendar &
     conky -c ~/.conky/conkyrc_top &
+    conky -c ~/.conky/conkyrc_clock_2 &
     dbus-launch avant-window-navigator &
     # dbus-launch empathy &
     dbus-launch gajim &
@@ -81,13 +82,15 @@ DEFAULT_SESSION=compiz-manager
 case $1 in
     compiz)
         startup_applications
-        exec dbus-launch $DEFAULT_SESSION
+        # If mounting fails for normal users
+        # <https://wiki.archlinux.org/index.php/HAL#Mounting_fails_for_normal_users>.
+        exec ck-launch-session dbus-launch $DEFAULT_SESSION
         ;;
     fluxbox)
         exec startfluxbox
         ;;
     *)
         startup_applications
-        exec dbus-launch $DEFAULT_SESSION
+        exec ck-launch-session dbus-launch $DEFAULT_SESSION
         ;;
 esac
