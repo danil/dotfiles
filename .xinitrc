@@ -43,34 +43,8 @@ xscreensaver -nosplash &
 urxvtd --fork --quiet
 feh --bg-center ~/local/share/backgrounds/gentoo-znurt-larry-abducted-1440x900.png &
 
-function startup_applications {
-    dbus-launch nautilus --no-default-window &
-    if [[ `hostname -s` == "leela" ]]; then
-        argyll-dispwin ~/t400s_082409.icm &
-    fi
-    tint2 &
-    parcellite &
-    # dbus-launch volumeicon &
-    dbus-launch volti &
-    dbus-launch gnome-power-manager &
-    dbus-launch wicd-gtk --tray &
-    conky -c ~/.conky/conkyrc_calendar &
-    conky -c ~/.conky/conkyrc_top &
-    conky -c ~/.conky/conkyrc_clock_2 &
-    dbus-launch avant-window-navigator &
-    # dbus-launch empathy &
-    dbus-launch gajim &
-    stardict &
-    # screenletsd --cli run ClockRing &
-    # screenletsd --cli run ClearCalendar &
-    # screenletsd --cli run ClearWeather &
-    # screenletsd --cli run Calc &
-
-    # tint2 Double system tray icons
-    # <http://code.google.com/p/tint2/issues/detail?id=343#hc8>,
-    # <https://bbs.archlinux.org/viewtopic.php?id=111712>.
-    killall -SIGUSR1 tint2
-}
+# <https://wiki.archlinux.org/index.php/Udiskie#Installation>.
+udiskie &
 
 # The following variable defines the session which is started if the
 # user doesn't explicitly select a session
@@ -81,16 +55,18 @@ DEFAULT_SESSION=compiz-manager
 # <http://en.gentoo-wiki.com/wiki/SLiM#Preparing_for_multiple_sessions>.
 case $1 in
     compiz)
-        startup_applications
-        # If mounting fails for normal users
-        # <https://wiki.archlinux.org/index.php/HAL#Mounting_fails_for_normal_users>.
-        exec ck-launch-session dbus-launch $DEFAULT_SESSION
+        # Running several applications from ~/.xinitrc
+        # <https://wiki.archlinux.org/index.php/ConsoleKit#Running_several_applications_from_.7E.2F.xinitrc>.
+        ~/.xstart
+        # Since Slim 1.3.3 NO longer include ck-launch-session in .xinitrc
+        # <https://wiki.archlinux.org/index.php/SLiM#Single_environments>.
+        exec bash -c "dbus-launch $DEFAULT_SESSION"
         ;;
     fluxbox)
         exec startfluxbox
         ;;
     *)
-        startup_applications
-        exec ck-launch-session dbus-launch $DEFAULT_SESSION
+        ~/.xstart
+        exec dbus-launch $DEFAULT_SESSION
         ;;
 esac
