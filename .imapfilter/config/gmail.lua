@@ -104,6 +104,14 @@ function gmail_filtering()
                   mailbox:contain_field("List-Id", "spbhug.googlegroups.com")
    mailbox:move_messages(gmail.lists, result)
 
+   -- Emacs.
+
+   -- Rails On Emacs mailing list filtering.
+   local mailbox = gmail.INBOX
+   local result = mailbox:is_unseen() *
+                  mailbox:contain_field("List-Id", "emacs-on-rails.googlegroups.com")
+   mailbox:move_messages(gmail.community_emacs, result)
+
    -- Emacs planet feed.
    -- Non-english messages filtering.
    local mailbox = gmail.community_emacs
