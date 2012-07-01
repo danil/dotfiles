@@ -53,12 +53,14 @@
                :description "Major mode for editing Sass files"
                :type git
                :url "https://github.com/nex3/sass-mode.git"
-               :features sass-mode
-               :post-init (lambda ()
-                            (add-to-list 'auto-mode-alist '("\\.scss$" . sass-mode))))
+               ;; :post-init (lambda ()
+               ;;              (add-to-list 'auto-mode-alist '("\\.scss$" . sass-mode)))
+               :features sass-mode)
         (:name scss-mode
                :type git
                :url "git://github.com/antonj/scss-mode.git"
+               :after (lambda ()
+                        (setq scss-compile-at-save nil))
                :features (scss-mode))
         (:name lua-mode
                :type git
