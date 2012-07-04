@@ -175,8 +175,21 @@ function gmail_filtering()
    -- Molinos bugs messages filtering.
    local mailbox = gmail.INBOX
    local result = mailbox:is_unseen() *
+                  mailbox:contain_from("errbit@500.molinos.ru")
+   mailbox:move_messages(gmail.molinos, result)
+
+   -- Molinos Juvelirtorg bugs messages filtering.
+   local mailbox = gmail.INBOX
+   local result = mailbox:is_unseen() *
                   mailbox:contain_from("notifier@juvelirtorg.spb.ru") *
-               mailbox:contain_subject("[Indicator Juvelirtorg]")
+                  mailbox:contain_subject("[Indicator Juvelirtorg]")
+   mailbox:move_messages(gmail.molinos, result)
+
+   -- Molinos Rolf bugs messages filtering.
+   local mailbox = gmail.INBOX
+   local result = mailbox:is_unseen() *
+                  mailbox:contain_from("notifier@guptek.ru") *
+                  mailbox:contain_subject("[Indicator Rolf]")
    mailbox:move_messages(gmail.molinos, result)
 
    -- Linode alert annoying messages filtering.
@@ -190,14 +203,14 @@ function gmail_filtering()
    local mailbox = gmail.INBOX
    local result = mailbox:is_unseen() *
                   mailbox:contain_from("info@prohq.ru") *
-               mailbox:contain_subject("[PROhq Production ERROR]")
+                  mailbox:contain_subject("[PROhq Production ERROR]")
    mailbox:move_messages(gmail.prohq, result)
 
    -- PROhq subscription messages filtering.
    local mailbox = gmail.INBOX
    local result = mailbox:is_unseen() *
                   mailbox:contain_from("mailer@prohq.ru") *
-               mailbox:contain_subject("[PROhq]")
+                  mailbox:contain_subject("[PROhq]")
    mailbox:move_messages(gmail.prohq, result)
 
    -- -- RIPN re-registration annoying messages filtering.
