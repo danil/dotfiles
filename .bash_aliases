@@ -26,9 +26,9 @@ export HISTCONTROL=ignoredups
 alias ec='/usr/bin/emacsclient -t'
 
 # Load RVM (Ruby Version Manager) into a shell session *as a function*
-# <http://rvm.beginrescueend.com/rvm/install>.
+# <http://rvm.rvm.io/rvm/install>.
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-# RVM bash completion <http://beginrescueend.com/workflow/completion>.
+# RVM bash completion <http://rvm.io/workflow/completion>.
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
