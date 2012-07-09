@@ -152,6 +152,7 @@
                         (add-to-list 'ac-modes 'markdown-mode)
                         (add-to-list 'ac-modes 'org-mode)
                         (add-to-list 'ac-modes 'sass-mode)
+                        (add-to-list 'ac-modes 'scss-mode)
                         (add-to-list 'ac-modes 'sgml-mode)
                         (add-to-list 'ac-modes 'yaml-mode)
                         (setq ac-disable-faces (quote (font-lock-doc-face)))))
