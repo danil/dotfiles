@@ -99,4 +99,4 @@ lua_draw_hook_pre conky_widgets_clock_2
 
 TEXT
 ${voffset 165}
-${alignc}Saint John -3
+${alignc}Melbourne +11
