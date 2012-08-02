@@ -143,7 +143,7 @@
 # "fbrun"
 #   Control + Shift + Mod1 + r
 
-"dmenu_run"
+"dmenu_run -b"
   Control + Shift + Mod1 + r
 
 # # Web browser.

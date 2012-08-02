@@ -49,7 +49,16 @@ udiskie &
 # The following variable defines the session which is started if the
 # user doesn't explicitly select a session
 # <http://svn.berlios.de/svnroot/repos/slim/trunk/xinitrc.sample>.
-DEFAULT_SESSION=compiz-manager
+# # Compiz 0.8.
+# DEFAULT_SESSION=compiz-manager
+# Compiz 0.9.
+DEFAULT_SESSION=compiz
+
+# * Messages for package gnome-base/gnome-menus-2.30.5:
+# * Due to bug #256614, you might lose icons in applications menus.
+# * If you use a login manager, please re-select your session.
+# * If you use startx and have no .xinitrc, just export XSESSION=Gnome.
+# * If you use startx and have .xinitrc, export XDG_MENU_PREFIX=gnome-
 
 # Slim
 # <http://en.gentoo-wiki.com/wiki/SLiM#Preparing_for_multiple_sessions>.

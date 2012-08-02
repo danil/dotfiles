@@ -6,16 +6,16 @@ dbus-launch nautilus --no-default-window &
 if [[ `hostname -s` == "leela" ]]; then
     argyll-dispwin ~/t400s_082409.icm &
 fi
-tint2 &
+# tint2 &
 parcellite &
 # dbus-launch volumeicon &
-dbus-launch volti &
-dbus-launch gnome-power-manager &
+# dbus-launch volti &
+# dbus-launch gnome-power-manager &
 dbus-launch wicd-gtk --tray &
 conky -c ~/.conky/conkyrc_calendar &
 conky -c ~/.conky/conkyrc_top &
 conky -c ~/.conky/conkyrc_clock_2 &
-dbus-launch avant-window-navigator &
+# dbus-launch avant-window-navigator &
 # dbus-launch empathy &
 dbus-launch gajim &
 stardict &
@@ -24,7 +24,7 @@ stardict &
 # screenletsd --cli run ClearWeather &
 # screenletsd --cli run Calc &
 
-# tint2 Double system tray icons
-# <http://code.google.com/p/tint2/issues/detail?id=343#hc8>,
-# <https://bbs.archlinux.org/viewtopic.php?id=111712>.
-killall -SIGUSR1 tint2
+# # tint2 Double system tray icons
+# # <http://code.google.com/p/tint2/issues/detail?id=343#hc8>,
+# # <https://bbs.archlinux.org/viewtopic.php?id=111712>.
+# killall -SIGUSR1 tint2
