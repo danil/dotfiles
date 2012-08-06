@@ -2,6 +2,9 @@
 # Running several applications from ~/.xinitrc
 # <https://wiki.archlinux.org/index.php/ConsoleKit#Running_several_applications_from_.7E.2F.xinitrc>.
 
+# Set the keyboard auto repeat parameters.
+xset r rate 300 30
+
 conky -c ~/.conky/conkyrc_calendar &
 conky -c ~/.conky/conkyrc_top &
 conky -c ~/.conky/conkyrc_clock_2 &
