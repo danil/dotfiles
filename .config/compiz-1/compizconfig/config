@@ -10,3 +10,9 @@ profile =
 integration = true
 plugin_list_autosort = true
 
+[general_ubuntu]
+backend = ini
+profile = 
+integration = true
+plugin_list_autosort = true
+
