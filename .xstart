@@ -2,27 +2,23 @@
 # Running several applications from ~/.xinitrc
 # <https://wiki.archlinux.org/index.php/ConsoleKit#Running_several_applications_from_.7E.2F.xinitrc>.
 
-dbus-launch nautilus --no-default-window &
+killall nautilus ; dbus-launch nautilus --no-default-window &
 if [[ `hostname -s` == "leela" ]]; then
     argyll-dispwin ~/t400s_082409.icm &
 fi
-# tint2 &
-parcellite &
-# dbus-launch volumeicon &
-# dbus-launch volti &
-# dbus-launch gnome-power-manager &
-dbus-launch wicd-gtk --tray &
-conky -c ~/.conky/conkyrc_calendar &
-conky -c ~/.conky/conkyrc_top &
-conky -c ~/.conky/conkyrc_clock_2 &
-# dbus-launch avant-window-navigator &
-# dbus-launch empathy &
-dbus-launch gajim &
-stardict &
-# screenletsd --cli run ClockRing &
-# screenletsd --cli run ClearCalendar &
-# screenletsd --cli run ClearWeather &
-# screenletsd --cli run Calc &
+killall tint2 ; tint2 &
+killall parcellite ; parcellite &
+# killall glipper ; glipper &
+# killall volumeicon ; dbus-launch volumeicon &
+killall volti ; dbus-launch volti &
+# killall gnome-power-manager; dbus-launch gnome-power-manager &
+killall wicd-gtk ; dbus-launch wicd-gtk --tray &
+killall conky ; conky -c ~/.conky/conkyrc_calendar & conky -c ~/.conky/conkyrc_top & conky -c ~/.conky/conkyrc_clock_2 &
+killall avant-window-navigator ; dbus-launch avant-window-navigator &
+# killall empathy ; dbus-launch empathy &
+killall gajim ; dbus-launch gajim &
+killall stardict ; stardict &
+# screenletsd --cli run ClockRing & screenletsd --cli run ClearCalendar & screenletsd --cli run ClearWeather & screenletsd --cli run Calc &
 
 # # tint2 Double system tray icons
 # # <http://code.google.com/p/tint2/issues/detail?id=343#hc8>,
