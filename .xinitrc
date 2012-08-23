@@ -49,10 +49,10 @@ udiskie &
 # The following variable defines the session which is started if the
 # user doesn't explicitly select a session
 # <http://svn.berlios.de/svnroot/repos/slim/trunk/xinitrc.sample>.
-# # Compiz 0.8.
-# DEFAULT_SESSION=compiz-manager
-# Compiz 0.9.
-DEFAULT_SESSION=compiz
+# Compiz 0.8.
+DEFAULT_SESSION=compiz-manager
+# # Compiz 0.9.
+# DEFAULT_SESSION=compiz
 
 # * Messages for package gnome-base/gnome-menus-2.30.5:
 # * Due to bug #256614, you might lose icons in applications menus.
