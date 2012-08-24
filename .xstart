@@ -10,19 +10,19 @@ tint2 &
 parcellite &
 # dbus-launch volumeicon &
 dbus-launch volti &
-dbus-launch gnome-power-manager &
+# killall gnome-power-manager ; dbus-launch gnome-power-manager &
+killall xfce4-power-manager ; dbus-launch xfce4-power-manager &
 dbus-launch wicd-gtk --tray &
 conky -c ~/.conky/conkyrc_calendar &
 conky -c ~/.conky/conkyrc_top &
 conky -c ~/.conky/conkyrc_clock_2 &
-dbus-launch avant-window-navigator &
+# dbus-launch avant-window-navigator &
+killall docky ; dbus-launch docky &
+killall cairo-dock ; dbus-launch cairo-dock &
 # dbus-launch empathy &
 dbus-launch gajim &
 stardict &
-# screenletsd --cli run ClockRing &
-# screenletsd --cli run ClearCalendar &
-# screenletsd --cli run ClearWeather &
-# screenletsd --cli run Calc &
+killall screenletsd ; screenletsd --cli run ClearCalendar & screenletsd --cli run ClearWeather &
 
 # tint2 Double system tray icons
 # <http://code.google.com/p/tint2/issues/detail?id=343#hc8>,
