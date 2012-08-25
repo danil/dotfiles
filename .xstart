@@ -11,7 +11,8 @@ killall parcellite ; parcellite &
 # killall glipper ; glipper &
 # killall volumeicon ; dbus-launch volumeicon &
 killall volti ; dbus-launch volti &
-killall gnome-power-manager; dbus-launch gnome-power-manager &
+# killall gnome-power-manager; dbus-launch gnome-power-manager &
+killall xfce4-power-manager ; dbus-launch xfce4-power-manager &
 killall wicd-gtk ; dbus-launch wicd-gtk --tray &
 killall conky ; conky -c ~/.conky/conkyrc_calendar & conky -c ~/.conky/conkyrc_top & conky -c ~/.conky/conkyrc_clock_2 &
 # killall avant-window-navigator ; dbus-launch avant-window-navigator &
