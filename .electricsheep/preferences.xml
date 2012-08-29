@@ -3,7 +3,7 @@
  nick=""
  url=""
  password_md5=""
- cache="2000"
+ cache="1000"
  nrepeats="2"
  frame_rate="23"
  play_evenly="1"
