@@ -78,7 +78,7 @@ systray = 1
 systray_padding = 0 0 4
 systray_sort = ascending
 systray_background_id = 0
-systray_icon_size = 22
+systray_icon_size = 19
 systray_icon_asb = 100 0 0
 
 # Clock
