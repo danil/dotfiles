@@ -11,8 +11,8 @@
       <property name="size" type="uint" value="24"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="6"/>
+        <value type="int" value="3"/>
         <value type="int" value="2"/>
-        <value type="int" value="7"/>
         <value type="int" value="1"/>
       </property>
       <property name="background-style" type="uint" value="1"/>
@@ -34,34 +34,20 @@
       <property name="names-visible" type="array">
         <value type="string" value="sound output volume"/>
         <value type="string" value="stardict"/>
+        <value type="string" value="task manager"/>
         <value type="string" value="wicd-client.py"/>
         <value type="string" value="orage"/>
         <value type="string" value="gajim"/>
         <value type="string" value="volti"/>
         <value type="string" value="parcellite"/>
         <value type="string" value="xfce4-power-manager"/>
+        <value type="string" value="dropbox"/>
         <value type="string" value="thunderbird"/>
       </property>
       <property name="show-frame" type="bool" value="false"/>
     </property>
     <property name="plugin-1" type="string" value="xfce4-orageclock-plugin"/>
     <property name="plugin-2" type="string" value="showdesktop"/>
-    <property name="plugin-7" type="string" value="actions">
-      <property name="appearance" type="uint" value="0"/>
-      <property name="invert-orientation" type="bool" value="false"/>
-      <property name="items" type="array">
-        <value type="string" value="-lock-screen"/>
-        <value type="string" value="-switch-user"/>
-        <value type="string" value="-separator"/>
-        <value type="string" value="-suspend"/>
-        <value type="string" value="-hibernate"/>
-        <value type="string" value="-separator"/>
-        <value type="string" value="-shutdown"/>
-        <value type="string" value="-restart"/>
-        <value type="string" value="-separator"/>
-        <value type="string" value="+logout"/>
-        <value type="string" value="-logout-dialog"/>
-      </property>
-    </property>
+    <property name="plugin-3" type="string" value="xfce4-mixer-plugin"/>
   </property>
 </channel>

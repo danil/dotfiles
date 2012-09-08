@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <channel name="xfce4-mixer" version="1.0">
-  <property name="sound-card" type="string" value="PlaybackInternalAudioAnalogStereoPulseAudioMixer"/>
+  <property name="sound-card" type="string" value="HDAIntelAlsamixer"/>
   <property name="window-height" type="int" value="400"/>
   <property name="window-width" type="int" value="669"/>
   <property name="active-card" type="string" value="HDAIntelAlsamixer"/>
