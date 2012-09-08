@@ -71,6 +71,9 @@ case $1 in
         # <https://wiki.archlinux.org/index.php/SLiM#Single_environments>.
         exec bash -c "dbus-launch $DEFAULT_SESSION"
         ;;
+    xfce)
+        exec startxfce4
+        ;;
     fluxbox)
         exec startfluxbox
         ;;
