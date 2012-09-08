@@ -2,27 +2,25 @@
 # Running several applications from ~/.xinitrc
 # <https://wiki.archlinux.org/index.php/ConsoleKit#Running_several_applications_from_.7E.2F.xinitrc>.
 
-killall nautilus ; dbus-launch nautilus --no-default-window &
+# Turn off bell.
+xset b off
+
+# Set the keyboard auto repeat parameters.
+xset r rate 300 30
+
+# xbindkeys.
+# The first line makes sure any running xbindkeys is killed. The
+# second starts and backgrounds xscreensaver.
+killall xbindkeys 2>/dev/null
+xbindkeys &
+
 if [[ `hostname -s` == "leela" ]]; then
     argyll-dispwin ~/t400s_082409.icm &
 fi
-killall tint2 ; tint2 &
-killall parcellite ; parcellite &
-# killall glipper ; glipper &
-# killall volumeicon ; dbus-launch volumeicon &
-killall volti ; dbus-launch volti &
-# killall gnome-power-manager; dbus-launch gnome-power-manager &
-killall xfce4-power-manager ; dbus-launch xfce4-power-manager &
-killall wicd-gtk ; dbus-launch wicd-gtk --tray &
+feh --bg-center ~/local/share/backgrounds/gentoo-znurt-larry-abducted-1440x900.png &
+# urxvtd --fork --quiet
 killall conky ; conky -c ~/.conky/conkyrc_calendar & conky -c ~/.conky/conkyrc_top & conky -c ~/.conky/conkyrc_clock_2 &
-# killall avant-window-navigator ; dbus-launch avant-window-navigator &
-killall cairo-dock ; dbus-launch cairo-dock &
 # killall empathy ; dbus-launch empathy &
 killall gajim ; dbus-launch gajim &
 killall stardict ; stardict &
-killall screenletsd ; screenletsd --cli run ClearCalendar & screenletsd --cli run ClearWeather & screenletsd --cli run Calc &
-
-# # tint2 Double system tray icons
-# # <http://code.google.com/p/tint2/issues/detail?id=343#hc8>,
-# # <https://bbs.archlinux.org/viewtopic.php?id=111712>.
-# killall -SIGUSR1 tint2
+killall screenletsd ; screenletsd --cli run ClearWeather & screenletsd --cli run Calc #& screenletsd --cli run ClearCalendar

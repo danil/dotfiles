@@ -4,5 +4,5 @@
 
 ~/.xstart
 
-killall wicd-gtk ; wicd-gtk --tray &
-killall glipper ; glipper &
+killall parcellite ; parcellite &
+killall volti ; dbus-launch volti &

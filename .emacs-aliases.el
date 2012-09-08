@@ -285,6 +285,7 @@
          coffee-mode
          column-marker
          deft
+         egg
          findr
          haml-mode
          haskell-mode
