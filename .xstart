@@ -23,4 +23,4 @@ killall conky ; conky -c ~/.conky/conkyrc_calendar & conky -c ~/.conky/conkyrc_t
 # killall empathy ; dbus-launch empathy &
 killall gajim ; dbus-launch gajim &
 killall stardict ; stardict &
-killall screenletsd ; screenletsd --cli run ClearWeather & screenletsd --cli run Calc #& screenletsd --cli run ClearCalendar
+killall screenletsd ; screenletsd --cli run ClearWeather & screenletsd --cli run Calc & screenletsd --cli run Pager #& screenletsd --cli run ClearCalendar
