@@ -5,7 +5,7 @@
   <property name="panels" type="array">
     <value type="int" value="1"/>
     <property name="panel-1" type="empty">
-      <property name="position" type="string" value="p=11;x=1281;y=13"/>
+      <property name="position" type="string" value="p=2;x=1314;y=13"/>
       <property name="length" type="uint" value="1"/>
       <property name="position-locked" type="bool" value="true"/>
       <property name="size" type="uint" value="24"/>
@@ -14,6 +14,10 @@
         <value type="int" value="3"/>
         <value type="int" value="2"/>
         <value type="int" value="1"/>
+        <value type="int" value="4"/>
+        <value type="int" value="5"/>
+        <value type="int" value="7"/>
+        <value type="int" value="8"/>
       </property>
       <property name="background-style" type="uint" value="1"/>
       <property name="background-alpha" type="uint" value="0"/>
@@ -36,8 +40,10 @@
         <value type="string" value="stardict"/>
         <value type="string" value="task manager"/>
         <value type="string" value="wicd-client.py"/>
+        <value type="string" value="skype"/>
         <value type="string" value="orage"/>
         <value type="string" value="gajim"/>
+        <value type="string" value="shutter"/>
         <value type="string" value="volti"/>
         <value type="string" value="parcellite"/>
         <value type="string" value="xfce4-power-manager"/>
@@ -49,5 +55,18 @@
     <property name="plugin-1" type="string" value="xfce4-orageclock-plugin"/>
     <property name="plugin-2" type="string" value="showdesktop"/>
     <property name="plugin-3" type="string" value="xfce4-mixer-plugin"/>
+    <property name="plugin-4" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+      <property name="expand" type="bool" value="false"/>
+    </property>
+    <property name="plugin-5" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-7" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-8" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+    </property>
   </property>
 </channel>
