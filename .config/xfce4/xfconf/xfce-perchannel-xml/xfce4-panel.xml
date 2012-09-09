@@ -14,6 +14,7 @@
         <value type="int" value="3"/>
         <value type="int" value="2"/>
         <value type="int" value="1"/>
+        <value type="int" value="7"/>
       </property>
       <property name="background-style" type="uint" value="1"/>
       <property name="background-alpha" type="uint" value="0"/>
@@ -49,5 +50,6 @@
     <property name="plugin-1" type="string" value="xfce4-orageclock-plugin"/>
     <property name="plugin-2" type="string" value="showdesktop"/>
     <property name="plugin-3" type="string" value="xfce4-mixer-plugin"/>
+    <property name="plugin-7" type="string" value="pager"/>
   </property>
 </channel>
