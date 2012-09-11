@@ -14,3 +14,6 @@ heartbeat-cmd="~/bin/suppress_xscreensaver.sh"
 # subfont-text-scale="5"
 # subfont-blur="8"
 # subfont-outline="8"
+fs=yes
+# <http://electricsheep.org/node/2835>.
+# stop-xscreensaver = no
