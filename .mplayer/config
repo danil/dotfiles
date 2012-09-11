@@ -15,8 +15,12 @@ heartbeat-cmd="~/bin/suppress_xscreensaver.sh"
 # subfont-blur="8"
 # subfont-outline="8"
 
-# Electricsheep.
-fs=yes
-monitoraspect=1.35
-# <http://electricsheep.org/node/2835>.
-# stop-xscreensaver = no
+# # Electricsheep.
+# fs=yes
+# monitoraspect=1.35
+# # <http://electricsheep.org/node/2835>.
+# # stop-xscreensaver = no
+
+# Control running instance of mplayer <http://ubuntuforums.org/showthread.php?t=1629000#post10153319>.
+input=file=/home/danil/.mplayer/mplayer.pipe
+# slave=yes

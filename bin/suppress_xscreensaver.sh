@@ -9,4 +9,7 @@
 
 if [[ -z $(ps -ef | grep electricsheep | grep -v grep) ]] ; then
     xscreensaver-command -deactivate
+else
+    echo 'switch_ratio 1.6' > ~/.mplayer/mplayer.pipe
+    echo 'vo_fullscreen 1'  > ~/.mplayer/mplayer.pipe
 fi
