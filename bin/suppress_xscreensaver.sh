@@ -11,6 +11,10 @@
 if [[ -z $(ps -ef | grep electricsheep | grep -v grep) ]] ; then
     xscreensaver-command -deactivate
 else
-    echo 'switch_ratio 1.6' > ~/.mplayer/mplayer.pipe
-    echo 'vo_fullscreen 1'  > ~/.mplayer/mplayer.pipe
+    echo $(ps ux | awk '/mplayer/ && !/awk/ {print $2}') > ~/.mplayer/tmp.pid #TODO: Rremove extra tmp.pid after fix 'bash: !/awk/: event not found'
+    if [[ "$(cat ~/.mplayer/tmp.pid)" != "$(cat ~/.mplayer/mplayer.pid)" ]] ; then
+        echo $(ps ux | awk '/mplayer/ && !/awk/ {print $2}') > ~/.mplayer/mplayer.pid
+        echo 'switch_ratio 1.6' > ~/.mplayer/mplayer.pipe
+        echo 'vo_fullscreen 1'  > ~/.mplayer/mplayer.pipe
+    fi
 fi
