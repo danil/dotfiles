@@ -7,6 +7,7 @@
 # ~/.mplayer/config
 # <http://fugutabetai.com/?postid=292>.
 
+# Mplayer slave mode protocol <http://www.mplayerhq.hu/DOCS/tech/slave.txt>.
 if [[ -z $(ps -ef | grep electricsheep | grep -v grep) ]] ; then
     xscreensaver-command -deactivate
 else
