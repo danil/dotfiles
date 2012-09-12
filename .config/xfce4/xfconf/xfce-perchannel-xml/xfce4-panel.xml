@@ -19,8 +19,8 @@
       </property>
       <property name="background-style" type="uint" value="1"/>
       <property name="background-alpha" type="uint" value="0"/>
-      <property name="enter-opacity" type="uint" value="80"/>
-      <property name="leave-opacity" type="uint" value="80"/>
+      <property name="enter-opacity" type="uint" value="70"/>
+      <property name="leave-opacity" type="uint" value="70"/>
       <property name="disable-struts" type="bool" value="true"/>
       <property name="mode" type="uint" value="0"/>
       <property name="background-color" type="array">
@@ -41,6 +41,7 @@
         <value type="string" value="orage"/>
         <value type="string" value="shutter"/>
         <value type="string" value="gajim"/>
+        <value type="string" value="wally"/>
         <value type="string" value="volti"/>
         <value type="string" value="dropbox"/>
         <value type="string" value="xfce4-power-manager"/>
