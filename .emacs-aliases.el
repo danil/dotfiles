@@ -236,12 +236,15 @@
          ;; bongo
          ;; jump
          ;; auto-complete-ruby ;buggy(
+         apache-mode
          auto-complete-chunk
          auto-complete-css
          auto-complete-emacs-lisp
          auto-complete-etags
          coffee-mode
          column-marker
+         crontab-mode
+         csv-mode
          deft
          egg
          findr
@@ -251,6 +254,7 @@
          lua-mode
          magit
          markdown-mode
+         nginx-mode
          org-mode
          paredit
          php-mode
@@ -503,9 +507,9 @@
 ;;; <http://emacswiki.org/emacs/css-mode.el>.
 (setq css-indent-offset 2)
 
-;;; nginx confs.
-(setq auto-mode-alist
-      (cons '("/etc/nginx/.*\\.conf\\'" . perl-mode) auto-mode-alist))
+;; ;;; nginx confs.
+;; (setq auto-mode-alist
+;;       (cons '("/etc/nginx/.*\\.conf\\'" . perl-mode) auto-mode-alist))
 
 ;;; Auto Fill Mode
 ;;; <http://gnu.org/software/emacs/manual/html_node/emacs/Auto-Fill.html>.
