@@ -10,21 +10,24 @@
 
 ;;; el-get <http://github.com/dimitri/el-get>.
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-(require 'el-get)
+;; (require 'el-get)
+(unless (require 'el-get nil t)
+  (url-retrieve
+   "https://raw.github.com/dimitri/el-get/master/el-get-install.el"
+   (lambda (s)
+     (goto-char (point-max))
+     (eval-print-last-sexp))))
 (setq el-get-sources
-      '((:name deft
-               :description "Deft is an Emacs mode for quickly browsing, filtering, and editing directories of plain text notes, inspired by Notational Velocity."
-               :after (lambda ()
+      '(
+        (:name deft
+               :after (progn
                         (setq
                          deft-extension "org"
-                         deft-text-mode 'org-mode))
-               :type http
-               :url "http://jblevins.org/projects/deft/deft.el"
-               :features deft)
+                         deft-text-mode 'org-mode)))
         ;; (:name visws
         ;;        :type emacswik)
         (:name markdown-mode
-               :after (lambda ()
+               :after (progn
                         (add-hook 'markdown-mode-hook
                                   (lambda ()(setq truncate-lines t)))
                         (setq auto-mode-alist
@@ -36,7 +39,7 @@
                                '("/mutt[-a-zA-Z0-9]+\\'" . markdown-mode)
                                auto-mode-alist))))
         (:name less
-               :after (lambda ()
+               :after (progn
                         (add-hook 'find-file-hook
                                   '(lambda ()
                                      (when buffer-read-only
@@ -45,64 +48,46 @@
                                         'less-minor-mode))
                :type git
                :url "git://github.com/emacsmirror/less.git")
-        (:name haml-mode
-               :description "Major mode for editing Haml files"
-               :type git
-               :url "git://github.com/nex3/haml-mode.git")
-        (:name sass-mode
-               :description "Major mode for editing Sass files"
-               :type git
-               :url "https://github.com/nex3/sass-mode.git"
-               ;; :post-init (lambda ()
-               ;;              (add-to-list 'auto-mode-alist '("\\.scss$" . sass-mode)))
-               :features sass-mode)
+        ;; (:name sass-mode
+        ;;        ;; :post-init (lambda ()
+        ;;        ;;              (add-to-list 'auto-mode-alist '("\\.scss$" . sass-mode)))
+        ;;        :features sass-mode)
         (:name scss-mode
-               :type git
-               :url "git://github.com/antonj/scss-mode.git"
-               :after (lambda ()
-                        (setq scss-compile-at-save nil))
-               :features (scss-mode))
+               :after (progn
+                        (setq scss-compile-at-save nil)))
         (:name lua-mode
-               :type git
-               :url "git://github.com/immerrr/lua-mode.git"
-               :after (lambda ()
+               :after (progn
                         (add-to-list 'auto-mode-alist
                                      '("\\.ws\\'" . lua-mode))
                         ;; <http://lua-users.org/wiki/LuaStyleGuide>,
                         ;; <http://stackoverflow.com/questions/4643206/how-to-configure-indentation-in-emacs-lua-mode#answer-4652043>
                         (setq lua-indent-level 2)))
-        (:name lua2-mode
-               :type http
-               ;; :after (lambda ()
-               ;;          (autoload 'lua2-mode "lua2-mode"
-               ;;            "semantic highlighting extension for lua-mode" t))
-               :url "http://www.enyo.de/fw/software/lua-emacs/lua2-mode.el")
+        ;; (:name lua2-mode
+        ;;        :type http
+        ;;        ;; :after (lambda ()
+        ;;        ;;          (autoload 'lua2-mode "lua2-mode"
+        ;;        ;;            "semantic highlighting extension for lua-mode" t))
+        ;;        :url "http://www.enyo.de/fw/software/lua-emacs/lua2-mode.el")
         (:name rinari
-               :description "Rinari Is Not A Rails IDE"
-               :type git
-               :url "http://github.com/eschulte/rinari.git"
-               :load-path ("." "util" "util/jump")
-               :compile ("\\.el$" "util")
-               ;; :build ("rake doc:install_info")
-               ;; :info "doc"
                ;; :after (lambda ()
                ;;          (autoload 'rinari-web-server "rinari"
                ;;            "Run Rails script/server." t))
-               :features rinari)
-        ;; ;; <http://stackoverflow.com/questions/2713096/emacs-rails-vs-rinari>
+               :build nil
+               :info nil)
+        ;; <http://stackoverflow.com/questions/2713096/emacs-rails-vs-rinari>
         ;; (:name emacs-rails
         ;;        :type git
         ;;        :url "git://github.com/remvee/emacs-rails.git")
-        (:name jump
-               :type git
-               :url "git://github.com/emacsmirror/jump.git")
+        ;; (:name jump
+        ;;        :type git
+        ;;        :url "git://github.com/emacsmirror/jump.git")
         (:name findr
                :type git
                :url "git://github.com/emacsmirror/findr.git")
         (:name window-numbering
                :type git
                :url "git://github.com/nschum/window-numbering.el.git"
-               :after (lambda ()
+               :after (progn
                         (autoload 'window-numbering-mode
                           "window-numbering"
                           "Numbered window shortcuts" t)
@@ -111,38 +96,36 @@
         ;; (:name color-theme)
         ;; (:name color-theme-zenburn
         ;;        :features zenburn
-        ;;        :after (lambda ()
+        ;;        :after (progn
         ;;                 (color-theme-zenburn)))
-        (:name bongo
-               :type git
-               :url "git://github.com/dbrock/bongo.git"
-               :after (lambda ()
-                        (autoload 'bongo "bongo"
-                          "Buffer-oriented media player for GNU Emacs." t)))
+        ;; (:name bongo
+        ;;        :type git
+        ;;        :url "git://github.com/dbrock/bongo.git"
+        ;;        :after (progn
+        ;;                 (autoload 'bongo "bongo"
+        ;;                   "Buffer-oriented media player for GNU Emacs." t)))
         ;; (:name highlight-indentation
         ;;        :type git
         ;;        :url "https://github.com/antonj/Highlight-Indentation-for-Emacs"
-        ;;        :after (lambda ()
+        ;;        :after (progn
         ;;                 (autoload 'highlight-indentation "highlight-indentation"
         ;;                   "Visual guidelines for indentation (using spaces)" t)))
         (:name rhtml-mode
-               :description "Major mode for editing RHTML files"
-               :type git
-               :url "https://github.com/eschulte/rhtml.git"
-               :post-init (lambda ()
+               :post-init (progn
                             (autoload 'rhtml-mode "rhtml-mode" nil t)
                             (add-to-list 'auto-mode-alist '("\\.html\.erb$" . rhtml-mode))
                             (add-to-list 'auto-mode-alist '("\\.erb$" . rhtml-mode))))
         (:name rainbow-mode
-               :description "Colorize color names in buffers"
-               :type git
-               :url "git://github.com/emacsmirror/rainbow-mode.git"
-               :features rainbow-mode
-               :after (lambda ()
+               :after (progn
                         (add-hook 'css-mode-hook (lambda () (rainbow-mode 1)))
                         (add-hook 'sass-mode-hook (lambda () (rainbow-mode 1)))))
         (:name auto-complete
-               :after (lambda ()
+               :pkgname "auto-complete/auto-complete"
+               :type github
+               :depends (popup fuzzy)
+               :after (progn
+                        (require 'auto-complete-config)
+                        (ac-config-default)
                         (add-to-list 'ac-modes 'coffee-mode)
                         (add-to-list 'ac-modes 'conf-mode)
                         (add-to-list 'ac-modes 'conf-space-mode)
@@ -156,10 +139,18 @@
                         (add-to-list 'ac-modes 'sgml-mode)
                         (add-to-list 'ac-modes 'yaml-mode)
                         (setq ac-disable-faces (quote (font-lock-doc-face)))))
+        (:name fuzzy ;;required by auto-complete
+               :website "https://github.com/auto-complete/fuzzy-el"
+               :description "Fuzzy matching utilities for GNU Emacs"
+               :type github
+               :pkgname "auto-complete/fuzzy-el")
+        (:name popup ;;required by auto-complete
+               :website "https://github.com/auto-complete/popup-el"
+               :description "Visual Popup Interface Library for Emacs"
+               :type github
+               :pkgname "auto-complete/popup-el")
         (:name column-marker
-               :type git
-               :url "git://github.com/emacsmirror/column-marker.git"
-               :after (lambda ()
+               :after (progn
                         (defun my-column-marker ()
                           (unless buffer-read-only (column-marker-1 79)))
                         ;;(add-hook 'mail-mode-hook (lambda () (interactive) (my-column-marker)))
@@ -191,7 +182,7 @@
                         (add-hook 'xml-mode-hook (lambda () (interactive) (my-column-marker)))
                         (add-hook 'yaml-mode-hook (lambda () (interactive) (my-column-marker)))))
         (:name org-mode
-               :after (lambda ()
+               :after (progn
                         ;; (add-to-list 'auto-mode-alist
                         ;;              '("\\.org\\'" . org-mode))
                         ;; Disable previously defined unstrict pattern.
@@ -237,60 +228,25 @@
                                  ((org-agenda-files
                                    (file-expand-wildcards
                                     "~/org/work/*.org"))))))))
-        (:name yasnippet
-               :website "https://github.com/capitaomorte/yasnippet.git"
-               :description "YASnippet is a template system for Emacs."
-               :type git
-               :url "https://github.com/capitaomorte/yasnippet.git"
-               :features "yasnippet"
-               :prepare (lambda ()
-                          ;; Set up the default snippets directory
-                          ;;
-                          ;; Principle: don't override any user settings
-                          ;; for yas/snippet-dirs, whether those were made
-                          ;; with setq or customize.  If the user doesn't
-                          ;; want the default snippets, she shouldn't get
-                          ;; them!
-                          (unless (or (boundp 'yas/snippet-dirs) (get 'yas/snippet-dirs 'customized-value))
-                            (setq yas/snippet-dirs
-                                  (list (concat el-get-dir (file-name-as-directory "yasnippet") "snippets")))))
-
-               :post-init (lambda ()
-                            ;; Trick customize into believing the standard
-                            ;; value includes the default snippets.
-                            ;; yasnippet would probably do this itself,
-                            ;; except that it doesn't include an
-                            ;; installation procedure that sets up the
-                            ;; snippets directory, and thus doesn't know
-                            ;; where those snippets will be installed.  See
-                            ;; http://code.google.com/p/yasnippet/issues/detail?id=179
-                            (put 'yas/snippet-dirs 'standard-value
-                                 ;; as cus-edit.el specifies, "a cons-cell
-                                 ;; whose car evaluates to the standard
-                                 ;; value"
-                                 (list (list 'quote
-                                             (list (concat el-get-dir (file-name-as-directory "yasnippet") "snippets"))))))
-               ;; byte-compile load vc-svn and that fails
-               ;; see https://github.com/dimitri/el-get/issues/200
-               :compile nil
-               ;; :after (lambda () (yas/initialize))
-               :submodule nil)
         ))
 
 (setq my-packages
       (append
        '(
-         auto-complete
-         bongo
+         ;; bongo
+         ;; jump
+         ;; auto-complete-ruby ;buggy(
+         auto-complete-chunk
+         auto-complete-css
+         auto-complete-emacs-lisp
+         auto-complete-etags
          coffee-mode
          column-marker
          deft
          egg
          findr
-         haml-mode
          haskell-mode
          inf-ruby
-         jump
          less
          lua-mode
          magit
@@ -301,7 +257,7 @@
          rainbow-mode
          rhtml-mode
          rinari
-         ruby-mode
+         ruby-mode ;work well with haml, but 1.9 style hash syntax highlighting is buggy
          sass-mode
          scss-mode
          window-numbering
