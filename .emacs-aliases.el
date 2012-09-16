@@ -391,9 +391,11 @@
 ;;; Browse Url with Epiphany.
 ;(setq browse-url-browser-function 'browse-url-epiphany)
 
+;; (setq browse-url-browser-function 'browse-url-generic
+;;   browse-url-generic-program "epiphany"
+;;   browse-url-generic-args '("--new-tab"))
 (setq browse-url-browser-function 'browse-url-generic
-  browse-url-generic-program "epiphany"
-  browse-url-generic-args '("--new-tab"))
+  browse-url-generic-program "google-chrome")
 
 ;;; Spelling.
 ;(setq-default ispell-program-name "/usr/bin/aspell")
