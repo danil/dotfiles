@@ -228,6 +228,10 @@
                                  ((org-agenda-files
                                    (file-expand-wildcards
                                     "~/org/work/*.org"))))))))
+        (:name nginx-mode
+               :after (progn
+                        (setq auto-mode-alist
+                              (cons '("/etc/nginx/.*\\.conf\\'" . nginx-mode) auto-mode-alist))))
         ))
 
 (setq my-packages
@@ -506,10 +510,6 @@
 ;;; CSS mode
 ;;; <http://emacswiki.org/emacs/css-mode.el>.
 (setq css-indent-offset 2)
-
-;; ;;; nginx confs.
-;; (setq auto-mode-alist
-;;       (cons '("/etc/nginx/.*\\.conf\\'" . perl-mode) auto-mode-alist))
 
 ;;; Auto Fill Mode
 ;;; <http://gnu.org/software/emacs/manual/html_node/emacs/Auto-Fill.html>.
