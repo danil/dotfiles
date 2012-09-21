@@ -66,13 +66,14 @@
 #  Control + b:2 + Release
 
 # Terminal emulator.
-"urxvtc"
+# "urxvtc"
+"urxvt"
   Control + Shift + Mod1 + c
 
-# # Show desktop
-# # <http://ubuntuforums.org/showthread.php?t=1615199#td_post_10083165>.
-# "showdesktop.sh"
-#   Control + Mod1 + d
+# Show desktop
+# <http://ubuntuforums.org/showthread.php?t=1615199#td_post_10083165>.
+"/home/danil/bin/showdesktop.sh"
+  Control + Mod1 + d
 
 # Compiz viewports switch
 # <http://superuser.com/questions/264281/wmctrl-says-i-have-one-workspace-when-i-actually-have-four#answer-264502>.
@@ -113,7 +114,8 @@
   Control + Shift + Mod1 + l
 
 # Shutdown menu.
-"~/src/python/shutdown_menu.py"
+# "~/src/python/shutdown_menu.py"
+"/usr/bin/xfce4-session-logout"
   Control + Shift + Mod1 + 0
 
 # S3 aka Suspend to RAM aka Sleep.

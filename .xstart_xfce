@@ -1,0 +1,7 @@
+#! /bin/bash
+# Running several applications from ~/.xinitrc
+# <https://wiki.archlinux.org/index.php/ConsoleKit#Running_several_applications_from_.7E.2F.xinitrc>.
+
+~/.xstart
+
+killall parcellite ; parcellite &

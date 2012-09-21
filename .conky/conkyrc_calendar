@@ -53,12 +53,13 @@ text_buffer_size 2048
 
 temperature_unit fahrenheit
 
-# Window specifications #
+# Window specifications
 # <http://conky.sourceforge.net/config_settings.html>.
 own_window yes
 # own_window_class Conky
 # own_window_type override #with nautilus desktop
-own_window_type normal #without nautilus desktop
+own_window_type normal #without nautilus desktop #do not minimize on Show Desktop (Compiz) <https://wiki.archlinux.org/index.php/Conky#Do_not_minimize_on_Show_Desktop_.28Compiz.29>
+own_window_argb_visual yes #for real transparency
 own_window_transparent yes
 own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
 
@@ -98,13 +99,12 @@ lua_load ~/.conky/conky_widgets.lua  ~/.conky/air_clock.lua  ~/.conky/text_calen
 lua_draw_hook_pre conky_widgets
 
 TEXT
-${voffset 165}
-${alignc}${time %B}
+${goto 61}${voffset 155}${font Liberation Sans:Regular:size=7}Moscow +4
+${voffset 15}${alignc}${font}${time %B}
 ${lua_parse text_calendar}
+${color}${font}${alignc}${voffset 13}$kernel $uptime_short
 
-${color}${font}${alignc}${voffset 5}$uptime_short $kernel
-
-${goto 19}${voffset 6}${font Liberation Sans:Regular:size=7}${loadavg 1} ${loadavg 2} ${loadavg 3}
+${goto 19}${voffset 9}${font Liberation Sans:Regular:size=7}${loadavg 1} ${loadavg 2} ${loadavg 3}
 ${goto 93}${voffset 47}${font}CPU
 ${goto 13}${voffset 65}MEM${goto 93}Disk
 

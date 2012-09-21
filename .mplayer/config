@@ -22,5 +22,5 @@ heartbeat-cmd="~/bin/suppress_xscreensaver.sh"
 # # stop-xscreensaver = no
 
 # Control running instance of mplayer <http://ubuntuforums.org/showthread.php?t=1629000#post10153319>.
-input=file=/home/danil/.mplayer/mplayer.pipe
 # slave=yes
+input=file=/home/danil/.mplayer/mplayer.pipe
