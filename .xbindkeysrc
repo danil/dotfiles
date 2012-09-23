@@ -114,8 +114,8 @@
   Control + Shift + Mod1 + l
 
 # Shutdown menu.
-# "~/src/python/shutdown_menu.py"
-"/usr/bin/xfce4-session-logout"
+# "/usr/bin/xfce4-session-logout"
+"~/src/python/shutdown_menu.py"
   Control + Shift + Mod1 + 0
 
 # S3 aka Suspend to RAM aka Sleep.

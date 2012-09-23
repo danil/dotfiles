@@ -6,7 +6,7 @@
     <property name="lid-action-on-battery" type="uint" value="0"/>
     <property name="lid-action-on-ac" type="uint" value="0"/>
     <property name="brightness-level-on-battery" type="uint" value="20"/>
-    <property name="brightness-on-battery" type="uint" value="60"/>
+    <property name="brightness-on-battery" type="uint" value="90"/>
     <property name="inactivity-on-battery" type="uint" value="15"/>
     <property name="inactivity-on-ac" type="uint" value="60"/>
     <property name="critical-power-level" type="uint" value="5"/>
