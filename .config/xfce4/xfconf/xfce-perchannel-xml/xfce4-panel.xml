@@ -40,8 +40,8 @@
         <value type="string" value="wicd-client.py"/>
         <value type="string" value="skype"/>
         <value type="string" value="shutter"/>
-        <value type="string" value="orage"/>
         <value type="string" value="gajim"/>
+        <value type="string" value="orage"/>
         <value type="string" value="wally"/>
         <value type="string" value="volti"/>
         <value type="string" value="dropbox"/>
