@@ -232,11 +232,15 @@
                :after (progn
                         (setq auto-mode-alist
                               (cons '("/etc/nginx/.*\\.conf\\'" . nginx-mode) auto-mode-alist))))
-        ;; (:name ruby-mode
-        ;;        :website "https://github.com/danil/ruby-mode"
-        ;;        :description "Major mode for editing Ruby files"
-        ;;        :type github
-        ;;        :pkgname "danil/ruby-mode")
+        (:name ruby-mode
+               :website "https://github.com/danil/ruby-mode"
+               :description "Major mode for editing Ruby files"
+               :type github
+               :pkgname "danil/ruby-mode")
+        (:name haml-mode
+               :description "Major mode for editing Haml files"
+               :type github
+               :pkgname "danil/haml-mode")
         ))
 
 (setq my-packages
@@ -257,6 +261,7 @@
          deft
          egg
          findr
+         haml-mode
          haskell-mode
          inf-ruby
          less
