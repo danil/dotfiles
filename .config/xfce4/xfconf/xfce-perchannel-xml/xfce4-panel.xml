@@ -14,13 +14,13 @@
         <value type="int" value="3"/>
         <value type="int" value="2"/>
         <value type="int" value="1"/>
-        <value type="int" value="10"/>
+        <value type="int" value="4"/>
         <value type="int" value="9"/>
       </property>
       <property name="background-style" type="uint" value="1"/>
       <property name="background-alpha" type="uint" value="0"/>
-      <property name="enter-opacity" type="uint" value="70"/>
-      <property name="leave-opacity" type="uint" value="70"/>
+      <property name="enter-opacity" type="uint" value="80"/>
+      <property name="leave-opacity" type="uint" value="80"/>
       <property name="disable-struts" type="bool" value="true"/>
       <property name="mode" type="uint" value="0"/>
       <property name="background-color" type="array">
@@ -40,6 +40,7 @@
         <value type="string" value="wicd-client.py"/>
         <value type="string" value="skype"/>
         <value type="string" value="shutter"/>
+        <value type="string" value="orage"/>
         <value type="string" value="gajim"/>
         <value type="string" value="orage"/>
         <value type="string" value="wally"/>
@@ -59,7 +60,7 @@
     <property name="plugin-2" type="string" value="showdesktop"/>
     <property name="plugin-3" type="string" value="xfce4-mixer-plugin"/>
     <property name="plugin-9" type="string" value="pager"/>
-    <property name="plugin-10" type="string" value="separator">
+    <property name="plugin-4" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
     </property>
   </property>

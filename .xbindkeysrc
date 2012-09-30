@@ -184,9 +184,9 @@
 # "mocp --previous"
 #   Control + F7
 
-# tint2.
-"killall -SIGUSR1 tint2"
-  Control + Shift + Mod1 + 2
+# # tint2.
+# "killall -SIGUSR1 tint2"
+#   Control + Shift + Mod1 + 2
 
 "/home/danil/bin/unless_electricsheep.sh"
   Control + Shift + Mod1 + e
