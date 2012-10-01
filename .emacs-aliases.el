@@ -232,6 +232,15 @@
                :after (progn
                         (setq auto-mode-alist
                               (cons '("/etc/nginx/.*\\.conf\\'" . nginx-mode) auto-mode-alist))))
+        (:name ruby-mode
+               :website "https://github.com/danil/ruby-mode"
+               :description "Major mode for editing Ruby files"
+               :type github
+               :pkgname "danil/ruby-mode")
+        (:name haml-mode
+               :description "Major mode for editing Haml files"
+               :type github
+               :pkgname "danil/haml-mode")
         ))
 
 (setq my-packages
@@ -252,6 +261,7 @@
          deft
          egg
          findr
+         haml-mode
          haskell-mode
          inf-ruby
          less
@@ -265,7 +275,7 @@
          rainbow-mode
          rhtml-mode
          rinari
-         ruby-mode ;work well with haml, but 1.9 style hash syntax highlighting is buggy
+         ruby-mode ;Matsumoto's work well with haml, but 1.9 style hash syntax highlighting is buggy
          sass-mode
          scss-mode
          window-numbering
