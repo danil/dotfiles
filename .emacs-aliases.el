@@ -261,6 +261,7 @@
          deft
          egg
          findr
+         go-mode
          haml-mode
          haskell-mode
          inf-ruby
