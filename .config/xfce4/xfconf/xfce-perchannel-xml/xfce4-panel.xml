@@ -12,9 +12,9 @@
       <property name="plugin-ids" type="array">
         <value type="int" value="6"/>
         <value type="int" value="3"/>
-        <value type="int" value="2"/>
         <value type="int" value="1"/>
         <value type="int" value="4"/>
+        <value type="int" value="2"/>
         <value type="int" value="9"/>
       </property>
       <property name="background-style" type="uint" value="1"/>
@@ -44,6 +44,7 @@
         <value type="string" value="volti"/>
         <value type="string" value="dropbox"/>
         <value type="string" value="xfce4-power-manager"/>
+        <value type="string" value="scp-dbus-service.py"/>
         <value type="string" value="thunderbird"/>
       </property>
       <property name="show-frame" type="bool" value="false"/>

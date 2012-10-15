@@ -6,4 +6,15 @@
   <property name="window-width" type="int" value="669"/>
   <property name="active-card" type="string" value="HDAIntelAlsamixer"/>
   <property name="volume-step-size" type="uint" value="5"/>
+  <property name="sound-cards" type="empty">
+    <property name="PlaybackInternalAudioAnalogStereoPulseAudioMixer" type="array">
+      <value type="string" value="Master"/>
+    </property>
+    <property name="HDAIntelAlsamixer" type="array">
+      <value type="string" value="Master"/>
+      <value type="string" value="Headphone"/>
+      <value type="string" value="Speaker"/>
+      <value type="string" value="PCM"/>
+    </property>
+  </property>
 </channel>
