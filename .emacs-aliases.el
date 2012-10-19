@@ -241,6 +241,10 @@
                :description "Major mode for editing Haml files"
                :type github
                :pkgname "danil/haml-mode")
+        (:name ethan-wspace
+               :after (progn
+                        ;; (set-face-background 'ethan-wspace-face "gray95")
+                        (global-ethan-wspace-mode 1)))
         ))
 
 (setq my-packages
@@ -260,6 +264,7 @@
          csv-mode
          deft
          egg
+         ethan-wspace
          findr
          go-mode
          haml-mode
@@ -561,45 +566,46 @@
 ;; (add-hook 'xml-mode-hook (lambda () (interactive) (my-view-mode)))
 ;; (add-hook 'yaml-mode-hook (lambda () (interactive) (my-view-mode)))
 
-;;; Whitespace mode.
-(defun my-whitespace-mode ()
-  (setq whitespace-style '(face space-after-tab space-before-tab trailing))
-  (unless buffer-read-only (whitespace-mode t)))
-;;(add-hook 'mail-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-(add-hook 'awk-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-(add-hook 'change-log-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-(add-hook 'coffee-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-(add-hook 'conf-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-(add-hook 'css-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-(add-hook 'emacs-lisp-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-(add-hook 'haml-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-(add-hook 'haskell-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-(add-hook 'html-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-(add-hook 'java-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-(add-hook 'js-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-(add-hook 'lisp-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-(add-hook 'lua-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-(add-hook 'makefile-gmake-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-(add-hook 'markdown-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-(add-hook 'nxml-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-(add-hook 'org-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-(add-hook 'perl-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-(add-hook 'php-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-(add-hook 'ruby-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-(add-hook 'sass-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-(add-hook 'sgml-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-(add-hook 'sh-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-(add-hook 'sql-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-(add-hook 'whitespace-mode-hook (lambda () (interactive) (column-marker-1 80)))
-(add-hook 'xml-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-(add-hook 'yaml-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-;; (add-hook 'markdown-mode-hook
-;;           (lambda () (if (string-match "/bookmarks\\.md\\'"
-;;                                        (buffer-file-name))
-;;                          (setq whitespace-style
-;;                                '(trailing space-before-tab
-;;                                           space-after-tab empty))
-;;                        (my-whitespace-mode))))
+;; ;;; Whitespace mode.
+;; (defun my-whitespace-mode ()
+;;   (setq whitespace-style '(face space-after-tab space-before-tab trailing))
+;;   (unless buffer-read-only (whitespace-mode t))
+;;   )
+;; ;;(add-hook 'mail-mode-hook (lambda () (interactive) (my-whitespace-mode)))
+;; (add-hook 'awk-mode-hook (lambda () (interactive) (my-whitespace-mode)))
+;; (add-hook 'change-log-mode-hook (lambda () (interactive) (my-whitespace-mode)))
+;; (add-hook 'coffee-mode-hook (lambda () (interactive) (my-whitespace-mode)))
+;; (add-hook 'conf-mode-hook (lambda () (interactive) (my-whitespace-mode)))
+;; (add-hook 'css-mode-hook (lambda () (interactive) (my-whitespace-mode)))
+;; (add-hook 'emacs-lisp-mode-hook (lambda () (interactive) (my-whitespace-mode)))
+;; (add-hook 'haml-mode-hook (lambda () (interactive) (my-whitespace-mode)))
+;; (add-hook 'haskell-mode-hook (lambda () (interactive) (my-whitespace-mode)))
+;; (add-hook 'html-mode-hook (lambda () (interactive) (my-whitespace-mode)))
+;; (add-hook 'java-mode-hook (lambda () (interactive) (my-whitespace-mode)))
+;; (add-hook 'js-mode-hook (lambda () (interactive) (my-whitespace-mode)))
+;; (add-hook 'lisp-mode-hook (lambda () (interactive) (my-whitespace-mode)))
+;; (add-hook 'lua-mode-hook (lambda () (interactive) (my-whitespace-mode)))
+;; (add-hook 'makefile-gmake-mode-hook (lambda () (interactive) (my-whitespace-mode)))
+;; (add-hook 'markdown-mode-hook (lambda () (interactive) (my-whitespace-mode)))
+;; (add-hook 'nxml-mode-hook (lambda () (interactive) (my-whitespace-mode)))
+;; (add-hook 'org-mode-hook (lambda () (interactive) (my-whitespace-mode)))
+;; (add-hook 'perl-mode-hook (lambda () (interactive) (my-whitespace-mode)))
+;; (add-hook 'php-mode-hook (lambda () (interactive) (my-whitespace-mode)))
+;; (add-hook 'ruby-mode-hook (lambda () (interactive) (my-whitespace-mode)))
+;; (add-hook 'sass-mode-hook (lambda () (interactive) (my-whitespace-mode)))
+;; (add-hook 'sgml-mode-hook (lambda () (interactive) (my-whitespace-mode)))
+;; (add-hook 'sh-mode-hook (lambda () (interactive) (my-whitespace-mode)))
+;; (add-hook 'sql-mode-hook (lambda () (interactive) (my-whitespace-mode)))
+;; (add-hook 'whitespace-mode-hook (lambda () (interactive) (column-marker-1 80)))
+;; (add-hook 'xml-mode-hook (lambda () (interactive) (my-whitespace-mode)))
+;; (add-hook 'yaml-mode-hook (lambda () (interactive) (my-whitespace-mode)))
+;; ;; (add-hook 'markdown-mode-hook
+;; ;;           (lambda () (if (string-match "/bookmarks\\.md\\'"
+;; ;;                                        (buffer-file-name))
+;; ;;                          (setq whitespace-style
+;; ;;                                '(trailing space-before-tab
+;; ;;                                           space-after-tab empty))
+;; ;;                        (my-whitespace-mode))))
 
 ;;; ri-emacs.
 ;; (setq ri-ruby-script "~/share/emacs/site-lisp/ri-emacs/ri-emacs.rb")
