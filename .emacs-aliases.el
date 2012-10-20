@@ -153,7 +153,8 @@
                :after (progn
                         (defun my-column-marker ()
                           (unless buffer-read-only (column-marker-1 79)))
-                        ;;(add-hook 'mail-mode-hook (lambda () (interactive) (my-column-marker)))
+                        ;; (add-hook 'mail-mode-hook (lambda () (interactive) (my-column-marker)))
+                        ;; (add-hook 'whitespace-mode-hook (lambda () (interactive) (column-marker-1 80)))
                         (add-hook 'awk-mode-hook (lambda () (interactive) (my-column-marker)))
                         (add-hook 'change-log-mode-hook (lambda () (interactive) (my-column-marker)))
                         (add-hook 'coffee-mode-hook (lambda () (interactive) (my-column-marker)))
@@ -178,7 +179,6 @@
                         (add-hook 'sgml-mode-hook (lambda () (interactive) (my-column-marker)))
                         (add-hook 'sh-mode-hook (lambda () (interactive) (my-column-marker)))
                         (add-hook 'sql-mode-hook (lambda () (interactive) (my-column-marker)))
-                        (add-hook 'whitespace-mode-hook (lambda () (interactive) (column-marker-1 80)))
                         (add-hook 'xml-mode-hook (lambda () (interactive) (my-column-marker)))
                         (add-hook 'yaml-mode-hook (lambda () (interactive) (my-column-marker)))))
         (:name org-mode
