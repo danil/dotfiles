@@ -51,6 +51,7 @@
         <value type="string" value="stardict"/>
         <value type="string" value="orage"/>
         <value type="string" value="parcellite"/>
+        <value type="string" value="bluetooth"/>
       </property>
     </property>
     <property name="plugin-1" type="string" value="xfce4-orageclock-plugin"/>
