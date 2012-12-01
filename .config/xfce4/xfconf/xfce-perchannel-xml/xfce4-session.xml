@@ -12,7 +12,9 @@
       <property name="Count" type="empty"/>
       <!-- Run Compiz https://bbs.archlinux.org/viewtopic.php?id=148284 http://inspirated.com/2009/10/17/howto-integrate-compiz-fusion-with-xfce-the-right-way -->
       <property name="Client0_Command" type="array">
-        <value type="string" value="compiz-manager"/>
+        <!-- <value type="string" value="compiz-manager"/> -->
+        <value type="string" value="compiz"/>
+        <value type="string" value="--replace"/>
       </property>
       <property name="Client0_PerScreen" type="empty"/>
       <property name="Client1_Command" type="empty"/>
