@@ -58,7 +58,7 @@ temperature_unit fahrenheit
 own_window yes
 # own_window_class Conky
 # own_window_type override #with nautilus desktop
-own_window_type normal #without nautilus desktop #do not minimize on Show Desktop (Compiz) <https://wiki.archlinux.org/index.php/Conky#Do_not_minimize_on_Show_Desktop_.28Compiz.29>
+own_window_type desktop #do not minimize on Show Desktop (Compiz) <https://wiki.archlinux.org/index.php/Conky#Do_not_minimize_on_Show_Desktop_.28Compiz.29>
 own_window_argb_visual yes #for real transparency
 own_window_transparent yes
 own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
@@ -118,4 +118,3 @@ ${goto 13}${font}${voffset 15}${addr eth0}${goto 106}Battery
 ${goto 13}${voffset 41}eth${goto 91}${voffset 5}${battery_percent}%
 ${goto 13}${voffset -5}${font Liberation Sans:Regular:size=7}U${totalup eth0}${goto 91}${voffset 5}${font}${exec acpi -b |grep "Battery" |awk '{print $5}' |cut -c 1-5}
 ${goto 13}${voffset -10}${font Liberation Sans:Regular:size=7}D${totaldown eth0}
-

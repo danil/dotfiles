@@ -42,6 +42,7 @@
         <value type="string" value="wicd-client.py"/>
         <value type="string" value="xfce4-power-manager"/>
         <value type="string" value="dropbox"/>
+        <value type="string" value="docky"/>
         <value type="string" value="pidgin"/>
         <value type="string" value="spideroak"/>
         <value type="string" value="volti"/>
