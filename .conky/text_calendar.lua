@@ -37,15 +37,15 @@ function conky_text_calendar()
       day_per_month[2] = day_per_month[2]+1
     end
   end
-  month = month - math.floor(month / 12 ) * 12
-  year = year + math.floor(month / 12 )
+  -- month = month - math.floor(month / 12 ) * 12 --wrf?
+  -- year = year + math.floor(month / 12 ) --wrf?
 
   local result = '${color}'
   do
     local wday = get_day_of_week(1, month, year)
     result = result .. '${font Liberation Sans:Regular:size=7}'
     result = result .. 'Mon  Tue  Wed  Thu  Fri  ${color1}Sat  Sun${color}'
-    --		result = result .. 'пн вт ср чт пт ${color1}сб вс${color}'
+    -- result = result .. 'пн вт ср чт пт ${color1}сб вс${color}'
     result = result .. '\n${font DejaVu Sans Mono:Regular:size=10}'
     result = result .. string.rep('   ', wday - 1)
     local week = 1
