@@ -33,17 +33,17 @@
   <property name="plugins" type="empty">
     <property name="plugin-6" type="string" value="systray">
       <property name="names-visible" type="array">
-        <value type="string" value="sound output volume"/>
-        <value type="string" value="task manager"/>
-        <value type="string" value="wicd-client.py"/>
         <value type="string" value="skype"/>
-        <value type="string" value="shutter"/>
-        <value type="string" value="gajim"/>
+        <value type="string" value="task manager"/>
         <value type="string" value="wally"/>
-        <value type="string" value="volti"/>
-        <value type="string" value="dropbox"/>
-        <value type="string" value="xfce4-power-manager"/>
         <value type="string" value="scp-dbus-service.py"/>
+        <value type="string" value="wicd-client.py"/>
+        <value type="string" value="gajim"/>
+        <value type="string" value="xfce4-power-manager"/>
+        <value type="string" value="dropbox"/>
+        <value type="string" value="shutter"/>
+        <value type="string" value="volti"/>
+        <value type="string" value="sound output volume"/>
         <value type="string" value="thunderbird"/>
       </property>
       <property name="show-frame" type="bool" value="false"/>
@@ -56,7 +56,12 @@
     </property>
     <property name="plugin-1" type="string" value="xfce4-orageclock-plugin"/>
     <property name="plugin-2" type="string" value="showdesktop"/>
-    <property name="plugin-3" type="string" value="xfce4-mixer-plugin"/>
     <property name="plugin-9" type="string" value="pager"/>
+    <property name="plugin-3" type="string" value="mixer">
+      <property name="sound-card" type="string" value="HDAIntelAlsamixer"/>
+      <property name="track" type="string" value="Master"/>
+      <property name="command" type="string" value="xfce4-mixer"/>
+      <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
+    </property>
   </property>
 </channel>
