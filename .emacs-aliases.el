@@ -232,15 +232,15 @@
                :after (progn
                         (setq auto-mode-alist
                               (cons '("/etc/nginx/.*\\.conf\\'" . nginx-mode) auto-mode-alist))))
-        (:name ruby-mode
-               :website "https://github.com/danil/ruby-mode"
-               :description "Major mode for editing Ruby files"
-               :type github
-               :pkgname "danil/ruby-mode")
-        (:name haml-mode
-               :description "Major mode for editing Haml files"
-               :type github
-               :pkgname "danil/haml-mode")
+        ;; (:name ruby-mode
+        ;;        :website "https://github.com/danil/ruby-mode"
+        ;;        :description "Major mode for editing Ruby files"
+        ;;        :type github
+        ;;        :pkgname "danil/ruby-mode")
+        ;; (:name haml-mode
+        ;;        :description "Major mode for editing Haml files"
+        ;;        :type github
+        ;;        :pkgname "danil/haml-mode")
         (:name ethan-wspace
                :after (progn
                         ;; (set-face-background 'ethan-wspace-face "gray95")
@@ -250,9 +250,10 @@
 (setq my-packages
       (append
        '(
+         ;; auto-complete-ruby ;buggy(
          ;; bongo
          ;; jump
-         ;; auto-complete-ruby ;buggy(
+         ;; ruby-mode ;Matsumoto's work well with haml, but 1.9 style hash syntax highlighting is buggy
          apache-mode
          auto-complete-chunk
          auto-complete-css
@@ -281,7 +282,6 @@
          rainbow-mode
          rhtml-mode
          rinari
-         ruby-mode ;Matsumoto's work well with haml, but 1.9 style hash syntax highlighting is buggy
          sass-mode
          scss-mode
          window-numbering
