@@ -132,14 +132,14 @@ urxvt*cursorColor: #aa0000
 
 ! UXTerm.
 UXTerm.vt100.metaSendsEscape: true
-! UXTerm.vt100.font1: -misc-fixed-medium-r-normal--8-80-75-75-c-50-iso10646-1
-! UXTerm.vt100.font2: -misc-fixed-medium-r-normal--8-80-75-75-c-50-iso10646-1
-! UXTerm.vt100.font3: -misc-fixed-medium-r-normal--14-130-75-75-c-70-iso10646-1
-! UXTerm.vt100.font4: -misc-fixed-medium-r-normal--13-120-75-75-c-80-iso10646-1
-! UXTerm.vt100.font5: -misc-fixed-medium-r-normal--18-120-100-100-c-90-iso10646-1
-! UXTerm.vt100.font: -misc-fixed-medium-r-normal--18-120-100-100-c-90-iso10646-1
-! UXTerm.vt100.font6: -misc-fixed-medium-r-normal--20-200-75-75-c-100-iso10646-1
-! UXTerm.vt100.geometry: 50x16
+UXTerm.vt100.font1: -misc-fixed-medium-r-normal--8-80-75-75-c-50-iso10646-1
+UXTerm.vt100.font2: -misc-fixed-medium-r-normal--8-80-75-75-c-50-iso10646-1
+UXTerm.vt100.font3: -misc-fixed-medium-r-normal--14-130-75-75-c-70-iso10646-1
+UXTerm.vt100.font4: -misc-fixed-medium-r-normal--13-120-75-75-c-80-iso10646-1
+UXTerm.vt100.font5: -misc-fixed-medium-r-normal--18-120-100-100-c-90-iso10646-1
+UXTerm.vt100.font: -misc-fixed-medium-r-normal--14-130-75-75-c-70-iso10646-1
+UXTerm.vt100.font6: -misc-fixed-medium-r-normal--20-200-75-75-c-100-iso10646-1
+UXTerm.vt100.geometry: 100x50
 
 ! "White" text on black background.
 ! UXTerm.vt100.foreground: gray90
