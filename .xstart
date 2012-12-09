@@ -20,7 +20,7 @@ fi
 feh --bg-center ~/local/share/backgrounds/gentoo-znurt-larry-abducted-1440x900.png &
 # urxvtd --fork --quiet
 killall conky ; conky -c ~/.conky/conkyrc_calendar & conky -c ~/.conky/conkyrc_top & conky -c ~/.conky/conkyrc_clock_2 &
-# killall empathy ; dbus-launch empathy &
-killall gajim ; dbus-launch gajim &
+# killall gajim ; gajim &
+killall empathy ; empathy &
 killall stardict ; stardict &
 killall screenletsd ; screenletsd --cli run ClearWeather & screenletsd --cli run Calc #& screenletsd --cli run Pager #& screenletsd --cli run ClearCalendar
