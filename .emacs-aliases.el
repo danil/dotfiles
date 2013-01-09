@@ -245,6 +245,13 @@
                :after (progn
                         ;; (set-face-background 'ethan-wspace-face "gray95")
                         (global-ethan-wspace-mode 1)))
+        (:name gpicker
+               :type http
+               :post-init (progn
+                            (autoload 'gpicker-visit-project "gpicker" nil t))
+               :after (progn
+                        (global-set-key (kbd "C-c / f") 'gpicker-find-file))
+               :url "https://raw.github.com/alk/gpicker/v2.2/gpicker.el")
         ))
 
 (setq my-packages
@@ -268,6 +275,7 @@
          ethan-wspace
          findr
          go-mode
+         gpicker
          haml-mode
          haskell-mode
          inf-ruby
