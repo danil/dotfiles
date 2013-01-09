@@ -250,6 +250,7 @@
                :post-init (progn
                             (autoload 'gpicker-visit-project "gpicker" nil t))
                :after (progn
+                        (defvar *gpicker-path* "/home/danil/bin/gpicker")
                         (global-set-key (kbd "C-c f c") 'gpicker-visit-project)
                         (global-set-key (kbd "C-c f f") 'gpicker-find-file))
                :url "https://raw.github.com/alk/gpicker/v2.2/gpicker.el")
