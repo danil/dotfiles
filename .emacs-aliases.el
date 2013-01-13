@@ -262,13 +262,25 @@
                         (global-set-key (kbd "C-c s") 'simp-project-rgrep)
                         (setq simp-completing-read-command (quote ido-completing-read))
                         (setq grep-find-ignored-directories ()) ;due to bug <https://github.com/re5et/simp/issues/2>
+                        (let
+                            ((rails-ignore '(.git
+                                            coverage
+                                            public/assets
+                                            public/images
+                                            public/system
+                                            tmp
+                                            vendor/cache))))
                         (simp-project-define
                          '(:has (.git)
                                 :ignore (.git)))
                         (simp-project-define
                          '(:type rails
-                                 :has (config.ru app/views app/models app/controllers)
-                                 :ignore (tmp coverage .git public/system public/assets vendor/cache public/images))))
+                                 :has (config.ru app/models app/views app/controllers)
+                                 :ignore ,rails-ignore))
+                        (simp-project-define
+                         '(:type emacs
+                                 :has (init.el)
+                                 :ignore (.git))))
                :type elpa)
         ;; (:name ido-better-flex
         ;;        :type elpa)
