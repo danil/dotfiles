@@ -1,4 +1,4 @@
-[gnome_session]
+[general]
 backend = ini
 profile = 
 integration = true
