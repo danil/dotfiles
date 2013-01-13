@@ -68,12 +68,13 @@
         ;;        ;;          (autoload 'lua2-mode "lua2-mode"
         ;;        ;;            "semantic highlighting extension for lua-mode" t))
         ;;        :url "http://www.enyo.de/fw/software/lua-emacs/lua2-mode.el")
-        (:name rinari
-               ;; :after (lambda ()
-               ;;          (autoload 'rinari-web-server "rinari"
-               ;;            "Run Rails script/server." t))
-               :build nil
-               :info nil)
+        ;; (:name rinari
+        ;;        ;; :after (lambda ()
+        ;;        ;;          (autoload 'rinari-web-server "rinari"
+        ;;        ;;            "Run Rails script/server." t))
+        ;;        ;; :build nil
+        ;;        ;; :info nil
+        ;;        )
         ;; <http://stackoverflow.com/questions/2713096/emacs-rails-vs-rinari>
         ;; (:name emacs-rails
         ;;        :type git
@@ -245,14 +246,32 @@
                :after (progn
                         ;; (set-face-background 'ethan-wspace-face "gray95")
                         (global-ethan-wspace-mode 1)))
-        (:name gpicker
-               :type http
+        ;; (:name gpicker
+        ;;        :type http
+        ;;        :post-init (progn
+        ;;                     (autoload 'gpicker-visit-project "gpicker" nil t))
+        ;;        :after (progn
+        ;;                 (global-set-key (kbd "C-c f c") 'gpicker-visit-project)
+        ;;                 (global-set-key (kbd "C-c f f") 'gpicker-find-file))
+        ;;        :url "https://raw.github.com/alk/gpicker/v2.2/gpicker.el")
+        (:name simp
                :post-init (progn
-                            (autoload 'gpicker-visit-project "gpicker" nil t))
+                            (autoload 'simp-project-define "simp" nil t))
                :after (progn
-                        (global-set-key (kbd "C-c f c") 'gpicker-visit-project)
-                        (global-set-key (kbd "C-c f f") 'gpicker-find-file))
-               :url "https://raw.github.com/alk/gpicker/v2.2/gpicker.el")
+                        (global-set-key (kbd "C-c f") 'simp-project-find-file)
+                        (global-set-key (kbd "C-c s") 'simp-project-rgrep)
+                        (setq simp-completing-read-command (quote ido-completing-read))
+                        (setq grep-find-ignored-directories ()) ;due to bug <https://github.com/re5et/simp/issues/2>
+                        (simp-project-define
+                         '(:has (.git)
+                                :ignore (.git)))
+                        (simp-project-define
+                         '(:type rails
+                                 :has (config.ru app/views app/models app/controllers)
+                                 :ignore (tmp coverage .git public/system))))
+               :type elpa)
+        ;; (:name ido-better-flex
+        ;;        :type elpa)
         ))
 
 (setq my-packages
@@ -260,6 +279,9 @@
        '(
          ;; auto-complete-ruby ;buggy(
          ;; bongo
+         ;; gpicker
+         ;; ido-better-flex
+         ;; ido-yes-or-no
          ;; jump
          ;; ruby-mode ;Matsumoto's work well with haml, but 1.9 style hash syntax highlighting is buggy
          apache-mode
@@ -276,9 +298,9 @@
          ethan-wspace
          findr
          go-mode
-         gpicker
          haml-mode
          haskell-mode
+         ido-ubiquitous
          inf-ruby
          less
          lua-mode
@@ -293,6 +315,7 @@
          rinari
          sass-mode
          scss-mode
+         simp
          window-numbering
          yaml-mode
          yasnippet
@@ -381,6 +404,7 @@
   (setq global-hl-line-mode nil))
 (add-hook 'ediff-mode-hook 'local-hl-line-mode-off)
 (add-hook 'term-mode-hook 'local-hl-line-mode-off)
+(global-rinari-mode)
 
 ;;; Column number mode
 ;;; <http://gnu.org/software/emacs/manual/html_node/emacs/Optional-Mode-Line.html>.
