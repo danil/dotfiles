@@ -268,7 +268,7 @@
                         (simp-project-define
                          '(:type rails
                                  :has (config.ru app/views app/models app/controllers)
-                                 :ignore (tmp coverage .git public/system))))
+                                 :ignore (tmp coverage .git public/system public/assets vendor/cache public/images))))
                :type elpa)
         ;; (:name ido-better-flex
         ;;        :type elpa)
@@ -280,6 +280,7 @@
          ;; auto-complete-ruby ;buggy(
          ;; bongo
          ;; gpicker
+         ;; helm
          ;; ido-better-flex
          ;; ido-yes-or-no
          ;; jump
@@ -385,6 +386,11 @@
 ")
 ;;; Interactively do things.
 (ido-mode t)
+(setq ido-everywhere t)
+(setq ido-max-directory-size 100000)
+(setq ido-use-virtual-buffers t) ;if Recentf is enabled
+(setq ido-enable-flex-matching t) ;fuzzy matching <http://webcache.googleusercontent.com/search?q=cache:wOWaMK_w_joJ:emacsblog.org/2008/05/19/giving-ido-mode-a-second-chance/&hl=en&tbo=d&strip=1>
+
 ;;; AnsiColor (Emacs terminal related stuff)
 ;;; <http://emacswiki.org/AnsiColor>.
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
