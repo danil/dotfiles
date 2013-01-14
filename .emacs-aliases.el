@@ -245,6 +245,58 @@
                :after (progn
                         ;; (set-face-background 'ethan-wspace-face "gray95")
                         (global-ethan-wspace-mode 1)))
+        ;; (:name gpicker
+        ;;        :type http
+        ;;        :post-init (progn
+        ;;                     (autoload 'gpicker-visit-project "gpicker" nil t))
+        ;;        :after (progn
+        ;;                 (global-set-key (kbd "C-c f c") 'gpicker-visit-project)
+        ;;                 (global-set-key (kbd "C-c f f") 'gpicker-find-file))
+        ;;        :url "https://raw.github.com/alk/gpicker/v2.2/gpicker.el")
+        (:name simp
+               :post-init (progn
+                            (autoload 'simp-project-define "simp" nil t))
+               :after (progn
+                        (global-set-key (kbd "C-c f") 'simp-project-find-file)
+                        (global-set-key (kbd "C-c s") 'simp-project-rgrep)
+                        (setq simp-completing-read-command (quote ido-completing-read))
+                        (setq grep-find-ignored-directories ()) ;due to bug <https://github.com/re5et/simp/issues/2>
+                        (let
+                            ((rails-ignore '(.git
+                                            coverage
+                                            public/assets
+                                            public/images
+                                            public/system
+                                            tmp
+                                            vendor/cache))))
+                        (simp-project-define
+                         '(:has (.git)
+                                :ignore (.git)))
+                        (simp-project-define
+                         '(:type rails
+                                 :has (config.ru app/models app/views app/controllers)
+                                 :ignore ,rails-ignore))
+                        (simp-project-define
+                         '(:type emacs
+                                 :has (init.el)
+                                 :ignore (.git))))
+               :type elpa)
+        (:name ido-ubiquitous
+               :description "Use ido (nearly) everywhere"
+               :post-init (progn
+                            (autoload 'ido-ubiquitous-mode "ido-ubiquitous" nil t))
+               :after (progn
+                        (ido-mode t)
+                        (ido-ubiquitous-mode 1))
+               :type elpa)
+        (:name ido-yes-or-no
+               :description "Use Ido to answer yes-or-no questions"
+               :post-init (progn
+                            (autoload 'ido-yes-or-no-mode "ido-yes-or-no" nil t))
+               :after (progn (ido-yes-or-no-mode 1))
+               :type elpa)
+        ;; (:name ido-better-flex
+        ;;        :type elpa)
         ))
 
 (setq my-packages
@@ -252,6 +304,10 @@
        '(
          ;; auto-complete-ruby ;buggy(
          ;; bongo
+         ;; gpicker
+         ;; helm
+         ;; ido-better-flex
+         ;; ido-yes-or-no
          ;; jump
          ;; ruby-mode ;Matsumoto's work well with haml, but 1.9 style hash syntax highlighting is buggy
          apache-mode
@@ -270,6 +326,7 @@
          go-mode
          haml-mode
          haskell-mode
+         ido-ubiquitous
          inf-ruby
          less
          lua-mode
@@ -284,6 +341,7 @@
          rinari
          sass-mode
          scss-mode
+         simp
          window-numbering
          yaml-mode
          yasnippet
