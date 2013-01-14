@@ -307,7 +307,6 @@
          ;; gpicker
          ;; helm
          ;; ido-better-flex
-         ;; ido-yes-or-no
          ;; jump
          ;; ruby-mode ;Matsumoto's work well with haml, but 1.9 style hash syntax highlighting is buggy
          apache-mode
@@ -327,6 +326,7 @@
          haml-mode
          haskell-mode
          ido-ubiquitous
+         ido-yes-or-no
          inf-ruby
          less
          lua-mode
