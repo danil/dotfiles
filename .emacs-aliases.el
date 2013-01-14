@@ -282,6 +282,20 @@
                                  :has (init.el)
                                  :ignore (.git))))
                :type elpa)
+        (:name ido-ubiquitous
+               :description "Use ido (nearly) everywhere"
+               :post-init (progn
+                            (autoload 'ido-ubiquitous-mode "ido-ubiquitous" nil t))
+               :after (progn
+                        (ido-mode t)
+                        (ido-ubiquitous-mode 1))
+               :type elpa)
+        (:name ido-yes-or-no
+               :description "Use Ido to answer yes-or-no questions"
+               :post-init (progn
+                            (autoload 'ido-yes-or-no-mode "ido-yes-or-no" nil t))
+               :after (progn (ido-yes-or-no-mode 1))
+               :type elpa)
         ;; (:name ido-better-flex
         ;;        :type elpa)
         ))
@@ -294,7 +308,6 @@
          ;; gpicker
          ;; helm
          ;; ido-better-flex
-         ;; ido-yes-or-no
          ;; jump
          ;; ruby-mode ;Matsumoto's work well with haml, but 1.9 style hash syntax highlighting is buggy
          apache-mode
@@ -314,6 +327,7 @@
          haml-mode
          haskell-mode
          ido-ubiquitous
+         ido-yes-or-no
          inf-ruby
          less
          lua-mode
@@ -430,7 +444,7 @@
 (setq column-number-mode 1)
 
 ;;; IswitchB <http://emacswiki.org/IswitchBuffers>.
-(iswitchb-mode 1)
+;; (iswitchb-mode 1)
 ;; (setq iswitchb-buffer-ignore '("^ " "*scratch*" "*Messages*"
 ;;                                "*Completions*" "*Ibuffer*"))
 ;(setq iswitchb-default-method 'samewindow)
