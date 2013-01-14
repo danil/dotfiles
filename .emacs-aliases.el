@@ -411,6 +411,11 @@
 ")
 ;;; Interactively do things.
 (ido-mode t)
+(setq ido-everywhere t)
+(setq ido-max-directory-size 100000)
+(setq ido-use-virtual-buffers t) ;if Recentf is enabled
+(setq ido-enable-flex-matching t) ;fuzzy matching <http://webcache.googleusercontent.com/search?q=cache:wOWaMK_w_joJ:emacsblog.org/2008/05/19/giving-ido-mode-a-second-chance/&hl=en&tbo=d&strip=1>
+
 ;;; AnsiColor (Emacs terminal related stuff)
 ;;; <http://emacswiki.org/AnsiColor>.
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
@@ -437,7 +442,7 @@
 (setq column-number-mode 1)
 
 ;;; IswitchB <http://emacswiki.org/IswitchBuffers>.
-(iswitchb-mode 1)
+;; (iswitchb-mode 1)
 ;; (setq iswitchb-buffer-ignore '("^ " "*scratch*" "*Messages*"
 ;;                                "*Completions*" "*Ibuffer*"))
 ;(setq iswitchb-default-method 'samewindow)
