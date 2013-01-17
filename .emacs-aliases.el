@@ -255,8 +255,10 @@
         ;;                 (global-set-key (kbd "C-c f f") 'gpicker-find-file))
         ;;        :url "https://raw.github.com/alk/gpicker/v2.2/gpicker.el")
         (:name simp
-               :post-init (progn
-                            (autoload 'simp-project-define "simp" nil t))
+               ;; :type elpa
+               :type github
+               :pkgname "re5et/simp"
+               :post-init (progn (autoload 'simp-project-define "simp" nil t))
                :after (progn
                         (global-set-key (kbd "C-c f") 'simp-project-find-file)
                         (global-set-key (kbd "C-c s") 'simp-project-rgrep)
@@ -280,22 +282,21 @@
                         (simp-project-define
                          '(:type emacs
                                  :has (init.el)
-                                 :ignore (.git))))
-               :type elpa)
+                                 :ignore (.git)))))
         (:name ido-ubiquitous
+               :type elpa
                :description "Use ido (nearly) everywhere"
                :post-init (progn
                             (autoload 'ido-ubiquitous-mode "ido-ubiquitous" nil t))
                :after (progn
                         (ido-mode t)
-                        (ido-ubiquitous-mode 1))
-               :type elpa)
+                        (ido-ubiquitous-mode 1)))
         (:name ido-yes-or-no
+               :type elpa
                :description "Use Ido to answer yes-or-no questions"
                :post-init (progn
                             (autoload 'ido-yes-or-no-mode "ido-yes-or-no" nil t))
-               :after (progn (ido-yes-or-no-mode 1))
-               :type elpa)
+               :after (progn (ido-yes-or-no-mode 1)))
         ;; (:name ido-better-flex
         ;;        :type elpa)
         ))
