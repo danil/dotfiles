@@ -311,6 +311,7 @@
          ;; ido-better-flex
          ;; jump
          ;; ruby-mode ;Matsumoto's work well with haml, but 1.9 style hash syntax highlighting is buggy
+         ;; vline
          apache-mode
          auto-complete-chunk
          auto-complete-css
