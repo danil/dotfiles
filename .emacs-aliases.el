@@ -68,12 +68,13 @@
         ;;        ;;          (autoload 'lua2-mode "lua2-mode"
         ;;        ;;            "semantic highlighting extension for lua-mode" t))
         ;;        :url "http://www.enyo.de/fw/software/lua-emacs/lua2-mode.el")
-        (:name rinari
-               ;; :after (lambda ()
-               ;;          (autoload 'rinari-web-server "rinari"
-               ;;            "Run Rails script/server." t))
-               :build nil
-               :info nil)
+        ;; (:name rinari
+        ;;        ;; :after (lambda ()
+        ;;        ;;          (autoload 'rinari-web-server "rinari"
+        ;;        ;;            "Run Rails script/server." t))
+        ;;        ;; :build nil
+        ;;        ;; :info nil
+        ;;        )
         ;; <http://stackoverflow.com/questions/2713096/emacs-rails-vs-rinari>
         ;; (:name emacs-rails
         ;;        :type git
@@ -254,8 +255,10 @@
         ;;                 (global-set-key (kbd "C-c f f") 'gpicker-find-file))
         ;;        :url "https://raw.github.com/alk/gpicker/v2.2/gpicker.el")
         (:name simp
-               :post-init (progn
-                            (autoload 'simp-project-define "simp" nil t))
+               ;; :type elpa
+               :type github
+               :pkgname "re5et/simp"
+               :post-init (progn (autoload 'simp-project-define "simp" nil t))
                :after (progn
                         (global-set-key (kbd "C-c f") 'simp-project-find-file)
                         (global-set-key (kbd "C-c s") 'simp-project-rgrep)
@@ -279,22 +282,21 @@
                         (simp-project-define
                          '(:type emacs
                                  :has (init.el)
-                                 :ignore (.git))))
-               :type elpa)
+                                 :ignore (.git)))))
         (:name ido-ubiquitous
+               :type elpa
                :description "Use ido (nearly) everywhere"
                :post-init (progn
                             (autoload 'ido-ubiquitous-mode "ido-ubiquitous" nil t))
                :after (progn
                         (ido-mode t)
-                        (ido-ubiquitous-mode 1))
-               :type elpa)
+                        (ido-ubiquitous-mode 1)))
         (:name ido-yes-or-no
+               :type elpa
                :description "Use Ido to answer yes-or-no questions"
                :post-init (progn
                             (autoload 'ido-yes-or-no-mode "ido-yes-or-no" nil t))
-               :after (progn (ido-yes-or-no-mode 1))
-               :type elpa)
+               :after (progn (ido-yes-or-no-mode 1)))
         ;; (:name ido-better-flex
         ;;        :type elpa)
         ))
@@ -435,6 +437,7 @@
   (setq global-hl-line-mode nil))
 (add-hook 'ediff-mode-hook 'local-hl-line-mode-off)
 (add-hook 'term-mode-hook 'local-hl-line-mode-off)
+(global-rinari-mode)
 
 ;;; Column number mode
 ;;; <http://gnu.org/software/emacs/manual/html_node/emacs/Optional-Mode-Line.html>.
@@ -632,7 +635,8 @@
 ;; ;;; Whitespace mode.
 ;; (defun my-whitespace-mode ()
 ;;   (setq whitespace-style '(face space-after-tab space-before-tab trailing))
-;;   (unless buffer-read-only (whitespace-mode t)))
+;;   (unless buffer-read-only (whitespace-mode t))
+;;   )
 ;; ;;(add-hook 'mail-mode-hook (lambda () (interactive) (my-whitespace-mode)))
 ;; (add-hook 'awk-mode-hook (lambda () (interactive) (my-whitespace-mode)))
 ;; (add-hook 'change-log-mode-hook (lambda () (interactive) (my-whitespace-mode)))
