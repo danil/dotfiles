@@ -457,7 +457,9 @@
 ;;                                "*Completions*" "*Ibuffer*"))
 ;(setq iswitchb-default-method 'samewindow)
 
-;;; Ibuffer <http://emacswiki.org/IbufferMode>.
+;;; Ibuffer <http://emacswiki.org/IbufferMode>,
+;;; <http://emacs-fu.blogspot.ru/2010/02/dealing-with-many-buffers-ibuffer.html>,
+;;; <http://martinowen.net/blog/2010/02/tips-for-emacs-ibuffer.html>.
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (autoload 'ibuffer "ibuffer" "List buffers." t)
 ;(setq ibuffer-use-other-window 1)
