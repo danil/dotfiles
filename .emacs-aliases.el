@@ -452,7 +452,7 @@
 (setq column-number-mode 1)
 
 ;;; IswitchB <http://emacswiki.org/IswitchBuffers>.
-(iswitchb-mode 1)
+;; (iswitchb-mode 1)
 ;; (setq iswitchb-buffer-ignore '("^ " "*scratch*" "*Messages*"
 ;;                                "*Completions*" "*Ibuffer*"))
 ;(setq iswitchb-default-method 'samewindow)
@@ -463,26 +463,45 @@
 ;(setq ibuffer-use-other-window 1)
 
 ;;; Interactively do things.
-(ido-mode t)
-(setq ido-max-directory-size 100000)
-;; (setq ido-everywhere t)
-;; (setq ido-use-virtual-buffers t) ;if Recentf is enabled
-;; (setq ido-enable-flex-matching t) ;fuzzy matching <http://webcache.googleusercontent.com/search?q=cache:wOWaMK_w_joJ:emacsblog.org/2008/05/19/giving-ido-mode-a-second-chance/&hl=en&tbo=d&strip=1>
+;; (ido-mode t)
+(ido-mode 'both) ;for buffers and files
+(setq
+ ;; ido-save-directory-list-file "~/.emacs.d/cache/ido.last"
+ ;; ido-ignore-buffers '("\\` " "^\*Mess" "^\*Back" ".*Completion" "^\*Ido" "^\*trace" "^\*compilation" "^\*GTAGS" "^session\.*") ;"^\*") ;ignore these guys
+ ido-work-directory-list '("~/" "~/Desktop" "~/Documents" "~src")
+ ido-case-fold  t                 ; be case-insensitive
+
+ ido-enable-last-directory-history t ;remember last used dirs
+ ido-max-work-directory-list   30    ;should be enough
+ ido-max-work-file-list        50    ;remember many
+ ido-use-filename-at-point     nil   ;don't use filename at point (annoying)
+ ido-use-url-at-point          nil   ;don't use url at point (annoying)
+
+ ido-enable-flex-matching      nil   ;fuzzy matching <http://webcache.googleusercontent.com/search?q=cache:wOWaMK_w_joJ:emacsblog.org/2008/05/19/giving-ido-mode-a-second-chance/&hl=en&tbo=d&strip=1>
+ ido-max-prospects             100   ;don't spam my minibuffer
+ ido-confirm-unique-completion t     ;wait for RET, even with unique completion
+
+ ido-max-directory-size 100000
+ ;; ido-everywhere t
+ ;; ido-use-virtual-buffers t           ;if Recentf is enabled
+ )
+(setq confirm-nonexistent-file-or-buffer nil) ;when using ido, the confirmation is rather annoying...
 
 ;;; Server <http://shreevatsa.wordpress.com/tag/emacs/>.
 ;; (remove-hook 'kill-buffer-query-functions
 ;;              'server-kill-buffer-query-function)
 
 ;;; Uniquify
-;;; <http://gnu.org/software/emacs/manual/html_node/emacs/Uniquify.html>.
+;;; <http://gnu.org/software/emacs/manual/html_node/emacs/Uniquify.html>,
+;;; <http://emacs-fu.blogspot.ru/2009/11/making-buffer-names-unique.html>.
 (require 'uniquify)
 ;; nil, forward, reverse, post-forward or post-forward-angle-brackets
-(setq uniquify-buffer-name-style 'forward)
-;(setq uniquify-separator "/")
-;; Rename after killing uniquified.
-;(setq uniquify-after-kill-buffer-p t)
-;; Don't muck with special buffers.
-;(setq uniquify-ignore-buffers-re "^\\*")
+(setq
+ uniquify-buffer-name-style 'post-forward ;'forward
+ uniquify-separator ":" ;"/"
+ ;; uniquify-after-kill-buffer-p t ;rename after killing uniquified
+ ;; uniquify-ignore-buffers-re "^\\*" ;don't muck with special buffers
+ )
 
 ;;; Browse Url with Epiphany.
 ;(setq browse-url-browser-function 'browse-url-epiphany)
