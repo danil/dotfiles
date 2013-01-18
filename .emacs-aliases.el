@@ -283,14 +283,14 @@
                          '(:type emacs
                                  :has (init.el)
                                  :ignore (.git)))))
-        (:name ido-ubiquitous
-               :type elpa
-               :description "Use ido (nearly) everywhere"
-               :post-init (progn
-                            (autoload 'ido-ubiquitous-mode "ido-ubiquitous" nil t))
-               :after (progn
-                        (ido-mode t)
-                        (ido-ubiquitous-mode 1)))
+        ;; (:name ido-ubiquitous
+        ;;        :type elpa
+        ;;        :description "Use ido (nearly) everywhere"
+        ;;        :post-init (progn
+        ;;                     (autoload 'ido-ubiquitous-mode "ido-ubiquitous" nil t))
+        ;;        :after (progn
+        ;;                 (ido-mode t)
+        ;;                 (ido-ubiquitous-mode 1)))
         (:name ido-yes-or-no
                :type elpa
                :description "Use Ido to answer yes-or-no questions"
@@ -299,6 +299,17 @@
                :after (progn (ido-yes-or-no-mode 1)))
         ;; (:name ido-better-flex
         ;;        :type elpa)
+        (:name smex
+               :description "M-x interface with Ido-style fuzzy matching."
+               :type github
+               :pkgname "nonsequitur/smex"
+               :features smex
+               :post-init (smex-initialize)
+               :after (progn
+                        (global-set-key (kbd "M-x") 'smex)
+                        (global-set-key (kbd "M-X") 'smex-major-mode-commands)
+                        ;; This is your old M-x.
+                        (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)))
         ))
 
 (setq my-packages
@@ -309,6 +320,7 @@
          ;; gpicker
          ;; helm
          ;; ido-better-flex
+         ;; ido-ubiquitous
          ;; jump
          ;; ruby-mode ;Matsumoto's work well with haml, but 1.9 style hash syntax highlighting is buggy
          ;; vline
@@ -328,7 +340,6 @@
          go-mode
          haml-mode
          haskell-mode
-         ido-ubiquitous
          ido-yes-or-no
          inf-ruby
          less
@@ -345,6 +356,7 @@
          sass-mode
          scss-mode
          simp
+         smex
          window-numbering
          yaml-mode
          yasnippet
@@ -412,12 +424,6 @@
 ;; If you want to create a file, visit that file with C-x C-f,
 ;; then enter the text in that file's own buffer.
 ")
-;;; Interactively do things.
-(ido-mode t)
-(setq ido-everywhere t)
-(setq ido-max-directory-size 100000)
-(setq ido-use-virtual-buffers t) ;if Recentf is enabled
-;; (setq ido-enable-flex-matching t) ;fuzzy matching <http://webcache.googleusercontent.com/search?q=cache:wOWaMK_w_joJ:emacsblog.org/2008/05/19/giving-ido-mode-a-second-chance/&hl=en&tbo=d&strip=1>
 
 ;;; AnsiColor (Emacs terminal related stuff)
 ;;; <http://emacswiki.org/AnsiColor>.
@@ -446,7 +452,7 @@
 (setq column-number-mode 1)
 
 ;;; IswitchB <http://emacswiki.org/IswitchBuffers>.
-;; (iswitchb-mode 1)
+(iswitchb-mode 1)
 ;; (setq iswitchb-buffer-ignore '("^ " "*scratch*" "*Messages*"
 ;;                                "*Completions*" "*Ibuffer*"))
 ;(setq iswitchb-default-method 'samewindow)
@@ -455,6 +461,13 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (autoload 'ibuffer "ibuffer" "List buffers." t)
 ;(setq ibuffer-use-other-window 1)
+
+;;; Interactively do things.
+(ido-mode t)
+(setq ido-max-directory-size 100000)
+;; (setq ido-everywhere t)
+;; (setq ido-use-virtual-buffers t) ;if Recentf is enabled
+;; (setq ido-enable-flex-matching t) ;fuzzy matching <http://webcache.googleusercontent.com/search?q=cache:wOWaMK_w_joJ:emacsblog.org/2008/05/19/giving-ido-mode-a-second-chance/&hl=en&tbo=d&strip=1>
 
 ;;; Server <http://shreevatsa.wordpress.com/tag/emacs/>.
 ;; (remove-hook 'kill-buffer-query-functions
