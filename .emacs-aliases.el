@@ -68,20 +68,6 @@
         ;;        ;;          (autoload 'lua2-mode "lua2-mode"
         ;;        ;;            "semantic highlighting extension for lua-mode" t))
         ;;        :url "http://www.enyo.de/fw/software/lua-emacs/lua2-mode.el")
-        ;; (:name rinari
-        ;;        ;; :after (lambda ()
-        ;;        ;;          (autoload 'rinari-web-server "rinari"
-        ;;        ;;            "Run Rails script/server." t))
-        ;;        ;; :build nil
-        ;;        ;; :info nil
-        ;;        )
-        ;; <http://stackoverflow.com/questions/2713096/emacs-rails-vs-rinari>
-        ;; (:name emacs-rails
-        ;;        :type git
-        ;;        :url "git://github.com/remvee/emacs-rails.git")
-        ;; (:name jump
-        ;;        :type git
-        ;;        :url "git://github.com/emacsmirror/jump.git")
         (:name findr
                :type git
                :url "git://github.com/emacsmirror/findr.git")
@@ -111,11 +97,6 @@
         ;;        :after (progn
         ;;                 (autoload 'highlight-indentation "highlight-indentation"
         ;;                   "Visual guidelines for indentation (using spaces)" t)))
-        (:name rhtml-mode
-               :post-init (progn
-                            (autoload 'rhtml-mode "rhtml-mode" nil t)
-                            (add-to-list 'auto-mode-alist '("\\.html\.erb$" . rhtml-mode))
-                            (add-to-list 'auto-mode-alist '("\\.erb$" . rhtml-mode))))
         (:name rainbow-mode
                :after (progn
                         (add-hook 'css-mode-hook (lambda () (rainbow-mode 1)))
@@ -310,14 +291,35 @@
                         (global-set-key (kbd "M-X") 'smex-major-mode-commands)
                         ;; This is your old M-x.
                         (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)))
+        ;; (:name jump
+        ;;        :type git
+        ;;        :url "git://github.com/emacsmirror/jump.git")
+        ;; (:name rinari
+        ;;        ;; :after (lambda ()
+        ;;        ;;          (autoload 'rinari-web-server "rinari"
+        ;;        ;;            "Run Rails script/server." t))
+        ;;        ;; :build nil
+        ;;        ;; :info nil
+        ;;        )
+        ;; (:name emacs-rails ;<http://stackoverflow.com/questions/2713096/emacs-rails-vs-rinari>
+        ;;        :type git
+        ;;        :url "git://github.com/remvee/emacs-rails.git")
+        (:name rhtml-mode
+               :post-init (progn
+                            (autoload 'rhtml-mode "rhtml-mode" nil t)
+                            (add-to-list 'auto-mode-alist '("\\.erb$" . rhtml-mode))
+                            (add-to-list 'auto-mode-alist '("\\.html\.erb$" . rhtml-mode))))
         ;; (:name mmm-mode
         ;;        :description "Allow Multiple Major Modes in a buffer"
         ;;        :type github
         ;;        :pkgname "purcell/mmm-mode"
+        ;;        :post-init (progn
+        ;;                     (autoload 'mmm-add-mode-ext-class "mmm-mode" nil t))
         ;;        :after (progn
         ;;                 ;; <https://github.com/purcell/emacs.d/blob/master/init-mmm.el>.
         ;;                 (setq mmm-global-mode 'buffers-with-submode-classes)
         ;;                 (setq mmm-submode-decoration-level 2)
+        ;;                 ;; (setq mmm-parse-when-idle t)
         ;;                 ;; <https://github.com/purcell/emacs.d/blob/master/init-ruby-mode.el>.
         ;;                 (defun sanityinc/ensure-mmm-erb-loaded ()
         ;;                   (require 'mmm-erb))
@@ -763,8 +765,6 @@
   (shell-command
    (format "%s -f %s/TAGS -e -R %s" path-to-ctags dir-name dir-name)))
 
-
-
 ;; Mew is a mail reader for Emacs <http://mew.org>, <http://emacswiki.org/Mew>.
 (autoload 'mew "mew" nil t)
 (autoload 'mew-send "mew" nil t)
@@ -779,8 +779,6 @@
 ;;       'mew-draft-send-message
 ;;       'mew-draft-kill
 ;;       'mew-send-hook))
-
-
 
 ;;; DVC.
 ;(add-to-list 'load-path "~/share/emacs/site-lisp/dvc")
