@@ -310,6 +310,29 @@
                         (global-set-key (kbd "M-X") 'smex-major-mode-commands)
                         ;; This is your old M-x.
                         (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)))
+        ;; (:name mmm-mode
+        ;;        :description "Allow Multiple Major Modes in a buffer"
+        ;;        :type github
+        ;;        :pkgname "purcell/mmm-mode"
+        ;;        :after (progn
+        ;;                 ;; <https://github.com/purcell/emacs.d/blob/master/init-mmm.el>.
+        ;;                 (setq mmm-global-mode 'buffers-with-submode-classes)
+        ;;                 (setq mmm-submode-decoration-level 2)
+        ;;                 ;; <https://github.com/purcell/emacs.d/blob/master/init-ruby-mode.el>.
+        ;;                 (defun sanityinc/ensure-mmm-erb-loaded ()
+        ;;                   (require 'mmm-erb))
+        ;;                 (dolist (hook (list 'html-mode-hook 'nxml-mode-hook 'yaml-mode-hook))
+        ;;                   (add-hook hook 'sanityinc/ensure-mmm-erb-loaded))
+        ;;                 (dolist (mode (list 'html-mode 'html-erb-mode 'nxml-mode))
+        ;;                   (mmm-add-mode-ext-class mode "\\.r?html\\(\\.erb\\)?\\'" 'html-js)
+        ;;                   (mmm-add-mode-ext-class mode "\\.r?html\\(\\.erb\\)?\\'" 'html-css)
+        ;;                   (mmm-add-mode-ext-class mode "\\.erb\\'" 'erb))
+        ;;                 (mmm-add-mode-ext-class 'html-erb-mode "\\.jst\\.ejs\\'" 'ejs)
+        ;;                 (add-to-list 'auto-mode-alist '("\\.r?html\\(\\.erb\\)?\\'" . html-erb-mode))
+        ;;                 (add-to-list 'auto-mode-alist '("\\.jst\\.ejs\\'"  . html-erb-mode))
+        ;;                 (mmm-add-mode-ext-class 'yaml-mode "\\.yaml\\'" 'erb)
+        ;;                 (dolist (mode (list 'js-mode 'js2-mode 'js3-mode))
+        ;;                   (mmm-add-mode-ext-class mode "\\.js\\.erb\\'" 'erb))))
         ))
 
 (setq my-packages
