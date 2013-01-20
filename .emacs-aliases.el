@@ -68,20 +68,6 @@
         ;;        ;;          (autoload 'lua2-mode "lua2-mode"
         ;;        ;;            "semantic highlighting extension for lua-mode" t))
         ;;        :url "http://www.enyo.de/fw/software/lua-emacs/lua2-mode.el")
-        ;; (:name rinari
-        ;;        ;; :after (lambda ()
-        ;;        ;;          (autoload 'rinari-web-server "rinari"
-        ;;        ;;            "Run Rails script/server." t))
-        ;;        ;; :build nil
-        ;;        ;; :info nil
-        ;;        )
-        ;; <http://stackoverflow.com/questions/2713096/emacs-rails-vs-rinari>
-        ;; (:name emacs-rails
-        ;;        :type git
-        ;;        :url "git://github.com/remvee/emacs-rails.git")
-        ;; (:name jump
-        ;;        :type git
-        ;;        :url "git://github.com/emacsmirror/jump.git")
         (:name findr
                :type git
                :url "git://github.com/emacsmirror/findr.git")
@@ -111,11 +97,6 @@
         ;;        :after (progn
         ;;                 (autoload 'highlight-indentation "highlight-indentation"
         ;;                   "Visual guidelines for indentation (using spaces)" t)))
-        (:name rhtml-mode
-               :post-init (progn
-                            (autoload 'rhtml-mode "rhtml-mode" nil t)
-                            (add-to-list 'auto-mode-alist '("\\.html\.erb$" . rhtml-mode))
-                            (add-to-list 'auto-mode-alist '("\\.erb$" . rhtml-mode))))
         (:name rainbow-mode
                :after (progn
                         (add-hook 'css-mode-hook (lambda () (rainbow-mode 1)))
@@ -283,14 +264,14 @@
                          '(:type emacs
                                  :has (init.el)
                                  :ignore (.git)))))
-        (:name ido-ubiquitous
-               :type elpa
-               :description "Use ido (nearly) everywhere"
-               :post-init (progn
-                            (autoload 'ido-ubiquitous-mode "ido-ubiquitous" nil t))
-               :after (progn
-                        (ido-mode t)
-                        (ido-ubiquitous-mode 1)))
+        ;; (:name ido-ubiquitous
+        ;;        :type elpa
+        ;;        :description "Use ido (nearly) everywhere"
+        ;;        :post-init (progn
+        ;;                     (autoload 'ido-ubiquitous-mode "ido-ubiquitous" nil t))
+        ;;        :after (progn
+        ;;                 (ido-mode t)
+        ;;                 (ido-ubiquitous-mode 1)))
         (:name ido-yes-or-no
                :type elpa
                :description "Use Ido to answer yes-or-no questions"
@@ -299,6 +280,61 @@
                :after (progn (ido-yes-or-no-mode 1)))
         ;; (:name ido-better-flex
         ;;        :type elpa)
+        (:name smex
+               :description "M-x interface with Ido-style fuzzy matching."
+               :type github
+               :pkgname "nonsequitur/smex"
+               :features smex
+               :post-init (smex-initialize)
+               :after (progn
+                        (global-set-key (kbd "M-x") 'smex)
+                        (global-set-key (kbd "M-X") 'smex-major-mode-commands)
+                        ;; This is your old M-x.
+                        (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)))
+        ;; (:name jump
+        ;;        :type git
+        ;;        :url "git://github.com/emacsmirror/jump.git")
+        ;; (:name rinari
+        ;;        ;; :after (lambda ()
+        ;;        ;;          (autoload 'rinari-web-server "rinari"
+        ;;        ;;            "Run Rails script/server." t))
+        ;;        ;; :build nil
+        ;;        ;; :info nil
+        ;;        )
+        ;; (:name emacs-rails ;<http://stackoverflow.com/questions/2713096/emacs-rails-vs-rinari>
+        ;;        :type git
+        ;;        :url "git://github.com/remvee/emacs-rails.git")
+        (:name rhtml-mode
+               :post-init (progn
+                            (autoload 'rhtml-mode "rhtml-mode" nil t)
+                            (add-to-list 'auto-mode-alist '("\\.erb$" . rhtml-mode))
+                            (add-to-list 'auto-mode-alist '("\\.html\.erb$" . rhtml-mode))))
+        ;; (:name mmm-mode
+        ;;        :description "Allow Multiple Major Modes in a buffer"
+        ;;        :type github
+        ;;        :pkgname "purcell/mmm-mode"
+        ;;        :post-init (progn
+        ;;                     (autoload 'mmm-add-mode-ext-class "mmm-mode" nil t))
+        ;;        :after (progn
+        ;;                 ;; <https://github.com/purcell/emacs.d/blob/master/init-mmm.el>.
+        ;;                 (setq mmm-global-mode 'buffers-with-submode-classes)
+        ;;                 (setq mmm-submode-decoration-level 2)
+        ;;                 ;; (setq mmm-parse-when-idle t)
+        ;;                 ;; <https://github.com/purcell/emacs.d/blob/master/init-ruby-mode.el>.
+        ;;                 (defun sanityinc/ensure-mmm-erb-loaded ()
+        ;;                   (require 'mmm-erb))
+        ;;                 (dolist (hook (list 'html-mode-hook 'nxml-mode-hook 'yaml-mode-hook))
+        ;;                   (add-hook hook 'sanityinc/ensure-mmm-erb-loaded))
+        ;;                 (dolist (mode (list 'html-mode 'html-erb-mode 'nxml-mode))
+        ;;                   (mmm-add-mode-ext-class mode "\\.r?html\\(\\.erb\\)?\\'" 'html-js)
+        ;;                   (mmm-add-mode-ext-class mode "\\.r?html\\(\\.erb\\)?\\'" 'html-css)
+        ;;                   (mmm-add-mode-ext-class mode "\\.erb\\'" 'erb))
+        ;;                 (mmm-add-mode-ext-class 'html-erb-mode "\\.jst\\.ejs\\'" 'ejs)
+        ;;                 (add-to-list 'auto-mode-alist '("\\.r?html\\(\\.erb\\)?\\'" . html-erb-mode))
+        ;;                 (add-to-list 'auto-mode-alist '("\\.jst\\.ejs\\'"  . html-erb-mode))
+        ;;                 (mmm-add-mode-ext-class 'yaml-mode "\\.yaml\\'" 'erb)
+        ;;                 (dolist (mode (list 'js-mode 'js2-mode 'js3-mode))
+        ;;                   (mmm-add-mode-ext-class mode "\\.js\\.erb\\'" 'erb))))
         ))
 
 (setq my-packages
@@ -309,8 +345,10 @@
          ;; gpicker
          ;; helm
          ;; ido-better-flex
+         ;; ido-ubiquitous
          ;; jump
          ;; ruby-mode ;Matsumoto's work well with haml, but 1.9 style hash syntax highlighting is buggy
+         ;; vline
          apache-mode
          auto-complete-chunk
          auto-complete-css
@@ -327,7 +365,6 @@
          go-mode
          haml-mode
          haskell-mode
-         ido-ubiquitous
          ido-yes-or-no
          inf-ruby
          less
@@ -344,6 +381,7 @@
          sass-mode
          scss-mode
          simp
+         smex
          window-numbering
          yaml-mode
          yasnippet
@@ -411,12 +449,6 @@
 ;; If you want to create a file, visit that file with C-x C-f,
 ;; then enter the text in that file's own buffer.
 ")
-;;; Interactively do things.
-(ido-mode t)
-(setq ido-everywhere t)
-(setq ido-max-directory-size 100000)
-(setq ido-use-virtual-buffers t) ;if Recentf is enabled
-(setq ido-enable-flex-matching t) ;fuzzy matching <http://webcache.googleusercontent.com/search?q=cache:wOWaMK_w_joJ:emacsblog.org/2008/05/19/giving-ido-mode-a-second-chance/&hl=en&tbo=d&strip=1>
 
 ;;; AnsiColor (Emacs terminal related stuff)
 ;;; <http://emacswiki.org/AnsiColor>.
@@ -450,25 +482,53 @@
 ;;                                "*Completions*" "*Ibuffer*"))
 ;(setq iswitchb-default-method 'samewindow)
 
-;;; Ibuffer <http://emacswiki.org/IbufferMode>.
+;;; Ibuffer <http://emacswiki.org/IbufferMode>,
+;;; <http://emacs-fu.blogspot.ru/2010/02/dealing-with-many-buffers-ibuffer.html>,
+;;; <http://martinowen.net/blog/2010/02/tips-for-emacs-ibuffer.html>.
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (autoload 'ibuffer "ibuffer" "List buffers." t)
 ;(setq ibuffer-use-other-window 1)
+
+;;; Interactively do things.
+;; (ido-mode t)
+(ido-mode 'both) ;for buffers and files
+(setq
+ ;; ido-save-directory-list-file "~/.emacs.d/cache/ido.last"
+ ;; ido-ignore-buffers '("\\` " "^\*Mess" "^\*Back" ".*Completion" "^\*Ido" "^\*trace" "^\*compilation" "^\*GTAGS" "^session\.*") ;"^\*") ;ignore these guys
+ ido-work-directory-list '("~/" "~/Desktop" "~/Documents" "~src")
+ ido-case-fold  t                 ; be case-insensitive
+
+ ido-enable-last-directory-history t ;remember last used dirs
+ ido-max-work-directory-list   30    ;should be enough
+ ido-max-work-file-list        50    ;remember many
+ ido-use-filename-at-point     nil   ;don't use filename at point (annoying)
+ ido-use-url-at-point          nil   ;don't use url at point (annoying)
+
+ ido-enable-flex-matching      nil   ;fuzzy matching <http://webcache.googleusercontent.com/search?q=cache:wOWaMK_w_joJ:emacsblog.org/2008/05/19/giving-ido-mode-a-second-chance/&hl=en&tbo=d&strip=1>
+ ido-max-prospects             100   ;don't spam my minibuffer
+ ido-confirm-unique-completion t     ;wait for RET, even with unique completion
+
+ ido-max-directory-size 100000
+ ;; ido-everywhere t
+ ;; ido-use-virtual-buffers t           ;if Recentf is enabled
+ )
+(setq confirm-nonexistent-file-or-buffer nil) ;when using ido, the confirmation is rather annoying...
 
 ;;; Server <http://shreevatsa.wordpress.com/tag/emacs/>.
 ;; (remove-hook 'kill-buffer-query-functions
 ;;              'server-kill-buffer-query-function)
 
 ;;; Uniquify
-;;; <http://gnu.org/software/emacs/manual/html_node/emacs/Uniquify.html>.
+;;; <http://gnu.org/software/emacs/manual/html_node/emacs/Uniquify.html>,
+;;; <http://emacs-fu.blogspot.ru/2009/11/making-buffer-names-unique.html>.
 (require 'uniquify)
 ;; nil, forward, reverse, post-forward or post-forward-angle-brackets
-(setq uniquify-buffer-name-style 'forward)
-;(setq uniquify-separator "/")
-;; Rename after killing uniquified.
-;(setq uniquify-after-kill-buffer-p t)
-;; Don't muck with special buffers.
-;(setq uniquify-ignore-buffers-re "^\\*")
+(setq
+ uniquify-buffer-name-style 'post-forward ;'forward
+ uniquify-separator ":" ;"/"
+ ;; uniquify-after-kill-buffer-p t ;rename after killing uniquified
+ ;; uniquify-ignore-buffers-re "^\\*" ;don't muck with special buffers
+ )
 
 ;;; Browse Url with Epiphany.
 ;(setq browse-url-browser-function 'browse-url-epiphany)
@@ -705,8 +765,6 @@
   (shell-command
    (format "%s -f %s/TAGS -e -R %s" path-to-ctags dir-name dir-name)))
 
-
-
 ;; Mew is a mail reader for Emacs <http://mew.org>, <http://emacswiki.org/Mew>.
 (autoload 'mew "mew" nil t)
 (autoload 'mew-send "mew" nil t)
@@ -721,8 +779,6 @@
 ;;       'mew-draft-send-message
 ;;       'mew-draft-kill
 ;;       'mew-send-hook))
-
-
 
 ;;; DVC.
 ;(add-to-list 'load-path "~/share/emacs/site-lisp/dvc")
