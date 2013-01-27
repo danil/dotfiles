@@ -504,7 +504,7 @@
  ido-use-filename-at-point     nil   ;don't use filename at point (annoying)
  ido-use-url-at-point          nil   ;don't use url at point (annoying)
 
- ido-enable-flex-matching      nil   ;fuzzy matching <http://webcache.googleusercontent.com/search?q=cache:wOWaMK_w_joJ:emacsblog.org/2008/05/19/giving-ido-mode-a-second-chance/&hl=en&tbo=d&strip=1>
+ ido-enable-flex-matching      t     ;fuzzy matching <http://webcache.googleusercontent.com/search?q=cache:wOWaMK_w_joJ:emacsblog.org/2008/05/19/giving-ido-mode-a-second-chance/&hl=en&tbo=d&strip=1>
  ido-max-prospects             100   ;don't spam my minibuffer
  ido-confirm-unique-completion t     ;wait for RET, even with unique completion
 
