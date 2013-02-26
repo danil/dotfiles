@@ -1,5 +1,5 @@
 WINE REGISTRY Version 2
-;; All keys relative to \\User\\S-1-5-4
+;; All keys relative to \\User\\S-1-5-21-0-0-0-1000
 
 #arch=win32
 
@@ -77,6 +77,9 @@ WINE REGISTRY Version 2
 "sTimeFormat"="h:mm:ss tt"
 "sYearMonth"="MMMM, yyyy"
 
+[Control Panel\\Mouse] 1358865905
+"Beep"="No"
+
 [Environment] 1287152943
 "TEMP"="C:\\users\\danil\\Temp"
 "TMP"="C:\\users\\danil\\Temp"
@@ -84,24 +87,55 @@ WINE REGISTRY Version 2
 [Keyboard Layout\\Preload] 1287152937
 "1"="00000409"
 
+[Software\\Microsoft\\Installer\\Features\\E091ECFC4799CD8409D14BC5E934EC3C] 1358865904
+"wine_gecko"=""
+
+[Software\\Microsoft\\Installer\\Products\\E091ECFC4799CD8409D14BC5E934EC3C] 1358865904
+"AdvertiseFlags"=dword:00000184
+"Assignment"=dword:00000000
+"AuthorizedLUAApp"=dword:00000000
+"Clients"=":"
+"InstanceType"=dword:00000000
+"Language"=dword:00000000
+"PackageCode"="97B82D3EB3EB6B94791820F1DA58F645"
+"ProductName"="Wine Gecko (32-bit)"
+"Version"=dword:01040000
+
+[Software\\Microsoft\\Installer\\Products\\E091ECFC4799CD8409D14BC5E934EC3C\\SourceList] 1358865904
+"LastUsedSource"="n;1;Z:\\usr\\share\\wine\\gecko\\"
+"PackageName"="wine_gecko-1.4-x86.msi"
+
+[Software\\Microsoft\\Installer\\Products\\E091ECFC4799CD8409D14BC5E934EC3C\\SourceList\\Media] 1358865904
+"1"=";"
+"DiskPrompt"=""
+"MediaPackage"=""
+
+[Software\\Microsoft\\Installer\\Products\\E091ECFC4799CD8409D14BC5E934EC3C\\SourceList\\Net] 1358865904
+"1"=str(2):"Z:\\usr\\share\\wine\\gecko\\"
+
+[Software\\Microsoft\\Installer\\UpgradeCodes\\ADF909AA16ED9784E920D37B806499E7] 1358865904
+"E091ECFC4799CD8409D14BC5E934EC3C"=""
+
 [Software\\Microsoft\\Internet Explorer\\Main] 1287152945
 "Search Page"="http://www.google.com"
 "Start Page"="http://www.winehq.org"
 
+[Software\\Microsoft\\Internet Explorer\\Main\\FeatureControl] 1358865901
+
 [Software\\Microsoft\\Internet Explorer\\Settings] 1287152945
 "Text Color"="0,0,0"
 
-[Software\\Microsoft\\Notepad] 1302356056
+[Software\\Microsoft\\Notepad] 1358865938
 "fWrap"=dword:00000001
 "iMarginBottom"=dword:000009c4
 "iMarginLeft"=dword:000007d0
 "iMarginRight"=dword:000007d0
 "iMarginTop"=dword:000009c4
 "iPointSize"=dword:0000005a
-"iWindowPosDX"=dword:000002d6
-"iWindowPosDY"=dword:0000038d
-"iWindowPosX"=dword:fffffffd
-"iWindowPosY"=dword:fffffffa
+"iWindowPosDX"=dword:000002ed
+"iWindowPosDY"=dword:00000246
+"iWindowPosX"=dword:0000013e
+"iWindowPosY"=dword:0000010e
 "lfCharSet"=dword:00000001
 "lfClipPrecision"=dword:00000000
 "lfEscapement"=dword:00000000
@@ -118,6 +152,26 @@ WINE REGISTRY Version 2
 "szTrailer"="Page &p"
 
 [Software\\Microsoft\\Protected Storage System Provider] 1287152945
+
+[Software\\Microsoft\\Windows\\CurrentVersion\\Applets\\Wordpad\\Options] 1358866031
+"FrameRect"=hex:69,00,00,00,e6,00,00,00,41,04,00,00,71,03,00,00
+"Maximized"=dword:00000000
+"PageMargin"=hex:dd,06,00,00,89,05,00,00,dd,06,00,00,89,05,00,00
+
+[Software\\Microsoft\\Windows\\CurrentVersion\\Applets\\Wordpad\\Recent file list] 1358867558
+"File1"="Z:\\home\\danil\\Dropbox\\sp\\money_order.rtf"
+"File2"="Z:\\home\\danil\\Dropbox\\money_order.rtf"
+
+[Software\\Microsoft\\Windows\\CurrentVersion\\Applets\\Wordpad\\RTF] 1358865917
+"BarState0"=dword:0000000f
+"Wrap"=dword:00000001
+
+[Software\\Microsoft\\Windows\\CurrentVersion\\Applets\\Wordpad\\Settings] 1358865917
+"PreviewPages"=dword:00000001
+
+[Software\\Microsoft\\Windows\\CurrentVersion\\Applets\\Wordpad\\Text] 1358865917
+"BarState0"=dword:0000000f
+"Wrap"=dword:00000000
 
 [Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders] 1287152943
 "AppData"="C:\\users\\danil\\Application Data"
@@ -387,36 +441,53 @@ WINE REGISTRY Version 2
 "MinLevel"=dword:00012000
 "RecommendedLevel"=dword:00012000
 
+[Software\\Microsoft\\Windows\\CurrentVersion\\Run] 1358865905
+
+[Software\\Microsoft\\Windows NT\\CurrentVersion\\Devices] 1358867456
+"HP LaserJet P2055"="wineps.drv,LPR:HPLaserJetP2055"
+"HPLaserJetP2055"="wineps.drv,CUPS:HPLaserJetP2055"
+
+[Software\\Microsoft\\Windows NT\\CurrentVersion\\PrinterPorts] 1358867456
+"HP LaserJet P2055"="wineps.drv,LPR:HPLaserJetP2055,15,45"
+"HPLaserJetP2055"="wineps.drv,CUPS:HPLaserJetP2055,15,45"
+
+[Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows] 1358867456
+"Device"="HPLaserJetP2055,wineps.drv,CUPS:HPLaserJetP2055"
+
 [Software\\Wine\\Debug] 1287152945
 "RelayExclude"="ntdll.RtlEnterCriticalSection;ntdll.RtlLeaveCriticalSection;kernel32.48;kernel32.49;kernel32.94;kernel32.95;kernel32.96;kernel32.97;kernel32.98"
 "RelayFromExclude"="winex11.drv;user32;gdi32;advapi32;kernel32"
 
-[Software\\Wine\\FileOpenAssociations\\.chm] 1333750667
+[Software\\Wine\\FileOpenAssociations\\.chm] 1358865899
 "AppName"="hh"
 "DesktopFile"="/home/danil/.local/share/applications/wine-extension-chm.desktop"
 "DocName"="Compiled HTML Help File"
 "MimeType"="application/vnd.ms-htmlhelp"
+"OpenWithIcon"="A35F_hh.0"
 "ProgID"="chm.file"
 
-[Software\\Wine\\FileOpenAssociations\\.gif] 1287154767
-"AppName"="Wine core exe"
+[Software\\Wine\\FileOpenAssociations\\.gif] 1358865923
+"AppName"="Wine Internet Explorer"
 "DesktopFile"="/home/danil/.local/share/applications/wine-extension-gif.desktop"
 "DocName"="GIF Image"
 "MimeType"="image/gif"
+"OpenWithIcon"="FB4C_iexplore.0"
 "ProgID"="giffile"
 
-[Software\\Wine\\FileOpenAssociations\\.hlp] 1287154767
+[Software\\Wine\\FileOpenAssociations\\.hlp] 1358865899
 "AppName"="winhlp32"
 "DesktopFile"="/home/danil/.local/share/applications/wine-extension-hlp.desktop"
 "DocName"="Help File"
 "MimeType"="application/x-wine-extension-hlp"
+"OpenWithIcon"="4137_winhlp32.0"
 "ProgID"="hlpfile"
 
-[Software\\Wine\\FileOpenAssociations\\.htm] 1287154767
+[Software\\Wine\\FileOpenAssociations\\.htm] 1358865899
 "AppName"="winebrowser"
 "DesktopFile"="/home/danil/.local/share/applications/wine-extension-htm.desktop"
 "DocName"="HTML Document"
 "MimeType"="text/html"
+"OpenWithIcon"="7765_winebrowser.0"
 "ProgID"="htmlfile"
 
 [Software\\Wine\\FileOpenAssociations\\.html] 1287154767
@@ -426,25 +497,28 @@ WINE REGISTRY Version 2
 "MimeType"="text/html"
 "ProgID"="htmlfile"
 
-[Software\\Wine\\FileOpenAssociations\\.ini] 1287154767
+[Software\\Wine\\FileOpenAssociations\\.ini] 1358865899
 "AppName"="notepad"
 "DesktopFile"="/home/danil/.local/share/applications/wine-extension-ini.desktop"
 "DocName"="Configuration Settings"
 "MimeType"="application/x-wine-extension-ini"
+"OpenWithIcon"="1E64_notepad.0"
 "ProgID"="inifile"
 
-[Software\\Wine\\FileOpenAssociations\\.jfif] 1287154767
-"AppName"="Wine core exe"
+[Software\\Wine\\FileOpenAssociations\\.jfif] 1358865924
+"AppName"="Wine Internet Explorer"
 "DesktopFile"="/home/danil/.local/share/applications/wine-extension-jfif.desktop"
 "DocName"="JPEG Image"
 "MimeType"="image/pjpeg"
+"OpenWithIcon"="FB4C_iexplore.0"
 "ProgID"="pjpegfile"
 
-[Software\\Wine\\FileOpenAssociations\\.jpe] 1287154767
-"AppName"="Wine core exe"
+[Software\\Wine\\FileOpenAssociations\\.jpe] 1358865924
+"AppName"="Wine Internet Explorer"
 "DesktopFile"="/home/danil/.local/share/applications/wine-extension-jpe.desktop"
 "DocName"="JPEG Image"
 "MimeType"="image/jpeg"
+"OpenWithIcon"="FB4C_iexplore.0"
 "ProgID"="jpegfile"
 
 [Software\\Wine\\FileOpenAssociations\\.jpeg] 1287154767
@@ -461,44 +535,62 @@ WINE REGISTRY Version 2
 "MimeType"="image/jpeg"
 "ProgID"="jpegfile"
 
-[Software\\Wine\\FileOpenAssociations\\.png] 1287154767
-"AppName"="Wine core exe"
+[Software\\Wine\\FileOpenAssociations\\.msp] 1358865924
+"AppName"="A Wine application"
+"DesktopFile"="/home/danil/.local/share/applications/wine-extension-msp.desktop"
+"MimeType"="application/x-wine-extension-msp"
+"ProgID"="Msi.Patch"
+
+[Software\\Wine\\FileOpenAssociations\\.png] 1358865924
+"AppName"="Wine Internet Explorer"
 "DesktopFile"="/home/danil/.local/share/applications/wine-extension-png.desktop"
 "DocName"="PNG Image"
 "MimeType"="image/png"
+"OpenWithIcon"="FB4C_iexplore.0"
 "ProgID"="pngfile"
 
-[Software\\Wine\\FileOpenAssociations\\.rtf] 1287154767
+[Software\\Wine\\FileOpenAssociations\\.rtf] 1358865900
 "AppName"="wordpad"
 "DesktopFile"="/home/danil/.local/share/applications/wine-extension-rtf.desktop"
 "DocName"="Rich Text Document"
 "MimeType"="application/rtf"
+"OpenWithIcon"="2EF4_wordpad.0"
 "ProgID"="rtffile"
 
-[Software\\Wine\\FileOpenAssociations\\.txt] 1287154767
+[Software\\Wine\\FileOpenAssociations\\.txt] 1358865900
 "AppName"="notepad"
 "DesktopFile"="/home/danil/.local/share/applications/wine-extension-txt.desktop"
 "DocName"="Text Document"
 "MimeType"="text/plain"
+"OpenWithIcon"="1E64_notepad.0"
 "ProgID"="txtfile"
 
-[Software\\Wine\\FileOpenAssociations\\.wri] 1287154767
+[Software\\Wine\\FileOpenAssociations\\.url] 1358865924
+"AppName"="rundll32"
+"DesktopFile"="/home/danil/.local/share/applications/wine-extension-url.desktop"
+"MimeType"="application/x-mswinurl"
+"OpenWithIcon"="1CD8_rundll32.0"
+"ProgID"="InternetShortcut"
+
+[Software\\Wine\\FileOpenAssociations\\.wri] 1358865900
 "AppName"="wordpad"
 "DesktopFile"="/home/danil/.local/share/applications/wine-extension-wri.desktop"
 "MimeType"="application/x-mswrite"
+"OpenWithIcon"="2EF4_wordpad.0"
 "ProgID"="wrifile"
 
-[Software\\Wine\\FileOpenAssociations\\.xml] 1287154767
+[Software\\Wine\\FileOpenAssociations\\.xml] 1358865900
 "AppName"="winebrowser"
 "DesktopFile"="/home/danil/.local/share/applications/wine-extension-xml.desktop"
 "DocName"="XML Document"
 "MimeType"="application/xml"
+"OpenWithIcon"="7765_winebrowser.0"
 "ProgID"="xmlfile"
 
-[Software\\Wine\\Fonts] 1333788636
+[Software\\Wine\\Fonts] 1358867556
 "Codepages"="1252,437"
 
-[Software\\Wine\\Fonts\\External Fonts] 1333788636
+[Software\\Wine\\Fonts\\External Fonts] 1358867556
 "Marlett (TrueType)"="Z:\\usr\\bin\\..\\share\\wine\\fonts\\\\marlett.ttf"
 "Symbol (TrueType)"="Z:\\usr\\bin\\..\\share\\wine\\fonts\\\\symbol.ttf"
 "Tahoma (TrueType)"="Z:\\usr\\bin\\..\\share\\wine\\fonts\\\\tahoma.ttf"
