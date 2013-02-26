@@ -78,6 +78,10 @@
                         (autoload 'window-numbering-mode
                           "window-numbering"
                           "Numbered window shortcuts" t)
+                        ;; <http://blog.binchen.org/?p=512#sec-1>.
+                        (custom-set-faces
+                         '(window-numbering-face
+                           ((t (:foreground "DeepPink" :underline nil :weight bold)))))
                         (window-numbering-mode 1)))
         ;; ;; <http://www.nongnu.org/color-theme>.
         ;; (:name color-theme)
