@@ -40,12 +40,14 @@
                                auto-mode-alist))))
         (:name less
                :after (progn
-                        (add-hook 'find-file-hook
-                                  '(lambda ()
-                                     (when buffer-read-only
-                                       (less-minor-mode-on))))
-                        (global-set-key (kbd "ESC ESC ESC")
-                                        'less-minor-mode))
+                        ;; (add-hook 'find-file-hook
+                        ;;           '(lambda ()
+                        ;;              (when buffer-read-only
+                        ;;                (less-minor-mode-on))))
+                        ;; (global-set-key (kbd "ESC ESC ESC")
+                        ;;                 'less-minor-mode)
+                        (global-set-key (kbd "M-p") 'less-scroll-up-line)
+                        (global-set-key (kbd "M-n") 'less-scroll-down-line))
                :type git
                :url "git://github.com/emacsmirror/less.git")
         ;; (:name sass-mode
@@ -81,7 +83,7 @@
                         ;; <http://blog.binchen.org/?p=512#sec-1>.
                         (custom-set-faces
                          '(window-numbering-face
-                           ((t (:foreground "black" :background nil :weight bold :underline nil)))))
+                           ((t (:foreground "brightmagenta" :background nil :weight normal :underline nil)))))
                         (window-numbering-mode 1)))
         ;; ;; <http://www.nongnu.org/color-theme>.
         ;; (:name color-theme)
