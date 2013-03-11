@@ -45,9 +45,9 @@
                         ;;              (when buffer-read-only
                         ;;                (less-minor-mode-on))))
                         ;; (global-set-key (kbd "ESC ESC ESC")
-                        ;;                 'less-minor-mode)
-                        (global-set-key (kbd "M-p") 'less-scroll-up-line)
-                        (global-set-key (kbd "M-n") 'less-scroll-down-line))
+                        ;                 'less-minor-mode)
+                        (global-set-key (kbd "M-p") 'less-scroll-down-line)
+                        (global-set-key (kbd "M-n") 'less-scroll-up-line))
                :type git
                :url "git://github.com/emacsmirror/less.git")
         ;; (:name sass-mode
