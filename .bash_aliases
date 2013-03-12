@@ -24,6 +24,7 @@ export HISTCONTROL=ignoredups
 
 # Aliases.
 alias ec='/usr/bin/emacsclient -t'
+alias ag='ag --smart-case'
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" #load RVM (Ruby Version Manager) into a shell session *as a function* <http://rvm.rvm.io/rvm/install>
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion #RVM bash completion <http://rvm.io/workflow/completion>
