@@ -1,0 +1,3 @@
+#! /bin/bash
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+sh -c 'play -q --no-show-progress ~/local/share/sounds/complete.oga &'
