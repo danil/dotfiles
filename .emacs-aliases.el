@@ -29,7 +29,11 @@
         (:name markdown-mode
                :after (progn
                         (add-hook 'markdown-mode-hook
-                                  (lambda ()(setq truncate-lines t)))
+                                  (lambda ()
+                                    ;; <http://stackoverflow.com/questions/7598433/how-to-remove-a-key-from-a-minor-mode-keymap-in-emacs#7598754>.
+                                    (define-key markdown-mode-map "\M-n" nil) ;unset markdown-next-wiki-link
+                                    (define-key markdown-mode-map "\M-p" nil) ;unset markdown-previous-wiki-link
+                                    (setq truncate-lines t)))
                         (setq auto-mode-alist
                               (cons '("/README\\'" . markdown-mode)
                                     auto-mode-alist))
@@ -37,7 +41,8 @@
                         (setq auto-mode-alist
                               (cons
                                '("/mutt[-a-zA-Z0-9]+\\'" . markdown-mode)
-                               auto-mode-alist))))
+                               auto-mode-alist))
+                        ))
         (:name less
                :after (progn
                         ;; (add-hook 'find-file-hook
