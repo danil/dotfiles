@@ -29,7 +29,11 @@
         (:name markdown-mode
                :after (progn
                         (add-hook 'markdown-mode-hook
-                                  (lambda ()(setq truncate-lines t)))
+                                  (lambda ()
+                                    ;; ;; <http://stackoverflow.com/questions/7598433/how-to-remove-a-key-from-a-minor-mode-keymap-in-emacs#7598754>.
+                                    ;; (define-key markdown-mode-map "\M-n" nil) ;unset markdown-next-wiki-link
+                                    ;; (define-key markdown-mode-map "\M-p" nil) ;unset markdown-previous-wiki-link
+                                    (setq truncate-lines t)))
                         (setq auto-mode-alist
                               (cons '("/README\\'" . markdown-mode)
                                     auto-mode-alist))
@@ -37,7 +41,8 @@
                         (setq auto-mode-alist
                               (cons
                                '("/mutt[-a-zA-Z0-9]+\\'" . markdown-mode)
-                               auto-mode-alist))))
+                               auto-mode-alist))
+                        ))
         (:name less
                :after (progn
                         ;; (add-hook 'find-file-hook
@@ -45,9 +50,9 @@
                         ;;              (when buffer-read-only
                         ;;                (less-minor-mode-on))))
                         ;; (global-set-key (kbd "ESC ESC ESC")
-                        ;                 'less-minor-mode)
-                        (global-set-key (kbd "M-p") 'less-scroll-down-line)
-                        (global-set-key (kbd "M-n") 'less-scroll-up-line))
+                        ;;                 'less-minor-mode)
+                        (global-set-key (kbd "M-v") 'less-scroll-down-line)
+                        (global-set-key (kbd "C-v") 'less-scroll-up-line))
                :type git
                :url "git://github.com/emacsmirror/less.git")
         ;; (:name sass-mode
@@ -494,6 +499,9 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (autoload 'ibuffer "ibuffer" "List buffers." t)
 ;(setq ibuffer-use-other-window 1)
+;; ;; <http://stackoverflow.com/questions/7598433/how-to-remove-a-key-from-a-minor-mode-keymap-in-emacs#7598754>.
+;; (define-key ibuffer-mode-map "\M-n" nil) ;unset ibuffer-forward-filter-group
+;; (define-key ibuffer-mode-map "\M-p" nil) ;unset ibuffer-backward-filter-group
 
 ;;; Interactively do things.
 ;; (ido-mode t)
