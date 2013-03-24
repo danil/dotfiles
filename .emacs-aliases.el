@@ -503,11 +503,11 @@
 ;;; Highlight current line
 ;;; <http://emacs-fu.blogspot.com/2008/12/highlighting-current-line.html>,
 ;;; <http://stackoverflow.com/questions/2718189/emacshighlight-the-current-line-by-underline-it#answer-2718543>.
-(defface hl-line '((t (:background nil))) ;#222
-  "Face to use for `hl-line-face`." :group 'hl-line)
+;; (defface hl-line '((t (:background nil))) ;#222
+;;   "Face to use for `hl-line-face`." :group 'hl-line)
 (setq hl-line-face 'hl-line)
 (global-hl-line-mode 1)
-(set-face-attribute hl-line-face nil :underline t)
+;; (set-face-attribute hl-line-face nil :underline t) ;looks inconsistent with fill-column-indicator
 ;;; <http://emacsblog.org/2007/04/09/highlight-the-current-line/#comment-284>.
 (defun local-hl-line-mode-off ()
   (interactive)
