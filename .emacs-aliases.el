@@ -127,6 +127,7 @@
                         (add-to-list 'ac-modes 'lua-mode)
                         (add-to-list 'ac-modes 'markdown-mode)
                         (add-to-list 'ac-modes 'org-mode)
+                        (add-to-list 'ac-modes 'rhtml-mode)
                         (add-to-list 'ac-modes 'sass-mode)
                         (add-to-list 'ac-modes 'scss-mode)
                         (add-to-list 'ac-modes 'sgml-mode)
