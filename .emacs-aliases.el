@@ -30,9 +30,9 @@
                :after (progn
                         (add-hook 'markdown-mode-hook
                                   (lambda ()
-                                    ;; ;; <http://stackoverflow.com/questions/7598433/how-to-remove-a-key-from-a-minor-mode-keymap-in-emacs#7598754>.
-                                    ;; (define-key markdown-mode-map "\M-n" nil) ;unset markdown-next-wiki-link
-                                    ;; (define-key markdown-mode-map "\M-p" nil) ;unset markdown-previous-wiki-link
+                                    ;; <http://stackoverflow.com/questions/7598433/how-to-remove-a-key-from-a-minor-mode-keymap-in-emacs#7598754>.
+                                    (define-key markdown-mode-map "\M-n" nil) ;unset markdown-next-wiki-link
+                                    (define-key markdown-mode-map "\M-p" nil) ;unset markdown-previous-wiki-link
                                     (setq truncate-lines t)))
                         (setq auto-mode-alist
                               (cons '("/README\\'" . markdown-mode)
@@ -52,7 +52,9 @@
                         ;; (global-set-key (kbd "ESC ESC ESC")
                         ;;                 'less-minor-mode)
                         (global-set-key (kbd "M-v") 'less-scroll-down-line)
-                        (global-set-key (kbd "C-v") 'less-scroll-up-line))
+                        (global-set-key (kbd "C-v") 'less-scroll-up-line)
+                        (global-set-key (kbd "M-p") 'scroll-down-command)
+                        (global-set-key (kbd "M-n") 'scroll-up-command))
                :type git
                :url "git://github.com/emacsmirror/less.git")
         ;; (:name sass-mode
@@ -127,6 +129,7 @@
                         (add-to-list 'ac-modes 'lua-mode)
                         (add-to-list 'ac-modes 'markdown-mode)
                         (add-to-list 'ac-modes 'org-mode)
+                        (add-to-list 'ac-modes 'rhtml-mode)
                         (add-to-list 'ac-modes 'sass-mode)
                         (add-to-list 'ac-modes 'scss-mode)
                         (add-to-list 'ac-modes 'sgml-mode)
@@ -534,9 +537,9 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (autoload 'ibuffer "ibuffer" "List buffers." t)
 ;(setq ibuffer-use-other-window 1)
-;; ;; <http://stackoverflow.com/questions/7598433/how-to-remove-a-key-from-a-minor-mode-keymap-in-emacs#7598754>.
-;; (define-key ibuffer-mode-map "\M-n" nil) ;unset ibuffer-forward-filter-group
-;; (define-key ibuffer-mode-map "\M-p" nil) ;unset ibuffer-backward-filter-group
+;; <http://stackoverflow.com/questions/7598433/how-to-remove-a-key-from-a-minor-mode-keymap-in-emacs#7598754>.
+(define-key ibuffer-mode-map "\M-n" nil) ;unset ibuffer-forward-filter-group
+(define-key ibuffer-mode-map "\M-p" nil) ;unset ibuffer-backward-filter-group
 
 ;;; Interactively do things.
 ;; (ido-mode t)
