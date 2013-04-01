@@ -37,12 +37,14 @@
         <value type="string" value="skype"/>
         <value type="string" value="task manager"/>
         <value type="string" value="wally"/>
+        <value type="string" value="steam"/>
         <value type="string" value="orage"/>
         <value type="string" value="gajim"/>
         <value type="string" value="empathy"/>
         <value type="string" value="bluetooth"/>
         <value type="string" value="wicd-client.py"/>
         <value type="string" value="dropbox"/>
+        <value type="string" value="thunar"/>
         <value type="string" value="docky"/>
         <value type="string" value="xfce4-power-manager"/>
         <value type="string" value="pidgin"/>
