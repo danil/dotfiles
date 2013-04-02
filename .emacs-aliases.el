@@ -711,103 +711,6 @@
 ;;; <http://gnu.org/software/emacs/manual/html_node/emacs/Auto-Fill.html>.
 ;(add-hook 'mail-mode-hook (lambda () (auto-fill-mode t)))
 
-;; ;;; View mode.
-;; (setq view-read-only t)
-;; ;; (add-hook 'view-mode-hook (lambda () (less-minor-mode t)))
-;; (defun my-view-mode () (view-mode t))
-;; ;;(add-hook 'mail-mode-hook (lambda () (interactive) (my-view-mode)))
-;; (add-hook 'awk-mode-hook (lambda () (interactive) (my-view-mode)))
-;; (add-hook 'change-log-mode-hook (lambda () (interactive) (my-view-mode)))
-;; (add-hook 'coffee-mode-hook (lambda () (interactive) (my-view-mode)))
-;; (add-hook 'conf-mode-hook (lambda () (interactive) (my-view-mode)))
-;; (add-hook 'css-mode-hook (lambda () (interactive) (my-view-mode)))
-;; (add-hook 'emacs-lisp-mode-hook (lambda () (interactive) (my-view-mode)))
-;; (add-hook 'haml-mode-hook (lambda () (interactive) (my-view-mode)))
-;; (add-hook 'haskell-mode-hook (lambda () (interactive) (my-view-mode)))
-;; (add-hook 'html-mode-hook (lambda () (interactive) (my-view-mode)))
-;; (add-hook 'java-mode-hook (lambda () (interactive) (my-view-mode)))
-;; (add-hook 'js-mode-hook (lambda () (interactive) (my-view-mode)))
-;; (add-hook 'lisp-mode-hook (lambda () (interactive) (my-view-mode)))
-;; (add-hook 'lua-mode-hook (lambda () (interactive) (my-view-mode)))
-;; (add-hook 'makefile-gmake-mode-hook (lambda () (interactive) (my-view-mode)))
-;; (add-hook 'markdown-mode-hook (lambda () (interactive) (my-view-mode)))
-;; (add-hook 'nxml-mode-hook (lambda () (interactive) (my-view-mode)))
-;; (add-hook 'org-mode-hook (lambda () (interactive) (my-view-mode)))
-;; (add-hook 'perl-mode-hook (lambda () (interactive) (my-view-mode)))
-;; (add-hook 'php-mode-hook (lambda () (interactive) (my-view-mode)))
-;; (add-hook 'ruby-mode-hook (lambda () (interactive) (my-view-mode)))
-;; (add-hook 'sass-mode-hook (lambda () (interactive) (my-view-mode)))
-;; (add-hook 'sgml-mode-hook (lambda () (interactive) (my-view-mode)))
-;; (add-hook 'sh-mode-hook (lambda () (interactive) (my-view-mode)))
-;; (add-hook 'sql-mode-hook (lambda () (interactive) (my-view-mode)))
-;; (add-hook 'whitespace-mode-hook (lambda () (interactive) (column-marker-1 80)))
-;; (add-hook 'xml-mode-hook (lambda () (interactive) (my-view-mode)))
-;; (add-hook 'yaml-mode-hook (lambda () (interactive) (my-view-mode)))
-
-;; ;;; Whitespace mode.
-;; (defun my-whitespace-mode ()
-;;   (setq whitespace-style '(face space-after-tab space-before-tab trailing))
-;;   (unless buffer-read-only (whitespace-mode t))
-;;   )
-;; ;;(add-hook 'mail-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-;; (add-hook 'awk-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-;; (add-hook 'change-log-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-;; (add-hook 'coffee-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-;; (add-hook 'conf-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-;; (add-hook 'css-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-;; (add-hook 'emacs-lisp-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-;; (add-hook 'haml-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-;; (add-hook 'haskell-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-;; (add-hook 'html-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-;; (add-hook 'java-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-;; (add-hook 'js-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-;; (add-hook 'lisp-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-;; (add-hook 'lua-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-;; (add-hook 'makefile-gmake-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-;; (add-hook 'markdown-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-;; (add-hook 'nxml-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-;; (add-hook 'org-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-;; (add-hook 'perl-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-;; (add-hook 'php-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-;; (add-hook 'ruby-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-;; (add-hook 'sass-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-;; (add-hook 'sgml-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-;; (add-hook 'sh-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-;; (add-hook 'sql-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-;; (add-hook 'whitespace-mode-hook (lambda () (interactive) (column-marker-1 80)))
-;; (add-hook 'xml-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-;; (add-hook 'yaml-mode-hook (lambda () (interactive) (my-whitespace-mode)))
-;; ;; (add-hook 'markdown-mode-hook
-;; ;;           (lambda () (if (string-match "/bookmarks\\.md\\'"
-;; ;;                                        (buffer-file-name))
-;; ;;                          (setq whitespace-style
-;; ;;                                '(trailing space-before-tab
-;; ;;                                           space-after-tab empty))
-;; ;;                        (my-whitespace-mode))))
-
-;;; ri-emacs.
-;; (setq ri-ruby-script "~/share/emacs/site-lisp/ri-emacs/ri-emacs.rb")
-;; (autoload 'ri "~/share/emacs/site-lisp/ri-emacs/ri-ruby.el" nil t)
-;; (add-hook 'ruby-mode-hook
-;;   (lambda ()
-;;     (local-set-key 'f1 'ri)
-;;     (local-set-key "\M-\C-i" 'ri-ruby-complete-symbol)
-;;     (local-set-key 'f4 'ri-ruby-show-args)
-;;     ))
-
-;;; Ruby and Rails documentation lookup.
-;; (defun ror-doc-lookup () (local-set-key (kbd "<f1>") 'doc-symbol-lookup))
-;; ;http://www.google.com/search?num=100&q=site%3Aruby-doc.org/core+
-;; (defun doc-symbol-lookup ()
-;;   (interactive)
-;;   (let ((symbol (symbol-at-point)))
-;;     (if (not symbol)
-;;       (message "No symbol at point.")
-;;       (browse-url
-;;         (concat
-;;           "http://www.google.com/search?num=100&q=site%3Aapi.rubyonrails.org+"
-;;           (symbol-name symbol))))))
-
 ;;; Tags
 ;;; <http://emacswiki.org/BuildTags#toc2>.
 (setq path-to-ctags "/usr/bin/exuberant-ctags")
@@ -831,6 +734,34 @@
 ;;       'mew-draft-send-message
 ;;       'mew-draft-kill
 ;;       'mew-send-hook))
+
+;;; My keyboard macroses.
+;; <http://emacs-fu.blogspot.ru/2010/07/keyboard-macros.html>.
+(fset 'my-kbd-macro-ruby-new-hash-syntax
+   "\C-s =>\C-m\C-r:\C-m\C-d\C-s =>\C-m\C-?\C-?\C-?:")
+
+;;; ri-emacs.
+;; (setq ri-ruby-script "~/share/emacs/site-lisp/ri-emacs/ri-emacs.rb")
+;; (autoload 'ri "~/share/emacs/site-lisp/ri-emacs/ri-ruby.el" nil t)
+;; (add-hook 'ruby-mode-hook
+;;   (lambda ()
+;;     (local-set-key 'f1 'ri)
+;;     (local-set-key "\M-\C-i" 'ri-ruby-complete-symbol)
+;;     (local-set-key 'f4 'ri-ruby-show-args)
+;;     ))
+
+;;; Ruby and Rails documentation lookup.
+;; (defun ror-doc-lookup () (local-set-key (kbd "<f1>") 'doc-symbol-lookup))
+;; ;http://www.google.com/search?num=100&q=site%3Aruby-doc.org/core+
+;; (defun doc-symbol-lookup ()
+;;   (interactive)
+;;   (let ((symbol (symbol-at-point)))
+;;     (if (not symbol)
+;;       (message "No symbol at point.")
+;;       (browse-url
+;;         (concat
+;;           "http://www.google.com/search?num=100&q=site%3Aapi.rubyonrails.org+"
+;;           (symbol-name symbol))))))
 
 ;;; DVC.
 ;(add-to-list 'load-path "~/share/emacs/site-lisp/dvc")
