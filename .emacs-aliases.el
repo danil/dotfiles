@@ -739,6 +739,8 @@
 ;; <http://emacs-fu.blogspot.ru/2010/07/keyboard-macros.html>.
 (fset 'my-kbd-macro-ruby-new-hash-syntax
    "\C-s =>\C-m\C-r:\C-m\C-d\C-s =>\C-m\C-?\C-?\C-?:")
+(fset 'my-kbd-macro-ruby-string-to-symbol
+   "\C-[\C-s\\(\"\\|'\\)\C-s\C-m\C-?\C-[\C-r\\(\"\\|'\\)\C-m\C-d:")
 
 ;;; ri-emacs.
 ;; (setq ri-ruby-script "~/share/emacs/site-lisp/ri-emacs/ri-emacs.rb")
