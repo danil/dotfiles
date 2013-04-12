@@ -158,9 +158,10 @@ WINE REGISTRY Version 2
 "Maximized"=dword:00000000
 "PageMargin"=hex:dd,06,00,00,89,05,00,00,dd,06,00,00,89,05,00,00
 
-[Software\\Microsoft\\Windows\\CurrentVersion\\Applets\\Wordpad\\Recent file list] 1358867558
-"File1"="Z:\\home\\danil\\Dropbox\\sp\\money_order.rtf"
-"File2"="Z:\\home\\danil\\Dropbox\\money_order.rtf"
+[Software\\Microsoft\\Windows\\CurrentVersion\\Applets\\Wordpad\\Recent file list] 1365527857
+"File1"="Z:\\home\\danil\\Dropbox\\Photos\\How to use the Photos folder.rtf"
+"File2"="Z:\\home\\danil\\Dropbox\\sp\\money_order.rtf"
+"File3"="Z:\\home\\danil\\Dropbox\\money_order.rtf"
 
 [Software\\Microsoft\\Windows\\CurrentVersion\\Applets\\Wordpad\\RTF] 1358865917
 "BarState0"=dword:0000000f
@@ -451,8 +452,8 @@ WINE REGISTRY Version 2
 "HP LaserJet P2055"="wineps.drv,LPR:HPLaserJetP2055,15,45"
 "HPLaserJetP2055"="wineps.drv,CUPS:HPLaserJetP2055,15,45"
 
-[Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows] 1358867456
-"Device"="HPLaserJetP2055,wineps.drv,CUPS:HPLaserJetP2055"
+[Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows] 1365527855
+"Device"="HP LaserJet P2055,WINEPS.DRV,LPR:HPLaserJetP2055"
 
 [Software\\Wine\\Debug] 1287152945
 "RelayExclude"="ntdll.RtlEnterCriticalSection;ntdll.RtlLeaveCriticalSection;kernel32.48;kernel32.49;kernel32.94;kernel32.95;kernel32.96;kernel32.97;kernel32.98"
@@ -587,10 +588,10 @@ WINE REGISTRY Version 2
 "OpenWithIcon"="7765_winebrowser.0"
 "ProgID"="xmlfile"
 
-[Software\\Wine\\Fonts] 1358867556
+[Software\\Wine\\Fonts] 1365527854
 "Codepages"="1252,437"
 
-[Software\\Wine\\Fonts\\External Fonts] 1358867556
+[Software\\Wine\\Fonts\\External Fonts] 1365527854
 "Marlett (TrueType)"="Z:\\usr\\bin\\..\\share\\wine\\fonts\\\\marlett.ttf"
 "Symbol (TrueType)"="Z:\\usr\\bin\\..\\share\\wine\\fonts\\\\symbol.ttf"
 "Tahoma (TrueType)"="Z:\\usr\\bin\\..\\share\\wine\\fonts\\\\tahoma.ttf"
