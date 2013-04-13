@@ -409,6 +409,7 @@
          deft
          egg
          ethan-wspace
+         evil
          fill-column-indicator
          findr
          go-mode
