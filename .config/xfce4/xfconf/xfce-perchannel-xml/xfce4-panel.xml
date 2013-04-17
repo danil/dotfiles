@@ -34,6 +34,7 @@
     <property name="plugin-6" type="string" value="systray">
       <property name="names-visible" type="array">
         <value type="string" value="sound output volume"/>
+        <value type="string" value="thunar"/>
         <value type="string" value="docky"/>
         <value type="string" value="task manager"/>
         <value type="string" value="wicd-client.py"/>
