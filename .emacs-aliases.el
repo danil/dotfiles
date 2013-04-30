@@ -383,6 +383,23 @@
                         (add-hook 'sql-mode-hook 'fci-mode)
                         (add-hook 'xml-mode-hook 'fci-mode)
                         (add-hook 'yaml-mode-hook 'fci-mode)))
+        (:name coffee-mode
+               :website "http://ozmm.org/posts/coffee_mode.html"
+               :description "Emacs Major Mode for CoffeeScript"
+               :type github
+               :pkgname "defunkt/coffee-mode"
+               :features coffee-mode
+               :post-init (progn
+                            (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
+                            (add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
+                            ;; it defaults to js2-mode, which is not present in Emacs by default
+                            (setq coffee-js-mode 'javascript-mode))
+               :after (progn
+                        (defun coffee-custom ()
+                          "coffee-mode-hook"
+                          (set (make-local-variable 'tab-width) 2))
+                        (add-hook 'coffee-mode-hook
+                                  '(lambda() (coffee-custom)))))
         ))
 
 (setq my-packages
@@ -391,12 +408,14 @@
          ;; auto-complete-ruby ;buggy(
          ;; bongo
          ;; column-marker
+         ;; evil
          ;; gpicker
          ;; helm
          ;; ido-better-flex
          ;; ido-ubiquitous
          ;; jump
          ;; ruby-mode ;Matsumoto's work well with haml, but 1.9 style hash syntax highlighting is buggy
+         ;; undo-tree
          ;; vline
          apache-mode
          auto-complete-chunk
