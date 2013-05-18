@@ -148,3 +148,6 @@ UXTerm.vt100.geometry: 100x50
 ! Black text on a white background.
 ! UXTerm.vt100.foreground: black
 ! UXTerm.vt100.background: white
+
+! Emacs <http://gentoo.org/proj/en/lisp/emacs/xft.xml?style=printable>.
+Emacs.font: Bitstream Vera Sans Mono-11
