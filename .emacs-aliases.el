@@ -2,10 +2,10 @@
 ;(add-to-list 'load-path "~/share/emacs/site-lisp")
 
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(scroll-bar-width 7) ;scroll bar <http://emacswiki.org/emacs/ScrollBar>.
  '(safe-local-variable-values (quote ((encoding . utf-8)))))
 
@@ -522,6 +522,9 @@
 ;;; Tool bar <http://www.emacswiki.org/emacs/ToolBar#toc1>,
 ;;; <http://superuser.com/questions/127420/how-can-i-hide-the-tool-bar-in-emacs-persistently#127422>.
 (tool-bar-mode -1)
+
+;; ;;; <http://emacswiki.org/ScrollBar>.
+;; (scroll-bar-mode -1)
 
 ;;; AnsiColor (Emacs terminal related stuff)
 ;;; <http://emacswiki.org/AnsiColor>.
