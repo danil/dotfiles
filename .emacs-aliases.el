@@ -519,7 +519,7 @@
 ;; then enter the text in that file's own buffer.
 ")
 
-;;; Tool bar <http://www.emacswiki.org/emacs/ToolBar#toc1>,
+;;; Tool bar <http://emacswiki.org/ToolBar#toc1>,
 ;;; <http://superuser.com/questions/127420/how-can-i-hide-the-tool-bar-in-emacs-persistently#127422>.
 (tool-bar-mode -1)
 
