@@ -525,6 +525,7 @@
 
 ;; ;;; <http://emacswiki.org/ScrollBar>.
 ;; (scroll-bar-mode -1)
+;; <http://stackoverflow.com/questions/3155451/emacs-scrollbar-customize#3159618>.
 (set-face-background 'scroll-bar "white")
 (set-face-foreground 'scroll-bar "gray")
 
