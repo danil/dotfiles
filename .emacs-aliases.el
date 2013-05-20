@@ -2,10 +2,11 @@
 ;(add-to-list 'load-path "~/share/emacs/site-lisp")
 
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(scroll-bar-width 7) ;scroll bar <http://emacswiki.org/emacs/ScrollBar>.
  '(safe-local-variable-values (quote ((encoding . utf-8)))))
 
 ;;; el-get <http://github.com/dimitri/el-get>.
@@ -383,6 +384,7 @@
                         (add-hook 'sql-mode-hook 'fci-mode)
                         (add-hook 'xml-mode-hook 'fci-mode)
                         (add-hook 'yaml-mode-hook 'fci-mode)))
+
         (:name coffee-mode
                :website "http://ozmm.org/posts/coffee_mode.html"
                :description "Emacs Major Mode for CoffeeScript"
@@ -415,7 +417,6 @@
          ;; ido-ubiquitous
          ;; jump
          ;; ruby-mode ;Matsumoto's work well with haml, but 1.9 style hash syntax highlighting is buggy
-         ;; undo-tree
          ;; vline
          apache-mode
          auto-complete-chunk
@@ -469,7 +470,7 @@
 
 (set-cursor-color "#aa0000")
 
-;;; Truncation of Lines <http://emacswiki.org/emacs/TruncateLines>.
+;;; Truncation of Lines (toggle-truncate-lines) <http://emacswiki.org/emacs/TruncateLines>.
 (set-default 'truncate-lines t)
 ;;; Horizontal Scrolling
 ;;; <http://gnu.org/software/emacs/manual/html_node/emacs/Horizontal-Scrolling.html#Horizontal-Scrolling>.
@@ -517,6 +518,16 @@
 ;; If you want to create a file, visit that file with C-x C-f,
 ;; then enter the text in that file's own buffer.
 ")
+
+;;; Tool bar <http://emacswiki.org/ToolBar#toc1>,
+;;; <http://superuser.com/questions/127420/how-can-i-hide-the-tool-bar-in-emacs-persistently#127422>.
+(tool-bar-mode -1)
+
+;; ;;; <http://emacswiki.org/ScrollBar>.
+;; (scroll-bar-mode -1)
+;; <http://stackoverflow.com/questions/3155451/emacs-scrollbar-customize#3159618>.
+(set-face-background 'scroll-bar "white")
+(set-face-foreground 'scroll-bar "gray")
 
 ;;; AnsiColor (Emacs terminal related stuff)
 ;;; <http://emacswiki.org/AnsiColor>.
