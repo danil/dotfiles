@@ -525,6 +525,8 @@
 
 ;; ;;; <http://emacswiki.org/ScrollBar>.
 ;; (scroll-bar-mode -1)
+(set-face-background 'scroll-bar "white")
+(set-face-foreground 'scroll-bar "gray")
 
 ;;; AnsiColor (Emacs terminal related stuff)
 ;;; <http://emacswiki.org/AnsiColor>.
