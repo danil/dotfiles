@@ -1,2 +1,3 @@
 #!/bin/bash
+# Emacs client <http://emacswiki.org/EmacsClient#toc3>.
 exec emacsclient --alternate-editor="" -c "$@"
