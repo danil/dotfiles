@@ -67,7 +67,9 @@
 
 # Terminal emulator.
 # "urxvtc"
-"urxvt"
+# "urxvt"
+# Fish shell <https://wiki.archlinux.org/index.php/Fish#Troubleshooting>.
+"urxvt -e fish"
   Control + Shift + Mod1 + c
 
 # Show desktop
