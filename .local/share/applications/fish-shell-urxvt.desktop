@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Fish in urxvt
+Type=Application
+Comment=rxvt clone with xft and unicode support
+Exec=urxvt -e fish
+TryExec=urxvt
+Icon=utilities-terminal
+Categories=System;TerminalEmulator;
