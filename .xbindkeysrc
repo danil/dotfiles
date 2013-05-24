@@ -72,6 +72,11 @@
 "urxvt -e fish"
   Control + Shift + Mod1 + c
 
+# Editor.
+# Fish shell <https://wiki.archlinux.org/index.php/Fish#Troubleshooting>.
+"/home/danil/bin/ecx"
+  Control + Shift + Mod1 + e
+
 # Show desktop
 # <http://ubuntuforums.org/showthread.php?t=1615199#td_post_10083165>.
 "/home/danil/bin/showdesktop.sh"
@@ -191,7 +196,7 @@
 #   Control + Shift + Mod1 + 2
 
 "/home/danil/bin/unless_electricsheep.sh"
-  Control + Shift + Mod1 + e
+  Control + Shift + Mod1 + s
 
 # # Listen
 # "listen --next"
