@@ -67,9 +67,9 @@
 
 # Terminal emulator.
 # "urxvtc"
-# "urxvt"
-# Fish shell <https://wiki.archlinux.org/index.php/Fish#Troubleshooting>.
-"urxvt -e fish"
+# # Fish shell <https://wiki.archlinux.org/index.php/Fish#Troubleshooting>.
+# "urxvt -e fish"
+"urxvt"
   Control + Shift + Mod1 + c
 
 # Editor.
