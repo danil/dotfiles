@@ -410,7 +410,6 @@
          ;; auto-complete-ruby ;buggy(
          ;; bongo
          ;; column-marker
-         ;; evil
          ;; gpicker
          ;; helm
          ;; ido-better-flex
@@ -429,6 +428,7 @@
          deft
          egg
          ethan-wspace
+         evil
          fill-column-indicator
          findr
          go-mode
