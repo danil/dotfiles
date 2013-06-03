@@ -709,7 +709,7 @@
 (setq auto-mode-alist
       (cons '("/etc/portage/profile/use\\.mask\\'" . conf-mode) auto-mode-alist))
 
-(require 'site-gentoo)
+;; (require 'site-gentoo)
 
 ;;; ruby-mode.
 (setq auto-mode-alist
