@@ -95,10 +95,16 @@
                         (window-numbering-mode 1)))
         ;; ;; <http://www.nongnu.org/color-theme>.
         ;; (:name color-theme)
-        ;; (:name color-theme-zenburn
-        ;;        :features zenburn
+        ;; (:name railscasts-theme
+        ;;        :description "Railscasts color theme for GNU Emacs"
+        ;;        :website "https://github.com/itiut/railscasts-theme"
+        ;;        :type github
+        ;;        :pkgname "itiut/railscasts-theme"
+        ;;        :minimum-emacs-version 24
         ;;        :after (progn
-        ;;                 (color-theme-zenburn)))
+        ;;                 (load-theme 'railscasts t nil))
+        ;;        :post-init (add-to-list 'custom-theme-load-path
+        ;;                                default-directory))
         ;; (:name bongo
         ;;        :type git
         ;;        :url "git://github.com/dbrock/bongo.git"
@@ -350,40 +356,40 @@
         ;;                 (add-hook 'sql-mode-hook (lambda () (interactive) (my-column-marker)))
         ;;                 (add-hook 'xml-mode-hook (lambda () (interactive) (my-column-marker)))
         ;;                 (add-hook 'yaml-mode-hook (lambda () (interactive) (my-column-marker)))))
-        (:name fill-column-indicator
-               :after (progn
-                        ;; (setq-default fci-rule-column 70)
-                        ;; ;; <http://www.emacswiki.org/emacs/FillColumnIndicator#toc6>.
-                        ;; (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
-                        ;; (global-fci-mode 1)
-                        ;; (add-hook 'mail-mode-hook 'fci-mode)
-                        ;; (add-hook 'whitespace-mode-hook 'fci-mode)
-                        (add-hook 'awk-mode-hook 'fci-mode)
-                        (add-hook 'change-log-mode-hook 'fci-mode)
-                        (add-hook 'coffee-mode-hook 'fci-mode)
-                        (add-hook 'conf-mode-hook 'fci-mode)
-                        (add-hook 'css-mode-hook 'fci-mode)
-                        (add-hook 'emacs-lisp-mode-hook 'fci-mode)
-                        (add-hook 'haml-mode-hook 'fci-mode)
-                        (add-hook 'haskell-mode-hook 'fci-mode)
-                        (add-hook 'html-mode-hook 'fci-mode)
-                        (add-hook 'java-mode-hook 'fci-mode)
-                        (add-hook 'js-mode-hook 'fci-mode)
-                        (add-hook 'lisp-mode-hook 'fci-mode)
-                        (add-hook 'lua-mode-hook 'fci-mode)
-                        (add-hook 'makefile-gmake-mode-hook 'fci-mode)
-                        (add-hook 'markdown-mode-hook 'fci-mode)
-                        (add-hook 'nxml-mode-hook 'fci-mode)
-                        (add-hook 'org-mode-hook 'fci-mode)
-                        (add-hook 'perl-mode-hook 'fci-mode)
-                        (add-hook 'php-mode-hook 'fci-mode)
-                        (add-hook 'ruby-mode-hook 'fci-mode)
-                        (add-hook 'sass-mode-hook 'fci-mode)
-                        (add-hook 'sgml-mode-hook 'fci-mode)
-                        (add-hook 'sh-mode-hook 'fci-mode)
-                        (add-hook 'sql-mode-hook 'fci-mode)
-                        (add-hook 'xml-mode-hook 'fci-mode)
-                        (add-hook 'yaml-mode-hook 'fci-mode)))
+        ;; (:name fill-column-indicator
+        ;;        :after (progn
+        ;;                 ;; (setq-default fci-rule-column 70)
+        ;;                 ;; ;; <http://www.emacswiki.org/emacs/FillColumnIndicator#toc6>.
+        ;;                 ;; (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
+        ;;                 ;; (global-fci-mode 1)
+        ;;                 ;; (add-hook 'mail-mode-hook 'fci-mode)
+        ;;                 ;; (add-hook 'whitespace-mode-hook 'fci-mode)
+        ;;                 (add-hook 'awk-mode-hook 'fci-mode)
+        ;;                 (add-hook 'change-log-mode-hook 'fci-mode)
+        ;;                 (add-hook 'coffee-mode-hook 'fci-mode)
+        ;;                 (add-hook 'conf-mode-hook 'fci-mode)
+        ;;                 (add-hook 'css-mode-hook 'fci-mode)
+        ;;                 (add-hook 'emacs-lisp-mode-hook 'fci-mode)
+        ;;                 (add-hook 'haml-mode-hook 'fci-mode)
+        ;;                 (add-hook 'haskell-mode-hook 'fci-mode)
+        ;;                 (add-hook 'html-mode-hook 'fci-mode)
+        ;;                 (add-hook 'java-mode-hook 'fci-mode)
+        ;;                 (add-hook 'js-mode-hook 'fci-mode)
+        ;;                 (add-hook 'lisp-mode-hook 'fci-mode)
+        ;;                 (add-hook 'lua-mode-hook 'fci-mode)
+        ;;                 (add-hook 'makefile-gmake-mode-hook 'fci-mode)
+        ;;                 (add-hook 'markdown-mode-hook 'fci-mode)
+        ;;                 (add-hook 'nxml-mode-hook 'fci-mode)
+        ;;                 (add-hook 'org-mode-hook 'fci-mode)
+        ;;                 (add-hook 'perl-mode-hook 'fci-mode)
+        ;;                 (add-hook 'php-mode-hook 'fci-mode)
+        ;;                 (add-hook 'ruby-mode-hook 'fci-mode)
+        ;;                 (add-hook 'sass-mode-hook 'fci-mode)
+        ;;                 (add-hook 'sgml-mode-hook 'fci-mode)
+        ;;                 (add-hook 'sh-mode-hook 'fci-mode)
+        ;;                 (add-hook 'sql-mode-hook 'fci-mode)
+        ;;                 (add-hook 'xml-mode-hook 'fci-mode)
+        ;;                 (add-hook 'yaml-mode-hook 'fci-mode)))
 
         (:name coffee-mode
                :website "http://ozmm.org/posts/coffee_mode.html"
@@ -410,6 +416,7 @@
          ;; auto-complete-ruby ;buggy(
          ;; bongo
          ;; column-marker
+         ;; fill-column-indicator
          ;; gpicker
          ;; helm
          ;; ido-better-flex
@@ -429,7 +436,6 @@
          egg
          ethan-wspace
          evil
-         fill-column-indicator
          findr
          go-mode
          haml-mode
@@ -536,11 +542,11 @@
 ;;; Highlight current line
 ;;; <http://emacs-fu.blogspot.com/2008/12/highlighting-current-line.html>,
 ;;; <http://stackoverflow.com/questions/2718189/emacshighlight-the-current-line-by-underline-it#answer-2718543>.
-;; (defface hl-line '((t (:background nil))) ;#222
-;;   "Face to use for `hl-line-face`." :group 'hl-line)
+(defface hl-line '((t (:background nil))) ;#222
+  "Face to use for `hl-line-face`." :group 'hl-line)
 (setq hl-line-face 'hl-line)
 (global-hl-line-mode 1)
-;; (set-face-attribute hl-line-face nil :underline t) ;looks inconsistent with fill-column-indicator
+(set-face-attribute hl-line-face nil :underline t) ;looks inconsistent with fill-column-indicator
 ;;; <http://emacsblog.org/2007/04/09/highlight-the-current-line/#comment-284>.
 (defun local-hl-line-mode-off ()
   (interactive)

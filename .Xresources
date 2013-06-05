@@ -25,10 +25,10 @@ URxvt*geometry: 100x50
 URxvt*scrollBar: true
 urxvt.scrollstyle: plain
 urxvt.scrollBar_right: true
-! Black text on a white background.
-urxvt.scrollColor: gray80
-! ! White text on black background.
-! urxvt.scrollColor: gray40
+! ! Scroll for black text on a white background.
+! urxvt.scrollColor: gray80
+! Scroll for White text on black background.
+urxvt.scrollColor: gray40
 
 ! urxvt.
 ! URxvt*font: -misc-fixed-medium-r-normal--18-120-100-100-c-90-iso10646-1,\
@@ -37,13 +37,17 @@ urxvt.scrollColor: gray80
 !             -misc-fixed-medium-r-normal--14-130-75-75-c-70-iso10646-1,\
 !             -misc-fixed-medium-r-normal--13-120-75-75-c-80-iso10646-1
 
-! "White" text on black background.
+! ! "White" text on black background.
 ! URxvt*foreground: gray90
 ! URxvt*background: black
 
-! Black text on a white background.
+! ! Black text on a white background.
 ! URxvt*foreground: black
 ! URxvt*background: white
+
+! ! Railscasts theme.
+! URxvt*foreground: #E6E1DC
+! URxvt*background: #232323
 
 URxvt*saveLines: 10000
 
@@ -74,6 +78,34 @@ URxvt*matcher.button: 3
 URxvt*urlLauncher: google-chrome
 
 urxvt*cursorColor: #aa0000
+
+! ! Rxvt black (dark) theme <http://wiki.gentoo.org/wiki/Rxvt-unicode>.
+URxvt*background: #0f0f0f
+URxvt*foreground: #c8c8c8
+! Black.
+URxvt*color0:  #251f1f
+URxvt*color8:  #5e5e5e
+! Red.
+URxvt*color1:  #eb4509
+URxvt*color9:  #eb4509
+! Green.
+URxvt*color2:  #94e76b
+URxvt*color10: #95e76b
+! Yellow.
+URxvt*color3:  #ffac18
+URxvt*color11: #ffac18
+! Blue.
+URxvt*color4:  #46aede
+URxvt*color12: #46aede
+! Magenta.
+URxvt*color5:  #e32c57
+URxvt*color13: #e32c57
+! Cyan.
+URxvt*color6:  #d6dbac
+URxvt*color14: #d6dbac
+! White.
+URxvt*color7:  #efefef
+URxvt*color15: #efefef
 
 ! ! Rxvt zenburn theme <http://hjiang.net/archives/471>.
 ! URxvt*xftAntialias: true
