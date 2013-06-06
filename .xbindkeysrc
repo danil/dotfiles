@@ -88,14 +88,17 @@
 "wmctrl -o 0,0"
   Control + Mod1 + 1
 # "wmctrl -o 1680,0 && notify-send --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=1050 '2' 'Desktop'"
-"wmctrl -o 1680,0"
-  Control + Mod1 + 2
-# "wmctrl -o 0,1050 && notify-send --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=1050 '3' 'Desktop'"
+# "wmctrl -o 1680,0"
 "wmctrl -o 0,1050"
+  Control + Mod1 + 2
+"wmctrl -o 0,2100"
   Control + Mod1 + 3
-# "wmctrl -o 1680,1050 && notify-send --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=1050 '4' 'Desktop'"
-"wmctrl -o 1680,1050"
-  Control + Mod1 + 4
+# # "wmctrl -o 0,1050 && notify-send --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=1050 '3' 'Desktop'"
+# "wmctrl -o 0,1050"
+#   Control + Mod1 + 3
+# # "wmctrl -o 1680,1050 && notify-send --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=1050 '4' 'Desktop'"
+# "wmctrl -o 1680,1050"
+#   Control + Mod1 + 4
 
 # # TODO:
 # # <http://askubuntu.com/questions/20530/how-can-i-find-the-location-on-the-desktop-of-a-window-on-the-command-line>,
