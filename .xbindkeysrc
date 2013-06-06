@@ -84,17 +84,17 @@
 
 # Compiz viewports switch
 # <http://superuser.com/questions/264281/wmctrl-says-i-have-one-workspace-when-i-actually-have-four#answer-264502>.
-# "wmctrl -o 0,0 && notify-send --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=900 '1' 'Desktop'"
-"wmctrl -o 0,0"
+# "wmctrl -o 0,0 && notify-send --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=1050 '1' 'Desktop'"
+"wmctrl -o 0,0" 1680 1050
   Control + Mod1 + 1
-# "wmctrl -o 1440,0 && notify-send --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=900 '2' 'Desktop'"
-"wmctrl -o 1440,0"
+# "wmctrl -o 1680,0 && notify-send --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=1050 '2' 'Desktop'"
+"wmctrl -o 1680,0"
   Control + Mod1 + 2
-# "wmctrl -o 0,900 && notify-send --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=900 '3' 'Desktop'"
-"wmctrl -o 0,900"
+# "wmctrl -o 0,1050 && notify-send --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=1050 '3' 'Desktop'"
+"wmctrl -o 0,1050"
   Control + Mod1 + 3
-# "wmctrl -o 1440,900 && notify-send --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=900 '4' 'Desktop'"
-"wmctrl -o 1440,900"
+# "wmctrl -o 1680,1050 && notify-send --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=1050 '4' 'Desktop'"
+"wmctrl -o 1680,1050"
   Control + Mod1 + 4
 
 # # TODO:
@@ -104,11 +104,11 @@
 # # <http://ubuntuforums.org/showthread.php?t=1045417#post7399123>.
 # "wmctrl -r :ACTIVE: -e 0,50,50,-1,-1 && wmctrl -o 0,0"
 #   Control + Shift + Mod1 + 1
-# "wmctrl -r :ACTIVE: -e 0,1470,50,-1,-1 && wmctrl -o 1440,0"
+# "wmctrl -r :ACTIVE: -e 0,1470,50,-1,-1 && wmctrl -o 1680,0"
 #   Control + Shift + Mod1 + 2
-# "wmctrl -r :ACTIVE: -e 0,0,950,-1,-1 && wmctrl -o 0,900"
+# "wmctrl -r :ACTIVE: -e 0,0,950,-1,-1 && wmctrl -o 0,1050"
 #   Control + Shift + Mod1 + 3
-# "wmctrl -r :ACTIVE: -e 0,1470,950,-1,-1 && wmctrl -o 1440,900"
+# "wmctrl -r :ACTIVE: -e 0,1470,950,-1,-1 && wmctrl -o 1680,1050"
 #   Control + Shift + Mod1 + 4
 
 # Dim screen backlight.
