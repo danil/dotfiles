@@ -25,10 +25,10 @@ URxvt*geometry: 100x50
 URxvt*scrollBar: true
 urxvt.scrollstyle: plain
 urxvt.scrollBar_right: true
-! Black text on a white background.
-urxvt.scrollColor: gray80
-! ! White text on black background.
-! urxvt.scrollColor: gray40
+! ! Scroll for black text on a white background.
+! urxvt.scrollColor: gray80
+! Scroll for White text on black background.
+urxvt.scrollColor: gray40
 
 ! urxvt.
 ! URxvt*font: -misc-fixed-medium-r-normal--18-120-100-100-c-90-iso10646-1,\
@@ -37,13 +37,17 @@ urxvt.scrollColor: gray80
 !             -misc-fixed-medium-r-normal--14-130-75-75-c-70-iso10646-1,\
 !             -misc-fixed-medium-r-normal--13-120-75-75-c-80-iso10646-1
 
-! "White" text on black background.
+! ! "White" text on black background.
 ! URxvt*foreground: gray90
 ! URxvt*background: black
 
-! Black text on a white background.
+! ! Black text on a white background.
 ! URxvt*foreground: black
 ! URxvt*background: white
+
+! ! Railscasts theme.
+! URxvt*foreground: #E6E1DC
+! URxvt*background: #232323
 
 URxvt*saveLines: 10000
 
@@ -75,52 +79,56 @@ URxvt*urlLauncher: google-chrome
 
 urxvt*cursorColor: #aa0000
 
-! ! Rxvt zenburn theme <http://hjiang.net/archives/471>.
-! URxvt*xftAntialias: true
-! URxvt*background: #3f3f3f
-! URxvt*foreground: #dcdccc
-! URxvt*cursorColor: #aaaaaa
-! URxvt*colorUL: #6ca0a3
-! URxvt*underlineColor: #dfaf8f
-! URxvt*color0: #3f3f3f
-! URxvt*color1: #cc9393
-! URxvt*color2: #7f9f7f
-! URxvt*color3: #d0bf8f
-! URxvt*color4: #6ca0a3
-! URxvt*color5: #dc8cc3
-! URxvt*color6: #93e0e3
-! URxvt*color7: #dcdccc
-! URxvt*color8: #000000
-! URxvt*color9: #dca3a3
-! URxvt*color10: #bfebbf
-! URxvt*color11: #f0dfaf
-! URxvt*color12: #8cd0d3
-! URxvt*color13: #dc8cc3
-! URxvt*color14: #93e0e3
-! URxvt*color15: #ffffff
+! ! Rxvt black (dark) theme <http://wiki.gentoo.org/wiki/Rxvt-unicode>.
+URxvt*background: #0f0f0f
+URxvt*foreground: #c8c8c8
+! Black.
+URxvt*color0:  #251f1f
+URxvt*color8:  #5e5e5e
+! Red.
+URxvt*color1:  #eb4509
+URxvt*color9:  #eb4509
+! Green.
+URxvt*color2:  #94e76b
+URxvt*color10: #95e76b
+! Yellow.
+URxvt*color3:  #ffac18
+URxvt*color11: #ffac18
+! Blue.
+URxvt*color4:  #46aede
+URxvt*color12: #46aede
+! Magenta.
+URxvt*color5:  #e32c57
+URxvt*color13: #e32c57
+! Cyan.
+URxvt*color6:  #d6dbac
+URxvt*color14: #d6dbac
+! White.
+URxvt*color7:  #efefef
+URxvt*color15: #efefef
 
 ! ! Tango theme black <http://liuchuan.org/files/config/Xresources.html>.
 ! URxvt*color0:   #000000
 ! URxvt*color8:   #555753
-! ! red
+! ! Red.
 ! URxvt*color1:   #cc0000
 ! URxvt*color9:   #ef2929
-! ! green
+! ! Green.
 ! URxvt*color2:   #4e9a06
 ! URxvt*color10:  #8ae234
-! !! yellow
+! ! Yellow.
 ! URxvt*color3:   #c4a000
 ! URxvt*color11:  #fce94f
-! ! blue
+! ! Blue.
 ! URxvt*color4:   #3465a4
 ! URxvt*color12:  #729fcf
-! ! magenta
+! ! Magenta.
 ! URxvt*color5:   #75507b
 ! URxvt*color13:  #ad7fa8
-! ! cyan
+! ! Cyan,
 ! URxvt*color6:   #06989a
 ! URxvt*color14:  #34e2e2
-! ! white
+! ! White,
 ! URxvt*color7:   #d3d7cf
 ! URxvt*color15:  #eeeeec
 
