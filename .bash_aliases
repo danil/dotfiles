@@ -20,6 +20,7 @@ export HISTSIZE=10000
 export HISTCONTROL=ignoredups
 # See /usr/share/terminfo/*/
 # export TERM=rxvt-256color
+[ "$TERM" = "xterm" ] && TERM="xterm-256color"
 #export GIT_PAGER=""
 
 # Aliases.
