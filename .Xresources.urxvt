@@ -1,0 +1,50 @@
+! This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+! URxvt.
+URxvt*scrollBar: true
+URxvt.scrollstyle: plain
+URxvt.scrollBar_right: true
+! ! Scroll for black text on a white background.
+! URxvt.scrollColor: gray80
+! Scroll for White text on black background.
+URxvt.scrollColor: gray40
+
+! URxvtperl.
+! See the urxvtperl manpage for details.
+! You can find them in </usr/lib/urxvt/perl/>.
+! <http://wiki.archlinux.org/index.php/Rxvt-unicode#Automatic_Script_Management>.
+! selection,option-popup,selection-popup,readline,clipboard,matcher
+! URxvt.perl-lib: /home/danil/.urxvt/ext/
+! URxvt*perl-ext-common: tabbed
+URxvt*perl-ext-common: default,matcher,searchable-scrollback,clipboard,font-size
+
+URxvt.searchable-scrollback: CM-F
+
+! Changing the font size on the fly
+! <http://github.com/majutsushi/urxvt-font-size>.
+URxvt.keysym.C-Up:   perl:font-size:increase
+URxvt.keysym.C-Down: perl:font-size:decrease
+
+! Matcher.
+URxvt*matcher.button: 3
+! URxvt*colorUL: #86a2be
+! URxvt*urlLauncher: /home/danil/bin/epiphany.sh
+! URxvt*urlLauncher: chromium
+! URxvt*urlLauncher: google-chrome
+URxvt*urlLauncher: x-www-browser
+
+! ! Tabbed.
+! URxvt.tabbed.tabbar-fg: 0
+! URxvt.tabbed.tabbar-bg: 15
+! URxvt.tabbed.tab-fg:    0
+! URxvt.tabbed.tab-bg:    7
+! ! Tabbed only if more than one tab
+! ! <http://valentinvoigt.info/2011/04/urxvt-tabbed-nur-wenn-mehr-als-ein-tab>.
+! URxvt.tabbed.hide-when-empty: true
+! ! URxvt.tabbed.hide: true
+! ! URxvt.tabbed.newButton: false
+
+! :Bind C-0, C-+ and C-= to activate small, medium, and big font size resp.
+
+! URxvt.keysym.C-0: command:\033]710;-*-dina-medium-r-normal--13-*-*-*-*-*-*-*\007
+! URxvt.keysym.C-minus: command:\033]710;-*-dina-medium-r-normal--15-*-*-*-*-*-*-*\007
+! URxvt.keysym.C-equal: command:\033]710;-*-dina-medium-r-normal--16-*-*-*-*-*-*-*\007
