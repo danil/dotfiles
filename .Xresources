@@ -25,7 +25,7 @@ Xft.rgba:      rgb
 !             -misc-fixed-medium-r-normal--13-120-75-75-c-80-iso10646-1
 ! *font: xft:DejaVu Sans Mono:pixelsize=12:antialias=true:hinting=true:autohint=true
 ! <http://askubuntu.com/questions/22419/how-do-i-make-urxvt-render-xft-fonts#96779>.
-*font: xft:Ubuntu Mono:pixelsize=14:antialias=true:hinting=true:autohint=true:style=regular
+*font: xft:Ubuntu Mono:pixelsize=18:antialias=true:hinting=true:autohint=true:style=regular
 
 ! <https://wiki.archlinux.org/index.php/X11_Cursors>.
 Xcursor.theme: Vanilla-DMZ
