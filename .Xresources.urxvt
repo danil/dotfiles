@@ -21,8 +21,9 @@ URxvt.searchable-scrollback: CM-F
 
 ! Changing the font size on the fly
 ! <http://github.com/majutsushi/urxvt-font-size>.
-URxvt.keysym.C-Up:   perl:font-size:increase
-URxvt.keysym.C-Down: perl:font-size:decrease
+URxvt.font-size.step: 4
+URxvt.keysym.Mod4-equal: perl:font-size:increase
+URxvt.keysym.Mod4-minus: perl:font-size:decrease
 
 ! Matcher.
 URxvt*matcher.button: 3
