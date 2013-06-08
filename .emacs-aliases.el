@@ -93,12 +93,17 @@
                          '(window-numbering-face
                            ((t (:foreground "brightmagenta" :background nil :weight normal :underline nil)))))
                         (window-numbering-mode 1)))
-        ;; ;; <http://www.nongnu.org/color-theme>.
-        ;; (:name color-theme)
-        ;; (:name color-theme-zenburn
-        ;;        :features zenburn
+        ;; ;; Color theme.
+        ;; (:name railscasts-theme
+        ;;        :description "Railscasts color theme for GNU Emacs"
+        ;;        :website "https://github.com/itiut/railscasts-theme"
+        ;;        :type github
+        ;;        :pkgname "itiut/railscasts-theme"
+        ;;        :minimum-emacs-version 24
         ;;        :after (progn
-        ;;                 (color-theme-zenburn)))
+        ;;                 (load-theme 'railscasts t nil))
+        ;;        :post-init (add-to-list 'custom-theme-load-path
+        ;;                                default-directory))
         ;; (:name bongo
         ;;        :type git
         ;;        :url "git://github.com/dbrock/bongo.git"
@@ -125,6 +130,7 @@
                         (add-to-list 'ac-modes 'coffee-mode)
                         (add-to-list 'ac-modes 'conf-mode)
                         (add-to-list 'ac-modes 'conf-space-mode)
+                        (add-to-list 'ac-modes 'conf-xdefaults-mode)
                         (add-to-list 'ac-modes 'haml-mode)
                         (add-to-list 'ac-modes 'html-mode)
                         (add-to-list 'ac-modes 'lua-mode)
@@ -208,7 +214,8 @@
         ;;        :pkgname "danil/haml-mode")
         (:name ethan-wspace
                :after (progn
-                        ;; (set-face-background 'ethan-wspace-face "gray95")
+                        (setq ethan-wspace-face-customized t) ;<http://github.com/glasserc/ethan-wspace/blob/master/lisp/ethan-wspace.el#L714>
+                        (set-face-background 'ethan-wspace-face "#262626") ;#3f3f3f
                         (global-ethan-wspace-mode 1)))
         ;; (:name gpicker
         ;;        :type http
@@ -350,41 +357,40 @@
         ;;                 (add-hook 'sql-mode-hook (lambda () (interactive) (my-column-marker)))
         ;;                 (add-hook 'xml-mode-hook (lambda () (interactive) (my-column-marker)))
         ;;                 (add-hook 'yaml-mode-hook (lambda () (interactive) (my-column-marker)))))
-        (:name fill-column-indicator
-               :after (progn
-                        ;; (setq-default fci-rule-column 70)
-                        ;; ;; <http://www.emacswiki.org/emacs/FillColumnIndicator#toc6>.
-                        ;; (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
-                        ;; (global-fci-mode 1)
-                        ;; (add-hook 'mail-mode-hook 'fci-mode)
-                        ;; (add-hook 'whitespace-mode-hook 'fci-mode)
-                        (add-hook 'awk-mode-hook 'fci-mode)
-                        (add-hook 'change-log-mode-hook 'fci-mode)
-                        (add-hook 'coffee-mode-hook 'fci-mode)
-                        (add-hook 'conf-mode-hook 'fci-mode)
-                        (add-hook 'css-mode-hook 'fci-mode)
-                        (add-hook 'emacs-lisp-mode-hook 'fci-mode)
-                        (add-hook 'haml-mode-hook 'fci-mode)
-                        (add-hook 'haskell-mode-hook 'fci-mode)
-                        (add-hook 'html-mode-hook 'fci-mode)
-                        (add-hook 'java-mode-hook 'fci-mode)
-                        (add-hook 'js-mode-hook 'fci-mode)
-                        (add-hook 'lisp-mode-hook 'fci-mode)
-                        (add-hook 'lua-mode-hook 'fci-mode)
-                        (add-hook 'makefile-gmake-mode-hook 'fci-mode)
-                        (add-hook 'markdown-mode-hook 'fci-mode)
-                        (add-hook 'nxml-mode-hook 'fci-mode)
-                        (add-hook 'org-mode-hook 'fci-mode)
-                        (add-hook 'perl-mode-hook 'fci-mode)
-                        (add-hook 'php-mode-hook 'fci-mode)
-                        (add-hook 'ruby-mode-hook 'fci-mode)
-                        (add-hook 'sass-mode-hook 'fci-mode)
-                        (add-hook 'sgml-mode-hook 'fci-mode)
-                        (add-hook 'sh-mode-hook 'fci-mode)
-                        (add-hook 'sql-mode-hook 'fci-mode)
-                        (add-hook 'xml-mode-hook 'fci-mode)
-                        (add-hook 'yaml-mode-hook 'fci-mode)))
-
+        ;; (:name fill-column-indicator
+        ;;        :after (progn
+        ;;                 ;; (setq-default fci-rule-column 70)
+        ;;                 ;; ;; <http://emacswiki.org/FillColumnIndicator#toc6>.
+        ;;                 ;; (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
+        ;;                 ;; (global-fci-mode 1)
+        ;;                 ;; (add-hook 'mail-mode-hook 'fci-mode)
+        ;;                 ;; (add-hook 'whitespace-mode-hook 'fci-mode)
+        ;;                 (add-hook 'awk-mode-hook 'fci-mode)
+        ;;                 (add-hook 'change-log-mode-hook 'fci-mode)
+        ;;                 (add-hook 'coffee-mode-hook 'fci-mode)
+        ;;                 (add-hook 'conf-mode-hook 'fci-mode)
+        ;;                 (add-hook 'css-mode-hook 'fci-mode)
+        ;;                 (add-hook 'emacs-lisp-mode-hook 'fci-mode)
+        ;;                 (add-hook 'haml-mode-hook 'fci-mode)
+        ;;                 (add-hook 'haskell-mode-hook 'fci-mode)
+        ;;                 (add-hook 'html-mode-hook 'fci-mode)
+        ;;                 (add-hook 'java-mode-hook 'fci-mode)
+        ;;                 (add-hook 'js-mode-hook 'fci-mode)
+        ;;                 (add-hook 'lisp-mode-hook 'fci-mode)
+        ;;                 (add-hook 'lua-mode-hook 'fci-mode)
+        ;;                 (add-hook 'makefile-gmake-mode-hook 'fci-mode)
+        ;;                 (add-hook 'markdown-mode-hook 'fci-mode)
+        ;;                 (add-hook 'nxml-mode-hook 'fci-mode)
+        ;;                 (add-hook 'org-mode-hook 'fci-mode)
+        ;;                 (add-hook 'perl-mode-hook 'fci-mode)
+        ;;                 (add-hook 'php-mode-hook 'fci-mode)
+        ;;                 (add-hook 'ruby-mode-hook 'fci-mode)
+        ;;                 (add-hook 'sass-mode-hook 'fci-mode)
+        ;;                 (add-hook 'sgml-mode-hook 'fci-mode)
+        ;;                 (add-hook 'sh-mode-hook 'fci-mode)
+        ;;                 (add-hook 'sql-mode-hook 'fci-mode)
+        ;;                 (add-hook 'xml-mode-hook 'fci-mode)
+        ;;                 (add-hook 'yaml-mode-hook 'fci-mode)))
         (:name coffee-mode
                :website "http://ozmm.org/posts/coffee_mode.html"
                :description "Emacs Major Mode for CoffeeScript"
@@ -410,6 +416,7 @@
          ;; auto-complete-ruby ;buggy(
          ;; bongo
          ;; column-marker
+         ;; fill-column-indicator
          ;; gpicker
          ;; helm
          ;; ido-better-flex
@@ -429,7 +436,6 @@
          egg
          ethan-wspace
          evil
-         fill-column-indicator
          findr
          go-mode
          haml-mode
@@ -468,7 +474,9 @@
 ;; (set-face-background 'region nil)
 ;; (set-face-attribute 'region nil :inverse-video t)
 
+(set-background-color "#0f0f0f")
 (set-cursor-color "#aa0000")
+(set-face-background 'region "#002b36") ;2E3436 ;set selection background color
 
 ;;; Truncation of Lines (toggle-truncate-lines) <http://emacswiki.org/emacs/TruncateLines>.
 (set-default 'truncate-lines t)
@@ -540,7 +548,7 @@
 ;;   "Face to use for `hl-line-face`." :group 'hl-line)
 (setq hl-line-face 'hl-line)
 (global-hl-line-mode 1)
-;; (set-face-attribute hl-line-face nil :underline t) ;looks inconsistent with fill-column-indicator
+(set-face-attribute hl-line-face nil :underline t) ;looks inconsistent with fill-column-indicator
 ;;; <http://emacsblog.org/2007/04/09/highlight-the-current-line/#comment-284>.
 (defun local-hl-line-mode-off ()
   (interactive)
@@ -682,6 +690,8 @@
       (cons '("/etc/hosts\\'" . conf-mode) auto-mode-alist))
 (setq auto-mode-alist
       (cons '("\\.pkla\\'" . conf-mode) auto-mode-alist))
+(setq auto-mode-alist
+      (cons '("\\.cnf\\'" . conf-mode) auto-mode-alist))
 
 ;;; Lisp.
 (setq auto-mode-alist
@@ -726,6 +736,8 @@
 (add-hook 'ruby-mode-hook
           (lambda () (interactive)
             (remove-hook 'before-save-hook 'ruby-mode-set-encoding)))
+(setq auto-mode-alist
+      (cons '("\\.mrb\\'" . ruby-mode) auto-mode-alist))
 
 ;;; JavaScript mode.
 ;;; HTML Components (HTCs or .htc)
