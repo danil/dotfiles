@@ -325,72 +325,39 @@
         ;;                 (mmm-add-mode-ext-class 'yaml-mode "\\.yaml\\'" 'erb)
         ;;                 (dolist (mode (list 'js-mode 'js2-mode 'js3-mode))
         ;;                   (mmm-add-mode-ext-class mode "\\.js\\.erb\\'" 'erb))))
-        ;; (:name column-marker
-        ;;        :after (progn
-        ;;                 (defun my-column-marker ()
-        ;;                   (unless buffer-read-only (column-marker-1 79)))
-        ;;                 ;; (add-hook 'mail-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 ;; (add-hook 'whitespace-mode-hook (lambda () (interactive) (column-marker-1 80)))
-        ;;                 (add-hook 'awk-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'change-log-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'coffee-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'conf-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'css-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'emacs-lisp-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'haml-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'haskell-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'html-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'java-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'js-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'lisp-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'lua-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'makefile-gmake-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'markdown-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'nxml-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'org-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'perl-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'php-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'ruby-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'sass-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'sgml-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'sh-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'sql-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'xml-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'yaml-mode-hook (lambda () (interactive) (my-column-marker)))))
-        ;; (:name fill-column-indicator
-        ;;        :after (progn
-        ;;                 ;; (setq-default fci-rule-column 70)
-        ;;                 ;; ;; <http://emacswiki.org/FillColumnIndicator#toc6>.
-        ;;                 ;; (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
-        ;;                 ;; (global-fci-mode 1)
-        ;;                 ;; (add-hook 'mail-mode-hook 'fci-mode)
-        ;;                 ;; (add-hook 'whitespace-mode-hook 'fci-mode)
-        ;;                 (add-hook 'awk-mode-hook 'fci-mode)
-        ;;                 (add-hook 'change-log-mode-hook 'fci-mode)
-        ;;                 (add-hook 'coffee-mode-hook 'fci-mode)
-        ;;                 (add-hook 'conf-mode-hook 'fci-mode)
-        ;;                 (add-hook 'css-mode-hook 'fci-mode)
-        ;;                 (add-hook 'emacs-lisp-mode-hook 'fci-mode)
-        ;;                 (add-hook 'haml-mode-hook 'fci-mode)
-        ;;                 (add-hook 'haskell-mode-hook 'fci-mode)
-        ;;                 (add-hook 'html-mode-hook 'fci-mode)
-        ;;                 (add-hook 'java-mode-hook 'fci-mode)
-        ;;                 (add-hook 'js-mode-hook 'fci-mode)
-        ;;                 (add-hook 'lisp-mode-hook 'fci-mode)
-        ;;                 (add-hook 'lua-mode-hook 'fci-mode)
-        ;;                 (add-hook 'makefile-gmake-mode-hook 'fci-mode)
-        ;;                 (add-hook 'markdown-mode-hook 'fci-mode)
-        ;;                 (add-hook 'nxml-mode-hook 'fci-mode)
-        ;;                 (add-hook 'org-mode-hook 'fci-mode)
-        ;;                 (add-hook 'perl-mode-hook 'fci-mode)
-        ;;                 (add-hook 'php-mode-hook 'fci-mode)
-        ;;                 (add-hook 'ruby-mode-hook 'fci-mode)
-        ;;                 (add-hook 'sass-mode-hook 'fci-mode)
-        ;;                 (add-hook 'sgml-mode-hook 'fci-mode)
-        ;;                 (add-hook 'sh-mode-hook 'fci-mode)
-        ;;                 (add-hook 'sql-mode-hook 'fci-mode)
-        ;;                 (add-hook 'xml-mode-hook 'fci-mode)
-        ;;                 (add-hook 'yaml-mode-hook 'fci-mode)))
+        (:name column-marker
+               :after (progn
+                         (set-face-background 'column-marker-1 "#393b3f")
+                        (defun my-column-marker ()
+                          (unless buffer-read-only (column-marker-1 79)))
+                        ;; (add-hook 'mail-mode-hook (lambda () (interactive) (my-column-marker)))
+                        ;; (add-hook 'whitespace-mode-hook (lambda () (interactive) (column-marker-1 80)))
+                        (add-hook 'awk-mode-hook (lambda () (interactive) (my-column-marker)))
+                        (add-hook 'change-log-mode-hook (lambda () (interactive) (my-column-marker)))
+                        (add-hook 'coffee-mode-hook (lambda () (interactive) (my-column-marker)))
+                        (add-hook 'conf-mode-hook (lambda () (interactive) (my-column-marker)))
+                        (add-hook 'css-mode-hook (lambda () (interactive) (my-column-marker)))
+                        (add-hook 'emacs-lisp-mode-hook (lambda () (interactive) (my-column-marker)))
+                        (add-hook 'haml-mode-hook (lambda () (interactive) (my-column-marker)))
+                        (add-hook 'haskell-mode-hook (lambda () (interactive) (my-column-marker)))
+                        (add-hook 'html-mode-hook (lambda () (interactive) (my-column-marker)))
+                        (add-hook 'java-mode-hook (lambda () (interactive) (my-column-marker)))
+                        (add-hook 'js-mode-hook (lambda () (interactive) (my-column-marker)))
+                        (add-hook 'lisp-mode-hook (lambda () (interactive) (my-column-marker)))
+                        (add-hook 'lua-mode-hook (lambda () (interactive) (my-column-marker)))
+                        (add-hook 'makefile-gmake-mode-hook (lambda () (interactive) (my-column-marker)))
+                        (add-hook 'markdown-mode-hook (lambda () (interactive) (my-column-marker)))
+                        (add-hook 'nxml-mode-hook (lambda () (interactive) (my-column-marker)))
+                        (add-hook 'org-mode-hook (lambda () (interactive) (my-column-marker)))
+                        (add-hook 'perl-mode-hook (lambda () (interactive) (my-column-marker)))
+                        (add-hook 'php-mode-hook (lambda () (interactive) (my-column-marker)))
+                        (add-hook 'ruby-mode-hook (lambda () (interactive) (my-column-marker)))
+                        (add-hook 'sass-mode-hook (lambda () (interactive) (my-column-marker)))
+                        (add-hook 'sgml-mode-hook (lambda () (interactive) (my-column-marker)))
+                        (add-hook 'sh-mode-hook (lambda () (interactive) (my-column-marker)))
+                        (add-hook 'sql-mode-hook (lambda () (interactive) (my-column-marker)))
+                        (add-hook 'xml-mode-hook (lambda () (interactive) (my-column-marker)))
+                        (add-hook 'yaml-mode-hook (lambda () (interactive) (my-column-marker)))))
         (:name coffee-mode
                :website "http://ozmm.org/posts/coffee_mode.html"
                :description "Emacs Major Mode for CoffeeScript"
@@ -415,8 +382,6 @@
        '(
          ;; auto-complete-ruby ;buggy(
          ;; bongo
-         ;; column-marker
-         ;; fill-column-indicator
          ;; gpicker
          ;; helm
          ;; ido-better-flex
@@ -430,6 +395,7 @@
          auto-complete-emacs-lisp
          auto-complete-etags
          coffee-mode
+         column-marker
          crontab-mode
          csv-mode
          deft
@@ -476,7 +442,7 @@
 
 (set-background-color "#0f0f0f")
 (set-cursor-color "#aa0000")
-(set-face-background 'region "#002b36") ;2E3436 ;set selection background color
+(set-face-background 'region "#002b36") ;#2E3436 ;set selection background color
 
 ;;; Truncation of Lines (toggle-truncate-lines) <http://emacswiki.org/emacs/TruncateLines>.
 (set-default 'truncate-lines t)
