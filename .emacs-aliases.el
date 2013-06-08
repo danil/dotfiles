@@ -1,6 +1,7 @@
 ;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 ;(add-to-list 'load-path "~/share/emacs/site-lisp")
 
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -130,6 +131,7 @@
                         (add-to-list 'ac-modes 'coffee-mode)
                         (add-to-list 'ac-modes 'conf-mode)
                         (add-to-list 'ac-modes 'conf-space-mode)
+                        (add-to-list 'ac-modes 'conf-xdefaults-mode)
                         (add-to-list 'ac-modes 'haml-mode)
                         (add-to-list 'ac-modes 'html-mode)
                         (add-to-list 'ac-modes 'lua-mode)
@@ -213,7 +215,8 @@
         ;;        :pkgname "danil/haml-mode")
         (:name ethan-wspace
                :after (progn
-                        ;; (set-face-background 'ethan-wspace-face "gray95")
+                        (setq ethan-wspace-face-customized t) ;<http://github.com/glasserc/ethan-wspace/blob/master/lisp/ethan-wspace.el#L714>
+                        (set-face-background 'ethan-wspace-face "#262626") ;#3f3f3f
                         (global-ethan-wspace-mode 1)))
         ;; (:name gpicker
         ;;        :type http
@@ -358,7 +361,7 @@
         ;; (:name fill-column-indicator
         ;;        :after (progn
         ;;                 ;; (setq-default fci-rule-column 70)
-        ;;                 ;; ;; <http://www.emacswiki.org/emacs/FillColumnIndicator#toc6>.
+        ;;                 ;; ;; <http://emacswiki.org/FillColumnIndicator#toc6>.
         ;;                 ;; (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
         ;;                 ;; (global-fci-mode 1)
         ;;                 ;; (add-hook 'mail-mode-hook 'fci-mode)
@@ -472,7 +475,9 @@
 ;; (set-face-background 'region nil)
 ;; (set-face-attribute 'region nil :inverse-video t)
 
+(set-background-color "#0f0f0f")
 (set-cursor-color "#aa0000")
+(set-face-background 'region "#002b36") ;2E3436 ;set selection background color
 
 ;;; Truncation of Lines (toggle-truncate-lines) <http://emacswiki.org/emacs/TruncateLines>.
 (set-default 'truncate-lines t)
