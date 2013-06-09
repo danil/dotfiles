@@ -435,8 +435,9 @@
 (setq calendar-week-start-day 1)
 (global-font-lock-mode 1)
 
-;; BackspaceKey <http://emacswiki.org/BackspaceKey>.
-(global-set-key [(control h)] 'delete-backward-char)
+;;; BackspaceKey <http://emacswiki.org/BackspaceKey>.
+;; (global-set-key [(control h)] 'delete-backward-char)
+(keyboard-translate ?\C-h ?\C-?)
 
 ;;; Transient Mark mode <http://emacswiki.org/TransientMarkMode>.
 (transient-mark-mode 1)
