@@ -58,6 +58,7 @@ temperature_unit fahrenheit
 own_window yes
 # own_window_class Conky
 # own_window_type override #with nautilus desktop
+# own_window_type desktop #do not minimize on Show Desktop (Compiz) <https://wiki.archlinux.org/index.php/Conky#Do_not_minimize_on_Show_Desktop_.28Compiz.29>
 own_window_type normal #without nautilus desktop #do not minimize on Show Desktop (Compiz) <https://wiki.archlinux.org/index.php/Conky#Do_not_minimize_on_Show_Desktop_.28Compiz.29>
 own_window_argb_visual yes #for real transparency
 own_window_transparent yes
