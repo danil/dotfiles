@@ -2,6 +2,6 @@
 # <http://stackoverflow.com/questions/10246023/bundle-install-fails-with-ssl-certificate-verification-error#10250470>.
 :ssl_verify_mode: 0
 
-# <https://mail.google.com/mail/#label/list_ror2ru_old/12c893582f4a8fd0>
+# Danil <https://groups.google.com/forum/#!topic/ror2ru/DcVmCxpgG4w/discussion>.
 gem: --no-ri --no-rdoc
 :verbose: :loud

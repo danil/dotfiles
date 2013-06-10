@@ -1,7 +1,7 @@
 # -- THEME AUTO-WRITTEN DO NOT EDIT
-include "/usr/share/themes/Greybird/gtk-2.0/gtkrc"
+include "/usr/share/themes/NOX/gtk-2.0/gtkrc"
 
-gtk-theme-name  = "Greybird"
+gtk-theme-name  = "NOX"
 
 include "/home/danil/.gtkrc.mine"
 
