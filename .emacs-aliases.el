@@ -415,11 +415,11 @@
                :type github
                :description "Helpers for easily building flymake checkers"
                :pkgname "purcell/flymake-easy"
-               ;; :after (progn
-               ;;          (custom-set-faces
-               ;;           '(flymake-errline ((((class color)) (:underline "red"))))
-               ;;           '(flymake-warnline ((((class color)) (:underline "yellow"))))
-               ;;           ))
+               :after (progn
+                        (custom-set-faces
+                         '(flymake-errline ((((class color)) (:foreground "red"))))
+                         '(flymake-warnline ((((class color)) (:background "#393b3f"))))
+                         ))
                :website "http://github.com/purcell/flymake-easy")
         (:name flymake-ruby
                :type github
