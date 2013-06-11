@@ -375,6 +375,93 @@
                           (set (make-local-variable 'tab-width) 2))
                         (add-hook 'coffee-mode-hook
                                   '(lambda() (coffee-custom)))))
+        (:name idle-highlight-mode
+               :description "Idle Highlight Mode."
+               :website "https://github.com/nonsequitur/idle-highlight-mode"
+               :type github
+               :after (progn
+                        (add-hook 'awk-mode-hook (lambda () (idle-highlight-mode t)))
+                        (add-hook 'change-log-mode-hook (lambda () (idle-highlight-mode t)))
+                        (add-hook 'coffee-mode-hook (lambda () (idle-highlight-mode t)))
+                        (add-hook 'conf-mode-hook (lambda () (idle-highlight-mode t)))
+                        (add-hook 'conf-space-mode-hook (lambda () (idle-highlight-mode t)))
+                        (add-hook 'conf-xdefaults-mode-hook (lambda () (idle-highlight-mode t)))
+                        (add-hook 'css-mode-hook (lambda () (idle-highlight-mode t)))
+                        (add-hook 'emacs-lisp-mode-hook (lambda () (idle-highlight-mode t)))
+                        (add-hook 'haml-mode-hook (lambda () (idle-highlight-mode t)))
+                        (add-hook 'haskell-mode-hook (lambda () (idle-highlight-mode t)))
+                        (add-hook 'html-mode-hook (lambda () (idle-highlight-mode t)))
+                        (add-hook 'java-mode-hook (lambda () (idle-highlight-mode t)))
+                        (add-hook 'js-mode-hook (lambda () (idle-highlight-mode t)))
+                        (add-hook 'lisp-mode-hook (lambda () (idle-highlight-mode t)))
+                        (add-hook 'lua-mode-hook (lambda () (idle-highlight-mode t)))
+                        (add-hook 'makefile-gmake-mode-hook (lambda () (idle-highlight-mode t)))
+                        (add-hook 'markdown-mode-hook (lambda () (idle-highlight-mode t)))
+                        (add-hook 'nxml-mode-hook (lambda () (idle-highlight-mode t)))
+                        (add-hook 'org-mode-hook (lambda () (idle-highlight-mode t)))
+                        (add-hook 'perl-mode-hook (lambda () (idle-highlight-mode t)))
+                        (add-hook 'php-mode-hook (lambda () (idle-highlight-mode t)))
+                        (add-hook 'rhtml-mode-hook (lambda () (idle-highlight-mode t)))
+                        (add-hook 'ruby-mode-hook (lambda () (idle-highlight-mode t)))
+                        (add-hook 'sass-mode-hook (lambda () (idle-highlight-mode t)))
+                        (add-hook 'scss-mode-hook (lambda () (idle-highlight-mode t)))
+                        (add-hook 'sgml-mode-hook (lambda () (idle-highlight-mode t)))
+                        (add-hook 'sh-mode-hook (lambda () (idle-highlight-mode t)))
+                        (add-hook 'sql-mode-hook (lambda () (idle-highlight-mode t)))
+                        (add-hook 'xml-mode-hook (lambda () (idle-highlight-mode t)))
+                        (add-hook 'yaml-mode-hook (lambda () (idle-highlight-mode t))))
+               :pkgname "nonsequitur/idle-highlight-mode")
+        (:name flymake-easy
+               :type github
+               :description "Helpers for easily building flymake checkers"
+               :pkgname "purcell/flymake-easy"
+               :website "http://github.com/purcell/flymake-easy")
+        (:name flymake-ruby
+               :type github
+               :description "A flymake handler for ruby-mode files"
+               :pkgname "purcell/flymake-ruby"
+               :website "http://github.com/purcell/flymake-ruby"
+               :depends (flymake-easy)
+               :post-init (add-hook 'ruby-mode-hook 'flymake-ruby-load))
+        (:name flymake-shell
+               :type github
+               :pkgname "purcell/flymake-shell"
+               :description "A flymake syntax-checker for shell scripts"
+               :website "http://github.com/purcell/flymake-shell"
+               :depends (flymake-easy)
+               :post-init (progn
+                            (add-hook 'shell-script-mode-hook 'flymake-shell-load)
+                            (add-hook 'sh-mode-hook 'flymake-shell-load)))
+        (:name flymake-haml
+               :type github
+               :pkgname "purcell/flymake-haml"
+               :description "Flymake handler for haml files"
+               :website "http://github.com/purcell/flymake-haml"
+               :depends (flymake-easy)
+               :post-init (add-hook 'haml-mode-hook 'flymake-haml-load))
+        (:name flymake-coffee
+               :type github
+               :pkgname "purcell/flymake-coffee"
+               :description "Flymake support for coffee script"
+               :website "http://github.com/purcell/flymake-coffee"
+               :depends (flymake-easy)
+               :post-init (progn
+                            (add-to-list 'load-path "~/node_modules/.bin/coffee") ;make sure we can find the coffee executable
+                            (add-hook 'coffee-mode-hook 'flymake-coffee-load)))
+        (:name flymake-sass
+               :type github
+               :pkgname "purcell/flymake-sass"
+               :description "Flymake handler for sass files"
+               :website "http://github.com/purcell/flymake-sass"
+               :depends (flymake-easy)
+               :post-init (add-hook 'sass-mode-hook 'flymake-sass-load))
+        (:name flymake-css
+               :type github
+               :pkgname "purcell/flymake-css"
+               :description "Flymake support for css using csslint"
+               :website "http://github.com/purcell/flymake-css"
+               :depends (flymake-easy)
+               :post-init (add-hook 'css-mode-hook 'flymake-css-load))
         ))
 
 (setq my-packages
@@ -403,9 +490,15 @@
          ethan-wspace
          evil
          findr
+         flymake-coffee
+         flymake-haml
+         flymake-ruby
+         flymake-sass
+         flymake-shell
          go-mode
          haml-mode
          haskell-mode
+         idle-highlight-mode
          ido-yes-or-no
          inf-ruby
          less
@@ -419,6 +512,7 @@
          rainbow-mode
          rhtml-mode
          rinari
+         rvm
          sass-mode
          scss-mode
          simp
