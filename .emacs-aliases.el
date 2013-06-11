@@ -415,6 +415,11 @@
                :type github
                :description "Helpers for easily building flymake checkers"
                :pkgname "purcell/flymake-easy"
+               ;; :after (progn
+               ;;          (custom-set-faces
+               ;;           '(flymake-errline ((((class color)) (:underline "red"))))
+               ;;           '(flymake-warnline ((((class color)) (:underline "yellow"))))
+               ;;           ))
                :website "http://github.com/purcell/flymake-easy")
         (:name flymake-ruby
                :type github
@@ -424,7 +429,7 @@
                :depends (flymake-easy)
                :post-init (progn
                             (add-hook 'ruby-mode-hook 'flymake-ruby-load)
-                            (add-hook 'rspec-mode-hook (lambda () (flymake-mode -1))))
+                            (add-hook 'rspec-mode-hook (lambda () (flymake-mode -1)))))
         (:name flymake-shell
                :type github
                :pkgname "purcell/flymake-shell"
