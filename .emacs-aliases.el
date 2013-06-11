@@ -469,6 +469,16 @@
                :website "http://github.com/purcell/flymake-css"
                :depends (flymake-easy)
                :post-init (add-hook 'css-mode-hook 'flymake-css-load))
+        (:name git-gutter
+               :description "Emacs port of GitGutter Sublime Text 2 Plugin"
+               :website "https://github.com/syohex/emacs-git-gutter"
+               :type github
+               :pkgname "syohex/emacs-git-gutter")
+        (:name git-gutter-fringe
+               :type github
+               :pkgname "syohex/emacs-git-gutter-fringe"
+               :description "Fringe version of git-gutter.el"
+               :depends (git-gutter fringe-helper))
         ))
 
 (setq my-packages
@@ -483,6 +493,7 @@
          ;; jump
          ;; ruby-mode ;Matsumoto's work well with haml, but 1.9 style hash syntax highlighting is buggy
          ;; vline
+         git-gutter-fringe
          apache-mode
          auto-complete-chunk
          auto-complete-css
