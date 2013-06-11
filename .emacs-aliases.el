@@ -445,7 +445,9 @@
                :description "Flymake support for coffee script"
                :website "http://github.com/purcell/flymake-coffee"
                :depends (flymake-easy)
-               :post-init (add-hook 'coffee-mode-hook 'flymake-coffee-load))
+               :post-init (progn
+                            (add-to-list 'load-path "~/node_modules/.bin/coffee") ;make sure we can find the coffee executable
+                            (add-hook 'coffee-mode-hook 'flymake-coffee-load)))
         (:name flymake-sass
                :type github
                :pkgname "purcell/flymake-sass"
@@ -453,6 +455,13 @@
                :website "http://github.com/purcell/flymake-sass"
                :depends (flymake-easy)
                :post-init (add-hook 'sass-mode-hook 'flymake-sass-load))
+        (:name flymake-css
+               :type github
+               :pkgname "purcell/flymake-css"
+               :description "Flymake support for css using csslint"
+               :website "http://github.com/purcell/flymake-css"
+               :depends (flymake-easy)
+               :post-init (add-hook 'css-mode-hook 'flymake-css-load))
         ))
 
 (setq my-packages
