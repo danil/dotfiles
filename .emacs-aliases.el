@@ -422,7 +422,9 @@
                :pkgname "purcell/flymake-ruby"
                :website "http://github.com/purcell/flymake-ruby"
                :depends (flymake-easy)
-               :post-init (add-hook 'ruby-mode-hook 'flymake-ruby-load))
+               :post-init (progn
+                            (add-hook 'ruby-mode-hook 'flymake-ruby-load)
+                            (add-hook 'rspec-mode-hook (lambda () (flymake-mode -1))))
         (:name flymake-shell
                :type github
                :pkgname "purcell/flymake-shell"
@@ -512,6 +514,7 @@
          rainbow-mode
          rhtml-mode
          rinari
+         rspec-mode
          rvm
          sass-mode
          scss-mode
