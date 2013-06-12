@@ -1,0 +1,3 @@
+(:name scss-mode
+       :after (progn
+                (setq scss-compile-at-save nil)))
