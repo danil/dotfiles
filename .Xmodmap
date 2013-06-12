@@ -1,3 +1,4 @@
+! This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 ! Disable forward and back keys on ThinkPad T400
 ! <http://streamreader.org/askubuntu/questions/24412/disable-xf86back-and-xf86forward-(back/forward-on->,
 ! <http://rollingrelease.com/system/2010/09/xmodmap-hints-and-tips>
@@ -6,7 +7,6 @@ keycode 166 =
 ! XF86Forward.
 keycode 167 =
 
-! This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 ! Swap Caps_Lock and Control_L
 ! <http://emacswiki.org/EmacsCrashTips#toc1>,
 ! <http://emacswiki.org/MovingTheCtrlKey#toc3>.
@@ -16,6 +16,10 @@ keycode 167 =
 remove Lock = Caps_Lock
 add Control = Caps_Lock
 keysym Caps_Lock = Control_L
+
+! ! Make less be a Alt_L
+! ! <http://askubuntu.com/questions/24916/how-do-i-remap-certain-keys#24930>.
+! keycode 94 = Alt_L
 
 ! Make the Left Control key be a Caps Lock key.
 ! remove Control = Control_L
