@@ -549,8 +549,9 @@
 (global-font-lock-mode 1)
 
 ;;; BackspaceKey <http://emacswiki.org/BackspaceKey>.
+;; (global-set-key [(control h)] 'delete-backward-char)
 ;; (keyboard-translate ?\C-h ?\C-?)
-(global-set-key [(control h)] 'delete-backward-char)
+(define-key key-translation-map [?\C-h] [?\C-?])
 
 ;;; Transient Mark mode <http://emacswiki.org/TransientMarkMode>.
 (transient-mark-mode 1)
