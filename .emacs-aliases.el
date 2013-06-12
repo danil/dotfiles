@@ -98,16 +98,6 @@
         ;;                 (mmm-add-mode-ext-class 'yaml-mode "\\.yaml\\'" 'erb)
         ;;                 (dolist (mode (list 'js-mode 'js2-mode 'js3-mode))
         ;;                   (mmm-add-mode-ext-class mode "\\.js\\.erb\\'" 'erb))))
-        ;; (:name flymake-easy
-        ;;        :type github
-        ;;        :description "Helpers for easily building flymake checkers"
-        ;;        :pkgname "purcell/flymake-easy"
-        ;;        :after (progn
-        ;;                 (custom-set-faces
-        ;;                  '(flymake-errline ((((class color)) (:foreground "red"))))
-        ;;                  '(flymake-warnline ((((class color)) (:background "#393b3f"))))
-        ;;                  ))
-        ;;        :website "http://github.com/purcell/flymake-easy")
         ;; (:name flymake-ruby
         ;;        :type github
         ;;        :description "A flymake handler for ruby-mode files"
@@ -182,6 +172,7 @@
          ethan-wspace
          evil
          findr
+         flycheck
          git-gutter
          go-mode
          haml-mode
@@ -211,7 +202,6 @@
          yasnippet
          )
        (mapcar 'el-get-source-name el-get-sources)))
-
 (el-get 'sync my-packages)
 
 (setq system-time-locale "C")
