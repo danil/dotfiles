@@ -474,11 +474,6 @@
                :website "https://github.com/syohex/emacs-git-gutter"
                :type github
                :pkgname "syohex/emacs-git-gutter")
-        (:name git-gutter-fringe
-               :type github
-               :pkgname "syohex/emacs-git-gutter-fringe"
-               :description "Fringe version of git-gutter.el"
-               :depends (git-gutter fringe-helper))
         ))
 
 (setq my-packages
@@ -493,7 +488,6 @@
          ;; jump
          ;; ruby-mode ;Matsumoto's work well with haml, but 1.9 style hash syntax highlighting is buggy
          ;; vline
-         git-gutter-fringe
          apache-mode
          auto-complete-chunk
          auto-complete-css
@@ -513,6 +507,7 @@
          flymake-ruby
          flymake-sass
          flymake-shell
+         git-gutter
          go-mode
          haml-mode
          haskell-mode
