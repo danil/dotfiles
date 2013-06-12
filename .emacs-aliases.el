@@ -411,69 +411,69 @@
                         (add-hook 'xml-mode-hook (lambda () (idle-highlight-mode t)))
                         (add-hook 'yaml-mode-hook (lambda () (idle-highlight-mode t))))
                :pkgname "nonsequitur/idle-highlight-mode")
-        (:name flymake-easy
-               :type github
-               :description "Helpers for easily building flymake checkers"
-               :pkgname "purcell/flymake-easy"
-               :after (progn
-                        (custom-set-faces
-                         '(flymake-errline ((((class color)) (:foreground "red"))))
-                         '(flymake-warnline ((((class color)) (:background "#393b3f"))))
-                         ))
-               :website "http://github.com/purcell/flymake-easy")
-        (:name flymake-ruby
-               :type github
-               :description "A flymake handler for ruby-mode files"
-               :pkgname "purcell/flymake-ruby"
-               :website "http://github.com/purcell/flymake-ruby"
-               :depends (flymake-easy)
-               :post-init (progn
-                            (add-hook 'ruby-mode-hook 'flymake-ruby-load)
-                            (add-hook 'rspec-mode-hook (lambda () (flymake-mode -1)))))
-        (:name flymake-shell
-               :type github
-               :pkgname "purcell/flymake-shell"
-               :description "A flymake syntax-checker for shell scripts"
-               :website "http://github.com/purcell/flymake-shell"
-               :depends (flymake-easy)
-               :post-init (progn
-                            (add-hook 'shell-script-mode-hook 'flymake-shell-load)
-                            (add-hook 'sh-mode-hook 'flymake-shell-load)))
-        (:name flymake-haml
-               :type github
-               :pkgname "purcell/flymake-haml"
-               :description "Flymake handler for haml files"
-               :website "http://github.com/purcell/flymake-haml"
-               :depends (flymake-easy)
-               :post-init (add-hook 'haml-mode-hook 'flymake-haml-load))
-        (:name flymake-coffee
-               :type github
-               :pkgname "purcell/flymake-coffee"
-               :description "Flymake support for coffee script"
-               :website "http://github.com/purcell/flymake-coffee"
-               :depends (flymake-easy)
-               :post-init (progn
-                            (add-to-list 'load-path "~/node_modules/.bin/coffee") ;make sure we can find the coffee executable
-                            (add-hook 'coffee-mode-hook 'flymake-coffee-load)))
-        (:name flymake-sass
-               :type github
-               :pkgname "purcell/flymake-sass"
-               :description "Flymake handler for sass files"
-               :website "http://github.com/purcell/flymake-sass"
-               :depends (flymake-easy)
-               :post-init (add-hook 'sass-mode-hook 'flymake-sass-load))
-        (:name flymake-css
-               :type github
-               :pkgname "purcell/flymake-css"
-               :description "Flymake support for css using csslint"
-               :website "http://github.com/purcell/flymake-css"
-               :depends (flymake-easy)
-               :post-init (add-hook 'css-mode-hook 'flymake-css-load))
         (:name git-gutter
                :description "Emacs port of GitGutter Sublime Text 2 Plugin"
                :website "https://github.com/syohex/emacs-git-gutter"
                :type github
                :pkgname "syohex/emacs-git-gutter")
+        ;; (:name flymake-easy
+        ;;        :type github
+        ;;        :description "Helpers for easily building flymake checkers"
+        ;;        :pkgname "purcell/flymake-easy"
+        ;;        :after (progn
+        ;;                 (custom-set-faces
+        ;;                  '(flymake-errline ((((class color)) (:foreground "red"))))
+        ;;                  '(flymake-warnline ((((class color)) (:background "#393b3f"))))
+        ;;                  ))
+        ;;        :website "http://github.com/purcell/flymake-easy")
+        ;; (:name flymake-ruby
+        ;;        :type github
+        ;;        :description "A flymake handler for ruby-mode files"
+        ;;        :pkgname "purcell/flymake-ruby"
+        ;;        :website "http://github.com/purcell/flymake-ruby"
+        ;;        :depends (flymake-easy)
+        ;;        :post-init (progn
+        ;;                     (add-hook 'ruby-mode-hook 'flymake-ruby-load)
+        ;;                     (add-hook 'rspec-mode-hook (lambda () (flymake-mode -1)))))
+        ;; (:name flymake-shell
+        ;;        :type github
+        ;;        :pkgname "purcell/flymake-shell"
+        ;;        :description "A flymake syntax-checker for shell scripts"
+        ;;        :website "http://github.com/purcell/flymake-shell"
+        ;;        :depends (flymake-easy)
+        ;;        :post-init (progn
+        ;;                     (add-hook 'shell-script-mode-hook 'flymake-shell-load)
+        ;;                     (add-hook 'sh-mode-hook 'flymake-shell-load)))
+        ;; (:name flymake-haml
+        ;;        :type github
+        ;;        :pkgname "purcell/flymake-haml"
+        ;;        :description "Flymake handler for haml files"
+        ;;        :website "http://github.com/purcell/flymake-haml"
+        ;;        :depends (flymake-easy)
+        ;;        :post-init (add-hook 'haml-mode-hook 'flymake-haml-load))
+        ;; (:name flymake-coffee
+        ;;        :type github
+        ;;        :pkgname "purcell/flymake-coffee"
+        ;;        :description "Flymake support for coffee script"
+        ;;        :website "http://github.com/purcell/flymake-coffee"
+        ;;        :depends (flymake-easy)
+        ;;        :post-init (progn
+        ;;                     (add-to-list 'load-path "~/node_modules/.bin/coffee") ;make sure we can find the coffee executable
+        ;;                     (add-hook 'coffee-mode-hook 'flymake-coffee-load)))
+        ;; (:name flymake-sass
+        ;;        :type github
+        ;;        :pkgname "purcell/flymake-sass"
+        ;;        :description "Flymake handler for sass files"
+        ;;        :website "http://github.com/purcell/flymake-sass"
+        ;;        :depends (flymake-easy)
+        ;;        :post-init (add-hook 'sass-mode-hook 'flymake-sass-load))
+        ;; (:name flymake-css
+        ;;        :type github
+        ;;        :pkgname "purcell/flymake-css"
+        ;;        :description "Flymake support for css using csslint"
+        ;;        :website "http://github.com/purcell/flymake-css"
+        ;;        :depends (flymake-easy)
+        ;;        :post-init (add-hook 'css-mode-hook 'flymake-css-load))
         ))
 
 (setq my-packages
@@ -502,11 +502,6 @@
          ethan-wspace
          evil
          findr
-         flymake-coffee
-         flymake-haml
-         flymake-ruby
-         flymake-sass
-         flymake-shell
          git-gutter
          go-mode
          haml-mode
