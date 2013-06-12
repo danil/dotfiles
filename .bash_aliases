@@ -20,7 +20,7 @@ export HISTSIZE=10000
 export HISTCONTROL=ignoredups
 # See /usr/share/terminfo/*/
 # export TERM=rxvt-256color
-[ "$TERM" = "xterm" ] && TERM="xterm-256color"
+[ "$TERM" = "xterm" ] && TERM="xterm-256color" #<http://ricochen.wordpress.com/2011/07/23/mac-os-x-lion-terminal-color-remote-access-problem-fix>
 #export GIT_PAGER=""
 
 # Aliases.
