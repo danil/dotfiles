@@ -442,6 +442,8 @@
       (cons '("\\.cnf\\'" . conf-mode) auto-mode-alist))
 (setq auto-mode-alist
       (cons '("\\.theme\\'" . conf-mode) auto-mode-alist))
+(setq auto-mode-alist
+      (cons '("/.gtkrc-2.0\\'" . conf-mode) auto-mode-alist))
 
 ;;; Lisp.
 (setq auto-mode-alist
