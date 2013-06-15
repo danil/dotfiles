@@ -440,6 +440,8 @@
       (cons '("\\.pkla\\'" . conf-mode) auto-mode-alist))
 (setq auto-mode-alist
       (cons '("\\.cnf\\'" . conf-mode) auto-mode-alist))
+(setq auto-mode-alist
+      (cons '("\\.theme\\'" . conf-mode) auto-mode-alist))
 
 ;;; Lisp.
 (setq auto-mode-alist
