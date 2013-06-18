@@ -49,3 +49,6 @@ URxvt*urlLauncher: x-www-browser
 ! URxvt.keysym.C-0: command:\033]710;-*-dina-medium-r-normal--13-*-*-*-*-*-*-*\007
 ! URxvt.keysym.C-minus: command:\033]710;-*-dina-medium-r-normal--15-*-*-*-*-*-*-*\007
 ! URxvt.keysym.C-equal: command:\033]710;-*-dina-medium-r-normal--16-*-*-*-*-*-*-*\007
+
+! ! <http://unix.stackexchange.com/questions/50205/map-control-shift-tab-in-rxvt-unicode#50246>.
+! URxvt.iso14755_52: False
