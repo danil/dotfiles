@@ -244,11 +244,11 @@
 ;;; Desktop <http://emacswiki.org/DeskTop>.
 ;;(desktop-save-mode 1)
 ;; <http://stackoverflow.com/questions/4477376/some-emacs-desktop-save-questions-how-to-change-it-to-save-in-emacs-d-emacs#answer-4485083>.
-(defun my-desktop-save ()
+(defun save-my-desktop ()
   "Save the desktop"
   (interactive)
   (desktop-save-in-desktop-dir))
-(defun my-desktop-load ()
+(defun load-my-desktop ()
   "Load the desktop and enable autosaving"
   (interactive)
   (let ((desktop-load-locked-desktop "ask"))
@@ -440,6 +440,10 @@
       (cons '("\\.pkla\\'" . conf-mode) auto-mode-alist))
 (setq auto-mode-alist
       (cons '("\\.cnf\\'" . conf-mode) auto-mode-alist))
+(setq auto-mode-alist
+      (cons '("\\.theme\\'" . conf-mode) auto-mode-alist))
+(setq auto-mode-alist
+      (cons '("/.gtkrc-2.0\\'" . conf-mode) auto-mode-alist))
 
 ;;; Lisp.
 (setq auto-mode-alist

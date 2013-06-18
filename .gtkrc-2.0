@@ -1,7 +1,7 @@
 # -- THEME AUTO-WRITTEN DO NOT EDIT
-include "/usr/share/themes/NOX/gtk-2.0/gtkrc"
+include "/usr/share/themes/delorean-dark-theme-3.6/gtk-2.0/gtkrc"
 
-gtk-theme-name  = "NOX"
+gtk-theme-name  = "delorean-dark-theme-3.6"
 
 include "/home/danil/.gtkrc.mine"
 
