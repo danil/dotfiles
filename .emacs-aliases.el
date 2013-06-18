@@ -490,6 +490,8 @@
             (remove-hook 'before-save-hook 'ruby-mode-set-encoding)))
 (setq auto-mode-alist
       (cons '("\\.mrb\\'" . ruby-mode) auto-mode-alist))
+(setq auto-mode-alist
+      (cons '("\\.atex\\'" . ruby-mode) auto-mode-alist))
 
 ;;; JavaScript mode.
 ;;; HTML Components (HTCs or .htc)
