@@ -292,9 +292,9 @@
 ;;; Highlight current line
 ;;; <http://emacs-fu.blogspot.com/2008/12/highlighting-current-line.html>,
 ;;; <http://stackoverflow.com/questions/2718189/emacshighlight-the-current-line-by-underline-it#answer-2718543>.
-;; (defface hl-line '((t (:background nil))) ;#222
-;;   "Face to use for `hl-line-face`." :group 'hl-line)
-;; (setq hl-line-face 'hl-line)
+(defface hl-line '((t (:background nil))) ;#222
+  "Face to use for `hl-line-face`." :group 'hl-line)
+(setq hl-line-face 'hl-line)
 ;; (set-face-attribute hl-line-face nil :underline t) ;looks inconsistent with fill-column-indicator
 (set-face-background hl-line-face "gray13") ;<http://stackoverflow.com/questions/4495406/hl-line-mode-emacs-color-change#4504223>
 (global-hl-line-mode 1)
