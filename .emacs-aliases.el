@@ -210,7 +210,7 @@
 
 ;;; BackspaceKey <http://emacswiki.org/BackspaceKey>.
 ;; (global-set-key [(control h)] 'delete-backward-char)
-;; (keyboard-translate ?\C-h ?\C-?)
+(keyboard-translate ?\C-h ?\C-?)
 (define-key key-translation-map [?\C-h] [?\C-?])
 
 ;;; Transient Mark mode <http://emacswiki.org/TransientMarkMode>.
@@ -295,8 +295,9 @@
 (defface hl-line '((t (:background nil))) ;#222
   "Face to use for `hl-line-face`." :group 'hl-line)
 (setq hl-line-face 'hl-line)
+;; (set-face-attribute hl-line-face nil :underline t) ;looks inconsistent with fill-column-indicator
+(set-face-background hl-line-face "gray13") ;<http://stackoverflow.com/questions/4495406/hl-line-mode-emacs-color-change#4504223>
 (global-hl-line-mode 1)
-(set-face-attribute hl-line-face nil :underline t) ;looks inconsistent with fill-column-indicator
 ;;; <http://emacsblog.org/2007/04/09/highlight-the-current-line/#comment-284>.
 (defun local-hl-line-mode-off ()
   (interactive)
@@ -490,6 +491,8 @@
             (remove-hook 'before-save-hook 'ruby-mode-set-encoding)))
 (setq auto-mode-alist
       (cons '("\\.mrb\\'" . ruby-mode) auto-mode-alist))
+(setq auto-mode-alist
+      (cons '("\\.atex\\'" . ruby-mode) auto-mode-alist))
 
 ;;; JavaScript mode.
 ;;; HTML Components (HTCs or .htc)
@@ -507,6 +510,7 @@
 
 ;;; Tags
 ;;; <http://emacswiki.org/BuildTags#toc2>.
+;; (setq path-to-ctags "/usr/bin/ctags")
 (setq path-to-ctags "/usr/bin/exuberant-ctags")
 (defun create-tags (dir-name)
   "Create tags file."

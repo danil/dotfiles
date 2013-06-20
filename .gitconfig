@@ -11,5 +11,6 @@
 
 [color]
     diff = always
+    ui = true
 # [diff]
 # 	external = meld
