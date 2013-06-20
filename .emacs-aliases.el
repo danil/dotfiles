@@ -165,6 +165,7 @@
          auto-complete-etags
          coffee-mode
          column-marker
+         command-t
          crontab-mode
          csv-mode
          deft
