@@ -510,6 +510,7 @@
 
 ;;; Tags
 ;;; <http://emacswiki.org/BuildTags#toc2>.
+;; (setq path-to-ctags "/usr/bin/ctags")
 (setq path-to-ctags "/usr/bin/exuberant-ctags")
 (defun create-tags (dir-name)
   "Create tags file."
