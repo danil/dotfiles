@@ -197,6 +197,7 @@
          sass-mode
          scss-mode
          simp
+         slim-mode
          smex
          window-numbering
          yaml-mode
