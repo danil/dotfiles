@@ -4,4 +4,4 @@
        :type github
        :pkgname "danil/command-t"
        :features command-t
-       :depends (find-file-in-project))
+       :depends (find-file-in-project popwin))
