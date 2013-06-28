@@ -15,7 +15,7 @@ fi
 
 export EDITOR="nano" #export EDITOR="/usr/bin/emacsclient -t"
 export ALTERNATE_EDITOR="/usr/bin/emacs"
-export PAGER="/usr/bin/less -I"
+export PAGER="/usr/bin/less -IM"
 export HISTSIZE=10000
 export HISTCONTROL=ignoredups
 # See /usr/share/terminfo/*/
@@ -24,6 +24,7 @@ export HISTCONTROL=ignoredups
 #export GIT_PAGER=""
 
 # Aliases.
+alias less=$PAGER
 alias ec='/usr/bin/emacsclient -t'
 # alias ecx='/usr/bin/emacsclient --alternate-editor="" -c "$@"'
 # Silver searchers colors configurable <https://github.com/ggreer/the_silver_searcher/issues/90>.
