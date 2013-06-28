@@ -495,6 +495,32 @@
 (setq auto-mode-alist
       (cons '("\\.atex\\'" . ruby-mode) auto-mode-alist))
 
+;; Ruby indentation fix
+;; <https://github.com/mlapshin/dotfiles/blob/2531616385b9fd3bef4b6418a5f024fd2f010461/.emacs.d/custom/ruby.el#L49>.
+(eval-after-load 'ruby-mode
+  '(progn
+     (defadvice ruby-indent-line (after line-up-args activate)
+       (let (indent prev-indent arg-indent)
+         (save-excursion
+           (back-to-indentation)
+           (when (zerop (car (syntax-ppss)))
+             (setq indent (current-column))
+             (skip-chars-backward " \t\n")
+             (when (eq ?, (char-before))
+               (ruby-backward-sexp)
+               (back-to-indentation)
+               (setq prev-indent (current-column))
+               (skip-syntax-forward "w_.")
+               (skip-chars-forward " ")
+               (setq arg-indent (current-column)))))
+         (when prev-indent
+           (let ((offset (- (current-column) indent)))
+             (cond ((< indent prev-indent)
+                    (indent-line-to prev-indent))
+                   ((= indent prev-indent)
+                    (indent-line-to arg-indent)))
+             (when (> offset 0) (forward-char offset))))))))
+
 ;;; JavaScript mode.
 ;;; HTML Components (HTCs or .htc)
 ;;; <http://en.wikipedia.org/wiki/HTML_Components>.
