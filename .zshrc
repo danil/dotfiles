@@ -66,6 +66,13 @@ alias ec='/usr/bin/emacsclient -t'
 # Silver searchers colors configurable <https://github.com/ggreer/the_silver_searcher/issues/90>.
 alias ag='ag --smart-case --color-line-number "2;31"'
 
+# # Emacs <http://stackoverflow.com/questions/367442/getting-emacs-ansi-term-and-zsh-to-play-nicely#10050104>.
+# if [ -n "$INSIDE_EMACS" ]; then
+#   chpwd() { print -P "\033AnSiTc %d" }
+#   print -P "\033AnSiTu %n"
+#   print -P "\033AnSiTc %d"
+# fi
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" #load RVM (Ruby Version Manager) into a shell session *as a function* <http://rvm.rvm.io/rvm/install>
-[[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion #RVM bash completion <http://rvm.io/workflow/completion>
+# [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion #RVM bash completion <http://rvm.io/workflow/completion>
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

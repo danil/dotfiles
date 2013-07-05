@@ -198,6 +198,7 @@
          sass-mode
          scss-mode
          simp
+         slim-mode
          smex
          window-numbering
          yaml-mode
@@ -220,9 +221,9 @@
 ;; (set-face-background 'region nil)
 ;; (set-face-attribute 'region nil :inverse-video t)
 
-(set-background-color "#0f0f0f")
+;; (set-background-color "#0f0f0f")
 (set-cursor-color "#aa0000")
-(set-face-background 'region "#002b36") ;#2E3436 ;set selection background color
+;; (set-face-background 'region "#002b36") ;#2E3436 ;set selection background color
 
 ;;; Truncation of Lines (toggle-truncate-lines) <http://emacswiki.org/emacs/TruncateLines>.
 (set-default 'truncate-lines t)
@@ -290,6 +291,9 @@
 ;;; AnsiColor (Emacs terminal related stuff)
 ;;; <http://emacswiki.org/AnsiColor>.
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+
+;;; Terminal <http://stackoverflow.com/questions/1568987/getting-emacs-to-respect-my-default-shell-options#1570246>.
+(setenv "ESHELL" (expand-file-name "/bin/zsh"))
 
 ;;; Highlight current line
 ;;; <http://emacs-fu.blogspot.com/2008/12/highlighting-current-line.html>,
