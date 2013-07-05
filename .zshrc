@@ -48,3 +48,24 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=$PATH:/home/danil/.rvm/gems/ruby-1.9.3-p429-railsexpress/bin:/home/danil/.rvm/gems/ruby-1.9.3-p429-railsexpress@global/bin:/home/danil/.rvm/rubies/ruby-1.9.3-p429-railsexpress/bin:/home/danil/.rvm/bin:/home/danil/bin:/home/danil/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/danil/.rvm/bin:/home/danil/.rvm/bin
+
+export EDITOR="nano" #export EDITOR="/usr/bin/emacsclient -t"
+export ALTERNATE_EDITOR="/usr/bin/emacs"
+export PAGER="/usr/bin/less -IM"
+export HISTSIZE=10000
+export HISTCONTROL=ignoredups
+# See /usr/share/terminfo/*/
+# export TERM=rxvt-256color
+[ "$TERM" = "xterm" ] && TERM="xterm-256color" #<http://ricochen.wordpress.com/2011/07/23/mac-os-x-lion-terminal-color-remote-access-problem-fix>
+#export GIT_PAGER=""
+
+# Aliases.
+alias less=$PAGER
+alias ec='/usr/bin/emacsclient -t'
+# alias ecx='/usr/bin/emacsclient --alternate-editor="" -c "$@"'
+# Silver searchers colors configurable <https://github.com/ggreer/the_silver_searcher/issues/90>.
+alias ag='ag --smart-case --color-line-number "2;31"'
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" #load RVM (Ruby Version Manager) into a shell session *as a function* <http://rvm.rvm.io/rvm/install>
+[[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion #RVM bash completion <http://rvm.io/workflow/completion>
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
