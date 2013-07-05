@@ -158,6 +158,7 @@
          ;; ido-ubiquitous
          ;; jump
          ;; vline
+         ag
          apache-mode
          auto-complete-chunk
          auto-complete-css
