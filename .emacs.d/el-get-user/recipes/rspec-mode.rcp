@@ -2,6 +2,5 @@
        :description "Enhance ruby-mode for RSpec"
        :type github
        :pkgname "pezra/rspec-mode"
-       ;; :after (progn
-       ;;          (setq rspec-use-rake-when-possible t))
+       :after (progn (setq rspec-use-rake-when-possible nil))
        :features rspec-mode)
