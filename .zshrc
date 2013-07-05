@@ -49,7 +49,7 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export PATH=$PATH:/home/danil/node_modules/.bin:/home/danil/.luarocks/bin:/home/danil/.rvm/gems/ruby-2.0.0-p0/bin:/home/danil/.rvm/gems/ruby-2.0.0-p0@global/bin:/home/danil/.rvm/rubies/ruby-2.0.0-p0/bin:/home/danil/.rvm/bin:/home/danil/local/bin:/home/danil/bin:/usr/local/bin:/usr/bin:/bin:/opt/bin:/usr/x86_64-pc-linux-gnu/gcc-bin/4.6.4:/usr/games/bin:/home/danil/.rvm/bin:/home/danil/.rvm/bin
 
-export EDITOR="nano"
+export EDITOR="nano" #export EDITOR="/usr/bin/emacsclient -t"
 export ALTERNATE_EDITOR="/usr/bin/emacs"
 export PAGER="/usr/bin/less -IM"
 export HISTSIZE=10000
