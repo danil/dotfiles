@@ -158,6 +158,7 @@
          ;; ido-ubiquitous
          ;; jump
          ;; vline
+         ag
          apache-mode
          auto-complete-chunk
          auto-complete-css
@@ -290,6 +291,9 @@
 ;;; AnsiColor (Emacs terminal related stuff)
 ;;; <http://emacswiki.org/AnsiColor>.
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+
+;;; Terminal <http://stackoverflow.com/questions/1568987/getting-emacs-to-respect-my-default-shell-options#1570246>.
+(setenv "ESHELL" (expand-file-name "/bin/zsh"))
 
 ;;; Highlight current line
 ;;; <http://emacs-fu.blogspot.com/2008/12/highlighting-current-line.html>,
@@ -495,6 +499,32 @@
       (cons '("\\.mrb\\'" . ruby-mode) auto-mode-alist))
 (setq auto-mode-alist
       (cons '("\\.atex\\'" . ruby-mode) auto-mode-alist))
+
+;; Ruby indentation fix
+;; <https://github.com/mlapshin/dotfiles/blob/2531616385b9fd3bef4b6418a5f024fd2f010461/.emacs.d/custom/ruby.el#L49>.
+(eval-after-load 'ruby-mode
+  '(progn
+     (defadvice ruby-indent-line (after line-up-args activate)
+       (let (indent prev-indent arg-indent)
+         (save-excursion
+           (back-to-indentation)
+           (when (zerop (car (syntax-ppss)))
+             (setq indent (current-column))
+             (skip-chars-backward " \t\n")
+             (when (eq ?, (char-before))
+               (ruby-backward-sexp)
+               (back-to-indentation)
+               (setq prev-indent (current-column))
+               (skip-syntax-forward "w_.")
+               (skip-chars-forward " ")
+               (setq arg-indent (current-column)))))
+         (when prev-indent
+           (let ((offset (- (current-column) indent)))
+             (cond ((< indent prev-indent)
+                    (indent-line-to prev-indent))
+                   ((= indent prev-indent)
+                    (indent-line-to arg-indent)))
+             (when (> offset 0) (forward-char offset))))))))
 
 ;;; JavaScript mode.
 ;;; HTML Components (HTCs or .htc)
