@@ -39,33 +39,33 @@ Xcursor.theme: Vanilla-DMZ
 ! *foreground: black
 ! *background: white
 
-! Black (dark) theme <http://wiki.gentoo.org/wiki/Rxvt-unicode#Color_theme>.
-*background: #0f0f0f
-*foreground: #c8c8c8
-! Black.
-*color0:  #251f1f
-*color8:  #5e5e5e
-! Red.
-*color1:  #eb4509
-*color9:  #eb4509
-! Green.
-*color2:  #94e76b
-*color10: #95e76b
-! Yellow.
-*color3:  #ffac18
-*color11: #ffac18
-! Blue.
-*color4:  #46aede
-*color12: #46aede
-! Magenta.
-*color5:  #e32c57
-*color13: #e32c57
-! Cyan.
-*color6:  #d6dbac
-*color14: #d6dbac
-! White.
-*color7:  #efefef
-*color15: #efefef
+! ! Black (dark) theme <http://wiki.gentoo.org/wiki/Rxvt-unicode#Color_theme>.
+! *background: #0f0f0f
+! *foreground: #c8c8c8
+! ! Black.
+! *color0:  #251f1f
+! *color8:  #5e5e5e
+! ! Red.
+! *color1:  #eb4509
+! *color9:  #eb4509
+! ! Green.
+! *color2:  #94e76b
+! *color10: #95e76b
+! ! Yellow.
+! *color3:  #ffac18
+! *color11: #ffac18
+! ! Blue.
+! *color4:  #46aede
+! *color12: #46aede
+! ! Magenta.
+! *color5:  #e32c57
+! *color13: #e32c57
+! ! Cyan.
+! *color6:  #d6dbac
+! *color14: #d6dbac
+! ! White.
+! *color7:  #efefef
+! *color15: #efefef
 
 ! ! Tango theme black <http://wiki.gentoo.org/wiki/Rxvt-unicode#Color_theme>.
 ! *background: #0f0f0f

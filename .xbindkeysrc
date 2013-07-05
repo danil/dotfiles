@@ -69,7 +69,7 @@
 # "urxvtc"
 # # Fish shell <https://wiki.archlinux.org/index.php/Fish#Troubleshooting>.
 # "urxvt -e fish"
-"urxvt"
+"urxvt -rv"
   Control + Shift + Mod1 + c
 
 # Editor.
