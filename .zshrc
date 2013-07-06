@@ -47,6 +47,10 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+
+# Correction <http://unix.stackexchange.com/questions/13563/stop-zsh-from-trying-to-correct-command#13564>.
+setopt nocorrectall; setopt correct
+
 export PATH=$PATH:/home/danil/node_modules/.bin:/home/danil/.luarocks/bin:/home/danil/.rvm/gems/ruby-2.0.0-p0/bin:/home/danil/.rvm/gems/ruby-2.0.0-p0@global/bin:/home/danil/.rvm/rubies/ruby-2.0.0-p0/bin:/home/danil/.rvm/bin:/home/danil/local/bin:/home/danil/bin:/usr/local/bin:/usr/bin:/bin:/opt/bin:/usr/x86_64-pc-linux-gnu/gcc-bin/4.6.4:/usr/games/bin:/home/danil/.rvm/bin:/home/danil/.rvm/bin
 
 export EDITOR="nano" #export EDITOR="/usr/bin/emacsclient -t"
