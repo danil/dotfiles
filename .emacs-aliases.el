@@ -153,13 +153,13 @@
        '(
          ;; auto-complete-ruby ;buggy(
          ;; bongo
+         ;; color-theme-ir-black
+         ;; color-theme-vivid-chalk
          ;; helm
          ;; ido-better-flex
          ;; ido-ubiquitous
          ;; jump
          ;; vline
-         ;; color-theme-ir-black
-         ;; color-theme-vivid-chalk
          ag
          apache-mode
          auto-complete-chunk
@@ -181,6 +181,7 @@
          go-mode
          haml-mode
          haskell-mode
+         hl-line+
          idle-highlight-mode
          ido-yes-or-no
          inf-ruby
@@ -297,22 +298,6 @@
 ;;; Terminal <http://stackoverflow.com/questions/1568987/getting-emacs-to-respect-my-default-shell-options#1570246>.
 (setenv "ESHELL" (expand-file-name "/bin/zsh"))
 
-;;; Highlight current line
-;;; <http://emacs-fu.blogspot.com/2008/12/highlighting-current-line.html>,
-;;; <http://stackoverflow.com/questions/2718189/emacshighlight-the-current-line-by-underline-it#answer-2718543>.
-(defface hl-line '((t (:background nil))) ;#222
-  "Face to use for `hl-line-face`." :group 'hl-line)
-(setq hl-line-face 'hl-line)
-;; (set-face-attribute hl-line-face nil :underline t) ;looks inconsistent with fill-column-indicator
-(set-face-background hl-line-face "gray13") ;<http://stackoverflow.com/questions/4495406/hl-line-mode-emacs-color-change#4504223>
-(global-hl-line-mode 1)
-;;; <http://emacsblog.org/2007/04/09/highlight-the-current-line/#comment-284>.
-(defun local-hl-line-mode-off ()
-  (interactive)
-  (make-local-variable 'global-hl-line-mode)
-  (setq global-hl-line-mode nil))
-(add-hook 'ediff-mode-hook 'local-hl-line-mode-off)
-(add-hook 'term-mode-hook 'local-hl-line-mode-off)
 (global-rinari-mode)
 
 ;;; Column number mode
