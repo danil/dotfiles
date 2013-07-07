@@ -5,7 +5,7 @@
        :type elpa
        :repo ("marmalade" . "http://marmalade-repo.org/packages/")
        :after (progn
-                ;; change magit diff colors.
+                ;; change magit diff colors <http://readystate4.com/2011/02/22/emacs-changing-magits-default-diff-colors>.
                 (eval-after-load 'magit
                   '(progn
                      (set-face-foreground 'magit-diff-add "green3")
