@@ -47,6 +47,10 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+
+# Correction <http://unix.stackexchange.com/questions/13563/stop-zsh-from-trying-to-correct-command#13564>.
+setopt nocorrectall; setopt correct
+
 export PATH=$PATH:/home/danil/.rvm/gems/ruby-1.9.3-p429-railsexpress/bin:/home/danil/.rvm/gems/ruby-1.9.3-p429-railsexpress@global/bin:/home/danil/.rvm/rubies/ruby-1.9.3-p429-railsexpress/bin:/home/danil/.rvm/bin:/home/danil/bin:/home/danil/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/danil/.rvm/bin:/home/danil/.rvm/bin
 
 export EDITOR="nano" #export EDITOR="/usr/bin/emacsclient -t"
@@ -76,3 +80,5 @@ alias ag='ag --smart-case --color-line-number "2;31"'
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" #load RVM (Ruby Version Manager) into a shell session *as a function* <http://rvm.rvm.io/rvm/install>
 # [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion #RVM bash completion <http://rvm.io/workflow/completion>
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+bindkey "\el" down-case-word #Oh-my-zsh sets M-l so that it runs the "ls" command. Emacs disagrees, and so my fingers disagree as well <https://github.com/brandon-rhodes/homedir/blob/0cf986776be2335077cf7d86a1f5717084ffc41e/.zshrc#L82>

@@ -5,7 +5,7 @@
        :post-init (progn (autoload 'simp-project-define "simp" nil t))
        :after (progn
                 (global-set-key (kbd "C-c f") 'simp-project-find-file)
-                ;; (global-set-key (kbd "C-c s") 'simp-project-rgrep)
+                (global-set-key (kbd "C-c g") 'simp-project-rgrep)
                 (setq simp-completing-read-command (quote ido-completing-read))
                 (setq grep-find-ignored-directories ()) ;due to bug <https://github.com/re5et/simp/issues/2>
                 (let
