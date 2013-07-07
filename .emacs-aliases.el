@@ -158,6 +158,8 @@
          ;; ido-ubiquitous
          ;; jump
          ;; vline
+         ;; color-theme-ir-black
+         ;; color-theme-vivid-chalk
          ag
          apache-mode
          auto-complete-chunk
