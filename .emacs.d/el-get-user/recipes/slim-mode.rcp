@@ -1,0 +1,4 @@
+(:name slim-mode
+       :pkgname "Syntax highlighting for Slim"
+       :website "http://slim-lang.com"
+       :type elpa)

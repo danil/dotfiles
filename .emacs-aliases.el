@@ -153,6 +153,8 @@
        '(
          ;; auto-complete-ruby ;buggy(
          ;; bongo
+         ;; color-theme-ir-black
+         ;; color-theme-vivid-chalk
          ;; helm
          ;; ido-better-flex
          ;; ido-ubiquitous
@@ -179,6 +181,7 @@
          go-mode
          haml-mode
          haskell-mode
+         hl-line+
          idle-highlight-mode
          ido-yes-or-no
          inf-ruby
@@ -198,6 +201,7 @@
          sass-mode
          scss-mode
          simp
+         slim-mode
          smex
          window-numbering
          yaml-mode
@@ -220,9 +224,9 @@
 ;; (set-face-background 'region nil)
 ;; (set-face-attribute 'region nil :inverse-video t)
 
-(set-background-color "#0f0f0f")
+;; (set-background-color "#0f0f0f")
 (set-cursor-color "#aa0000")
-(set-face-background 'region "#002b36") ;#2E3436 ;set selection background color
+;; (set-face-background 'region "#002b36") ;#2E3436 ;set selection background color
 
 ;;; Truncation of Lines (toggle-truncate-lines) <http://emacswiki.org/emacs/TruncateLines>.
 (set-default 'truncate-lines t)
@@ -291,22 +295,9 @@
 ;;; <http://emacswiki.org/AnsiColor>.
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
-;;; Highlight current line
-;;; <http://emacs-fu.blogspot.com/2008/12/highlighting-current-line.html>,
-;;; <http://stackoverflow.com/questions/2718189/emacshighlight-the-current-line-by-underline-it#answer-2718543>.
-(defface hl-line '((t (:background nil))) ;#222
-  "Face to use for `hl-line-face`." :group 'hl-line)
-(setq hl-line-face 'hl-line)
-;; (set-face-attribute hl-line-face nil :underline t) ;looks inconsistent with fill-column-indicator
-(set-face-background hl-line-face "gray13") ;<http://stackoverflow.com/questions/4495406/hl-line-mode-emacs-color-change#4504223>
-(global-hl-line-mode 1)
-;;; <http://emacsblog.org/2007/04/09/highlight-the-current-line/#comment-284>.
-(defun local-hl-line-mode-off ()
-  (interactive)
-  (make-local-variable 'global-hl-line-mode)
-  (setq global-hl-line-mode nil))
-(add-hook 'ediff-mode-hook 'local-hl-line-mode-off)
-(add-hook 'term-mode-hook 'local-hl-line-mode-off)
+;;; Terminal <http://stackoverflow.com/questions/1568987/getting-emacs-to-respect-my-default-shell-options#1570246>.
+(setenv "ESHELL" (expand-file-name "/bin/zsh"))
+
 (global-rinari-mode)
 
 ;;; Column number mode
