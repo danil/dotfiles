@@ -222,11 +222,26 @@
 ;;; Transient Mark mode <http://emacswiki.org/TransientMarkMode>.
 (transient-mark-mode 1)
 ;; (set-face-background 'region nil)
+
+;;; Region.
 ;; (set-face-attribute 'region nil :inverse-video t)
+(set-face-background 'region "#002b36") ;#2E3436 ;set selection background color
 
 ;; (set-background-color "#0f0f0f")
 (set-cursor-color "#aa0000")
-;; (set-face-background 'region "#002b36") ;#2E3436 ;set selection background color
+
+(eval-after-load 'diff-mode
+  '(progn
+     (set-face-foreground 'diff-added   "brightgreen")
+     (set-face-foreground 'diff-removed "brightred")
+     (set-face-foreground 'diff-changed "brightblue")
+     (when (not window-system)
+       (set-face-background 'diff-added       "black3")
+       (set-face-background 'diff-removed     "black3")
+       (set-face-background 'diff-changed     "black3")
+       (set-face-background 'diff-file-header "black")
+       (set-face-background 'diff-hunk-header "black")
+       )))
 
 ;;; Truncation of Lines (toggle-truncate-lines) <http://emacswiki.org/emacs/TruncateLines>.
 (set-default 'truncate-lines t)
