@@ -50,7 +50,8 @@ Xcursor.theme: Vanilla-DMZ
 *color1:  #eb4509
 *color9:  #eb4509
 ! Green.
-*color2:  #94e76b
+! *color2:  #94e76b !unreadable color in the tig application
+*color2:  #4e9a06
 *color10: #95e76b
 ! Yellow.
 *color3:  #ffac18
