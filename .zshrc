@@ -81,4 +81,6 @@ alias ag='ag --smart-case --color-line-number "2;31"'
 # [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion #RVM bash completion <http://rvm.io/workflow/completion>
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
+# Key binding <http://superuser.com/questions/268338/how-i-handle-bindkey-in-zsh#271882>.
 bindkey "\el" down-case-word #Oh-my-zsh sets M-l so that it runs the "ls" command. Emacs disagrees, and so my fingers disagree as well <https://github.com/brandon-rhodes/homedir/blob/0cf986776be2335077cf7d86a1f5717084ffc41e/.zshrc#L82>
+bindkey "\Xl" delete-char #replace oh-my-zsh C-h "man" binding by backspace
