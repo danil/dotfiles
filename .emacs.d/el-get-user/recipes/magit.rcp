@@ -8,12 +8,12 @@
                 ;; change magit diff colors <http://readystate4.com/2011/02/22/emacs-changing-magits-default-diff-colors>.
                 (eval-after-load 'magit
                   '(progn
-                     (set-face-foreground 'magit-diff-add "green3")
-                     (set-face-foreground 'magit-diff-del "red3")
+                     (set-face-foreground 'magit-diff-add "brightgreen")
+                     (set-face-foreground 'magit-diff-del "brightred")
                      (when (not window-system)
-                       (set-face-background 'magit-item-highlight "black")
-                       (set-face-background 'magit-diff-add "black")
-                       (set-face-background 'magit-diff-del "black")
+                       (set-face-background 'magit-item-highlight "black3")
+                       (set-face-background 'magit-diff-add "black3")
+                       (set-face-background 'magit-diff-del "black3")
                        ;; (set-face-background 'magit-item-mark "black")
                        )))
                 )
