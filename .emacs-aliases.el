@@ -453,6 +453,8 @@
       (cons '("\\.theme\\'" . conf-mode) auto-mode-alist))
 (setq auto-mode-alist
       (cons '("/.gtkrc-2.0\\'" . conf-mode) auto-mode-alist))
+(setq auto-mode-alist
+      (cons '("/\\.tigrc\\'" . conf-mode) auto-mode-alist))
 
 ;;; Lisp.
 (setq auto-mode-alist
