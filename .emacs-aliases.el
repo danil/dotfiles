@@ -155,6 +155,7 @@
          ;; bongo
          ;; color-theme-ir-black
          ;; color-theme-vivid-chalk
+         ;; command-t
          ;; helm
          ;; ido-better-flex
          ;; ido-ubiquitous
@@ -168,7 +169,6 @@
          auto-complete-etags
          coffee-mode
          column-marker
-         command-t
          crontab-mode
          csv-mode
          deft
@@ -176,6 +176,7 @@
          ethan-wspace
          evil
          findr
+         fiplr
          flycheck
          git-gutter
          go-mode
