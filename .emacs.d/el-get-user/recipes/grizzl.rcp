@@ -1,0 +1,4 @@
+(:name grizzl
+       :type elpa
+       :repo ("melpa" . "http://melpa.milkbox.net/packages/")
+       )
