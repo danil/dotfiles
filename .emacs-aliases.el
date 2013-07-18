@@ -217,8 +217,11 @@
 
 ;;; BackspaceKey <http://emacswiki.org/BackspaceKey>.
 ;; (global-set-key [(control h)] 'delete-backward-char)
-(keyboard-translate ?\C-h ?\C-?)
-(define-key key-translation-map [?\C-h] [?\C-?])
+(defun my-backspace-fix ()
+  (keyboard-translate ?\C-h ?\C-?)
+  (define-key key-translation-map [?\C-h] [?\C-?]))
+(my-backspace-fix)
+(eval-after-load 'term-mode '(progn (my-backspace-fix)))
 
 ;;; Transient Mark mode <http://emacswiki.org/TransientMarkMode>.
 (transient-mark-mode 1)
