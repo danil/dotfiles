@@ -1,5 +1,3 @@
 (:name cl-lib
-       ;; :builtin "24.3" ;error: Wrong type argument: number-or-marker-p, "24.3"
-       :type elpa
-       :description "Properly prefixed CL functions and macros"
-       :url "http://elpa.gnu.org/packages/cl-lib.html")
+       :type github
+       :pkgname "danil/cl-lib-fu")
