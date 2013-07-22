@@ -2,6 +2,7 @@
        :description "An Emacs Fuzzy Find in Project Package"
        :website "https://github.com/d11wtq/fiplr"
        :type elpa
+       :depends (grizzl package)
        :repo ("melpa" . "http://melpa.milkbox.net/packages/")
        :after (progn
                 (global-set-key (kbd "C-c f") 'fiplr-find-file)

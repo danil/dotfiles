@@ -192,6 +192,7 @@
          markdown-mode
          nginx-mode
          org-mode
+         package
          paredit
          php-mode
          rainbow-mode
