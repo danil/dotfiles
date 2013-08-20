@@ -714,3 +714,15 @@
 ;;           "#"))
 ;;     (expand-file-name
 ;;      (concat "#%" (buffer-name) "#"))))
+
+;; Prompts and run command with file (associated to current buffer)
+;; path as argument
+;; <http://superuser.com/questions/360427/emacs-equivalent-of-this-vim-command-to-run-my-tests#360512>.
+(defun shell-command-on-buffer-file ()
+  "prompts for a command and executes that command on to the associated
+ file of current buffer. if no buffer is associated gives an error"
+  (interactive)
+  (or (buffer-file-name) (error "no file is associated file to this buffer"))
+  (let* ((my-cmd (read-shell-command "Command to run: "))
+         (cmd-to-run (concat my-cmd " " (buffer-file-name))))
+    (shell-command cmd-to-run)))
