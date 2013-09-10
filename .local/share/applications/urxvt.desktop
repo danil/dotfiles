@@ -2,7 +2,7 @@
 Name=Urxvt
 Comment=Terminal emulator
 TryExec=urxvt
-Exec=urxvt
+Exec=urxvt -rv
 Icon=terminal
 Type=Application
 Categories=GNOME;GTK;Utility;TerminalEmulator;System;

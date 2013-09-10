@@ -1,7 +1,4 @@
 (:name column-marker
-       :description "Highlight certain character columns"
-       :type emacswiki
-       :features column-marker
        :after (progn
                 (set-face-background 'column-marker-1 "#393b3f")
                 (defun my-column-marker ()
