@@ -7,10 +7,12 @@ keycode 166 =
 ! XF86Forward.
 keycode 167 =
 
-! Swap Caps_Lock and Control_L
-! <http://emacswiki.org/EmacsCrashTips#toc1>,
-! <http://emacswiki.org/MovingTheCtrlKey#toc3>.
-! <http://columbia.edu/~djv/docs/keyremap.html>.
+clear Lock
+
+! ! Swap Caps_Lock and Control_L
+! ! <http://emacswiki.org/EmacsCrashTips#toc1>,
+! ! <http://emacswiki.org/MovingTheCtrlKey#toc3>.
+! ! <http://columbia.edu/~djv/docs/keyremap.html>.
 ! Make the Caps Lock key be a Control key
 ! <http://askubuntu.com/questions/23491/how-to-change-capslock-key-to-produce-a>.
 remove Lock = Caps_Lock
@@ -39,3 +41,15 @@ keysym Caps_Lock = Control_L
 ! keysym j = j J Down
 ! keysym k = k K Up
 ! keysym l = l L Right
+
+! Remap Super to control key
+! <http://askubuntu.com/questions/137172/how-to-remap-superleft-key-to-control-key#137456>.
+remove mod4 = Super_L
+add control = Super_L
+remove mod4 = Super_R
+add control = Super_R
+
+! Remap Menu to control key
+! <>.
+keycode 135 = Menu
+keysym Menu = Control_R

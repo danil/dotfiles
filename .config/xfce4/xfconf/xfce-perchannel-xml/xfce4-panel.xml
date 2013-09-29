@@ -45,12 +45,14 @@
         <value type="string" value="pidgin"/>
         <value type="string" value="wally"/>
         <value type="string" value="blueman-applet"/>
+        <value type="string" value="tomahawk"/>
         <value type="string" value="bluetooth"/>
         <value type="string" value="xfce4-power-manager"/>
         <value type="string" value="volti"/>
         <value type="string" value="dropbox"/>
         <value type="string" value="scp-dbus-service.py"/>
         <value type="string" value="thunderbird"/>
+        <value type="string" value="google chrome"/>
       </property>
       <property name="show-frame" type="bool" value="false"/>
       <property name="names-hidden" type="array">
