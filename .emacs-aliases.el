@@ -316,8 +316,8 @@
 ;;; <http://emacswiki.org/AnsiColor>.
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
-;;; Terminal <http://stackoverflow.com/questions/1568987/getting-emacs-to-respect-my-default-shell-options#1570246>.
-(setenv "ESHELL" (expand-file-name "/bin/zsh"))
+;; ;;; Terminal <http://stackoverflow.com/questions/1568987/getting-emacs-to-respect-my-default-shell-options#1570246>.
+;; (setenv "ESHELL" (expand-file-name "/bin/zsh"))
 
 (global-rinari-mode)
 
