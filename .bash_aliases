@@ -34,6 +34,18 @@ alias ag='ag --smart-case --color-line-number "2;31"'
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion #RVM bash completion <http://rvm.io/workflow/completion>
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
+# Git prompt <http://github.com/magicmonty/bash-git-prompt>.
+# export PS1='[last: ${timer_show}s][\w]$ '
+export GIT_PROMPT_START="\[\033[0;33m\]\[\033[01;32m\]\u@\h \[\033[01;34m\]\w\[\033[0m\]"
+
+# export GIT_PROMPT_START="${Yellow}${PathShort}${ResetColor}"
+if [ -f ~/.bash-git-prompt/gitprompt.sh ]; then
+    . ~/.bash-git-prompt/gitprompt.sh
+fi
+
+# Last command time prompt
+# <http://stackoverflow.com/questions/1862510/how-can-the-last-commands-wall-time-be-put-in-the-bash-prompt#1862762>.
+
 # Lua.
 if [ -d ~/.luarocks/bin ] ; then
     PATH=~/.luarocks/bin:"${PATH}"
