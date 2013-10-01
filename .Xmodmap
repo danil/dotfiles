@@ -7,8 +7,6 @@ keycode 166 =
 ! XF86Forward.
 keycode 167 =
 
-clear Lock
-
 ! ! Swap Caps_Lock and Control_L
 ! ! <http://emacswiki.org/EmacsCrashTips#toc1>,
 ! ! <http://emacswiki.org/MovingTheCtrlKey#toc3>.
@@ -50,6 +48,6 @@ remove mod4 = Super_R
 add control = Super_R
 
 ! Remap Menu to control key
-! <>.
-keycode 135 = Menu
-keysym Menu = Control_R
+! <http://ubuntuforums.org/showthread.php?t=820187&p=5126113#post5126113>.
+keycode 135 = Control_R
+add Control = Control_R
