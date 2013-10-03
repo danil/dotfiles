@@ -13,6 +13,10 @@ fi
 # <http://en.gentoo-wiki.com/wiki/TAB-Completion#Installation>.
 [[ -f /etc/profile.d/bash-completion.sh ]] && source /etc/profile.d/bash-completion.sh
 
+# Disable the XOFF (Ctrl-s) keystroke
+# <http://superuser.com/questions/124845/can-you-disable-the-ctrl-s-xoff-keystroke-in-putty#155875>.
+stty -ixon
+
 export EDITOR="nano" #export EDITOR="/usr/bin/emacsclient -t"
 export ALTERNATE_EDITOR="/usr/bin/emacs"
 export PAGER="/usr/bin/less -IM"
