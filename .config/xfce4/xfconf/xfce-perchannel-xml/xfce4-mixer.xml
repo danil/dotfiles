@@ -12,6 +12,8 @@
     </property>
     <property name="HDAIntelAlsamixer" type="array">
       <value type="string" value="Master"/>
+      <value type="string" value="Headphone"/>
+      <value type="string" value="Speaker"/>
       <value type="string" value="PCM"/>
     </property>
   </property>

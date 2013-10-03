@@ -13,23 +13,94 @@ fi
 # <http://en.gentoo-wiki.com/wiki/TAB-Completion#Installation>.
 [[ -f /etc/profile.d/bash-completion.sh ]] && source /etc/profile.d/bash-completion.sh
 
+# Disable the XOFF (Ctrl-s) keystroke
+# <http://superuser.com/questions/124845/can-you-disable-the-ctrl-s-xoff-keystroke-in-putty#155875>.
+stty -ixon
+
 export EDITOR="vim" #export EDITOR="nano" #export EDITOR="/usr/bin/emacsclient -t"
 # export ALTERNATE_EDITOR="/usr/bin/emacs"
-export PAGER="/usr/bin/less -I"
+export PAGER="/usr/bin/less -IM"
 export HISTSIZE=10000
 export HISTCONTROL=ignoredups
 # See /usr/share/terminfo/*/
 # export TERM=rxvt-256color
+[ "$TERM" = "xterm" ] && TERM="xterm-256color" #<http://ricochen.wordpress.com/2011/07/23/mac-os-x-lion-terminal-color-remote-access-problem-fix>
 #export GIT_PAGER=""
 
 # Aliases.
+alias less=$PAGER
 alias ec='/usr/bin/emacsclient -t'
+# alias ecx='/usr/bin/emacsclient --alternate-editor="" -c "$@"'
 # Silver searchers colors configurable <https://github.com/ggreer/the_silver_searcher/issues/90>.
 alias ag='ag --smart-case --color-line-number "2;31"'
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" #load RVM (Ruby Version Manager) into a shell session *as a function* <http://rvm.rvm.io/rvm/install>
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion #RVM bash completion <http://rvm.io/workflow/completion>
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# Prompt.
+function registr_prompt_command() {
+    if [ -z "$PROMPT_COMMAND" ]; then
+        PROMPT_COMMAND="$1"
+    else
+        PROMPT_COMMAND=${PROMPT_COMMAND%% }; #remove trailing spaces
+        PROMPT_COMMAND=${PROMPT_COMMAND%\;}; #remove trailing semi-colon
+        PROMPT_COMMAND="$PROMPT_COMMAND;$1"
+    fi
+}
+ps1_plain="\[\033[0m\]"
+ps1_blue="\[\033[01;34m\]"
+ps1_green="\[\033[01;32m\]"
+ps1_red="\[\033[1;31m\]"
+ps1_user="${ps1_green}\u@\h${ps1_plain}"
+ps1_dir=" ${ps1_blue}\w${ps1_plain}"
+function prompt_load {
+    # Prompt load average <http://www.gilesorr.com/bashprompt/prompts/load.html>.
+    local load_string="$(uptime | sed -e "s/.*load average: \(.*\...\), \(.*\...\), \(.*\...\).*/\1/" -e "s/ //g")"
+    local tmp=$(echo ${load_string}*100 | bc)
+    let load100=${tmp%.*}
+    if [ ${load100} -ge 100 ]; then
+        echo -n " ${ps1_red}load:${load_string}${ps1_plain}"
+    fi
+}
+function prompt_jobs {
+    if [ `jobs | wc -l` -ne 0 ]; then
+        echo -n " ${ps1_red}jobs:\j${ps1_plain}"
+    fi
+}
+# Prompt last command time
+# <http://stackoverflow.com/questions/1862510/how-can-the-last-commands-wall-time-be-put-in-the-bash-prompt#1862762>.
+function prompt_timer_start {
+  PROMPT_TIMER=${PROMPT_TIMER:-$SECONDS}
+}
+function prompt_timer_assign {
+  prompt_timer_seconds=$(($SECONDS - $PROMPT_TIMER))
+}
+function prompt_timer_stop {
+  unset PROMPT_TIMER
+}
+trap 'prompt_timer_start' DEBUG
+function prompt_timer {
+    if [ ${prompt_timer_seconds} -ge 4 ]; then
+        echo -n " ${ps1_plain}time:${prompt_timer_seconds}s"
+    fi
+}
+registr_prompt_command "prompt_timer_assign"
+function prompt_callback {
+    echo -n "${ps1_user}$(prompt_timer)$(prompt_jobs)$(prompt_load)${ps1_dir}"
+}
+# Git prompt <http://github.com/magicmonty/bash-git-prompt>.
+if [ -f ~/.bash-git-prompt/gitprompt.sh ]; then
+    # GIT_PROMPT_START="${ps1_plain}"
+    GIT_PROMPT_START="${ps1_plain}"
+    GIT_PROMPT_END="\n${ps1_blue}\$${ps1_plain} "
+    . ~/.bash-git-prompt/gitprompt.sh
+fi
+registr_prompt_command "prompt_timer_stop"
+
+# History between sessions <http://briancarper.net/blog/248>.
+# registr_prompt_command "history -an" #write and read
+registr_prompt_command "history -a" #write only
 
 # Lua.
 if [ -d ~/.luarocks/bin ] ; then

@@ -1,2 +1,3 @@
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 set show-rev-graph = yes # Show revision graph?
+color cursor default 235

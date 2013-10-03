@@ -1,0 +1,4 @@
+(:name rainbow-mode
+       :after (progn
+                (add-hook 'css-mode-hook (lambda () (rainbow-mode 1)))
+                (add-hook 'sass-mode-hook (lambda () (rainbow-mode 1)))))

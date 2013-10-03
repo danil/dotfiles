@@ -2,10 +2,11 @@
 ;(add-to-list 'load-path "~/share/emacs/site-lisp")
 
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(scroll-bar-width 7) ;scroll bar <http://emacswiki.org/emacs/ScrollBar>.
  '(safe-local-variable-values (quote ((encoding . utf-8)))))
 
 ;;; el-get <http://github.com/dimitri/el-get>.
@@ -15,200 +16,40 @@
   (url-retrieve
    "https://raw.github.com/dimitri/el-get/master/el-get-install.el"
    (lambda (s)
-     (goto-char (point-max))
-     (eval-print-last-sexp))))
+     (let ;(el-get-master-branch)
+       (goto-char (point-max))
+       (eval-print-last-sexp)))))
 (setq el-get-sources
       '(
-        (:name deft
-               :after (progn
-                        (setq
-                         deft-extension "org"
-                         deft-text-mode 'org-mode)))
         ;; (:name visws
         ;;        :type emacswik)
-        (:name markdown-mode
-               :after (progn
-                        (add-hook 'markdown-mode-hook
-                                  (lambda ()
-                                    ;; <http://stackoverflow.com/questions/7598433/how-to-remove-a-key-from-a-minor-mode-keymap-in-emacs#7598754>.
-                                    (define-key markdown-mode-map "\M-n" nil) ;unset markdown-next-wiki-link
-                                    (define-key markdown-mode-map "\M-p" nil) ;unset markdown-previous-wiki-link
-                                    (setq truncate-lines t)))
-                        (setq auto-mode-alist
-                              (cons '("/README\\'" . markdown-mode)
-                                    auto-mode-alist))
-                        ;; Mutt temporary files.
-                        (setq auto-mode-alist
-                              (cons
-                               '("/mutt[-a-zA-Z0-9]+\\'" . markdown-mode)
-                               auto-mode-alist))
-                        ))
-        (:name less
-               :after (progn
-                        ;; (add-hook 'find-file-hook
-                        ;;           '(lambda ()
-                        ;;              (when buffer-read-only
-                        ;;                (less-minor-mode-on))))
-                        ;; (global-set-key (kbd "ESC ESC ESC")
-                        ;;                 'less-minor-mode)
-                        (global-set-key (kbd "M-v") 'less-scroll-down-line)
-                        (global-set-key (kbd "C-v") 'less-scroll-up-line)
-                        (global-set-key (kbd "M-p") 'scroll-down-command)
-                        (global-set-key (kbd "M-n") 'scroll-up-command))
-               :type git
-               :url "git://github.com/emacsmirror/less.git")
         ;; (:name sass-mode
         ;;        ;; :post-init (lambda ()
         ;;        ;;              (add-to-list 'auto-mode-alist '("\\.scss$" . sass-mode)))
         ;;        :features sass-mode)
-        (:name scss-mode
-               :after (progn
-                        (setq scss-compile-at-save nil)))
-        (:name lua-mode
-               :after (progn
-                        (add-to-list 'auto-mode-alist
-                                     '("\\.ws\\'" . lua-mode))
-                        ;; <http://lua-users.org/wiki/LuaStyleGuide>,
-                        ;; <http://stackoverflow.com/questions/4643206/how-to-configure-indentation-in-emacs-lua-mode#answer-4652043>
-                        (setq lua-indent-level 2)))
         ;; (:name lua2-mode
         ;;        :type http
         ;;        ;; :after (lambda ()
         ;;        ;;          (autoload 'lua2-mode "lua2-mode"
         ;;        ;;            "semantic highlighting extension for lua-mode" t))
         ;;        :url "http://www.enyo.de/fw/software/lua-emacs/lua2-mode.el")
-        (:name findr
-               :type git
-               :url "git://github.com/emacsmirror/findr.git")
-        (:name window-numbering
-               :type git
-               :url "git://github.com/nschum/window-numbering.el.git"
-               :after (progn
-                        (autoload 'window-numbering-mode
-                          "window-numbering"
-                          "Numbered window shortcuts" t)
-                        ;; <http://blog.binchen.org/?p=512#sec-1>.
-                        (custom-set-faces
-                         '(window-numbering-face
-                           ((t (:foreground "brightmagenta" :background nil :weight normal :underline nil)))))
-                        (window-numbering-mode 1)))
-        ;; ;; <http://www.nongnu.org/color-theme>.
-        ;; (:name color-theme)
-        ;; (:name color-theme-zenburn
-        ;;        :features zenburn
+        ;; ;; Color theme.
+        ;; (:name railscasts-theme
+        ;;        :description "Railscasts color theme for GNU Emacs"
+        ;;        :website "https://github.com/itiut/railscasts-theme"
+        ;;        :type github
+        ;;        :pkgname "itiut/railscasts-theme"
+        ;;        :minimum-emacs-version 24
         ;;        :after (progn
-        ;;                 (color-theme-zenburn)))
-        ;; (:name bongo
-        ;;        :type git
-        ;;        :url "git://github.com/dbrock/bongo.git"
-        ;;        :after (progn
-        ;;                 (autoload 'bongo "bongo"
-        ;;                   "Buffer-oriented media player for GNU Emacs." t)))
+        ;;                 (load-theme 'railscasts t nil))
+        ;;        :post-init (add-to-list 'custom-theme-load-path
+        ;;                                default-directory))
         ;; (:name highlight-indentation
         ;;        :type git
         ;;        :url "https://github.com/antonj/Highlight-Indentation-for-Emacs"
         ;;        :after (progn
         ;;                 (autoload 'highlight-indentation "highlight-indentation"
         ;;                   "Visual guidelines for indentation (using spaces)" t)))
-        (:name rainbow-mode
-               :after (progn
-                        (add-hook 'css-mode-hook (lambda () (rainbow-mode 1)))
-                        (add-hook 'sass-mode-hook (lambda () (rainbow-mode 1)))))
-        (:name auto-complete
-               :pkgname "auto-complete/auto-complete"
-               :type github
-               :depends (popup fuzzy)
-               :after (progn
-                        (require 'auto-complete-config)
-                        (ac-config-default)
-                        (add-to-list 'ac-modes 'coffee-mode)
-                        (add-to-list 'ac-modes 'conf-mode)
-                        (add-to-list 'ac-modes 'conf-space-mode)
-                        (add-to-list 'ac-modes 'haml-mode)
-                        (add-to-list 'ac-modes 'html-mode)
-                        (add-to-list 'ac-modes 'lua-mode)
-                        (add-to-list 'ac-modes 'markdown-mode)
-                        (add-to-list 'ac-modes 'org-mode)
-                        (add-to-list 'ac-modes 'rhtml-mode)
-                        (add-to-list 'ac-modes 'sass-mode)
-                        (add-to-list 'ac-modes 'scss-mode)
-                        (add-to-list 'ac-modes 'sgml-mode)
-                        (add-to-list 'ac-modes 'yaml-mode)
-                        (setq ac-disable-faces (quote (font-lock-doc-face)))))
-        (:name fuzzy ;;required by auto-complete
-               :website "https://github.com/auto-complete/fuzzy-el"
-               :description "Fuzzy matching utilities for GNU Emacs"
-               :type github
-               :pkgname "auto-complete/fuzzy-el")
-        (:name popup ;;required by auto-complete
-               :website "https://github.com/auto-complete/popup-el"
-               :description "Visual Popup Interface Library for Emacs"
-               :type github
-               :pkgname "auto-complete/popup-el")
-        (:name org-mode
-               :after (progn
-                        ;; (add-to-list 'auto-mode-alist
-                        ;;              '("\\.org\\'" . org-mode))
-                        ;; Disable previously defined unstrict pattern.
-                        (add-to-list 'auto-mode-alist '("\\.org\\'" . nil))
-                        ;; Add more strict pattern.
-                        (add-to-list 'auto-mode-alist
-                                     '("/org/.*\\.org\\'" . org-mode))
-                        (global-set-key "\C-cl" 'org-store-link)
-                        (global-set-key "\C-ca" 'org-agenda)
-                        (global-set-key "\C-cb" 'org-iswitchb)
-                        (setq org-log-done t)
-
-                        ;; Interactively do things (Org-mode with Ido)
-                        (add-hook 'org-mode-hook (lambda () (ido-mode t)))
-                        (setq org-completion-use-ido t)
-
-                        ;; Org Clock.
-                        ;; Sometimes I change tasks I'm clocking
-                        ;; quickly - this removes clocked tasks with
-                        ;; 0:00 duration.
-                        ;;(setq org-clock-out-remove-zero-time-clocks t)
-
-                        ;; Org Agenda.
-                        ;; (setq org-agenda-files
-                        ;;   (list "~/org/home.org"
-                        ;;         "~/org/JohnStudio.org"))
-                        (setq org-agenda-files
-                              (append (file-expand-wildcards
-                                       "~/org/*.org")
-                                      (file-expand-wildcards
-                                       "~/org/home/*.org")
-                                      (file-expand-wildcards
-                                       "~/org/work/*.org")))
-                        ;; (load-library "find-lisp")
-                        ;; (setq org-agenda-files
-                        ;;       (find-lisp-find-files "~/org" "\.org\\'"))
-                        (setq org-agenda-custom-commands
-                              '(("h" "Home" todo "TODO"
-                                 ((org-agenda-files
-                                   (file-expand-wildcards
-                                    "~/org/home/*.org"))))
-                                ("w" "Work" todo "TODO"
-                                 ((org-agenda-files
-                                   (file-expand-wildcards
-                                    "~/org/work/*.org"))))))))
-        (:name nginx-mode
-               :after (progn
-                        (setq auto-mode-alist
-                              (cons '("/etc/nginx/.*\\.conf\\'" . nginx-mode) auto-mode-alist))))
-        ;; (:name ruby-mode
-        ;;        :website "https://github.com/danil/ruby-mode"
-        ;;        :description "Major mode for editing Ruby files"
-        ;;        :type github
-        ;;        :pkgname "danil/ruby-mode")
-        ;; (:name haml-mode
-        ;;        :description "Major mode for editing Haml files"
-        ;;        :type github
-        ;;        :pkgname "danil/haml-mode")
-        (:name ethan-wspace
-               :after (progn
-                        ;; (set-face-background 'ethan-wspace-face "gray95")
-                        (global-ethan-wspace-mode 1)))
         ;; (:name gpicker
         ;;        :type http
         ;;        :post-init (progn
@@ -217,62 +58,8 @@
         ;;                 (global-set-key (kbd "C-c f c") 'gpicker-visit-project)
         ;;                 (global-set-key (kbd "C-c f f") 'gpicker-find-file))
         ;;        :url "https://raw.github.com/alk/gpicker/v2.2/gpicker.el")
-        (:name simp
-               ;; :type elpa
-               :type github
-               :pkgname "re5et/simp"
-               :post-init (progn (autoload 'simp-project-define "simp" nil t))
-               :after (progn
-                        (global-set-key (kbd "C-c f") 'simp-project-find-file)
-                        (global-set-key (kbd "C-c s") 'simp-project-rgrep)
-                        (setq simp-completing-read-command (quote ido-completing-read))
-                        (setq grep-find-ignored-directories ()) ;due to bug <https://github.com/re5et/simp/issues/2>
-                        (let
-                            ((rails-ignore '(.git
-                                            coverage
-                                            public/assets
-                                            public/images
-                                            public/system
-                                            tmp
-                                            vendor/cache))))
-                        (simp-project-define
-                         '(:has (.git)
-                                :ignore (.git)))
-                        (simp-project-define
-                         '(:type rails
-                                 :has (config.ru app/models app/views app/controllers)
-                                 :ignore ,rails-ignore))
-                        (simp-project-define
-                         '(:type emacs
-                                 :has (init.el)
-                                 :ignore (.git)))))
-        ;; (:name ido-ubiquitous
-        ;;        :type elpa
-        ;;        :description "Use ido (nearly) everywhere"
-        ;;        :post-init (progn
-        ;;                     (autoload 'ido-ubiquitous-mode "ido-ubiquitous" nil t))
-        ;;        :after (progn
-        ;;                 (ido-mode t)
-        ;;                 (ido-ubiquitous-mode 1)))
-        (:name ido-yes-or-no
-               :type elpa
-               :description "Use Ido to answer yes-or-no questions"
-               :post-init (progn
-                            (autoload 'ido-yes-or-no-mode "ido-yes-or-no" nil t))
-               :after (progn (ido-yes-or-no-mode 1)))
         ;; (:name ido-better-flex
         ;;        :type elpa)
-        (:name smex
-               :description "M-x interface with Ido-style fuzzy matching."
-               :type github
-               :pkgname "nonsequitur/smex"
-               :features smex
-               :post-init (smex-initialize)
-               :after (progn
-                        (global-set-key (kbd "M-x") 'smex)
-                        (global-set-key (kbd "M-X") 'smex-major-mode-commands)
-                        ;; This is your old M-x.
-                        (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)))
         ;; (:name jump
         ;;        :type git
         ;;        :url "git://github.com/emacsmirror/jump.git")
@@ -286,11 +73,6 @@
         ;; (:name emacs-rails ;<http://stackoverflow.com/questions/2713096/emacs-rails-vs-rinari>
         ;;        :type git
         ;;        :url "git://github.com/remvee/emacs-rails.git")
-        (:name rhtml-mode
-               :post-init (progn
-                            (autoload 'rhtml-mode "rhtml-mode" nil t)
-                            (add-to-list 'auto-mode-alist '("\\.erb$" . rhtml-mode))
-                            (add-to-list 'auto-mode-alist '("\\.html\.erb$" . rhtml-mode))))
         ;; (:name mmm-mode
         ;;        :description "Allow Multiple Major Modes in a buffer"
         ;;        :type github
@@ -317,111 +99,77 @@
         ;;                 (mmm-add-mode-ext-class 'yaml-mode "\\.yaml\\'" 'erb)
         ;;                 (dolist (mode (list 'js-mode 'js2-mode 'js3-mode))
         ;;                   (mmm-add-mode-ext-class mode "\\.js\\.erb\\'" 'erb))))
-        ;; (:name column-marker
-        ;;        :after (progn
-        ;;                 (defun my-column-marker ()
-        ;;                   (unless buffer-read-only (column-marker-1 79)))
-        ;;                 ;; (add-hook 'mail-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 ;; (add-hook 'whitespace-mode-hook (lambda () (interactive) (column-marker-1 80)))
-        ;;                 (add-hook 'awk-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'change-log-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'coffee-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'conf-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'css-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'emacs-lisp-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'haml-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'haskell-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'html-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'java-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'js-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'lisp-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'lua-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'makefile-gmake-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'markdown-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'nxml-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'org-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'perl-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'php-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'ruby-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'sass-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'sgml-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'sh-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'sql-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'xml-mode-hook (lambda () (interactive) (my-column-marker)))
-        ;;                 (add-hook 'yaml-mode-hook (lambda () (interactive) (my-column-marker)))))
-        ;; (:name fill-column-indicator
-        ;;        :after (progn
-        ;;                 ;; (setq-default fci-rule-column 70)
-        ;;                 ;; ;; <http://www.emacswiki.org/emacs/FillColumnIndicator#toc6>.
-        ;;                 ;; (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
-        ;;                 ;; (global-fci-mode 1)
-        ;;                 ;; (add-hook 'mail-mode-hook 'fci-mode)
-        ;;                 ;; (add-hook 'whitespace-mode-hook 'fci-mode)
-        ;;                 (add-hook 'awk-mode-hook 'fci-mode)
-        ;;                 (add-hook 'change-log-mode-hook 'fci-mode)
-        ;;                 (add-hook 'coffee-mode-hook 'fci-mode)
-        ;;                 (add-hook 'conf-mode-hook 'fci-mode)
-        ;;                 (add-hook 'css-mode-hook 'fci-mode)
-        ;;                 (add-hook 'emacs-lisp-mode-hook 'fci-mode)
-        ;;                 (add-hook 'haml-mode-hook 'fci-mode)
-        ;;                 (add-hook 'haskell-mode-hook 'fci-mode)
-        ;;                 (add-hook 'html-mode-hook 'fci-mode)
-        ;;                 (add-hook 'java-mode-hook 'fci-mode)
-        ;;                 (add-hook 'js-mode-hook 'fci-mode)
-        ;;                 (add-hook 'lisp-mode-hook 'fci-mode)
-        ;;                 (add-hook 'lua-mode-hook 'fci-mode)
-        ;;                 (add-hook 'makefile-gmake-mode-hook 'fci-mode)
-        ;;                 (add-hook 'markdown-mode-hook 'fci-mode)
-        ;;                 (add-hook 'nxml-mode-hook 'fci-mode)
-        ;;                 (add-hook 'org-mode-hook 'fci-mode)
-        ;;                 (add-hook 'perl-mode-hook 'fci-mode)
-        ;;                 (add-hook 'php-mode-hook 'fci-mode)
-        ;;                 (add-hook 'ruby-mode-hook 'fci-mode)
-        ;;                 (add-hook 'sass-mode-hook 'fci-mode)
-        ;;                 (add-hook 'sgml-mode-hook 'fci-mode)
-        ;;                 (add-hook 'sh-mode-hook 'fci-mode)
-        ;;                 (add-hook 'sql-mode-hook 'fci-mode)
-        ;;                 (add-hook 'xml-mode-hook 'fci-mode)
-        ;;                 (add-hook 'yaml-mode-hook 'fci-mode)))
-        (:name coffee-mode
-               :website "http://ozmm.org/posts/coffee_mode.html"
-               :description "Emacs Major Mode for CoffeeScript"
-               :type github
-               :pkgname "defunkt/coffee-mode"
-               :features coffee-mode
-               :post-init (progn
-                            (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
-                            (add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
-                            ;; it defaults to js2-mode, which is not present in Emacs by default
-                            (setq coffee-js-mode 'javascript-mode))
-               :after (progn
-                        (defun coffee-custom ()
-                          "coffee-mode-hook"
-                          (set (make-local-variable 'tab-width) 2))
-                        (add-hook 'coffee-mode-hook
-                                  '(lambda() (coffee-custom)))))
+        ;; (:name flymake-ruby
+        ;;        :type github
+        ;;        :description "A flymake handler for ruby-mode files"
+        ;;        :pkgname "purcell/flymake-ruby"
+        ;;        :website "http://github.com/purcell/flymake-ruby"
+        ;;        :depends (flymake-easy)
+        ;;        :post-init (progn
+        ;;                     (add-hook 'ruby-mode-hook 'flymake-ruby-load)
+        ;;                     (add-hook 'rspec-mode-hook (lambda () (flymake-mode -1)))))
+        ;; (:name flymake-shell
+        ;;        :type github
+        ;;        :pkgname "purcell/flymake-shell"
+        ;;        :description "A flymake syntax-checker for shell scripts"
+        ;;        :website "http://github.com/purcell/flymake-shell"
+        ;;        :depends (flymake-easy)
+        ;;        :post-init (progn
+        ;;                     (add-hook 'shell-script-mode-hook 'flymake-shell-load)
+        ;;                     (add-hook 'sh-mode-hook 'flymake-shell-load)))
+        ;; (:name flymake-haml
+        ;;        :type github
+        ;;        :pkgname "purcell/flymake-haml"
+        ;;        :description "Flymake handler for haml files"
+        ;;        :website "http://github.com/purcell/flymake-haml"
+        ;;        :depends (flymake-easy)
+        ;;        :post-init (add-hook 'haml-mode-hook 'flymake-haml-load))
+        ;; (:name flymake-coffee
+        ;;        :type github
+        ;;        :pkgname "purcell/flymake-coffee"
+        ;;        :description "Flymake support for coffee script"
+        ;;        :website "http://github.com/purcell/flymake-coffee"
+        ;;        :depends (flymake-easy)
+        ;;        :post-init (progn
+        ;;                     (add-to-list 'load-path "~/node_modules/.bin/coffee") ;make sure we can find the coffee executable
+        ;;                     (add-hook 'coffee-mode-hook 'flymake-coffee-load)))
+        ;; (:name flymake-sass
+        ;;        :type github
+        ;;        :pkgname "purcell/flymake-sass"
+        ;;        :description "Flymake handler for sass files"
+        ;;        :website "http://github.com/purcell/flymake-sass"
+        ;;        :depends (flymake-easy)
+        ;;        :post-init (add-hook 'sass-mode-hook 'flymake-sass-load))
+        ;; (:name flymake-css
+        ;;        :type github
+        ;;        :pkgname "purcell/flymake-css"
+        ;;        :description "Flymake support for css using csslint"
+        ;;        :website "http://github.com/purcell/flymake-css"
+        ;;        :depends (flymake-easy)
+        ;;        :post-init (add-hook 'css-mode-hook 'flymake-css-load))
         ))
-
+(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 (setq my-packages
       (append
        '(
          ;; auto-complete-ruby ;buggy(
          ;; bongo
-         ;; column-marker
-         ;; fill-column-indicator
-         ;; gpicker
+         ;; color-theme-ir-black
+         ;; color-theme-vivid-chalk
+         ;; command-t
          ;; helm
          ;; ido-better-flex
          ;; ido-ubiquitous
          ;; jump
-         ;; ruby-mode ;Matsumoto's work well with haml, but 1.9 style hash syntax highlighting is buggy
          ;; vline
+         ag
          apache-mode
          auto-complete-chunk
          auto-complete-css
          auto-complete-emacs-lisp
          auto-complete-etags
          coffee-mode
+         column-marker
          crontab-mode
          csv-mode
          deft
@@ -429,9 +177,14 @@
          ethan-wspace
          evil
          findr
+         ;fiplr
+         flycheck
+         git-gutter
          go-mode
          haml-mode
          haskell-mode
+         hl-line+
+         idle-highlight-mode
          ido-yes-or-no
          inf-ruby
          less
@@ -440,35 +193,63 @@
          markdown-mode
          nginx-mode
          org-mode
+         package
          paredit
          php-mode
          rainbow-mode
          rhtml-mode
          rinari
+         rspec-mode
+         rvm
          sass-mode
          scss-mode
          simp
+         slim-mode
          smex
          window-numbering
          yaml-mode
          yasnippet
          )
        (mapcar 'el-get-source-name el-get-sources)))
-
 (el-get 'sync my-packages)
 
 (setq system-time-locale "C")
 (setq calendar-week-start-day 1)
 (global-font-lock-mode 1)
 
+;;; BackspaceKey <http://emacswiki.org/BackspaceKey>.
+;; (global-set-key [(control h)] 'delete-backward-char)
+(defun my-backspace-fix ()
+  (keyboard-translate ?\C-h ?\C-?)
+  (define-key key-translation-map [?\C-h] [?\C-?]))
+(my-backspace-fix)
+(eval-after-load 'term-mode '(progn (my-backspace-fix)))
+
 ;;; Transient Mark mode <http://emacswiki.org/TransientMarkMode>.
 (transient-mark-mode 1)
 ;; (set-face-background 'region nil)
-;; (set-face-attribute 'region nil :inverse-video t)
 
+;;; Region.
+;; (set-face-attribute 'region nil :inverse-video t)
+(set-face-background 'region "#002b36") ;#2E3436 ;set selection background color
+
+;; (set-background-color "#0f0f0f")
 (set-cursor-color "#aa0000")
 
-;;; Truncation of Lines <http://emacswiki.org/emacs/TruncateLines>.
+(eval-after-load 'diff-mode
+  '(progn
+     (set-face-foreground 'diff-added   "brightgreen")
+     (set-face-foreground 'diff-removed "brightred")
+     (set-face-foreground 'diff-changed "brightblue")
+     (when (not window-system)
+       (set-face-background 'diff-added       "black3")
+       (set-face-background 'diff-removed     "black3")
+       (set-face-background 'diff-changed     "black3")
+       (set-face-background 'diff-file-header "black")
+       (set-face-background 'diff-hunk-header "black")
+       )))
+
+;;; Truncation of Lines (toggle-truncate-lines) <http://emacswiki.org/emacs/TruncateLines>.
 (set-default 'truncate-lines t)
 ;;; Horizontal Scrolling
 ;;; <http://gnu.org/software/emacs/manual/html_node/emacs/Horizontal-Scrolling.html#Horizontal-Scrolling>.
@@ -490,7 +271,11 @@
 ;;; Desktop <http://emacswiki.org/DeskTop>.
 ;;(desktop-save-mode 1)
 ;; <http://stackoverflow.com/questions/4477376/some-emacs-desktop-save-questions-how-to-change-it-to-save-in-emacs-d-emacs#answer-4485083>.
-(defun my-desktop ()
+(defun save-my-desktop ()
+  "Save the desktop"
+  (interactive)
+  (desktop-save-in-desktop-dir))
+(defun load-my-desktop ()
   "Load the desktop and enable autosaving"
   (interactive)
   (let ((desktop-load-locked-desktop "ask"))
@@ -517,25 +302,23 @@
 ;; then enter the text in that file's own buffer.
 ")
 
+;;; Tool bar <http://emacswiki.org/ToolBar#toc1>,
+;;; <http://superuser.com/questions/127420/how-can-i-hide-the-tool-bar-in-emacs-persistently#127422>.
+(tool-bar-mode -1)
+
+;; ;;; <http://emacswiki.org/ScrollBar>.
+;; (scroll-bar-mode -1)
+;; <http://stackoverflow.com/questions/3155451/emacs-scrollbar-customize#3159618>.
+(set-face-background 'scroll-bar "white")
+(set-face-foreground 'scroll-bar "gray")
+
 ;;; AnsiColor (Emacs terminal related stuff)
 ;;; <http://emacswiki.org/AnsiColor>.
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
-;;; Highlight current line
-;;; <http://emacs-fu.blogspot.com/2008/12/highlighting-current-line.html>,
-;;; <http://stackoverflow.com/questions/2718189/emacshighlight-the-current-line-by-underline-it#answer-2718543>.
-(defface hl-line '((t (:background nil))) ;#222
-  "Face to use for `hl-line-face`." :group 'hl-line)
-(setq hl-line-face 'hl-line)
-(global-hl-line-mode 1)
-(set-face-attribute hl-line-face nil :underline t) ;looks inconsistent with fill-column-indicator
-;;; <http://emacsblog.org/2007/04/09/highlight-the-current-line/#comment-284>.
-(defun local-hl-line-mode-off ()
-  (interactive)
-  (make-local-variable 'global-hl-line-mode)
-  (setq global-hl-line-mode nil))
-(add-hook 'ediff-mode-hook 'local-hl-line-mode-off)
-(add-hook 'term-mode-hook 'local-hl-line-mode-off)
+;; ;;; Terminal <http://stackoverflow.com/questions/1568987/getting-emacs-to-respect-my-default-shell-options#1570246>.
+;; (setenv "ESHELL" (expand-file-name "/bin/zsh"))
+
 (global-rinari-mode)
 
 ;;; Column number mode
@@ -670,6 +453,14 @@
       (cons '("/etc/hosts\\'" . conf-mode) auto-mode-alist))
 (setq auto-mode-alist
       (cons '("\\.pkla\\'" . conf-mode) auto-mode-alist))
+(setq auto-mode-alist
+      (cons '("\\.cnf\\'" . conf-mode) auto-mode-alist))
+(setq auto-mode-alist
+      (cons '("\\.theme\\'" . conf-mode) auto-mode-alist))
+(setq auto-mode-alist
+      (cons '("/.gtkrc-2.0\\'" . conf-mode) auto-mode-alist))
+(setq auto-mode-alist
+      (cons '("/\\.tigrc\\'" . conf-mode) auto-mode-alist))
 
 ;;; Lisp.
 (setq auto-mode-alist
@@ -714,6 +505,36 @@
 (add-hook 'ruby-mode-hook
           (lambda () (interactive)
             (remove-hook 'before-save-hook 'ruby-mode-set-encoding)))
+(setq auto-mode-alist
+      (cons '("\\.mrb\\'" . ruby-mode) auto-mode-alist))
+(setq auto-mode-alist
+      (cons '("\\.atex\\'" . ruby-mode) auto-mode-alist))
+
+;; Ruby indentation fix
+;; <https://github.com/mlapshin/dotfiles/blob/2531616385b9fd3bef4b6418a5f024fd2f010461/.emacs.d/custom/ruby.el#L49>.
+(eval-after-load 'ruby-mode
+  '(progn
+     (defadvice ruby-indent-line (after line-up-args activate)
+       (let (indent prev-indent arg-indent)
+         (save-excursion
+           (back-to-indentation)
+           (when (zerop (car (syntax-ppss)))
+             (setq indent (current-column))
+             (skip-chars-backward " \t\n")
+             (when (eq ?, (char-before))
+               (ruby-backward-sexp)
+               (back-to-indentation)
+               (setq prev-indent (current-column))
+               (skip-syntax-forward "w_.")
+               (skip-chars-forward " ")
+               (setq arg-indent (current-column)))))
+         (when prev-indent
+           (let ((offset (- (current-column) indent)))
+             (cond ((< indent prev-indent)
+                    (indent-line-to prev-indent))
+                   ((= indent prev-indent)
+                    (indent-line-to arg-indent)))
+             (when (> offset 0) (forward-char offset))))))))
 
 ;;; JavaScript mode.
 ;;; HTML Components (HTCs or .htc)
@@ -731,6 +552,7 @@
 
 ;;; Tags
 ;;; <http://emacswiki.org/BuildTags#toc2>.
+;; (setq path-to-ctags "/usr/bin/ctags")
 (setq path-to-ctags "/usr/bin/exuberant-ctags")
 (defun create-tags (dir-name)
   "Create tags file."
@@ -894,3 +716,15 @@
 ;;           "#"))
 ;;     (expand-file-name
 ;;      (concat "#%" (buffer-name) "#"))))
+
+;; Prompts and run command with file (associated to current buffer)
+;; path as argument
+;; <http://superuser.com/questions/360427/emacs-equivalent-of-this-vim-command-to-run-my-tests#360512>.
+(defun shell-command-on-buffer-file ()
+  "prompts for a command and executes that command on to the associated
+ file of current buffer. if no buffer is associated gives an error"
+  (interactive)
+  (or (buffer-file-name) (error "no file is associated file to this buffer"))
+  (let* ((my-cmd (read-shell-command "Command to run: "))
+         (cmd-to-run (concat my-cmd " " (buffer-file-name))))
+    (shell-command cmd-to-run)))

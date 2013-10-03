@@ -1,0 +1,28 @@
+(:name magit
+       :website "https://github.com/magit/magit#readme"
+       :description "It's Magit! An Emacs mode for Git."
+       :depends (cl-lib)
+       :type elpa
+       :repo ("marmalade" . "http://marmalade-repo.org/packages/")
+       :after (progn
+                ;; change magit diff colors <http://readystate4.com/2011/02/22/emacs-changing-magits-default-diff-colors>.
+                (eval-after-load 'magit
+                  '(progn
+                     (set-face-foreground 'magit-diff-add "green3")
+                     (set-face-foreground 'magit-diff-del "red3")
+                     (when (not window-system)
+                       (set-face-background 'magit-item-highlight "black")
+                       (set-face-background 'magit-diff-add "black")
+                       (set-face-background 'magit-diff-del "black")
+                       ;; (set-face-background 'magit-item-mark "black")
+                       )))
+                )
+       ;; :type github
+       ;; :pkgname "magit/magit"
+       ;; :info "."
+       ;; ;; let el-get care about autoloads so that it works with all OSes
+       ;; :build (if (version<= "24.3" emacs-version)
+       ;;            `(("make" ,(format "EMACS=%s" el-get-emacs) "all"))
+       ;;          `(("make" ,(format "EMACS=%s" el-get-emacs) "docs")))
+       ;; :build/berkeley-unix (("touch" "`find . -name Makefile`") ("gmake"))
+       )

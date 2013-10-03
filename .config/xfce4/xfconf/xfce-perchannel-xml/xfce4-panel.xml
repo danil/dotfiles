@@ -16,10 +16,10 @@
         <value type="int" value="2"/>
         <value type="int" value="9"/>
       </property>
-      <property name="background-style" type="uint" value="1"/>
-      <property name="background-alpha" type="uint" value="0"/>
-      <property name="enter-opacity" type="uint" value="70"/>
-      <property name="leave-opacity" type="uint" value="70"/>
+      <property name="background-style" type="uint" value="0"/>
+      <property name="background-alpha" type="uint" value="100"/>
+      <property name="enter-opacity" type="uint" value="80"/>
+      <property name="leave-opacity" type="uint" value="80"/>
       <property name="disable-struts" type="bool" value="true"/>
       <property name="mode" type="uint" value="0"/>
       <property name="background-color" type="array">
@@ -28,42 +28,38 @@
         <value type="uint" value="0"/>
         <value type="uint" value="65535"/>
       </property>
-      <property name="autohide" type="bool" value="false"/>
     </property>
   </property>
   <property name="plugins" type="empty">
     <property name="plugin-6" type="string" value="systray">
       <property name="names-visible" type="array">
-        <value type="string" value="skype"/>
+        <value type="string" value="sound output volume"/>
+        <value type="string" value="vlc"/>
+        <value type="string" value="docky"/>
         <value type="string" value="task manager"/>
-        <value type="string" value="wally"/>
-        <value type="string" value="steam"/>
-        <value type="string" value="orage"/>
+        <value type="string" value="wicd-client.py"/>
+        <value type="string" value="thunar"/>
+        <value type="string" value="skype"/>
+        <value type="string" value="shutter"/>
         <value type="string" value="gajim"/>
-        <value type="string" value="empathy"/>
+        <value type="string" value="pidgin"/>
+        <value type="string" value="wally"/>
+        <value type="string" value="blueman-applet"/>
+        <value type="string" value="tomahawk"/>
         <value type="string" value="bluetooth"/>
         <value type="string" value="xfce4-power-manager"/>
-        <value type="string" value="thunar"/>
-        <value type="string" value="dropbox"/>
-        <value type="string" value="docky"/>
-        <value type="string" value="wicd-client.py"/>
-        <value type="string" value="pidgin"/>
-        <value type="string" value="spideroak"/>
         <value type="string" value="volti"/>
-        <value type="string" value="sparkleshare"/>
-        <value type="string" value="sound output volume"/>
+        <value type="string" value="dropbox"/>
+        <value type="string" value="scp-dbus-service.py"/>
         <value type="string" value="thunderbird"/>
-        <value type="string" value="blueman-applet"/>
+        <value type="string" value="google chrome"/>
       </property>
       <property name="show-frame" type="bool" value="false"/>
       <property name="names-hidden" type="array">
         <value type="string" value="stardict"/>
+        <value type="string" value="orage"/>
         <value type="string" value="parcellite"/>
-        <value type="string" value="vlc"/>
-        <value type="string" value="opera"/>
-        <value type="string" value="shutter"/>
       </property>
-      <property name="size-max" type="uint" value="22"/>
     </property>
     <property name="plugin-1" type="string" value="xfce4-orageclock-plugin"/>
     <property name="plugin-2" type="string" value="showdesktop"/>

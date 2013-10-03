@@ -1,0 +1,7 @@
+(:name command-t
+       :description "Command-T"
+       :website "https://github.com/danil/command-t"
+       :type github
+       :pkgname "danil/command-t"
+       :features command-t
+       :depends (find-file-in-project popwin))
