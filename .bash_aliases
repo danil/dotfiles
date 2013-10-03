@@ -98,6 +98,10 @@ if [ -f ~/.bash-git-prompt/gitprompt.sh ]; then
 fi
 registr_prompt_command "prompt_timer_stop"
 
+# History between sessions <http://briancarper.net/blog/248>.
+# registr_prompt_command "history -an" #write and read
+registr_prompt_command "history -a" #write only
+
 # Lua.
 if [ -d ~/.luarocks/bin ] ; then
     PATH=~/.luarocks/bin:"${PATH}"
