@@ -93,7 +93,7 @@ function prompt_callback {
 if [ -f ~/.bash-git-prompt/gitprompt.sh ]; then
     # GIT_PROMPT_START="${ps1_plain}"
     GIT_PROMPT_START="${ps1_plain}"
-    GIT_PROMPT_END="\n${ps1_plain}$ "
+    GIT_PROMPT_END="\n${ps1_blue}\$${ps1_plain} "
     . ~/.bash-git-prompt/gitprompt.sh
 fi
 registr_prompt_command "prompt_timer_stop"
