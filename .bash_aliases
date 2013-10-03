@@ -68,6 +68,15 @@ function prompt_jobs {
         echo -n " ${ps1_red}jobs:\j${ps1_plain}"
     fi
 }
+# function prompt_set_exit_code {
+#     export EXIT_CODE="$?"
+# }
+# registr_prompt_command "prompt_set_exit_code"
+# function prompt_exit_code {
+#     if [ $EXIT_CODE -ne 0 ]; then
+#         echo -n " ${ps1_red}error:${EXIT_CODE}${ps1_plain}"
+#     fi
+# }
 # Prompt last command time
 # <http://stackoverflow.com/questions/1862510/how-can-the-last-commands-wall-time-be-put-in-the-bash-prompt#1862762>.
 function prompt_timer_start {
@@ -93,7 +102,7 @@ function prompt_callback {
 if [ -f ~/.bash-git-prompt/gitprompt.sh ]; then
     # GIT_PROMPT_START="${ps1_plain}"
     GIT_PROMPT_START="${ps1_plain}"
-    GIT_PROMPT_END="\n${ps1_plain}$ "
+    GIT_PROMPT_END="\n${ps1_blue}\$${ps1_plain} "
     . ~/.bash-git-prompt/gitprompt.sh
 fi
 registr_prompt_command "prompt_timer_stop"
