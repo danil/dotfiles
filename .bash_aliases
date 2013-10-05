@@ -96,7 +96,7 @@ function prompt_timer {
 }
 registr_prompt_command "prompt_timer_assign"
 function prompt_callback {
-    echo -n "${ps1_user}$(prompt_timer)$(prompt_jobs)$(prompt_load)${ps1_dir}"
+    echo -n "${ps1_user}$(prompt_jobs)$(prompt_load)${ps1_dir}"
 }
 # Git prompt <http://github.com/magicmonty/bash-git-prompt>.
 if [ -f ~/.bash-git-prompt/gitprompt.sh ]; then
