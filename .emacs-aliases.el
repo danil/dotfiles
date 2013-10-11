@@ -173,6 +173,7 @@
          csv-mode
          deft
          egg
+         etags-select
          ethan-wspace
          evil
          findr
@@ -548,15 +549,15 @@
 ;;; <http://gnu.org/software/emacs/manual/html_node/emacs/Auto-Fill.html>.
 ;(add-hook 'mail-mode-hook (lambda () (auto-fill-mode t)))
 
-;;; Tags
-;;; <http://emacswiki.org/BuildTags#toc2>.
-;; (setq path-to-ctags "/usr/bin/ctags")
-(setq path-to-ctags "/usr/bin/exuberant-ctags")
-(defun create-tags (dir-name)
-  "Create tags file."
-  (interactive "DDirectory: ")
-  (shell-command
-   (format "%s -f %s/TAGS -e -R %s" path-to-ctags dir-name dir-name)))
+;; ;;; Tags
+;; ;;; <http://emacswiki.org/BuildTags#toc2>.
+;; ;; (setq path-to-ctags "/usr/bin/ctags")
+;; (setq path-to-ctags "/usr/bin/exuberant-ctags")
+;; (defun create-tags (dir-name)
+;;   "Create tags file."
+;;   (interactive "DDirectory: ")
+;;   (shell-command
+;;    (format "%s -f %s/TAGS -e -R %s" path-to-ctags dir-name dir-name)))
 
 ;; Mew is a mail reader for Emacs <http://mew.org>, <http://emacswiki.org/Mew>.
 (autoload 'mew "mew" nil t)
