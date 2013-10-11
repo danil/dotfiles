@@ -199,6 +199,7 @@
          rhtml-mode
          rinari
          rspec-mode
+         ruby-hash-syntax
          rvm
          sass-mode
          scss-mode
@@ -576,10 +577,10 @@
 
 ;;; My keyboard macroses.
 ;; <http://emacs-fu.blogspot.ru/2010/07/keyboard-macros.html>.
-(fset 'my-kbd-macro-ruby-new-hash-syntax
-   "\C-s =>\C-m\C-r:\C-m\C-d\C-s =>\C-m\C-?\C-?\C-?:")
 (fset 'my-kbd-macro-ruby-string-to-symbol
    "\C-[\C-s\\(\"\\|'\\)\C-s\C-m\C-?\C-[\C-r\\(\"\\|'\\)\C-m\C-d:")
+;; (fset 'my-kbd-macro-ruby-new-hash-syntax
+;;    "\C-s =>\C-m\C-r:\C-m\C-d\C-s =>\C-m\C-?\C-?\C-?:")
 
 ;;; ri-emacs.
 ;; (setq ri-ruby-script "~/share/emacs/site-lisp/ri-emacs/ri-emacs.rb")
