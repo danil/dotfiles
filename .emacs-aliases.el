@@ -183,6 +183,7 @@
          go-mode
          haml-mode
          haskell-mode
+         highlight-parentheses
          hl-line+
          idle-highlight-mode
          ido-yes-or-no
