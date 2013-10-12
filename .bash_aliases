@@ -52,7 +52,7 @@ if [ -f ~/.git-prompt/contrib/completion/git-prompt.sh ]; then
     GIT_PS1_SHOWDIRTYSTATE=1
     GIT_PS1_SHOWSTASHSTATE=1
     GIT_PS1_SHOWUNTRACKEDFILES=1
-    GIT_PS1_SHOWUPSTREAM="auto verbose"
+    GIT_PS1_SHOWUPSTREAM="auto"
     source ~/.git-prompt/contrib/completion/git-prompt.sh
 fi
 PS1="${ps1_user}${ps1_dir}"'$(__git_ps1 " (%s)")\n'"${ps1_blue}\$${ps1_plain} "
