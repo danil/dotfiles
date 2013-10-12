@@ -85,7 +85,7 @@ draw_graph_borders no
 use_xft yes
 # force UTF8? note that UTF8 support required XFT
 override_utf8_locale yes
-xftfont DejaVu Sans:size=8
+xftfont PragmataPro:size=9
 # xftfont xft:pixelsize=14:antialias=true:hinting=true:autohint=true
 xftalpha 0.8
 uppercase no
@@ -93,7 +93,7 @@ uppercase no
 default_color b6b6b6
 
 TEXT
-${alignc}${font Liberation Sans:Regular:size=7}CPU${font}
+${alignc}${font PragmataPro:Regular:size=9}CPU${font}
 ${top name 1}${alignr}${top cpu 1}
 ${top name 2}${alignr}${top cpu 2}
 ${top name 3}${alignr}${top cpu 3}
@@ -103,7 +103,7 @@ ${top name 6}${alignr}${top cpu 6}
 ${top name 7}${alignr}${top cpu 7}
 ${top name 8}${alignr}${top cpu 8}
 ${top name 9}${alignr}${top cpu 9}
-${alignc}${font Liberation Sans:Regular:size=7}MEM${font}
+${alignc}${font PragmataPro:Regular:size=9}MEM${font}
 ${top_mem name 1}${alignr}${top_mem mem_res 1}
 ${top_mem name 2}${alignr}${top_mem mem_res 2}
 ${top_mem name 3}${alignr}${top_mem mem_res 3}
@@ -113,7 +113,7 @@ ${top_mem name 6}${alignr}${top_mem mem_res 6}
 ${top_mem name 7}${alignr}${top_mem mem_res 7}
 ${top_mem name 8}${alignr}${top_mem mem_res 8}
 ${top_mem name 9}${alignr}${top_mem mem_res 9}
-${alignc}${font Liberation Sans:Regular:size=7}Time${font}
+${alignc}${font PragmataPro:Regular:size=9}Time${font}
 ${top_time name 1}${alignr}${top_time time 1}
 ${top_time name 2}${alignr}${top_time time 2}
 ${top_time name 3}${alignr}${top_time time 3}
