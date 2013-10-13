@@ -1,7 +1,10 @@
 (:name ag
-       :type elpa
        :description "An Emacs frontend to ag, (\"the silver searcher\" ack replacment)"
        :website "https://github.com/Wilfred/ag.el"
+       :type github
+       :pkgname "Wilfred/ag.el"
+       ;; :type elpa
+       ;; :repo ("melpa" . "http://melpa.milkbox.net/packages/")
        :after (progn
-                (global-set-key (kbd "C-c s") 'ag)
+                (global-set-key (kbd "C-c s") 'ag-regexp)
                 (set 'ag-highlight-search 1)))

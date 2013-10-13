@@ -1,0 +1,33 @@
+(:name highlight-parentheses
+       :description "Highlight the matching parentheses surrounding point."
+       :type http
+       :url "http://nschum.de/src/emacs/highlight-parentheses/highlight-parentheses.el"
+       :features highlight-parentheses
+       :after (progn
+                (add-hook 'awk-mode-hook 'highlight-parentheses-mode)
+                (add-hook 'change-log-mode-hook 'highlight-parentheses-mode)
+                (add-hook 'coffee-mode-hook 'highlight-parentheses-mode)
+                (add-hook 'conf-mode-hook 'highlight-parentheses-mode)
+                (add-hook 'css-mode-hook 'highlight-parentheses-mode)
+                (add-hook 'emacs-lisp-mode-hook 'highlight-parentheses-mode)
+                (add-hook 'haml-mode-hook 'highlight-parentheses-mode)
+                (add-hook 'haskell-mode-hook 'highlight-parentheses-mode)
+                (add-hook 'html-mode-hook 'highlight-parentheses-mode)
+                (add-hook 'java-mode-hook 'highlight-parentheses-mode)
+                (add-hook 'js-mode-hook 'highlight-parentheses-mode)
+                (add-hook 'lisp-mode-hook 'highlight-parentheses-mode)
+                (add-hook 'lua-mode-hook 'highlight-parentheses-mode)
+                (add-hook 'makefile-gmake-mode-hook 'highlight-parentheses-mode)
+                (add-hook 'markdown-mode-hook 'highlight-parentheses-mode)
+                (add-hook 'nxml-mode-hook 'highlight-parentheses-mode)
+                (add-hook 'org-mode-hook 'highlight-parentheses-mode)
+                (add-hook 'perl-mode-hook 'highlight-parentheses-mode)
+                (add-hook 'php-mode-hook 'highlight-parentheses-mode)
+                (add-hook 'ruby-mode-hook 'highlight-parentheses-mode)
+                (add-hook 'sass-mode-hook 'highlight-parentheses-mode)
+                (add-hook 'sgml-mode-hook 'highlight-parentheses-mode)
+                (add-hook 'sh-mode-hook 'highlight-parentheses-mode)
+                (add-hook 'sql-mode-hook 'highlight-parentheses-mode)
+                (add-hook 'xml-mode-hook 'highlight-parentheses-mode)
+                (add-hook 'yaml-mode-hook 'highlight-parentheses-mode)
+                ))

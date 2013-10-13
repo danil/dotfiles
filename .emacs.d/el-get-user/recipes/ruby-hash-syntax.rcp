@@ -1,0 +1,5 @@
+(:name ruby-hash-syntax
+       :description "In Emacs, toggle ruby hash syntax between classic and 1.9 styles"
+       :website "https://github.com/purcell/ruby-hash-syntax"
+       :type github
+       :pkgname "purcell/ruby-hash-syntax")

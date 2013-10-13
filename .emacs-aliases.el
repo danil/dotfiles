@@ -174,15 +174,17 @@
          csv-mode
          deft
          egg
+         etags-select
          ethan-wspace
          evil
          findr
-         ;fiplr
+         fiplr
          flycheck
          git-gutter
          go-mode
          haml-mode
          haskell-mode
+         highlight-parentheses
          hl-line+
          idle-highlight-mode
          ido-yes-or-no
@@ -193,13 +195,14 @@
          markdown-mode
          nginx-mode
          org-mode
-         package
+         ;; package
          paredit
          php-mode
          rainbow-mode
          rhtml-mode
          rinari
          rspec-mode
+         ruby-hash-syntax
          rvm
          sass-mode
          scss-mode
@@ -550,15 +553,15 @@
 ;;; <http://gnu.org/software/emacs/manual/html_node/emacs/Auto-Fill.html>.
 ;(add-hook 'mail-mode-hook (lambda () (auto-fill-mode t)))
 
-;;; Tags
-;;; <http://emacswiki.org/BuildTags#toc2>.
-;; (setq path-to-ctags "/usr/bin/ctags")
-(setq path-to-ctags "/usr/bin/exuberant-ctags")
-(defun create-tags (dir-name)
-  "Create tags file."
-  (interactive "DDirectory: ")
-  (shell-command
-   (format "%s -f %s/TAGS -e -R %s" path-to-ctags dir-name dir-name)))
+;; ;;; Tags
+;; ;;; <http://emacswiki.org/BuildTags#toc2>.
+;; ;; (setq path-to-ctags "/usr/bin/ctags")
+;; (setq path-to-ctags "/usr/bin/exuberant-ctags")
+;; (defun create-tags (dir-name)
+;;   "Create tags file."
+;;   (interactive "DDirectory: ")
+;;   (shell-command
+;;    (format "%s -f %s/TAGS -e -R %s" path-to-ctags dir-name dir-name)))
 
 ;; Mew is a mail reader for Emacs <http://mew.org>, <http://emacswiki.org/Mew>.
 (autoload 'mew "mew" nil t)
@@ -577,10 +580,10 @@
 
 ;;; My keyboard macroses.
 ;; <http://emacs-fu.blogspot.ru/2010/07/keyboard-macros.html>.
-(fset 'my-kbd-macro-ruby-new-hash-syntax
-   "\C-s =>\C-m\C-r:\C-m\C-d\C-s =>\C-m\C-?\C-?\C-?:")
 (fset 'my-kbd-macro-ruby-string-to-symbol
    "\C-[\C-s\\(\"\\|'\\)\C-s\C-m\C-?\C-[\C-r\\(\"\\|'\\)\C-m\C-d:")
+;; (fset 'my-kbd-macro-ruby-new-hash-syntax
+;;    "\C-s =>\C-m\C-r:\C-m\C-d\C-s =>\C-m\C-?\C-?\C-?:")
 
 ;;; ri-emacs.
 ;; (setq ri-ruby-script "~/share/emacs/site-lisp/ri-emacs/ri-emacs.rb")
@@ -728,3 +731,16 @@
   (let* ((my-cmd (read-shell-command "Command to run: "))
          (cmd-to-run (concat my-cmd " " (buffer-file-name))))
     (shell-command cmd-to-run)))
+
+;; ANSI SGR (Select Graphic Rendition) escape sequences
+;; in shell command output
+;; <http://stackoverflow.com/questions/5819719/emacs-shell-command-output-not-showing-ansi-colors-but-the-code#5821668
+;; <http://www.emacswiki.org/emacs/AnsiColor>
+(require 'ansi-color)
+(defadvice display-message-or-buffer (before ansi-color activate)
+  "Process ANSI color codes in shell output."
+  (let ((buf (ad-get-arg 0)))
+    (and (bufferp buf)
+         (string= (buffer-name buf) "*Shell Command Output*")
+         (with-current-buffer buf
+           (ansi-color-apply-on-region (point-min) (point-max))))))
