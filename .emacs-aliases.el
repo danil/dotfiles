@@ -297,6 +297,40 @@
 ;;; <http://emacswiki.org/TrampMode>.
 ;(setq tramp-default-method "ssh")
 
+;;; Line numbers
+;;; Linum
+(eval-after-load 'linum
+  '(progn
+     (set-face-attribute 'linum nil :foreground "DimGray") ;gray40
+     ))
+(defun my-linum-mode-hook ()
+  (linum-mode 1))
+(add-hook 'awk-mode-hook 'my-linum-mode-hook)
+(add-hook 'coffee-mode-hook 'my-linum-mode-hook)
+(add-hook 'conf-mode-hook 'my-linum-mode-hook)
+(add-hook 'css-mode-hook 'my-linum-mode-hook)
+(add-hook 'emacs-lisp-mode-hook 'my-linum-mode-hook)
+(add-hook 'haml-mode-hook 'my-linum-mode-hook)
+(add-hook 'haskell-mode-hook 'my-linum-mode-hook)
+(add-hook 'html-mode-hook 'my-linum-mode-hook)
+(add-hook 'java-mode-hook 'my-linum-mode-hook)
+(add-hook 'js-mode-hook 'my-linum-mode-hook)
+(add-hook 'lisp-mode-hook 'my-linum-mode-hook)
+(add-hook 'lua-mode-hook 'my-linum-mode-hook)
+(add-hook 'makefile-gmake-mode-hook 'my-linum-mode-hook)
+(add-hook 'markdown-mode-hook 'my-linum-mode-hook)
+(add-hook 'nxml-mode-hook 'my-linum-mode-hook)
+(add-hook 'org-mode-hook 'my-linum-mode-hook)
+(add-hook 'perl-mode-hook 'my-linum-mode-hook)
+(add-hook 'php-mode-hook 'my-linum-mode-hook)
+(add-hook 'ruby-mode-hook 'my-linum-mode-hook)
+(add-hook 'sass-mode-hook 'my-linum-mode-hook)
+(add-hook 'sgml-mode-hook 'my-linum-mode-hook)
+(add-hook 'sh-mode-hook 'my-linum-mode-hook)
+(add-hook 'sql-mode-hook 'my-linum-mode-hook)
+(add-hook 'xml-mode-hook 'my-linum-mode-hook)
+(add-hook 'yaml-mode-hook 'my-linum-mode-hook)
+
 ;;; HTML mode.
 (add-to-list 'auto-mode-alist '("\\.lp\\'" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.op\\'" . html-mode))
