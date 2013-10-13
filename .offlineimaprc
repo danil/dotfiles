@@ -44,7 +44,7 @@ type = IMAP
 remotehost = imap.gmail.com
 ssl = yes
 # <http://news.offlineimap.org/certfingerprint-errors-on-upgrade>.
-cert_fingerprint = b0ba392bba326e6feb1add4d04fa0fb86cd173fa
+cert_fingerprint = 89091347184d41768bfc0da9fad94bfe882dd358
 remoteuser = danil@kutkevich.org
 folderfilter = lambda foldername: foldername not in [ '[Gmail]/All Mail',
   '[Gmail]/Starred', '[Gmail]/Important', '[Gmail]/Spam', 'imapfilter_trash' ]

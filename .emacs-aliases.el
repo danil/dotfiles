@@ -16,137 +16,12 @@
   (url-retrieve
    "https://raw.github.com/dimitri/el-get/master/el-get-install.el"
    (lambda (s)
-     (goto-char (point-max))
-     (eval-print-last-sexp))))
-(setq el-get-sources
-      '(
-        ;; (:name visws
-        ;;        :type emacswik)
-        ;; (:name sass-mode
-        ;;        ;; :post-init (lambda ()
-        ;;        ;;              (add-to-list 'auto-mode-alist '("\\.scss$" . sass-mode)))
-        ;;        :features sass-mode)
-        ;; (:name lua2-mode
-        ;;        :type http
-        ;;        ;; :after (lambda ()
-        ;;        ;;          (autoload 'lua2-mode "lua2-mode"
-        ;;        ;;            "semantic highlighting extension for lua-mode" t))
-        ;;        :url "http://www.enyo.de/fw/software/lua-emacs/lua2-mode.el")
-        ;; ;; Color theme.
-        ;; (:name railscasts-theme
-        ;;        :description "Railscasts color theme for GNU Emacs"
-        ;;        :website "https://github.com/itiut/railscasts-theme"
-        ;;        :type github
-        ;;        :pkgname "itiut/railscasts-theme"
-        ;;        :minimum-emacs-version 24
-        ;;        :after (progn
-        ;;                 (load-theme 'railscasts t nil))
-        ;;        :post-init (add-to-list 'custom-theme-load-path
-        ;;                                default-directory))
-        ;; (:name highlight-indentation
-        ;;        :type git
-        ;;        :url "https://github.com/antonj/Highlight-Indentation-for-Emacs"
-        ;;        :after (progn
-        ;;                 (autoload 'highlight-indentation "highlight-indentation"
-        ;;                   "Visual guidelines for indentation (using spaces)" t)))
-        ;; (:name gpicker
-        ;;        :type http
-        ;;        :post-init (progn
-        ;;                     (autoload 'gpicker-visit-project "gpicker" nil t))
-        ;;        :after (progn
-        ;;                 (global-set-key (kbd "C-c f c") 'gpicker-visit-project)
-        ;;                 (global-set-key (kbd "C-c f f") 'gpicker-find-file))
-        ;;        :url "https://raw.github.com/alk/gpicker/v2.2/gpicker.el")
-        ;; (:name ido-better-flex
-        ;;        :type elpa)
-        ;; (:name jump
-        ;;        :type git
-        ;;        :url "git://github.com/emacsmirror/jump.git")
-        ;; (:name rinari
-        ;;        ;; :after (lambda ()
-        ;;        ;;          (autoload 'rinari-web-server "rinari"
-        ;;        ;;            "Run Rails script/server." t))
-        ;;        ;; :build nil
-        ;;        ;; :info nil
-        ;;        )
-        ;; (:name emacs-rails ;<http://stackoverflow.com/questions/2713096/emacs-rails-vs-rinari>
-        ;;        :type git
-        ;;        :url "git://github.com/remvee/emacs-rails.git")
-        ;; (:name mmm-mode
-        ;;        :description "Allow Multiple Major Modes in a buffer"
-        ;;        :type github
-        ;;        :pkgname "purcell/mmm-mode"
-        ;;        :post-init (progn
-        ;;                     (autoload 'mmm-add-mode-ext-class "mmm-mode" nil t))
-        ;;        :after (progn
-        ;;                 ;; <https://github.com/purcell/emacs.d/blob/master/init-mmm.el>.
-        ;;                 (setq mmm-global-mode 'buffers-with-submode-classes)
-        ;;                 (setq mmm-submode-decoration-level 2)
-        ;;                 ;; (setq mmm-parse-when-idle t)
-        ;;                 ;; <https://github.com/purcell/emacs.d/blob/master/init-ruby-mode.el>.
-        ;;                 (defun sanityinc/ensure-mmm-erb-loaded ()
-        ;;                   (require 'mmm-erb))
-        ;;                 (dolist (hook (list 'html-mode-hook 'nxml-mode-hook 'yaml-mode-hook))
-        ;;                   (add-hook hook 'sanityinc/ensure-mmm-erb-loaded))
-        ;;                 (dolist (mode (list 'html-mode 'html-erb-mode 'nxml-mode))
-        ;;                   (mmm-add-mode-ext-class mode "\\.r?html\\(\\.erb\\)?\\'" 'html-js)
-        ;;                   (mmm-add-mode-ext-class mode "\\.r?html\\(\\.erb\\)?\\'" 'html-css)
-        ;;                   (mmm-add-mode-ext-class mode "\\.erb\\'" 'erb))
-        ;;                 (mmm-add-mode-ext-class 'html-erb-mode "\\.jst\\.ejs\\'" 'ejs)
-        ;;                 (add-to-list 'auto-mode-alist '("\\.r?html\\(\\.erb\\)?\\'" . html-erb-mode))
-        ;;                 (add-to-list 'auto-mode-alist '("\\.jst\\.ejs\\'"  . html-erb-mode))
-        ;;                 (mmm-add-mode-ext-class 'yaml-mode "\\.yaml\\'" 'erb)
-        ;;                 (dolist (mode (list 'js-mode 'js2-mode 'js3-mode))
-        ;;                   (mmm-add-mode-ext-class mode "\\.js\\.erb\\'" 'erb))))
-        ;; (:name flymake-ruby
-        ;;        :type github
-        ;;        :description "A flymake handler for ruby-mode files"
-        ;;        :pkgname "purcell/flymake-ruby"
-        ;;        :website "http://github.com/purcell/flymake-ruby"
-        ;;        :depends (flymake-easy)
-        ;;        :post-init (progn
-        ;;                     (add-hook 'ruby-mode-hook 'flymake-ruby-load)
-        ;;                     (add-hook 'rspec-mode-hook (lambda () (flymake-mode -1)))))
-        ;; (:name flymake-shell
-        ;;        :type github
-        ;;        :pkgname "purcell/flymake-shell"
-        ;;        :description "A flymake syntax-checker for shell scripts"
-        ;;        :website "http://github.com/purcell/flymake-shell"
-        ;;        :depends (flymake-easy)
-        ;;        :post-init (progn
-        ;;                     (add-hook 'shell-script-mode-hook 'flymake-shell-load)
-        ;;                     (add-hook 'sh-mode-hook 'flymake-shell-load)))
-        ;; (:name flymake-haml
-        ;;        :type github
-        ;;        :pkgname "purcell/flymake-haml"
-        ;;        :description "Flymake handler for haml files"
-        ;;        :website "http://github.com/purcell/flymake-haml"
-        ;;        :depends (flymake-easy)
-        ;;        :post-init (add-hook 'haml-mode-hook 'flymake-haml-load))
-        ;; (:name flymake-coffee
-        ;;        :type github
-        ;;        :pkgname "purcell/flymake-coffee"
-        ;;        :description "Flymake support for coffee script"
-        ;;        :website "http://github.com/purcell/flymake-coffee"
-        ;;        :depends (flymake-easy)
-        ;;        :post-init (progn
-        ;;                     (add-to-list 'load-path "~/node_modules/.bin/coffee") ;make sure we can find the coffee executable
-        ;;                     (add-hook 'coffee-mode-hook 'flymake-coffee-load)))
-        ;; (:name flymake-sass
-        ;;        :type github
-        ;;        :pkgname "purcell/flymake-sass"
-        ;;        :description "Flymake handler for sass files"
-        ;;        :website "http://github.com/purcell/flymake-sass"
-        ;;        :depends (flymake-easy)
-        ;;        :post-init (add-hook 'sass-mode-hook 'flymake-sass-load))
-        ;; (:name flymake-css
-        ;;        :type github
-        ;;        :pkgname "purcell/flymake-css"
-        ;;        :description "Flymake support for css using csslint"
-        ;;        :website "http://github.com/purcell/flymake-css"
-        ;;        :depends (flymake-easy)
-        ;;        :post-init (add-hook 'css-mode-hook 'flymake-css-load))
-        ))
+     (let ;(el-get-master-branch)
+       (goto-char (point-max))
+       (eval-print-last-sexp)))))
+;; (setq el-get-sources
+;;       '(
+;;         ))
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 (setq my-packages
       (append
@@ -177,7 +52,7 @@
          ethan-wspace
          evil
          findr
-         fiplr
+         ;; fiplr
          flycheck
          git-gutter
          go-mode
@@ -194,6 +69,7 @@
          markdown-mode
          nginx-mode
          org-mode
+         ;; package
          paredit
          php-mode
          rainbow-mode
@@ -218,6 +94,22 @@
 (setq calendar-week-start-day 1)
 (global-font-lock-mode 1)
 
+;;; Host specific confirmation
+;;; <http://www.gnu.org/software/emacs/manual/html_node/elisp/System-Environment.html>,
+;;; <http://ergoemacs.org/emacs/elisp_determine_OS_version.html>.
+(cond
+ ;;; Frink.
+ ((string-equal system-name "frink.kutkevich.org")
+  (progn
+    (require 'site-gentoo)
+    ))
+ ;; ;; Barney.
+ ;; ((string-equal system-name "danil-kutkevich")
+ ;;  (progn
+ ;;    ;;
+ ;;    ))
+ )
+
 ;;; BackspaceKey <http://emacswiki.org/BackspaceKey>.
 ;; (global-set-key [(control h)] 'delete-backward-char)
 (defun my-backspace-fix ()
@@ -239,6 +131,7 @@
 
 (eval-after-load 'diff-mode
   '(progn
+     ;; Colors available to Emacs <http://raebear.net/comp/emacscolors.html>.
      (set-face-foreground 'diff-added   "brightgreen")
      (set-face-foreground 'diff-removed "brightred")
      (set-face-foreground 'diff-changed "brightblue")
@@ -405,6 +298,40 @@
 ;;; <http://emacswiki.org/TrampMode>.
 ;(setq tramp-default-method "ssh")
 
+;;; Line numbers
+;;; Linum
+(eval-after-load 'linum
+  '(progn
+     (set-face-attribute 'linum nil :foreground "DimGray") ;gray40
+     ))
+(defun my-linum-mode-hook ()
+  (linum-mode 1))
+(add-hook 'awk-mode-hook 'my-linum-mode-hook)
+(add-hook 'coffee-mode-hook 'my-linum-mode-hook)
+(add-hook 'conf-mode-hook 'my-linum-mode-hook)
+(add-hook 'css-mode-hook 'my-linum-mode-hook)
+(add-hook 'emacs-lisp-mode-hook 'my-linum-mode-hook)
+(add-hook 'haml-mode-hook 'my-linum-mode-hook)
+(add-hook 'haskell-mode-hook 'my-linum-mode-hook)
+(add-hook 'html-mode-hook 'my-linum-mode-hook)
+(add-hook 'java-mode-hook 'my-linum-mode-hook)
+(add-hook 'js-mode-hook 'my-linum-mode-hook)
+(add-hook 'lisp-mode-hook 'my-linum-mode-hook)
+(add-hook 'lua-mode-hook 'my-linum-mode-hook)
+(add-hook 'makefile-gmake-mode-hook 'my-linum-mode-hook)
+(add-hook 'markdown-mode-hook 'my-linum-mode-hook)
+(add-hook 'nxml-mode-hook 'my-linum-mode-hook)
+(add-hook 'org-mode-hook 'my-linum-mode-hook)
+(add-hook 'perl-mode-hook 'my-linum-mode-hook)
+(add-hook 'php-mode-hook 'my-linum-mode-hook)
+(add-hook 'ruby-mode-hook 'my-linum-mode-hook)
+(add-hook 'sass-mode-hook 'my-linum-mode-hook)
+(add-hook 'sgml-mode-hook 'my-linum-mode-hook)
+(add-hook 'sh-mode-hook 'my-linum-mode-hook)
+(add-hook 'sql-mode-hook 'my-linum-mode-hook)
+(add-hook 'xml-mode-hook 'my-linum-mode-hook)
+(add-hook 'yaml-mode-hook 'my-linum-mode-hook)
+
 ;;; HTML mode.
 (add-to-list 'auto-mode-alist '("\\.lp\\'" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.op\\'" . html-mode))
@@ -489,8 +416,6 @@
 (setq auto-mode-alist
       (cons '("/etc/portage/profile/use\\.mask\\'" . conf-mode) auto-mode-alist))
 
-;; (require 'site-gentoo)
-
 ;;; ruby-mode.
 (setq auto-mode-alist
       (cons '("/[rR]akefile\\'" . ruby-mode) auto-mode-alist))
@@ -547,21 +472,32 @@
 ;;; <http://emacswiki.org/emacs/css-mode.el>.
 (setq css-indent-offset 2)
 
-;;; Auto Fill Mode
-;;; <http://gnu.org/software/emacs/manual/html_node/emacs/Auto-Fill.html>.
-;(add-hook 'mail-mode-hook (lambda () (auto-fill-mode t)))
+;;; Prompts and run command with file (associated to current buffer)
+;;; path as argument
+;;; <http://superuser.com/questions/360427/emacs-equivalent-of-this-vim-command-to-run-my-tests#360512>.
+(defun shell-command-on-buffer-file ()
+  "prompts for a command and executes that command on to the associated
+ file of current buffer. if no buffer is associated gives an error"
+  (interactive)
+  (or (buffer-file-name) (error "no file is associated file to this buffer"))
+  (let* ((my-cmd (read-shell-command "Command to run: "))
+         (cmd-to-run (concat my-cmd " " (buffer-file-name))))
+    (shell-command cmd-to-run)))
 
-;; ;;; Tags
-;; ;;; <http://emacswiki.org/BuildTags#toc2>.
-;; ;; (setq path-to-ctags "/usr/bin/ctags")
-;; (setq path-to-ctags "/usr/bin/exuberant-ctags")
-;; (defun create-tags (dir-name)
-;;   "Create tags file."
-;;   (interactive "DDirectory: ")
-;;   (shell-command
-;;    (format "%s -f %s/TAGS -e -R %s" path-to-ctags dir-name dir-name)))
+;;; ANSI SGR (Select Graphic Rendition) escape sequences
+;;; in shell command output
+;; <http://stackoverflow.com/questions/5819719/emacs-shell-command-output-not-showing-ansi-colors-but-the-code#5821668
+;; <http://www.emacswiki.org/emacs/AnsiColor>
+(require 'ansi-color)
+(defadvice display-message-or-buffer (before ansi-color activate)
+  "Process ANSI color codes in shell output."
+  (let ((buf (ad-get-arg 0)))
+    (and (bufferp buf)
+         (string= (buffer-name buf) "*Shell Command Output*")
+         (with-current-buffer buf
+           (ansi-color-apply-on-region (point-min) (point-max))))))
 
-;; Mew is a mail reader for Emacs <http://mew.org>, <http://emacswiki.org/Mew>.
+;;; Mew is a mail reader for Emacs <http://mew.org>, <http://emacswiki.org/Mew>.
 (autoload 'mew "mew" nil t)
 (autoload 'mew-send "mew" nil t)
 ;; ;; Optional setup (e.g. C-xm for sending a message):
@@ -582,6 +518,20 @@
    "\C-[\C-s\\(\"\\|'\\)\C-s\C-m\C-?\C-[\C-r\\(\"\\|'\\)\C-m\C-d:")
 ;; (fset 'my-kbd-macro-ruby-new-hash-syntax
 ;;    "\C-s =>\C-m\C-r:\C-m\C-d\C-s =>\C-m\C-?\C-?\C-?:")
+
+;; ;;; Tags
+;; ;;; <http://emacswiki.org/BuildTags#toc2>.
+;; ;; (setq path-to-ctags "/usr/bin/ctags")
+;; (setq path-to-ctags "/usr/bin/exuberant-ctags")
+;; (defun create-tags (dir-name)
+;;   "Create tags file."
+;;   (interactive "DDirectory: ")
+;;   (shell-command
+;;    (format "%s -f %s/TAGS -e -R %s" path-to-ctags dir-name dir-name)))
+
+;;; Auto Fill Mode
+;;; <http://gnu.org/software/emacs/manual/html_node/emacs/Auto-Fill.html>.
+;(add-hook 'mail-mode-hook (lambda () (auto-fill-mode t)))
 
 ;;; ri-emacs.
 ;; (setq ri-ruby-script "~/share/emacs/site-lisp/ri-emacs/ri-emacs.rb")
@@ -717,28 +667,3 @@
 ;;           "#"))
 ;;     (expand-file-name
 ;;      (concat "#%" (buffer-name) "#"))))
-
-;; Prompts and run command with file (associated to current buffer)
-;; path as argument
-;; <http://superuser.com/questions/360427/emacs-equivalent-of-this-vim-command-to-run-my-tests#360512>.
-(defun shell-command-on-buffer-file ()
-  "prompts for a command and executes that command on to the associated
- file of current buffer. if no buffer is associated gives an error"
-  (interactive)
-  (or (buffer-file-name) (error "no file is associated file to this buffer"))
-  (let* ((my-cmd (read-shell-command "Command to run: "))
-         (cmd-to-run (concat my-cmd " " (buffer-file-name))))
-    (shell-command cmd-to-run)))
-
-;; ANSI SGR (Select Graphic Rendition) escape sequences
-;; in shell command output
-;; <http://stackoverflow.com/questions/5819719/emacs-shell-command-output-not-showing-ansi-colors-but-the-code#5821668
-;; <http://www.emacswiki.org/emacs/AnsiColor>
-(require 'ansi-color)
-(defadvice display-message-or-buffer (before ansi-color activate)
-  "Process ANSI color codes in shell output."
-  (let ((buf (ad-get-arg 0)))
-    (and (bufferp buf)
-         (string= (buffer-name buf) "*Shell Command Output*")
-         (with-current-buffer buf
-           (ansi-color-apply-on-region (point-min) (point-max))))))

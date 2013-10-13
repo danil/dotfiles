@@ -72,7 +72,7 @@ maximum_width 165
 
 alignment tr
 gap_x 250
-gap_y 55
+gap_y 230
 
 # Graphics settings #
 draw_shades no
@@ -96,9 +96,9 @@ color1 ffffff
 color2 c2bf08
 
 # Lua Load  #
-lua_load ~/.conky/conky_widgets_clock_2.lua   ~/.conky/air_clock.lua ~/.conky/clock_rings.lua
-lua_draw_hook_pre conky_widgets_clock_2
+lua_load ~/.conky/conky_widgets_clock_3.lua   ~/.conky/air_clock.lua ~/.conky/clock_rings.lua
+lua_draw_hook_pre conky_widgets_clock_3
 
 TEXT
 ${voffset 140}
-${alignc}Melbourne +11
+${alignc}Los Angeles -7

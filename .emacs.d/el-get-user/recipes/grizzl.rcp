@@ -1,4 +1,7 @@
 (:name grizzl
+       :description "Grizzl - A fuzzy search index & completing-read for Emacs"
+       :website "https://github.com/d11wtq/grizzl"
        :type elpa
+       :depends (package)
        :repo ("melpa" . "http://melpa.milkbox.net/packages/")
        )

@@ -20,7 +20,6 @@
                 (add-hook 'makefile-gmake-mode-hook 'highlight-parentheses-mode)
                 (add-hook 'markdown-mode-hook 'highlight-parentheses-mode)
                 (add-hook 'nxml-mode-hook 'highlight-parentheses-mode)
-                (add-hook 'org-mode-hook 'highlight-parentheses-mode)
                 (add-hook 'perl-mode-hook 'highlight-parentheses-mode)
                 (add-hook 'php-mode-hook 'highlight-parentheses-mode)
                 (add-hook 'ruby-mode-hook 'highlight-parentheses-mode)
