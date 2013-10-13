@@ -21,55 +21,6 @@
        (eval-print-last-sexp)))))
 (setq el-get-sources
       '(
-        ;; (:name visws
-        ;;        :type emacswik)
-        ;; (:name sass-mode
-        ;;        ;; :post-init (lambda ()
-        ;;        ;;              (add-to-list 'auto-mode-alist '("\\.scss$" . sass-mode)))
-        ;;        :features sass-mode)
-        ;; (:name lua2-mode
-        ;;        :type http
-        ;;        ;; :after (lambda ()
-        ;;        ;;          (autoload 'lua2-mode "lua2-mode"
-        ;;        ;;            "semantic highlighting extension for lua-mode" t))
-        ;;        :url "http://www.enyo.de/fw/software/lua-emacs/lua2-mode.el")
-        ;; ;; Color theme.
-        ;; (:name railscasts-theme
-        ;;        :description "Railscasts color theme for GNU Emacs"
-        ;;        :website "https://github.com/itiut/railscasts-theme"
-        ;;        :type github
-        ;;        :pkgname "itiut/railscasts-theme"
-        ;;        :minimum-emacs-version 24
-        ;;        :after (progn
-        ;;                 (load-theme 'railscasts t nil))
-        ;;        :post-init (add-to-list 'custom-theme-load-path
-        ;;                                default-directory))
-        ;; (:name highlight-indentation
-        ;;        :type git
-        ;;        :url "https://github.com/antonj/Highlight-Indentation-for-Emacs"
-        ;;        :after (progn
-        ;;                 (autoload 'highlight-indentation "highlight-indentation"
-        ;;                   "Visual guidelines for indentation (using spaces)" t)))
-        ;; (:name gpicker
-        ;;        :type http
-        ;;        :post-init (progn
-        ;;                     (autoload 'gpicker-visit-project "gpicker" nil t))
-        ;;        :after (progn
-        ;;                 (global-set-key (kbd "C-c f c") 'gpicker-visit-project)
-        ;;                 (global-set-key (kbd "C-c f f") 'gpicker-find-file))
-        ;;        :url "https://raw.github.com/alk/gpicker/v2.2/gpicker.el")
-        ;; (:name ido-better-flex
-        ;;        :type elpa)
-        ;; (:name jump
-        ;;        :type git
-        ;;        :url "git://github.com/emacsmirror/jump.git")
-        ;; (:name rinari
-        ;;        ;; :after (lambda ()
-        ;;        ;;          (autoload 'rinari-web-server "rinari"
-        ;;        ;;            "Run Rails script/server." t))
-        ;;        ;; :build nil
-        ;;        ;; :info nil
-        ;;        )
         ;; (:name emacs-rails ;<http://stackoverflow.com/questions/2713096/emacs-rails-vs-rinari>
         ;;        :type git
         ;;        :url "git://github.com/remvee/emacs-rails.git")
