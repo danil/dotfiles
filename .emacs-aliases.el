@@ -131,6 +131,7 @@
 
 (eval-after-load 'diff-mode
   '(progn
+     ;; Colors available to Emacs <http://raebear.net/comp/emacscolors.html>.
      (set-face-foreground 'diff-added   "brightgreen")
      (set-face-foreground 'diff-removed "brightred")
      (set-face-foreground 'diff-changed "brightblue")

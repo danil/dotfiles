@@ -168,11 +168,10 @@
 # "stardict"
 #   Control + Shift + Mod1 + t
 
-# # Screenshot.
-# # "import ~/tmp/screenshot.png"
-# "shutter -s"
-#   Control + Shift + Mod1 + p
-#   # Control + Shift + Mod1 + Print
+# Screenshot.
+# "import ~/tmp/screenshot.png"
+"shutter -s"
+  Control + Shift + Mod1 + p
 
 # # ALSA.
 # "amixer sset PCM 5%+ unmute"
