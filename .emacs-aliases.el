@@ -178,7 +178,7 @@
          ethan-wspace
          evil
          findr
-         fiplr
+         ;; fiplr
          flycheck
          git-gutter
          go-mode
