@@ -475,7 +475,7 @@
 ;;; Prompts and run command with file (associated to current buffer)
 ;;; path as argument
 ;;; <http://superuser.com/questions/360427/emacs-equivalent-of-this-vim-command-to-run-my-tests#360512>.
-(defun shell-command-on-buffer-file ()
+(defun my-do-shell-command-on-buffer-file ()
   "prompts for a command and executes that command on to the associated
  file of current buffer. if no buffer is associated gives an error"
   (interactive)
@@ -485,10 +485,14 @@
     (shell-command cmd-to-run)))
 
 ;;; ANSI SGR (Select Graphic Rendition) escape sequences
-;;; in shell command output
-;; <http://stackoverflow.com/questions/5819719/emacs-shell-command-output-not-showing-ansi-colors-but-the-code#5821668
-;; <http://www.emacswiki.org/emacs/AnsiColor>
+;;; <http://www.emacswiki.org/emacs/AnsiColor>
 (require 'ansi-color)
+(defun my-show-ansi-color ()
+  "Process ANSI color codes in region."
+  (interactive)
+  (ansi-color-apply-on-region (region-beginning) (region-end)))
+;;; ANSI SRG in shell command output
+;:; <http://stackoverflow.com/questions/5819719/emacs-shell-command-output-not-showing-ansi-colors-but-the-code#5821668
 (defadvice display-message-or-buffer (before ansi-color activate)
   "Process ANSI color codes in shell output."
   (let ((buf (ad-get-arg 0)))
