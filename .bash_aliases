@@ -34,6 +34,9 @@ alias ec='/usr/bin/emacsclient -t'
 # Silver searchers colors configurable <https://github.com/ggreer/the_silver_searcher/issues/90>.
 alias ag='ag --smart-case --color-line-number "2;31"'
 
+# Prompt.
+[[ -f ~/.bash_prompt.sh ]] && source ~/.bash_prompt.sh
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" #load RVM (Ruby Version Manager) into a shell session *as a function* <http://rvm.rvm.io/rvm/install>
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion #RVM bash completion <http://rvm.io/workflow/completion>
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
@@ -43,9 +46,6 @@ PATH=$PATH:$HOME/.cask/bin
 
 # EVM (Emacs Version Manager) <https://github.com/rejeep/evm>.
 PATH=$PATH:$HOME/.evm/bin
-
-# Prompt.
-[[ -f ~/.bash_prompt.sh ]] && source ~/.bash_prompt.sh
 
 # Lua.
 if [ -d ~/.luarocks/bin ] ; then
