@@ -37,6 +37,8 @@ function ps1_load {
         echo -n " ${ps1_red}load:${load_string}${ps1_plain}"
     fi
 }
+# Dynamically PS1
+# <http://stackoverflow.com/questions/3058325/what-is-the-difference-between-ps1-and-prompt-command#3058390>.
 function my_prompt_command {
     PS1="${ps1_user}${ps1_dir}$(ps1_load)$(ps1_jobs)"'$(__git_ps1 " (%s)")\n'"${ps1_blue}\$${ps1_plain} "
 }
