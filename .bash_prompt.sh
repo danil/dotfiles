@@ -34,14 +34,13 @@ function my_prompt_command {
     # Exit status error
     # <http://brettterpstra.com/2009/11/17/my-new-favorite-bash-prompt>.
     exit_code=$?
-    if [ $exit_code -eq 0 ]; then #set an error string for the prompt, if applicable
+    if [[ $exit_code -eq 0 || $exit_code -eq 130 ]]; then #set an error string for the prompt, if applicable (130 script terminated by control-c <http://www.tldp.org/LDP/abs/html/exitcodes.html>)
         ps1_exit_code=""
     else
         ps1_exit_code=" ${ps1_red}error:$exit_code$ps1_plain"
     fi
     PS1="${ps1_user}${ps1_dir}${ps1_exit_code}$(ps1_load)$(ps1_jobs)"'$(__git_ps1 " (%s)")\n'"${ps1_blue}\$${ps1_plain} "
 }
-# registr_my_prompt_command "my_prompt_command"
 PROMPT_COMMAND=my_prompt_command
 # Git prompt
 # <http://github.com/git/git/blob/master/contrib/completion/git-prompt.sh>.
