@@ -34,7 +34,7 @@ function my_prompt_command {
     # Exit status error
     # <http://brettterpstra.com/2009/11/17/my-new-favorite-bash-prompt>.
     exit_code=$?
-    if [[ $exit_code -eq 0 || $exit_code -eq 130 ]]; then #set an error string for the prompt, if applicable (130 script terminated by control-c <http://www.tldp.org/LDP/abs/html/exitcodes.html>)
+    if [[ $exit_code -eq 0 || $exit_code -eq 130 ]]; then #set an error string for the prompt, if applicable (to ignore 130: script terminated by control-c <http://www.tldp.org/LDP/abs/html/exitcodes.html>)
         ps1_exit_code=""
     else
         ps1_exit_code=" ${ps1_red}error:$exit_code$ps1_plain"
