@@ -14,15 +14,6 @@ function registr_my_prompt_command() {
         PROMPT_COMMAND="$PROMPT_COMMAND;$1"
     fi
 }
-# function ps1_set_exit_code {
-#     export EXIT_CODE="$?"
-# }
-# registr_my_prompt_command "ps1_set_exit_code"
-# function ps1_exit_code {
-#     if [ $EXIT_CODE -ne 0 ]; then
-#         echo -n " ${ps1_red}error:${EXIT_CODE}${ps1_plain}"
-#     fi
-# }
 function ps1_jobs {
     if [ `jobs | wc -l` -ne 0 ]; then
         echo -n " ${ps1_red}jobs:\j${ps1_plain}"
@@ -37,12 +28,21 @@ function ps1_load {
         echo -n " ${ps1_red}load:${load_string}${ps1_plain}"
     fi
 }
-# Dynamically PS1
+# Assign PS1 dynamically
 # <http://stackoverflow.com/questions/3058325/what-is-the-difference-between-ps1-and-prompt-command#3058390>.
 function my_prompt_command {
-    PS1="${ps1_user}${ps1_dir}$(ps1_load)$(ps1_jobs)"'$(__git_ps1 " (%s)")\n'"${ps1_blue}\$${ps1_plain} "
+    # Exit status error
+    # <http://brettterpstra.com/2009/11/17/my-new-favorite-bash-prompt>.
+    exit_code=$?
+    if [ $exit_code -eq 0 ]; then #set an error string for the prompt, if applicable
+        ps1_exit_code=""
+    else
+        ps1_exit_code=" ${ps1_red}error:$exit_code$ps1_plain"
+    fi
+    PS1="${ps1_user}${ps1_dir}${ps1_exit_code}$(ps1_load)$(ps1_jobs)"'$(__git_ps1 " (%s)")\n'"${ps1_blue}\$${ps1_plain} "
 }
-registr_my_prompt_command "my_prompt_command"
+# registr_my_prompt_command "my_prompt_command"
+PROMPT_COMMAND=my_prompt_command
 # Git prompt
 # <http://github.com/git/git/blob/master/contrib/completion/git-prompt.sh>.
 if [ -f ~/.git-prompt/contrib/completion/git-prompt.sh ]; then
