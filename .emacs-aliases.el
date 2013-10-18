@@ -47,12 +47,13 @@
          crontab-mode
          csv-mode
          deft
+         ebuild-mode
          egg
          etags-select
          ethan-wspace
          evil
          findr
-         ;; fiplr
+         fiplr
          flycheck
          git-gutter
          go-mode
@@ -93,22 +94,6 @@
 (setq system-time-locale "C")
 (setq calendar-week-start-day 1)
 (global-font-lock-mode 1)
-
-;;; Host specific confirmation
-;;; <http://www.gnu.org/software/emacs/manual/html_node/elisp/System-Environment.html>,
-;;; <http://ergoemacs.org/emacs/elisp_determine_OS_version.html>.
-(cond
- ;;; Frink.
- ((string-equal system-name "frink.kutkevich.org")
-  (progn
-    (require 'site-gentoo)
-    ))
- ;; ;; Barney.
- ;; ((string-equal system-name "danil-kutkevich")
- ;;  (progn
- ;;    ;;
- ;;    ))
- )
 
 ;;; BackspaceKey <http://emacswiki.org/BackspaceKey>.
 ;; (global-set-key [(control h)] 'delete-backward-char)
@@ -321,7 +306,6 @@
 (add-hook 'makefile-gmake-mode-hook 'my-linum-mode-hook)
 (add-hook 'markdown-mode-hook 'my-linum-mode-hook)
 (add-hook 'nxml-mode-hook 'my-linum-mode-hook)
-(add-hook 'org-mode-hook 'my-linum-mode-hook)
 (add-hook 'perl-mode-hook 'my-linum-mode-hook)
 (add-hook 'php-mode-hook 'my-linum-mode-hook)
 (add-hook 'ruby-mode-hook 'my-linum-mode-hook)
@@ -398,10 +382,6 @@
 (setq auto-mode-alist
       (cons '("\\.features\\'" . conf-mode) auto-mode-alist))
 
-;;; Gentoo ebuild.
-;; (setq auto-mode-alist
-;;       (cons '("\\.ebuild\\'" . sh-mode) auto-mode-alist))
-
 ;;; Gentoo confs.
 (add-to-list 'auto-mode-alist '("/etc/conf.d/" . conf-mode))
 (add-to-list 'auto-mode-alist '("/etc/env.d/" . conf-mode))
@@ -475,7 +455,7 @@
 ;;; Prompts and run command with file (associated to current buffer)
 ;;; path as argument
 ;;; <http://superuser.com/questions/360427/emacs-equivalent-of-this-vim-command-to-run-my-tests#360512>.
-(defun shell-command-on-buffer-file ()
+(defun my-do-shell-command-on-buffer-file ()
   "prompts for a command and executes that command on to the associated
  file of current buffer. if no buffer is associated gives an error"
   (interactive)
@@ -485,10 +465,14 @@
     (shell-command cmd-to-run)))
 
 ;;; ANSI SGR (Select Graphic Rendition) escape sequences
-;;; in shell command output
-;; <http://stackoverflow.com/questions/5819719/emacs-shell-command-output-not-showing-ansi-colors-but-the-code#5821668
-;; <http://www.emacswiki.org/emacs/AnsiColor>
+;;; <http://www.emacswiki.org/emacs/AnsiColor>
 (require 'ansi-color)
+(defun my-show-ansi-color ()
+  "Process ANSI color codes in region."
+  (interactive)
+  (ansi-color-apply-on-region (region-beginning) (region-end)))
+;;; ANSI SRG in shell command output
+;:; <http://stackoverflow.com/questions/5819719/emacs-shell-command-output-not-showing-ansi-colors-but-the-code#5821668
 (defadvice display-message-or-buffer (before ansi-color activate)
   "Process ANSI color codes in shell output."
   (let ((buf (ad-get-arg 0)))

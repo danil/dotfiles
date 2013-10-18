@@ -24,7 +24,8 @@ export HISTCONTROL=ignoredups
 
 # Aliases.
 alias less=$PAGER
-alias ec='/usr/bin/emacsclient -t'
+# alias ec='/usr/bin/emacsclient -t'
+alias ec='~/.evm/installations/emacs-24.3/bin/emacsclient -t'
 # alias ecx='/usr/bin/emacsclient --alternate-editor="" -c "$@"'
 # Silver searchers colors configurable <https://github.com/ggreer/the_silver_searcher/issues/90>.
 alias ag='ag --smart-case --color-line-number "2;31"'
