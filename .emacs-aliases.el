@@ -321,7 +321,6 @@
 (add-hook 'makefile-gmake-mode-hook 'my-linum-mode-hook)
 (add-hook 'markdown-mode-hook 'my-linum-mode-hook)
 (add-hook 'nxml-mode-hook 'my-linum-mode-hook)
-(add-hook 'org-mode-hook 'my-linum-mode-hook)
 (add-hook 'perl-mode-hook 'my-linum-mode-hook)
 (add-hook 'php-mode-hook 'my-linum-mode-hook)
 (add-hook 'ruby-mode-hook 'my-linum-mode-hook)
