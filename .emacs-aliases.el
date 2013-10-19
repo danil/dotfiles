@@ -148,7 +148,7 @@
         ;;        :depends (flymake-easy)
         ;;        :post-init (add-hook 'css-mode-hook 'flymake-css-load))
         ))
-(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
+(add-to-list 'el-get-recipe-path "~/.emacs.d/my-el-get/recipes")
 (setq my-packages
       (append
        '(
