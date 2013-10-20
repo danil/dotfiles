@@ -20,7 +20,9 @@ function ps1_jobs {
     fi
 }
 function ps1_load {
-    # Prompt load average <http://www.gilesorr.com/bashprompt/prompts/load.html>.
+    # Prompt load average
+    # <http://www.gilesorr.com/bashprompt/prompts/load.html>,
+    # <http://stackoverflow.com/questions/1738665/showing-only-the-uptime-from-uptime-unix/1738675#1740333>.
     local load_string="$(uptime)"
     local load_string=${load_string/#*average: }
     local load_string=${load_string%%,*}
