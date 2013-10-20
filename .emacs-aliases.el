@@ -47,6 +47,7 @@
          crontab-mode
          csv-mode
          deft
+         ebuild-mode
          egg
          etags-select
          ethan-wspace
@@ -93,22 +94,6 @@
 (setq system-time-locale "C")
 (setq calendar-week-start-day 1)
 (global-font-lock-mode 1)
-
-;;; Host specific confirmation
-;;; <http://www.gnu.org/software/emacs/manual/html_node/elisp/System-Environment.html>,
-;;; <http://ergoemacs.org/emacs/elisp_determine_OS_version.html>.
-(cond
- ;;; Frink.
- ((string-equal system-name "frink.kutkevich.org")
-  (progn
-    (require 'site-gentoo)
-    ))
- ;; ;; Barney.
- ;; ((string-equal system-name "danil-kutkevich")
- ;;  (progn
- ;;    ;;
- ;;    ))
- )
 
 ;;; BackspaceKey <http://emacswiki.org/BackspaceKey>.
 ;; (global-set-key [(control h)] 'delete-backward-char)
@@ -321,6 +306,7 @@
 (add-hook 'makefile-gmake-mode-hook 'my-linum-mode-hook)
 (add-hook 'markdown-mode-hook 'my-linum-mode-hook)
 (add-hook 'nxml-mode-hook 'my-linum-mode-hook)
+(add-hook 'org-mode-hook 'my-linum-mode-hook)
 (add-hook 'perl-mode-hook 'my-linum-mode-hook)
 (add-hook 'php-mode-hook 'my-linum-mode-hook)
 (add-hook 'ruby-mode-hook 'my-linum-mode-hook)
@@ -397,10 +383,6 @@
 (setq auto-mode-alist
       (cons '("\\.features\\'" . conf-mode) auto-mode-alist))
 
-;;; Gentoo ebuild.
-;; (setq auto-mode-alist
-;;       (cons '("\\.ebuild\\'" . sh-mode) auto-mode-alist))
-
 ;;; Gentoo confs.
 (add-to-list 'auto-mode-alist '("/etc/conf.d/" . conf-mode))
 (add-to-list 'auto-mode-alist '("/etc/env.d/" . conf-mode))
@@ -470,6 +452,17 @@
 ;;; CSS mode
 ;;; <http://emacswiki.org/emacs/css-mode.el>.
 (setq css-indent-offset 2)
+
+;;; Hide Show minor mode <http://www.emacswiki.org/emacs/HideShow>.
+(add-hook 'ruby-mode-hook 'hs-minor-mode)
+;; (eval-after-load 'hs-minor-mode
+;;   '(progn (define-key hs-minor-mode-map (kbd \"TAB\") 'hs-toggle-hiding)))
+
+;;; Folding Ruby code (hide show minor mode).
+(add-to-list 'hs-special-modes-alist
+                  '(ruby-mode
+                           "\\(def\\|do\\|{\\)" "\\(end\\|end\\|}\\)" "#"
+                                  (lambda (arg) (ruby-end-of-block)) nil))
 
 ;;; Prompts and run command with file (associated to current buffer)
 ;;; path as argument
