@@ -21,10 +21,12 @@ function ps1_jobs {
 }
 function ps1_load {
     # Prompt load average <http://www.gilesorr.com/bashprompt/prompts/load.html>.
-    local load_string="$(uptime | sed -e "s/.*load average: \(.*\...\), \(.*\...\), \(.*\...\).*/\1/" -e "s/ //g")"
+    local load_string="$(uptime)"
+    local load_string=${load_string/#*average: }
+    local load_string=${load_string%%,*}
     local tmp=$(echo ${load_string}*100 | bc)
     let load100=${tmp%.*}
-    if [ ${load100} -ge 100 ]; then
+    if [[ ${load100} -ge 100 ]]; then
         echo -n " ${ps1_red}load:${load_string}${ps1_plain}"
     fi
 }
