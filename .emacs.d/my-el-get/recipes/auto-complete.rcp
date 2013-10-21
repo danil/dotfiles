@@ -19,5 +19,6 @@
                 (add-to-list 'ac-modes 'sass-mode)
                 (add-to-list 'ac-modes 'scss-mode)
                 (add-to-list 'ac-modes 'sgml-mode)
+                (add-to-list 'ac-modes 'sql-mode)
                 (add-to-list 'ac-modes 'yaml-mode)
                 (setq ac-disable-faces (quote (font-lock-doc-face)))))
