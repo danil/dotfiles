@@ -42,6 +42,7 @@
          auto-complete-css
          auto-complete-emacs-lisp
          auto-complete-etags
+         bash-completion
          coffee-mode
          column-marker
          crontab-mode
@@ -492,6 +493,20 @@
          (string= (buffer-name buf) "*Shell Command Output*")
          (with-current-buffer buf
            (ansi-color-apply-on-region (point-min) (point-max))))))
+
+;;; Move point to beginning of line or "back to indentation"
+;;; <http://stackoverflow.com/questions/6035872/moving-to-the-start-of-a-code-line-emacs#7250027>.
+(defun my-beginning-of-line ()
+  "Move point to the beginning of text on the current line; if that is already
+the current position of point, then move it to the beginning of the line."
+  (interactive)
+  (let ((pt (point)))
+    (beginning-of-line-text)
+    (when (eq pt (point))
+      (beginning-of-line))))
+(global-set-key (kbd "C-a") 'my-beginning-of-line)
+;; (eval-after-load "cc-mode"
+;;      '(define-key c-mode-base-map (kbd "C-a") 'my-beginning-of-line))
 
 ;;; Mew is a mail reader for Emacs <http://mew.org>, <http://emacswiki.org/Mew>.
 (autoload 'mew "mew" nil t)
