@@ -16,6 +16,7 @@ export EDITOR="vim" #export EDITOR="nano" #export EDITOR="/usr/bin/emacsclient -
 # export ALTERNATE_EDITOR="/usr/bin/emacs"
 export PAGER="/usr/bin/less -IM"
 export HISTSIZE=10000
+export HISTFILESIZE=10000
 export HISTCONTROL=ignoredups
 # See /usr/share/terminfo/*/
 # export TERM=rxvt-256color

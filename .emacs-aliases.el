@@ -42,6 +42,7 @@
          auto-complete-css
          auto-complete-emacs-lisp
          auto-complete-etags
+         bash-completion
          coffee-mode
          column-marker
          crontab-mode
@@ -185,6 +186,10 @@
 ;;; <http://superuser.com/questions/127420/how-can-i-hide-the-tool-bar-in-emacs-persistently#127422>.
 (tool-bar-mode -1)
 
+;;; Environment variables.
+(setenv "GIT_PAGER" "")
+;; (setenv "ESHELL" (expand-file-name "/bin/zsh")) ;terminal <http://stackoverflow.com/questions/1568987/getting-emacs-to-respect-my-default-shell-options#1570246>
+
 ;; ;;; <http://emacswiki.org/ScrollBar>.
 ;; (scroll-bar-mode -1)
 ;; <http://stackoverflow.com/questions/3155451/emacs-scrollbar-customize#3159618>.
@@ -195,8 +200,11 @@
 ;;; <http://emacswiki.org/AnsiColor>.
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
-;; ;;; Terminal <http://stackoverflow.com/questions/1568987/getting-emacs-to-respect-my-default-shell-options#1570246>.
-;; (setenv "ESHELL" (expand-file-name "/bin/zsh"))
+;;; Comint mode (which shell mode and sql mode based on)
+;;; <http://www.emacswiki.org/emacs/ComintMode#toc3>.
+(setq comint-input-ring-size 10000)
+;; (add-hook 'sql-interactive-mode-hook
+;;           (function (lambda () (setq comint-input-ring-size 10000))))
 
 (global-rinari-mode)
 
@@ -492,6 +500,20 @@
          (string= (buffer-name buf) "*Shell Command Output*")
          (with-current-buffer buf
            (ansi-color-apply-on-region (point-min) (point-max))))))
+
+;;; Move point to beginning of line or "back to indentation"
+;;; <http://stackoverflow.com/questions/6035872/moving-to-the-start-of-a-code-line-emacs#7250027>.
+(defun my-beginning-of-line ()
+  "Move point to the beginning of text on the current line; if that is already
+the current position of point, then move it to the beginning of the line."
+  (interactive)
+  (let ((pt (point)))
+    (beginning-of-line-text)
+    (when (eq pt (point))
+      (beginning-of-line))))
+(global-set-key (kbd "C-a") 'my-beginning-of-line)
+;; (eval-after-load "cc-mode"
+;;      '(define-key c-mode-base-map (kbd "C-a") 'my-beginning-of-line))
 
 ;;; Mew is a mail reader for Emacs <http://mew.org>, <http://emacswiki.org/Mew>.
 (autoload 'mew "mew" nil t)
