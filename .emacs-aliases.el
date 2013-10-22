@@ -200,6 +200,12 @@
 ;;; <http://emacswiki.org/AnsiColor>.
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
+;;; Comint mode (which shell mode and sql mode based on)
+;;; <http://www.emacswiki.org/emacs/ComintMode#toc3>.
+(setq comint-input-ring-size 10000)
+;; (add-hook 'sql-interactive-mode-hook
+;;           (function (lambda () (setq comint-input-ring-size 10000))))
+
 (global-rinari-mode)
 
 ;;; Column number mode
