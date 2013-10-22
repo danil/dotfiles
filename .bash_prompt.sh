@@ -44,7 +44,7 @@ function my_prompt_command {
     # Prompt unicode arrow
     # <http://crunchbang.org/forums/viewtopic.php?pid=127747#p127747>,
     # <https://wiki.archlinux.org/index.php/Color_Bash_Prompt#From_Arch_Forum_.231>.
-    PS1="┌${ps1_user}${ps1_dir}${ps1_exit_code}$(ps1_load)$(ps1_jobs)"'$(__git_ps1 " (%s)")\n'"└${ps1_blue}\$${ps1_plain} "
+    PS1="┌${ps1_user}${ps1_exit_code}$(ps1_load)$(ps1_jobs)${ps1_dir}"'$(__git_ps1 " (%s)")\n'"└${ps1_blue}\$${ps1_plain} "
 }
 PROMPT_COMMAND=my_prompt_command
 # Git prompt
