@@ -79,6 +79,7 @@
          rinari
          rspec-mode
          ruby-hash-syntax
+         ruby-tools
          rvm
          sass-mode
          scss-mode
