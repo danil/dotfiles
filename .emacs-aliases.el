@@ -97,6 +97,8 @@
 (setq calendar-week-start-day 1)
 (global-font-lock-mode 1)
 
+(global-set-key (kbd "C-c d s") 'sort-lines)
+
 ;;; BackspaceKey <http://emacswiki.org/BackspaceKey>.
 ;; (global-set-key [(control h)] 'delete-backward-char)
 (defun my-backspace-fix ()
