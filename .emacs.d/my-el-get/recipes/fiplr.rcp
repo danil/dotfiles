@@ -5,7 +5,7 @@
        :depends (grizzl package)
        :repo ("melpa" . "http://melpa.milkbox.net/packages/")
        :after (progn
-                (global-set-key (kbd "C-c f") 'fiplr-find-file)
+                (global-set-key (kbd "C-c f f") 'fiplr-find-file)
                 (add-hook 'grizzl-mode-hook
                           (lambda ()
                             (local-set-key (kbd "C-p") 'grizzl-set-selection+1)

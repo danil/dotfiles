@@ -6,5 +6,5 @@
        ;; :type elpa
        ;; :repo ("melpa" . "http://melpa.milkbox.net/packages/")
        :after (progn
-                (global-set-key (kbd "C-c s") 'ag-regexp)
+                (global-set-key (kbd "C-c f s") 'ag-regexp)
                 (set 'ag-highlight-search 1)))

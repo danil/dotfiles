@@ -53,6 +53,7 @@
          etags-select
          ethan-wspace
          evil
+         expand-region
          findr
          ;; fiplr
          flycheck
@@ -65,7 +66,6 @@
          idle-highlight-mode
          ido-yes-or-no
          inf-ruby
-         less
          lua-mode
          magit
          markdown-mode
@@ -504,13 +504,13 @@
 ;;; Move point to beginning of line or "back to indentation"
 ;;; <http://stackoverflow.com/questions/6035872/moving-to-the-start-of-a-code-line-emacs#7250027>.
 (defun my-beginning-of-line ()
-  "Move point to the beginning of text on the current line; if that is already
-the current position of point, then move it to the beginning of the line."
+  "Move point to the beginning of the line; if that is already
+the current position of point, then move it to the beginning of text on the current line."
   (interactive)
   (let ((pt (point)))
-    (beginning-of-line-text)
+    (beginning-of-line)
     (when (eq pt (point))
-      (beginning-of-line))))
+      (beginning-of-line-text))))
 (global-set-key (kbd "C-a") 'my-beginning-of-line)
 ;; (eval-after-load "cc-mode"
 ;;      '(define-key c-mode-base-map (kbd "C-a") 'my-beginning-of-line))
@@ -544,11 +544,13 @@ e.g. `HelloWorldString'."
         (replace-match (funcall func (match-string 1))
                        t nil))
       (widen))))
+(global-set-key (kbd "C-c d c") 'my-toggle-camelcase-underscore)
 
-(defun my-humanize-camelcase-and-underscore ()
-  "Humanize the symbol at point between C-style naming,
-e.g. `hello_world_string', and camel case,
-e.g. `HelloWorldString'."
+(defun my-humanize-symbol ()
+  "Humanize the symbol at point from
+C-style naming, e.g. `hello_world_string',
+and camel case, e.g. `HelloWorldString',
+and Lisp-style nameing, e.g. `hello-world-string'."
   (interactive)
   (let* ((symbol-pos (bounds-of-thing-at-point 'symbol))
          case-fold-search symbol-at-point cstyle regexp func)
@@ -557,7 +559,10 @@ e.g. `HelloWorldString'."
     (save-excursion
       (narrow-to-region (car symbol-pos) (cdr symbol-pos))
       (setq cstyle (string-match-p "_" (buffer-string))
-            regexp (if cstyle "\\(?:\\_<\\|_\\)\\(\\w\\)" "\\([A-Z]\\)")
+            lisp-style (string-match-p "-" (buffer-string))
+            regexp (cond (cstyle "\\(?:\\_<\\|_\\)\\(\\w\\)")
+                         (lisp-style "\\(?:\\-<\\|-\\)\\(\\w\\)")
+                         (t "\\([A-Z]\\)"))
             func (lambda (s)
                      (concat (if (= (match-beginning 1)
                                     (car symbol-pos))
@@ -569,6 +574,7 @@ e.g. `HelloWorldString'."
         (replace-match (funcall func (match-string 1))
                        t nil))
       (widen))))
+(global-set-key (kbd "C-c d h") 'my-humanize-symbol)
 
 ;;; Mew is a mail reader for Emacs <http://mew.org>, <http://emacswiki.org/Mew>.
 (autoload 'mew "mew" nil t)
