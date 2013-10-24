@@ -66,6 +66,7 @@
          idle-highlight-mode
          ido-yes-or-no
          inf-ruby
+         less ;do not remove, used for generic scroll!
          lua-mode
          magit
          markdown-mode
@@ -578,6 +579,21 @@ and Lisp-style nameing, e.g. `hello-world-string'."
                        t nil))
       (widen))))
 (global-set-key (kbd "C-c d h") 'my-humanize-symbol)
+
+;;; Sql mode history <http://www.emacswiki.org/emacs/SqlMode#toc3>.
+(defun my-sql-save-history-hook ()
+  (let ((lval 'sql-input-ring-file-name)
+        (rval 'sql-product))
+    (if (symbol-value rval)
+        (let ((filename
+               (concat "~/.emacs.d/sql/"
+                       (symbol-name (symbol-value rval))
+                       "-history.sql")))
+          (set (make-local-variable lval) filename))
+      (error
+       (format "SQL history will not be saved because %s is nil"
+               (symbol-name rval))))))
+(add-hook 'sql-interactive-mode-hook 'my-sql-save-history-hook)
 
 ;;; Mew is a mail reader for Emacs <http://mew.org>, <http://emacswiki.org/Mew>.
 (autoload 'mew "mew" nil t)
