@@ -80,6 +80,7 @@
          rinari
          rspec-mode
          ruby-hash-syntax
+         ruby-refactor
          ruby-tools
          rvm
          sass-mode
