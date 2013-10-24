@@ -62,6 +62,7 @@
          haml-mode
          haskell-mode
          highlight-parentheses
+         highlight-symbol
          hl-line+
          idle-highlight-mode
          ido-yes-or-no
@@ -117,8 +118,14 @@
 ;; (set-face-attribute 'region nil :inverse-video t)
 (set-face-background 'region "#002b36") ;#2E3436 ;set selection background color
 
+;;; Matches other than the current one by Isearch and Query Replace
+;;; <http://www.gnu.org/software/emacs/manual/html_node/emacs/Standard-Faces.html>.
+;; (set-face-background 'lazy-highlight "#002b36")
+(set-face-attribute 'lazy-highlight nil :foreground "lightskyblue1" :background "coral3")
+(set-face-attribute 'isearch-fail nil :foreground "black")
+
 ;; (set-background-color "#0f0f0f")
-(set-cursor-color "#aa0000")
+(set-cursor-color "red") ;#aa0000
 
 (eval-after-load 'diff-mode
   '(progn

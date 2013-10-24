@@ -6,7 +6,7 @@
 ! Cursor disappears with compiz and Xft font <http://bbs.archlinux.org/viewtopic.php?pid=991221>.
 ! *cursorUnderline: true
 *cursorBlink:     false
-*cursorColor:     #aa0000
+*cursorColor:     #ff0000
 *cursorUnderline: false
 ! Get width and height of a terminal window: `tput cols` and `tput lines`
 ! <http://stackoverflow.com/questions/263890/how-do-i-find-the-width-height-of-a-terminal-window#263900>.
