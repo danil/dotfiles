@@ -1,0 +1,8 @@
+(:name ruby-refactor
+       :description "A minor mode for Emacs that provides some Ruby refactoring methods."
+       :website "https://github.com/ajvargo/ruby-refactor"
+       :type github
+       :pkgname "ajvargo/ruby-refactor"
+       :after (progn
+                (add-hook 'ruby-mode-hook 'ruby-refactor-mode-launch)
+                ))

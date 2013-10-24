@@ -53,19 +53,21 @@
          etags-select
          ethan-wspace
          evil
+         expand-region
          findr
-         fiplr
+         ;; fiplr
          flycheck
          git-gutter
          go-mode
          haml-mode
          haskell-mode
          highlight-parentheses
+         highlight-symbol
          hl-line+
          idle-highlight-mode
          ido-yes-or-no
          inf-ruby
-         less
+         less ;do not remove, used for generic scroll!
          lua-mode
          magit
          markdown-mode
@@ -79,6 +81,8 @@
          rinari
          rspec-mode
          ruby-hash-syntax
+         ruby-refactor
+         ruby-tools
          rvm
          sass-mode
          scss-mode
@@ -96,6 +100,8 @@
 (setq calendar-week-start-day 1)
 (global-font-lock-mode 1)
 
+(global-set-key (kbd "C-c d s") 'sort-lines)
+
 ;;; BackspaceKey <http://emacswiki.org/BackspaceKey>.
 ;; (global-set-key [(control h)] 'delete-backward-char)
 (defun my-backspace-fix ()
@@ -112,8 +118,14 @@
 ;; (set-face-attribute 'region nil :inverse-video t)
 (set-face-background 'region "#002b36") ;#2E3436 ;set selection background color
 
+;;; Matches other than the current one by Isearch and Query Replace
+;;; <http://www.gnu.org/software/emacs/manual/html_node/emacs/Standard-Faces.html>.
+;; (set-face-background 'lazy-highlight "#002b36")
+(set-face-attribute 'lazy-highlight nil :foreground "lightskyblue1" :background "coral3")
+(set-face-attribute 'isearch-fail nil :foreground "black")
+
 ;; (set-background-color "#0f0f0f")
-(set-cursor-color "#aa0000")
+(set-cursor-color "red") ;#aa0000
 
 (eval-after-load 'diff-mode
   '(progn
@@ -504,16 +516,92 @@
 ;;; Move point to beginning of line or "back to indentation"
 ;;; <http://stackoverflow.com/questions/6035872/moving-to-the-start-of-a-code-line-emacs#7250027>.
 (defun my-beginning-of-line ()
-  "Move point to the beginning of text on the current line; if that is already
-the current position of point, then move it to the beginning of the line."
+  "Move point to the beginning of the line; if that is already
+the current position of point, then move it to the beginning of text on the current line."
   (interactive)
   (let ((pt (point)))
-    (beginning-of-line-text)
+    (beginning-of-line)
     (when (eq pt (point))
-      (beginning-of-line))))
+      (beginning-of-line-text))))
 (global-set-key (kbd "C-a") 'my-beginning-of-line)
 ;; (eval-after-load "cc-mode"
 ;;      '(define-key c-mode-base-map (kbd "C-a") 'my-beginning-of-line))
+
+;;; CamleCase and underscore toggle
+;;; <http://superuser.com/questions/126431/is-there-any-way-to-convert-camel-cased-names-to-use-underscores-in-emacs/126473#300048>,
+;;; <https://bunkus.org/blog/2009/12/switching-identifier-naming-style-between-camel-case-and-c-style-in-emacs>.
+(defun my-toggle-camelcase-and-underscore ()
+  "Toggles the symbol at point between C-style naming,
+e.g. `hello_world_string', and camel case,
+e.g. `HelloWorldString'."
+  (interactive)
+  (let* ((symbol-pos (bounds-of-thing-at-point 'symbol))
+         case-fold-search symbol-at-point cstyle regexp func)
+    (unless symbol-pos
+      (error "No symbol at point"))
+    (save-excursion
+      (narrow-to-region (car symbol-pos) (cdr symbol-pos))
+      (setq cstyle (string-match-p "_" (buffer-string))
+            regexp (if cstyle "\\(?:\\_<\\|_\\)\\(\\w\\)" "\\([A-Z]\\)")
+            func (if cstyle
+                     'capitalize
+                   (lambda (s)
+                     (concat (if (= (match-beginning 1)
+                                    (car symbol-pos))
+                                 ""
+                               "_")
+                             (downcase s)))))
+      (goto-char (point-min))
+      (while (re-search-forward regexp nil t)
+        (replace-match (funcall func (match-string 1))
+                       t nil))
+      (widen))))
+(global-set-key (kbd "C-c d c") 'my-toggle-camelcase-underscore)
+
+(defun my-humanize-symbol ()
+  "Humanize the symbol at point from
+C-style naming, e.g. `hello_world_string',
+and camel case, e.g. `HelloWorldString',
+and Lisp-style nameing, e.g. `hello-world-string'."
+  (interactive)
+  (let* ((symbol-pos (bounds-of-thing-at-point 'symbol))
+         case-fold-search symbol-at-point cstyle regexp func)
+    (unless symbol-pos
+      (error "No symbol at point"))
+    (save-excursion
+      (narrow-to-region (car symbol-pos) (cdr symbol-pos))
+      (setq cstyle (string-match-p "_" (buffer-string))
+            lisp-style (string-match-p "-" (buffer-string))
+            regexp (cond (cstyle "\\(?:\\_<\\|_\\)\\(\\w\\)")
+                         (lisp-style "\\(?:\\-<\\|-\\)\\(\\w\\)")
+                         (t "\\([A-Z]\\)"))
+            func (lambda (s)
+                     (concat (if (= (match-beginning 1)
+                                    (car symbol-pos))
+                                 ""
+                               " ")
+                             (downcase s))))
+      (goto-char (point-min))
+      (while (re-search-forward regexp nil t)
+        (replace-match (funcall func (match-string 1))
+                       t nil))
+      (widen))))
+(global-set-key (kbd "C-c d h") 'my-humanize-symbol)
+
+;;; Sql mode history <http://www.emacswiki.org/emacs/SqlMode#toc3>.
+(defun my-sql-save-history-hook ()
+  (let ((lval 'sql-input-ring-file-name)
+        (rval 'sql-product))
+    (if (symbol-value rval)
+        (let ((filename
+               (concat "~/.emacs.d/sql/"
+                       (symbol-name (symbol-value rval))
+                       "-history.sql")))
+          (set (make-local-variable lval) filename))
+      (error
+       (format "SQL history will not be saved because %s is nil"
+               (symbol-name rval))))))
+(add-hook 'sql-interactive-mode-hook 'my-sql-save-history-hook)
 
 ;;; Mew is a mail reader for Emacs <http://mew.org>, <http://emacswiki.org/Mew>.
 (autoload 'mew "mew" nil t)
