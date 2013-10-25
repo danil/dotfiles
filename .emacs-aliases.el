@@ -334,6 +334,7 @@
 (add-hook 'sass-mode-hook 'my-linum-mode-hook)
 (add-hook 'sgml-mode-hook 'my-linum-mode-hook)
 (add-hook 'sh-mode-hook 'my-linum-mode-hook)
+(add-hook 'shell-mode-hook 'my-linum-mode-hook)
 (add-hook 'sql-mode-hook 'my-linum-mode-hook)
 (add-hook 'xml-mode-hook 'my-linum-mode-hook)
 (add-hook 'yaml-mode-hook 'my-linum-mode-hook)
