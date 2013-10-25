@@ -307,7 +307,7 @@
 ;;; Linum
 (eval-after-load 'linum
   '(progn
-     (set-face-attribute 'linum nil :foreground "DimGray") ;gray40
+     (set-face-attribute 'linum nil :foreground "DimGray" :background "gray9") ;gray40
      ))
 (defun my-linum-mode-hook ()
   (linum-mode 1))
@@ -556,7 +556,7 @@ e.g. `HelloWorldString'."
         (replace-match (funcall func (match-string 1))
                        t nil))
       (widen))))
-(global-set-key (kbd "C-c d c") 'my-toggle-camelcase-underscore)
+(global-set-key (kbd "C-c d c") 'my-toggle-camelcase-and-underscore)
 
 (defun my-humanize-symbol ()
   "Humanize the symbol at point from
