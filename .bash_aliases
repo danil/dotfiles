@@ -17,8 +17,7 @@ export EDITOR="vim" #export EDITOR="nano" #export EDITOR="/usr/bin/emacsclient -
 export PAGER="/usr/bin/less -IM"
 export HISTSIZE=10000
 export HISTFILESIZE=10000
-
-export HISTCONTROL=ignoredups
+export HISTCONTROL=ignoredups:erasedups
 # See /usr/share/terminfo/*/
 # export TERM=rxvt-256color
 [ "$TERM" = "xterm" ] && TERM="xterm-256color" #<http://ricochen.wordpress.com/2011/07/23/mac-os-x-lion-terminal-color-remote-access-problem-fix>
