@@ -62,7 +62,7 @@
          haml-mode
          haskell-mode
          highlight-parentheses
-         highlight-symbol
+         highlight-symbol ;try replace with idle highlight mode, due to curren symbol highlighting face
          hl-line+
          idle-highlight-mode
          ido-yes-or-no
@@ -438,6 +438,7 @@
       (cons '("/etc/portage/package\\.unmask\\'" . conf-mode) auto-mode-alist))
 (setq auto-mode-alist
       (cons '("/etc/portage/profile/use\\.mask\\'" . conf-mode) auto-mode-alist))
+(add-to-list 'auto-mode-alist '("var/lib/portage/world\\'" . conf-mode))
 
 ;;; ruby-mode.
 (setq auto-mode-alist
