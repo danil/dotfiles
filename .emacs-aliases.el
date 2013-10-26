@@ -100,7 +100,26 @@
 (setq calendar-week-start-day 1)
 (global-font-lock-mode 1)
 
-(global-set-key (kbd "C-c d s") 'sort-lines)
+;;; Setting key with repeat
+;;; <http://stackoverflow.com/questions/7560094/two-key-shortcut-in-emacs-without-repressing-the-first-key#7560416>.
+(defmacro my-with-repeat-while-press-last-key (&rest body)
+  "Execute BODY and repeat while the user presses the last key."
+  (declare (indent 0))
+  `(let* ((repeat-key (and (> (length (this-single-command-keys)) 1)
+                           last-input-event))
+          (repeat-key-str (format-kbd-macro (vector repeat-key) nil)))
+     ,@body
+     (while repeat-key
+       (message "Type %s to repeat again" repeat-key-str)
+       (let ((event (read-event)))
+         (clear-this-command-keys t)
+         (if (equal event repeat-key)
+             (progn ,@body
+                    (setq last-input-event nil))
+           (setq repeat-key nil)
+           (push last-input-event unread-command-events))))))
+
+(global-set-key (kbd "C-c d o") 'sort-lines)
 
 ;;; BackspaceKey <http://emacswiki.org/BackspaceKey>.
 ;; (global-set-key [(control h)] 'delete-backward-char)
@@ -307,12 +326,13 @@
 ;;; Linum
 (eval-after-load 'linum
   '(progn
-     (set-face-attribute 'linum nil :foreground "DimGray") ;gray40
+     (set-face-attribute 'linum nil :foreground "DimGray" :background "gray9") ;gray40
      ))
 (defun my-linum-mode-hook ()
   (linum-mode 1))
 (add-hook 'awk-mode-hook 'my-linum-mode-hook)
 (add-hook 'coffee-mode-hook 'my-linum-mode-hook)
+(add-hook 'compilation-mode-hook 'my-linum-mode-hook)
 (add-hook 'conf-mode-hook 'my-linum-mode-hook)
 (add-hook 'css-mode-hook 'my-linum-mode-hook)
 (add-hook 'emacs-lisp-mode-hook 'my-linum-mode-hook)
@@ -323,6 +343,7 @@
 (add-hook 'js-mode-hook 'my-linum-mode-hook)
 (add-hook 'lisp-mode-hook 'my-linum-mode-hook)
 (add-hook 'lua-mode-hook 'my-linum-mode-hook)
+(add-hook 'magit-diff-mode-hook 'my-linum-mode-hook)
 (add-hook 'makefile-gmake-mode-hook 'my-linum-mode-hook)
 (add-hook 'markdown-mode-hook 'my-linum-mode-hook)
 (add-hook 'nxml-mode-hook 'my-linum-mode-hook)
@@ -333,6 +354,7 @@
 (add-hook 'sass-mode-hook 'my-linum-mode-hook)
 (add-hook 'sgml-mode-hook 'my-linum-mode-hook)
 (add-hook 'sh-mode-hook 'my-linum-mode-hook)
+(add-hook 'shell-mode-hook 'my-linum-mode-hook)
 (add-hook 'sql-mode-hook 'my-linum-mode-hook)
 (add-hook 'xml-mode-hook 'my-linum-mode-hook)
 (add-hook 'yaml-mode-hook 'my-linum-mode-hook)
@@ -556,7 +578,7 @@ e.g. `HelloWorldString'."
         (replace-match (funcall func (match-string 1))
                        t nil))
       (widen))))
-(global-set-key (kbd "C-c d c") 'my-toggle-camelcase-underscore)
+(global-set-key (kbd "C-c d c") 'my-toggle-camelcase-and-underscore)
 
 (defun my-humanize-symbol ()
   "Humanize the symbol at point from

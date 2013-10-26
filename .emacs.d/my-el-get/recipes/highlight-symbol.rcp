@@ -8,6 +8,22 @@
                 ;; (set-face-attribute 'highlight-symbol-face nil :foreground nil :background "gray40")
                 (set-face-background 'highlight-symbol-face "gray20")
 
+                (eval-after-load 'highlight-symbol
+                  '(progn
+                     (defun highlight-symbol-next-with-repeat ()
+                       (interactive)
+                       (my-with-repeat-while-press-last-key
+                        (highlight-symbol-next)))
+                     (defun highlight-symbol-prev-with-repeat ()
+                       (interactive)
+                       (my-with-repeat-while-press-last-key
+                        (highlight-symbol-prev)))
+                     ;; (global-set-key (kbd "C-c d s ") 'highlight-symbol-at-point)
+                     (global-set-key (kbd "C-c d s n") 'highlight-symbol-next-with-repeat)
+                     (global-set-key (kbd "C-c d s p") 'highlight-symbol-prev-with-repeat)
+                     (global-set-key (kbd "C-c d s r") 'highlight-symbol-query-replace)
+                     ))
+
                 (add-hook 'awk-mode-hook 'highlight-symbol-mode)
                 (add-hook 'coffee-mode-hook 'highlight-symbol-mode)
                 (add-hook 'conf-mode-hook 'highlight-symbol-mode)
