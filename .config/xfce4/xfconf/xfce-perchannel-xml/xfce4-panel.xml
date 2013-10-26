@@ -34,6 +34,7 @@
     <property name="plugin-6" type="string" value="systray">
       <property name="names-visible" type="array">
         <value type="string" value="skype"/>
+        <value type="string" value="cloud"/>
         <value type="string" value="task manager"/>
         <value type="string" value="wally"/>
         <value type="string" value="scp-dbus-service.py"/>
