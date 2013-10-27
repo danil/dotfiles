@@ -88,6 +88,7 @@
          scss-mode
          simp
          slim-mode
+         smartparens
          smex
          window-numbering
          yaml-mode
@@ -134,8 +135,11 @@
 ;; (set-face-background 'region nil)
 
 ;;; Region.
+(setq my-face-reginon-background "#002b36") ;#2E3436 ;set selection background color
 ;; (set-face-attribute 'region nil :inverse-video t)
-(set-face-background 'region "#002b36") ;#2E3436 ;set selection background color
+(set-face-background 'region my-face-reginon-background)
+
+(set-face-background 'highlight my-face-reginon-background)
 
 ;;; Matches other than the current one by Isearch and Query Replace
 ;;; <http://www.gnu.org/software/emacs/manual/html_node/emacs/Standard-Faces.html>.
@@ -176,6 +180,9 @@
 ;;; show-paren-mode <http://emacswiki.org/ShowParenMode>,
 ;;; <http://emacswiki.org/ParenthesesAppearance>
 (show-paren-mode 1)
+(eval-after-load 'show-paren
+  '(progn
+     (set-face-background 'show-paren-match my-face-reginon-background)))
 
 ;;; Session Management <http://emacswiki.org/SessionManagement>.
 (savehist-mode 1)
