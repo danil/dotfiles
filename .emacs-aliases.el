@@ -31,10 +31,13 @@
          ;; color-theme-ir-black
          ;; color-theme-vivid-chalk
          ;; command-t
+         ;; fiplr
          ;; helm
          ;; ido-better-flex
          ;; ido-ubiquitous
          ;; jump
+         ;; package
+         ;; smartparens
          ;; vline
          ag
          apache-mode
@@ -55,7 +58,6 @@
          evil
          expand-region
          findr
-         ;; fiplr
          flycheck
          git-gutter
          go-mode
@@ -73,7 +75,6 @@
          markdown-mode
          nginx-mode
          org-mode
-         ;; package
          paredit
          php-mode
          rainbow-mode
@@ -88,7 +89,6 @@
          scss-mode
          simp
          slim-mode
-         smartparens
          smex
          window-numbering
          yaml-mode
@@ -135,17 +135,19 @@
 ;; (set-face-background 'region nil)
 
 ;;; Region.
-(setq my-face-reginon-background "#002b36") ;#2E3436 ;set selection background color
+;; (setq my-face-reginon-background "#002b36") ;#2E3436 ;set selection background color
 ;; (set-face-attribute 'region nil :inverse-video t)
-(set-face-background 'region my-face-reginon-background)
-
-(set-face-background 'highlight my-face-reginon-background)
+(set-face-background 'region "#002b36")
 
 ;;; Matches other than the current one by Isearch and Query Replace
 ;;; <http://www.gnu.org/software/emacs/manual/html_node/emacs/Standard-Faces.html>.
 ;; (set-face-background 'lazy-highlight "#002b36")
-(set-face-attribute 'lazy-highlight nil :foreground "lightskyblue1" :background "coral3")
+(set-face-attribute 'lazy-highlight nil :foreground "lightskyblue1" :background "maroon4")
+
+(set-face-attribute 'isearch nil :foreground "lightskyblue1" :background "red")
 (set-face-attribute 'isearch-fail nil :foreground "black")
+(set-face-attribute 'match nil :foreground "lightskyblue1" :background "OrangeRed3")
+(set-face-background 'highlight '"#002b36")
 
 ;; (set-background-color "#0f0f0f")
 (set-cursor-color "red") ;#aa0000
@@ -180,9 +182,9 @@
 ;;; show-paren-mode <http://emacswiki.org/ShowParenMode>,
 ;;; <http://emacswiki.org/ParenthesesAppearance>
 (show-paren-mode 1)
-(eval-after-load 'show-paren
-  '(progn
-     (set-face-background 'show-paren-match my-face-reginon-background)))
+;; (eval-after-load 'show-paren
+;;   '(progn
+;;      (set-face-background 'show-paren-match "#002b36")))
 
 ;;; Session Management <http://emacswiki.org/SessionManagement>.
 (savehist-mode 1)
@@ -334,7 +336,7 @@
 ;;; Linum
 (eval-after-load 'linum
   '(progn
-     (set-face-attribute 'linum nil :foreground "DimGray" :background "gray9") ;gray40
+     (set-face-attribute 'linum nil :foreground "DimGray" :background "gray10") ;gray40
      ))
 (defun my-linum-mode-hook ()
   (linum-mode 1))

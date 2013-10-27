@@ -7,4 +7,10 @@
        ;; :repo ("melpa" . "http://melpa.milkbox.net/packages/")
        :after (progn
                 (global-set-key (kbd "C-c f s") 'ag-regexp)
-                (set 'ag-highlight-search 1)))
+                (set 'ag-highlight-search 1)
+                ;; (eval-after-load 'ag
+                ;;   '(progn
+                ;;      ;; (set-face-background 'ag-match-face "green3")
+                ;;      (set-face-foreground 'ag-match-face "lightskyblue1")
+                ;;      ))
+                ))

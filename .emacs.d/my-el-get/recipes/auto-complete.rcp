@@ -5,6 +5,9 @@
        :after (progn
                 (require 'auto-complete-config)
                 (ac-config-default)
+                (setq ac-disable-faces (quote (font-lock-doc-face)))
+                (setq ac-ignore-case nil) ;preserve capitalization <http://stackoverflow.com/questions/15637536/how-do-i-preserve-capitalization-when-using-autocomplete-in-emacs>
+
                 (add-to-list 'ac-modes 'coffee-mode)
                 (add-to-list 'ac-modes 'conf-mode)
                 (add-to-list 'ac-modes 'conf-space-mode)
@@ -23,4 +26,4 @@
                 (add-to-list 'ac-modes 'sql-interactive-mode)
                 (add-to-list 'ac-modes 'sql-mode)
                 (add-to-list 'ac-modes 'yaml-mode)
-                (setq ac-disable-faces (quote (font-lock-doc-face)))))
+                ))

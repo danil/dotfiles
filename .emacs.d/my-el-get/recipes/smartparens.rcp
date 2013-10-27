@@ -5,4 +5,7 @@
        :depends dash
        :after (progn
                 ;; (require 'smartparens-config)
+                ;; (eval-after-load 'smartparens
+                ;;   '(progn
+                ;;      ))
                 ))
