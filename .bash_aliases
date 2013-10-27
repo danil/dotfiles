@@ -25,7 +25,9 @@ export HISTCONTROL=ignoredups:erasedups
 
 # Aliases.
 alias less=$PAGER
+# alias e='~/.evm/installations/emacs-24.3/bin/emacs -nw'
 alias e='emacs -nw'
+# alias ec='~/.evm/installations/emacs-24.3/bin/emacsclient -t'
 alias ec='/usr/bin/emacsclient -t'
 # alias ecx='/usr/bin/emacsclient --alternate-editor="" -c "$@"'
 alias g='git'

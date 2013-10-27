@@ -62,7 +62,7 @@
          haml-mode
          haskell-mode
          highlight-parentheses
-         highlight-symbol
+         highlight-symbol ;try replace with idle highlight mode, due to curren symbol highlighting face
          hl-line+
          idle-highlight-mode
          ido-yes-or-no
@@ -220,6 +220,7 @@
 ;;; Environment variables.
 (setenv "GIT_PAGER" "")
 ;; (setenv "ESHELL" (expand-file-name "/bin/zsh")) ;terminal <http://stackoverflow.com/questions/1568987/getting-emacs-to-respect-my-default-shell-options#1570246>
+(setenv "RAILS_TRUSTED_IP" "192.168.0.18") ;<https://github.com/charliesome/better_errors#security>.
 
 ;; ;;; <http://emacswiki.org/ScrollBar>.
 ;; (scroll-bar-mode -1)
@@ -438,6 +439,7 @@
       (cons '("/etc/portage/package\\.unmask\\'" . conf-mode) auto-mode-alist))
 (setq auto-mode-alist
       (cons '("/etc/portage/profile/use\\.mask\\'" . conf-mode) auto-mode-alist))
+(add-to-list 'auto-mode-alist '("var/lib/portage/world\\'" . conf-mode))
 
 ;;; ruby-mode.
 (setq auto-mode-alist

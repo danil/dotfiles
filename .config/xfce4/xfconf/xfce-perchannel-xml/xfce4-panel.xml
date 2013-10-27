@@ -34,6 +34,7 @@
     <property name="plugin-6" type="string" value="systray">
       <property name="names-visible" type="array">
         <value type="string" value="skype"/>
+        <value type="string" value="cloud"/>
         <value type="string" value="task manager"/>
         <value type="string" value="wally"/>
         <value type="string" value="scp-dbus-service.py"/>
@@ -42,6 +43,7 @@
         <value type="string" value="gajim"/>
         <value type="string" value="xfce4-power-manager"/>
         <value type="string" value="bluetooth"/>
+        <value type="string" value="exe"/>
         <value type="string" value="thunar"/>
         <value type="string" value="dropbox"/>
         <value type="string" value="docky"/>
