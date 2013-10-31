@@ -342,7 +342,6 @@
   (linum-mode 1))
 (add-hook 'awk-mode-hook 'my-linum-mode-hook)
 (add-hook 'coffee-mode-hook 'my-linum-mode-hook)
-(add-hook 'compilation-mode-hook 'my-linum-mode-hook)
 (add-hook 'conf-mode-hook 'my-linum-mode-hook)
 (add-hook 'css-mode-hook 'my-linum-mode-hook)
 (add-hook 'emacs-lisp-mode-hook 'my-linum-mode-hook)
@@ -368,6 +367,7 @@
 (add-hook 'sql-mode-hook 'my-linum-mode-hook)
 (add-hook 'xml-mode-hook 'my-linum-mode-hook)
 (add-hook 'yaml-mode-hook 'my-linum-mode-hook)
+;; (add-hook 'compilation-mode-hook 'my-linum-mode-hook)
 
 ;;; HTML mode.
 (add-to-list 'auto-mode-alist '("\\.lp\\'" . html-mode))
