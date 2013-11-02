@@ -261,6 +261,8 @@
 (define-key ibuffer-mode-map "\M-n" nil) ;unset ibuffer-forward-filter-group
 (define-key ibuffer-mode-map "\M-p" nil) ;unset ibuffer-backward-filter-group
 
+(put 'dired-find-alternate-file 'disabled nil)
+
 ;;; Interactively do things.
 ;; (ido-mode t)
 (ido-mode 'both) ;for buffers and files
