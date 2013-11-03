@@ -227,10 +227,10 @@
 (tool-bar-mode -1)
 
 ;;; Environment variables.
-(setenv "GIT_PAGER" "")
-;; (setenv "ESHELL" (expand-file-name "/bin/zsh")) ;terminal <http://stackoverflow.com/questions/1568987/getting-emacs-to-respect-my-default-shell-options#1570246>
-(setenv "RAILS_TRUSTED_IP" "192.168.0.18") ;<https://github.com/charliesome/better_errors#security>.
 (setenv "DISABLE_PRY_RAILS" "1")
+(setenv "GIT_PAGER" "")
+(setenv "RAILS_TRUSTED_IP" "192.168.0.18") ;<https://github.com/charliesome/better_errors#security>.
+;; (setenv "ESHELL" (expand-file-name "/bin/zsh")) ;terminal <http://stackoverflow.com/questions/1568987/getting-emacs-to-respect-my-default-shell-options#1570246>
 
 ;; ;;; <http://emacswiki.org/ScrollBar>.
 ;; (scroll-bar-mode -1)
@@ -260,6 +260,17 @@
 ;; (setq iswitchb-buffer-ignore '("^ " "*scratch*" "*Messages*"
 ;;                                "*Completions*" "*Ibuffer*"))
 ;(setq iswitchb-default-method 'samewindow)
+
+;;; Dired.
+;;; Reuse directory buffer
+;;; <http://www.emacswiki.org/emacs/DiredReuseDirectoryBuffer>.
+(put 'dired-find-alternate-file 'disabled nil)
+(add-hook 'dired-mode-hook
+          (lambda ()
+            (define-key dired-mode-map (kbd "^")
+              (lambda () (interactive) (find-alternate-file "..")))
+                                        ; was dired-up-directory
+            ))
 
 ;;; Ibuffer <http://emacswiki.org/IbufferMode>,
 ;;; <http://emacs-fu.blogspot.ru/2010/02/dealing-with-many-buffers-ibuffer.html>,
@@ -364,11 +375,11 @@
 (add-hook 'sass-mode-hook 'my-linum-mode-hook)
 (add-hook 'sgml-mode-hook 'my-linum-mode-hook)
 (add-hook 'sh-mode-hook 'my-linum-mode-hook)
-(add-hook 'shell-mode-hook 'my-linum-mode-hook)
 (add-hook 'sql-mode-hook 'my-linum-mode-hook)
 (add-hook 'xml-mode-hook 'my-linum-mode-hook)
 (add-hook 'yaml-mode-hook 'my-linum-mode-hook)
 ;; (add-hook 'compilation-mode-hook 'my-linum-mode-hook)
+;; (add-hook 'shell-mode-hook 'my-linum-mode-hook)
 
 ;;; HTML mode.
 (add-to-list 'auto-mode-alist '("\\.lp\\'" . html-mode))
