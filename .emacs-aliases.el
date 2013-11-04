@@ -81,6 +81,7 @@
          rhtml-mode
          rinari
          rspec-mode
+         ruby-end
          ruby-hash-syntax
          ruby-refactor
          ruby-tools
