@@ -20,7 +20,7 @@ fi
 feh --bg-center ~/local/share/backgrounds/gentoo-znurt-larry-abducted-1440x900.png &
 # urxvtd --fork --quiet
 killall conky ; conky -c ~/.conky/conkyrc_calendar & conky -c ~/.conky/conkyrc_top & conky -c ~/.conky/conkyrc_clock_2 & conky -c ~/.conky/conkyrc_clock_3 &
-killall gajim ; gajim &
+# killall gajim ; gajim &
 # killall pidgin ; pidgin &
 # killall empathy ; empathy &
 killall stardict ; stardict &

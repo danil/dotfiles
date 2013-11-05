@@ -43,6 +43,9 @@ case $1 in
     fluxbox)
         exec startfluxbox
         ;;
+    i3)
+        exec i3
+        ;;
     *)
         exec dbus-launch $DEFAULT_SESSION
         ;;
