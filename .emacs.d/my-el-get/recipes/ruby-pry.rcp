@@ -1,0 +1,8 @@
+(:name ruby-pry
+       :description "Pry support within Emacs"
+       :website "http://github.com/jacott/emacs-pry"
+       :type github
+       :pkgname "jacott/emacs-pry"
+       :after (progn
+                (require 'pry)
+                ))

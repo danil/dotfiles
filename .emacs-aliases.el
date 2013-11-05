@@ -83,6 +83,7 @@
          rspec-mode
          ruby-end
          ruby-hash-syntax
+         ruby-pry
          ruby-refactor
          ruby-tools
          rvm
