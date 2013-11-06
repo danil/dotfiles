@@ -483,6 +483,10 @@
       (cons '("\\.mrb\\'" . ruby-mode) auto-mode-alist))
 (setq auto-mode-alist
       (cons '("\\.atex\\'" . ruby-mode) auto-mode-alist))
+(setq auto-mode-alist
+      (cons '("\\.gemspec\\'" . ruby-mode) auto-mode-alist))
+(setq auto-mode-alist
+      (cons '("\\.irbrc\\'" . ruby-mode) auto-mode-alist))
 
 ;; Ruby indentation fix
 ;; <https://github.com/mlapshin/dotfiles/blob/2531616385b9fd3bef4b6418a5f024fd2f010461/.emacs.d/custom/ruby.el#L49>.
