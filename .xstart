@@ -15,7 +15,11 @@ killall xbindkeys 2>/dev/null
 xbindkeys &
 
 if [[ `hostname -s` == "leela" ]]; then
-    argyll-dispwin ~/t400s_082409.icm &
+    if hash argyll-dispwin 2>/dev/null; then
+        argyll-dispwin ~/t400s_082409.icm &
+    elif hash dispwin 2>/dev/null; then
+        dispwin ~/t400s_082409.icm &
+    fi
 fi
 feh --bg-center ~/local/share/backgrounds/gentoo-znurt-larry-abducted-1440x900.png &
 # urxvtd --fork --quiet
