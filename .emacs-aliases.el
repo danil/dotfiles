@@ -31,10 +31,13 @@
          ;; color-theme-ir-black
          ;; color-theme-vivid-chalk
          ;; command-t
+         ;; fiplr
          ;; helm
          ;; ido-better-flex
          ;; ido-ubiquitous
          ;; jump
+         ;; package
+         ;; smartparens
          ;; vline
          ag
          apache-mode
@@ -55,7 +58,6 @@
          evil
          expand-region
          findr
-         ;; fiplr
          flycheck
          git-gutter
          go-mode
@@ -73,14 +75,15 @@
          markdown-mode
          nginx-mode
          org-mode
-         ;; package
          paredit
          php-mode
          rainbow-mode
          rhtml-mode
          rinari
          rspec-mode
+         ruby-end
          ruby-hash-syntax
+         ruby-pry
          ruby-refactor
          ruby-tools
          rvm
@@ -134,14 +137,19 @@
 ;; (set-face-background 'region nil)
 
 ;;; Region.
+;; (setq my-face-reginon-background "#002b36") ;#2E3436 ;set selection background color
 ;; (set-face-attribute 'region nil :inverse-video t)
-(set-face-background 'region "#002b36") ;#2E3436 ;set selection background color
+(set-face-background 'region "#002b36")
 
 ;;; Matches other than the current one by Isearch and Query Replace
 ;;; <http://www.gnu.org/software/emacs/manual/html_node/emacs/Standard-Faces.html>.
 ;; (set-face-background 'lazy-highlight "#002b36")
-(set-face-attribute 'lazy-highlight nil :foreground "lightskyblue1" :background "coral3")
+(set-face-attribute 'lazy-highlight nil :foreground "lightskyblue1" :background "maroon4")
+
+(set-face-attribute 'isearch nil :foreground "lightskyblue1" :background "red")
 (set-face-attribute 'isearch-fail nil :foreground "black")
+(set-face-attribute 'match nil :foreground "lightskyblue1" :background "OrangeRed3")
+(set-face-background 'highlight '"#002b36")
 
 ;; (set-background-color "#0f0f0f")
 (set-cursor-color "red") ;#aa0000
@@ -176,6 +184,9 @@
 ;;; show-paren-mode <http://emacswiki.org/ShowParenMode>,
 ;;; <http://emacswiki.org/ParenthesesAppearance>
 (show-paren-mode 1)
+;; (eval-after-load 'show-paren
+;;   '(progn
+;;      (set-face-background 'show-paren-match "#002b36")))
 
 ;;; Session Management <http://emacswiki.org/SessionManagement>.
 (savehist-mode 1)
@@ -218,9 +229,10 @@
 (tool-bar-mode -1)
 
 ;;; Environment variables.
+(setenv "DISABLE_PRY_RAILS" "1")
 (setenv "GIT_PAGER" "")
-;; (setenv "ESHELL" (expand-file-name "/bin/zsh")) ;terminal <http://stackoverflow.com/questions/1568987/getting-emacs-to-respect-my-default-shell-options#1570246>
 (setenv "RAILS_TRUSTED_IP" "192.168.0.18") ;<https://github.com/charliesome/better_errors#security>.
+;; (setenv "ESHELL" (expand-file-name "/bin/zsh")) ;terminal <http://stackoverflow.com/questions/1568987/getting-emacs-to-respect-my-default-shell-options#1570246>
 
 ;; ;;; <http://emacswiki.org/ScrollBar>.
 ;; (scroll-bar-mode -1)
@@ -251,6 +263,17 @@
 ;;                                "*Completions*" "*Ibuffer*"))
 ;(setq iswitchb-default-method 'samewindow)
 
+;;; Dired.
+;;; Reuse directory buffer
+;;; <http://www.emacswiki.org/emacs/DiredReuseDirectoryBuffer>.
+(put 'dired-find-alternate-file 'disabled nil)
+(add-hook 'dired-mode-hook
+          (lambda ()
+            (define-key dired-mode-map (kbd "^")
+              (lambda () (interactive) (find-alternate-file "..")))
+                                        ; was dired-up-directory
+            ))
+
 ;;; Ibuffer <http://emacswiki.org/IbufferMode>,
 ;;; <http://emacs-fu.blogspot.ru/2010/02/dealing-with-many-buffers-ibuffer.html>,
 ;;; <http://martinowen.net/blog/2010/02/tips-for-emacs-ibuffer.html>.
@@ -260,8 +283,6 @@
 ;; <http://stackoverflow.com/questions/7598433/how-to-remove-a-key-from-a-minor-mode-keymap-in-emacs#7598754>.
 (define-key ibuffer-mode-map "\M-n" nil) ;unset ibuffer-forward-filter-group
 (define-key ibuffer-mode-map "\M-p" nil) ;unset ibuffer-backward-filter-group
-
-(put 'dired-find-alternate-file 'disabled nil)
 
 ;;; Interactively do things.
 ;; (ido-mode t)
@@ -329,13 +350,12 @@
 ;;; Linum
 (eval-after-load 'linum
   '(progn
-     (set-face-attribute 'linum nil :foreground "DimGray" :background "gray9") ;gray40
+     (set-face-attribute 'linum nil :foreground "DimGray" :background "gray10") ;gray40
      ))
 (defun my-linum-mode-hook ()
   (linum-mode 1))
 (add-hook 'awk-mode-hook 'my-linum-mode-hook)
 (add-hook 'coffee-mode-hook 'my-linum-mode-hook)
-(add-hook 'compilation-mode-hook 'my-linum-mode-hook)
 (add-hook 'conf-mode-hook 'my-linum-mode-hook)
 (add-hook 'css-mode-hook 'my-linum-mode-hook)
 (add-hook 'emacs-lisp-mode-hook 'my-linum-mode-hook)
@@ -357,10 +377,11 @@
 (add-hook 'sass-mode-hook 'my-linum-mode-hook)
 (add-hook 'sgml-mode-hook 'my-linum-mode-hook)
 (add-hook 'sh-mode-hook 'my-linum-mode-hook)
-(add-hook 'shell-mode-hook 'my-linum-mode-hook)
 (add-hook 'sql-mode-hook 'my-linum-mode-hook)
 (add-hook 'xml-mode-hook 'my-linum-mode-hook)
 (add-hook 'yaml-mode-hook 'my-linum-mode-hook)
+;; (add-hook 'compilation-mode-hook 'my-linum-mode-hook)
+;; (add-hook 'shell-mode-hook 'my-linum-mode-hook)
 
 ;;; HTML mode.
 (add-to-list 'auto-mode-alist '("\\.lp\\'" . html-mode))
@@ -462,6 +483,10 @@
       (cons '("\\.mrb\\'" . ruby-mode) auto-mode-alist))
 (setq auto-mode-alist
       (cons '("\\.atex\\'" . ruby-mode) auto-mode-alist))
+(setq auto-mode-alist
+      (cons '("\\.gemspec\\'" . ruby-mode) auto-mode-alist))
+(setq auto-mode-alist
+      (cons '("\\.irbrc\\'" . ruby-mode) auto-mode-alist))
 
 ;; Ruby indentation fix
 ;; <https://github.com/mlapshin/dotfiles/blob/2531616385b9fd3bef4b6418a5f024fd2f010461/.emacs.d/custom/ruby.el#L49>.
@@ -650,6 +675,91 @@ and Lisp-style nameing, e.g. `hello-world-string'."
    "\C-[\C-s\\(\"\\|'\\)\C-s\C-m\C-?\C-[\C-r\\(\"\\|'\\)\C-m\C-d:")
 ;; (fset 'my-kbd-macro-ruby-new-hash-syntax
 ;;    "\C-s =>\C-m\C-r:\C-m\C-d\C-s =>\C-m\C-?\C-?\C-?:")
+
+(eval-after-load 'ruby-mode
+  '(progn
+     (define-key ruby-mode-map (kbd "C-c {") 'my-ruby-toggle-block)
+     ))
+(defun my-ruby-brace-to-do-end (orig end)
+  (let (beg-marker end-marker)
+    (goto-char end)
+    (when (eq (char-before) ?\})
+      (delete-char -1)
+      (when (save-excursion
+              (skip-chars-backward " \t")
+              (not (bolp)))
+        (insert "\n"))
+      (insert "end")
+      (setq end-marker (point-marker))
+      (when (and (not (eobp)) (eq (char-syntax (char-after)) ?w))
+        (insert " "))
+      (goto-char orig)
+      (delete-char 1)
+      (when (eq (char-syntax (char-before)) ?w)
+        (insert " "))
+      (insert "do")
+      (setq beg-marker (point-marker))
+      (when (looking-at "\\(\\s \\)*|")
+        (unless (match-beginning 1)
+          (insert " "))
+        (goto-char (1+ (match-end 0)))
+        (search-forward "|"))
+      (unless (looking-at "\\s *$")
+        (insert "\n"))
+      (indent-region beg-marker end-marker)
+      (goto-char beg-marker)
+      t)))
+(defun my-ruby-do-end-to-brace (orig end)
+  (let (beg-marker end-marker beg-pos end-pos)
+    (goto-char (- end 3))
+    (when (looking-at ruby-block-end-re)
+      (delete-char 3)
+      (setq end-marker (point-marker))
+      (insert "}")
+      (goto-char orig)
+      (delete-char 2)
+      (insert "{")
+      (setq beg-marker (point-marker))
+      (when (looking-at "\\s +|")
+        (unless (match-beginning 1)
+          (insert " "))
+        (delete-char (- (match-end 0) (match-beginning 0) 1))
+        (forward-char)
+        (re-search-forward "|" (line-end-position) t))
+      (save-excursion
+        (skip-chars-forward " \t\n\r")
+        (setq beg-pos (point))
+        (goto-char end-marker)
+        (skip-chars-backward " \t\n\r")
+        (setq end-pos (point)))
+      (when (or
+             (< end-pos beg-pos)
+             (and (= (line-number-at-pos beg-pos) (line-number-at-pos end-pos))
+                  (< (+ (current-column) (- end-pos beg-pos) 2) fill-column)))
+        (just-one-space -1)
+        (goto-char end-marker)
+        (just-one-space -1))
+      (goto-char beg-marker)
+      t)))
+(defun my-ruby-toggle-block ()
+  "Toggle block type from do-end to braces or back.
+The block must begin on the current line or above it and end after the point.
+If the result is do-end block, it will always be multiline."
+  (interactive)
+  (my-with-repeat-while-press-last-key
+  (let ((start (point)) beg end)
+    (end-of-line)
+    (unless
+        (if (and (re-search-backward "\\({\\)\\|\\_<do\\(\\s \\|$\\||\\)")
+                 (progn
+                   (setq beg (point))
+                   (save-match-data (ruby-forward-sexp))
+                   (setq end (point))
+                   (> end start)))
+            (if (match-beginning 1)
+                (my-ruby-brace-to-do-end beg end)
+              (my-ruby-do-end-to-brace beg end)))
+      (goto-char start)))))
 
 ;; ;;; Tags
 ;; ;;; <http://emacswiki.org/BuildTags#toc2>.
