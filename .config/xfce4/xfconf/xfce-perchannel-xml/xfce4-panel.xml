@@ -12,8 +12,6 @@
       <property name="plugin-ids" type="array">
         <value type="int" value="6"/>
         <value type="int" value="3"/>
-        <value type="int" value="2"/>
-        <value type="int" value="1"/>
         <value type="int" value="9"/>
       </property>
       <property name="background-style" type="uint" value="0"/>
@@ -41,9 +39,9 @@
         <value type="string" value="wicd-client.py"/>
         <value type="string" value="vlc"/>
         <value type="string" value="gajim"/>
+        <value type="string" value="exe"/>
         <value type="string" value="xfce4-power-manager"/>
         <value type="string" value="bluetooth"/>
-        <value type="string" value="exe"/>
         <value type="string" value="thunar"/>
         <value type="string" value="dropbox"/>
         <value type="string" value="docky"/>
@@ -51,6 +49,7 @@
         <value type="string" value="shutter"/>
         <value type="string" value="tomahawk"/>
         <value type="string" value="volti"/>
+        <value type="string" value="networkmanager applet"/>
         <value type="string" value="sound output volume"/>
         <value type="string" value="thunderbird"/>
         <value type="string" value="blueman-applet"/>
@@ -60,10 +59,10 @@
         <value type="string" value="stardict"/>
         <value type="string" value="orage"/>
         <value type="string" value="parcellite"/>
+        <value type="string" value="chromium"/>
         <value type="string" value="google chrome"/>
       </property>
     </property>
-    <property name="plugin-2" type="string" value="showdesktop"/>
     <property name="plugin-9" type="string" value="pager"/>
     <property name="plugin-3" type="string" value="mixer">
       <property name="sound-card" type="string" value="HDAIntelAlsamixer"/>
