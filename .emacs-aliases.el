@@ -243,6 +243,7 @@
 ;;; AnsiColor (Emacs terminal related stuff)
 ;;; <http://emacswiki.org/AnsiColor>.
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+;; (add-hook 'shell-mode-hook 'compilation-shell-minor-mode) ;filenames with line numbers linkable
 
 ;;; Comint mode (which shell mode and sql mode based on)
 ;;; <http://www.emacswiki.org/emacs/ComintMode#toc3>.
@@ -760,6 +761,21 @@ If the result is do-end block, it will always be multiline."
                 (my-ruby-brace-to-do-end beg end)
               (my-ruby-do-end-to-brace beg end)))
       (goto-char start)))))
+
+;; ;;; Inf ruby mode (irb) history <http://www.emacswiki.org/emacs/SqlMode#toc3>.
+;; (defun my-irb-save-history-hook ()
+;;   (let ((lval 'sql-input-ring-file-name)
+;;         (rval 'sql-product))
+;;     (if (symbol-value rval)
+;;         (let ((filename
+;;                (concat "~/.emacs.d/irb/"
+;;                        (symbol-name (symbol-value rval))
+;;                        "-history.sql")))
+;;           (set (make-local-variable lval) filename))
+;;       (error
+;;        (format "IRB history will not be saved because %s is nil"
+;;                (symbol-name rval))))))
+;; (add-hook 'inf-ruby-mode-hook 'my-irb-save-history-hook)
 
 ;; ;;; Tags
 ;; ;;; <http://emacswiki.org/BuildTags#toc2>.
