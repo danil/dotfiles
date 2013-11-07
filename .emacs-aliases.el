@@ -243,6 +243,7 @@
 ;;; AnsiColor (Emacs terminal related stuff)
 ;;; <http://emacswiki.org/AnsiColor>.
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+;; (add-hook 'shell-mode-hook 'compilation-shell-minor-mode) ;filenames with line numbers linkable
 
 ;;; Comint mode (which shell mode and sql mode based on)
 ;;; <http://www.emacswiki.org/emacs/ComintMode#toc3>.
