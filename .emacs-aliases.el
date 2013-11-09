@@ -1,6 +1,10 @@
 ;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 ;(add-to-list 'load-path "~/share/emacs/site-lisp")
 
+;;; My color themes.
+(setq my-color-theme "white")
+;; (setq my-color-theme "dark")
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -136,37 +140,41 @@
 (transient-mark-mode 1)
 ;; (set-face-background 'region nil)
 
-;;; Region.
-;; (setq my-face-reginon-background "#002b36") ;#2E3436 ;set selection background color
-;; (set-face-attribute 'region nil :inverse-video t)
-(set-face-background 'region "#002b36")
-
-;;; Matches other than the current one by Isearch and Query Replace
-;;; <http://www.gnu.org/software/emacs/manual/html_node/emacs/Standard-Faces.html>.
-;; (set-face-background 'lazy-highlight "#002b36")
-(set-face-attribute 'lazy-highlight nil :foreground "lightskyblue1" :background "maroon4")
-
-(set-face-attribute 'isearch nil :foreground "lightskyblue1" :background "red")
-(set-face-attribute 'isearch-fail nil :foreground "black")
-(set-face-attribute 'match nil :foreground "lightskyblue1" :background "OrangeRed3")
-(set-face-background 'highlight '"#002b36")
-
+;;; My color themes.
 ;; (set-background-color "#0f0f0f")
 (set-cursor-color "red") ;#aa0000
+(if (equal my-color-theme "dark")
+    (
+     ;; Region.
+     ;; (setq my-face-reginon-background "#002b36") ;#2E3436 ;set selection background color
+     ;; (set-face-attribute 'region nil :inverse-video t)
+     (set-face-background 'region "#002b36")
 
-(eval-after-load 'diff-mode
-  '(progn
-     ;; Colors available to Emacs <http://raebear.net/comp/emacscolors.html>.
-     (set-face-foreground 'diff-added   "brightgreen")
-     (set-face-foreground 'diff-removed "brightred")
-     (set-face-foreground 'diff-changed "brightblue")
-     (when (not window-system)
-       (set-face-background 'diff-added       "black3")
-       (set-face-background 'diff-removed     "black3")
-       (set-face-background 'diff-changed     "black3")
-       (set-face-background 'diff-file-header "black")
-       (set-face-background 'diff-hunk-header "black")
-       )))
+     ;; Matches other than the current one by Isearch and Query Replace
+     ;; <http://www.gnu.org/software/emacs/manual/html_node/emacs/Standard-Faces.html>.
+     ;; (set-face-background 'lazy-highlight "#002b36")
+     (set-face-attribute 'lazy-highlight nil :foreground "lightskyblue1" :background "maroon4")
+
+     (set-face-attribute 'isearch nil :foreground "lightskyblue1" :background "red")
+     (set-face-attribute 'isearch-fail nil :foreground "black")
+     (set-face-attribute 'match nil :foreground "lightskyblue1" :background "OrangeRed3")
+     (set-face-background 'highlight '"#002b36")
+
+     (eval-after-load 'diff-mode
+       '(progn
+          ;; Colors available to Emacs <http://raebear.net/comp/emacscolors.html>.
+          (set-face-foreground 'diff-added   "brightgreen")
+          (set-face-foreground 'diff-removed "brightred")
+          (set-face-foreground 'diff-changed "brightblue")
+          (when (not window-system)
+            (set-face-background 'diff-added       "black3")
+            (set-face-background 'diff-removed     "black3")
+            (set-face-background 'diff-changed     "black3")
+            (set-face-background 'diff-file-header "black")
+            (set-face-background 'diff-hunk-header "black")
+            )))
+     )
+  )
 
 ;;; Truncation of Lines (toggle-truncate-lines) <http://emacswiki.org/emacs/TruncateLines>.
 (set-default 'truncate-lines t)
@@ -184,9 +192,11 @@
 ;;; show-paren-mode <http://emacswiki.org/ShowParenMode>,
 ;;; <http://emacswiki.org/ParenthesesAppearance>
 (show-paren-mode 1)
-;; (eval-after-load 'show-paren
-;;   '(progn
-;;      (set-face-background 'show-paren-match "#002b36")))
+;; (if (equal my-color-theme "dark")
+;;     (eval-after-load 'show-paren
+;;       '(progn
+;;          (set-face-background 'show-paren-match "#002b36")))
+;;   )
 
 ;;; Session Management <http://emacswiki.org/SessionManagement>.
 (savehist-mode 1)
@@ -237,8 +247,10 @@
 ;; ;;; <http://emacswiki.org/ScrollBar>.
 ;; (scroll-bar-mode -1)
 ;; <http://stackoverflow.com/questions/3155451/emacs-scrollbar-customize#3159618>.
-(set-face-background 'scroll-bar "white")
-(set-face-foreground 'scroll-bar "gray")
+(if (equal my-color-theme "white")
+    (set-face-background 'scroll-bar "white")
+  (set-face-foreground 'scroll-bar "gray")
+  )
 
 ;;; AnsiColor (Emacs terminal related stuff)
 ;;; <http://emacswiki.org/AnsiColor>.
@@ -349,10 +361,12 @@
 
 ;;; Line numbers
 ;;; Linum
-(eval-after-load 'linum
-  '(progn
-     (set-face-attribute 'linum nil :foreground "DimGray" :background "gray10") ;gray40
-     ))
+(if (equal my-color-theme "dark")
+    (eval-after-load 'linum
+      '(progn
+         (set-face-attribute 'linum nil :foreground "DimGray" :background "gray10") ;gray40
+         ))
+  )
 (defun my-linum-mode-hook ()
   (linum-mode 1))
 (add-hook 'awk-mode-hook 'my-linum-mode-hook)

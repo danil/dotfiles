@@ -3,10 +3,10 @@
 URxvt*scrollBar: true
 URxvt.scrollstyle: plain
 URxvt.scrollBar_right: true
-! ! Scroll for black text on a white background.
-! URxvt.scrollColor: gray80
-! Scroll for White text on black background.
-URxvt.scrollColor: gray40
+! Scroll for black text on a white background.
+URxvt.scrollColor: gray80
+! ! Scroll for White text on black background.
+! URxvt.scrollColor: gray40
 
 ! URxvtperl.
 ! See the urxvtperl manpage for details.

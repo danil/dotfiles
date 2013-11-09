@@ -20,10 +20,11 @@
     <property name="custom" type="empty">
       <property name="&lt;Alt&gt;F2" type="string" value="xfce4-appfinder --collapsed"/>
       <property name="&lt;Alt&gt;F3" type="string" value="xfce4-appfinder"/>
-      <property name="&lt;Alt&gt;F1" type="string" value="xfce4-popup-applicationsmenu"/>
+      <property name="&lt;Control&gt;&lt;Alt&gt;Delete" type="string" value="xflock4"/>
       <property name="XF86Mail" type="string" value="exo-open --launch MailReader"/>
       <property name="XF86Display" type="string" value="xfce4-display-settings --minimal"/>
       <property name="XF86WWW" type="string" value="exo-open --launch WebBrowser"/>
+      <property name="&lt;Super&gt;p" type="string" value="xfce4-display-settings --minimal"/>
       <property name="override" type="bool" value="true"/>
     </property>
   </property>

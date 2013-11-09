@@ -13,7 +13,7 @@
 *cursorUnderline: false
 ! Get width and height of a terminal window: `tput cols` and `tput lines`
 ! <http://stackoverflow.com/questions/263890/how-do-i-find-the-width-height-of-a-terminal-window#263900>.
-*geometry:        87x58
+*geometry:        87x54
 *saveLines:       10000
 
 ! Xft <https://wiki.archlinux.org/index.php/Font_Configuration#Applications_without_fontconfig_support>.
@@ -48,99 +48,38 @@ Xft.rgba:      rgb
 Xcursor.theme: Vanilla-DMZ
 ! Xcursor.size: 48
 
-! ! "White" text on black background.
-! *foreground: gray90
-! *background: black
-
 ! ! Black text on a white background.
 ! *foreground: black
 ! *background: white
 
-! Black (dark) theme <http://wiki.gentoo.org/wiki/Rxvt-unicode#Color_theme>.
-! *background: #0f0f0f
-*background: #0c0c0c
-*foreground: #c8c8c8
-! Black.
-*color0:  #251f1f
-*color8:  #5e5e5e
-! Red.
-*color1:  #eb4509
-*color9:  #eb4509
-! Green.
-*color2:  #94e76b
-*color10: #95e76b
-! Yellow.
-*color3:  #ffac18
-*color11: #ffac18
-! Blue.
-*color4:  #46aede
-*color12: #46aede
-! Magenta.
-*color5:  #e32c57
-*color13: #e32c57
-! Cyan.
-*color6:  #d6dbac
-*color14: #d6dbac
-! White.
-*color7:  #efefef
-*color15: #efefef
-
-! ! tango theme black <http://wiki.gentoo.org/wiki/rxvt-unicode#color_theme>.
+! ! Black (dark) theme <http://wiki.gentoo.org/wiki/Rxvt-unicode#Color_theme>.
 ! ! *background: #0f0f0f
 ! *background: #0c0c0c
 ! *foreground: #c8c8c8
-! ! black.
-! *color0:  #2e3436
-! *color8:  #555753
-! ! red.
-! *color1:  #a40000
-! *color9:  #ef2929
-! ! green.
-! *color2:  #4e9a06
-! *color10: #8ae234
-! ! yellow.
-! *color3:  #c4a000
-! *color11: #fce94f
-! ! blue.
-! *color4:  #3465a4
-! *color12: #729fcf
-! ! purple.
-! *color5:  #75507b
-! *color13: #ad7fa8
-! ! orange (replaces cyan).
-! *color6:  #ce5c00
-! *color14: #fcaf3e
-! ! white.
-! *color7:  #babdb9
-! *color15: #eeeeec
-
-! ! Tango theme black <http://liuchuan.org/files/config/Xresources.html>.
-! *background: #0f0f0f
-! *foreground: #c8c8c8
 ! ! Black.
-! *color0:   #000000
-! *color8:   #555753
+! *color0:  #251f1f
+! *color8:  #5e5e5e
 ! ! Red.
-! *color1:   #cc0000
-! *color9:   #ef2929
+! *color1:  #eb4509
+! *color9:  #eb4509
 ! ! Green.
-! *color2:   #4e9a06
-! *color10:  #8ae234
+! *color2:  #94e76b
+! *color10: #95e76b
 ! ! Yellow.
-! *color3:   #c4a000
-! *color11:  #fce94f
+! *color3:  #ffac18
+! *color11: #ffac18
 ! ! Blue.
-! *color4:   #3465a4
-! *color12:  #729fcf
+! *color4:  #46aede
+! *color12: #46aede
 ! ! Magenta.
-! *color5:   #75507b
-! *color13:  #ad7fa8
-! ! Cyan,
-! *color6:   #06989a
-! *color14:  #34e2e2
-! ! White,
-! *color7:   #d3d7cf
-! *color15:  #eeeeec
+! *color5:  #e32c57
+! *color13: #e32c57
+! ! Cyan.
+! *color6:  #d6dbac
+! *color14: #d6dbac
+! ! White.
+! *color7:  #efefef
+! *color15: #efefef
 
 ! Include multiple resource
 ! <http://www.nongnu.org/emacsdoc-fr/manuel/resources-x.html>,

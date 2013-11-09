@@ -5,9 +5,10 @@
        :pkgname "nschum/highlight-symbol.el"
        :features "highlight-symbol"
        :after (progn
-                ;; (set-face-attribute 'highlight-symbol-face nil :foreground nil :background "gray40")
-                (set-face-background 'highlight-symbol-face "gray20")
-
+                (if (equal my-color-theme "dark")
+                    ;; (set-face-attribute 'highlight-symbol-face nil :foreground nil :background "gray40")
+                    (set-face-background 'highlight-symbol-face "gray20")
+                  )
                 (eval-after-load 'highlight-symbol
                   '(progn
                      (defun highlight-symbol-next-with-repeat ()

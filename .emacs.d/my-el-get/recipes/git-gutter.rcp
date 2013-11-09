@@ -6,14 +6,16 @@
                 (setq git-gutter:modified-sign "=          ")
                 (setq git-gutter:added-sign    "+          ")
                 (setq git-gutter:deleted-sign  "-          ")
-                (eval-after-load 'git-gutter
-                  '(progn
-                     (set-face-background 'git-gutter:added     "gray10")
-                     (set-face-background 'git-gutter:deleted   "gray10")
-                     (set-face-background 'git-gutter:modified  "gray10")
-                     (set-face-background 'git-gutter:separator "gray10")
-                     (set-face-background 'git-gutter:unchanged "gray10")
-                     ))
+                (if (equal my-color-theme "dark")
+                    (eval-after-load 'git-gutter
+                      '(progn
+                         (set-face-background 'git-gutter:added     "gray10")
+                         (set-face-background 'git-gutter:deleted   "gray10")
+                         (set-face-background 'git-gutter:modified  "gray10")
+                         (set-face-background 'git-gutter:separator "gray10")
+                         (set-face-background 'git-gutter:unchanged "gray10")
+                         ))
+                  )
                 (add-hook 'awk-mode-hook 'git-gutter-mode)
                 (add-hook 'coffee-mode-hook 'git-gutter-mode)
                 (add-hook 'conf-mode-hook 'git-gutter-mode)
