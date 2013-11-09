@@ -6,8 +6,10 @@
        :features "highlight-symbol"
        :after (progn
                 (if (equal my-color-theme "dark")
-                    ;; (set-face-attribute 'highlight-symbol-face nil :foreground nil :background "gray40")
-                    (set-face-background 'highlight-symbol-face "gray20")
+                    (
+                     ;; (set-face-attribute 'highlight-symbol-face nil :foreground nil :background "gray40")
+                     (set-face-background 'highlight-symbol-face "gray20")
+                     )
                   )
                 (eval-after-load 'highlight-symbol
                   '(progn

@@ -247,9 +247,11 @@
 ;; ;;; <http://emacswiki.org/ScrollBar>.
 ;; (scroll-bar-mode -1)
 ;; <http://stackoverflow.com/questions/3155451/emacs-scrollbar-customize#3159618>.
-(if (equal my-color-theme "white")
-    (set-face-background 'scroll-bar "white")
-  (set-face-foreground 'scroll-bar "gray")
+(if (equal my-color-theme "dark")
+    (
+     (set-face-background 'scroll-bar "white")
+     (set-face-foreground 'scroll-bar "gray")
+     )
   )
 
 ;;; AnsiColor (Emacs terminal related stuff)
@@ -361,12 +363,15 @@
 
 ;;; Line numbers
 ;;; Linum
-(if (equal my-color-theme "dark")
-    (eval-after-load 'linum
-      '(progn
-         (set-face-attribute 'linum nil :foreground "DimGray" :background "gray10") ;gray40
-         ))
-  )
+(eval-after-load 'linum
+  '(progn
+     (cond ((equal my-color-theme "white")
+            (set-face-attribute 'linum nil :foreground "DimGray" :background "gray85")
+            )
+           ((equal my-color-theme "dark")
+            (set-face-attribute 'linum nil :foreground "DimGray" :background "gray10") ;gray40
+            ))
+     ))
 (defun my-linum-mode-hook ()
   (linum-mode 1))
 (add-hook 'awk-mode-hook 'my-linum-mode-hook)
