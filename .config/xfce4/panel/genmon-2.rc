@@ -1,0 +1,6 @@
+Command=echo "1"
+UseLabel=0
+Text=d
+UpdatePeriod=30000
+Font=PragmataPro 10
+
