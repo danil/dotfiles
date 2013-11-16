@@ -1,10 +1,22 @@
 # Bash prompt.
+# Colors
+# Below are the color init strings for the basic file types. A color init
+# string consists of one or more of the following numeric codes:
+# Attribute codes:
+# 00=none 01=bold 04=underscore 05=blink 07=reverse 08=concealed
+# Text color codes:
+# 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
+# Background color codes:
+# 40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
+# <https://wiki.archlinux.org/index.php/Color_Bash_Prompt#.2Fetc.2FDIR_COLORS>.
 ps1_plain="\[\033[0m\]"
 ps1_blue="\[\033[01;34m\]"
+ps1_cyan="\[\033[1;36m\]"
 ps1_green="\[\033[01;32m\]"
+ps1_magenta="\[\033[1;35m\]"
 ps1_red="\[\033[1;31m\]"
 ps1_user="${ps1_green}\u@\h${ps1_plain}"
-ps1_dir=" ${ps1_blue}\w${ps1_plain}"
+ps1_pwd=" ${ps1_blue}\w${ps1_plain}"
 function registr_my_prompt_command() {
     if [ -z "$PROMPT_COMMAND" ]; then
         PROMPT_COMMAND="$1"
@@ -18,6 +30,10 @@ function ps1_jobs {
     if [ `jobs | wc -l` -ne 0 ]; then
         echo -n " ${ps1_red}jobs:\j${ps1_plain}"
     fi
+}
+function ps1_pwd {
+  local my_pwd=$(echo $PWD | sed -e "s|^$HOME|~|" -e 's-\([^/.]\)[^/]*/-\1/-g')
+  echo -n " ${ps1_blue}${my_pwd}${ps1_plain}"
 }
 function ps1_load {
     # Prompt load average
@@ -46,7 +62,7 @@ function my_prompt_command {
     # Prompt unicode arrow
     # <http://crunchbang.org/forums/viewtopic.php?pid=127747#p127747>,
     # <https://wiki.archlinux.org/index.php/Color_Bash_Prompt#From_Arch_Forum_.231>.
-    PS1="┌${ps1_user}${ps1_exit_code}$(ps1_load)$(ps1_jobs)${ps1_dir}"'$(__git_ps1 " (%s)")\n'"└${ps1_blue}\$${ps1_plain} "
+    PS1="${ps1_user}${ps1_exit_code}$(ps1_load)$(ps1_jobs)${ps1_pwd}${ps1_magenta}"'$(__git_ps1 " %s")'"\n${ps1_cyan}\$${ps1_plain} "
 }
 PROMPT_COMMAND=my_prompt_command
 # Git prompt
