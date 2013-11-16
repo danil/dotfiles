@@ -54,6 +54,7 @@
          column-marker
          crontab-mode
          csv-mode
+         dart-mode
          deft
          ebuild-mode
          egg
