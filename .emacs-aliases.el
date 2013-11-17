@@ -450,7 +450,7 @@
 (setq auto-mode-alist
       (cons '("/etc/fstab\\'" . conf-mode) auto-mode-alist))
 (setq auto-mode-alist
-      (cons '("/etc/hosts\\'" . conf-mode) auto-mode-alist))
+      (cons '("/hosts\\'" . conf-mode) auto-mode-alist))
 (setq auto-mode-alist
       (cons '("\\.pkla\\'" . conf-mode) auto-mode-alist))
 (setq auto-mode-alist
