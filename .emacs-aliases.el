@@ -3,8 +3,8 @@
 
 ;;; Color light and dark themes toggle
 ;;; <http://www.gnu.org/software/emacs/manual/html_node/emacs/Faces.html>.
-;; (setq frame-background-mode 'light)
-(setq frame-background-mode 'dark)
+(setq frame-background-mode 'light)
+;; (setq frame-background-mode 'dark)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
