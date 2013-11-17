@@ -463,6 +463,8 @@
       (cons '("/\\.tigrc\\'" . conf-mode) auto-mode-alist))
 (setq auto-mode-alist
       (cons '("/locale.gen\\'" . conf-mode) auto-mode-alist))
+(setq auto-mode-alist
+      (cons '("/sudoers\\'" . conf-mode) auto-mode-alist))
 
 ;;; Lisp.
 (setq auto-mode-alist
