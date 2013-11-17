@@ -8,14 +8,14 @@
                 (setq git-gutter:deleted-sign  "-          ")
                 (eval-after-load 'git-gutter
                   '(progn
-                     (cond ((equal my-color-theme "white")
+                     (cond ((equal frame-background-mode 'light)
                             (set-face-background 'git-gutter:added     "gray85")
                             (set-face-background 'git-gutter:deleted   "gray85")
                             (set-face-background 'git-gutter:modified  "gray85")
                             (set-face-background 'git-gutter:separator "gray85")
                             (set-face-background 'git-gutter:unchanged "gray85")
                             )
-                           ((equal my-color-theme "dark")
+                           ((equal frame-background-mode 'dark)
                             (set-face-background 'git-gutter:added     "gray10")
                             (set-face-background 'git-gutter:deleted   "gray10")
                             (set-face-background 'git-gutter:modified  "gray10")

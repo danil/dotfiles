@@ -48,10 +48,6 @@ Xft.rgba:      rgb
 Xcursor.theme: Vanilla-DMZ
 ! Xcursor.size: 48
 
-! ! Black text on a white background.
-! *foreground: black
-! *background: white
-
 ! ! Black (dark) theme <http://wiki.gentoo.org/wiki/Rxvt-unicode#Color_theme>.
 ! ! *background: #0f0f0f
 ! *background: #0c0c0c

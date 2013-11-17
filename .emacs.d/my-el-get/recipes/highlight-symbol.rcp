@@ -5,14 +5,12 @@
        :pkgname "nschum/highlight-symbol.el"
        :features "highlight-symbol"
        :after (progn
-                (if (equal my-color-theme "dark")
-                    (
-                     ;; (set-face-attribute 'highlight-symbol-face nil :foreground nil :background "gray40")
-                     (set-face-background 'highlight-symbol-face "gray20")
-                     )
-                  )
                 (eval-after-load 'highlight-symbol
                   '(progn
+                     (cond ((equal frame-background-mode 'dark)
+                            ;; (set-face-attribute 'highlight-symbol-face nil :foreground nil :background "gray40")
+                            (set-face-background 'highlight-symbol-face "gray20")
+                            ))
                      (defun highlight-symbol-next-with-repeat ()
                        (interactive)
                        (my-with-repeat-while-press-last-key
@@ -26,7 +24,6 @@
                      (global-set-key (kbd "C-c d s p") 'highlight-symbol-prev-with-repeat)
                      (global-set-key (kbd "C-c d s r") 'highlight-symbol-query-replace)
                      ))
-
                 (add-hook 'awk-mode-hook 'highlight-symbol-mode)
                 (add-hook 'coffee-mode-hook 'highlight-symbol-mode)
                 (add-hook 'conf-mode-hook 'highlight-symbol-mode)

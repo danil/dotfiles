@@ -8,11 +8,11 @@
        :after (progn
                 (global-set-key (kbd "C-c f s") 'ag-regexp)
                 (set 'ag-highlight-search 1)
-                ;; (if (equal my-color-theme "dark")
-                ;;     (eval-after-load 'ag
-                ;;       '(progn
-                ;;          ;; (set-face-background 'ag-match-face "green3")
-                ;;          (set-face-foreground 'ag-match-face "lightskyblue1")
-                ;;          ))
-                ;;   )
+                ;; (eval-after-load 'ag
+                ;;   '(progn
+                ;;      (cond ((equal frame-background-mode 'dark)
+                ;;             ;; (set-face-background 'ag-match-face "green3")
+                ;;             (set-face-foreground 'ag-match-face "lightskyblue1")
+                ;;             ))
+                ;;      ))
                 ))

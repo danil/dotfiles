@@ -11,7 +11,7 @@
     <property name="inactivity-on-ac" type="uint" value="14"/>
     <property name="critical-power-level" type="uint" value="5"/>
     <property name="general-notification" type="bool" value="true"/>
-    <property name="brightness-on-ac" type="uint" value="120"/>
+    <property name="brightness-on-ac" type="uint" value="9"/>
     <property name="brightness-level-on-ac" type="uint" value="1"/>
   </property>
 </channel>

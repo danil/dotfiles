@@ -5,7 +5,7 @@
        :load-path "lisp/"
        :after (progn
                 (setq ethan-wspace-face-customized t) ;<http://github.com/glasserc/ethan-wspace/blob/master/lisp/ethan-wspace.el#L714>
-                (cond ((equal my-color-theme "dark")
+                (cond ((equal frame-background-mode 'dark)
                        (set-face-background 'ethan-wspace-face "#262626") ;#3f3f3f
                        ))
                 (global-ethan-wspace-mode 1))
