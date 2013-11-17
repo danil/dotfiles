@@ -170,7 +170,8 @@
 
 # Screenshot.
 # "import ~/tmp/screenshot.png"
-"shutter -s"
+# "shutter -s"
+"ksnapshot"
   Control + Shift + Mod1 + p
 
 # # ALSA.
