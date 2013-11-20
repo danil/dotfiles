@@ -1,6 +1,11 @@
 ;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 ;(add-to-list 'load-path "~/share/emacs/site-lisp")
 
+;;; Color light and dark themes toggle
+;;; <http://www.gnu.org/software/emacs/manual/html_node/emacs/Faces.html>.
+(setq frame-background-mode 'dark)
+;; (setq frame-background-mode 'light)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -540,12 +545,18 @@
 ;;; path as argument
 ;;; <http://superuser.com/questions/360427/emacs-equivalent-of-this-vim-command-to-run-my-tests#360512>.
 (defun my-do-shell-command-on-buffer-file ()
-  "prompts for a command and executes that command on to the associated
- file of current buffer. if no buffer is associated gives an error"
+  "Prompts for a command and executes that command on to the associated
+ file of current buffer. If no buffer is associated gives an error"
   (interactive)
   (or (buffer-file-name) (error "no file is associated file to this buffer"))
   (let* ((my-cmd (read-shell-command "Command to run: "))
          (cmd-to-run (concat my-cmd " " (buffer-file-name))))
+    (shell-command cmd-to-run)))
+(defun my-do-shell-command-on-current-path ()
+  "Prompts for a command and executes that command"
+  (interactive)
+  (let* ((my-cmd (read-shell-command "Command to run: "))
+         (cmd-to-run (concat my-cmd)))
     (shell-command cmd-to-run)))
 
 ;;; ANSI SGR (Select Graphic Rendition) escape sequences
