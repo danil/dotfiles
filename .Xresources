@@ -52,8 +52,8 @@ Xcursor.theme: Vanilla-DMZ
 *background: #0c0c0c
 *foreground: #eeeeeeeeecec
 ! Black.
-*color0:  #2e2e34343636
-*color8:  #555557575353
+*color0:  #0c0c0c
+*color8:  #251f1f
 ! Red.
 *color1:  #cccc00000000
 *color9:  #efef29292929
