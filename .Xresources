@@ -43,6 +43,9 @@ Xft.rgba:      rgb
 ! *font: xft:DejaVu Sans Mono:pixelsize=12:antialias=true:hinting=true:autohint=true
 ! <http://askubuntu.com/questions/22419/how-do-i-make-urxvt-render-xft-fonts#96779>.
 *font: xft:PragmataPro:pixelsize=13:antialias=true:hinting=true:autohint=true:style=regular
+*boldFont: xft:PragmataPro:pixelsize=13:antialias=true:hinting=true:autohint=true:style=bold
+*italicFont: xft:PragmataPro:pixelsize=13:antialias=true:hinting=true:autohint=true:style=italic
+*boldItalicFont: xft:PragmataPro:pixelsize=13:antialias=true:hinting=true:autohint=true:style=bold italic
 
 ! <https://wiki.archlinux.org/index.php/X11_Cursors>.
 Xcursor.theme: Vanilla-DMZ
