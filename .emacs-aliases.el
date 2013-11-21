@@ -356,7 +356,7 @@
 ;;; Linum
 (eval-after-load 'linum
   '(progn
-     (set-face-attribute 'linum nil :foreground "DimGray" :background "gray10") ;gray40
+     (set-face-attribute 'linum nil :foreground "DimGray" :background "gray15")
      ))
 (defun my-linum-mode-hook ()
   (linum-mode 1))
