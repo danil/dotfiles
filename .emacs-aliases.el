@@ -152,7 +152,7 @@
 (set-face-attribute 'lazy-highlight nil :foreground "lightskyblue1" :background "maroon4")
 
 (set-face-attribute 'isearch nil :foreground "lightskyblue1" :background "red")
-(set-face-attribute 'isearch-fail nil :foreground "black")
+(set-face-attribute 'isearch-fail nil :foreground "lightskyblue1" :background "red")
 (set-face-attribute 'match nil :foreground "lightskyblue1" :background "OrangeRed3")
 (set-face-background 'highlight '"#002b36")
 
