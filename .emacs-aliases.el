@@ -372,7 +372,6 @@
 (add-hook 'js-mode-hook 'my-linum-mode-hook)
 (add-hook 'lisp-mode-hook 'my-linum-mode-hook)
 (add-hook 'lua-mode-hook 'my-linum-mode-hook)
-(add-hook 'magit-diff-mode-hook 'my-linum-mode-hook)
 (add-hook 'makefile-gmake-mode-hook 'my-linum-mode-hook)
 (add-hook 'markdown-mode-hook 'my-linum-mode-hook)
 (add-hook 'nxml-mode-hook 'my-linum-mode-hook)
