@@ -14,6 +14,7 @@
         <value type="int" value="2"/>
         <value type="int" value="19"/>
         <value type="int" value="13"/>
+        <value type="int" value="5"/>
         <value type="int" value="1"/>
         <value type="int" value="3"/>
         <value type="int" value="4"/>
@@ -91,5 +92,6 @@
     <property name="plugin-1" type="string" value="xfce4-orageclock-plugin"/>
     <property name="plugin-2" type="string" value="genmon"/>
     <property name="plugin-3" type="string" value="xfce4-brightness-plugin"/>
+    <property name="plugin-5" type="string" value="genmon"/>
   </property>
 </channel>
