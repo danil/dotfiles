@@ -1,6 +1,6 @@
-Command=echo "1"
+Command=cat /tmp/danil_desktop_number
 UseLabel=0
 Text=d
-UpdatePeriod=30000
+UpdatePeriod=1000
 Font=PragmataPro 10
 
