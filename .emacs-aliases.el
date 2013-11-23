@@ -142,7 +142,6 @@
 (transient-mark-mode 1)
 ;; (set-face-background 'region nil)
 
-;;; My color themes.
 ;; (set-background-color "#0f0f0f")
 (set-cursor-color "red") ;#aa0000
 (cond ((equal frame-background-mode 'dark)
@@ -157,6 +156,7 @@
        (set-face-attribute 'lazy-highlight nil :foreground "lightskyblue1" :background "maroon4")
 
        (set-face-attribute 'isearch nil :foreground "lightskyblue1" :background "red")
+       (set-face-attribute 'isearch-fail nil :foreground "lightskyblue1" :background "red")
        (set-face-attribute 'match nil :foreground "lightskyblue1" :background "OrangeRed3")
        (set-face-background 'highlight '"#002b36")
        ;; (set-face-attribute 'isearch-fail nil :foreground "black")
@@ -368,7 +368,7 @@
             (set-face-attribute 'linum nil :foreground "DimGray" :background "gray85")
             )
            ((equal frame-background-mode 'dark)
-            (set-face-attribute 'linum nil :foreground "DimGray" :background "gray10") ;gray40
+            (set-face-attribute 'linum nil :foreground "DimGray" :background "gray15")
             ))
      ))
 (defun my-linum-mode-hook ()
@@ -386,7 +386,6 @@
 (add-hook 'js-mode-hook 'my-linum-mode-hook)
 (add-hook 'lisp-mode-hook 'my-linum-mode-hook)
 (add-hook 'lua-mode-hook 'my-linum-mode-hook)
-(add-hook 'magit-diff-mode-hook 'my-linum-mode-hook)
 (add-hook 'makefile-gmake-mode-hook 'my-linum-mode-hook)
 (add-hook 'markdown-mode-hook 'my-linum-mode-hook)
 (add-hook 'nxml-mode-hook 'my-linum-mode-hook)
@@ -564,12 +563,18 @@
 ;;; path as argument
 ;;; <http://superuser.com/questions/360427/emacs-equivalent-of-this-vim-command-to-run-my-tests#360512>.
 (defun my-do-shell-command-on-buffer-file ()
-  "prompts for a command and executes that command on to the associated
- file of current buffer. if no buffer is associated gives an error"
+  "Prompts for a command and executes that command on to the associated
+ file of current buffer. If no buffer is associated gives an error"
   (interactive)
   (or (buffer-file-name) (error "no file is associated file to this buffer"))
   (let* ((my-cmd (read-shell-command "Command to run: "))
          (cmd-to-run (concat my-cmd " " (buffer-file-name))))
+    (shell-command cmd-to-run)))
+(defun my-do-shell-command-on-current-path ()
+  "Prompts for a command and executes that command"
+  (interactive)
+  (let* ((my-cmd (read-shell-command "Command to run: "))
+         (cmd-to-run (concat my-cmd)))
     (shell-command cmd-to-run)))
 
 ;;; ANSI SGR (Select Graphic Rendition) escape sequences
