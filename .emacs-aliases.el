@@ -144,7 +144,12 @@
 
 ;; (set-background-color "#0f0f0f")
 (set-cursor-color "red") ;#aa0000
-(cond ((equal frame-background-mode 'dark)
+(cond ((equal frame-background-mode 'light)
+       (set-face-attribute 'isearch-fail nil
+                           :foreground "lightskyblue1"
+                           :background "magenta3")
+       )
+      ((equal frame-background-mode 'dark)
        ;; Region.
        ;; (setq my-face-reginon-background "#002b36") ;#2E3436 ;set selection background color
        ;; (set-face-attribute 'region nil :inverse-video t)
@@ -153,11 +158,19 @@
        ;; Matches other than the current one by Isearch and Query Replace
        ;; <http://www.gnu.org/software/emacs/manual/html_node/emacs/Standard-Faces.html>.
        ;; (set-face-background 'lazy-highlight "#002b36")
-       (set-face-attribute 'lazy-highlight nil :foreground "lightskyblue1" :background "maroon4")
+       (set-face-attribute 'lazy-highlight nil
+                           :foreground "lightskyblue1"
+                           :background "maroon4")
 
-       (set-face-attribute 'isearch nil :foreground "lightskyblue1" :background "red")
-       (set-face-attribute 'isearch-fail nil :foreground "lightskyblue1" :background "red")
-       (set-face-attribute 'match nil :foreground "lightskyblue1" :background "OrangeRed3")
+       (set-face-attribute 'isearch nil
+                           :foreground "lightskyblue1"
+                           :background "red")
+       (set-face-attribute 'isearch-fail nil
+                           :foreground "lightskyblue1"
+                           :background "red")
+       (set-face-attribute 'match nil
+                           :foreground "lightskyblue1"
+                           :background "OrangeRed3")
        (set-face-background 'highlight '"#002b36")
        ;; (set-face-attribute 'isearch-fail nil :foreground "black")
 
