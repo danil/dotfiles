@@ -173,6 +173,13 @@
        (set-face-background 'diff-hunk-header "black")
        )))
 
+(set-face-foreground 'ediff-current-diff-B nil)
+(set-face-foreground 'ediff-current-diff-A nil)
+(set-face-foreground 'ediff-current-diff-C nil)
+(set-face-background 'ediff-current-diff-A "DarkRed")
+(set-face-background 'ediff-current-diff-B "DarkGreen")
+(set-face-background 'ediff-current-diff-C "DarkOrange4")
+
 ;;; Truncation of Lines (toggle-truncate-lines) <http://emacswiki.org/emacs/TruncateLines>.
 (set-default 'truncate-lines t)
 ;;; Horizontal Scrolling
