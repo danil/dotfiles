@@ -11,7 +11,7 @@
                   "Face to use for `hl-line-face`." :group 'hl-line)
                 (setq hl-line-face 'hl-line)
                 ;; (set-face-attribute hl-line-face nil :underline t) ;looks inconsistent with fill-column-indicator
-                (set-face-background hl-line-face "gray13") ;nil ;<http://stackoverflow.com/questions/4495406/hl-line-mode-emacs-color-change#4504223>
+                (set-face-background hl-line-face "gray14") ;nil ;<http://stackoverflow.com/questions/4495406/hl-line-mode-emacs-color-change#4504223>
                 (global-hl-line-mode 1)
                 ;; <http://emacsblog.org/2007/04/09/highlight-the-current-line/#comment-284>.
                 (defun local-hl-line-mode-off ()
