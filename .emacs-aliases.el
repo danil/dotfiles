@@ -107,6 +107,7 @@
 (setq system-time-locale "C")
 (setq calendar-week-start-day 1)
 (global-font-lock-mode 1)
+(put 'upcase-region 'disabled nil)
 
 ;;; Setting key with repeat
 ;;; <http://stackoverflow.com/questions/7560094/two-key-shortcut-in-emacs-without-repressing-the-first-key#7560416>.
@@ -359,6 +360,9 @@
 ;;; TRAMP.
 ;;; <http://emacswiki.org/TrampMode>.
 ;(setq tramp-default-method "ssh")
+
+;;; Cua mode <http://www.emacswiki.org/emacs/CuaMode>.
+(setq cua-enable-cua-keys nil) ;change case of a rectangle <http://stackoverflow.com/questions/6154545/emacs-change-case-of-a-rectangle#comment-7167904>.
 
 ;;; Line numbers
 ;;; Linum
