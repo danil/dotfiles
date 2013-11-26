@@ -602,9 +602,15 @@ the current position of point, then move it to the beginning of text on the curr
 ;; (eval-after-load "cc-mode"
 ;;      '(define-key c-mode-base-map (kbd "C-a") 'my-beginning-of-line))
 
-;;; CamleCase and underscore toggle
+;;; CamleCase and underscore inflection toggle
 ;;; <http://superuser.com/questions/126431/is-there-any-way-to-convert-camel-cased-names-to-use-underscores-in-emacs/126473#300048>,
-;;; <https://bunkus.org/blog/2009/12/switching-identifier-naming-style-between-camel-case-and-c-style-in-emacs>.
+;;; <https://bunkus.org/blog/2009/12/switching-identifier-naming-style-between-camel-case-and-c-style-in-emacs>,
+;;; <http://api.rubyonrails.org/classes/ActiveSupport/Inflector.html>.
+(global-set-key (kbd "C-c d i c") 'my-toggle-camelcase-and-underscore-with-repeat)
+(defun my-toggle-camelcase-and-underscore-with-repeat ()
+  (interactive)
+  (my-with-repeat-while-press-last-key
+    (my-toggle-camelcase-and-underscore)))
 (defun my-toggle-camelcase-and-underscore ()
   "Toggles the symbol at point between C-style naming,
 e.g. `hello_world_string', and camel case,
@@ -631,8 +637,12 @@ e.g. `HelloWorldString'."
         (replace-match (funcall func (match-string 1))
                        t nil))
       (widen))))
-(global-set-key (kbd "C-c d i c") 'my-toggle-camelcase-and-underscore)
 
+(global-set-key (kbd "C-c d i h") 'my-humanize-symbol-with-repeat)
+(defun my-humanize-symbol-with-repeat ()
+  (interactive)
+  (my-with-repeat-while-press-last-key
+    (my-humanize-symbol)))
 (defun my-humanize-symbol ()
   "Humanize the symbol at point from
 C-style naming, e.g. `hello_world_string',
@@ -661,7 +671,6 @@ and Lisp-style nameing, e.g. `hello-world-string'."
         (replace-match (funcall func (match-string 1))
                        t nil))
       (widen))))
-(global-set-key (kbd "C-c d i h") 'my-humanize-symbol)
 
 ;;; Sql mode history <http://www.emacswiki.org/emacs/SqlMode#toc3>.
 (defun my-sql-save-history-hook ()
