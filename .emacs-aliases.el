@@ -631,7 +631,7 @@ e.g. `HelloWorldString'."
         (replace-match (funcall func (match-string 1))
                        t nil))
       (widen))))
-(global-set-key (kbd "C-c d c") 'my-toggle-camelcase-and-underscore)
+(global-set-key (kbd "C-c d i c") 'my-toggle-camelcase-and-underscore)
 
 (defun my-humanize-symbol ()
   "Humanize the symbol at point from
@@ -661,7 +661,7 @@ and Lisp-style nameing, e.g. `hello-world-string'."
         (replace-match (funcall func (match-string 1))
                        t nil))
       (widen))))
-(global-set-key (kbd "C-c d h") 'my-humanize-symbol)
+(global-set-key (kbd "C-c d i h") 'my-humanize-symbol)
 
 ;;; Sql mode history <http://www.emacswiki.org/emacs/SqlMode#toc3>.
 (defun my-sql-save-history-hook ()
