@@ -10,6 +10,12 @@
                   '(progn
                      (set-face-foreground 'magit-diff-add "green1")
                      (set-face-foreground 'magit-diff-del "red1")
+                     (set-face-attribute 'magit-blame-header nil
+                                         :underline nil
+                                         :foreground "gray40"
+                                         :background "gray10")
+                     (set-face-attribute 'magit-blame-sha1 nil
+                                         :inherit 'magit-blame-header)
                      (when (not window-system)
                        (set-face-background 'magit-item-highlight "brightblack")
                        (set-face-background 'magit-diff-add "brightblack")
