@@ -1,0 +1,12 @@
+(:name haml-mode
+       :description "Major mode for editing Haml files"
+       :type github
+       :pkgname "nex3/haml-mode"
+       :after (progn
+                (eval-after-load 'haml-mode
+                  '(progn
+                     (define-key haml-mode-map (kbd "C-c d r h")
+                       'ruby-toggle-hash-syntax)
+                     ))
+                )
+       )

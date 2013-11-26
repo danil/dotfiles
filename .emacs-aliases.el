@@ -127,7 +127,8 @@
            (setq repeat-key nil)
            (push last-input-event unread-command-events))))))
 
-(global-set-key (kbd "C-c d o") 'sort-lines)
+(global-set-key (kbd "C-c d s l") 'sort-lines)
+(global-set-key (kbd "C-c d s f") 'sort-fields)
 
 ;;; BackspaceKey <http://emacswiki.org/BackspaceKey>.
 ;; (global-set-key [(control h)] 'delete-backward-char)
@@ -696,7 +697,8 @@ and Lisp-style nameing, e.g. `hello-world-string'."
 
 (eval-after-load 'ruby-mode
   '(progn
-     (define-key ruby-mode-map (kbd "C-c {") 'my-ruby-toggle-block)
+     (define-key ruby-mode-map (kbd "C-c d r b") 'my-ruby-toggle-block)
+     (define-key ruby-mode-map (kbd "C-c d r h") 'ruby-toggle-hash-syntax)
      ))
 (defun my-ruby-brace-to-do-end (orig end)
   (let (beg-marker end-marker)
