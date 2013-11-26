@@ -1,9 +1,9 @@
 (:name magit
-       :website "https://github.com/magit/magit#readme"
+       :website "http://magit.github.io/magit"
        :description "It's Magit! An Emacs mode for Git."
-       :depends (cl-lib)
        :type elpa
        :repo ("marmalade" . "http://marmalade-repo.org/packages/")
+       :depends (cl-lib git-modes)
        :after (progn
                 ;; change magit diff colors <http://readystate4.com/2011/02/22/emacs-changing-magits-default-diff-colors>.
                 (eval-after-load 'magit
