@@ -290,6 +290,30 @@
                                         ; was dired-up-directory
             ))
 
+;;; Get rid of annoying backups, temporary files and autosaves.
+;; Built-in backup settings
+;; <http://www.emacswiki.org/emacs/BackupDirectory#toc2>.
+(setq
+ backup-by-copying t           ;don't clobber symlinks
+ backup-directory-alist
+ '(("." . "~/.emacs-backups")) ;don't litter my fs tree
+ delete-old-versions t
+ kept-new-versions 6
+ kept-old-versions 2
+ version-control t)            ;use versioned backups
+;; ;; Redefining the make-backup-file-name function in order to get
+;; ;; backup files in ~/.backups/ rather than scattered around all over
+;; ;; the filesystem. Note that you must have a directory ~/.backups/
+;; ;; made.  This function looks first to see if that folder exists.  If
+;; ;; it does not the standard backup copy is made.
+;; (defun make-backup-file-name (file-name)
+;;   "Create the non-numeric backup file name for `file-name'."
+;;   (require 'dired)
+;;   (if (file-exists-p "~/.backups")
+;;       (concat (expand-file-name "~/.backups/")
+;;               (dired-replace-in-string "/" "!" file-name))
+;;     (concat file-name "~")))
+
 ;;; Ibuffer <http://emacswiki.org/IbufferMode>,
 ;;; <http://emacs-fu.blogspot.ru/2010/02/dealing-with-many-buffers-ibuffer.html>,
 ;;; <http://martinowen.net/blog/2010/02/tips-for-emacs-ibuffer.html>.
@@ -942,20 +966,6 @@ If the result is do-end block, it will always be multiline."
 ;;         ("rubyonrails_planet_ru" "http://planet.rubyonrails.ru/xml/rss")
 ;;         ("softwaremaniacs_org" "http://softwaremaniacs.org/blog/feed/")
 ;;         ))
-
-;; ;;; Get Rid of Annoying Backups and Autosaves.
-;; ;; Redefining the make-backup-file-name function in order to get
-;; ;; backup files in ~/.backups/ rather than scattered around all over
-;; ;; the filesystem. Note that you must have a directory ~/.backups/
-;; ;; made.  This function looks first to see if that folder exists.  If
-;; ;; it does not the standard backup copy is made.
-;; (defun make-backup-file-name (file-name)
-;;   "Create the non-numeric backup file name for `file-name'."
-;;   (require 'dired)
-;;   (if (file-exists-p "~/.backups")
-;;       (concat (expand-file-name "~/.backups/")
-;;               (dired-replace-in-string "/" "!" file-name))
-;;     (concat file-name "~")))
 
 ;; ;; Redefining the make-auto-save-file-name function in order to get
 ;; ;; autosave files sent to a single directory.  Note that this function
