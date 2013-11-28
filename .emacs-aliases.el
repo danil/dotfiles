@@ -394,6 +394,7 @@
 (eval-after-load 'linum
   '(progn
      (set-face-attribute 'linum nil :foreground "DimGray" :background "gray15")
+     ;; (setq linum-format "%4d ") ;separating line numbers from text <http://www.emacswiki.org/emacs/LineNumbers#toc7>
      ))
 (defun my-linum-mode-hook ()
   (linum-mode 1))
