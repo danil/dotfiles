@@ -672,6 +672,23 @@ and Lisp-style nameing, e.g. `hello-world-string'."
                        t nil))
       (widen))))
 
+;;; Duplicate lines <http://www.emacswiki.org/emacs/DuplicateLines#toc2>.
+(global-set-key (kbd "C-c d d l") 'uniquify-all-lines-region)
+(defun uniquify-all-lines-region (start end)
+  "Find duplicate lines in region START to END keeping first occurrence."
+  (interactive "*r")
+  (save-excursion
+    (let ((end (copy-marker end)))
+      (while
+          (progn
+            (goto-char start)
+            (re-search-forward "^\\(.*\\)\n\\(\\(.*\n\\)*\\)\\1\n" end t))
+        (replace-match "\\1\n\\2")))))
+(defun uniquify-all-lines-buffer ()
+  "Delete duplicate lines in buffer and keep first occurrence."
+  (interactive "*")
+  (uniquify-all-lines-region (point-min) (point-max)))
+
 ;;; Sql mode history <http://www.emacswiki.org/emacs/SqlMode#toc3>.
 (defun my-sql-save-history-hook ()
   (let ((lval 'sql-input-ring-file-name)
