@@ -51,8 +51,6 @@ source $ZSH/oh-my-zsh.sh
 # Correction <http://unix.stackexchange.com/questions/13563/stop-zsh-from-trying-to-correct-command#13564>.
 setopt nocorrectall; setopt correct
 
-export PATH=$PATH:/home/danil/.rvm/gems/ruby-1.9.3-p429-railsexpress/bin:/home/danil/.rvm/gems/ruby-1.9.3-p429-railsexpress@global/bin:/home/danil/.rvm/rubies/ruby-1.9.3-p429-railsexpress/bin:/home/danil/.rvm/bin:/home/danil/bin:/home/danil/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/danil/.rvm/bin:/home/danil/.rvm/bin
-
 export EDITOR="nano" #export EDITOR="/usr/bin/emacsclient -t"
 export ALTERNATE_EDITOR="/usr/bin/emacs"
 export PAGER="/usr/bin/less -IM"
@@ -77,8 +75,7 @@ alias ag='ag --smart-case --color-line-number "2;31"'
 #   print -P "\033AnSiTc %d"
 # fi
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" #load RVM (Ruby Version Manager) into a shell session *as a function* <http://rvm.rvm.io/rvm/install>
-# [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion #RVM bash completion <http://rvm.io/workflow/completion>
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" #load RVM (Ruby Version Manager) into a shell session *as a function* <http://rvm.rvm.io/rvm/install>
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # Bash-like navigation <http://superuser.com/questions/410356/how-do-you-make-zsh-meta-delete-behave-like-bash-to-make-it-delete-a-word-inst#416995>.

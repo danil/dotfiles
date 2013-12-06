@@ -58,6 +58,7 @@
          deft
          ebuild-mode
          egg
+         erite
          etags-select
          ethan-wspace
          evil
