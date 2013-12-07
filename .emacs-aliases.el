@@ -59,6 +59,7 @@
          deft
          ebuild-mode
          egg
+         erite
          etags-select
          ethan-wspace
          evil
@@ -108,6 +109,7 @@
 (setq system-time-locale "C")
 (setq calendar-week-start-day 1)
 (global-font-lock-mode 1)
+(put 'upcase-region 'disabled nil)
 
 ;;; Setting key with repeat
 ;;; <http://stackoverflow.com/questions/7560094/two-key-shortcut-in-emacs-without-repressing-the-first-key#7560416>.
@@ -128,7 +130,8 @@
            (setq repeat-key nil)
            (push last-input-event unread-command-events))))))
 
-(global-set-key (kbd "C-c d o") 'sort-lines)
+(global-set-key (kbd "C-c d s l") 'sort-lines)
+(global-set-key (kbd "C-c d s f") 'sort-fields)
 
 ;;; BackspaceKey <http://emacswiki.org/BackspaceKey>.
 ;; (global-set-key [(control h)] 'delete-backward-char)
@@ -162,6 +165,8 @@
                            :foreground "lightskyblue1"
                            :background "maroon4")
 
+       (set-face-attribute 'header-line nil :inherit nil)
+
        (set-face-attribute 'isearch nil
                            :foreground "lightskyblue1"
                            :background "red")
@@ -188,6 +193,13 @@
               (set-face-background 'diff-hunk-header "black")
               )))
        ))
+
+(set-face-foreground 'ediff-current-diff-B nil)
+(set-face-foreground 'ediff-current-diff-A nil)
+(set-face-foreground 'ediff-current-diff-C nil)
+(set-face-background 'ediff-current-diff-A "DarkRed")
+(set-face-background 'ediff-current-diff-B "DarkGreen")
+(set-face-background 'ediff-current-diff-C "DarkOrange4")
 
 ;;; Truncation of Lines (toggle-truncate-lines) <http://emacswiki.org/emacs/TruncateLines>.
 (set-default 'truncate-lines t)
@@ -301,6 +313,30 @@
                                         ; was dired-up-directory
             ))
 
+;;; Get rid of annoying backups, temporary files and autosaves.
+;; Built-in backup settings
+;; <http://www.emacswiki.org/emacs/BackupDirectory#toc2>.
+(setq
+ backup-by-copying t           ;don't clobber symlinks
+ backup-directory-alist
+ '(("." . "~/.emacs-backups")) ;don't litter my fs tree
+ delete-old-versions t
+ kept-new-versions 6
+ kept-old-versions 2
+ version-control t)            ;use versioned backups
+;; ;; Redefining the make-backup-file-name function in order to get
+;; ;; backup files in ~/.backups/ rather than scattered around all over
+;; ;; the filesystem. Note that you must have a directory ~/.backups/
+;; ;; made.  This function looks first to see if that folder exists.  If
+;; ;; it does not the standard backup copy is made.
+;; (defun make-backup-file-name (file-name)
+;;   "Create the non-numeric backup file name for `file-name'."
+;;   (require 'dired)
+;;   (if (file-exists-p "~/.backups")
+;;       (concat (expand-file-name "~/.backups/")
+;;               (dired-replace-in-string "/" "!" file-name))
+;;     (concat file-name "~")))
+
 ;;; Ibuffer <http://emacswiki.org/IbufferMode>,
 ;;; <http://emacs-fu.blogspot.ru/2010/02/dealing-with-many-buffers-ibuffer.html>,
 ;;; <http://martinowen.net/blog/2010/02/tips-for-emacs-ibuffer.html>.
@@ -373,15 +409,23 @@
 ;;; <http://emacswiki.org/TrampMode>.
 ;(setq tramp-default-method "ssh")
 
+;;; Cua mode <http://www.emacswiki.org/emacs/CuaMode>.
+(setq cua-enable-cua-keys nil) ;change case of a rectangle <http://stackoverflow.com/questions/6154545/emacs-change-case-of-a-rectangle#comment-7167904>.
+
 ;;; Line numbers
 ;;; Linum
 (eval-after-load 'linum
   '(progn
+     ;; (setq linum-format "%4d ") ;separating line numbers from text <http://www.emacswiki.org/emacs/LineNumbers#toc7>
      (cond ((equal frame-background-mode 'light)
-            (set-face-attribute 'linum nil :foreground "DimGray" :background "gray85")
+            (set-face-attribute 'linum nil
+                                :foreground "DimGray"
+                                :background "gray85")
             )
            ((equal frame-background-mode 'dark)
-            (set-face-attribute 'linum nil :foreground "DimGray" :background "gray15")
+            (set-face-attribute 'linum nil
+                                :foreground "DimGray"
+                                :background "gray15")
             ))
      ))
 (defun my-linum-mode-hook ()
@@ -551,6 +595,13 @@
                     (indent-line-to arg-indent)))
              (when (> offset 0) (forward-char offset))))))))
 
+;;; Haml.
+(eval-after-load 'haml-mode
+  '(progn
+     (define-key haml-mode-map (kbd "C-c d r h")
+       'ruby-toggle-hash-syntax)
+     ))
+
 ;;; JavaScript mode.
 ;;; HTML Components (HTCs or .htc)
 ;;; <http://en.wikipedia.org/wiki/HTML_Components>.
@@ -621,9 +672,15 @@ the current position of point, then move it to the beginning of text on the curr
 ;; (eval-after-load "cc-mode"
 ;;      '(define-key c-mode-base-map (kbd "C-a") 'my-beginning-of-line))
 
-;;; CamleCase and underscore toggle
+;;; CamleCase and underscore inflection toggle
 ;;; <http://superuser.com/questions/126431/is-there-any-way-to-convert-camel-cased-names-to-use-underscores-in-emacs/126473#300048>,
-;;; <https://bunkus.org/blog/2009/12/switching-identifier-naming-style-between-camel-case-and-c-style-in-emacs>.
+;;; <https://bunkus.org/blog/2009/12/switching-identifier-naming-style-between-camel-case-and-c-style-in-emacs>,
+;;; <http://api.rubyonrails.org/classes/ActiveSupport/Inflector.html>.
+(global-set-key (kbd "C-c d i c") 'my-toggle-camelcase-and-underscore-with-repeat)
+(defun my-toggle-camelcase-and-underscore-with-repeat ()
+  (interactive)
+  (my-with-repeat-while-press-last-key
+    (my-toggle-camelcase-and-underscore)))
 (defun my-toggle-camelcase-and-underscore ()
   "Toggles the symbol at point between C-style naming,
 e.g. `hello_world_string', and camel case,
@@ -650,8 +707,12 @@ e.g. `HelloWorldString'."
         (replace-match (funcall func (match-string 1))
                        t nil))
       (widen))))
-(global-set-key (kbd "C-c d c") 'my-toggle-camelcase-and-underscore)
 
+(global-set-key (kbd "C-c d i h") 'my-humanize-symbol-with-repeat)
+(defun my-humanize-symbol-with-repeat ()
+  (interactive)
+  (my-with-repeat-while-press-last-key
+    (my-humanize-symbol)))
 (defun my-humanize-symbol ()
   "Humanize the symbol at point from
 C-style naming, e.g. `hello_world_string',
@@ -680,7 +741,23 @@ and Lisp-style nameing, e.g. `hello-world-string'."
         (replace-match (funcall func (match-string 1))
                        t nil))
       (widen))))
-(global-set-key (kbd "C-c d h") 'my-humanize-symbol)
+
+;;; Duplicate lines <http://www.emacswiki.org/emacs/DuplicateLines#toc2>.
+(global-set-key (kbd "C-c d d l") 'uniquify-all-lines-region)
+(defun uniquify-all-lines-region (start end)
+  "Find duplicate lines in region START to END keeping first occurrence."
+  (interactive "*r")
+  (save-excursion
+    (let ((end (copy-marker end)))
+      (while
+          (progn
+            (goto-char start)
+            (re-search-forward "^\\(.*\\)\n\\(\\(.*\n\\)*\\)\\1\n" end t))
+        (replace-match "\\1\n\\2")))))
+(defun uniquify-all-lines-buffer ()
+  "Delete duplicate lines in buffer and keep first occurrence."
+  (interactive "*")
+  (uniquify-all-lines-region (point-min) (point-max)))
 
 ;;; Sql mode history <http://www.emacswiki.org/emacs/SqlMode#toc3>.
 (defun my-sql-save-history-hook ()
@@ -721,7 +798,8 @@ and Lisp-style nameing, e.g. `hello-world-string'."
 
 (eval-after-load 'ruby-mode
   '(progn
-     (define-key ruby-mode-map (kbd "C-c {") 'my-ruby-toggle-block)
+     (define-key ruby-mode-map (kbd "C-c d r b") 'my-ruby-toggle-block)
+     (define-key ruby-mode-map (kbd "C-c d r h") 'ruby-toggle-hash-syntax)
      ))
 (defun my-ruby-brace-to-do-end (orig end)
   (let (beg-marker end-marker)
@@ -934,20 +1012,6 @@ If the result is do-end block, it will always be multiline."
 ;;         ("rubyonrails_planet_ru" "http://planet.rubyonrails.ru/xml/rss")
 ;;         ("softwaremaniacs_org" "http://softwaremaniacs.org/blog/feed/")
 ;;         ))
-
-;; ;;; Get Rid of Annoying Backups and Autosaves.
-;; ;; Redefining the make-backup-file-name function in order to get
-;; ;; backup files in ~/.backups/ rather than scattered around all over
-;; ;; the filesystem. Note that you must have a directory ~/.backups/
-;; ;; made.  This function looks first to see if that folder exists.  If
-;; ;; it does not the standard backup copy is made.
-;; (defun make-backup-file-name (file-name)
-;;   "Create the non-numeric backup file name for `file-name'."
-;;   (require 'dired)
-;;   (if (file-exists-p "~/.backups")
-;;       (concat (expand-file-name "~/.backups/")
-;;               (dired-replace-in-string "/" "!" file-name))
-;;     (concat file-name "~")))
 
 ;; ;; Redefining the make-auto-save-file-name function in order to get
 ;; ;; autosave files sent to a single directory.  Note that this function
