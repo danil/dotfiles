@@ -8,6 +8,9 @@
                 (eval-after-load 'highlight-symbol
                   '(progn
                      (cond ((equal frame-background-mode 'dark)
+                            (set-face-background 'highlight-symbol-face "paleturquoise")
+                            )
+                           ((equal frame-background-mode 'dark)
                             ;; (set-face-attribute 'highlight-symbol-face nil :foreground nil :background "gray40")
                             (set-face-background 'highlight-symbol-face "gray20")
                             ))

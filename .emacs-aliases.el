@@ -148,9 +148,15 @@
 ;; (set-background-color "#0f0f0f")
 (set-cursor-color "red") ;#aa0000
 (cond ((equal frame-background-mode 'light)
+       ;; (set-face-attribute 'lazy-highlight nil
+       ;;                     :foreground "lightskyblue1"
+       ;;                     :background "magenta3")
+       (set-face-attribute 'isearch nil
+                           :foreground "lightskyblue1"
+                           :background "red")
        (set-face-attribute 'isearch-fail nil
                            :foreground "lightskyblue1"
-                           :background "magenta3")
+                           :background "red")
        )
       ((equal frame-background-mode 'dark)
        ;; Region.
