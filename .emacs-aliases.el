@@ -1,11 +1,6 @@
 ;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 ;(add-to-list 'load-path "~/share/emacs/site-lisp")
 
-;;; Color light and dark themes toggle
-;;; <http://www.gnu.org/software/emacs/manual/html_node/emacs/Faces.html>.
-(setq frame-background-mode 'light)
-;; (setq frame-background-mode 'dark)
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -145,6 +140,20 @@
 (transient-mark-mode 1)
 ;; (set-face-background 'region nil)
 
+;;; Color light and dark themes toggle
+;;; <http://www.gnu.org/software/emacs/manual/html_node/emacs/Faces.html>.
+(setq frame-background-mode 'light)
+;; (setq frame-background-mode 'dark)
+(defface my-default '((t :inherit default))
+  "Face name to use for my customization."
+  :group 'my-default)
+(cond ((equal frame-background-mode 'light)
+       (set-face-attribute 'my-default nil
+                           :foreground "black"
+                           :background "brightwhite")
+       )
+      ((equal frame-background-mode 'dark)
+       ))
 ;; (set-background-color "#0f0f0f")
 (set-cursor-color "red") ;#aa0000
 (cond ((equal frame-background-mode 'light)
