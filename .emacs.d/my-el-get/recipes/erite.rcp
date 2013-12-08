@@ -2,10 +2,4 @@
        :description "Emacs Rails i18n translations extractor"
        :website "https://github.com/danil/erite"
        :type github
-       :pkgname "danil/erite"
-       :after (progn
-                ;; (setq erite-key-length-limit 30)
-                (setq erite-shell-command "i18n-yaml-add-key")
-                (global-set-key (kbd "C-c d r i s") 'erite)
-                )
-       )
+       :pkgname "danil/erite")

@@ -3,15 +3,16 @@
 require 'yaml'
 require 'psych'
 
-File.open('/tmp/123', 'w') do |file|
-  file.write(ARGV.inspect)
-end
-
 i18n_file, i18n_keys, text = ARGV
+
+fail 'I18n YAML file NOT provided' if i18n_file.nil? || i18n_file == ''
+fail 'I18n transaction key NOT provided' if i18n_keys.nil? || i18n_keys == ''
+fail 'I18n transaction text NOT provided' if text.nil? || text == ''
+
 translations = YAML.load_file(i18n_file)
 keys = i18n_keys.split('.').compact
 
-return if keys.empty?
+fail 'I18n transaction key should NOT be blnak' if keys.empty?
 
 if keys.size == 1
   translations[keys.first] = test
