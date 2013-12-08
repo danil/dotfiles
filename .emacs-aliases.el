@@ -838,16 +838,6 @@ If the result is do-end block, it will always be multiline."
 ;;                (symbol-name rval))))))
 ;; (add-hook 'inf-ruby-mode-hook 'my-irb-save-history-hook)
 
-;; ;;; Tags
-;; ;;; <http://emacswiki.org/BuildTags#toc2>.
-;; ;; (setq path-to-ctags "/usr/bin/ctags")
-;; (setq path-to-ctags "/usr/bin/exuberant-ctags")
-;; (defun create-tags (dir-name)
-;;   "Create tags file."
-;;   (interactive "DDirectory: ")
-;;   (shell-command
-;;    (format "%s -f %s/TAGS -e -R %s" path-to-ctags dir-name dir-name)))
-
 ;;; Auto Fill Mode
 ;;; <http://gnu.org/software/emacs/manual/html_node/emacs/Auto-Fill.html>.
 ;(add-hook 'mail-mode-hook (lambda () (auto-fill-mode t)))
