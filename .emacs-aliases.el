@@ -1,13 +1,19 @@
 ;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 ;(add-to-list 'load-path "~/share/emacs/site-lisp")
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(scroll-bar-width 7) ;scroll bar <http://emacswiki.org/emacs/ScrollBar>.
- '(safe-local-variable-values (quote ((encoding . utf-8)))))
+;;; My recipes.
+(mapc 'load (directory-files
+             (concat user-emacs-directory "my-recipes") t "^[^#].*el$"))
+
+;;; My custom variables.
+(setq custom-file "~/.emacs.d/my-custom-variables.el")
+(load custom-file)
+
+;;; Put <http://www.gnu.org/software/emacs/manual/html_node/elisp/Symbol-Plists.html>.
+;; Horizontal Scrolling
+;; <http://gnu.org/software/emacs/manual/html_node/emacs/Horizontal-Scrolling.html#Horizontal-Scrolling>.
+(put 'scroll-left 'disabled nil)
+(put 'upcase-region 'disabled nil)
 
 ;;; el-get <http://github.com/dimitri/el-get>.
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
@@ -93,6 +99,7 @@
          scss-mode
          simp
          slim-mode
+         slime
          smex
          window-numbering
          yaml-mode
@@ -104,7 +111,6 @@
 (setq system-time-locale "C")
 (setq calendar-week-start-day 1)
 (global-font-lock-mode 1)
-(put 'upcase-region 'disabled nil)
 
 ;;; Setting key with repeat
 ;;; <http://stackoverflow.com/questions/7560094/two-key-shortcut-in-emacs-without-repressing-the-first-key#7560416>.
@@ -138,89 +144,9 @@
 
 ;;; Transient Mark mode <http://emacswiki.org/TransientMarkMode>.
 (transient-mark-mode 1)
-;; (set-face-background 'region nil)
-
-;;; Color light and dark themes toggle
-;;; <http://www.gnu.org/software/emacs/manual/html_node/emacs/Faces.html>.
-(setq frame-background-mode 'light)
-;; (setq frame-background-mode 'dark)
-(defface my-default '((t :inherit default))
-  "Face name to use for my customization."
-  :group 'my-default)
-(cond ((equal frame-background-mode 'light)
-       (set-face-attribute 'my-default nil
-                           :foreground "black"
-                           :background "brightwhite")
-       )
-      ((equal frame-background-mode 'dark)
-       ))
-;; (set-background-color "#0f0f0f")
-(set-cursor-color "red") ;#aa0000
-(cond ((equal frame-background-mode 'light)
-       ;; (set-face-attribute 'lazy-highlight nil
-       ;;                     :foreground "lightskyblue1"
-       ;;                     :background "magenta3")
-       (set-face-attribute 'isearch nil
-                           :foreground "lightskyblue1"
-                           :background "red")
-       (set-face-attribute 'isearch-fail nil
-                           :foreground "lightskyblue1"
-                           :background "red")
-       )
-      ((equal frame-background-mode 'dark)
-       ;; Region.
-       ;; (setq my-face-reginon-background "#002b36") ;#2E3436 ;set selection background color
-       ;; (set-face-attribute 'region nil :inverse-video t)
-       (set-face-background 'region "#002b36")
-
-       ;; Matches other than the current one by Isearch and Query Replace
-       ;; <http://www.gnu.org/software/emacs/manual/html_node/emacs/Standard-Faces.html>.
-       ;; (set-face-background 'lazy-highlight "#002b36")
-       (set-face-attribute 'lazy-highlight nil
-                           :foreground "lightskyblue1"
-                           :background "maroon4")
-
-       (set-face-attribute 'header-line nil :inherit nil)
-
-       (set-face-attribute 'isearch nil
-                           :foreground "lightskyblue1"
-                           :background "red")
-       (set-face-attribute 'isearch-fail nil
-                           :foreground "lightskyblue1"
-                           :background "red")
-       (set-face-attribute 'match nil
-                           :foreground "lightskyblue1"
-                           :background "OrangeRed3")
-       (set-face-background 'highlight '"#002b36")
-       ;; (set-face-attribute 'isearch-fail nil :foreground "black")
-
-       (eval-after-load 'diff-mode
-         '(progn
-            ;; Colors available to Emacs <http://raebear.net/comp/emacscolors.html>.
-            (set-face-foreground 'diff-added   "brightgreen")
-            (set-face-foreground 'diff-removed "brightred")
-            (set-face-foreground 'diff-changed "brightblue")
-            (when (not window-system)
-              (set-face-background 'diff-added       "black3")
-              (set-face-background 'diff-removed     "black3")
-              (set-face-background 'diff-changed     "black3")
-              (set-face-background 'diff-file-header "black")
-              (set-face-background 'diff-hunk-header "black")
-              )))
-       ))
-
-(set-face-foreground 'ediff-current-diff-B nil)
-(set-face-foreground 'ediff-current-diff-A nil)
-(set-face-foreground 'ediff-current-diff-C nil)
-(set-face-background 'ediff-current-diff-A "DarkRed")
-(set-face-background 'ediff-current-diff-B "DarkGreen")
-(set-face-background 'ediff-current-diff-C "DarkOrange4")
 
 ;;; Truncation of Lines (toggle-truncate-lines) <http://emacswiki.org/emacs/TruncateLines>.
 (set-default 'truncate-lines t)
-;;; Horizontal Scrolling
-;;; <http://gnu.org/software/emacs/manual/html_node/emacs/Horizontal-Scrolling.html#Horizontal-Scrolling>.
-(put 'scroll-left 'disabled nil)
 ;(set-keyboard-coding-system 'mule-utf-8)
 ;(set-default-coding-systems 'utf-8)
 ;(set-terminal-coding-system 'utf-8)
