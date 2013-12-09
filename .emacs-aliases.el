@@ -60,7 +60,7 @@
          deft
          ebuild-mode
          egg
-         erite
+         erise
          etags-select
          ethan-wspace
          evil
