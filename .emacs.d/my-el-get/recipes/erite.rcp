@@ -1,5 +1,0 @@
-(:name erite
-       :description "Emacs Rails i18n translations extractor"
-       :website "https://github.com/danil/erite"
-       :type github
-       :pkgname "danil/erite")
