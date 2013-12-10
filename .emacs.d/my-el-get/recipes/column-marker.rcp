@@ -1,6 +1,8 @@
 (:name column-marker
        :after (progn
-                (set-face-background 'column-marker-1 "gray35")
+                (cond ((equal frame-background-mode 'dark)
+                       (set-face-background 'column-marker-1 "gray35")
+                       ))
                 (defun my-column-marker ()
                   (unless buffer-read-only (column-marker-1 79)))
                 ;; (add-hook 'mail-mode-hook (lambda () (interactive) (my-column-marker)))

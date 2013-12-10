@@ -1,18 +1,19 @@
 ;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 ;(add-to-list 'load-path "~/share/emacs/site-lisp")
 
-;;; Color light and dark themes toggle
-;;; <http://www.gnu.org/software/emacs/manual/html_node/emacs/Faces.html>.
-(setq frame-background-mode 'dark)
-;; (setq frame-background-mode 'light)
+;;; My recipes.
+(mapc 'load (directory-files
+             (concat user-emacs-directory "my-recipes") t "^[^#].*el$"))
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(scroll-bar-width 7) ;scroll bar <http://emacswiki.org/emacs/ScrollBar>.
- '(safe-local-variable-values (quote ((encoding . utf-8)))))
+;;; My custom variables.
+(setq custom-file "~/.emacs.d/my-custom-variables.el")
+(load custom-file)
+
+;;; Put <http://www.gnu.org/software/emacs/manual/html_node/elisp/Symbol-Plists.html>.
+;; Horizontal Scrolling
+;; <http://gnu.org/software/emacs/manual/html_node/emacs/Horizontal-Scrolling.html#Horizontal-Scrolling>.
+(put 'scroll-left 'disabled nil)
+(put 'upcase-region 'disabled nil)
 
 ;;; el-get <http://github.com/dimitri/el-get>.
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
@@ -55,6 +56,7 @@
          column-marker
          crontab-mode
          csv-mode
+         dart-mode
          deft
          ebuild-mode
          egg
@@ -97,6 +99,7 @@
          scss-mode
          simp
          slim-mode
+         slime
          smex
          window-numbering
          yaml-mode
@@ -108,7 +111,6 @@
 (setq system-time-locale "C")
 (setq calendar-week-start-day 1)
 (global-font-lock-mode 1)
-(put 'upcase-region 'disabled nil)
 
 ;;; Setting key with repeat
 ;;; <http://stackoverflow.com/questions/7560094/two-key-shortcut-in-emacs-without-repressing-the-first-key#7560416>.
@@ -142,53 +144,9 @@
 
 ;;; Transient Mark mode <http://emacswiki.org/TransientMarkMode>.
 (transient-mark-mode 1)
-;; (set-face-background 'region nil)
-
-;;; Region.
-;; (setq my-face-reginon-background "#002b36") ;#2E3436 ;set selection background color
-;; (set-face-attribute 'region nil :inverse-video t)
-(set-face-background 'region "#002b36")
-
-;;; Matches other than the current one by Isearch and Query Replace
-;;; <http://www.gnu.org/software/emacs/manual/html_node/emacs/Standard-Faces.html>.
-;; (set-face-background 'lazy-highlight "#002b36")
-(set-face-attribute 'lazy-highlight nil :foreground "lightskyblue1" :background "maroon4")
-
-(set-face-attribute 'header-line nil :inherit nil)
-(set-face-attribute 'isearch nil :foreground "lightskyblue1" :background "red")
-(set-face-attribute 'isearch-fail nil :foreground "lightskyblue1" :background "red")
-(set-face-attribute 'match nil :foreground "lightskyblue1" :background "OrangeRed3")
-(set-face-background 'highlight '"#002b36")
-
-;; (set-background-color "#0f0f0f")
-(set-cursor-color "red") ;#aa0000
-
-(eval-after-load 'diff-mode
-  '(progn
-     ;; Colors available to Emacs <http://raebear.net/comp/emacscolors.html>.
-     (set-face-foreground 'diff-added   "brightgreen")
-     (set-face-foreground 'diff-removed "brightred")
-     (set-face-foreground 'diff-changed "brightblue")
-     (when (not window-system)
-       (set-face-background 'diff-added       "black3")
-       (set-face-background 'diff-removed     "black3")
-       (set-face-background 'diff-changed     "black3")
-       (set-face-background 'diff-file-header "black")
-       (set-face-background 'diff-hunk-header "black")
-       )))
-
-(set-face-foreground 'ediff-current-diff-B nil)
-(set-face-foreground 'ediff-current-diff-A nil)
-(set-face-foreground 'ediff-current-diff-C nil)
-(set-face-background 'ediff-current-diff-A "DarkRed")
-(set-face-background 'ediff-current-diff-B "DarkGreen")
-(set-face-background 'ediff-current-diff-C "DarkOrange4")
 
 ;;; Truncation of Lines (toggle-truncate-lines) <http://emacswiki.org/emacs/TruncateLines>.
 (set-default 'truncate-lines t)
-;;; Horizontal Scrolling
-;;; <http://gnu.org/software/emacs/manual/html_node/emacs/Horizontal-Scrolling.html#Horizontal-Scrolling>.
-(put 'scroll-left 'disabled nil)
 ;(set-keyboard-coding-system 'mule-utf-8)
 ;(set-default-coding-systems 'utf-8)
 ;(set-terminal-coding-system 'utf-8)
@@ -202,7 +160,10 @@
 (show-paren-mode 1)
 ;; (eval-after-load 'show-paren
 ;;   '(progn
-;;      (set-face-background 'show-paren-match "#002b36")))
+;;      (cond ((equal frame-background-mode 'dark)
+;;             (set-face-background 'show-paren-match "#002b36")
+;;             ))
+;;      ))
 
 ;;; Session Management <http://emacswiki.org/SessionManagement>.
 (savehist-mode 1)
@@ -253,8 +214,10 @@
 ;; ;;; <http://emacswiki.org/ScrollBar>.
 ;; (scroll-bar-mode -1)
 ;; <http://stackoverflow.com/questions/3155451/emacs-scrollbar-customize#3159618>.
-(set-face-background 'scroll-bar "white")
-(set-face-foreground 'scroll-bar "gray")
+(cond ((equal frame-background-mode 'dark)
+       (set-face-background 'scroll-bar "white")
+       (set-face-foreground 'scroll-bar "gray")
+       ))
 
 ;;; AnsiColor (Emacs terminal related stuff)
 ;;; <http://emacswiki.org/AnsiColor>.
@@ -394,12 +357,22 @@
 ;;; Linum
 (eval-after-load 'linum
   '(progn
-     (set-face-attribute 'linum nil :foreground "DimGray" :background "gray15")
      ;; (setq linum-format "%4d ") ;separating line numbers from text <http://www.emacswiki.org/emacs/LineNumbers#toc7>
+     (cond ((equal frame-background-mode 'light)
+            (set-face-attribute 'linum nil
+                                :foreground "DimGray"
+                                :background "gray85")
+            )
+           ((equal frame-background-mode 'dark)
+            (set-face-attribute 'linum nil
+                                :foreground "DimGray"
+                                :background "gray15")
+            ))
      ))
 (defun my-linum-mode-hook ()
   (linum-mode 1))
 (add-hook 'awk-mode-hook 'my-linum-mode-hook)
+(add-hook 'c-mode-hook 'my-linum-mode-hook)
 (add-hook 'coffee-mode-hook 'my-linum-mode-hook)
 (add-hook 'conf-mode-hook 'my-linum-mode-hook)
 (add-hook 'css-mode-hook 'my-linum-mode-hook)
@@ -417,6 +390,7 @@
 (add-hook 'org-mode-hook 'my-linum-mode-hook)
 (add-hook 'perl-mode-hook 'my-linum-mode-hook)
 (add-hook 'php-mode-hook 'my-linum-mode-hook)
+(add-hook 'python-mode-hook 'my-linum-mode-hook)
 (add-hook 'ruby-mode-hook 'my-linum-mode-hook)
 (add-hook 'sass-mode-hook 'my-linum-mode-hook)
 (add-hook 'sgml-mode-hook 'my-linum-mode-hook)
@@ -473,7 +447,7 @@
 (setq auto-mode-alist
       (cons '("/etc/fstab\\'" . conf-mode) auto-mode-alist))
 (setq auto-mode-alist
-      (cons '("/etc/hosts\\'" . conf-mode) auto-mode-alist))
+      (cons '("/hosts\\'" . conf-mode) auto-mode-alist))
 (setq auto-mode-alist
       (cons '("\\.pkla\\'" . conf-mode) auto-mode-alist))
 (setq auto-mode-alist
@@ -484,6 +458,10 @@
       (cons '("/.gtkrc-2.0\\'" . conf-mode) auto-mode-alist))
 (setq auto-mode-alist
       (cons '("/\\.tigrc\\'" . conf-mode) auto-mode-alist))
+(setq auto-mode-alist
+      (cons '("/locale.gen\\'" . conf-mode) auto-mode-alist))
+(setq auto-mode-alist
+      (cons '("/sudoers\\'" . conf-mode) auto-mode-alist))
 
 ;;; Lisp.
 (setq auto-mode-alist
@@ -859,16 +837,6 @@ If the result is do-end block, it will always be multiline."
 ;;        (format "IRB history will not be saved because %s is nil"
 ;;                (symbol-name rval))))))
 ;; (add-hook 'inf-ruby-mode-hook 'my-irb-save-history-hook)
-
-;; ;;; Tags
-;; ;;; <http://emacswiki.org/BuildTags#toc2>.
-;; ;; (setq path-to-ctags "/usr/bin/ctags")
-;; (setq path-to-ctags "/usr/bin/exuberant-ctags")
-;; (defun create-tags (dir-name)
-;;   "Create tags file."
-;;   (interactive "DDirectory: ")
-;;   (shell-command
-;;    (format "%s -f %s/TAGS -e -R %s" path-to-ctags dir-name dir-name)))
 
 ;;; Auto Fill Mode
 ;;; <http://gnu.org/software/emacs/manual/html_node/emacs/Auto-Fill.html>.

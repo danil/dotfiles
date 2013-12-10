@@ -10,7 +10,9 @@
                 (set 'ag-highlight-search 1)
                 ;; (eval-after-load 'ag
                 ;;   '(progn
-                ;;      ;; (set-face-background 'ag-match-face "green3")
-                ;;      (set-face-foreground 'ag-match-face "lightskyblue1")
+                ;;      (cond ((equal frame-background-mode 'dark)
+                ;;             ;; (set-face-background 'ag-match-face "green3")
+                ;;             (set-face-foreground 'ag-match-face "lightskyblue1")
+                ;;             ))
                 ;;      ))
                 ))
