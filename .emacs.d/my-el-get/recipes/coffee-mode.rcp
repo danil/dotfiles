@@ -2,16 +2,6 @@
        :website "http://ozmm.org/posts/coffee_mode.html"
        :description "Emacs Major Mode for CoffeeScript"
        :type github
+       :depends (js2-mode) ;coffee mode defaults to js2-mode, which is not present in Emacs by default
        :pkgname "defunkt/coffee-mode"
-       :features coffee-mode
-       :post-init (progn
-                    (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
-                    (add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
-                    ;; it defaults to js2-mode, which is not present in Emacs by default
-                    (setq coffee-js-mode 'javascript-mode))
-       :after (progn
-                (defun coffee-custom ()
-                  "coffee-mode-hook"
-                  (set (make-local-variable 'tab-width) 2))
-                (add-hook 'coffee-mode-hook
-                          '(lambda() (coffee-custom)))))
+       :features coffee-mode)
