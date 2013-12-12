@@ -77,6 +77,7 @@
          idle-highlight-mode
          ido-yes-or-no
          inf-ruby
+         js2-mode ;coffee mode defaults to js2-mode, which is not present in Emacs by default
          less ;do not remove, used for generic scroll!
          lua-mode
          magit
