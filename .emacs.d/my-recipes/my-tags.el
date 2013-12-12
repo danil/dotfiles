@@ -15,7 +15,13 @@
   (interactive)
   (message "Building project tags")
   (let ((root (my-project-root)))
-    (shell-command (format "cd %s && ripper-tags --format=emacs --exclude=spec --exclude=test --recursive --tag-file TAGS --force"
+    ;; --exclude=spec
+    ;; --exclude=test
+    ;; --force
+    ;; --format=emacs
+    ;; --recursive
+    ;; --tag-file=TAGS
+    (shell-command (format "cd %s && ripper-tags --format=emacs --recursive --tag-file=TAGS --force"
                            root)))
   (my-visit-project-tags))
 
