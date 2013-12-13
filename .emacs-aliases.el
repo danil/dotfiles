@@ -132,9 +132,6 @@
            (setq repeat-key nil)
            (push last-input-event unread-command-events))))))
 
-(global-set-key (kbd "C-c d s l") 'sort-lines)
-(global-set-key (kbd "C-c d s f") 'sort-fields)
-
 ;;; BackspaceKey <http://emacswiki.org/BackspaceKey>.
 ;; (global-set-key [(control h)] 'delete-backward-char)
 (defun my-backspace-fix ()
