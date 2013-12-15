@@ -2,7 +2,7 @@
                 (lambda ()
                   (interactive)
                   (eval-buffer)
-                  (message (format "%s buffer evaled" (buffer-name)))))
+                  (message (format "%s evaled" (buffer-name)))))
 (global-set-key (kbd "C-c d l r")
                 (lambda (start end)
                   (interactive "r")
