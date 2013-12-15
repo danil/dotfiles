@@ -37,6 +37,7 @@
          ;; color-theme-ir-black
          ;; color-theme-vivid-chalk
          ;; command-t
+         ;; evil ;in far far future will switch to hjkl
          ;; fiplr
          ;; helm
          ;; ido-better-flex
@@ -62,7 +63,6 @@
          erise
          etags-select
          ethan-wspace
-         evil
          expand-region
          findr
          flycheck
