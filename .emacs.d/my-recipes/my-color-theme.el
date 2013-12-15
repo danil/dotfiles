@@ -19,7 +19,7 @@
                            :background "magenta3");"orchid3");"VioletRed")
        )
       ((equal frame-background-mode 'dark)
-       (setq my-highlight-symbol-at-point-background "gray20") ;gray40
+       (setq my-highlight-symbol-at-point-background "red") ;OrangeRed3 ;gray20 ;gray40
        (setq my-line-number-background "gray15")
        ;; Region.
        ;; (setq my-face-reginon-background "#002b36") ;#2E3436 ;set selection background color
