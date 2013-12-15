@@ -59,11 +59,9 @@
          dart-mode
          deft
          ebuild-mode
-         egg
          erise
          etags-select
          ethan-wspace
-         evil
          expand-region
          findr
          flycheck
@@ -74,7 +72,6 @@
          highlight-parentheses
          highlight-symbol ;try replace with idle highlight mode, due to curren symbol highlighting face
          hl-line+
-         idle-highlight-mode
          ido-yes-or-no
          inf-ruby
          js2-mode ;coffee mode defaults to js2-mode, which is not present in Emacs by default
