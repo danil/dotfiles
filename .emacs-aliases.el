@@ -71,9 +71,8 @@
          haml-mode
          haskell-mode
          highlight-parentheses
-         highlight-symbol ;try replace with idle highlight mode, due to curren symbol highlighting face
+         highlight-symbol
          hl-line+
-         idle-highlight-mode
          ido-yes-or-no
          inf-ruby
          js2-mode ;coffee mode defaults to js2-mode, which is not present in Emacs by default

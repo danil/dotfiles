@@ -12,12 +12,14 @@
 (set-cursor-color "red") ;#aa0000
 (cond ((equal frame-background-mode 'light)
        (set-face-attribute 'my-default nil :foreground nil :background nil)
+       (setq my-highlight-symbol-at-point-background "yellow1") ;lightgoldenrod2
        (setq my-line-number-background "gray90")
        (set-face-attribute 'lazy-highlight nil
                            :foreground "lightskyblue1"
                            :background "magenta3");"orchid3");"VioletRed")
        )
       ((equal frame-background-mode 'dark)
+       (setq my-highlight-symbol-at-point-background "gray20") ;gray40
        (setq my-line-number-background "gray15")
        ;; Region.
        ;; (setq my-face-reginon-background "#002b36") ;#2E3436 ;set selection background color
