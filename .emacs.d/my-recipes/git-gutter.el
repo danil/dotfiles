@@ -4,20 +4,14 @@
      (setq git-gutter:modified-sign "=          ")
      (setq git-gutter:added-sign    "+          ")
      (setq git-gutter:deleted-sign  "-          ")
-     (cond ((equal frame-background-mode 'light)
-            (set-face-background 'git-gutter:added     "gray90")
-            (set-face-background 'git-gutter:deleted   "gray90")
-            (set-face-background 'git-gutter:modified  "gray90")
-            (set-face-background 'git-gutter:separator "gray90")
-            (set-face-background 'git-gutter:unchanged "gray90")
-            )
-           ((equal frame-background-mode 'dark)
-            (set-face-background 'git-gutter:added     "gray15")
-            (set-face-background 'git-gutter:deleted   "gray15")
-            (set-face-background 'git-gutter:modified  "gray15")
-            (set-face-background 'git-gutter:separator "gray15")
-            (set-face-background 'git-gutter:unchanged "gray15")
-            ))
+     (dolist (face '(
+                     git-gutter:added
+                     git-gutter:deleted
+                     git-gutter:modified
+                     git-gutter:separator
+                     git-gutter:unchanged
+                     ))
+       (set-face-background face my-line-number-background))
      ))
 (dolist (hook '(
                 awk-mode-hook

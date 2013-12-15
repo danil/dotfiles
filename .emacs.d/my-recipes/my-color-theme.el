@@ -6,18 +6,19 @@
 (defface my-default '((t :inherit default))
   "Face name to use for my customization."
   :group 'my-default)
-
 (set-face-attribute 'header-line nil :inherit nil)
 ;; (set-face-background 'region nil)
 ;; (set-background-color "#0f0f0f")
 (set-cursor-color "red") ;#aa0000
 (cond ((equal frame-background-mode 'light)
        (set-face-attribute 'my-default nil :foreground nil :background nil)
+       (setq my-line-number-background "gray90")
        (set-face-attribute 'lazy-highlight nil
                            :foreground "lightskyblue1"
                            :background "magenta3");"orchid3");"VioletRed")
        )
       ((equal frame-background-mode 'dark)
+       (setq my-line-number-background "gray15")
        ;; Region.
        ;; (setq my-face-reginon-background "#002b36") ;#2E3436 ;set selection background color
        ;; (set-face-attribute 'region nil :inverse-video t)

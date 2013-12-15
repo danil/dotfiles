@@ -2,16 +2,9 @@
 (eval-after-load 'linum
   '(progn
      ;; (setq linum-format "%4d ") ;separating line numbers from text <http://www.emacswiki.org/emacs/LineNumbers#toc7>
-     (cond ((equal frame-background-mode 'light)
-            (set-face-attribute 'linum nil
-                                :foreground "DimGray"
-                                :background "gray90")
-            )
-           ((equal frame-background-mode 'dark)
-            (set-face-attribute 'linum nil
-                                :foreground "DimGray"
-                                :background "gray15")
-            ))
+     (set-face-attribute 'linum nil
+                         :foreground "DimGray"
+                         :background my-line-number-background)
      ))
 (dolist (hook '(
                 ;; compilation-mode-hook
