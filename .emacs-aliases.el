@@ -59,7 +59,6 @@
          dart-mode
          deft
          ebuild-mode
-         egg
          erise
          etags-select
          ethan-wspace
