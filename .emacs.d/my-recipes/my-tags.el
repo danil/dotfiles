@@ -21,9 +21,11 @@
     ;; --format=emacs
     ;; --recursive
     ;; --tag-file=TAGS
-    (shell-command (format "cd %s && ripper-tags --format=emacs --recursive --tag-file=TAGS --force"
-                           dir)))
-  (my-visit-tags dir))
+    (shell-command
+     (format
+      "cd %s && ripper-tags --format=emacs --recursive --tag-file=TAGS --force"
+      dir))
+    (my-visit-tags dir)))
 
 (defun create-tags (dir-name)
   "Create tags file."
