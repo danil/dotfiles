@@ -37,6 +37,7 @@
          ;; color-theme-ir-black
          ;; color-theme-vivid-chalk
          ;; command-t
+         ;; evil ;in far far future will switch to hjkl
          ;; fiplr
          ;; helm
          ;; ido-better-flex
@@ -70,7 +71,7 @@
          haml-mode
          haskell-mode
          highlight-parentheses
-         highlight-symbol ;try replace with idle highlight mode, due to curren symbol highlighting face
+         highlight-symbol
          hl-line+
          ido-yes-or-no
          inf-ruby
@@ -347,54 +348,6 @@
 
 ;;; Cua mode <http://www.emacswiki.org/emacs/CuaMode>.
 (setq cua-enable-cua-keys nil) ;change case of a rectangle <http://stackoverflow.com/questions/6154545/emacs-change-case-of-a-rectangle#comment-7167904>.
-
-;;; Line numbers
-;;; Linum
-(eval-after-load 'linum
-  '(progn
-     ;; (setq linum-format "%4d ") ;separating line numbers from text <http://www.emacswiki.org/emacs/LineNumbers#toc7>
-     (cond ((equal frame-background-mode 'light)
-            (set-face-attribute 'linum nil
-                                :foreground "DimGray"
-                                :background "gray85")
-            )
-           ((equal frame-background-mode 'dark)
-            (set-face-attribute 'linum nil
-                                :foreground "DimGray"
-                                :background "gray15")
-            ))
-     ))
-(defun my-linum-mode-hook ()
-  (linum-mode 1))
-(add-hook 'awk-mode-hook 'my-linum-mode-hook)
-(add-hook 'c-mode-hook 'my-linum-mode-hook)
-(add-hook 'coffee-mode-hook 'my-linum-mode-hook)
-(add-hook 'conf-mode-hook 'my-linum-mode-hook)
-(add-hook 'css-mode-hook 'my-linum-mode-hook)
-(add-hook 'emacs-lisp-mode-hook 'my-linum-mode-hook)
-(add-hook 'haml-mode-hook 'my-linum-mode-hook)
-(add-hook 'haskell-mode-hook 'my-linum-mode-hook)
-(add-hook 'html-mode-hook 'my-linum-mode-hook)
-(add-hook 'java-mode-hook 'my-linum-mode-hook)
-(add-hook 'js-mode-hook 'my-linum-mode-hook)
-(add-hook 'lisp-mode-hook 'my-linum-mode-hook)
-(add-hook 'lua-mode-hook 'my-linum-mode-hook)
-(add-hook 'makefile-gmake-mode-hook 'my-linum-mode-hook)
-(add-hook 'markdown-mode-hook 'my-linum-mode-hook)
-(add-hook 'nxml-mode-hook 'my-linum-mode-hook)
-(add-hook 'org-mode-hook 'my-linum-mode-hook)
-(add-hook 'perl-mode-hook 'my-linum-mode-hook)
-(add-hook 'php-mode-hook 'my-linum-mode-hook)
-(add-hook 'python-mode-hook 'my-linum-mode-hook)
-(add-hook 'ruby-mode-hook 'my-linum-mode-hook)
-(add-hook 'sass-mode-hook 'my-linum-mode-hook)
-(add-hook 'sgml-mode-hook 'my-linum-mode-hook)
-(add-hook 'sh-mode-hook 'my-linum-mode-hook)
-(add-hook 'sql-mode-hook 'my-linum-mode-hook)
-(add-hook 'xml-mode-hook 'my-linum-mode-hook)
-(add-hook 'yaml-mode-hook 'my-linum-mode-hook)
-;; (add-hook 'compilation-mode-hook 'my-linum-mode-hook)
-;; (add-hook 'shell-mode-hook 'my-linum-mode-hook)
 
 ;;; HTML mode.
 (add-to-list 'auto-mode-alist '("\\.lp\\'" . html-mode))

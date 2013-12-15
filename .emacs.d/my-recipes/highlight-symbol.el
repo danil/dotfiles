@@ -1,17 +1,8 @@
 (eval-after-load 'highlight-symbol
   '(progn
-     (cond ((equal frame-background-mode 'light)
-            (set-face-background 'highlight-symbol-face
-                                 "paleturquoise")
-            )
-           ((equal frame-background-mode 'dark)
-            ;; (set-face-attribute 'highlight-symbol-face nil
-            ;;                     :foreground nil
-            ;;                     :background "gray40")
-            (set-face-background 'highlight-symbol-face
-                                 "gray20")
-            ))
-
+     (setq highlight-symbol-idle-delay 0.5)
+     (set-face-background 'highlight-symbol-face
+                          my-highlight-symbol-at-point-background)
      ;; (global-set-key (kbd "C-c d y ") 'highlight-symbol-at-point)
      (global-set-key (kbd "C-c d y n") 'highlight-symbol-next-with-repeat)
      (global-set-key (kbd "C-c d y p") 'highlight-symbol-prev-with-repeat)
@@ -24,35 +15,37 @@
        (interactive)
        (my-with-repeat-while-press-last-key
          (highlight-symbol-prev)))
-
-     (add-hook 'awk-mode-hook 'highlight-symbol-mode)
-     (add-hook 'coffee-mode-hook 'highlight-symbol-mode)
-     (add-hook 'conf-mode-hook 'highlight-symbol-mode)
-     (add-hook 'conf-space-mode-hook 'highlight-symbol-mode)
-     (add-hook 'conf-xdefaults-mode-hook 'highlight-symbol-mode)
-     (add-hook 'css-mode-hook 'highlight-symbol-mode)
-     (add-hook 'emacs-lisp-mode-hook 'highlight-symbol-mode)
-     (add-hook 'haml-mode-hook 'highlight-symbol-mode)
-     (add-hook 'haskell-mode-hook 'highlight-symbol-mode)
-     (add-hook 'html-mode-hook 'highlight-symbol-mode)
-     (add-hook 'java-mode-hook 'highlight-symbol-mode)
-     (add-hook 'js-mode-hook 'highlight-symbol-mode)
-     (add-hook 'lisp-mode-hook 'highlight-symbol-mode)
-     (add-hook 'lua-mode-hook 'highlight-symbol-mode)
-     (add-hook 'makefile-gmake-mode-hook 'highlight-symbol-mode)
-     (add-hook 'markdown-mode-hook 'highlight-symbol-mode)
-     (add-hook 'nxml-mode-hook 'highlight-symbol-mode)
-     (add-hook 'org-mode-hook 'highlight-symbol-mode)
-     (add-hook 'perl-mode-hook 'highlight-symbol-mode)
-     (add-hook 'php-mode-hook 'highlight-symbol-mode)
-     (add-hook 'rhtml-mode-hook 'highlight-symbol-mode)
-     (add-hook 'ruby-mode-hook 'highlight-symbol-mode)
-     (add-hook 'sass-mode-hook 'highlight-symbol-mode)
-     (add-hook 'scss-mode-hook 'highlight-symbol-mode)
-     (add-hook 'sgml-mode-hook 'highlight-symbol-mode)
-     (add-hook 'sh-mode-hook 'highlight-symbol-mode)
-     (add-hook 'shell-mode-hook 'highlight-symbol-mode)
-     (add-hook 'sql-mode-hook 'highlight-symbol-mode)
-     (add-hook 'xml-mode-hook 'highlight-symbol-mode)
-     (add-hook 'yaml-mode-hook 'highlight-symbol-mode)
      ))
+(dolist (hook '(
+                awk-mode-hook
+                coffee-mode-hook
+                conf-mode-hook
+                conf-space-mode-hook
+                conf-xdefaults-mode-hook
+                css-mode-hook
+                emacs-lisp-mode-hook
+                haml-mode-hook
+                haskell-mode-hook
+                html-mode-hook
+                java-mode-hook
+                js-mode-hook
+                lisp-mode-hook
+                lua-mode-hook
+                makefile-gmake-mode-hook
+                markdown-mode-hook
+                nxml-mode-hook
+                org-mode-hook
+                perl-mode-hook
+                php-mode-hook
+                rhtml-mode-hook
+                ruby-mode-hook
+                sass-mode-hook
+                scss-mode-hook
+                sgml-mode-hook
+                sh-mode-hook
+                shell-mode-hook
+                sql-mode-hook
+                xml-mode-hook
+                yaml-mode-hook
+                ))
+  (add-hook hook 'highlight-symbol-mode))
