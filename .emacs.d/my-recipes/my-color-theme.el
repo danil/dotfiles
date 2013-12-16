@@ -40,5 +40,7 @@
                            :foreground my-match-foreground
                            :background "OrangeRed3")
        (set-face-background 'highlight '"#002b36")
+       (set-face-foreground 'success "Green4") ;Green1
+       (set-face-foreground 'warning "red") ;DarkOrange
        ;; (set-face-attribute 'isearch-fail nil :foreground "black")
        ))
