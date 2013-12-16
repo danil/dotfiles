@@ -1,8 +1,7 @@
 (eval-after-load 'highlight-symbol
   '(progn
-     (setq highlight-symbol-idle-delay 0.5)
-     (set-face-background 'highlight-symbol-face
-                          my-highlight-symbol-at-point-background)
+     (setq highlight-symbol-idle-delay 0.7)
+     (set-face-background 'highlight-symbol-face my-lazy-highlight-background)
      ;; (global-set-key (kbd "C-c d y ") 'highlight-symbol-at-point)
      (global-set-key (kbd "C-c d y n") 'highlight-symbol-next-with-repeat)
      (global-set-key (kbd "C-c d y p") 'highlight-symbol-prev-with-repeat)
@@ -27,6 +26,7 @@
                 haml-mode-hook
                 haskell-mode-hook
                 html-mode-hook
+                ibuffer-mode-hook
                 java-mode-hook
                 js-mode-hook
                 lisp-mode-hook
