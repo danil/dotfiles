@@ -21,7 +21,7 @@
                            :background "magenta3");"orchid3");"VioletRed")
        )
       ((equal frame-background-mode 'dark)
-       (setq my-lazy-highlight-background "maroon4") ;red ;OrangeRed3 ;gray20 ;gray40
+       (setq my-lazy-highlight-background "brown4") ;indianRed4 ;SaddleBrown ;maroon4 ;red ;OrangeRed3 ;gray20 ;gray40
        (setq my-line-number-background "gray15")
        (setq my-match-foreground "lightskyblue1")
        ;; Region.
