@@ -2,6 +2,9 @@
 ;(add-to-list 'load-path "~/share/emacs/site-lisp")
 
 ;;; My recipes.
+;; Generic recipes:
+(load-file (concat user-emacs-directory "my-recipes/my-color-theme.el"))
+;; Special recipes:
 (mapc 'load (directory-files
              (concat user-emacs-directory "my-recipes") t "^[^#].*el$"))
 
