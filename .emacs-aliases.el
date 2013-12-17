@@ -103,6 +103,7 @@
          slim-mode
          slime
          smex
+         undo-tree
          window-numbering
          yaml-mode
          yasnippet
@@ -110,6 +111,7 @@
        (mapcar 'el-get-source-name el-get-sources)))
 (el-get 'sync my-packages)
 
+(global-undo-tree-mode) ;FIXME: eval-after-load 'undo-tree-mode not working
 (setq system-time-locale "C")
 (setq calendar-week-start-day 1)
 (global-font-lock-mode 1)
