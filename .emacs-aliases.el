@@ -1,22 +1,30 @@
 ;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 ;(add-to-list 'load-path "~/share/emacs/site-lisp")
 
-;;; My recipes.
-;; Generic recipes:
-(load-file (concat user-emacs-directory "my-recipes/my-color-theme.el"))
-;; Special recipes:
-(mapc 'load (directory-files
-             (concat user-emacs-directory "my-recipes") t "^[^#].*el$"))
+;;; Truncation of Lines (toggle-truncate-lines)
+;;; <http://emacswiki.org/emacs/TruncateLines>.
+(set-default 'truncate-lines nil) ;wrap long lines
 
-;;; My custom variables.
-(setq custom-file "~/.emacs.d/my-custom-variables.el")
-(load custom-file)
+(setq system-time-locale "C")
+(setq calendar-week-start-day 1)
+(global-font-lock-mode 1)
 
 ;;; Put <http://www.gnu.org/software/emacs/manual/html_node/elisp/Symbol-Plists.html>.
 ;; Horizontal Scrolling
 ;; <http://gnu.org/software/emacs/manual/html_node/emacs/Horizontal-Scrolling.html#Horizontal-Scrolling>.
 (put 'scroll-left 'disabled nil)
 (put 'upcase-region 'disabled nil)
+
+;;; My custom variables.
+(setq custom-file "~/.emacs.d/my-custom-variables.el")
+(load custom-file)
+
+;;; My recipes.
+;; Generic recipes:
+(load-file (concat user-emacs-directory "my-recipes/my-color-theme.el"))
+;; Special recipes:
+(mapc 'load (directory-files
+             (concat user-emacs-directory "my-recipes") t "^[^#].*el$"))
 
 ;;; el-get <http://github.com/dimitri/el-get>.
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
@@ -112,9 +120,6 @@
 (el-get 'sync my-packages)
 
 (global-undo-tree-mode) ;FIXME: eval-after-load 'undo-tree-mode not working
-(setq system-time-locale "C")
-(setq calendar-week-start-day 1)
-(global-font-lock-mode 1)
 
 ;;; Setting key with repeat
 ;;; <http://stackoverflow.com/questions/7560094/two-key-shortcut-in-emacs-without-repressing-the-first-key#7560416>.
@@ -146,8 +151,6 @@
 ;;; Transient Mark mode <http://emacswiki.org/TransientMarkMode>.
 (transient-mark-mode 1)
 
-;;; Truncation of Lines (toggle-truncate-lines) <http://emacswiki.org/emacs/TruncateLines>.
-(set-default 'truncate-lines t)
 ;(set-keyboard-coding-system 'mule-utf-8)
 ;(set-default-coding-systems 'utf-8)
 ;(set-terminal-coding-system 'utf-8)

@@ -1,6 +1,9 @@
 (eval-after-load 'column-marker
   '(progn
-     (cond ((equal frame-background-mode 'dark)
+     (cond ((equal frame-background-mode 'light)
+            (set-face-background 'column-marker-1 "gray80")
+            )
+           ((equal frame-background-mode 'dark)
             (set-face-background 'column-marker-1 "gray35")
             ))
      ))
