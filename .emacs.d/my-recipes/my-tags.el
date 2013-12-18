@@ -1,6 +1,5 @@
 ;;; My tags <http://emacswiki.org/BuildTags#toc2>.
 
-;;;###autoload
 (defun my-build-tags ()
   (interactive)
   (let ((command "/usr/bin/ctags")
@@ -10,7 +9,6 @@
     (message "Building project tags")
     (my-visit-tags dir)))
 
-;;;###autoload
 (defun my-build-ruby-tags ()
   (interactive)
   (message "Building project tags")
@@ -33,13 +31,11 @@
   (shell-command
    (format "%s -f %s/TAGS -e -R %s" path-to-ctags dir-name dir-name)))
 
-;;;###autoload
 (defun my-visit-project-tags (dir)
   (interactive (list (read-directory-name "Directory: "
                                           (my-project-root))))
     (my-visit-tags dir))
 
-;;;###autoload
 (defun my-visit-project-tags-np ()
   (interactive)
   (let ((tags-file (my-project-root)))
