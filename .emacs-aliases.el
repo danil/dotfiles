@@ -492,13 +492,6 @@
                     (indent-line-to arg-indent)))
              (when (> offset 0) (forward-char offset))))))))
 
-;;; Haml.
-(eval-after-load 'haml-mode
-  '(progn
-     (define-key haml-mode-map (kbd "C-c d r h")
-       'ruby-toggle-hash-syntax)
-     ))
-
 ;;; JavaScript mode.
 ;;; HTML Components (HTCs or .htc)
 ;;; <http://en.wikipedia.org/wiki/HTML_Components>.
