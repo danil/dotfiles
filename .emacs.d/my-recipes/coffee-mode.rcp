@@ -4,4 +4,5 @@
           '(lambda()
              (setq coffee-js-mode ;coffee mode defaults to js2-mode, which is not present in Emacs by default
                    (if (fboundp 'js2-mode) 'js2-mode 'javascript-mode))
-             (set (make-local-variable 'tab-width) 2)))
+             (set (make-local-variable 'tab-width) 2)
+             (setq truncate-lines t)))
