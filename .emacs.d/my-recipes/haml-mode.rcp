@@ -1,0 +1,1 @@
+(add-hook 'haml-mode-hook (lambda () (setq truncate-lines t)))
