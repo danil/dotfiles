@@ -1,18 +1,3 @@
-(eval-after-load 'git-gutter
-  '(progn
-     (setq git-gutter:lighter " GG")
-     (setq git-gutter:modified-sign "=          ")
-     (setq git-gutter:added-sign    "+          ")
-     (setq git-gutter:deleted-sign  "-          ")
-     (dolist (face '(
-                     git-gutter:added
-                     git-gutter:deleted
-                     git-gutter:modified
-                     git-gutter:separator
-                     git-gutter:unchanged
-                     ))
-       (set-face-background face my-line-number-background))
-     ))
 (dolist (hook '(
                 awk-mode-hook
                 c-mode-hook
@@ -43,3 +28,20 @@
                 yaml-mode-hook
                 ))
   (add-hook hook 'git-gutter-mode))
+(add-hook 'git-gutter-mode-on-hook
+          (lambda ()
+            (global-set-key (kbd "C-c d g d n") 'git-gutter:next-diff)
+            (global-set-key (kbd "C-c d g d p") 'git-gutter:previous-diff)
+            (setq git-gutter:lighter " GG")
+            (setq git-gutter:modified-sign "=          ")
+            (setq git-gutter:added-sign    "+          ")
+            (setq git-gutter:deleted-sign  "-          ")
+            (dolist (face '(
+                            git-gutter:added
+                            git-gutter:deleted
+                            git-gutter:modified
+                            git-gutter:separator
+                            git-gutter:unchanged
+                            ))
+              (set-face-background face my-line-number-background))
+            ))
