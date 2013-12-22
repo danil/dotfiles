@@ -1,8 +1,8 @@
 ;;; My color theme.
 ;;; Color light and dark themes toggle
 ;;; <http://www.gnu.org/software/emacs/manual/html_node/emacs/Faces.html>.
-;; (setq frame-background-mode 'light)
-(setq frame-background-mode 'dark)
+(setq frame-background-mode 'light)
+;; (setq frame-background-mode 'dark)
 (defface my-default '((t :inherit default))
   "Face name to use for my customization."
   :group 'my-default)
