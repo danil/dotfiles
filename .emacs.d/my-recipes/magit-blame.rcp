@@ -1,3 +1,7 @@
+(eval-after-load 'magit
+  '(progn
+     (global-set-key (kbd "C-c d g b") 'magit-blame-mode)
+     ))
 (eval-after-load 'magit-blame
   '(progn
      ;; Colors - diff and more
