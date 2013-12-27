@@ -169,19 +169,6 @@
 
 ;;; Session Management <http://emacswiki.org/SessionManagement>.
 (savehist-mode 1)
-;;; Desktop <http://emacswiki.org/DeskTop>.
-;;(desktop-save-mode 1)
-;; <http://stackoverflow.com/questions/4477376/some-emacs-desktop-save-questions-how-to-change-it-to-save-in-emacs-d-emacs#answer-4485083>.
-(defun save-my-desktop ()
-  "Save the desktop"
-  (interactive)
-  (desktop-save-in-desktop-dir))
-(defun load-my-desktop ()
-  "Load the desktop and enable autosaving"
-  (interactive)
-  (let ((desktop-load-locked-desktop "ask"))
-    (desktop-read)
-    (desktop-save-mode 1)))
 
 ;;; Recentf (open recent files)
 ;;; <http://stackoverflow.com/questions/3527150/open-recent-in-emacs#answer-3527488>,
@@ -564,7 +551,7 @@ the current position of point, then move it to the beginning of text on the curr
 ;;; <http://superuser.com/questions/126431/is-there-any-way-to-convert-camel-cased-names-to-use-underscores-in-emacs/126473#300048>,
 ;;; <https://bunkus.org/blog/2009/12/switching-identifier-naming-style-between-camel-case-and-c-style-in-emacs>,
 ;;; <http://api.rubyonrails.org/classes/ActiveSupport/Inflector.html>.
-(global-set-key (kbd "C-c d i c") 'my-toggle-camelcase-and-underscore-with-repeat)
+(global-set-key (kbd "C-c d s i c") 'my-toggle-camelcase-and-underscore-with-repeat)
 (defun my-toggle-camelcase-and-underscore-with-repeat ()
   (interactive)
   (my-with-repeat-while-press-last-key
@@ -596,7 +583,7 @@ e.g. `HelloWorldString'."
                        t nil))
       (widen))))
 
-(global-set-key (kbd "C-c d i h") 'my-humanize-symbol-with-repeat)
+(global-set-key (kbd "C-c d s i h") 'my-humanize-symbol-with-repeat)
 (defun my-humanize-symbol-with-repeat ()
   (interactive)
   (my-with-repeat-while-press-last-key
@@ -631,7 +618,7 @@ and Lisp-style nameing, e.g. `hello-world-string'."
       (widen))))
 
 ;;; Duplicate lines <http://www.emacswiki.org/emacs/DuplicateLines#toc2>.
-(global-set-key (kbd "C-c d d l") 'uniquify-all-lines-region)
+(global-set-key (kbd "C-c d s u") 'uniquify-all-lines-region)
 (defun uniquify-all-lines-region (start end)
   "Find duplicate lines in region START to END keeping first occurrence."
   (interactive "*r")
