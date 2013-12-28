@@ -2,8 +2,8 @@
 ;;(desktop-save-mode 1)
 ;; <http://stackoverflow.com/questions/4477376/some-emacs-desktop-save-questions-how-to-change-it-to-save-in-emacs-d-emacs#answer-4485083>.
 
-(eval-after-load 'desktop-save-mode
-  '(progn
+;; (eval-after-load 'desktop-save-mode
+;;   '(progn
      (global-set-key (kbd "C-c d d s") 'save-my-desktop)
      (global-set-key (kbd "C-c d d l") 'load-my-desktop)
      (defun save-my-desktop ()
@@ -15,4 +15,5 @@
        (interactive)
        (let ((desktop-load-locked-desktop "ask"))
          (desktop-read)
-         (desktop-save-mode 1)))))
+         (desktop-save-mode 1)))
+     ;; ))
