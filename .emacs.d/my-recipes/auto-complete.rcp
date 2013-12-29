@@ -7,6 +7,7 @@
                      coffee-mode
                      conf-mode
                      conf-space-mode
+                     conf-unix-mode
                      conf-xdefaults-mode
                      haml-mode
                      html-mode
@@ -25,5 +26,4 @@
                      sql-mode
                      yaml-mode
                      ))
-       (add-to-list 'ac-modes mode))
-     ))
+       (add-to-list 'ac-modes mode))))

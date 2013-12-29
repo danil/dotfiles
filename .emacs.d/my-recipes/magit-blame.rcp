@@ -1,7 +1,4 @@
-(eval-after-load 'magit
-  '(progn
-     (global-set-key (kbd "C-c d g b") 'magit-blame-mode)
-     ))
+(global-set-key (kbd "C-c d g b") 'magit-blame-mode)
 (eval-after-load 'magit-blame
   '(progn
      ;; Colors - diff and more
@@ -18,7 +15,5 @@
                                 :foreground "gray40"
                                 :background "gray10")
             ))
-
      (set-face-attribute 'magit-blame-sha1 nil
-                         :inherit 'magit-blame-header)
-     ))
+                         :inherit 'magit-blame-header)))

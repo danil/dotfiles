@@ -1,12 +1,3 @@
-(eval-after-load 'column-marker
-  '(progn
-     (cond ((equal frame-background-mode 'light)
-            (set-face-background 'column-marker-1 "gray80")
-            )
-           ((equal frame-background-mode 'dark)
-            (set-face-background 'column-marker-1 "gray35")
-            ))
-     ))
 (dolist (hook '(
                 ;; mail-mode-hook
                 ;; whitespace-mode-hook
@@ -38,3 +29,12 @@
                 yaml-mode-hook
                 ))
   (add-hook hook (lambda () (unless buffer-read-only (column-marker-1 79)))))
+(eval-after-load 'column-marker
+  '(progn
+     (cond ((equal frame-background-mode 'light)
+            (set-face-background 'column-marker-1 "gray80")
+            )
+           ((equal frame-background-mode 'dark)
+            (set-face-background 'column-marker-1 "gray35")
+            ))
+     ))

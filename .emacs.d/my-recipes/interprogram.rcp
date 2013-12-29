@@ -4,15 +4,16 @@
 ;; program for getting and setting the contents of the X selection"
 (unless window-system
   (when (getenv "DISPLAY")
-    ;; Callback for when user cuts
+    ;; Callback for when user cuts.
     (defun xsel-cut-function (text &optional push)
-      ;; Insert text to temp-buffer, and "send" content to xsel stdin
+      ;; Insert text to temp-buffer, and "send" content to xsel stdin.
       (with-temp-buffer
         (insert text)
         ;; I prefer using the "clipboard" selection (the one the
         ;; typically is used by c-c/c-v) before the primary selection
         ;; (that uses mouse-select/middle-button-click)
-        (call-process-region (point-min) (point-max) "xsel" nil 0 nil "--clipboard" "--input")))
+        (call-process-region (point-min) (point-max)
+                             "xsel" nil 0 nil "--clipboard" "--input")))
     ;; Call back for when user pastes
     (defun xsel-paste-function()
       ;; Find out what is current selection by xsel. If it is different
@@ -22,7 +23,7 @@
       (let ((xsel-output (shell-command-to-string "xsel --clipboard --output")))
         (unless (string= (car kill-ring) xsel-output)
           xsel-output )))
-    ;; Attach callbacks to hooks
+    ;; Attach callbacks to hooks.
     (setq interprogram-cut-function 'xsel-cut-function)
     (setq interprogram-paste-function 'xsel-paste-function)
     ;; Idea from

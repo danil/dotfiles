@@ -1,11 +1,4 @@
 ;;; Linum (line numbers).
-(eval-after-load 'linum
-  '(progn
-     ;; (setq linum-format "%4d ") ;separating line numbers from text <http://www.emacswiki.org/emacs/LineNumbers#toc7>
-     (set-face-attribute 'linum nil
-                         :foreground "DimGray"
-                         :background my-line-number-background)
-     ))
 (dolist (hook '(
                 ;; compilation-mode-hook
                 ;; shell-mode-hook
@@ -38,3 +31,9 @@
                 yaml-mode-hook
                 ))
   (add-hook hook (lambda () (linum-mode 1))))
+(eval-after-load 'linum
+  '(progn
+     ;; (setq linum-format "%4d ") ;separating line numbers from text <http://www.emacswiki.org/emacs/LineNumbers#toc7>
+     (set-face-attribute 'linum nil
+                         :foreground "DimGray"
+                         :background my-line-number-background)))
