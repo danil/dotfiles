@@ -1,2 +1,0 @@
-(eval-after-load 'undo-tree
-  '(progn (define-key undo-tree-map (kbd "C-M-_") 'undo-tree-redo)))

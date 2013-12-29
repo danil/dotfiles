@@ -1,17 +1,15 @@
+(global-set-key (kbd "C-c d p p") 'pomohist-go-to-prev-position-with-repeat)
+(global-set-key (kbd "C-c d p n") 'pomohist-go-to-next-position-with-repeat)
 (eval-after-load 'pomohist
   '(progn
-     ;; (setq pomohist-depth 32)
      (add-hook 'pre-command-hook 'pomohist)
-     (global-set-key (kbd "C-c d p p")
-                     'pomohist-go-to-prev-position-with-repeat)
-     (global-set-key (kbd "C-c d p n")
-                     'pomohist-go-to-next-position-with-repeat)
-     (defun pomohist-go-to-prev-position-with-repeat ()
-       (interactive)
-       (my-with-repeat-while-press-last-key
-         (pomohist-go-to-prev-position)))
-     (defun pomohist-go-to-next-position-with-repeat ()
-       (interactive)
-       (my-with-repeat-while-press-last-key
-         (pomohist-go-to-next-position)))
+     ;; (setq pomohist-depth 32)
      ))
+(defun pomohist-go-to-prev-position-with-repeat ()
+  (interactive)
+  (my-with-repeat-while-press-last-key
+    (pomohist-go-to-prev-position)))
+(defun pomohist-go-to-next-position-with-repeat ()
+  (interactive)
+  (my-with-repeat-while-press-last-key
+    (pomohist-go-to-next-position)))
