@@ -12,9 +12,9 @@
       <property name="plugin-ids" type="array">
         <value type="int" value="6"/>
         <value type="int" value="19"/>
+        <value type="int" value="3"/>
         <value type="int" value="13"/>
         <value type="int" value="1"/>
-        <value type="int" value="3"/>
         <value type="int" value="4"/>
         <value type="int" value="5"/>
       </property>
@@ -51,6 +51,7 @@
         <value type="string" value="thunar"/>
         <value type="string" value="dropbox"/>
         <value type="string" value="docky"/>
+        <value type="string" value="trayicon"/>
         <value type="string" value="pidgin"/>
         <value type="string" value="shutter"/>
         <value type="string" value="tomahawk"/>
