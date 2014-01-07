@@ -10,13 +10,13 @@
       <property name="position-locked" type="bool" value="true"/>
       <property name="size" type="uint" value="24"/>
       <property name="plugin-ids" type="array">
+        <value type="int" value="5"/>
         <value type="int" value="6"/>
         <value type="int" value="19"/>
         <value type="int" value="3"/>
         <value type="int" value="13"/>
         <value type="int" value="1"/>
         <value type="int" value="4"/>
-        <value type="int" value="5"/>
       </property>
       <property name="background-style" type="uint" value="0"/>
       <property name="background-alpha" type="uint" value="100"/>
@@ -41,23 +41,25 @@
         <value type="string" value="task manager"/>
         <value type="string" value="wally"/>
         <value type="string" value="scp-dbus-service.py"/>
-        <value type="string" value="wicd-client.py"/>
-        <value type="string" value="vlc"/>
         <value type="string" value="gajim"/>
+        <value type="string" value="vlc"/>
+        <value type="string" value="trayicon"/>
         <value type="string" value="xfce4-power-manager"/>
         <value type="string" value="kalu"/>
         <value type="string" value="bluetooth"/>
-        <value type="string" value="exe"/>
+        <value type="string" value="wicd-client.py"/>
         <value type="string" value="thunar"/>
         <value type="string" value="dropbox"/>
+        <value type="string" value="exe"/>
         <value type="string" value="docky"/>
-        <value type="string" value="trayicon"/>
         <value type="string" value="pidgin"/>
         <value type="string" value="shutter"/>
         <value type="string" value="tomahawk"/>
-        <value type="string" value="pnmixer"/>
+        <value type="string" value="bluedevil-monolithic"/>
         <value type="string" value="volti"/>
+        <value type="string" value="pnmixer"/>
         <value type="string" value="networkmanager applet"/>
+        <value type="string" value="mikogo"/>
         <value type="string" value="sound output volume"/>
         <value type="string" value="thunderbird"/>
         <value type="string" value="blueman-applet"/>
