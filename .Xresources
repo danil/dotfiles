@@ -5,7 +5,7 @@
 
 ! Cursor disappears with compiz and Xft font <http://bbs.archlinux.org/viewtopic.php?pid=991221>.
 ! *cursorUnderline: true
-*cursorBlink:     false
+*cursorBlink:     true
 ! Dark theme.
 *cursorColor:     #ff0000
 ! ! White theme.
