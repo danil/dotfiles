@@ -59,6 +59,7 @@
         <value type="string" value="volti"/>
         <value type="string" value="pnmixer"/>
         <value type="string" value="networkmanager applet"/>
+        <value type="string" value="remmina"/>
         <value type="string" value="mikogo"/>
         <value type="string" value="sound output volume"/>
         <value type="string" value="thunderbird"/>
