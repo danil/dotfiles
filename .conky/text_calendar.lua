@@ -43,10 +43,10 @@ function conky_text_calendar()
   local result = '${color}'
   do
     local wday = get_day_of_week(1, month, year)
-    result = result .. '${font Liberation Sans:Regular:size=7}'
+    result = result .. '${font PragmataPro:Regular:size=7}'
     result = result .. 'Mon  Tue  Wed  Thu  Fri  ${color1}Sat  Sun${color}'
     -- result = result .. 'пн вт ср чт пт ${color1}сб вс${color}'
-    result = result .. '\n${font DejaVu Sans Mono:Regular:size=10}'
+    result = result .. '\n${font Ubuntu Mono:Regular:size=12}'
     result = result .. string.rep('   ', wday - 1)
     local week = 1
     for i=1, day_per_month[month] do

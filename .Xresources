@@ -5,18 +5,35 @@
 
 ! Cursor disappears with compiz and Xft font <http://bbs.archlinux.org/viewtopic.php?pid=991221>.
 ! *cursorUnderline: true
-*cursorBlink:     false
-*cursorColor:     #aa0000
+*cursorBlink:     true
+! Dark theme.
+*cursorColor:     #ff0000
+! ! White theme.
+! *cursorColor:     #aa0000
 *cursorUnderline: false
-*geometry:        100x38
+! Get width and height of a terminal window: `tput cols` and `tput lines`
+! <http://stackoverflow.com/questions/263890/how-do-i-find-the-width-height-of-a-terminal-window#263900>.
+*geometry:        87x54
 *saveLines:       10000
 
-! Xft <http://pastebin.com/LMBjmAfF>.
-Xft.dpi:       96
-Xft.antialias: true
-Xft.hinting:   slight
+! Xft <https://wiki.archlinux.org/index.php/Font_Configuration#Applications_without_fontconfig_support>.
+! Antialias <https://wiki.archlinux.org/index.php/Font_Configuration#Anti-aliasing>.
+Xft.antialias: 1
+! Autohint <http://wiki.gentoo.org/wiki/Fontconfig#Regarding_autohinter>.
+Xft.autohint:  0
+! Hinting <https://wiki.archlinux.org/index.php/Font_Configuration#Byte-Code_Interpreter_.28BCI.29>.
+Xft.hinting:   1
+! Hintstyle <https://wiki.archlinux.org/index.php/Font_Configuration#Hint_style>,
+! <http://wiki.gentoo.org/wiki/Fontconfig#Forcing_hinting>.
 Xft.hintstyle: hintfull
+! Lcd filter <http://wiki.gentoo.org/wiki/Fontconfig#Using_sub-pixel_rendering>,
+! <https://wiki.archlinux.org/index.php/Font_Configuration#LCD_filter>.
+Xft.lcdfilter: lcddefault
+! Sub-pixel rendering <http://wiki.gentoo.org/wiki/Fontconfig#Using_sub-pixel_rendering>,
+! <https://wiki.archlinux.org/index.php/Font_Configuration#Subpixel_rendering>.
 Xft.rgba:      rgb
+! ! DPI <https://wiki.archlinux.org/index.php/Font_Configuration#Distorted_fonts>.
+! Xft.dpi:       120.4
 
 ! *font: -misc-fixed-medium-r-normal--18-120-100-100-c-90-iso10646-1,\
 !             -misc-fixed-medium-r-normal--8-80-75-75-c-50-iso10646-1,\
@@ -25,105 +42,71 @@ Xft.rgba:      rgb
 !             -misc-fixed-medium-r-normal--13-120-75-75-c-80-iso10646-1
 ! *font: xft:DejaVu Sans Mono:pixelsize=12:antialias=true:hinting=true:autohint=true
 ! <http://askubuntu.com/questions/22419/how-do-i-make-urxvt-render-xft-fonts#96779>.
-*font: xft:Ubuntu Mono:pixelsize=15:antialias=true:hinting=true:autohint=true:style=regular
+*font:           xft:PragmataPro:pixelsize=13:antialias=true:hinting=true:autohint=true:style=regular
+*boldFont:       xft:PragmataPro:pixelsize=13:antialias=true:hinting=true:autohint=true:style=bold
+*italicFont:     xft:PragmataPro:pixelsize=13:antialias=true:hinting=true:autohint=true:style=italic
+*boldItalicFont: xft:PragmataPro:pixelsize=13:antialias=true:hinting=true:autohint=true:style=bold italic
 
 ! <https://wiki.archlinux.org/index.php/X11_Cursors>.
 Xcursor.theme: Vanilla-DMZ
 ! Xcursor.size: 48
 
-! ! "White" text on black background.
-! *foreground: gray90
-! *background: black
-
-! ! Black text on a white background.
-! *foreground: black
-! *background: white
-
-! Black (dark) theme <http://wiki.gentoo.org/wiki/Rxvt-unicode#Color_theme>.
-! *background: #0f0f0f
-*background: #0c0c0c
-*foreground: #c8c8c8
+! Black (dark) theme from Ubuntu Gnome terminal.
+*background: #000000
+*foreground: #eeeeeeeeecec
 ! Black.
-*color0:  #251f1f
-*color8:  #5e5e5e
+*color0:  #000000
+*color8:  #251f1f
 ! Red.
-*color1:  #eb4509
-*color9:  #eb4509
+*color1:  #cccc00000000
+*color9:  #efef29292929
 ! Green.
-*color2:  #94e76b
-*color10: #95e76b
+*color2:  #4e4e9a9a0606
+*color10: #8a8ae2e23434
 ! Yellow.
-*color3:  #ffac18
-*color11: #ffac18
+*color3:  #c4c4a0a00000
+*color11: #fcfce9e94f4f
 ! Blue.
-*color4:  #46aede
-*color12: #46aede
+*color4:  #34346565a4a4
+*color12: #72729f9fcfcf
 ! Magenta.
-*color5:  #e32c57
-*color13: #e32c57
+*color5:  #757550507b7b
+*color13: #adad7f7fa8a8
 ! Cyan.
-*color6:  #d6dbac
-*color14: #d6dbac
+*color6:  #060698209a9a
+*color14: #3434e2e2e2e2
 ! White.
-*color7:  #efefef
-*color15: #efefef
+*color7:  #d3d3d7d7cfcf
+*color15: #eeeeeeeeecec
 
-! ! tango theme black <http://wiki.gentoo.org/wiki/rxvt-unicode#color_theme>.
+! ! Black (dark) theme <http://wiki.gentoo.org/wiki/Rxvt-unicode#Color_theme>.
 ! ! *background: #0f0f0f
 ! *background: #0c0c0c
 ! *foreground: #c8c8c8
-! ! black.
-! *color0:  #2e3436
-! *color8:  #555753
-! ! red.
-! *color1:  #a40000
-! *color9:  #ef2929
-! ! green.
-! *color2:  #4e9a06
-! *color10: #8ae234
-! ! yellow.
-! *color3:  #c4a000
-! *color11: #fce94f
-! ! blue.
-! *color4:  #3465a4
-! *color12: #729fcf
-! ! purple.
-! *color5:  #75507b
-! *color13: #ad7fa8
-! ! orange (replaces cyan).
-! *color6:  #ce5c00
-! *color14: #fcaf3e
-! ! white.
-! *color7:  #babdb9
-! *color15: #eeeeec
-
-! ! Tango theme black <http://liuchuan.org/files/config/Xresources.html>.
-! *background: #0f0f0f
-! *foreground: #c8c8c8
 ! ! Black.
-! *color0:   #000000
-! *color8:   #555753
+! *color0:  #251f1f
+! *color8:  #5e5e5e
 ! ! Red.
-! *color1:   #cc0000
-! *color9:   #ef2929
+! *color1:  #eb4509
+! *color9:  #eb4509
 ! ! Green.
-! *color2:   #4e9a06
-! *color10:  #8ae234
+! *color2:  #94e76b
+! *color10: #95e76b
 ! ! Yellow.
-! *color3:   #c4a000
-! *color11:  #fce94f
+! *color3:  #ffac18
+! *color11: #ffac18
 ! ! Blue.
-! *color4:   #3465a4
-! *color12:  #729fcf
+! *color4:  #46aede
+! *color12: #46aede
 ! ! Magenta.
-! *color5:   #75507b
-! *color13:  #ad7fa8
-! ! Cyan,
-! *color6:   #06989a
-! *color14:  #34e2e2
-! ! White,
-! *color7:   #d3d7cf
-! *color15:  #eeeeec
+! *color5:  #e32c57
+! *color13: #e32c57
+! ! Cyan.
+! *color6:  #d6dbac
+! *color14: #d6dbac
+! ! White.
+! *color7:  #efefef
+! *color15: #efefef
 
 ! Include multiple resource
 ! <http://www.nongnu.org/emacsdoc-fr/manuel/resources-x.html>,

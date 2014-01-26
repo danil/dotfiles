@@ -10,5 +10,8 @@
                 (global-set-key (kbd "C-v") 'less-scroll-up-line)
                 (global-set-key (kbd "M-p") 'scroll-down-command)
                 (global-set-key (kbd "M-n") 'scroll-up-command))
+                ;; (global-set-key (kbd "M-S-v") 'scroll-down-command)
+                ;; (global-set-key (kbd "C-S-v") 'scroll-up-command)
+                )
        :type git
        :url "git://github.com/emacsmirror/less.git")

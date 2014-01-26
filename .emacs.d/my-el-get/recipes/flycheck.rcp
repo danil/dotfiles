@@ -1,7 +1,8 @@
 (:name flycheck
+       :description "On the fly syntax checking for GNU Emacs (aka 'flymake done right')"
+       :website "http://flycheck.github.io"
        :type github
        :pkgname "lunaryorn/flycheck"
-       :description "On-the-fly syntax checking extension"
        ;; :after (progn
        ;;          (add-hook 'awk-mode-hook 'flycheck-mode)
        ;;          (add-hook 'change-log-mode-hook 'flycheck-mode)

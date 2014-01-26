@@ -85,7 +85,7 @@ draw_graph_borders no
 use_xft yes
 # force UTF8? note that UTF8 support required XFT
 override_utf8_locale yes
-xftfont DejaVu Sans:size=8
+xftfont PragmataPro:size=7
 # xftfont xft:pixelsize=14:antialias=true:hinting=true:autohint=true
 xftalpha 0.8
 uppercase no
@@ -100,5 +100,5 @@ lua_load ~/.conky/conky_widgets_clock_2.lua   ~/.conky/air_clock.lua ~/.conky/cl
 lua_draw_hook_pre conky_widgets_clock_2
 
 TEXT
-${voffset 165}
+${voffset 140}
 ${alignc}Melbourne +11

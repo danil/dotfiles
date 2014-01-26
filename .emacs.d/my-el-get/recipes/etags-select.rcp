@@ -1,0 +1,31 @@
+(:name etags-select
+       :description "Select from multiple tags"
+       :type http
+       :url "http://www.emacswiki.org/cgi-bin/wiki/download/etags-select.el"
+       :features etags-select
+       :depends (find-file-in-project)
+       :after (progn
+                (global-set-key (kbd "M-.")
+                                'etags-select-find-tag-at-point-or-region)
+                (defun etags-select-find-tag-at-point-or-region ()
+                  "Finds tag at point or selected region using etags-select."
+                  (interactive)
+                  (require 'etags-select)
+                  (if (region-active-p)
+                      (etags-select-find (buffer-substring (region-beginning)
+                                                           (region-end)))
+                    (etags-select-find-tag-at-point)))
+                (eval-after-load 'etags-select
+                  '(progn
+                     (define-key etags-select-mode-map
+                       (kbd "C-g") 'etags-select-quit)
+                     (define-key etags-select-mode-map
+                       (kbd "C-n") 'etags-select-next-tag)
+                     (define-key etags-select-mode-map
+                       (kbd "C-p") 'etags-select-previous-tag)
+                     (define-key etags-select-mode-map
+                       (kbd "M-RET") 'etags-select-goto-tag-other-window)
+                     (define-key etags-select-mode-map
+                       (kbd "RET") 'etags-select-goto-tag)
+                     ))
+                ))

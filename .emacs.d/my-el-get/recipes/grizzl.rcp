@@ -3,4 +3,5 @@
        :website "https://github.com/d11wtq/grizzl"
        :type elpa
        :depends (package)
-       :repo ("melpa" . "http://melpa.milkbox.net/packages/"))
+       :repo ("melpa" . "http://melpa.milkbox.net/packages/")
+       )
