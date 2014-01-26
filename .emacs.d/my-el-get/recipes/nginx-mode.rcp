@@ -1,4 +1,0 @@
-(:name nginx-mode
-       :after (progn
-                (setq auto-mode-alist
-                      (cons '("/etc/nginx/.*\\.conf\\'" . nginx-mode) auto-mode-alist))))

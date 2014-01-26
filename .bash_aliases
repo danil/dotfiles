@@ -56,3 +56,4 @@ export LUA_CPATH="/home/danil/.luarocks/lib/lua/5.1//?.so;./?.so;$LUA_CPATH"
 # Node.js
 export NODE_PATH="$HOME/local:$HOME/local/lib/node_modules"
 PATH=~/node_modules/.bin:"${PATH}"
+[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
