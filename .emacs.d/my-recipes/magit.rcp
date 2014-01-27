@@ -1,3 +1,7 @@
+(global-set-key (kbd "C-c d g l L") 'magit-log-long)
+(global-set-key (kbd "C-c d g l f") 'magit-file-log)
+(global-set-key (kbd "C-c d g l l") 'magit-log)
+(global-set-key (kbd "C-c d g s") 'magit-status)
 (add-hook
  'magit-mode-hook
  (lambda ()
