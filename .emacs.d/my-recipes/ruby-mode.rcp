@@ -1,29 +1,19 @@
 ;;; ruby-mode.
-(setq auto-mode-alist
-      (cons '("/[rR]akefile\\'" . ruby-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("\\.rake\\'" . ruby-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/Gemfile\\'" . ruby-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/Capfile\\'" . ruby-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/Guardfile\\'" . ruby-mode) auto-mode-alist))
+(my-add-auto-mode-to-patterns 'ruby-mode
+                              "/Capfile\\'"
+                              "/Gemfile\\'"
+                              "/Guardfile\\'"
+                              "/[rR]akefile\\'"
+                              "\\.atex\\'"
+                              "\\.gemspec\\'"
+                              "\\.irbrc\\'"
+                              "\\.mrb\\'"
+                              "\\.rake\\'"
+                              "\\.thor\\'")
 ;; (add-hook 'ruby-mode-hook 'ror-doc-lookup)
 (add-hook 'ruby-mode-hook
           (lambda () (interactive)
             (remove-hook 'before-save-hook 'ruby-mode-set-encoding)))
-(setq auto-mode-alist
-      (cons '("\\.mrb\\'" . ruby-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("\\.atex\\'" . ruby-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("\\.gemspec\\'" . ruby-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("\\.irbrc\\'" . ruby-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("\\.thor\\'" . ruby-mode) auto-mode-alist))
-
 (add-hook 'ruby-mode-hook (lambda () (setq truncate-lines t))) ;truncate lines <http://stackoverflow.com/questions/950340/how-do-you-activate-line-wrapping-in-emacs#950406>
 
 ;; Ruby indentation fix

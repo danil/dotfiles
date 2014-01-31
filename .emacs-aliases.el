@@ -20,7 +20,7 @@
 (load custom-file)
 
 ;; <http://blog.puercopop.com/post/56050999061/improving-emacss-startup-time>.
-(defmacro my-after-load (feature &rest body)
+(defmacro my-eval-after-load (feature &rest body)
   "After FEATURE is loaded, evaluate BODY."
   (declare (indent defun))
   `(eval-after-load ,feature
@@ -33,6 +33,9 @@
   "Add entries to `auto-mode-alist' to use `MODE' for all given file `PATTERNS'."
   (dolist (mode modes)
     (add-to-list 'auto-mode-alist (cons pattern mode))))
+(defun my-add-mode-to-hooks (mode &rest hooks)
+  "Add `MODE' to all given `HOOKS'."
+  (dolist (hook hooks) (add-hook hook mode)))
 
 ;;; My recipes.
 ;; (load-file (concat user-emacs-directory "my-recipes/my-color-theme.rcp"))
