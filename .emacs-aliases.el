@@ -60,11 +60,6 @@
       (append
        '(
          ;; auto-complete-ruby ;buggy(
-         ;; bongo
-         ;; color-theme-ir-black
-         ;; color-theme-vivid-chalk
-         ;; command-t
-         ;; evil ;in far far future will switch to hjkl
          ;; fiplr
          ;; helm
          ;; ido-better-flex
@@ -72,7 +67,6 @@
          ;; jump
          ;; package
          ;; smartparens
-         ;; vline
          ag
          apache-mode
          auto-complete-chunk
@@ -85,7 +79,6 @@
          crontab-mode
          csv-mode
          dart-mode
-         deft
          ebuild-mode
          erise
          etags-select
