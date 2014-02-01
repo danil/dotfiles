@@ -1,0 +1,5 @@
+;; (global-set-key (kbd "C-c f f") 'fiplr-find-file)
+(add-hook 'grizzl-mode-hook
+          (lambda ()
+            (local-set-key (kbd "C-p") 'grizzl-set-selection+1)
+            (local-set-key (kbd "C-n") 'grizzl-set-selection-1)))

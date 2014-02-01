@@ -1,18 +1,5 @@
 (:name ag
-       :description "An Emacs frontend to ag, (\"the silver searcher\" ack replacment)"
+       :description "A simple ag frontend, loosely based on ack-and-half.el."
        :website "https://github.com/Wilfred/ag.el"
        :type github
-       :pkgname "Wilfred/ag.el"
-       ;; :type elpa
-       ;; :repo ("melpa" . "http://melpa.milkbox.net/packages/")
-       :after (progn
-                (global-set-key (kbd "C-c f s") 'ag-regexp)
-                (set 'ag-highlight-search 1)
-                ;; (eval-after-load 'ag
-                ;;   '(progn
-                ;;      (cond ((equal frame-background-mode 'dark)
-                ;;             ;; (set-face-background 'ag-match-face "green3")
-                ;;             (set-face-foreground 'ag-match-face "lightskyblue1")
-                ;;             ))
-                ;;      ))
-                ))
+       :pkgname "Wilfred/ag.el")

@@ -20,6 +20,11 @@
 (load custom-file)
 
 ;; <http://blog.puercopop.com/post/56050999061/improving-emacss-startup-time>.
+(defmacro my-after-init (&rest body)
+  "After loading all the init files, evaluate BODY."
+  (declare (indent defun))
+  `(add-hook 'after-init-hook
+             '(lambda () ,@body)))
 (defmacro my-eval-after-load (feature &rest body)
   "After FEATURE is loaded, evaluate BODY."
   (declare (indent defun))
@@ -36,6 +41,10 @@
 (defun my-add-mode-to-hooks (mode &rest hooks)
   "Add `MODE' to all given `HOOKS'."
   (dolist (hook hooks) (add-hook hook mode)))
+;; Truncate lines
+;; <http://stackoverflow.com/questions/950340/how-do-you-activate-line-wrapping-in-emacs#950406>.
+(defun my-hooks-with-truncate-lines (&rest hooks)
+  (dolist (hook hooks) (add-hook hook (lambda () (setq truncate-lines t)))))
 
 ;;; My recipes.
 ;; (load-file (concat user-emacs-directory "my-recipes/my-color-theme.rcp"))
@@ -60,12 +69,8 @@
       (append
        '(
          ;; auto-complete-ruby ;buggy(
-         ;; fiplr
-         ;; helm
          ;; ido-better-flex
          ;; ido-ubiquitous
-         ;; jump
-         ;; package
          ;; smartparens
          ag
          apache-mode
@@ -85,7 +90,6 @@
          ethan-wspace
          expand-region
          findr
-         flycheck
          git-gutter
          go-mode
          haml-mode

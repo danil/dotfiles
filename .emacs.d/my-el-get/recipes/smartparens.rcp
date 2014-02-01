@@ -2,10 +2,4 @@
        :description "Autoinsert pairs of defined brackets and wrap regions"
        :type github
        :pkgname "Fuco1/smartparens"
-       :depends dash
-       :after (progn
-                ;; (require 'smartparens-config)
-                ;; (eval-after-load 'smartparens
-                ;;   '(progn
-                ;;      ))
-                ))
+       :depends dash)
