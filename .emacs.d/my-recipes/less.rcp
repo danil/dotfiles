@@ -1,0 +1,14 @@
+(global-set-key (kbd "M-v") 'less-scroll-down-line)
+(global-set-key (kbd "C-v") 'less-scroll-up-line)
+(global-set-key (kbd "M-p") 'scroll-down-command)
+(global-set-key (kbd "M-n") 'scroll-up-command)
+;; (my-eval-after-load 'less
+;;                     ;; (add-hook 'find-file-hook
+;;                     ;;           '(lambda ()
+;;                     ;;              (when buffer-read-only
+;;                     ;;                (less-minor-mode-on))))
+;;                     ;; (global-set-key (kbd "ESC ESC ESC")
+;;                     ;;                 'less-minor-mode)
+;;                     ;; (global-set-key (kbd "M-S-v") 'scroll-down-command)
+;;                     ;; (global-set-key (kbd "C-S-v") 'scroll-up-command)
+;;                     )

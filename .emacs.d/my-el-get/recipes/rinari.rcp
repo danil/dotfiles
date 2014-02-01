@@ -7,7 +7,4 @@
        :build (("bundle")
                ("rake" "doc:install_info"))
        :info "doc"
-       ;; :after (progn
-       ;;          (autoload 'rinari-web-server "rinari"
-       ;;            "Run Rails script/server." t))
        :features rinari)

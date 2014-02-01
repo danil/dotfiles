@@ -1,0 +1,3 @@
+;; (my-eval-after-load 'rinari
+;;                     (autoload 'rinari-web-server "rinari"
+;;                       "Run Rails script/server." t))
