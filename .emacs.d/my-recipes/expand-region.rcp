@@ -1,0 +1,2 @@
+(my-eval-after-load 'expand-region
+                    (global-set-key (kbd "C-c d e") 'er/expand-region))

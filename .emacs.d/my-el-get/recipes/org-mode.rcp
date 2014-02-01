@@ -1,47 +1,20 @@
 (:name org-mode
-       :after (progn
-                ;; (add-to-list 'auto-mode-alist
-                ;;              '("\\.org\\'" . org-mode))
-                ;; Disable previously defined unstrict pattern.
-                (add-to-list 'auto-mode-alist '("\\.org\\'" . nil))
-                ;; Add more strict pattern.
-                (add-to-list 'auto-mode-alist
-                             '("/org/.*\\.org\\'" . org-mode))
-                ;; (global-set-key "\C-cl" 'org-store-link)
-                ;; (global-set-key "\C-ca" 'org-agenda)
-                (global-set-key "\C-cb" 'org-iswitchb)
-                (setq org-log-done t)
-
-                ;; Interactively do things (Org-mode with Ido)
-                (add-hook 'org-mode-hook (lambda () (ido-mode t)))
-                (setq org-completion-use-ido t)
-
-                ;; Org Clock.
-                ;; Sometimes I change tasks I'm clocking
-                ;; quickly - this removes clocked tasks with
-                ;; 0:00 duration.
-                ;;(setq org-clock-out-remove-zero-time-clocks t)
-
-                ;; Org Agenda.
-                ;; (setq org-agenda-files
-                ;;   (list "~/org/home.org"
-                ;;         "~/org/JohnStudio.org"))
-                (setq org-agenda-files
-                      (append (file-expand-wildcards
-                               "~/org/*.org")
-                              (file-expand-wildcards
-                               "~/org/home/*.org")
-                              (file-expand-wildcards
-                               "~/org/work/*.org")))
-                ;; (load-library "find-lisp")
-                ;; (setq org-agenda-files
-                ;;       (find-lisp-find-files "~/org" "\.org\\'"))
-                (setq org-agenda-custom-commands
-                      '(("h" "Home" todo "TODO"
-                         ((org-agenda-files
-                           (file-expand-wildcards
-                            "~/org/home/*.org"))))
-                        ("w" "Work" todo "TODO"
-                         ((org-agenda-files
-                           (file-expand-wildcards
-                            "~/org/work/*.org"))))))))
+       :website "http://orgmode.org/"
+       :description "Org-mode is for keeping notes, maintaining ToDo lists, doing project planning, and authoring with a fast and effective plain-text system."
+       :type git
+       :url "git://orgmode.org/org-mode.git"
+       :info "doc"
+       :build/berkeley-unix `,(mapcar
+                               (lambda (target)
+                                 (list "gmake" target
+                                       (concat "EMACS="
+                                               (shell-quote-argument
+                                                el-get-emacs))))
+                               '("oldorg"))
+       :build `,(mapcar
+                 (lambda (target)
+                   (list "make" target
+                         (concat "EMACS="
+                                 (shell-quote-argument el-get-emacs))))
+                 '("oldorg"))
+       :load-path ("." "lisp" "contrib/lisp"))

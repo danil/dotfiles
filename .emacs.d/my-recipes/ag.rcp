@@ -1,1 +1,7 @@
-(add-hook 'ag-mode-hook (lambda () (setq truncate-lines t))) ;truncate lines <http://stackoverflow.com/questions/950340/how-do-you-activate-line-wrapping-in-emacs#950406>
+(global-set-key (kbd "C-c f s") 'ag-regexp)
+(my-hooks-with-truncate-lines 'ag-mode-hook)
+(my-eval-after-load 'ag
+                    ;; (cond ((equal frame-background-mode 'dark)
+                    ;;        ;; (set-face-background 'ag-match-face "green3")
+                    ;;        (set-face-foreground 'ag-match-face "lightskyblue1")))
+                    (set 'ag-highlight-search 1))

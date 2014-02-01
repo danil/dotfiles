@@ -1,5 +1,0 @@
-(:name deft
-       :after (progn
-                (setq
-                 deft-extension "org"
-                 deft-text-mode 'org-mode)))

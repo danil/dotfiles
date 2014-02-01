@@ -1,6 +1,3 @@
 (:name ido-yes-or-no
-       :type elpa
        :description "Use Ido to answer yes-or-no questions"
-       :post-init (progn
-                    (autoload 'ido-yes-or-no-mode "ido-yes-or-no" nil t))
-       :after (progn (ido-yes-or-no-mode 1)))
+       :type elpa)

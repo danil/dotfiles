@@ -19,6 +19,33 @@
 (setq custom-file "~/.emacs.d/my-custom-variables.el")
 (load custom-file)
 
+;; <http://blog.puercopop.com/post/56050999061/improving-emacss-startup-time>.
+(defmacro my-after-init (&rest body)
+  "After loading all the init files, evaluate BODY."
+  (declare (indent defun))
+  `(add-hook 'after-init-hook
+             '(lambda () ,@body)))
+(defmacro my-eval-after-load (feature &rest body)
+  "After FEATURE is loaded, evaluate BODY."
+  (declare (indent defun))
+  `(eval-after-load ,feature
+     '(progn ,@body)))
+(defun my-add-auto-mode-to-patterns (mode &rest patterns)
+  "Add entries to `auto-mode-alist' to use `MODE' for all given file `PATTERNS'."
+  (dolist (pattern patterns)
+    (add-to-list 'auto-mode-alist (cons pattern mode))))
+(defun my-add-pattern-to-auto-modes (pattern &rest modes)
+  "Add entries to `auto-mode-alist' to use `MODE' for all given file `PATTERNS'."
+  (dolist (mode modes)
+    (add-to-list 'auto-mode-alist (cons pattern mode))))
+(defun my-add-mode-to-hooks (mode &rest hooks)
+  "Add `MODE' to all given `HOOKS'."
+  (dolist (hook hooks) (add-hook hook mode)))
+;; Truncate lines
+;; <http://stackoverflow.com/questions/950340/how-do-you-activate-line-wrapping-in-emacs#950406>.
+(defun my-hooks-with-truncate-lines (&rest hooks)
+  (dolist (hook hooks) (add-hook hook (lambda () (setq truncate-lines t)))))
+
 ;;; My recipes.
 ;; (load-file (concat user-emacs-directory "my-recipes/my-color-theme.rcp"))
 (mapc 'load (directory-files
@@ -42,19 +69,9 @@
       (append
        '(
          ;; auto-complete-ruby ;buggy(
-         ;; bongo
-         ;; color-theme-ir-black
-         ;; color-theme-vivid-chalk
-         ;; command-t
-         ;; evil ;in far far future will switch to hjkl
-         ;; fiplr
-         ;; helm
          ;; ido-better-flex
          ;; ido-ubiquitous
-         ;; jump
-         ;; package
          ;; smartparens
-         ;; vline
          ag
          apache-mode
          auto-complete-chunk
@@ -67,14 +84,12 @@
          crontab-mode
          csv-mode
          dart-mode
-         deft
          ebuild-mode
          erise
          etags-select
          ethan-wspace
          expand-region
          findr
-         flycheck
          git-gutter
          go-mode
          haml-mode
@@ -403,10 +418,6 @@
       (cons '("/locale.gen\\'" . conf-mode) auto-mode-alist))
 (setq auto-mode-alist
       (cons '("/sudoers\\'" . conf-mode) auto-mode-alist))
-
-;;; Lisp.
-(setq auto-mode-alist
-      (cons '("/\\.stumpwmrc\\'" . lisp-mode) auto-mode-alist))
 
 ;;; Cucumber features.
 (setq auto-mode-alist
