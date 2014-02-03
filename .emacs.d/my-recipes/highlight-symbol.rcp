@@ -34,11 +34,14 @@
 (global-set-key (kbd "C-c d s s n") 'my-highlight-symbol-next-with-repeat)
 (global-set-key (kbd "C-c d s s p") 'my-highlight-symbol-prev-with-repeat)
 (global-set-key (kbd "C-c d s s r") 'highlight-symbol-query-replace)
-(my-eval-after-load 'highlight-symbol
-                    (setq highlight-symbol-idle-delay 0.7)
-                    (cond ((equal frame-background-mode 'dark)
-                           (set-face-background 'highlight-symbol-face
-                                                "yellow3"))))
+(my-after-init
+  (my-eval-after-load 'highlight-symbol
+    (setq highlight-symbol-idle-delay 0.7)
+    (cond ((equal frame-background-mode 'dark)
+           (set-face-background 'highlight-symbol-face
+                                "maroon4") ;yellow3
+           (set-face-foreground 'highlight-symbol-face
+                                "black")))))
 (defun my-highlight-symbol-next-with-repeat ()
   (interactive)
   (my-with-repeat-while-press-last-key

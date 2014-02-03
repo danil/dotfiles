@@ -16,6 +16,8 @@
 (put 'upcase-region 'disabled nil)
 
 ;;; My custom variables.
+(setq frame-background-mode 'dark) ;FIXME: remove me
+(load-file (concat user-emacs-directory "my-recipes/my-color-theme.rcp")) ;FIXME: remove me
 (setq custom-file "~/.emacs.d/my-custom-variables.el")
 (load custom-file)
 
@@ -96,7 +98,7 @@
          haskell-mode
          highlight-parentheses
          highlight-symbol
-         hl-line+
+         hlinum
          ido-yes-or-no
          inf-ruby
          js2-mode ;coffee mode defaults to js2-mode, which is not present in Emacs by default

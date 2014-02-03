@@ -23,7 +23,6 @@
       ((equal frame-background-mode 'dark)
        (setq my-lazy-highlight-background "OrangeRed4") ;brown4 ;indianRed4 ;SaddleBrown ;maroon4 ;red ;OrangeRed3 ;gray20 ;gray40
        (setq my-line-number-background "gray15")
-       (setq my-match-foreground "lightskyblue1")
        ;; Region.
        ;; (setq my-face-reginon-background "#002b36") ;#2E3436 ;set selection background color
        ;; (set-face-attribute 'region nil :inverse-video t)
@@ -33,11 +32,11 @@
        ;; <http://www.gnu.org/software/emacs/manual/html_node/emacs/Standard-Faces.html>.
        ;; (set-face-background 'lazy-highlight "#002b36")
        (set-face-attribute 'lazy-highlight nil
-                           :foreground my-match-foreground
+                           :foreground "lightskyblue1"
                            :background my-lazy-highlight-background)
 
        (set-face-attribute 'match nil
-                           :foreground my-match-foreground
+                           :foreground "black"
                            :background "OrangeRed3")
        (set-face-background 'highlight '"#002b36")
        (set-face-foreground 'success "Green4") ;Green1
