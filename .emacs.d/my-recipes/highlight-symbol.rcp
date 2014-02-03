@@ -36,8 +36,9 @@
 (global-set-key (kbd "C-c d s s r") 'highlight-symbol-query-replace)
 (my-eval-after-load 'highlight-symbol
                     (setq highlight-symbol-idle-delay 0.7)
-                    (set-face-background 'highlight-symbol-face
-                                         my-lazy-highlight-background))
+                    (cond ((equal frame-background-mode 'dark)
+                           (set-face-background 'highlight-symbol-face
+                                                "yellow3"))))
 (defun my-highlight-symbol-next-with-repeat ()
   (interactive)
   (my-with-repeat-while-press-last-key
