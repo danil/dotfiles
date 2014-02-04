@@ -1,7 +1,8 @@
-(global-set-key (kbd "C-c f s") 'ag-regexp)
-(my-hooks-with-truncate-lines 'ag-mode-hook)
-(my-eval-after-load 'ag
-                    ;; (cond ((equal frame-background-mode 'dark)
-                    ;;        ;; (set-face-background 'ag-match-face "green3")
-                    ;;        (set-face-foreground 'ag-match-face "lightskyblue1")))
-                    (set 'ag-highlight-search 1))
+(my-after-init
+  (global-set-key (kbd "C-c f s") 'ag-regexp)
+  (my-hooks-with-truncate-lines 'ag-mode-hook)
+  (my-eval-after-load 'ag
+    ;; (cond ((equal frame-background-mode 'dark)
+    ;;        ;; (set-face-background 'ag-match-face "green3")
+    ;;        (set-face-foreground 'ag-match-face "lightskyblue1")))
+    (set 'ag-highlight-search 1)))

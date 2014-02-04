@@ -39,7 +39,7 @@
     (setq highlight-symbol-idle-delay 0.7)
     (cond ((equal frame-background-mode 'dark)
            (set-face-background 'highlight-symbol-face
-                                "maroon3") ;yellow3
+                                "OrangeRed3") ;maroon3 ;yellow3
            (set-face-foreground 'highlight-symbol-face
                                 "black")))))
 (defun my-highlight-symbol-next-with-repeat ()

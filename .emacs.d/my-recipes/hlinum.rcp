@@ -1,0 +1,1 @@
+(my-after-init (my-eval-after-load 'hlinum (hlinum-activate)))
