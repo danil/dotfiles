@@ -1,3 +1,4 @@
 (my-after-init
   (global-set-key (kbd "C-c d b b") 'bury-buffer)
+  (global-set-key (kbd "C-c d b r") 'rename-buffer)
   (global-set-key (kbd "C-c d b s") 'my-do-shell-command-on-buffer-file))

@@ -1,0 +1,1 @@
+(my-after-init (global-set-key (kbd "C-c d b r") 'revert-buffer))
