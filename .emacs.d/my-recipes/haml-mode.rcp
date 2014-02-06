@@ -1,5 +1,5 @@
-(add-hook 'haml-mode-hook (lambda () (setq truncate-lines t)))
-;; (my-eval-after-load 'haml-mode
-;;                     ;; (require 'ruby-mode)
-;;                     (define-key haml-mode-map (kbd "C-c d r h")
-;;                       'ruby-toggle-hash-syntax))
+(my-after-init
+  (my-hooks-with-truncate-lines 'haml-mode-hook)
+  (my-eval-after-load 'haml-mode
+    (my-eval-after-load 'ruby-mode
+      (define-key haml-mode-map (kbd "C-c d r h") 'ruby-toggle-hash-syntax))))

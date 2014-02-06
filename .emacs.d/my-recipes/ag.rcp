@@ -1,8 +1,8 @@
 (my-after-init
-  (global-set-key (kbd "C-c d f a s s") 'ag)
-  (global-set-key (kbd "C-c d f a s r") 'ag-regexp)
-  (global-set-key (kbd "C-c d f a f s") 'ag-dired)
-  (global-set-key (kbd "C-c d f a f r") 'ag-dired-regexp)
+  (global-set-key (kbd "C-c d f s s") 'ag)
+  (global-set-key (kbd "C-c d f s r") 'ag-regexp)
+  (global-set-key (kbd "C-c d f p s") 'ag-dired)
+  (global-set-key (kbd "C-c d f p r") 'ag-dired-regexp)
   (global-set-key (kbd "C-c d f a k k") 'ag-kill-buffers)
   (global-set-key (kbd "C-c d f a k o") 'ag-kill-other-buffers)
   (my-hooks-with-truncate-lines 'ag-mode-hook)
