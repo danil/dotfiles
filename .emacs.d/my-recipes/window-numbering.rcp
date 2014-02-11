@@ -1,8 +1,19 @@
 (autoload 'window-numbering-mode "window-numbering"
   "Numbered window shortcuts" t)
+(my-after-init
+  (global-set-key (kbd "C-c d 0") 'select-window-0)
+  (global-set-key (kbd "C-c d 1") 'select-window-1)
+  (global-set-key (kbd "C-c d 2") 'select-window-2)
+  (global-set-key (kbd "C-c d 3") 'select-window-3)
+  (global-set-key (kbd "C-c d 4") 'select-window-4)
+  (global-set-key (kbd "C-c d 5") 'select-window-5)
+  (global-set-key (kbd "C-c d 6") 'select-window-6)
+  (global-set-key (kbd "C-c d 7") 'select-window-7)
+  (global-set-key (kbd "C-c d 8") 'select-window-8)
+  (global-set-key (kbd "C-c d 9") 'select-window-9))
 (my-eval-after-load 'window-numbering
                     ;; ;; <http://blog.binchen.org/?p=512#sec-1>.
                     ;; (custom-set-faces
                     ;;  '(window-numbering-face
                     ;;    ((t (:foreground "brightmagenta" :background nil :weight normal :underline nil)))))
-                    (window-numbering-mode 1))
+                    (window-numbering-mode t))
