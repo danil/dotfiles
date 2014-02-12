@@ -1,4 +1,8 @@
 (my-after-init
-  (global-set-key (kbd "C-c d b b") 'bury-buffer)
+  (global-set-key (kbd "C-c d b b") 'bury-buffer-with-repeat)
   (global-set-key (kbd "C-c d b r") 'rename-buffer)
-  (global-set-key (kbd "C-c d b s") 'my-do-shell-command-on-buffer-file))
+  (global-set-key (kbd "C-c d b s") 'my-do-shell-command-on-buffer-file)
+  (defun bury-buffer-with-repeat ()
+    (interactive)
+    (my-with-repeat-while-press-last-key
+      (bury-buffer))))
