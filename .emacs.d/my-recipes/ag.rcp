@@ -4,7 +4,6 @@
   (global-set-key (kbd "C-c d f p s") 'ag-dired)
   (global-set-key (kbd "C-c d f p r") 'ag-dired-regexp)
   (global-set-key (kbd "C-c d f a k") 'ag-kill-buffers)
-  ;; (autoload 'ag "ag" nil t)
   (my-hooks-with-truncate-lines 'ag-mode-hook)
   (my-eval-after-load 'ag
     ;; (cond ((equal frame-background-mode 'dark)

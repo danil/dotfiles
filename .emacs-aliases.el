@@ -71,6 +71,7 @@
       (append
        '(
          ;; auto-complete-ruby ;buggy(
+         ;; hlinum
          ;; ido-better-flex
          ;; ido-ubiquitous
          ;; smartparens
@@ -98,7 +99,6 @@
          haskell-mode
          highlight-parentheses
          highlight-symbol
-         hlinum
          ido-yes-or-no
          inf-ruby
          js2-mode ;coffee mode defaults to js2-mode, which is not present in Emacs by default
@@ -283,16 +283,6 @@
 ;;       (concat (expand-file-name "~/.backups/")
 ;;               (dired-replace-in-string "/" "!" file-name))
 ;;     (concat file-name "~")))
-
-;;; Ibuffer <http://emacswiki.org/IbufferMode>,
-;;; <http://emacs-fu.blogspot.ru/2010/02/dealing-with-many-buffers-ibuffer.html>,
-;;; <http://martinowen.net/blog/2010/02/tips-for-emacs-ibuffer.html>.
-(global-set-key (kbd "C-x C-b") 'ibuffer)
-(autoload 'ibuffer "ibuffer" "List buffers." t)
-;(setq ibuffer-use-other-window 1)
-;; <http://stackoverflow.com/questions/7598433/how-to-remove-a-key-from-a-minor-mode-keymap-in-emacs#7598754>.
-(define-key ibuffer-mode-map "\M-n" nil) ;unset ibuffer-forward-filter-group
-(define-key ibuffer-mode-map "\M-p" nil) ;unset ibuffer-backward-filter-group
 
 ;;; Interactively do things.
 ;; (ido-mode t)
