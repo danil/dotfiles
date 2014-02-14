@@ -22,6 +22,7 @@
                      scss-mode
                      sgml-mode
                      shell-mode
+                     sieve-mode
                      sql-interactive-mode
                      sql-mode
                      yaml-mode
