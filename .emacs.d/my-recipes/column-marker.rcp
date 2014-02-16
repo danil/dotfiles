@@ -1,3 +1,4 @@
+(my-add-to-packages 'column-marker)
 (dolist (hook '(
                 ;; mail-mode-hook
                 ;; whitespace-mode-hook

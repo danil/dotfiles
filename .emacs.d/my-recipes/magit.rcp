@@ -1,3 +1,4 @@
+(my-add-to-packages 'magit)
 (my-after-init
   (global-set-key (kbd "C-c d v l L") 'magit-log-long)
   (global-set-key (kbd "C-c d v l f") 'magit-file-log)

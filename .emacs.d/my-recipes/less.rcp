@@ -1,3 +1,4 @@
+(my-add-to-packages 'less)
 (global-set-key (kbd "M-v") 'less-scroll-down-line)
 (global-set-key (kbd "C-v") 'less-scroll-up-line)
 (global-set-key (kbd "M-p") 'scroll-down-command)

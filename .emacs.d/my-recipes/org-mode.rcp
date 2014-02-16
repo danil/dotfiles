@@ -1,3 +1,4 @@
+(my-add-to-packages 'org-mode)
 (add-to-list 'auto-mode-alist '("\\.org\\'" . nil)) ;disable previously defined unstrict pattern
 (add-to-list 'auto-mode-alist '("/org/.*\\.org\\'" . org-mode)) ;add more strict pattern
 (global-set-key "\C-cb" 'org-iswitchb)

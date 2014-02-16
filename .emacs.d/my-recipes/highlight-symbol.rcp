@@ -1,3 +1,4 @@
+(my-add-to-packages 'highlight-symbol)
 (my-add-mode-to-hooks 'highlight-symbol-mode
                       'awk-mode-hook
                       'coffee-mode-hook

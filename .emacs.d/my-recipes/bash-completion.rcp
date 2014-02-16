@@ -1,3 +1,4 @@
+(my-add-to-packages 'bash-completion)
 (my-eval-after-load 'bash-completion
                     (autoload 'bash-completion-dynamic-complete
                       "bash-completion"

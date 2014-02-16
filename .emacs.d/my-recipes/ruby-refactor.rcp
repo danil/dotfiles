@@ -1,1 +1,2 @@
+(my-add-to-packages 'ruby-refactor)
 (add-hook 'ruby-mode-hook 'ruby-refactor-mode-launch)

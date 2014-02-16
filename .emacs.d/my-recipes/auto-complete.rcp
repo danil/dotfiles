@@ -1,3 +1,4 @@
+(my-add-to-packages 'auto-complete)
 (eval-after-load 'auto-complete-config
   '(progn
      (ac-config-default)

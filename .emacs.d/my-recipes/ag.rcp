@@ -1,3 +1,4 @@
+(my-add-to-packages 'ag)
 (my-after-init
   (global-set-key (kbd "C-c d f s s") 'ag)
   (global-set-key (kbd "C-c d f s r") 'ag-regexp)

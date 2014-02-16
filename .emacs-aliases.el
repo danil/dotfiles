@@ -19,69 +19,70 @@
 (setq custom-file "~/.emacs.d/my-custom-variables.el")
 (load custom-file)
 
-;; <http://blog.puercopop.com/post/56050999061/improving-emacss-startup-time>.
-(defmacro my-after-init (&rest body)
-  "After loading all the init files, evaluate BODY."
-  (declare (indent defun))
-  `(add-hook 'after-init-hook
-             '(lambda () ,@body)))
-(defmacro my-eval-after-load (feature &rest body)
-  "After FEATURE is loaded, evaluate BODY."
-  (declare (indent defun))
-  `(eval-after-load ,feature
-     '(progn ,@body)))
-(defun my-add-auto-mode-to-patterns (mode &rest patterns)
-  "Add entries to `auto-mode-alist' to use `MODE' for all given file `PATTERNS'."
-  (dolist (pattern patterns)
-    (add-to-list 'auto-mode-alist (cons pattern mode))))
-(defun my-add-pattern-to-auto-modes (pattern &rest modes)
-  "Add entries to `auto-mode-alist' to use `MODE' for all given file `PATTERNS'."
-  (dolist (mode modes)
-    (add-to-list 'auto-mode-alist (cons pattern mode))))
-(defun my-add-mode-to-hooks (mode &rest hooks)
-  "Add `MODE' to all given `HOOKS'."
-  (dolist (hook hooks) (add-hook hook mode)))
-;; Truncate lines
-;; <http://stackoverflow.com/questions/950340/how-do-you-activate-line-wrapping-in-emacs#950406>.
-(defun my-hooks-with-truncate-lines (&rest hooks)
-  (dolist (hook hooks) (add-hook hook (lambda () (setq truncate-lines t)))))
+;;; My packages (el-get <http://github.com/dimitri/el-get>).
+(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+(unless (require 'el-get nil 'noerror)
+  (with-current-buffer
+      (url-retrieve-synchronously
+       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
+    (goto-char (point-max))
+    (eval-print-last-sexp)))
+(add-to-list 'el-get-recipe-path
+             (concat user-emacs-directory "my-el-get/recipes"))
+;; (setq el-get-user-package-directory
+;;       (concat user-emacs-directory "my-el-get/init-files"))
+(setq my-packages (append (mapcar 'el-get-source-name el-get-sources)))
 
 ;;; My recipes.
 (dolist (recipe
          '(
+          "my-recipe-helpers"
           "ag"
+          "apache-mode"
           "auto-complete"
+          "auto-complete-chunk"
+          "auto-complete-css"
+          "auto-complete-emacs-lisp"
+          "auto-complete-etags"
           "bash-completion"
           "c-source-code-functions"
+          "csv-mode"
           "coffee-mode"
           "column-marker"
           "conf-mode"
+          "crontab-mode"
+          "dart-mode"
           "desktop"
           "diff-mode"
           "dired"
+          "ebuild-mode"
           "ediff"
           "erise"
           "etags-select"
           "ethan-wspace"
           "expand-region"
           "files"
+          "findr"
           "fiplr"
-          "flycheck"
           "git-commit-mode"
           "git-gutter"
+          "git-modes"
           "gitignore-mode"
+          "go-mode"
           "haml-mode"
+          "haskell-mode"
           "help"
           "highlight-current-line"
           "highlight-parentheses"
           "highlight-symbol"
-          "hlinum"
           "ibuffer"
           "ido-yes-or-no"
+          "inf-ruby"
           "interprogram"
           "isearch"
           "js-mode"
-          "less"
+          "js2-mode" ;coffee mode defaults to js2-mode, which is not present in Emacs by default
+          "less" ;do not remove, used for generic scroll!
           "linum"
           "lisp-mode"
           "lua"
@@ -96,6 +97,8 @@
           "nginx-mode"
           "occur-mode"
           "org-mode"
+          "paredit"
+          "php-mode"
           "pomohist"
           "rainbow-mode"
           "replace"
@@ -104,108 +107,32 @@
           "rspec-compilation-mode"
           "rspec-mode"
           "ruby-end"
+          "ruby-hash-syntax"
           "ruby-mode"
           "ruby-pry"
           "ruby-refactor"
           "ruby-tools"
           "rust-mode"
+          "rvm"
+          "sass-mode"
           "scss-mode"
           "sh-script"
           "sieve-mode"
           "simp"
           "simple"
+          "slim-mode"
           "smex"
           "sort"
+          "undo-tree"
           "window"
           "window-numbering"
           "yaml-mode"
           ))
   (load-file (concat user-emacs-directory "my-recipes/" recipe ".rcp")))
 
-;;; el-get <http://github.com/dimitri/el-get>.
-(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-(unless (require 'el-get nil 'noerror)
-  (with-current-buffer
-      (url-retrieve-synchronously
-       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
-    (goto-char (point-max))
-    (eval-print-last-sexp)))
-(add-to-list 'el-get-recipe-path
-             (concat user-emacs-directory "my-el-get/recipes"))
-;; (setq el-get-user-package-directory
-;;       (concat user-emacs-directory "my-el-get/init-files"))
-(setq my-packages (append '(
-                            ;; auto-complete-ruby ;buggy(
-                            ;; geiser
-                            ;; hlinum
-                            ;; ido-better-flex
-                            ;; ido-ubiquitous
-                            ;; quack
-                            ;; scheme-complete
-                            ;; slime
-                            ;; smartparens
-                            ag
-                            apache-mode
-                            auto-complete-chunk
-                            auto-complete-css
-                            auto-complete-emacs-lisp
-                            auto-complete-etags
-                            bash-completion
-                            coffee-mode
-                            column-marker
-                            crontab-mode
-                            csv-mode
-                            dart-mode
-                            ebuild-mode
-                            erise
-                            etags-select
-                            ethan-wspace
-                            expand-region
-                            findr
-                            git-gutter
-                            git-modes
-                            go-mode
-                            haml-mode
-                            haskell-mode
-                            highlight-parentheses
-                            highlight-symbol
-                            ido-yes-or-no
-                            inf-ruby
-                            js2-mode ;coffee mode defaults to js2-mode, which is not present in Emacs by default
-                            less ;do not remove, used for generic scroll!
-                            lua-mode
-                            magit
-                            markdown-mode
-                            nginx-mode
-                            org-mode
-                            paredit
-                            php-mode
-                            rainbow-mode
-                            rhtml-mode
-                            rinari
-                            rspec-mode
-                            ruby-end
-                            ruby-hash-syntax
-                            ruby-pry
-                            ruby-refactor
-                            ruby-tools
-                            rust-mode
-                            rvm
-                            sass-mode
-                            scss-mode
-                            simp
-                            slim-mode
-                            smex
-                            undo-tree
-                            window-numbering
-                            yaml-mode
-                            yasnippet
-                            )
-                          (mapcar 'el-get-source-name el-get-sources)))
+;;; Install/remove my packages (see above).
 (el-get-cleanup my-packages) ;remove all packages absent from `my-packages'
 (el-get 'sync my-packages)
-
-(global-undo-tree-mode) ;FIXME: eval-after-load 'undo-tree-mode not working
 
 ;;; Setting key with repeat
 ;;; <http://stackoverflow.com/questions/7560094/two-key-shortcut-in-emacs-without-repressing-the-first-key#7560416>.

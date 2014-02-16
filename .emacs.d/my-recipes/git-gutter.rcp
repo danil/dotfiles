@@ -1,3 +1,4 @@
+(my-add-to-packages 'git-gutter)
 (dolist (hook '(
                 awk-mode-hook
                 c-mode-hook

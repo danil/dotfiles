@@ -1,3 +1,4 @@
+(my-add-to-packages 'highlight-parentheses)
 (my-add-mode-to-hooks 'highlight-parentheses-mode
                       'awk-mode-hook
                       'change-log-mode-hook
