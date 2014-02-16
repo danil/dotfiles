@@ -21,26 +21,26 @@
                            :background "magenta3");"orchid3");"VioletRed")
        )
       ((equal frame-background-mode 'dark)
-       (setq my-lazy-highlight-background "OrangeRed4") ;brown4 ;indianRed4 ;SaddleBrown ;maroon4 ;red ;OrangeRed3 ;gray20 ;gray40
        (setq my-line-number-background "gray15")
-       (setq my-match-foreground "lightskyblue1")
        ;; Region.
        ;; (setq my-face-reginon-background "#002b36") ;#2E3436 ;set selection background color
        ;; (set-face-attribute 'region nil :inverse-video t)
-       (set-face-background 'region "#002b36")
+       (set-face-attribute 'region nil
+                           :foreground "black"
+                           :background "yellow2")
 
        ;; Matches other than the current one by Isearch and Query Replace
        ;; <http://www.gnu.org/software/emacs/manual/html_node/emacs/Standard-Faces.html>.
        ;; (set-face-background 'lazy-highlight "#002b36")
        (set-face-attribute 'lazy-highlight nil
-                           :foreground my-match-foreground
-                           :background my-lazy-highlight-background)
+                           :foreground "black"
+                           :background "yellow1") ;OrangeRed3 ;brown4 ;indianRed4 ;SaddleBrown ;maroon4 ;red ;OrangeRed3 ;gray20 ;gray40
 
        (set-face-attribute 'match nil
-                           :foreground my-match-foreground
-                           :background "OrangeRed3")
+                           :foreground "black"
+                           :background "maroon3")
        (set-face-background 'highlight '"#002b36")
+       ;; (set-face-attribute 'isearch-fail nil :foreground "black")
        (set-face-foreground 'success "Green4") ;Green1
        (set-face-foreground 'warning "red") ;DarkOrange
-       ;; (set-face-attribute 'isearch-fail nil :foreground "black")
        ))

@@ -1,8 +1,13 @@
-(global-set-key (kbd "C-c d g l L") 'magit-log-long)
-(global-set-key (kbd "C-c d g l f") 'magit-file-log)
-(global-set-key (kbd "C-c d g l l") 'magit-log)
-(global-set-key (kbd "C-c d g s") 'magit-status)
 (my-after-init
+  (global-set-key (kbd "C-c d v l L") 'magit-log-long)
+  (global-set-key (kbd "C-c d v l f") 'magit-file-log)
+  (global-set-key (kbd "C-c d v l l") 'magit-log)
+  (global-set-key (kbd "C-c d v s") 'magit-status)
+  (my-eval-after-load 'magit
+    (define-key magit-mode-map (kbd "C-c d g m 1") 'magit-show-level-1-all)
+    (define-key magit-mode-map (kbd "C-c d g m 2") 'magit-show-level-2-all)
+    (define-key magit-mode-map (kbd "C-c d g m 3") 'magit-show-level-3-all)
+    (define-key magit-mode-map (kbd "C-c d g m 4") 'magit-show-level-4-all))
   (add-hook
    'magit-mode-hook
    (lambda ()
@@ -49,10 +54,9 @@
               ))
            ((equal frame-background-mode 'dark)
             (when (not window-system)
+              ;; (set-face-background 'magit-item-mark "brightblack")
               (set-face-background 'magit-diff-add "brightblack")
               (set-face-background 'magit-diff-del "brightblack")
               (set-face-background 'magit-item-highlight "brightblack")
               (set-face-foreground 'magit-diff-add "green1")
-              (set-face-foreground 'magit-diff-del "red1")
-              ;; (set-face-background 'magit-item-mark "brightblack")
-              ))))))
+              (set-face-foreground 'magit-diff-del "red1")))))))

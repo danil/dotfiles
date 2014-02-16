@@ -1,8 +1,13 @@
-(global-set-key (kbd "C-c f s") 'ag-regexp)
 (my-after-init
+  (global-set-key (kbd "C-c d f s s") 'ag)
+  (global-set-key (kbd "C-c d f s r") 'ag-regexp)
+  (global-set-key (kbd "C-c d f p s") 'ag-dired)
+  (global-set-key (kbd "C-c d f p r") 'ag-dired-regexp)
+  (global-set-key (kbd "C-c d f a k") 'ag-kill-buffers)
   (my-hooks-with-truncate-lines 'ag-mode-hook)
   (my-eval-after-load 'ag
     ;; (cond ((equal frame-background-mode 'dark)
     ;;        ;; (set-face-background 'ag-match-face "green3")
     ;;        (set-face-foreground 'ag-match-face "lightskyblue1")))
-    (set 'ag-highlight-search 1)))
+    (setq ag-reuse-window 't)
+    (set 'ag-highlight-search t)))
