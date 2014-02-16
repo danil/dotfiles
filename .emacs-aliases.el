@@ -16,8 +16,6 @@
 (put 'upcase-region 'disabled nil)
 
 ;;; My custom variables.
-(setq frame-background-mode 'dark) ;FIXME: remove me
-(load-file (concat user-emacs-directory "my-recipes/my-color-theme.rcp")) ;FIXME: remove me
 (setq custom-file "~/.emacs.d/my-custom-variables.el")
 (load custom-file)
 
@@ -49,8 +47,80 @@
   (dolist (hook hooks) (add-hook hook (lambda () (setq truncate-lines t)))))
 
 ;;; My recipes.
-(mapc 'load (directory-files
-             (concat user-emacs-directory "my-recipes") t "^[^#].*rcp$"))
+(dolist (recipe
+         '(
+          "ag"
+          "auto-complete"
+          "bash-completion"
+          "c-source-code-functions"
+          "coffee-mode"
+          "column-marker"
+          "conf-mode"
+          "desktop"
+          "diff-mode"
+          "dired"
+          "ediff"
+          "erise"
+          "etags-select"
+          "ethan-wspace"
+          "expand-region"
+          "files"
+          "fiplr"
+          "flycheck"
+          "git-commit-mode"
+          "git-gutter"
+          "gitignore-mode"
+          "haml-mode"
+          "help"
+          "highlight-current-line"
+          "highlight-parentheses"
+          "highlight-symbol"
+          "hlinum"
+          "ibuffer"
+          "ido-yes-or-no"
+          "interprogram"
+          "isearch"
+          "js-mode"
+          "less"
+          "linum"
+          "lisp-mode"
+          "lua"
+          "lua-mode"
+          "magit"
+          "magit-blame"
+          "markdown-mode"
+          "mmm-mode"
+          "my-color-theme"
+          "my-project"
+          "my-tags"
+          "nginx-mode"
+          "occur-mode"
+          "org-mode"
+          "pomohist"
+          "rainbow-mode"
+          "replace"
+          "rhtml-mode"
+          "rinari"
+          "rspec-compilation-mode"
+          "rspec-mode"
+          "ruby-end"
+          "ruby-mode"
+          "ruby-pry"
+          "ruby-refactor"
+          "ruby-tools"
+          "rust-mode"
+          "scss-mode"
+          "sh-script"
+          "sieve-mode"
+          "simp"
+          "simple"
+          "smex"
+          "sort"
+          "window"
+          "window-numbering"
+          "yaml-mode"
+          ))
+  (load-file (concat user-emacs-directory "my-recipes/" recipe ".rcp")))
 
 ;;; el-get <http://github.com/dimitri/el-get>.
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
