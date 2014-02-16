@@ -3,6 +3,7 @@
   (global-set-key (kbd "C-c d v l f") 'magit-file-log)
   (global-set-key (kbd "C-c d v l l") 'magit-log)
   (global-set-key (kbd "C-c d v s") 'magit-status)
+  (global-set-key (kbd "C-c d v o") 'magit-show)
   (my-eval-after-load 'magit
     (define-key magit-mode-map (kbd "C-c d g m 1") 'magit-show-level-1-all)
     (define-key magit-mode-map (kbd "C-c d g m 2") 'magit-show-level-2-all)

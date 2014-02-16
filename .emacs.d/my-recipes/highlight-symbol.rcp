@@ -6,6 +6,7 @@
                       'conf-xdefaults-mode-hook
                       'css-mode-hook
                       'emacs-lisp-mode-hook
+                      'git-commit-mode-hook
                       'haml-mode-hook
                       'haskell-mode-hook
                       'html-mode-hook

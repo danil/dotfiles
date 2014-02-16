@@ -9,6 +9,7 @@
                      conf-space-mode
                      conf-unix-mode
                      conf-xdefaults-mode
+                     git-commit-mode
                      haml-mode
                      html-mode
                      inf-ruby-mode
