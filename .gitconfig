@@ -9,9 +9,9 @@
 	name = Danil Kutkevich
 	email = danil@kutkevich.org
 
-[color]
-    diff = always
-    ui = true
+# [color]
+#     diff = always
+#     ui = true
 # [diff]
 # 	external = meld
 

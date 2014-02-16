@@ -23,9 +23,11 @@
                 php-mode-hook
                 python-mode-hook
                 ruby-mode-hook
+                rust-mode-hook
                 sass-mode-hook
                 sgml-mode-hook
                 sh-mode-hook
+                sieve-mode-hook
                 sql-mode-hook
                 xml-mode-hook
                 yaml-mode-hook

@@ -1,15 +1,14 @@
 (:name magit
-       :website "http://magit.github.io/magit"
+       :website "https://github.com/magit/magit#readme"
        :description "It's Magit! An Emacs mode for Git."
-       :type elpa
-       :repo ("marmalade" . "http://marmalade-repo.org/packages/")
        :depends (cl-lib git-modes)
-       ;; :type github
-       ;; :pkgname "magit/magit"
-       ;; :info "."
-       ;; ;; let el-get care about autoloads so that it works with all OSes
-       ;; :build (if (version<= "24.3" emacs-version)
-       ;;            `(("make" ,(format "EMACS=%s" el-get-emacs) "all"))
-       ;;          `(("make" ,(format "EMACS=%s" el-get-emacs) "docs")))
-       ;; :build/berkeley-unix (("touch" "`find . -name Makefile`") ("gmake"))
-       )
+       ;; :type elpa
+       ;; :repo ("melpa" . "http://melpa.milkbox.net/packages/")
+       :type github
+       :pkgname "magit/magit"
+       :info "."
+       ;; let el-get care about autoloads so that it works with all OSes
+       :build (if (version<= "24.3" emacs-version)
+                  `(("make" ,(format "EMACS=%s" el-get-emacs) "all"))
+                `(("make" ,(format "EMACS=%s" el-get-emacs) "docs")))
+       :build/berkeley-unix (("touch" "`find . -name Makefile`") ("gmake")))

@@ -18,10 +18,12 @@
                      nxml-mode
                      org-mode
                      rhtml-mode
+                     rust-mode
                      sass-mode
                      scss-mode
                      sgml-mode
                      shell-mode
+                     sieve-mode
                      sql-interactive-mode
                      sql-mode
                      yaml-mode

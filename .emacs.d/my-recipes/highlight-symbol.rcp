@@ -22,11 +22,13 @@
                       'php-mode-hook
                       'rhtml-mode-hook
                       'ruby-mode-hook
+                      'rust-mode-hook
                       'sass-mode-hook
                       'scss-mode-hook
                       'sgml-mode-hook
                       'sh-mode-hook
                       'shell-mode-hook
+                      'sieve-mode-hook
                       'sql-mode-hook
                       'xml-mode-hook
                       'yaml-mode-hook)

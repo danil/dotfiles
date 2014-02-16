@@ -47,89 +47,90 @@
   (dolist (hook hooks) (add-hook hook (lambda () (setq truncate-lines t)))))
 
 ;;; My recipes.
-;; (load-file (concat user-emacs-directory "my-recipes/my-color-theme.rcp"))
 (mapc 'load (directory-files
              (concat user-emacs-directory "my-recipes") t "^[^#].*rcp$"))
 
 ;;; el-get <http://github.com/dimitri/el-get>.
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-;; (require 'el-get)
-(unless (require 'el-get nil t)
-  (url-retrieve
-   "https://raw.github.com/dimitri/el-get/master/el-get-install.el"
-   (lambda (s)
-     (let ;(el-get-master-branch)
-       (goto-char (point-max))
-       (eval-print-last-sexp)))))
-;; (setq el-get-sources
-;;       '(
-;;         ))
-(add-to-list 'el-get-recipe-path "~/.emacs.d/my-el-get/recipes")
-(setq my-packages
-      (append
-       '(
-         ;; auto-complete-ruby ;buggy(
-         ;; ido-better-flex
-         ;; ido-ubiquitous
-         ;; smartparens
-         ag
-         apache-mode
-         auto-complete-chunk
-         auto-complete-css
-         auto-complete-emacs-lisp
-         auto-complete-etags
-         bash-completion
-         coffee-mode
-         column-marker
-         crontab-mode
-         csv-mode
-         dart-mode
-         ebuild-mode
-         erise
-         etags-select
-         ethan-wspace
-         expand-region
-         findr
-         git-gutter
-         go-mode
-         haml-mode
-         haskell-mode
-         highlight-parentheses
-         highlight-symbol
-         hl-line+
-         ido-yes-or-no
-         inf-ruby
-         js2-mode ;coffee mode defaults to js2-mode, which is not present in Emacs by default
-         less ;do not remove, used for generic scroll!
-         lua-mode
-         magit
-         markdown-mode
-         nginx-mode
-         org-mode
-         paredit
-         php-mode
-         rainbow-mode
-         rhtml-mode
-         rinari
-         rspec-mode
-         ruby-end
-         ruby-hash-syntax
-         ruby-pry
-         ruby-refactor
-         ruby-tools
-         rvm
-         sass-mode
-         scss-mode
-         simp
-         slim-mode
-         slime
-         smex
-         undo-tree
-         window-numbering
-         yaml-mode
-         yasnippet
-         )
-       (mapcar 'el-get-source-name el-get-sources)))
+(unless (require 'el-get nil 'noerror)
+  (with-current-buffer
+      (url-retrieve-synchronously
+       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
+    (goto-char (point-max))
+    (eval-print-last-sexp)))
+(add-to-list 'el-get-recipe-path
+             (concat user-emacs-directory "my-el-get/recipes"))
+;; (setq el-get-user-package-directory
+;;       (concat user-emacs-directory "my-el-get/init-files"))
+(setq my-packages (append '(
+                            ;; auto-complete-ruby ;buggy(
+                            ;; geiser
+                            ;; ido-better-flex
+                            ;; ido-ubiquitous
+                            ;; quack
+                            ;; scheme-complete
+                            ;; slime
+                            ;; smartparens
+                            ag
+                            apache-mode
+                            auto-complete-chunk
+                            auto-complete-css
+                            auto-complete-emacs-lisp
+                            auto-complete-etags
+                            bash-completion
+                            coffee-mode
+                            column-marker
+                            crontab-mode
+                            csv-mode
+                            dart-mode
+                            ebuild-mode
+                            erise
+                            etags-select
+                            ethan-wspace
+                            expand-region
+                            findr
+                            git-gutter
+                            git-modes
+                            go-mode
+                            haml-mode
+                            haskell-mode
+                            highlight-parentheses
+                            highlight-symbol
+                            hl-line+
+                            ido-yes-or-no
+                            inf-ruby
+                            js2-mode ;coffee mode defaults to js2-mode, which is not present in Emacs by default
+                            less ;do not remove, used for generic scroll!
+                            lua-mode
+                            magit
+                            markdown-mode
+                            nginx-mode
+                            org-mode
+                            paredit
+                            php-mode
+                            rainbow-mode
+                            rhtml-mode
+                            rinari
+                            rspec-mode
+                            ruby-end
+                            ruby-hash-syntax
+                            ruby-pry
+                            ruby-refactor
+                            ruby-tools
+                            rust-mode
+                            rvm
+                            sass-mode
+                            scss-mode
+                            simp
+                            slim-mode
+                            smex
+                            undo-tree
+                            window-numbering
+                            yaml-mode
+                            yasnippet
+                            )
+                          (mapcar 'el-get-source-name el-get-sources)))
+(el-get-cleanup my-packages) ;remove all packages absent from `my-packages'
 (el-get 'sync my-packages)
 
 (global-undo-tree-mode) ;FIXME: eval-after-load 'undo-tree-mode not working
@@ -282,16 +283,6 @@
 ;;               (dired-replace-in-string "/" "!" file-name))
 ;;     (concat file-name "~")))
 
-;;; Ibuffer <http://emacswiki.org/IbufferMode>,
-;;; <http://emacs-fu.blogspot.ru/2010/02/dealing-with-many-buffers-ibuffer.html>,
-;;; <http://martinowen.net/blog/2010/02/tips-for-emacs-ibuffer.html>.
-(global-set-key (kbd "C-x C-b") 'ibuffer)
-(autoload 'ibuffer "ibuffer" "List buffers." t)
-;(setq ibuffer-use-other-window 1)
-;; <http://stackoverflow.com/questions/7598433/how-to-remove-a-key-from-a-minor-mode-keymap-in-emacs#7598754>.
-(define-key ibuffer-mode-map "\M-n" nil) ;unset ibuffer-forward-filter-group
-(define-key ibuffer-mode-map "\M-p" nil) ;unset ibuffer-backward-filter-group
-
 ;;; Interactively do things.
 ;; (ido-mode t)
 (ido-mode 'both) ;for buffers and files
@@ -376,67 +367,6 @@
       (cons '("/\\.bash_aliases\\'" . shell-script-mode) auto-mode-alist))
 (setq auto-mode-alist
       (cons '("/\\.ackrc\\'" . shell-script-mode) auto-mode-alist))
-
-;;; Configs.
-(setq auto-mode-alist
-      (cons '("/\\.gitconfig\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/\\.inputrc\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/\\.screenrc\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/\\.moc/keymap\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/\\.Xmodmap\\'" . conf-xdefaults-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/\\.rvmrc\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/\\.curlrc\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/conkyrc_calendar\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/conkyrc_top\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/portage/package\\.license\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/share/applications/defaults\\.list\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/etc/fstab\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/hosts\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("\\.pkla\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("\\.cnf\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("\\.theme\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/.gtkrc-2.0\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/\\.tigrc\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/locale.gen\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/sudoers\\'" . conf-mode) auto-mode-alist))
-
-;;; Cucumber features.
-(setq auto-mode-alist
-      (cons '("\\.features\\'" . conf-mode) auto-mode-alist))
-
-;;; Gentoo confs.
-(add-to-list 'auto-mode-alist '("/etc/conf.d/" . conf-mode))
-(add-to-list 'auto-mode-alist '("/etc/env.d/" . conf-mode))
-(setq auto-mode-alist
-      (cons '("/etc/portage/package\\.mask\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/etc/portage/package\\.keywords\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/etc/portage/package\\.use\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/etc/portage/package\\.unmask\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/etc/portage/profile/use\\.mask\\'" . conf-mode) auto-mode-alist))
-(add-to-list 'auto-mode-alist '("var/lib/portage/world\\'" . conf-mode))
 
 ;;; JavaScript mode.
 ;;; HTML Components (HTCs or .htc)

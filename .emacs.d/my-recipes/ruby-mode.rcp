@@ -1,4 +1,3 @@
-;;; ruby-mode.
 (my-add-auto-mode-to-patterns 'ruby-mode
                               "/Capfile\\'"
                               "/Gemfile\\'"
