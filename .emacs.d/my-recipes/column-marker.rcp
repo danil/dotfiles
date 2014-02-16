@@ -1,3 +1,4 @@
+(my-add-to-packages 'column-marker)
 (dolist (hook '(
                 ;; mail-mode-hook
                 ;; whitespace-mode-hook
@@ -7,6 +8,7 @@
                 conf-mode-hook
                 css-mode-hook
                 emacs-lisp-mode-hook
+                git-commit-mode-hook
                 haml-mode-hook
                 haskell-mode-hook
                 html-mode-hook
@@ -21,6 +23,7 @@
                 perl-mode-hook
                 php-mode-hook
                 ruby-mode-hook
+                rust-mode-hook
                 sass-mode-hook
                 sgml-mode-hook
                 sh-mode-hook

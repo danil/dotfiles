@@ -12,11 +12,11 @@
                                 "\\.mrb\\'"
                                 "\\.rake\\'"
                                 "\\.thor\\'")
+  (my-hooks-with-truncate-lines 'ruby-mode-hook)
   ;; (add-hook 'ruby-mode-hook 'ror-doc-lookup)
   (add-hook 'ruby-mode-hook
             (lambda () (interactive)
               (remove-hook 'before-save-hook 'ruby-mode-set-encoding)))
-  (my-hooks-with-truncate-lines 'ruby-mode-hook)
   ;; Ruby indentation fix
   ;; <https://github.com/mlapshin/dotfiles/blob/2531616385b9fd3bef4b6418a5f024fd2f010461/.emacs.d/custom/ruby.el#L49>.
   (my-eval-after-load 'ruby-mode
@@ -126,9 +126,7 @@ If the result is do-end block, it will always be multiline."
             (goto-char end-marker)
             (just-one-space -1))
           (goto-char beg-marker)
-          t)))
-
-    ))
+          t)))))
 
 ;;TODO: To refactor below.
 

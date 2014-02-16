@@ -1,3 +1,4 @@
+(my-add-to-packages 'lua-mode)
 (add-to-list 'auto-mode-alist '("\\.ws\\'" . lua-mode))
 (my-eval-after-load 'lua-mode
                     ;; <http://lua-users.org/wiki/LuaStyleGuide>,

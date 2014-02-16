@@ -1,2 +1,4 @@
-(my-after-init (autoload 'ido-yes-or-no-mode "ido-yes-or-no" nil t))
-(my-eval-after-load 'ido-yes-or-no (ido-yes-or-no-mode 1))
+(my-add-to-packages 'ido-yes-or-no)
+(my-after-init
+  (autoload 'ido-yes-or-no-mode "ido-yes-or-no" nil t)
+  (ido-yes-or-no-mode t))

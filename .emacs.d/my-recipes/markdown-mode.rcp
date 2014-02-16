@@ -1,3 +1,4 @@
+(my-add-to-packages 'markdown-mode)
 (my-add-auto-mode-to-patterns 'markdown-mode
                               "/README\\'"
                               "/mutt[-a-zA-Z0-9]+\\'"

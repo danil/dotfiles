@@ -1,3 +1,4 @@
+(my-add-to-packages 'window-numbering)
 (autoload 'window-numbering-mode "window-numbering"
   "Numbered window shortcuts" t)
 (my-after-init

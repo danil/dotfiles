@@ -1,3 +1,4 @@
+(my-add-to-packages 'haml-mode)
 (my-after-init
   (my-hooks-with-truncate-lines 'haml-mode-hook)
   (my-eval-after-load 'haml-mode

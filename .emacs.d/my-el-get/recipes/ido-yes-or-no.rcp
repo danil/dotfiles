@@ -1,3 +1,5 @@
 (:name ido-yes-or-no
        :description "Use Ido to answer yes-or-no questions"
-       :type elpa)
+       :website "https://github.com/DarwinAwardWinner/ido-yes-or-no"
+       :type github
+       :pkgname "DarwinAwardWinner/ido-yes-or-no")

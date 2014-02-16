@@ -1,3 +1,4 @@
+(my-add-to-packages 'ruby-tools)
 (my-add-mode-to-hooks 'ruby-tools-mode
                       'awk-mode-hook
                       'coffee-mode-hook

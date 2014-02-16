@@ -1,3 +1,2 @@
-;; (my-eval-after-load 'rinari
-;;                     (autoload 'rinari-web-server "rinari"
-;;                       "Run Rails script/server." t))
+(my-add-to-packages 'rinari)
+(autoload 'rinari-web-server "rinari" "Run Rails script/server." t)

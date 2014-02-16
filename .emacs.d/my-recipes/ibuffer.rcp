@@ -1,10 +1,9 @@
 ;;; Ibuffer <http://emacswiki.org/IbufferMode>,
 ;;; <http://emacs-fu.blogspot.ru/2010/02/dealing-with-many-buffers-ibuffer.html>,
 ;;; <http://martinowen.net/blog/2010/02/tips-for-emacs-ibuffer.html>.
-
 (my-after-init
-  (global-set-key (kbd "C-x C-b") 'ibuffer)
   (autoload 'ibuffer "ibuffer" "List buffers." t)
+  (global-set-key (kbd "C-x C-b") 'ibuffer)
   (my-eval-after-load 'ibuffer
     ;; (setq ibuffer-use-other-window 1)
     ;; <http://stackoverflow.com/questions/7598433/how-to-remove-a-key-from-a-minor-mode-keymap-in-emacs#7598754>.

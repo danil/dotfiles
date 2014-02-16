@@ -1,0 +1,2 @@
+(my-add-to-packages 'undo-tree)
+(my-after-init (global-undo-tree-mode))
