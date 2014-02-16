@@ -1,14 +1,13 @@
 Dotfiles
 ========
 
-This is Danil Kutkevich HOME <http://git.kutkevich.org/dotfiles.git>,
-including shell environment, emacs configuration, and other misc
-dotfiles and scripts.
+This is my dotfiles, including shell environment, emacs configuration,
+and other misc scripts.
 
 Copying
 -------
 
-Copyright (C) 2010 Danil Kutkevich <danil@kutkevich.org>
+Copyright (C) 2014 Danil Kutkevich <danil@kutkevich.org>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
