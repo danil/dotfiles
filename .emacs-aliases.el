@@ -77,7 +77,6 @@
           "highlight-symbol"
           "ibuffer"
           "ido-yes-or-no"
-          "inf-ruby"
           "interprogram"
           "isearch"
           "js-mode"
