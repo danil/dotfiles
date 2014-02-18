@@ -62,6 +62,7 @@
           "ethan-wspace"
           "expand-region"
           "files"
+          "fill"
           "findr"
           "fiplr"
           "git-commit-mode"
