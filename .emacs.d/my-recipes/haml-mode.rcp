@@ -3,4 +3,4 @@
   (my-hooks-with-truncate-lines 'haml-mode-hook)
   (my-eval-after-load 'haml-mode
     (my-eval-after-load 'ruby-mode
-      (define-key haml-mode-map (kbd "C-c d r h") 'ruby-toggle-hash-syntax))))
+      (define-key haml-mode-map (kbd "C-c d m r h") 'ruby-toggle-hash-syntax))))
