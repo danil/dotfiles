@@ -9,7 +9,6 @@
                                 "\\.atex\\'"
                                 "\\.gemspec\\'"
                                 "\\.irbrc\\'"
-                                "\\.mrb\\'"
                                 "\\.rake\\'"
                                 "\\.thor\\'")
   (my-hooks-with-truncate-lines 'ruby-mode-hook)

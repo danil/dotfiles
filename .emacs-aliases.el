@@ -45,6 +45,7 @@
           "auto-complete-emacs-lisp"
           "auto-complete-etags"
           "bash-completion"
+          "calendar"
           "coffee-mode"
           "column-marker"
           "conf-mode"
