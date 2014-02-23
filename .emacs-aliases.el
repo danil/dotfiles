@@ -206,10 +206,6 @@
 ;; then enter the text in that file's own buffer.
 ")
 
-;;; Tool bar <http://emacswiki.org/ToolBar#toc1>,
-;;; <http://superuser.com/questions/127420/how-can-i-hide-the-tool-bar-in-emacs-persistently#127422>.
-(tool-bar-mode -1)
-
 ;;; Environment variables.
 (setenv "DISABLE_PRY_RAILS" "1")
 (setenv "GIT_PAGER" "")
@@ -234,8 +230,6 @@
 (setq comint-input-ring-size 10000)
 ;; (add-hook 'sql-interactive-mode-hook
 ;;           (function (lambda () (setq comint-input-ring-size 10000))))
-
-(global-rinari-mode)
 
 ;;; Column number mode
 ;;; <http://gnu.org/software/emacs/manual/html_node/emacs/Optional-Mode-Line.html>.
