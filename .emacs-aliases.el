@@ -235,8 +235,6 @@
 ;; (add-hook 'sql-interactive-mode-hook
 ;;           (function (lambda () (setq comint-input-ring-size 10000))))
 
-(global-rinari-mode)
-
 ;;; Column number mode
 ;;; <http://gnu.org/software/emacs/manual/html_node/emacs/Optional-Mode-Line.html>.
 ;(setq line-number-mode t)
