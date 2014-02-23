@@ -1,6 +1,6 @@
 (my-after-init
-  (define-key ruby-mode-map (kbd "C-c d r b") 'my-ruby-toggle-block)
-  (define-key ruby-mode-map (kbd "C-c d r h") 'ruby-toggle-hash-syntax)
+  (define-key ruby-mode-map (kbd "C-c d m r b") 'my-ruby-toggle-block)
+  (define-key ruby-mode-map (kbd "C-c d m r h") 'ruby-toggle-hash-syntax)
   (my-add-auto-mode-to-patterns 'ruby-mode
                                 "/Capfile\\'"
                                 "/Gemfile\\'"
@@ -9,7 +9,6 @@
                                 "\\.atex\\'"
                                 "\\.gemspec\\'"
                                 "\\.irbrc\\'"
-                                "\\.mrb\\'"
                                 "\\.rake\\'"
                                 "\\.thor\\'")
   (my-hooks-with-truncate-lines 'ruby-mode-hook)

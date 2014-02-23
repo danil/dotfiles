@@ -4,12 +4,17 @@
   (global-set-key (kbd "C-c d v l f") 'magit-file-log)
   (global-set-key (kbd "C-c d v l l") 'magit-log)
   (global-set-key (kbd "C-c d v s") 'magit-status)
-  (global-set-key (kbd "C-c d v o") 'magit-show)
+  (global-set-key (kbd "C-c d v c 1") 'magit-show)
+  (global-set-key (kbd "C-c d v c 2") 'magit-show-commit)
   (my-eval-after-load 'magit
     (define-key magit-mode-map (kbd "C-c d g m 1") 'magit-show-level-1-all)
     (define-key magit-mode-map (kbd "C-c d g m 2") 'magit-show-level-2-all)
     (define-key magit-mode-map (kbd "C-c d g m 3") 'magit-show-level-3-all)
-    (define-key magit-mode-map (kbd "C-c d g m 4") 'magit-show-level-4-all))
+    (define-key magit-mode-map (kbd "C-c d g m 4") 'magit-show-level-4-all)
+    ;; (defun my-magit-show (&optional arg)
+    ;;   (interactive "P")
+    ;;   (if arg (magit-show-commit) (magit-show)))
+    )
   (add-hook
    'magit-mode-hook
    (lambda ()
