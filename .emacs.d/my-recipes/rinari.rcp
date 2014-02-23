@@ -1,0 +1,2 @@
+(my-add-to-packages 'rinari)
+(autoload 'rinari-web-server "rinari" "Run Rails script/server." t)

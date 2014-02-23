@@ -3,9 +3,9 @@
 URxvt*scrollBar: true
 URxvt.scrollstyle: plain
 URxvt.scrollBar_right: true
-! ! Scroll for black text on a white background.
+! ! Scroll for black text on a white background. White (light) theme.
 ! URxvt.scrollColor: gray80
-! Scroll for White text on black background.
+! Scroll for White text on black background. Black (dark) theme.
 URxvt.scrollColor: gray40
 
 ! URxvtperl.
@@ -50,5 +50,6 @@ URxvt*urlLauncher: x-www-browser
 ! URxvt.keysym.C-minus: command:\033]710;-*-dina-medium-r-normal--15-*-*-*-*-*-*-*\007
 ! URxvt.keysym.C-equal: command:\033]710;-*-dina-medium-r-normal--16-*-*-*-*-*-*-*\007
 
+URxvt.iso14755: False
 ! <http://unix.stackexchange.com/questions/50205/map-control-shift-tab-in-rxvt-unicode#50246>.
 URxvt.iso14755_52: False

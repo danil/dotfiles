@@ -1,0 +1,5 @@
+(:name pomohist
+       :description "Emacs point movements history stack"
+       :website "https://github.com/danil/pomohist"
+       :type github
+       :pkgname "danil/pomohist")

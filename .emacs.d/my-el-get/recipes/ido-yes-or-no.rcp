@@ -1,6 +1,5 @@
 (:name ido-yes-or-no
-       :type elpa
        :description "Use Ido to answer yes-or-no questions"
-       :post-init (progn
-                    (autoload 'ido-yes-or-no-mode "ido-yes-or-no" nil t))
-       :after (progn (ido-yes-or-no-mode 1)))
+       :website "https://github.com/DarwinAwardWinner/ido-yes-or-no"
+       :type github
+       :pkgname "DarwinAwardWinner/ido-yes-or-no")

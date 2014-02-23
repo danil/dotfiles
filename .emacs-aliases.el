@@ -1,107 +1,139 @@
 ;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 ;(add-to-list 'load-path "~/share/emacs/site-lisp")
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(scroll-bar-width 7) ;scroll bar <http://emacswiki.org/emacs/ScrollBar>.
- '(safe-local-variable-values (quote ((encoding . utf-8)))))
-
-;;; el-get <http://github.com/dimitri/el-get>.
-(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-;; (require 'el-get)
-(unless (require 'el-get nil t)
-  (url-retrieve
-   "https://raw.github.com/dimitri/el-get/master/el-get-install.el"
-   (lambda (s)
-     (let ;(el-get-master-branch)
-       (goto-char (point-max))
-       (eval-print-last-sexp)))))
-;; (setq el-get-sources
-;;       '(
-;;         ))
-(add-to-list 'el-get-recipe-path "~/.emacs.d/my-el-get/recipes")
-(setq my-packages
-      (append
-       '(
-         ;; auto-complete-ruby ;buggy(
-         ;; bongo
-         ;; color-theme-ir-black
-         ;; color-theme-vivid-chalk
-         ;; command-t
-         ;; fiplr
-         ;; helm
-         ;; ido-better-flex
-         ;; ido-ubiquitous
-         ;; jump
-         ;; package
-         ;; smartparens
-         ;; vline
-         ag
-         apache-mode
-         auto-complete-chunk
-         auto-complete-css
-         auto-complete-emacs-lisp
-         auto-complete-etags
-         bash-completion
-         coffee-mode
-         column-marker
-         crontab-mode
-         csv-mode
-         deft
-         ebuild-mode
-         egg
-         etags-select
-         ethan-wspace
-         evil
-         expand-region
-         findr
-         flycheck
-         git-gutter
-         go-mode
-         haml-mode
-         haskell-mode
-         highlight-parentheses
-         highlight-symbol ;try replace with idle highlight mode, due to curren symbol highlighting face
-         hl-line+
-         idle-highlight-mode
-         ido-yes-or-no
-         inf-ruby
-         less ;do not remove, used for generic scroll!
-         lua-mode
-         magit
-         markdown-mode
-         nginx-mode
-         org-mode
-         paredit
-         php-mode
-         rainbow-mode
-         rhtml-mode
-         rinari
-         rspec-mode
-         ruby-end
-         ruby-hash-syntax
-         ruby-pry
-         ruby-refactor
-         ruby-tools
-         rvm
-         sass-mode
-         scss-mode
-         simp
-         slim-mode
-         smex
-         window-numbering
-         yaml-mode
-         yasnippet
-         )
-       (mapcar 'el-get-source-name el-get-sources)))
-(el-get 'sync my-packages)
+;;; Truncation of Lines (toggle-truncate-lines)
+;;; <http://emacswiki.org/emacs/TruncateLines>.
+(set-default 'truncate-lines nil) ;wrap long lines
 
 (setq system-time-locale "C")
 (setq calendar-week-start-day 1)
 (global-font-lock-mode 1)
+
+;;; Put <http://www.gnu.org/software/emacs/manual/html_node/elisp/Symbol-Plists.html>.
+;; Horizontal Scrolling
+;; <http://gnu.org/software/emacs/manual/html_node/emacs/Horizontal-Scrolling.html#Horizontal-Scrolling>.
+(put 'scroll-left 'disabled nil)
+(put 'upcase-region 'disabled nil)
+
+;;; My custom variables.
+(setq custom-file "~/.emacs.d/my-custom-variables.el")
+(load custom-file)
+
+;;; My packages (el-get <http://github.com/dimitri/el-get>).
+(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+(unless (require 'el-get nil 'noerror)
+  (with-current-buffer
+      (url-retrieve-synchronously
+       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
+    (goto-char (point-max))
+    (eval-print-last-sexp)))
+(add-to-list 'el-get-recipe-path
+             (concat user-emacs-directory "my-el-get/recipes"))
+;; (setq el-get-user-package-directory
+;;       (concat user-emacs-directory "my-el-get/init-files"))
+(setq my-packages (append (mapcar 'el-get-source-name el-get-sources)))
+
+;;; My recipes.
+(dolist (recipe
+         '(
+          "my-recipe-helpers"
+          "ag"
+          "apache-mode"
+          "auto-complete"
+          "auto-complete-chunk"
+          "auto-complete-css"
+          "auto-complete-emacs-lisp"
+          "auto-complete-etags"
+          "bash-completion"
+          "calendar"
+          "coffee-mode"
+          "column-marker"
+          "conf-mode"
+          "crontab-mode"
+          "csv-mode"
+          "dart-mode"
+          "desktop"
+          "diff-mode"
+          "dired"
+          "ebuild-mode"
+          "ediff"
+          "emacs-lisp-mode"
+          "erise"
+          "etags-select"
+          "ethan-wspace"
+          "expand-region"
+          "files"
+          "fill"
+          "findr"
+          "fiplr"
+          "git-commit-mode"
+          "git-gutter"
+          "git-modes"
+          "gitignore-mode"
+          "go-mode"
+          "haml-mode"
+          "haskell-mode"
+          "help"
+          "highlight-current-line"
+          "highlight-parentheses"
+          "highlight-symbol"
+          "ibuffer"
+          "ido-yes-or-no"
+          "interprogram"
+          "isearch"
+          "js-mode"
+          "js2-mode" ;coffee mode defaults to js2-mode, which is not present in Emacs by default
+          "less" ;do not remove, used for generic scroll!
+          "linum"
+          "lisp-mode"
+          "lua"
+          "lua-mode"
+          "magit"
+          "magit-blame"
+          "markdown-mode"
+          "mmm-mode"
+          "my-color-theme"
+          "my-project"
+          "my-tags"
+          "nginx-mode"
+          "occur-mode"
+          "org-mode"
+          "paredit"
+          "php-mode"
+          "pomohist"
+          "rainbow-mode"
+          "replace"
+          "rhtml-mode"
+          "rinari"
+          "rspec-compilation-mode"
+          "rspec-mode"
+          "ruby-end"
+          "ruby-hash-syntax"
+          "ruby-mode"
+          "ruby-pry"
+          "ruby-refactor"
+          "ruby-tools"
+          "rust-mode"
+          "rvm"
+          "sass-mode"
+          "scss-mode"
+          "sh-script"
+          "sieve-mode"
+          "simp"
+          "simple"
+          "slim-mode"
+          "smex"
+          "sort"
+          "undo-tree"
+          "window"
+          "window-numbering"
+          "yaml-mode"
+          ))
+  (load-file (concat user-emacs-directory "my-recipes/" recipe ".rcp")))
+
+;;; Install/remove my packages (see above).
+(el-get-cleanup my-packages) ;remove all packages absent from `my-packages'
+(el-get 'sync my-packages)
 
 ;;; Setting key with repeat
 ;;; <http://stackoverflow.com/questions/7560094/two-key-shortcut-in-emacs-without-repressing-the-first-key#7560416>.
@@ -122,8 +154,6 @@
            (setq repeat-key nil)
            (push last-input-event unread-command-events))))))
 
-(global-set-key (kbd "C-c d o") 'sort-lines)
-
 ;;; BackspaceKey <http://emacswiki.org/BackspaceKey>.
 ;; (global-set-key [(control h)] 'delete-backward-char)
 (defun my-backspace-fix ()
@@ -134,45 +164,7 @@
 
 ;;; Transient Mark mode <http://emacswiki.org/TransientMarkMode>.
 (transient-mark-mode 1)
-;; (set-face-background 'region nil)
 
-;;; Region.
-;; (setq my-face-reginon-background "#002b36") ;#2E3436 ;set selection background color
-;; (set-face-attribute 'region nil :inverse-video t)
-(set-face-background 'region "#002b36")
-
-;;; Matches other than the current one by Isearch and Query Replace
-;;; <http://www.gnu.org/software/emacs/manual/html_node/emacs/Standard-Faces.html>.
-;; (set-face-background 'lazy-highlight "#002b36")
-(set-face-attribute 'lazy-highlight nil :foreground "lightskyblue1" :background "maroon4")
-
-(set-face-attribute 'isearch nil :foreground "lightskyblue1" :background "red")
-(set-face-attribute 'isearch-fail nil :foreground "black")
-(set-face-attribute 'match nil :foreground "lightskyblue1" :background "OrangeRed3")
-(set-face-background 'highlight '"#002b36")
-
-;; (set-background-color "#0f0f0f")
-(set-cursor-color "red") ;#aa0000
-
-(eval-after-load 'diff-mode
-  '(progn
-     ;; Colors available to Emacs <http://raebear.net/comp/emacscolors.html>.
-     (set-face-foreground 'diff-added   "brightgreen")
-     (set-face-foreground 'diff-removed "brightred")
-     (set-face-foreground 'diff-changed "brightblue")
-     (when (not window-system)
-       (set-face-background 'diff-added       "black3")
-       (set-face-background 'diff-removed     "black3")
-       (set-face-background 'diff-changed     "black3")
-       (set-face-background 'diff-file-header "black")
-       (set-face-background 'diff-hunk-header "black")
-       )))
-
-;;; Truncation of Lines (toggle-truncate-lines) <http://emacswiki.org/emacs/TruncateLines>.
-(set-default 'truncate-lines t)
-;;; Horizontal Scrolling
-;;; <http://gnu.org/software/emacs/manual/html_node/emacs/Horizontal-Scrolling.html#Horizontal-Scrolling>.
-(put 'scroll-left 'disabled nil)
 ;(set-keyboard-coding-system 'mule-utf-8)
 ;(set-default-coding-systems 'utf-8)
 ;(set-terminal-coding-system 'utf-8)
@@ -186,23 +178,13 @@
 (show-paren-mode 1)
 ;; (eval-after-load 'show-paren
 ;;   '(progn
-;;      (set-face-background 'show-paren-match "#002b36")))
+;;      (cond ((equal frame-background-mode 'dark)
+;;             (set-face-background 'show-paren-match "#002b36")
+;;             ))
+;;      ))
 
 ;;; Session Management <http://emacswiki.org/SessionManagement>.
 (savehist-mode 1)
-;;; Desktop <http://emacswiki.org/DeskTop>.
-;;(desktop-save-mode 1)
-;; <http://stackoverflow.com/questions/4477376/some-emacs-desktop-save-questions-how-to-change-it-to-save-in-emacs-d-emacs#answer-4485083>.
-(defun save-my-desktop ()
-  "Save the desktop"
-  (interactive)
-  (desktop-save-in-desktop-dir))
-(defun load-my-desktop ()
-  "Load the desktop and enable autosaving"
-  (interactive)
-  (let ((desktop-load-locked-desktop "ask"))
-    (desktop-read)
-    (desktop-save-mode 1)))
 
 ;;; Recentf (open recent files)
 ;;; <http://stackoverflow.com/questions/3527150/open-recent-in-emacs#answer-3527488>,
@@ -237,12 +219,15 @@
 ;; ;;; <http://emacswiki.org/ScrollBar>.
 ;; (scroll-bar-mode -1)
 ;; <http://stackoverflow.com/questions/3155451/emacs-scrollbar-customize#3159618>.
-(set-face-background 'scroll-bar "white")
-(set-face-foreground 'scroll-bar "gray")
+(cond ((equal frame-background-mode 'dark)
+       (set-face-background 'scroll-bar "white")
+       (set-face-foreground 'scroll-bar "gray")
+       ))
 
 ;;; AnsiColor (Emacs terminal related stuff)
 ;;; <http://emacswiki.org/AnsiColor>.
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+;; (add-hook 'shell-mode-hook 'compilation-shell-minor-mode) ;filenames with line numbers linkable
 
 ;;; Comint mode (which shell mode and sql mode based on)
 ;;; <http://www.emacswiki.org/emacs/ComintMode#toc3>.
@@ -274,15 +259,29 @@
                                         ; was dired-up-directory
             ))
 
-;;; Ibuffer <http://emacswiki.org/IbufferMode>,
-;;; <http://emacs-fu.blogspot.ru/2010/02/dealing-with-many-buffers-ibuffer.html>,
-;;; <http://martinowen.net/blog/2010/02/tips-for-emacs-ibuffer.html>.
-(global-set-key (kbd "C-x C-b") 'ibuffer)
-(autoload 'ibuffer "ibuffer" "List buffers." t)
-;(setq ibuffer-use-other-window 1)
-;; <http://stackoverflow.com/questions/7598433/how-to-remove-a-key-from-a-minor-mode-keymap-in-emacs#7598754>.
-(define-key ibuffer-mode-map "\M-n" nil) ;unset ibuffer-forward-filter-group
-(define-key ibuffer-mode-map "\M-p" nil) ;unset ibuffer-backward-filter-group
+;;; Get rid of annoying backups, temporary files and autosaves.
+;; Built-in backup settings
+;; <http://www.emacswiki.org/emacs/BackupDirectory#toc2>.
+(setq
+ backup-by-copying t           ;don't clobber symlinks
+ backup-directory-alist
+ '(("." . "~/.emacs-backups")) ;don't litter my fs tree
+ delete-old-versions t
+ kept-new-versions 6
+ kept-old-versions 2
+ version-control t)            ;use versioned backups
+;; ;; Redefining the make-backup-file-name function in order to get
+;; ;; backup files in ~/.backups/ rather than scattered around all over
+;; ;; the filesystem. Note that you must have a directory ~/.backups/
+;; ;; made.  This function looks first to see if that folder exists.  If
+;; ;; it does not the standard backup copy is made.
+;; (defun make-backup-file-name (file-name)
+;;   "Create the non-numeric backup file name for `file-name'."
+;;   (require 'dired)
+;;   (if (file-exists-p "~/.backups")
+;;       (concat (expand-file-name "~/.backups/")
+;;               (dired-replace-in-string "/" "!" file-name))
+;;     (concat file-name "~")))
 
 ;;; Interactively do things.
 ;; (ido-mode t)
@@ -346,42 +345,8 @@
 ;;; <http://emacswiki.org/TrampMode>.
 ;(setq tramp-default-method "ssh")
 
-;;; Line numbers
-;;; Linum
-(eval-after-load 'linum
-  '(progn
-     (set-face-attribute 'linum nil :foreground "DimGray" :background "gray10") ;gray40
-     ))
-(defun my-linum-mode-hook ()
-  (linum-mode 1))
-(add-hook 'awk-mode-hook 'my-linum-mode-hook)
-(add-hook 'coffee-mode-hook 'my-linum-mode-hook)
-(add-hook 'conf-mode-hook 'my-linum-mode-hook)
-(add-hook 'css-mode-hook 'my-linum-mode-hook)
-(add-hook 'emacs-lisp-mode-hook 'my-linum-mode-hook)
-(add-hook 'haml-mode-hook 'my-linum-mode-hook)
-(add-hook 'haskell-mode-hook 'my-linum-mode-hook)
-(add-hook 'html-mode-hook 'my-linum-mode-hook)
-(add-hook 'java-mode-hook 'my-linum-mode-hook)
-(add-hook 'js-mode-hook 'my-linum-mode-hook)
-(add-hook 'lisp-mode-hook 'my-linum-mode-hook)
-(add-hook 'lua-mode-hook 'my-linum-mode-hook)
-(add-hook 'magit-diff-mode-hook 'my-linum-mode-hook)
-(add-hook 'makefile-gmake-mode-hook 'my-linum-mode-hook)
-(add-hook 'markdown-mode-hook 'my-linum-mode-hook)
-(add-hook 'nxml-mode-hook 'my-linum-mode-hook)
-(add-hook 'org-mode-hook 'my-linum-mode-hook)
-(add-hook 'perl-mode-hook 'my-linum-mode-hook)
-(add-hook 'php-mode-hook 'my-linum-mode-hook)
-(add-hook 'ruby-mode-hook 'my-linum-mode-hook)
-(add-hook 'sass-mode-hook 'my-linum-mode-hook)
-(add-hook 'sgml-mode-hook 'my-linum-mode-hook)
-(add-hook 'sh-mode-hook 'my-linum-mode-hook)
-(add-hook 'sql-mode-hook 'my-linum-mode-hook)
-(add-hook 'xml-mode-hook 'my-linum-mode-hook)
-(add-hook 'yaml-mode-hook 'my-linum-mode-hook)
-;; (add-hook 'compilation-mode-hook 'my-linum-mode-hook)
-;; (add-hook 'shell-mode-hook 'my-linum-mode-hook)
+;;; Cua mode <http://www.emacswiki.org/emacs/CuaMode>.
+(setq cua-enable-cua-keys nil) ;change case of a rectangle <http://stackoverflow.com/questions/6154545/emacs-change-case-of-a-rectangle#comment-7167904>.
 
 ;;; HTML mode.
 (add-to-list 'auto-mode-alist '("\\.lp\\'" . html-mode))
@@ -402,117 +367,6 @@
       (cons '("/\\.bash_aliases\\'" . shell-script-mode) auto-mode-alist))
 (setq auto-mode-alist
       (cons '("/\\.ackrc\\'" . shell-script-mode) auto-mode-alist))
-
-;;; Configs.
-(setq auto-mode-alist
-      (cons '("/\\.gitconfig\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/\\.inputrc\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/\\.screenrc\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/\\.moc/keymap\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/\\.Xmodmap\\'" . conf-xdefaults-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/\\.rvmrc\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/\\.curlrc\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/conkyrc_calendar\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/conkyrc_top\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/portage/package\\.license\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/share/applications/defaults\\.list\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/etc/fstab\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/etc/hosts\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("\\.pkla\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("\\.cnf\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("\\.theme\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/.gtkrc-2.0\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/\\.tigrc\\'" . conf-mode) auto-mode-alist))
-
-;;; Lisp.
-(setq auto-mode-alist
-      (cons '("/\\.stumpwmrc\\'" . lisp-mode) auto-mode-alist))
-
-;;; Cucumber features.
-(setq auto-mode-alist
-      (cons '("\\.features\\'" . conf-mode) auto-mode-alist))
-
-;;; Gentoo confs.
-(add-to-list 'auto-mode-alist '("/etc/conf.d/" . conf-mode))
-(add-to-list 'auto-mode-alist '("/etc/env.d/" . conf-mode))
-(setq auto-mode-alist
-      (cons '("/etc/portage/package\\.mask\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/etc/portage/package\\.keywords\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/etc/portage/package\\.use\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/etc/portage/package\\.unmask\\'" . conf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/etc/portage/profile/use\\.mask\\'" . conf-mode) auto-mode-alist))
-(add-to-list 'auto-mode-alist '("var/lib/portage/world\\'" . conf-mode))
-
-;;; ruby-mode.
-(setq auto-mode-alist
-      (cons '("/[rR]akefile\\'" . ruby-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("\\.rake\\'" . ruby-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/Gemfile\\'" . ruby-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/Capfile\\'" . ruby-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/Guardfile\\'" . ruby-mode) auto-mode-alist))
-;; (add-hook 'ruby-mode-hook 'ror-doc-lookup)
-(add-hook 'ruby-mode-hook
-          (lambda () (interactive)
-            (remove-hook 'before-save-hook 'ruby-mode-set-encoding)))
-(setq auto-mode-alist
-      (cons '("\\.mrb\\'" . ruby-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("\\.atex\\'" . ruby-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("\\.gemspec\\'" . ruby-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("\\.irbrc\\'" . ruby-mode) auto-mode-alist))
-
-;; Ruby indentation fix
-;; <https://github.com/mlapshin/dotfiles/blob/2531616385b9fd3bef4b6418a5f024fd2f010461/.emacs.d/custom/ruby.el#L49>.
-(eval-after-load 'ruby-mode
-  '(progn
-     (defadvice ruby-indent-line (after line-up-args activate)
-       (let (indent prev-indent arg-indent)
-         (save-excursion
-           (back-to-indentation)
-           (when (zerop (car (syntax-ppss)))
-             (setq indent (current-column))
-             (skip-chars-backward " \t\n")
-             (when (eq ?, (char-before))
-               (ruby-backward-sexp)
-               (back-to-indentation)
-               (setq prev-indent (current-column))
-               (skip-syntax-forward "w_.")
-               (skip-chars-forward " ")
-               (setq arg-indent (current-column)))))
-         (when prev-indent
-           (let ((offset (- (current-column) indent)))
-             (cond ((< indent prev-indent)
-                    (indent-line-to prev-indent))
-                   ((= indent prev-indent)
-                    (indent-line-to arg-indent)))
-             (when (> offset 0) (forward-char offset))))))))
 
 ;;; JavaScript mode.
 ;;; HTML Components (HTCs or .htc)
@@ -539,12 +393,18 @@
 ;;; path as argument
 ;;; <http://superuser.com/questions/360427/emacs-equivalent-of-this-vim-command-to-run-my-tests#360512>.
 (defun my-do-shell-command-on-buffer-file ()
-  "prompts for a command and executes that command on to the associated
- file of current buffer. if no buffer is associated gives an error"
+  "Prompts for a command and executes that command on to the associated
+ file of current buffer. If no buffer is associated gives an error"
   (interactive)
   (or (buffer-file-name) (error "no file is associated file to this buffer"))
   (let* ((my-cmd (read-shell-command "Command to run: "))
          (cmd-to-run (concat my-cmd " " (buffer-file-name))))
+    (shell-command cmd-to-run)))
+(defun my-do-shell-command-on-current-path ()
+  "Prompts for a command and executes that command"
+  (interactive)
+  (let* ((my-cmd (read-shell-command "Command to run: "))
+         (cmd-to-run (concat my-cmd)))
     (shell-command cmd-to-run)))
 
 ;;; ANSI SGR (Select Graphic Rendition) escape sequences
@@ -578,9 +438,15 @@ the current position of point, then move it to the beginning of text on the curr
 ;; (eval-after-load "cc-mode"
 ;;      '(define-key c-mode-base-map (kbd "C-a") 'my-beginning-of-line))
 
-;;; CamleCase and underscore toggle
+;;; CamleCase and underscore inflection toggle
 ;;; <http://superuser.com/questions/126431/is-there-any-way-to-convert-camel-cased-names-to-use-underscores-in-emacs/126473#300048>,
-;;; <https://bunkus.org/blog/2009/12/switching-identifier-naming-style-between-camel-case-and-c-style-in-emacs>.
+;;; <https://bunkus.org/blog/2009/12/switching-identifier-naming-style-between-camel-case-and-c-style-in-emacs>,
+;;; <http://api.rubyonrails.org/classes/ActiveSupport/Inflector.html>.
+(global-set-key (kbd "C-c d s i c") 'my-toggle-camelcase-and-underscore-with-repeat)
+(defun my-toggle-camelcase-and-underscore-with-repeat ()
+  (interactive)
+  (my-with-repeat-while-press-last-key
+    (my-toggle-camelcase-and-underscore)))
 (defun my-toggle-camelcase-and-underscore ()
   "Toggles the symbol at point between C-style naming,
 e.g. `hello_world_string', and camel case,
@@ -607,8 +473,12 @@ e.g. `HelloWorldString'."
         (replace-match (funcall func (match-string 1))
                        t nil))
       (widen))))
-(global-set-key (kbd "C-c d c") 'my-toggle-camelcase-and-underscore)
 
+(global-set-key (kbd "C-c d s i h") 'my-humanize-symbol-with-repeat)
+(defun my-humanize-symbol-with-repeat ()
+  (interactive)
+  (my-with-repeat-while-press-last-key
+    (my-humanize-symbol)))
 (defun my-humanize-symbol ()
   "Humanize the symbol at point from
 C-style naming, e.g. `hello_world_string',
@@ -637,7 +507,23 @@ and Lisp-style nameing, e.g. `hello-world-string'."
         (replace-match (funcall func (match-string 1))
                        t nil))
       (widen))))
-(global-set-key (kbd "C-c d h") 'my-humanize-symbol)
+
+;;; Duplicate lines <http://www.emacswiki.org/emacs/DuplicateLines#toc2>.
+(global-set-key (kbd "C-c d s u") 'uniquify-all-lines-region)
+(defun uniquify-all-lines-region (start end)
+  "Find duplicate lines in region START to END keeping first occurrence."
+  (interactive "*r")
+  (save-excursion
+    (let ((end (copy-marker end)))
+      (while
+          (progn
+            (goto-char start)
+            (re-search-forward "^\\(.*\\)\n\\(\\(.*\n\\)*\\)\\1\n" end t))
+        (replace-match "\\1\n\\2")))))
+(defun uniquify-all-lines-buffer ()
+  "Delete duplicate lines in buffer and keep first occurrence."
+  (interactive "*")
+  (uniquify-all-lines-region (point-min) (point-max)))
 
 ;;; Sql mode history <http://www.emacswiki.org/emacs/SqlMode#toc3>.
 (defun my-sql-save-history-hook ()
@@ -669,134 +555,10 @@ and Lisp-style nameing, e.g. `hello-world-string'."
 ;;       'mew-draft-kill
 ;;       'mew-send-hook))
 
-;;; My keyboard macroses.
-;; <http://emacs-fu.blogspot.ru/2010/07/keyboard-macros.html>.
-(fset 'my-kbd-macro-ruby-string-to-symbol
-   "\C-[\C-s\\(\"\\|'\\)\C-s\C-m\C-?\C-[\C-r\\(\"\\|'\\)\C-m\C-d:")
-;; (fset 'my-kbd-macro-ruby-new-hash-syntax
-;;    "\C-s =>\C-m\C-r:\C-m\C-d\C-s =>\C-m\C-?\C-?\C-?:")
-
-(eval-after-load 'ruby-mode
-  '(progn
-     (define-key ruby-mode-map (kbd "C-c {") 'my-ruby-toggle-block)
-     ))
-(defun my-ruby-brace-to-do-end (orig end)
-  (let (beg-marker end-marker)
-    (goto-char end)
-    (when (eq (char-before) ?\})
-      (delete-char -1)
-      (when (save-excursion
-              (skip-chars-backward " \t")
-              (not (bolp)))
-        (insert "\n"))
-      (insert "end")
-      (setq end-marker (point-marker))
-      (when (and (not (eobp)) (eq (char-syntax (char-after)) ?w))
-        (insert " "))
-      (goto-char orig)
-      (delete-char 1)
-      (when (eq (char-syntax (char-before)) ?w)
-        (insert " "))
-      (insert "do")
-      (setq beg-marker (point-marker))
-      (when (looking-at "\\(\\s \\)*|")
-        (unless (match-beginning 1)
-          (insert " "))
-        (goto-char (1+ (match-end 0)))
-        (search-forward "|"))
-      (unless (looking-at "\\s *$")
-        (insert "\n"))
-      (indent-region beg-marker end-marker)
-      (goto-char beg-marker)
-      t)))
-(defun my-ruby-do-end-to-brace (orig end)
-  (let (beg-marker end-marker beg-pos end-pos)
-    (goto-char (- end 3))
-    (when (looking-at ruby-block-end-re)
-      (delete-char 3)
-      (setq end-marker (point-marker))
-      (insert "}")
-      (goto-char orig)
-      (delete-char 2)
-      (insert "{")
-      (setq beg-marker (point-marker))
-      (when (looking-at "\\s +|")
-        (unless (match-beginning 1)
-          (insert " "))
-        (delete-char (- (match-end 0) (match-beginning 0) 1))
-        (forward-char)
-        (re-search-forward "|" (line-end-position) t))
-      (save-excursion
-        (skip-chars-forward " \t\n\r")
-        (setq beg-pos (point))
-        (goto-char end-marker)
-        (skip-chars-backward " \t\n\r")
-        (setq end-pos (point)))
-      (when (or
-             (< end-pos beg-pos)
-             (and (= (line-number-at-pos beg-pos) (line-number-at-pos end-pos))
-                  (< (+ (current-column) (- end-pos beg-pos) 2) fill-column)))
-        (just-one-space -1)
-        (goto-char end-marker)
-        (just-one-space -1))
-      (goto-char beg-marker)
-      t)))
-(defun my-ruby-toggle-block ()
-  "Toggle block type from do-end to braces or back.
-The block must begin on the current line or above it and end after the point.
-If the result is do-end block, it will always be multiline."
-  (interactive)
-  (my-with-repeat-while-press-last-key
-  (let ((start (point)) beg end)
-    (end-of-line)
-    (unless
-        (if (and (re-search-backward "\\({\\)\\|\\_<do\\(\\s \\|$\\||\\)")
-                 (progn
-                   (setq beg (point))
-                   (save-match-data (ruby-forward-sexp))
-                   (setq end (point))
-                   (> end start)))
-            (if (match-beginning 1)
-                (my-ruby-brace-to-do-end beg end)
-              (my-ruby-do-end-to-brace beg end)))
-      (goto-char start)))))
-
-;; ;;; Tags
-;; ;;; <http://emacswiki.org/BuildTags#toc2>.
-;; ;; (setq path-to-ctags "/usr/bin/ctags")
-;; (setq path-to-ctags "/usr/bin/exuberant-ctags")
-;; (defun create-tags (dir-name)
-;;   "Create tags file."
-;;   (interactive "DDirectory: ")
-;;   (shell-command
-;;    (format "%s -f %s/TAGS -e -R %s" path-to-ctags dir-name dir-name)))
 
 ;;; Auto Fill Mode
 ;;; <http://gnu.org/software/emacs/manual/html_node/emacs/Auto-Fill.html>.
 ;(add-hook 'mail-mode-hook (lambda () (auto-fill-mode t)))
-
-;;; ri-emacs.
-;; (setq ri-ruby-script "~/share/emacs/site-lisp/ri-emacs/ri-emacs.rb")
-;; (autoload 'ri "~/share/emacs/site-lisp/ri-emacs/ri-ruby.el" nil t)
-;; (add-hook 'ruby-mode-hook
-;;   (lambda ()
-;;     (local-set-key 'f1 'ri)
-;;     (local-set-key "\M-\C-i" 'ri-ruby-complete-symbol)
-;;     (local-set-key 'f4 'ri-ruby-show-args)
-;;     ))
-
-;;; Ruby and Rails documentation lookup.
-;; (defun ror-doc-lookup () (local-set-key (kbd "<f1>") 'doc-symbol-lookup))
-;; ;http://www.google.com/search?num=100&q=site%3Aruby-doc.org/core+
-;; (defun doc-symbol-lookup ()
-;;   (interactive)
-;;   (let ((symbol (symbol-at-point)))
-;;     (if (not symbol)
-;;       (message "No symbol at point.")
-;;       (browse-url
-;;         (concat
-;;           "http://www.google.com/search?num=100&q=site%3Aapi.rubyonrails.org+"
-;;           (symbol-name symbol))))))
 
 ;;; DVC.
 ;(add-to-list 'load-path "~/share/emacs/site-lisp/dvc")
@@ -876,20 +638,6 @@ If the result is do-end block, it will always be multiline."
 ;;         ("rubyonrails_planet_ru" "http://planet.rubyonrails.ru/xml/rss")
 ;;         ("softwaremaniacs_org" "http://softwaremaniacs.org/blog/feed/")
 ;;         ))
-
-;; ;;; Get Rid of Annoying Backups and Autosaves.
-;; ;; Redefining the make-backup-file-name function in order to get
-;; ;; backup files in ~/.backups/ rather than scattered around all over
-;; ;; the filesystem. Note that you must have a directory ~/.backups/
-;; ;; made.  This function looks first to see if that folder exists.  If
-;; ;; it does not the standard backup copy is made.
-;; (defun make-backup-file-name (file-name)
-;;   "Create the non-numeric backup file name for `file-name'."
-;;   (require 'dired)
-;;   (if (file-exists-p "~/.backups")
-;;       (concat (expand-file-name "~/.backups/")
-;;               (dired-replace-in-string "/" "!" file-name))
-;;     (concat file-name "~")))
 
 ;; ;; Redefining the make-auto-save-file-name function in order to get
 ;; ;; autosave files sent to a single directory.  Note that this function

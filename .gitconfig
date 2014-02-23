@@ -9,8 +9,14 @@
 	name = Danil Kutkevich
 	email = danil@kutkevich.org
 
-[color]
-    diff = always
-    ui = true
+# [color]
+#     diff = always
+#     ui = true
 # [diff]
 # 	external = meld
+
+# Global .gitignore
+# <https://help.github.com/articles/ignoring-files#global-gitignore>,
+# <http://stackoverflow.com/questions/7335420/global-git-ignore#7335487>.
+[core]
+	excludesfile = ~/.gitignore_global

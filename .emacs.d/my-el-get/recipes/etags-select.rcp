@@ -3,39 +3,4 @@
        :type http
        :url "http://www.emacswiki.org/cgi-bin/wiki/download/etags-select.el"
        :features etags-select
-       :depends (find-file-in-project)
-       :after (progn
-                (defun build-tags ()
-                  (interactive)
-                  (message "building project tags")
-                  (let ((root (ffip-project-root)))
-                    (shell-command (format "cd %s && ripper-tags --format=emacs --exclude=spec --exclude=test --recursive --tag-file TAGS --force"
-                                           root)))
-                  (visit-project-tags)
-                  (message "tags built successfully"))
-
-                (defun visit-project-tags ()
-                  (interactive)
-                  (let ((tags-file (concat (ffip-project-root) "TAGS")))
-                    (visit-tags-table tags-file)
-                    (message (concat "Loaded " tags-file))))
-
-                (defun etags-select-find-tag-at-point-or-region ()
-                  "Finds tag at point or selected region using etags-select."
-                  (interactive)
-                  (require 'etags-select)
-
-                  (if (region-active-p)
-                      (etags-select-find (buffer-substring (region-beginning) (region-end)))
-                    (etags-select-find-tag-at-point)))
-
-                (global-set-key (kbd "M-.") 'etags-select-find-tag-at-point-or-region)
-
-                (eval-after-load 'etags-select
-                  '(progn
-                     (define-key etags-select-mode-map (kbd "RET") 'etags-select-goto-tag)
-                     (define-key etags-select-mode-map (kbd "M-RET") 'etags-select-goto-tag-other-window)
-                     (define-key etags-select-mode-map (kbd "C-n") 'etags-select-next-tag)
-                     (define-key etags-select-mode-map (kbd "C-p") 'etags-select-previous-tag)
-                     (define-key etags-select-mode-map (kbd "C-g") 'etags-select-quit)))
-                ))
+       :depends (find-file-in-project))

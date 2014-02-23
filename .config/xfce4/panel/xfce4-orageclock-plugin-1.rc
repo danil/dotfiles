@@ -2,11 +2,10 @@ show_frame=false
 fg_set=false
 bg_set=false
 timezone=
-width_set=true
+width_set=false
 height_set=false
-data0=%R\ 
+data0=%R
 font0=PragmataPro 10
 tooltip=%A %d %B %Y/%V
 hib_timing=false
-width=40
 
