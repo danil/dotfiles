@@ -2,5 +2,6 @@
 (my-after-init
   (my-add-mode-to-hooks (lambda () (rainbow-mode 1))
                         'css-mode-hook
+                        'less-css-mode-hook
                         'sass-mode-hook
                         'scss-mode))
