@@ -16,6 +16,7 @@
                   html-mode-hook
                   java-mode-hook
                   js-mode-hook
+                  less-css-mode-hook
                   lisp-mode-hook
                   lua-mode-hook
                   makefile-gmake-mode-hook
