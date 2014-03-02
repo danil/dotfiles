@@ -13,7 +13,7 @@
         <value type="int" value="6"/>
         <value type="int" value="3"/>
         <value type="int" value="2"/>
-        <value type="int" value="1"/>
+        <value type="int" value="5"/>
         <value type="int" value="9"/>
         <value type="int" value="4"/>
       </property>
@@ -43,8 +43,8 @@
         <value type="string" value="vlc"/>
         <value type="string" value="gajim"/>
         <value type="string" value="xfce4-power-manager"/>
-        <value type="string" value="exe"/>
         <value type="string" value="bluetooth"/>
+        <value type="string" value="exe"/>
         <value type="string" value="thunar"/>
         <value type="string" value="dropbox"/>
         <value type="string" value="docky"/>
@@ -72,7 +72,6 @@
       <property name="command" type="string" value="xfce4-mixer"/>
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
     </property>
-    <property name="plugin-1" type="string" value="xfce4-orageclock-plugin"/>
     <property name="plugin-4" type="string" value="actions">
       <property name="appearance" type="uint" value="0"/>
       <property name="items" type="array">
@@ -88,6 +87,10 @@
         <value type="string" value="-logout"/>
         <value type="string" value="-logout-dialog"/>
       </property>
+    </property>
+    <property name="plugin-5" type="string" value="clock">
+      <property name="show-frame" type="bool" value="false"/>
+      <property name="mode" type="uint" value="2"/>
     </property>
   </property>
 </channel>
