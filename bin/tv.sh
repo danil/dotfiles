@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-mplayer tv://
+mpv tv://
