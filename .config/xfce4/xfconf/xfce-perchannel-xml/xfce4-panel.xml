@@ -10,12 +10,11 @@
       <property name="position-locked" type="bool" value="true"/>
       <property name="size" type="uint" value="24"/>
       <property name="plugin-ids" type="array">
-        <value type="int" value="5"/>
         <value type="int" value="6"/>
-        <value type="int" value="19"/>
         <value type="int" value="3"/>
-        <value type="int" value="13"/>
-        <value type="int" value="1"/>
+        <value type="int" value="2"/>
+        <value type="int" value="5"/>
+        <value type="int" value="9"/>
         <value type="int" value="4"/>
       </property>
       <property name="background-style" type="uint" value="0"/>
@@ -36,31 +35,23 @@
     <property name="plugin-6" type="string" value="systray">
       <property name="names-visible" type="array">
         <value type="string" value="skype"/>
-        <value type="string" value="ubuntuone-installer"/>
         <value type="string" value="cloud"/>
         <value type="string" value="task manager"/>
         <value type="string" value="wally"/>
         <value type="string" value="scp-dbus-service.py"/>
-        <value type="string" value="gajim"/>
-        <value type="string" value="vlc"/>
-        <value type="string" value="trayicon"/>
-        <value type="string" value="xfce4-power-manager"/>
-        <value type="string" value="kalu"/>
-        <value type="string" value="bluetooth"/>
         <value type="string" value="wicd-client.py"/>
+        <value type="string" value="vlc"/>
+        <value type="string" value="gajim"/>
+        <value type="string" value="xfce4-power-manager"/>
+        <value type="string" value="exe"/>
+        <value type="string" value="bluetooth"/>
         <value type="string" value="thunar"/>
         <value type="string" value="dropbox"/>
-        <value type="string" value="exe"/>
         <value type="string" value="docky"/>
         <value type="string" value="pidgin"/>
         <value type="string" value="shutter"/>
         <value type="string" value="tomahawk"/>
-        <value type="string" value="bluedevil-monolithic"/>
         <value type="string" value="volti"/>
-        <value type="string" value="pnmixer"/>
-        <value type="string" value="networkmanager applet"/>
-        <value type="string" value="remmina"/>
-        <value type="string" value="mikogo"/>
         <value type="string" value="sound output volume"/>
         <value type="string" value="thunderbird"/>
         <value type="string" value="blueman-applet"/>
@@ -70,35 +61,36 @@
         <value type="string" value="stardict"/>
         <value type="string" value="orage"/>
         <value type="string" value="parcellite"/>
-        <value type="string" value="chromium"/>
         <value type="string" value="google chrome"/>
       </property>
     </property>
+    <property name="plugin-2" type="string" value="showdesktop"/>
+    <property name="plugin-9" type="string" value="pager"/>
+    <property name="plugin-3" type="string" value="mixer">
+      <property name="sound-card" type="string" value="HDAIntelAlsamixer"/>
+      <property name="track" type="string" value="Master"/>
+      <property name="command" type="string" value="xfce4-mixer"/>
+      <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
+    </property>
     <property name="plugin-4" type="string" value="actions">
       <property name="appearance" type="uint" value="0"/>
-      <property name="invert-orientation" type="bool" value="false"/>
       <property name="items" type="array">
         <value type="string" value="-lock-screen"/>
         <value type="string" value="-switch-user"/>
         <value type="string" value="-separator"/>
-        <value type="string" value="-suspend"/>
+        <value type="string" value="+suspend"/>
         <value type="string" value="-hibernate"/>
         <value type="string" value="-separator"/>
         <value type="string" value="-shutdown"/>
         <value type="string" value="-restart"/>
         <value type="string" value="-separator"/>
-        <value type="string" value="+logout"/>
+        <value type="string" value="-logout"/>
         <value type="string" value="-logout-dialog"/>
       </property>
     </property>
-    <property name="plugin-13" type="string" value="xkb-plugin"/>
-    <property name="plugin-19" type="string" value="showdesktop"/>
-    <property name="plugin-1" type="string" value="xfce4-orageclock-plugin"/>
-    <property name="plugin-3" type="string" value="xfce4-brightness-plugin"/>
-    <property name="plugin-5" type="string" value="pager">
-      <property name="rows" type="uint" value="1"/>
-      <property name="miniature-view" type="bool" value="true"/>
-      <property name="workspace-scrolling" type="bool" value="false"/>
+    <property name="plugin-5" type="string" value="clock">
+      <property name="show-frame" type="bool" value="false"/>
+      <property name="mode" type="uint" value="2"/>
     </property>
   </property>
 </channel>
