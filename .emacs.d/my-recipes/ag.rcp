@@ -14,4 +14,7 @@
     (set 'ag-highlight-search t)
     (defun my-ag-kill-buffers (&optional arg)
       (interactive "P")
-      (if arg (ag-kill-buffers) (ag-kill-other-buffers)))))
+      (if arg
+          (progn (ag-kill-buffers) (message "All ag-mode buffers killed"))
+        (ag-kill-other-buffers)
+        (message "All ag-mode buffers other than the current buffer killed")))))
