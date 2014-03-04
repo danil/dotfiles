@@ -103,8 +103,6 @@
           "paredit"
           "php-mode"
           "pomohist"
-          "projectile"
-          "projectile-rails"
           "rainbow-mode"
           "replace"
           "rhtml-mode"
