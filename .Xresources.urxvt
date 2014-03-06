@@ -9,6 +9,12 @@ URxvt*cursorColor:     #ff0000
 URxvt*cursorUnderline: false
 URxvt*saveLines:       10000
 
+! <http://askubuntu.com/questions/22419/how-do-i-make-urxvt-render-xft-fonts#96779>.
+URxvt*font:           xft:Ubuntu Mono:pixelsize=15:antialias=true:hinting=true:autohint=true:style=regular
+URxvt*boldFont:       xft:Ubuntu Mono:pixelsize=15:antialias=true:hinting=true:autohint=true:style=bold
+URxvt*italicFont:     xft:Ubuntu Mono:pixelsize=15:antialias=true:hinting=true:autohint=true:style=italic
+URxvt*boldItalicFont: xft:Ubuntu Mono:pixelsize=15:antialias=true:hinting=true:autohint=true:style=bold italic
+
 ! Black (dark) theme from Ubuntu Gnome terminal.
 *background: #000000
 *foreground: #eeeeeeeeecec
