@@ -23,6 +23,8 @@ export HISTCONTROL=ignoredups:erasedups
 [ "$TERM" = "xterm" ] && TERM="xterm-256color" #<http://ricochen.wordpress.com/2011/07/23/mac-os-x-lion-terminal-color-remote-access-problem-fix>
 #export GIT_PAGER=""
 
+# <http://askubuntu.com/questions/22037/aliases-not-available-when-using-sudo#22043>.
+alias sudo='sudo '
 # Aliases.
 alias less=$PAGER
 # alias e='~/.evm/installations/emacs-24.3/bin/emacs -nw'
