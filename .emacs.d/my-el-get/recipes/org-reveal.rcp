@@ -1,0 +1,7 @@
+(:name org-reveal
+       :description "Exports Org-mode contents to Reveal.js HTML presentation."
+       :website "https://github.com/yjwen/org-reveal"
+       :depends org-mode
+       :features ox-reveal
+       :type github
+       :pkgname "yjwen/org-reveal")

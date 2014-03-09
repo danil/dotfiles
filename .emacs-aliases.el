@@ -100,6 +100,7 @@
           "nginx-mode"
           "occur-mode"
           "org-mode"
+          "org-reveal"
           "paredit"
           "php-mode"
           "pomohist"
