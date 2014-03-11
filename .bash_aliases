@@ -24,6 +24,10 @@ export HISTCONTROL=ignoredups:erasedups
 #export GIT_PAGER=""
 
 # Aliases.
+# <http://askubuntu.com/questions/22037/aliases-not-available-when-using-sudo#22043>.
+alias sudo='sudo '
+alias ls='ls --color'
+alias ll='ls -l --all --human-readable'
 alias less=$PAGER
 # alias e='~/.evm/installations/emacs-24.3/bin/emacs -nw'
 alias e='emacs -nw'
@@ -33,6 +37,7 @@ alias ec='/usr/bin/emacsclient -t'
 alias g='git'
 # Silver searchers colors configurable <https://github.com/ggreer/the_silver_searcher/issues/90>.
 alias ag='ag --smart-case --color-line-number "2;31"'
+alias em='emerge --verbose --oneshot --color=y'
 
 # Prompt.
 [[ -f ~/.bash_prompt.sh ]] && source ~/.bash_prompt.sh

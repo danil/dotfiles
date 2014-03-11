@@ -12,6 +12,7 @@
                                 "/etc/fstab\\'"
                                 "/hosts\\'"
                                 "/locale.gen\\'"
+                                "/mimeapps.list\\'"
                                 "/share/applications/defaults\\.list\\'"
                                 "/sudoers\\'"
                                 "\\.cnf\\'"

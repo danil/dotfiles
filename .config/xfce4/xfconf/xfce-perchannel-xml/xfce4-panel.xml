@@ -43,8 +43,8 @@
         <value type="string" value="vlc"/>
         <value type="string" value="gajim"/>
         <value type="string" value="xfce4-power-manager"/>
-        <value type="string" value="exe"/>
         <value type="string" value="bluetooth"/>
+        <value type="string" value="exe"/>
         <value type="string" value="thunar"/>
         <value type="string" value="dropbox"/>
         <value type="string" value="docky"/>
