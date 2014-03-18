@@ -1,3 +1,25 @@
 (my-add-to-packages 'fiplr)
 (autoload 'fiplr-find-file "fiplr" nil t)
 (global-set-key (kbd "C-c d f f") 'fiplr-find-file)
+(my-after-init
+  (my-eval-after-load 'fiplr
+    (setq fiplr-ignored-globs
+          '((directories (
+                          ".bzr"
+                          ".git"
+                          ".hg"
+                          ".svn"
+                          "bower_components"
+                          "node_modules"
+                          ))
+            (files (
+                    "*.gif"
+                    "*.gz"
+                    "*.jpg"
+                    "*.pdf"
+                    "*.png"
+                    "*.so"
+                    "*.zip"
+                    "*~"
+                    ".#*"
+                    ))))))
