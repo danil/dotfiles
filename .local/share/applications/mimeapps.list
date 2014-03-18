@@ -2,7 +2,7 @@
 image/png=userapp-feh-22VPKV.desktop;gimp.desktop;eog.desktop;
 application/vnd.ms-excel=gnumeric.desktop;libreoffice-calc.desktop;zzz-gimp.desktop;
 text/plain=leafpad.desktop;
-image/jpeg=userapp-feh-22VPKV.desktop;gimp.desktop;eog.desktop;
+image/jpeg=userapp-feh-22VPKV.desktop;gimp.desktop;eog.desktop;ristretto.desktop;
 inode/directory=nautilus-folder-handler.desktop;userapp-feh-22VPKV.desktop;file-roller.desktop;
 image/gif=gimp.desktop;userapp-feh-22VPKV.desktop;eog.desktop;
 image/vnd.adobe.photoshop=gimp.desktop;openoffice.org-writer.desktop;userapp-evince-FVR0PV.desktop;
@@ -35,7 +35,7 @@ application/x-font-ttf=userapp-leafpad-EACN4W.desktop;
 
 [Default Applications]
 application/pdf=evince.desktop
-image/jpeg=eog.desktop
+image/jpeg=ristretto.desktop
 image/png=eog.desktop
 image/gif=eog.desktop
 application/vnd.ms-excel=libreoffice-calc.desktop
@@ -58,6 +58,11 @@ image/bmp=eog.desktop
 application/xml=firefox-bin.desktop
 video/x-msvideo=userapp-mplayer-SAZLSV.desktop
 application/x-font-ttf=userapp-leafpad-EACN4W.desktop
+text/html=google-chrome.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
+x-scheme-handler/about=google-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop
 
 [Removed Associations]
 image/jpeg=wine-extension-jfif.desktop;wine-extension-jpeg.desktop;wine-extension-jpe.desktop;wine-extension-jpg.desktop;
