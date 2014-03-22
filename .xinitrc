@@ -47,11 +47,8 @@ case $1 in
         # exec dbus-launch compiz-manager
         exec bash -c "dbus-launch compiz-manager"
         ;;
-    fluxbox)
-        exec startfluxbox
-        ;;
-    i3)
-        exec i3
+    ratpoison)
+        exec ratpoison
         ;;
     *)
         exec dbus-launch $DEFAULT_SESSION
