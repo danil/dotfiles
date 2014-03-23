@@ -47,6 +47,10 @@
 (gnewbg "9")
 
 (defcommand dmenu-run () () (run-shell-command "dmenu_run -b"))
+(defcommand set-keyboard-auto-repeat () ()
+  (run-shell-command "xset r rate 300 30")) ;set the keyboard auto repeat parameters
+(defcommand set-terminal-bell () ()
+  (run-shell-command "xset b off")) ;turn off bell
 (defcommand set-background (background) ()
   (run-shell-command (concatenate 'string "feh --bg-center " background)))
 (defcommand set-cursor-name (cursor-name) ()
@@ -93,9 +97,11 @@
 (ql:quickload "stumptray") ;<https://github.com/stumpwm/stumpwm-contrib/blob/master/util/stumptray/README.org>.
 (run-commands "stumptray")
 
+(set-keyboard-auto-repeat)
 (set-background BACKGROUND)
 (set-cursor-name CURSOR-NAME)
 (run-power-manager)
 (run-wireless-manager)
 (run-volume-daemon)
 (run-dictionary)
+(set-terminal-bell)
