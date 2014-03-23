@@ -1,0 +1,7 @@
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+# /usr/share/dunst/dunstrc
+
+[global]
+    # alignment of message text.
+    # Possible values are "left", "center" and "right"
+    alignment = right
