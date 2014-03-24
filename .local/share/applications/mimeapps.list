@@ -58,6 +58,11 @@ image/bmp=eog.desktop
 application/xml=firefox-bin.desktop
 video/x-msvideo=userapp-mplayer-SAZLSV.desktop
 application/x-font-ttf=userapp-leafpad-EACN4W.desktop
+text/html=google-chrome.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
+x-scheme-handler/about=google-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop
 
 [Removed Associations]
 image/jpeg=wine-extension-jfif.desktop;wine-extension-jpeg.desktop;wine-extension-jpe.desktop;wine-extension-jpg.desktop;
