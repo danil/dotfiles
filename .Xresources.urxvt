@@ -1,5 +1,12 @@
 ! This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 ! URxvt.
+
+! Font spacing.
+! By default in urxvt the distance between characters can feel too wide
+! <https://wiki.archlinux.org/index.php/rxvt-unicode#Font_spacing>,
+! <http://crunchbanglinux.org/wiki/urxvt#font_spacing>.
+URxvt.letterSpace: -1
+
 URxvt*scrollBar: true
 URxvt.scrollstyle: plain
 URxvt.scrollBar_right: true
