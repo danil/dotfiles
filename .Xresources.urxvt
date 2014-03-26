@@ -30,6 +30,7 @@ URxvt.searchable-scrollback: CM-F
 URxvt.font-size.step: 4
 URxvt.keysym.C-A-plus: perl:font-size:increase
 URxvt.keysym.C-A-underscore: perl:font-size:decrease
+URxvt.keysym.C-A-parenright: perl:font-size:reset
 
 ! Matcher.
 URxvt*matcher.button: 3

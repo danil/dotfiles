@@ -1,6 +1,6 @@
 (my-add-to-packages 'org-reveal)
 (global-set-key (kbd "C-c d m o r e") 'org-reveal-export-to-html)
-(my-after-init
-  (my-eval-after-load 'org-reveal
-    (setq org-reveal-root
-          "//cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6/js/reveal.min.js")))
+;; (my-after-init
+;;   (my-eval-after-load 'org-reveal
+;;     (setq org-reveal-root
+;;           "//cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6/js/reveal.min.js")))

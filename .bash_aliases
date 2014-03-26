@@ -52,6 +52,9 @@ PATH=$PATH:$HOME/.cask/bin
 # EVM (Emacs Version Manager) <https://github.com/rejeep/evm>.
 PATH=$PATH:$HOME/.evm/bin
 
+# Steel Bank Common Lisp.
+export SBCL_HOME=/usr/lib64/sbcl
+
 # Lua.
 PATH=~/.luarocks/bin:"${PATH}"
 export LUA_PATH="/home/danil/.luarocks/share/lua/5.1//?.lua;./?.lua;$LUA_PATH"
