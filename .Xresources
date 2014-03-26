@@ -35,12 +35,6 @@ Xft.rgba:      rgb
 ! ! DPI <https://wiki.archlinux.org/index.php/Font_Configuration#Distorted_fonts>.
 ! Xft.dpi:       120.4
 
-! *font: -misc-fixed-medium-r-normal--18-120-100-100-c-90-iso10646-1,\
-!             -misc-fixed-medium-r-normal--8-80-75-75-c-50-iso10646-1,\
-!             -misc-fixed-medium-r-normal--8-80-75-75-c-50-iso10646-1,\
-!             -misc-fixed-medium-r-normal--14-130-75-75-c-70-iso10646-1,\
-!             -misc-fixed-medium-r-normal--13-120-75-75-c-80-iso10646-1
-! *font: xft:DejaVu Sans Mono:pixelsize=12:antialias=true:hinting=true:autohint=true
 ! <http://askubuntu.com/questions/22419/how-do-i-make-urxvt-render-xft-fonts#96779>.
 *font:           xft:DejaVu Sans Mono:pixelsize=14:antialias=true:hinting=true:autohint=true:style=regular
 *boldFont:       xft:DejaVu Sans Mono:pixelsize=14:antialias=true:hinting=true:autohint=true:style=bold
