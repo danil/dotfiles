@@ -17,7 +17,8 @@ URxvt.scrollColor: gray40
 ! URxvtperl.
 ! See the urxvtperl manpage for details.
 ! You can find them in </usr/lib/urxvt/perl/>.
-! <http://wiki.archlinux.org/index.php/Rxvt-unicode#Automatic_Script_Management>.
+! <http://wiki.archlinux.org/index.php/Rxvt-unicode#Automatic_Script_Management>,
+! <http://crunchbanglinux.org/wiki/urxvt#font_spacing>.
 ! selection,option-popup,selection-popup,readline,clipboard,matcher
 ! URxvt.perl-lib: /home/danil/.urxvt/ext/
 ! URxvt*perl-ext-common: tabbed
