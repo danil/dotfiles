@@ -1,9 +1,9 @@
 (my-add-to-packages 'ag)
-(global-set-key (kbd "C-c d f s s") 'ag)
-(global-set-key (kbd "C-c d f s r") 'ag-regexp)
-(global-set-key (kbd "C-c d f p s") 'ag-dired)
-(global-set-key (kbd "C-c d f p r") 'ag-dired-regexp)
-(global-set-key (kbd "C-c d f a k") 'my-ag-kill-buffers)
+(global-set-key (my-kbd "f s s") 'ag)
+(global-set-key (my-kbd "f s r") 'ag-regexp)
+(global-set-key (my-kbd "f p s") 'ag-dired)
+(global-set-key (my-kbd "f p r") 'ag-dired-regexp)
+(global-set-key (my-kbd "f a k") 'my-ag-kill-buffers)
 (my-after-init
   (my-hooks-with-truncate-lines 'ag-mode-hook)
   (my-eval-after-load 'ag

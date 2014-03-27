@@ -35,10 +35,10 @@
                       'sql-mode-hook
                       'xml-mode-hook
                       'yaml-mode-hook)
-;; (global-set-key (kbd "C-c d y ") 'highlight-symbol-at-point)
-(global-set-key (kbd "C-c d s s n") 'my-highlight-symbol-next-with-repeat)
-(global-set-key (kbd "C-c d s s p") 'my-highlight-symbol-prev-with-repeat)
-(global-set-key (kbd "C-c d s s r") 'highlight-symbol-query-replace)
+;; (global-set-key (my-kbd "y ") 'highlight-symbol-at-point)
+(global-set-key (my-kbd "s s n") 'my-highlight-symbol-next-with-repeat)
+(global-set-key (my-kbd "s s p") 'my-highlight-symbol-prev-with-repeat)
+(global-set-key (my-kbd "s s r") 'highlight-symbol-query-replace)
 (my-after-init
   (my-eval-after-load 'highlight-symbol
     (setq highlight-symbol-idle-delay 0.7)

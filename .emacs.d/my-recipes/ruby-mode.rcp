@@ -17,8 +17,8 @@
   ;; Ruby indentation fix
   ;; <https://github.com/mlapshin/dotfiles/blob/2531616385b9fd3bef4b6418a5f024fd2f010461/.emacs.d/custom/ruby.el#L49>.
   (my-eval-after-load 'ruby-mode
-    (define-key ruby-mode-map (kbd "C-c d m r b") 'my-ruby-toggle-block)
-    (define-key ruby-mode-map (kbd "C-c d m r h") 'ruby-toggle-hash-syntax)
+    (define-key ruby-mode-map (my-kbd "m r b") 'my-ruby-toggle-block)
+    (define-key ruby-mode-map (my-kbd "m r h") 'ruby-toggle-hash-syntax)
     ;; My keyboard macroses.
     ;; <http://emacs-fu.blogspot.ru/2010/07/keyboard-macros.html>.
     (fset 'my-kbd-macro-ruby-string-to-symbol

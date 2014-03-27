@@ -1,5 +1,5 @@
 (my-after-init
-  (global-set-key (kbd "C-c d v b") 'magit-blame-mode)
+  (global-set-key (my-kbd "v b") 'magit-blame-mode)
   (my-eval-after-load 'magit-blame
     ;; Colors - diff and more
     ;; <http://readystate4.com/2011/02/22/emacs-changing-magits-default-diff-colors>.

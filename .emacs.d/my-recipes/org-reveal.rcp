@@ -1,5 +1,5 @@
 (my-add-to-packages 'org-reveal)
-(global-set-key (kbd "C-c d m o r e") 'org-reveal-export-to-html)
+(global-set-key (my-kbd "m o r e") 'org-reveal-export-to-html)
 ;; (my-after-init
 ;;   (my-eval-after-load 'org-reveal
 ;;     (setq org-reveal-root

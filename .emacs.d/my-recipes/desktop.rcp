@@ -2,8 +2,8 @@
 ;;(desktop-save-mode 1)
 ;; <http://stackoverflow.com/questions/4477376/some-emacs-desktop-save-questions-how-to-change-it-to-save-in-emacs-d-emacs#answer-4485083>.
 
-(global-set-key (kbd "C-c d d s") 'save-my-desktop)
-(global-set-key (kbd "C-c d d l") 'load-my-desktop)
+(global-set-key (my-kbd "d s") 'save-my-desktop)
+(global-set-key (my-kbd "d l") 'load-my-desktop)
 (defun save-my-desktop ()
   "Save the desktop"
   (interactive)
