@@ -1,6 +1,6 @@
 (my-add-to-packages 'fiplr)
 (autoload 'fiplr-find-file "fiplr" nil t)
-(global-set-key (kbd "C-c d f f") 'fiplr-find-file)
+(global-set-key (my-kbd "f f") 'fiplr-find-file)
 (my-after-init
   (my-eval-after-load 'fiplr
     (setq fiplr-ignored-globs

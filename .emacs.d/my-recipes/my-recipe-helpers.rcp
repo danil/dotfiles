@@ -1,3 +1,4 @@
+(defun my-kbd (key) (kbd (concat "C-c C-f " key)))
 ;; <http://blog.puercopop.com/post/56050999061/improving-emacss-startup-time>.
 (defmacro my-after-init (&rest body)
   "After loading all the init files, evaluate BODY."

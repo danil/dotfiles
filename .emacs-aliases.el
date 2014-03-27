@@ -440,7 +440,7 @@ the current position of point, then move it to the beginning of text on the curr
 ;;; <http://superuser.com/questions/126431/is-there-any-way-to-convert-camel-cased-names-to-use-underscores-in-emacs/126473#300048>,
 ;;; <https://bunkus.org/blog/2009/12/switching-identifier-naming-style-between-camel-case-and-c-style-in-emacs>,
 ;;; <http://api.rubyonrails.org/classes/ActiveSupport/Inflector.html>.
-(global-set-key (kbd "C-c d s i c") 'my-toggle-camelcase-and-underscore-with-repeat)
+(global-set-key (my-kbd "s i c") 'my-toggle-camelcase-and-underscore-with-repeat)
 (defun my-toggle-camelcase-and-underscore-with-repeat ()
   (interactive)
   (my-with-repeat-while-press-last-key
@@ -472,7 +472,7 @@ e.g. `HelloWorldString'."
                        t nil))
       (widen))))
 
-(global-set-key (kbd "C-c d s i h") 'my-humanize-symbol-with-repeat)
+(global-set-key (my-kbd "s i h") 'my-humanize-symbol-with-repeat)
 (defun my-humanize-symbol-with-repeat ()
   (interactive)
   (my-with-repeat-while-press-last-key
@@ -507,7 +507,7 @@ and Lisp-style nameing, e.g. `hello-world-string'."
       (widen))))
 
 ;;; Duplicate lines <http://www.emacswiki.org/emacs/DuplicateLines#toc2>.
-(global-set-key (kbd "C-c d s u") 'uniquify-all-lines-region)
+(global-set-key (my-kbd "s u") 'uniquify-all-lines-region)
 (defun uniquify-all-lines-region (start end)
   "Find duplicate lines in region START to END keeping first occurrence."
   (interactive "*r")
