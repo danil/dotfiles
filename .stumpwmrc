@@ -3,33 +3,31 @@
 (in-package :stumpwm)
 
 ;;; Variables.
-(defparameter X-TERM "urxvt"
+(defparameter MY-X-TERM "urxvt"
   "What shall be the command run when we want an X terminal?")
-(defparameter HOME-DIR (getenv "HOME"))
-(defparameter USER (getenv "USER"))
-(defparameter HOSTNAME (run-shell-command "hostname | tr -d [:cntrl:]" t))
-(defparameter PROMPT (concat USER "@" HOSTNAME))
-(defparameter FOREGROUND-COLOR "white")
-(defparameter BACKGROUND-COLOR "black")
-(defparameter INTERACTIVE-FOREGROUND-COLOR "black")
-(defparameter INTERACTIVE-BACKGROUND-COLOR "yellow1")
-(defparameter DATE-FORMAT "+%R %d-%b-%y")
-(defparameter BACKGROUND "~/local/share/backgrounds/gentoo-znurt-larry-abducted-1440x900.png")
-(defparameter CURSOR-NAME "Vanilla-DMZ")
-(defparameter SHOW-CPU-LOAD "bin/show_cpu_load.sh")
-(defparameter SHOW-BATTERY-STATUS "bin/show_battery_status.sh")
-(defparameter INTERACTIVE-COMMAND (concat "dmenu_run "
-                                          "-fn Monospace-12 "
-                                          "-p $USER@`hostname` "
-                                          " -nf "
-                                          FOREGROUND-COLOR
-                                          " -nb "
-                                          BACKGROUND-COLOR
-                                          " -sf "
-                                          INTERACTIVE-FOREGROUND-COLOR
-                                          " -sb "
-                                          INTERACTIVE-BACKGROUND-COLOR))
-(defparameter CONTRIB-DIR (merge-pathnames "src/vendor/cl/stumpwm-contrib/"
+(defparameter MY-HOME-DIR (getenv "HOME"))
+(defparameter MY-USER (getenv "USER"))
+(defparameter MY-HOSTNAME (run-shell-command "hostname | tr -d [:cntrl:]" t))
+(defparameter MY-PROMPT (concat MY-USER "@" MY-HOSTNAME))
+(defparameter MY-FOREGROUND-COLOR "white")
+(defparameter MY-BACKGROUND-COLOR "black")
+(defparameter MY-INTERACTIVE-FOREGROUND-COLOR "black")
+(defparameter MY-INTERACTIVE-BACKGROUND-COLOR "yellow")
+(defparameter MY-MODELINE-FOREGROUND-COLOR "gray")
+(defparameter MY-MODELINE-BACKGROUND-COLOR "black")
+(defparameter MY-DATE-FORMAT "+%R %d-%b-%y")
+(defparameter MY-BACKGROUND-IMAGE "~/local/share/backgrounds/gentoo-znurt-larry-abducted-1440x900.png")
+(defparameter MY-CURSOR-NAME "Vanilla-DMZ")
+(defparameter MY-SHOW-CPU-LOAD "bin/show_cpu_load.sh")
+(defparameter MY-SHOW-BATTERY-STATUS "bin/show_battery_status.sh")
+(defparameter MY-INTERACTIVE-COMMAND (concat "dmenu_run"
+                                          " -fn Monospace-12"
+                                          " -p $USER@`hostname`"
+                                          " -nf " MY-FOREGROUND-COLOR
+                                          " -nb " MY-BACKGROUND-COLOR
+                                          " -sf " MY-INTERACTIVE-FOREGROUND-COLOR
+                                          " -sb " MY-INTERACTIVE-BACKGROUND-COLOR))
+(defparameter MY-CONTRIB-DIR (merge-pathnames "src/vendor/cl/stumpwm-contrib/"
                                (user-homedir-pathname)))
 (defparameter MY-PACKAGES '(
                             "util/stumptray/"
@@ -38,7 +36,7 @@
 (set-prefix-key (kbd "M-m"))
 
 ;; Terminal emulator.
-(define-key *root-map* (kbd "c") (concat "exec " X-TERM))
+(define-key *root-map* (kbd "c") (concat "exec " MY-X-TERM))
 
 ;;; Commands
 ;;; <http://paste.lisp.org/display/75796>.
@@ -46,11 +44,11 @@
 ;; ;; Show CPU load.
 ;; (defcommand show-cpu-load () ()
 ;;   (message "~a" (run-shell-command
-;;                  (concat HOME-DIR "/"  SHOW-CPU-LOAD) t)))
+;;                  (concat MY-HOME-DIR "/"  MY-SHOW-CPU-LOAD) t)))
 ;; ;; Query ACPI and show the battery's status.
 ;; (defcommand show-battery-status () ()
 ;;   (message "~a" (run-shell-command
-;;                  (concat HOME-DIR "/" SHOW-BATTERY-STATUS) t)))
+;;                  (concat MY-HOME-DIR "/" MY-SHOW-BATTERY-STATUS) t)))
 
 ;; Groups.
 (setf (group-name (first (screen-groups (current-screen)))) "1") ;rename the first group "Default" to "1" <http://en.wikipedia.org/wiki/User:Gwern/.stumpwmrc>
@@ -64,63 +62,65 @@
 (gnewbg "8")
 (gnewbg "9")
 
-(defcommand dmenu-run () () (run-shell-command INTERACTIVE-COMMAND))
-(defcommand set-keyboard-auto-repeat () ()
+(defcommand my-dmenu-run () () (run-shell-command MY-INTERACTIVE-COMMAND))
+(defcommand my-set-keyboard-auto-repeat () ()
   (run-shell-command "xset r rate 300 30")) ;set the keyboard auto repeat parameters
-(defcommand set-terminal-bell () ()
+(defcommand my-set-terminal-bell () ()
   (run-shell-command "xset b off")) ;turn off bell
-(defcommand set-background (background) ()
+(defcommand my-set-background (background) ()
   (run-shell-command (concatenate 'string "feh --bg-center " background)))
-(defcommand set-cursor-name (cursor-name) ()
+(defcommand my-set-cursor-name (cursor-name) ()
   (run-shell-command (concatenate 'string "xsetroot -cursor_name " cursor-name))) ;<https://github.com/stumpwm/stumpwm/wiki/FAQ#why-is-the-mouse-pointer-an-x-and-how-do-i-change-it>
-(defcommand run-power-manager () () (run-shell-command "xfce4-power-manager"))
-(defcommand run-wireless-manager () ()
+(defcommand my-run-power-manager () () (run-shell-command "xfce4-power-manager"))
+(defcommand my-run-wireless-manager () ()
   (run-shell-command
    (concatenate 'string
                 "pkill -f /usr/share/wicd/gtk/wicd-client.py ; "
                 "wicd-gtk --tray")))
-(defcommand run-volume-daemon () ()
+(defcommand my-run-volume-daemon () ()
   (run-shell-command "killall xfce4-volumed ; xfce4-volumed"))
-(defcommand run-dictionary () ()
+(defcommand my-run-dictionary () ()
   (run-shell-command "killall stardict ; stardict --hide"))
+(defcommand my-run-unclutter () ()
+  (run-shell-command "killall unclutter ; unclutter"))
 
 ;;; Key binding.
 ;; (define-key *root-map* (kbd "C-q") "show-battery-status") ;battery status
 ;; (define-key *root-map* (kbd "q") "show-cpu-load") ;cpu load
 ;; (define-key *top-map* (kbd "C-M-G") "vgroups") ;groups (virtual desktops or workspaces) <http://nongnu.org/stumpwm/manual/stumpwm_8.html>
 (define-key *top-map* (kbd "C-M-M") "mode-line") ;mode line <http://nongnu.org/stumpwm/manual/stumpwm_7.html>
-(define-key *root-map* (kbd "!") "dmenu-run")
+(define-key *root-map* (kbd "!") "my-dmenu-run")
 
 ;;; Mode line.
 (setf *screen-mode-line-format*
       (list
-       "["
-       PROMPT
-       " %n]"
-       "%W "
+       "%n "
+       MY-PROMPT
+       " %W "
        "^>" ;right align
+       '(:eval (show-battery-charge))
        '(:eval (run-shell-command
                 (format nil "date '~a' | tr -d [:cntrl:]"
-                        DATE-FORMAT) t))
+                        MY-DATE-FORMAT) t))
        "      "))
 
 (setq *mode-line-position* :bottom)
-(setf *mode-line-foreground-color* FOREGROUND-COLOR)
-(setf *mode-line-background-color* BACKGROUND-COLOR)
+(setf *mode-line-foreground-color* MY-MODELINE-FOREGROUND-COLOR)
+(setf *mode-line-background-color* MY-MODELINE-BACKGROUND-COLOR)
 (setf *mode-line-border-width* 0)
 
+;; (set-font (make-instance 'xft:font :family "monospace" :subfamily "Regular" :size 12))
 (set-msg-border-width 0)
 (setf *input-window-gravity* :top-left)
-
-(set-fg-color INTERACTIVE-FOREGROUND-COLOR)
-(set-bg-color INTERACTIVE-BACKGROUND-COLOR)
+(set-fg-color MY-INTERACTIVE-FOREGROUND-COLOR)
+(set-bg-color MY-INTERACTIVE-BACKGROUND-COLOR)
 ;; (setf *input-window-gravity* :top-right)
 ;; (setf *message-window-gravity* :top-right)
 
-(dolist (my-package MY-PACKAGES)
-  (let ((my-path (merge-pathnames my-package CONTRIB-DIR)))
-    (when (probe-file my-path)
-      (push my-path asdf:*central-registry*))))
+(dolist (MY-package MY-PACKAGES)
+  (let ((MY-path (merge-pathnames MY-package MY-CONTRIB-DIR)))
+    (when (probe-file MY-path)
+      (push MY-path asdf:*central-registry*))))
 
 ;; (let ((quicklisp-init (merge-pathnames "src/vendor/cl/stumpwm-contrib/media/amixer/amixer.lisp"
 ;;                                        (user-homedir-pathname))))
@@ -128,13 +128,14 @@
 ;;     (load quicklisp-init)))
 
 (ql:quickload "stumptray") ;<https://github.com/stumpwm/stumpwm-contrib/blob/master/util/stumptray/README.org>.
-(run-commands "stumptray")
+;; (run-commands "stumptray")
 
-(set-keyboard-auto-repeat)
-(set-background BACKGROUND)
-(set-cursor-name CURSOR-NAME)
-(run-power-manager)
-(run-wireless-manager)
-(run-volume-daemon)
-(run-dictionary)
-(set-terminal-bell)
+(my-set-keyboard-auto-repeat)
+(my-set-background MY-BACKGROUND-IMAGE)
+(my-set-cursor-name MY-CURSOR-NAME)
+(my-run-power-manager)
+(my-run-wireless-manager)
+(my-run-volume-daemon)
+(my-run-dictionary)
+(my-set-terminal-bell)
+(my-run-unclutter)
