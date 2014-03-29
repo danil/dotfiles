@@ -94,8 +94,8 @@
 ;;   (when (probe-file quicklisp-init)
 ;;     (load quicklisp-init)))
 
-;; (ql:quickload "stumptray") ;<https://github.com/stumpwm/stumpwm-contrib/blob/master/util/stumptray/README.org>.
-;; (run-commands "stumptray")
+(ql:quickload "stumptray") ;<https://github.com/stumpwm/stumpwm-contrib/blob/master/util/stumptray/README.org>.
+(run-commands "stumptray")
 
 (set-keyboard-auto-repeat)
 (set-background BACKGROUND)
