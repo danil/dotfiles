@@ -46,22 +46,19 @@ alias em='emerge --verbose --oneshot --color=y'
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion #RVM bash completion <http://rvm.io/workflow/completion>
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-# Emacs Cask <http://cask.github.io>.
-PATH=$PATH:$HOME/.cask/bin
-
-# EVM (Emacs Version Manager) <https://github.com/rejeep/evm>.
-PATH=$PATH:$HOME/.evm/bin
-
 # Steel Bank Common Lisp.
 export SBCL_HOME=/usr/lib64/sbcl
 
-# Lua.
-PATH=~/.luarocks/bin:"${PATH}"
-export LUA_PATH="/home/danil/.luarocks/share/lua/5.1//?.lua;./?.lua;$LUA_PATH"
-export LUA_CPATH="/home/danil/.luarocks/lib/lua/5.1//?.so;./?.so;$LUA_CPATH"
-#export LUA_INIT="require 'luarocks.require'"
-
 # Node.js
-export NODE_PATH="$HOME/local:$HOME/local/lib/node_modules"
-PATH=~/node_modules/.bin:"${PATH}"
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
+
+# # Lua.
+# PATH=~/.luarocks/bin:"${PATH}"
+# export LUA_PATH="/home/danil/.luarocks/share/lua/5.1//?.lua;./?.lua;$LUA_PATH"
+# export LUA_CPATH="/home/danil/.luarocks/lib/lua/5.1//?.so;./?.so;$LUA_CPATH"
+
+# # Emacs Cask <http://cask.github.io>.
+# PATH=$PATH:$HOME/.cask/bin
+
+# # EVM (Emacs Version Manager) <https://github.com/rejeep/evm>.
+# PATH=$PATH:$HOME/.evm/bin

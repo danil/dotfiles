@@ -20,13 +20,6 @@
 (defparameter MY-CURSOR-NAME "Vanilla-DMZ")
 (defparameter MY-SHOW-CPU-LOAD "bin/show_cpu_load.sh")
 (defparameter MY-SHOW-BATTERY-STATUS "bin/show_battery_status.sh")
-(defparameter MY-INTERACTIVE-COMMAND (concat "dmenu_run"
-                                          " -fn Monospace-12"
-                                          " -p $USER@`hostname`"
-                                          " -nf " MY-FOREGROUND-COLOR
-                                          " -nb " MY-BACKGROUND-COLOR
-                                          " -sf " MY-INTERACTIVE-FOREGROUND-COLOR
-                                          " -sb " MY-INTERACTIVE-BACKGROUND-COLOR))
 (defparameter MY-CONTRIB-DIR (merge-pathnames "src/vendor/cl/stumpwm-contrib/"
                                (user-homedir-pathname)))
 (defparameter MY-PACKAGES '(
@@ -62,7 +55,7 @@
 (gnewbg "8")
 (gnewbg "9")
 
-(defcommand my-dmenu-run () () (run-shell-command MY-INTERACTIVE-COMMAND))
+(defcommand my-dmenu-run () () (run-shell-command "~/bin/dmenu_run"))
 (defcommand my-set-keyboard-auto-repeat () ()
   (run-shell-command "xset r rate 300 30")) ;set the keyboard auto repeat parameters
 (defcommand my-set-terminal-bell () ()
