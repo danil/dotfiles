@@ -16,6 +16,9 @@
 (defparameter MY-MODELINE-FOREGROUND-COLOR "gray")
 (defparameter MY-MODELINE-BACKGROUND-COLOR "black")
 (defparameter MY-DATE-FORMAT "+%R %d-%b-%y")
+(defparameter MY-DATE-COMMAND (format nil "date '~a' | tr -d [:cntrl:]"
+                                      MY-DATE-FORMAT))
+(defparameter MY-LOAD-COMMAND "~/bin/load.sh | tr -d [:cntrl:]")
 (defparameter MY-BACKGROUND-IMAGE "~/local/share/backgrounds/gentoo-znurt-larry-abducted-1440x900.png")
 (defparameter MY-CURSOR-NAME "Vanilla-DMZ")
 (defparameter MY-SHOW-CPU-LOAD "bin/show_cpu_load.sh")
@@ -24,7 +27,7 @@
                                (user-homedir-pathname)))
 (defparameter MY-PACKAGES '(
                             "util/stumptray/"
-                            "util/ttf-fonts/"
+                            "modeline/cpu/"
                             ))
 
 (set-prefix-key (kbd "M-m"))
@@ -92,10 +95,10 @@
        "[%n " MY-PROMPT "] "
        "%W "
        "^>" ;right align
+       '(:eval (run-shell-command MY-LOAD-COMMAND t))
+       " %t "
        '(:eval (show-battery-charge))
-       '(:eval (run-shell-command
-                (format nil "date '~a' | tr -d [:cntrl:]"
-                        MY-DATE-FORMAT) t))
+       '(:eval (run-shell-command MY-DATE-COMMAND t))
        "      "))
 
 (setq *mode-line-position* :bottom)
@@ -127,6 +130,9 @@
 
 (ql:quickload "stumptray") ;<https://github.com/stumpwm/stumpwm-contrib/blob/master/util/stumptray/README.org>.
 ;; (run-commands "stumptray")
+
+(ql:quickload "cpu")
+;; (load-module "cpu")
 
 (my-set-keyboard-auto-repeat)
 (my-set-background MY-BACKGROUND-IMAGE)
