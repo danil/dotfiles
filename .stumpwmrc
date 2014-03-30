@@ -109,7 +109,7 @@
 ;; (xft:cache-fonts)
 ;; (set-font (make-instance 'xft:font :family "monospace" :subfamily "Regular" :size 12))
 
-(set-msg-border-width 2)
+(set-msg-border-width 3)
 (setf *input-window-gravity* :top-left)
 (set-border-color MY-INTERACTIVE-BORDER-COLOR)
 (set-fg-color "white")
