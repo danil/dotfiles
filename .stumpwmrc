@@ -96,8 +96,7 @@
        "%W "
        "^>" ;right align
        '(:eval (run-shell-command MY-LOAD-COMMAND t))
-       " %t "
-       '(:eval (show-battery-charge))
+       " %t %N "
        '(:eval (run-shell-command MY-DATE-COMMAND t))
        "      "))
 
@@ -133,6 +132,8 @@
 
 (ql:quickload "cpu")
 ;; (load-module "cpu")
+
+(load-module "mem")
 
 (my-set-keyboard-auto-repeat)
 (my-set-background MY-BACKGROUND-IMAGE)
