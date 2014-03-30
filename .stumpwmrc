@@ -24,6 +24,7 @@
                                (user-homedir-pathname)))
 (defparameter MY-PACKAGES '(
                             "util/stumptray/"
+                            "util/ttf-fonts/"
                             ))
 
 (set-prefix-key (kbd "M-m"))
@@ -83,6 +84,7 @@
 ;; (define-key *top-map* (kbd "C-M-G") "vgroups") ;groups (virtual desktops or workspaces) <http://nongnu.org/stumpwm/manual/stumpwm_8.html>
 (define-key *top-map* (kbd "C-M-M") "mode-line") ;mode line <http://nongnu.org/stumpwm/manual/stumpwm_7.html>
 (define-key *root-map* (kbd "!") "my-dmenu-run")
+;; (define-key *root-map* (kbd "x") "next")
 
 ;;; Mode line.
 (setf *screen-mode-line-format*
@@ -102,7 +104,11 @@
 (setf *mode-line-background-color* MY-MODELINE-BACKGROUND-COLOR)
 (setf *mode-line-border-width* 0)
 
+;; ;;; <https://github.com/stumpwm/stumpwm/issues/72>.
+;; (load-module "ttf-fonts")
+;; (xft:cache-fonts)
 ;; (set-font (make-instance 'xft:font :family "monospace" :subfamily "Regular" :size 12))
+
 (set-msg-border-width 0)
 (setf *input-window-gravity* :top-left)
 (set-fg-color MY-INTERACTIVE-FOREGROUND-COLOR)
