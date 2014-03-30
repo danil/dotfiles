@@ -15,7 +15,7 @@
 (defparameter MY-INTERACTIVE-BACKGROUND-COLOR "yellow")
 (defparameter MY-MODELINE-FOREGROUND-COLOR "gray")
 (defparameter MY-MODELINE-BACKGROUND-COLOR "black")
-(defparameter MY-DATE-FORMAT "+%R %d-%b-%y")
+(defparameter MY-DATE-FORMAT "+%d-%b-%y %R")
 (defparameter MY-DATE-COMMAND (format nil "date '~a' | tr -d [:cntrl:]"
                                       MY-DATE-FORMAT))
 (defparameter MY-LOAD-COMMAND "~/bin/load.sh | tr -d [:cntrl:]")
