@@ -9,13 +9,14 @@
                                 "/\\.tigrc\\'"
                                 "/conkyrc_calendar\\'"
                                 "/conkyrc_top\\'"
-                                "/dunstrc"
+                                "/dunstrc\\'"
                                 "/etc/fstab\\'"
                                 "/hosts\\'"
                                 "/locale.gen\\'"
                                 "/mimeapps.list\\'"
                                 "/share/applications/defaults\\.list\\'"
                                 "/sudoers\\'"
+                                "/tint2rc\\'"
                                 "\\.cnf\\'"
                                 "\\.features\\'" ;cucumber features
                                 "\\.pkla\\'"
@@ -31,6 +32,9 @@
                                 "/etc/portage/package\\.use\\'"
                                 "/etc/portage/profile/use\\.mask\\'"
                                 "/portage/package\\.license\\'"
+                                "/profiles/categories\\'"
+                                "/profiles/package.mask\\'"
+                                "/profiles/repo_name\\'"
                                 "var/lib/portage/world\\'")
   (my-add-auto-mode-to-patterns 'conf-xdefaults-mode "/\\.Xmodmap\\'")
   (my-hooks-with-truncate-lines 'conf-mode-hook))
