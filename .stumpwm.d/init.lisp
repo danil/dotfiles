@@ -1,5 +1,6 @@
 ;;; This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
+;;; <https://github.com/Sarcasm/.stumpwm.d>.
 (in-package :stumpwm)
 
 (defvar *stumpwm-config-dir* "~/.stumpwm.d/"
