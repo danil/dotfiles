@@ -89,9 +89,8 @@
 ;;; Mode line.
 (setf *screen-mode-line-format*
       (list
-       "%n "
-       MY-PROMPT
-       " %W "
+       "[%n " MY-PROMPT "] "
+       "%W "
        "^>" ;right align
        '(:eval (show-battery-charge))
        '(:eval (run-shell-command
