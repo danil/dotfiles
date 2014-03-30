@@ -6,6 +6,6 @@ P="$USER@`hostname`"
 NF="white"
 NB="black"
 SF="black"
-SB="yellow"
+SB="OrangeRed1"
 
 dmenu_run -fn $FN -nf $NF -nb $NB -sf $SF -sb $SB -p $P $@
