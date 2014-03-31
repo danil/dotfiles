@@ -98,6 +98,7 @@
           "my-project"
           "my-tags"
           "nginx-mode"
+          "nodejs-repl"
           "occur-mode"
           "org-mode"
           "org-reveal"
