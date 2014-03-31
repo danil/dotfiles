@@ -1,0 +1,3 @@
+(my-add-to-packages 'nvm)
+(autoload 'nvm-use "nvm" nil t)
+;; (nvm-use "0.10")
