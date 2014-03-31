@@ -27,6 +27,7 @@
 (defparameter MY-PACKAGES '(
                             "util/stumptray/"
                             "modeline/cpu/"
+                            "modeline/mem/"
                             ))
 
 (set-prefix-key (kbd "M-m"))
@@ -95,7 +96,7 @@
        "%W "
        "^>" ;right align
        '(:eval (run-shell-command MY-LOAD-COMMAND t))
-       " %t %N "
+       " %t %M "
        '(:eval (run-shell-command MY-DATE-COMMAND t))
        "      "))
 
@@ -131,7 +132,8 @@
 (ql:quickload "cpu")
 ;; (load-module "cpu")
 
-(load-module "mem")
+(ql:quickload "mem")
+;; (load-module "mem")
 
 (my-set-keyboard-auto-repeat)
 (my-set-background MY-BACKGROUND-IMAGE)
@@ -142,3 +144,5 @@
 (my-run-dictionary)
 (my-set-terminal-bell)
 (my-run-unclutter)
+
+(load "~/.stumpwm.d/init.lisp")
