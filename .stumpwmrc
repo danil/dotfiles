@@ -59,7 +59,7 @@
 (gnewbg "8")
 (gnewbg "9")
 
-(defcommand my-dmenu-run () () (run-shell-command "~/bin/my_dmenu_run"))
+(defcommand my-dmenu-run () () (run-shell-command "~/bin/my_dmenu_run.sh"))
 (defcommand my-set-keyboard-auto-repeat () ()
   (run-shell-command "xset r rate 300 30")) ;set the keyboard auto repeat parameters
 (defcommand my-set-terminal-bell () ()
