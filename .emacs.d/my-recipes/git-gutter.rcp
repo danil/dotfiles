@@ -47,3 +47,6 @@
                             git-gutter:separator
                             git-gutter:unchanged))
               (set-face-background face my-line-number-background))))
+(my-after-init
+  (my-eval-after-load 'git-gutter
+    (setq git-gutter:disabled-modes '(shell-mode magit-mode))))
