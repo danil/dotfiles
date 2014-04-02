@@ -37,16 +37,16 @@
 (global-set-key (my-kbd "v h p") 'git-gutter:previous-diff)
 (add-hook 'git-gutter-mode-on-hook
           (lambda ()
-            (setq git-gutter:lighter " GG")
-            (setq git-gutter:modified-sign "=          ")
-            (setq git-gutter:added-sign    "+          ")
-            (setq git-gutter:deleted-sign  "-          ")
+            ;; (setq git-gutter:lighter " GG")
+            ;; (setq git-gutter:modified-sign "=          ")
+            ;; (setq git-gutter:added-sign    "+          ")
+            ;; (setq git-gutter:deleted-sign  "-          ")
             (dolist (face '(git-gutter:added
                             git-gutter:deleted
                             git-gutter:modified
                             git-gutter:separator
                             git-gutter:unchanged))
-              (set-face-background face my-line-number-background))))
-(my-after-init
-  (my-eval-after-load 'git-gutter
-    (setq git-gutter:disabled-modes '(shell-mode magit-mode))))
+              (set-face-background face my-line-numbers-background))))
+;; (my-after-init
+;;   (my-eval-after-load 'git-gutter
+;;     (setq git-gutter:disabled-modes '(shell-mode magit-mode))))

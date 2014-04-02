@@ -57,3 +57,7 @@
                       'sql-mode-hook
                       'xml-mode-hook
                       'yaml-mode-hook)
+(my-after-init
+  (my-eval-after-load 'smartparens
+    (sp-local-pair 'emacs-lisp-mode "`" "'") ;adds `' as a local pair in emacs-lisp-mode <https://github.com/Fuco1/smartparens/wiki/Pair-management#local-pair-definitions>
+))

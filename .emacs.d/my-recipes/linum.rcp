@@ -1,17 +1,23 @@
 ;;; Linum (line numbers).
 (autoload 'linum-mode "linum" nil t)
-(my-add-mode-to-hooks (lambda () (linum-mode 1))
-                      ;; 'compilation-mode-hook
-                      ;; 'shell-mode-hook
+(my-add-mode-to-hooks (lambda ()
+                        (let ((my-number-of-lines (count-lines (point-min)
+                                                        (point-max))))
+                          (if (< my-number-of-lines 20000)
+                              (linum-mode t))))
                       'awk-mode-hook
                       'c-mode-hook
                       'coffee-mode-hook
+                      'compilation-mode-hook
                       'conf-mode-hook
                       'css-mode-hook
+                      'csv-mode-hook
+                      'dired-mode-hook
                       'emacs-lisp-mode-hook
                       'haml-mode-hook
                       'haskell-mode-hook
                       'html-mode-hook
+                      'ibuffer-mode-hook
                       'java-mode-hook
                       'js-mode-hook
                       'less-css-mode-hook
@@ -29,14 +35,50 @@
                       'sass-mode-hook
                       'sgml-mode-hook
                       'sh-mode-hook
+                      'shell-mode-hook
                       'sieve-mode-hook
                       'sql-mode-hook
                       'xml-mode-hook
                       'yaml-mode-hook)
+;; (defun my-line-numbers-deactivator ()
+;;   (let ((my-number-of-lines (count-lines (point-min)
+;;                                          (point-max))))
+;;     (if (> my-number-of-lines 20000)
+;;         (progn (remove-hook 'linum-before-numbering-hook
+;;                             'my-line-numbers-deactivator)
+;;                (message "aaaaaaaa")
+;;                (linum-mode nil)
+;;                (linum-mode nil)
+;;                (message "bbbbbbbbbbb")))))
+;; (add-hook 'linum-before-numbering-hook 'my-line-numbers-deactivator)
 (my-after-init
   (my-eval-after-load 'linum
-    (cond ((equal frame-background-mode 'dark)
-           ;; (setq linum-format "%4d ") ;separating line numbers from text <http://www.emacswiki.org/emacs/LineNumbers#toc7>
-           (set-face-attribute 'linum nil
-                               :foreground "DimGray"
-                               :background my-line-number-background)))))
+    (defgroup my-line-numbers nil
+      "Custom line numbers in the left margin."
+      :group 'linum
+      :prefix "my-line-numbers-")
+    (defface my-line-numbers-separator
+      '((t :inherit linum))
+      "Face for separation between the line number display and the buffer contents."
+      :group 'my-line-numbers)
+    (set-face-foreground 'linum my-line-numbers-foreground)
+    (set-face-background 'linum my-line-numbers-background)
+    (set-face-background 'my-line-numbers-separator
+                         my-line-numbers-background)
+    ;; Separating line numbers from text
+    ;; <http://www.emacswiki.org/emacs/LineNumbers#toc7>.
+    (unless window-system
+      (add-hook 'linum-before-numbering-hook
+                (lambda ()
+                  (setq-local linum-format-fmt
+                              (let ((w (length
+                                        (number-to-string
+                                         (count-lines (point-min)
+                                                      (point-max))))))
+                                (concat "%" (number-to-string w) "d"))))))
+    (defun my-linum-format (line)
+      (concat
+       (propertize (format linum-format-fmt line) 'face 'linum)
+       (propertize " " 'face 'my-line-numbers-separator)))
+    (unless window-system
+      (setq linum-format 'my-linum-format))))
