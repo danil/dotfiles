@@ -18,6 +18,7 @@
                       'haskell-mode-hook
                       'html-mode-hook
                       'ibuffer-mode-hook
+                      'inf-ruby-mode-hook
                       'java-mode-hook
                       'js-mode-hook
                       'less-css-mode-hook
