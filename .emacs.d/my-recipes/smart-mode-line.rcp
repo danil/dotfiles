@@ -1,1 +1,4 @@
 (my-add-to-packages 'smart-mode-line)
+(autoload 'sml/setup "smart-mode-line" nil t)
+(setq sml/theme frame-background-mode)
+(my-after-init (sml/setup))

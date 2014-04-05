@@ -7,4 +7,5 @@
   ;;   (custom-set-faces
   ;;    '(window-numbering-face
   ;;      ((t (:foreground "brightmagenta" :background nil :weight normal :underline nil))))))
-  (window-numbering-mode))
+  (window-numbering-mode)
+  (custom-set-variables '(window-numbering-format "%s ")))
