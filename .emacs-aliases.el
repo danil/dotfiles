@@ -127,6 +127,7 @@
           "simp"
           "simple"
           "slim-mode"
+          "smart-mode-line"
           "smartparens"
           "smex"
           "sort"

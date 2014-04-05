@@ -1,0 +1,3 @@
+(my-add-to-packages 'window-number)
+(autoload 'window-number-mode "window-number" nil t)
+(my-after-init (window-number-mode t))
