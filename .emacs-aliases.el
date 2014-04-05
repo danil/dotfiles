@@ -105,6 +105,7 @@
           "org-reveal"
           "php-mode"
           "pomohist"
+          "rainbow-delimiters"
           "rainbow-mode"
           "replace"
           "rhtml-mode"
