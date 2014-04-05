@@ -96,7 +96,7 @@
        "%W "
        "^>" ;right align
        '(:eval (run-shell-command MY-LOAD-COMMAND t))
-       " %t %M "
+       " %t %M/%P% "
        '(:eval (run-shell-command MY-DATE-COMMAND t))
        "      "))
 
