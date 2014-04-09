@@ -1,5 +1,7 @@
-(global-set-key (my-kbd "b h r") 'highlight-regexp)
-(global-set-key (my-kbd "b u h r") 'unhighlight-regexp)
+(my-after-init
+  (global-set-key (my-kbd "b h r") 'highlight-regexp)
+  (global-set-key (my-kbd "b u h r") 'unhighlight-regexp))
+
 ;; (defun my-highlight-regexp (&optional arg)
 ;;   (interactive "P")
 ;;   (if arg (unhighlight-regexp) (highlight-regexp)))
