@@ -74,6 +74,7 @@
           "haml-mode"
           "haskell-mode"
           "help"
+          "hi-lock"
           "highlight-current-line"
           "highlight-symbol"
           "ibuffer"
