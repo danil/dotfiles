@@ -55,6 +55,7 @@
           "desktop"
           "diff-mode"
           "dired"
+          "disp-table"
           "ebuild-mode"
           "ediff"
           "emacs-lisp-mode"
