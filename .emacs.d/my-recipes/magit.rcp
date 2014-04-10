@@ -7,10 +7,10 @@
   (global-set-key (my-kbd "v s f") 'magit-show)
   (global-set-key (my-kbd "v s c") 'magit-show-commit)
   (my-eval-after-load 'magit
-    (define-key magit-mode-map (my-kbd "v s s s 1") 'magit-show-level-1-all)
-    (define-key magit-mode-map (my-kbd "v s s s 2") 'magit-show-level-2-all)
-    (define-key magit-mode-map (my-kbd "v s s s 3") 'magit-show-level-3-all)
-    (define-key magit-mode-map (my-kbd "v s s s 4") 'magit-show-level-4-all))
+    (define-key magit-mode-map (my-kbd "v s s 1") 'magit-show-level-1-all)
+    (define-key magit-mode-map (my-kbd "v s s 2") 'magit-show-level-2-all)
+    (define-key magit-mode-map (my-kbd "v s s 3") 'magit-show-level-3-all)
+    (define-key magit-mode-map (my-kbd "v s s 4") 'magit-show-level-4-all))
   (add-hook
    'magit-mode-hook
    (lambda ()
