@@ -88,6 +88,7 @@
           "less" ;do not remove, used for generic scroll!
           "less-css-mode"
           "linum"
+          "linum-format"
           "lisp-mode"
           "lua"
           "lua-mode"

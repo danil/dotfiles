@@ -2,7 +2,7 @@
 (autoload 'linum-mode "linum" nil t)
 (my-add-mode-to-hooks (lambda ()
                         (let ((my-number-of-lines (count-lines (point-min)
-                                                        (point-max))))
+                                                               (point-max))))
                           (if (< my-number-of-lines 20000)
                               (linum-mode t))))
                       'awk-mode-hook
@@ -41,45 +41,7 @@
                       'sql-mode-hook
                       'xml-mode-hook
                       'yaml-mode-hook)
-;; (defun my-line-numbers-deactivator ()
-;;   (let ((my-number-of-lines (count-lines (point-min)
-;;                                          (point-max))))
-;;     (if (> my-number-of-lines 20000)
-;;         (progn (remove-hook 'linum-before-numbering-hook
-;;                             'my-line-numbers-deactivator)
-;;                (message "aaaaaaaa")
-;;                (linum-mode nil)
-;;                (linum-mode nil)
-;;                (message "bbbbbbbbbbb")))))
-;; (add-hook 'linum-before-numbering-hook 'my-line-numbers-deactivator)
 (my-after-init
   (my-eval-after-load 'linum
-    (defgroup my-line-numbers nil
-      "Custom line numbers in the left margin."
-      :group 'linum
-      :prefix "my-line-numbers-")
-    (defface my-line-numbers-separator
-      '((t :inherit linum))
-      "Face for separation between the line number display and the buffer contents."
-      :group 'my-line-numbers)
     (set-face-foreground 'linum my-line-numbers-foreground)
-    (set-face-background 'linum my-line-numbers-background)
-    (set-face-background 'my-line-numbers-separator
-                         my-line-numbers-background)
-    ;; Separating line numbers from text
-    ;; <http://www.emacswiki.org/emacs/LineNumbers#toc7>.
-    (unless window-system
-      (add-hook 'linum-before-numbering-hook
-                (lambda ()
-                  (setq-local linum-format-fmt
-                              (let ((w (length
-                                        (number-to-string
-                                         (count-lines (point-min)
-                                                      (point-max))))))
-                                (concat "%" (number-to-string w) "d"))))))
-    (defun my-linum-format (line)
-      (concat
-       (propertize (format linum-format-fmt line) 'face 'linum)
-       (propertize " " 'face 'my-line-numbers-separator)))
-    (unless window-system
-      (setq linum-format 'my-linum-format))))
+    (set-face-background 'linum my-line-numbers-background)))

@@ -2,6 +2,7 @@
   (global-set-key (my-kbd "b h r") 'highlight-regexp)
   (global-set-key (my-kbd "b u h r") 'unhighlight-regexp))
 
+;;; TODO: Pass appropriate arguments to highlight-regexp.
 ;; (defun my-highlight-regexp (&optional arg)
 ;;   (interactive "P")
 ;;   (if arg (unhighlight-regexp) (highlight-regexp)))
