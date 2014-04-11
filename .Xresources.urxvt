@@ -2,10 +2,10 @@
 ! URxvt.
 
 ! <http://askubuntu.com/questions/22419/how-do-i-make-urxvt-render-xft-fonts#96779>.
-URxvt.font:           xft:monospace:pixelsize=13:antialias=true:hinting=true:autohint=true:style=regular
-URxvt.boldFont:       xft:monospace:pixelsize=13:antialias=true:hinting=true:autohint=true:style=bold
-URxvt.italicFont:     xft:monospace:pixelsize=13:antialias=true:hinting=true:autohint=true:style=italic
-URxvt.boldItalicFont: xft:monospace:pixelsize=13:antialias=true:hinting=true:autohint=true:style=bold italic
+URxvt.font:           xft:monospace:pixelsize=15:antialias=true:hinting=true:autohint=true:style=regular
+URxvt.boldFont:       xft:monospace:pixelsize=15:antialias=true:hinting=true:autohint=true:style=bold
+URxvt.italicFont:     xft:monospace:pixelsize=15:antialias=true:hinting=true:autohint=true:style=italic
+URxvt.boldItalicFont: xft:monospace:pixelsize=15:antialias=true:hinting=true:autohint=true:style=bold italic
 
 ! Font spacing.
 ! By default in urxvt the distance between characters can feel too wide
