@@ -1,15 +1,11 @@
 #!/bin/sh
-cachedir=${XDG_CACHE_HOME:-"$HOME/.cache"}
-if [ -d "$cachedir" ]; then
-    cache=$cachedir/dmenu_run
-else
-    cache=$HOME/.dmenu_cache # if no xdg dir, fall back to dotfile in ~
-fi
+dmenu_history=$HOME/.dmenu_history
+touch $dmenu_history
 (
     IFS=:
-    if stest -dqr -n "$cache" $PATH; then
-        stest -flx $PATH | sort -u | tee "$cache" | dmenu "$@"
-    else
-        dmenu "$@" < "$cache"
-    fi
-) | ${SHELL:-"/bin/sh"} &
+    # (cat $dmenu_history ; stest -flx $PATH | sort -u) # pipe multiple commands to a single command <http://stackoverflow.com/questions/11917708/pipe-multiple-commands-to-a-single-command#11917709>
+    #     | awk ' !x[$0]++'                             # removing duplicate lines without sorting <http://stackoverflow.com/questions/11532157/unix-removing-duplicate-lines-without-sorting#11532197>
+    (cat $dmenu_history ; stest -flx $PATH | sort -u) \
+        | awk ' !x[$0]++' \
+        | dmenu "$@"
+) | tee --append "$dmenu_history" | ${SHELL:-"/bin/sh"} &
