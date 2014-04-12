@@ -1,11 +1,13 @@
 #!/bin/sh
 # <http://tools.suckless.org/dmenu/scripts>.
 
-FN="Monospace-12"
-P="$USER@`hostname`"
-NF="white"
-NB="black"
-SF="black"
-SB="OrangeRed1"
+font="Monospace-12"
+prompt="$USER@`hostname`"
+foreground="white"
+background="black"
+selected_foreground="black"
+selected_background="OrangeRed1"
 
-dmenu_run -fn $FN -nf $NF -nb $NB -sf $SF -sb $SB -p $P $@
+$HOME/bin/my_dmenu.sh -fn $font -p $prompt \
+    -nf $foreground -nb $background \
+    -sf $selected_foreground -sb $selected_background $@
