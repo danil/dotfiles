@@ -3,10 +3,10 @@
 
 font="Monospace-12"
 prompt="$USER@`hostname`"
-foreground="white"
-background="black"
-selected_foreground="black"
-selected_background="OrangeRed1"
+normal_fg="white"
+normal_bg="black"
+selected_fg="black"
+selected_bg="OrangeRed1"
 history_path=$HOME/.dmenu_history
 
 touch $history_path
@@ -34,6 +34,6 @@ function get_commands {
     (tac $history_path ; get_commands | sort -u) \
         | awk ' !x[$0]++' \
         | dmenu -fn $font -p $prompt \
-        -nf $foreground -nb $background \
-        -sf $selected_foreground -sb $selected_background $@
+        -nf $normal_fg -nb $normal_bg \
+        -sf $selected_fg -sb $selected_bg $@
 ) | tee --append $history_path | ${SHELL:-"/bin/sh"} &
