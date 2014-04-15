@@ -1,12 +1,12 @@
 #! /bin/bash
 # <http://tools.suckless.org/dmenu/scripts>.
 
-font="Monospace-12"
+font=Monospace-12
 prompt="$USER@`hostname`"
-normal_fg="white"
-normal_bg="black"
-selected_fg="black"
-selected_bg="OrangeRed1"
+normal_fg=white
+normal_bg=black
+selected_fg=black
+selected_bg=OrangeRed1
 history_path=$HOME/.dmenu_history
 
 touch $history_path
