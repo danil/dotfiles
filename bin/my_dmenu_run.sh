@@ -16,7 +16,7 @@ touch $history_path
 # <http://unix.stackexchange.com/questions/31947/how-to-add-a-newline-to-the-end-of-a-file#comment-43399>.
 sed -i -e '$a\' $history_path
 
-function get_menu_items {
+function get_commands {
     # Executable exists?
     # <http://stackoverflow.com/questions/592620/how-to-check-if-a-program-exists-from-a-bash-script#677212>.
     if hash stest 2>/dev/null; then
@@ -31,7 +31,7 @@ function get_menu_items {
     # (tac $history_path ; stest -flx $PATH | sort -u) \ # reverse order of lines <http://stackoverflow.com/questions/742466/how-can-i-reverse-the-order-of-lines-in-a-file#742485>
     #                                                    # pipe multiple commands to a single command <http://stackoverflow.com/questions/11917708/pipe-multiple-commands-to-a-single-command#11917709>
     #     | awk ' !x[$0]++'                              # removing duplicate lines without sorting <http://stackoverflow.com/questions/11532157/unix-removing-duplicate-lines-without-sorting#11532197>
-    (tac $history_path ; get_menu_items | sort -u) \
+    (tac $history_path ; get_commands | sort -u) \
         | awk ' !x[$0]++' \
         | dmenu -fn $font -p $prompt \
         -nf $foreground -nb $background \
