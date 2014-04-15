@@ -37,6 +37,7 @@ alias ec='/usr/bin/emacsclient -t'
 alias g='git'
 # Silver searchers colors configurable <https://github.com/ggreer/the_silver_searcher/issues/90>.
 alias ag='ag --smart-case --color-line-number "2;31"'
+alias dm='my_dmenu_run.sh'
 alias em='emerge --verbose --oneshot --color=y'
 
 # Prompt.
