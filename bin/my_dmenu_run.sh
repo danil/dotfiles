@@ -1,4 +1,4 @@
-#!/bin/sh
+#! /bin/bash
 # <http://tools.suckless.org/dmenu/scripts>.
 
 font="Monospace-12"
@@ -7,34 +7,33 @@ foreground="white"
 background="black"
 selected_foreground="black"
 selected_background="OrangeRed1"
-dmenu_history=$HOME/.dmenu_history
+history_path=$HOME/.dmenu_history
 
-touch $dmenu_history
+touch $history_path
 
 # Adds \n at the end of the file only if it doesn’t already end with a newline
-# <http://unix.stackexchange.com/questions/31947/how-to-add-a-newline-to-the-end-of-a-file#31955>.
-sed -i '' -e '$a\' $dmenu_history
+# <http://unix.stackexchange.com/questions/31947/how-to-add-a-newline-to-the-end-of-a-file#31955>,
+# <http://unix.stackexchange.com/questions/31947/how-to-add-a-newline-to-the-end-of-a-file#comment-43399>.
+sed -i -e '$a\' $history_path
 
-# Executable exists?
-# <http://stackoverflow.com/questions/592620/how-to-check-if-a-program-exists-from-a-bash-script#677212>.
-if hash dmenu_path 2>/dev/null; then
-    (
-        (tac $dmenu_history ; dmenu_path | sort -u) \
-            | awk ' !x[$0]++' \
-            | dmenu -fn $font -p $prompt \
-            -nf $foreground -nb $background \
-            -sf $selected_foreground -sb $selected_background $@
-    ) | tee --append "$dmenu_history" | ${SHELL:-"/bin/sh"} &
-else
-    (
+function get_menu_items {
+    # Executable exists?
+    # <http://stackoverflow.com/questions/592620/how-to-check-if-a-program-exists-from-a-bash-script#677212>.
+    if hash dmenu_path 2>/dev/null; then
+        dmenu_path
+    else
         IFS=:
-        # (tac $dmenu_history ; stest -flx $PATH | sort -u) \ # reverse order of lines <http://stackoverflow.com/questions/742466/how-can-i-reverse-the-order-of-lines-in-a-file#742485>
-        #                                                     # pipe multiple commands to a single command <http://stackoverflow.com/questions/11917708/pipe-multiple-commands-to-a-single-command#11917709>
-        #     | awk ' !x[$0]++'                               # removing duplicate lines without sorting <http://stackoverflow.com/questions/11532157/unix-removing-duplicate-lines-without-sorting#11532197>
-        (tac $dmenu_history ; stest -flx $PATH | sort -u) \
-            | awk ' !x[$0]++' \
-            | dmenu -fn $font -p $prompt \
-            -nf $foreground -nb $background \
-            -sf $selected_foreground -sb $selected_background $@
-    ) | tee --append "$dmenu_history" | ${SHELL:-"/bin/sh"} &
-fi
+        stest -flx $PATH
+    fi
+}
+
+(
+    # (tac $history_path ; stest -flx $PATH | sort -u) \ # reverse order of lines <http://stackoverflow.com/questions/742466/how-can-i-reverse-the-order-of-lines-in-a-file#742485>
+    #                                                    # pipe multiple commands to a single command <http://stackoverflow.com/questions/11917708/pipe-multiple-commands-to-a-single-command#11917709>
+    #     | awk ' !x[$0]++'                              # removing duplicate lines without sorting <http://stackoverflow.com/questions/11532157/unix-removing-duplicate-lines-without-sorting#11532197>
+    (tac $history_path ; get_menu_items | sort -u) \
+        | awk ' !x[$0]++' \
+        | dmenu -fn $font -p $prompt \
+        -nf $foreground -nb $background \
+        -sf $selected_foreground -sb $selected_background $@
+) | tee --append "$history_path" | ${SHELL:-"/bin/sh"} &
