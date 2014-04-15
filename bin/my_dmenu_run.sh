@@ -19,11 +19,11 @@ sed -i -e '$a\' $history_path
 function get_menu_items {
     # Executable exists?
     # <http://stackoverflow.com/questions/592620/how-to-check-if-a-program-exists-from-a-bash-script#677212>.
-    if hash dmenu_path 2>/dev/null; then
-        dmenu_path
-    else
+    if hash stest 2>/dev/null; then
         IFS=:
         stest -flx $PATH
+    else
+        dmenu_path
     fi
 }
 
