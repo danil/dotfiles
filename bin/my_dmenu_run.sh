@@ -36,4 +36,4 @@ function get_commands {
         | dmenu -fn $font -p $prompt \
         -nf $foreground -nb $background \
         -sf $selected_foreground -sb $selected_background $@
-) | tee --append "$history_path" | ${SHELL:-"/bin/sh"} &
+) | tee --append $history_path | ${SHELL:-"/bin/sh"} &
