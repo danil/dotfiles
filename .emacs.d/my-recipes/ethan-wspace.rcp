@@ -6,5 +6,5 @@
     (cond ((equal frame-background-mode 'dark)
            (set-face-background 'ethan-wspace-face "#262626") ;#3f3f3f
            ))
-    (setq  ethan-wspace-mode-line-element "") ;typically looks like: ew:tLNm
+    (setq  ethan-wspace-mode-line-element nil) ;typically looks like: ew:tLNm
     (global-ethan-wspace-mode t)))

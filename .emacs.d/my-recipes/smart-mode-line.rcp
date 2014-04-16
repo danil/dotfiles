@@ -9,9 +9,9 @@
                " RubyRef"   ;ruby-refactor-mode
                " SP"        ;smartparens-mode
                " Undo-Tree" ;undo-tree-mode
+               " end"       ;ruby-end-mode
                " gg"        ;git-gutter-mode
                " hl-s"      ;highlight-symbol-mode
-               ;; " end"       ;ruby-end-mode
-               ;; " hs"        ;hs-minor-mode
-               ;; " rt"        ;ruby-tools-mode
+               " rt"        ;ruby-tools-mode
+               ;; " hs"        ;hideshow
                )) (add-to-list 'sml/hidden-modes my-hidden-mode)))
