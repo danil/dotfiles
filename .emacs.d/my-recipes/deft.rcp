@@ -1,1 +1,12 @@
 (my-add-to-packages 'deft)
+
+(my-after-init
+  (global-set-key (my-kbd "m d") 'my-deft)
+
+  (my-eval-after-load 'deft
+    (setq deft-text-mode 'markdown-mode)
+    (setq deft-extension "md")))
+
+(defun my-deft (&optional arg)
+  (interactive "P")
+  (if arg (deft-new-file) (deft)))

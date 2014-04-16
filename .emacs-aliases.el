@@ -52,6 +52,7 @@
           "crontab-mode"
           "csv-mode"
           "dart-mode"
+          "deft"
           "desktop"
           "diff-mode"
           "dired"

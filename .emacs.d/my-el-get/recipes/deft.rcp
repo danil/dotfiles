@@ -2,5 +2,4 @@
        :description "Deft is an Emacs mode for quickly browsing, filtering, and editing directories of plain text notes, inspired by Notational Velocity."
        :website "http://jblevins.org/projects/deft"
        :type http
-       :url "http://jblevins.org/projects/deft/deft.el"
-       :features deft)
+       :url "http://jblevins.org/projects/deft/deft.el")
