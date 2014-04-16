@@ -1,4 +1,17 @@
 (my-add-to-packages 'smart-mode-line)
 (autoload 'sml/setup "smart-mode-line" nil t)
-(setq sml/theme frame-background-mode)
-(my-after-init (sml/setup))
+
+(my-after-init
+  (setq sml/theme frame-background-mode)
+  (sml/setup)
+  (dolist (my-hidden-mode '(
+               " AC"        ;auto-complete-mode
+               " RubyRef"   ;ruby-refactor-mode
+               " SP"        ;smartparens-mode
+               " Undo-Tree" ;undo-tree-mode
+               " end"       ;ruby-end-mode
+               " gg"        ;git-gutter-mode
+               " hl-s"      ;highlight-symbol-mode
+               " rt"        ;ruby-tools-mode
+               ;; " hs"        ;hideshow
+               )) (add-to-list 'sml/hidden-modes my-hidden-mode)))

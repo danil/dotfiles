@@ -8,7 +8,6 @@
                       'awk-mode-hook
                       'c-mode-hook
                       'coffee-mode-hook
-                      'compilation-mode-hook
                       'conf-mode-hook
                       'css-mode-hook
                       'csv-mode-hook

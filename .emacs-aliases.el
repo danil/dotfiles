@@ -50,8 +50,10 @@
           "column-marker"
           "conf-mode"
           "crontab-mode"
+          "css"
           "csv-mode"
           "dart-mode"
+          "deft"
           "desktop"
           "diff-mode"
           "dired"
@@ -76,6 +78,7 @@
           "haskell-mode"
           "help"
           "hi-lock"
+          "hideshow"
           "highlight-current-line"
           "highlight-symbol"
           "ibuffer"
@@ -377,21 +380,6 @@
 ;;; <http://en.wikipedia.org/wiki/HTML_Components>.
 (add-to-list 'auto-mode-alist '("\\.htc$" . js-mode))
 (setq js-indent-level 2)
-
-;;; CSS mode
-;;; <http://emacswiki.org/emacs/css-mode.el>.
-(setq css-indent-offset 2)
-
-;;; Hide Show minor mode <http://www.emacswiki.org/emacs/HideShow>.
-(add-hook 'ruby-mode-hook 'hs-minor-mode)
-;; (eval-after-load 'hs-minor-mode
-;;   '(progn (define-key hs-minor-mode-map (kbd \"TAB\") 'hs-toggle-hiding)))
-
-;;; Folding Ruby code (hide show minor mode).
-(add-to-list 'hs-special-modes-alist
-                  '(ruby-mode
-                           "\\(def\\|do\\|{\\)" "\\(end\\|end\\|}\\)" "#"
-                                  (lambda (arg) (ruby-end-of-block)) nil))
 
 ;;; ANSI SGR (Select Graphic Rendition) escape sequences
 ;;; <http://www.emacswiki.org/emacs/AnsiColor>
