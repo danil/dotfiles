@@ -22,10 +22,10 @@
   (dolist (my-path-to-replace
            '(
              ("^~/src/" ":S:")
-             ("^:V\\([^:]\\):\\([^/]\\{0,6\\}\\)[^/]*?\\([^/]\\{0,4\\}\\)/" ":V\\1:\\2\\3:")
-             ("^~/src/vendor/waveaccess/" ":VW:")
-             ("^~/src/vendor/molinos/"    ":VM:")
-             ("^~/src/vendor/avers/"      ":VP:")
-             ("^~/src/vendor/johnstudio/" ":VJ:")
+             ("^:SV\\([^:]\\):\\([^/]\\{0,6\\}\\)[^/]*?\\([^/]\\{0,4\\}\\)/" ":SV\\1:\\2\\3:")
+             ("^~/src/vendor/waveaccess/" ":SVW:")
+             ("^~/src/vendor/molinos/"    ":SVM:")
+             ("^~/src/vendor/avers/"      ":SVP:")
+             ("^~/src/vendor/johnstudio/" ":SVJ:")
              ))
     (add-to-list 'sml/replacer-regexp-list my-path-to-replace)))
