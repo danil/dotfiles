@@ -21,6 +21,7 @@
                       'nxml-mode-hook
                       'perl-mode-hook
                       'php-mode-hook
+                      'python-mode-hook
                       'ruby-mode-hook
                       'rust-mode-hook
                       'sass-mode-hook

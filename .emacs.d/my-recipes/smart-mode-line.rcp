@@ -4,6 +4,7 @@
 (my-after-init
   (setq sml/theme frame-background-mode)
   (sml/setup)
+
   (dolist (my-hidden-mode '(
                " AC"        ;auto-complete-mode
                " RubyRef"   ;ruby-refactor-mode
@@ -14,4 +15,11 @@
                " hl-s"      ;highlight-symbol-mode
                " rt"        ;ruby-tools-mode
                ;; " hs"        ;hideshow
-               )) (add-to-list 'sml/hidden-modes my-hidden-mode)))
+               )) (add-to-list 'sml/hidden-modes my-hidden-mode))
+
+  (dolist (my-path-to-replace
+           '(
+             ("^:W:\\([^/]\\{0,6\\}\\)[^/]*?\\([^/]\\{0,4\\}\\)/" ":W:\\1\\2:")
+             ("^~/src/vendor/waveaccess/" ":W:")
+             ))
+    (add-to-list 'sml/replacer-regexp-list my-path-to-replace)))

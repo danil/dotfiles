@@ -39,6 +39,8 @@ alias g='git'
 alias ag='ag --smart-case --color-line-number "2;31"'
 alias dm='my_dmenu_run.sh'
 alias em='emerge --verbose --oneshot --color=y'
+alias cd-w='cd ~/src/vendor/waveaccess'
+alias cd-wm='cd ~/src/vendor/waveaccess/medapp'
 
 # Prompt.
 [[ -f ~/.bash_prompt.sh ]] && source ~/.bash_prompt.sh
