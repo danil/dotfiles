@@ -19,6 +19,7 @@
                     markdown-mode
                     nxml-mode
                     org-mode
+                    python-mode
                     rhtml-mode
                     rust-mode
                     sass-mode

@@ -1,37 +1,37 @@
 (my-add-to-packages 'git-gutter)
-(dolist (hook '(
-                awk-mode-hook
-                c-mode-hook
-                coffee-mode-hook
-                conf-mode-hook
-                css-mode-hook
-                emacs-lisp-mode-hook
-                haml-mode-hook
-                haskell-mode-hook
-                html-mode-hook
-                java-mode-hook
-                js-mode-hook
-                less-css-mode
-                lisp-mode-hook
-                lua-mode-hook
-                makefile-gmake-mode-hook
-                markdown-mode-hook
-                nxml-mode-hook
-                org-mode-hook
-                perl-mode-hook
-                php-mode-hook
-                python-mode-hook
-                ruby-mode-hook
-                rust-mode-hook
-                sass-mode-hook
-                sgml-mode-hook
-                sh-mode-hook
-                sieve-mode-hook
-                sql-mode-hook
-                xml-mode-hook
-                yaml-mode-hook
-                ))
-  (add-hook hook 'git-gutter-mode))
+
+(my-add-mode-to-hooks 'git-gutter-mode
+                      'awk-mode-hook
+                      'c-mode-hook
+                      'coffee-mode-hook
+                      'conf-mode-hook
+                      'css-mode-hook
+                      'emacs-lisp-mode-hook
+                      'haml-mode-hook
+                      'haskell-mode-hook
+                      'html-mode-hook
+                      'java-mode-hook
+                      'js-mode-hook
+                      'less-css-mode
+                      'lisp-mode-hook
+                      'lua-mode-hook
+                      'makefile-gmake-mode-hook
+                      'markdown-mode-hook
+                      'nxml-mode-hook
+                      'org-mode-hook
+                      'perl-mode-hook
+                      'php-mode-hook
+                      'python-mode-hook
+                      'ruby-mode-hook
+                      'rust-mode-hook
+                      'sass-mode-hook
+                      'sgml-mode-hook
+                      'sh-mode-hook
+                      'sieve-mode-hook
+                      'sql-mode-hook
+                      'xml-mode-hook
+                      'yaml-mode-hook)
+
 (global-set-key (my-kbd "v h k") 'git-gutter:revert-hunk)
 (global-set-key (my-kbd "v h n") 'git-gutter:next-diff)
 (global-set-key (my-kbd "v h p") 'git-gutter:previous-diff)
