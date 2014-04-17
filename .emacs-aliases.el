@@ -111,6 +111,7 @@
           "org-reveal"
           "php-mode"
           "pomohist"
+          "pretty-lambdada"
           "rainbow-delimiters"
           "rainbow-mode"
           "replace"
