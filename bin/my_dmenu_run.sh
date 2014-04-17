@@ -9,13 +9,6 @@ selected_fg=black
 selected_bg=OrangeRed1
 history_path=$HOME/.dmenu_history
 
-touch $history_path
-
-# Adds \n at the end of the file only if it doesn’t already end with a newline
-# <http://unix.stackexchange.com/questions/31947/how-to-add-a-newline-to-the-end-of-a-file#31955>,
-# <http://unix.stackexchange.com/questions/31947/how-to-add-a-newline-to-the-end-of-a-file#comment-43399>.
-sed -i -e '$a\' $history_path
-
 function get_commands {
     # Executable exists?
     # <http://stackoverflow.com/questions/592620/how-to-check-if-a-program-exists-from-a-bash-script#677212>.
@@ -26,6 +19,10 @@ function get_commands {
         dmenu_path
     fi
 }
+
+touch $history_path &&
+
+sed -i -e '$a\' $history_path &&
 
 (
     # (tac $history_path ; stest -flx $PATH | sort -u) \ # reverse order of lines <http://stackoverflow.com/questions/742466/how-can-i-reverse-the-order-of-lines-in-a-file#742485>
