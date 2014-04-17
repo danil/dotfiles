@@ -1,8 +1,7 @@
 (my-after-init
-  (global-set-key (my-kbd "b h r") 'highlight-regexp)
-  (global-set-key (my-kbd "b u h r") 'unhighlight-regexp))
+  (global-set-key (my-kbd "b h r") 'my-highlight-regexp))
 
-;;; TODO: Pass appropriate arguments to highlight-regexp.
-;; (defun my-highlight-regexp (&optional arg)
-;;   (interactive "P")
-;;   (if arg (unhighlight-regexp) (highlight-regexp)))
+(defun my-highlight-regexp (&optional arg)
+  (interactive "P")
+  (if arg (call-interactively 'unhighlight-regexp)
+    (call-interactively 'highlight-regexp)))
