@@ -7,6 +7,7 @@
 
   (dolist (my-hidden-mode '(
                " AC"        ;auto-complete-mode
+               " Abbrev"    ;auto-revert-mode
                " RubyRef"   ;ruby-refactor-mode
                " SP"        ;smartparens-mode
                " Undo-Tree" ;undo-tree-mode
@@ -19,6 +20,7 @@
 
   (dolist (my-path-to-replace
            '(
+             ("^~/src/" ":S:")
              ("^:V\\([^:]\\):\\([^/]\\{0,6\\}\\)[^/]*?\\([^/]\\{0,4\\}\\)/" ":V\\1:\\2\\3:")
              ("^~/src/vendor/waveaccess/" ":VW:")
              ("^~/src/vendor/molinos/"    ":VM:")
