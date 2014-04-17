@@ -4,8 +4,7 @@
   (global-set-key (my-kbd "m d") 'my-deft)
 
   (my-eval-after-load 'deft
-    ;; <http://jblevins.org/projects/deft>.
-    ;; (setq deft-directory "~/Dropbox/notes")
+    (setq deft-directory "~/Dropbox/notes") ;<http://jblevins.org/projects/deft>
     (setq deft-text-mode 'markdown-mode)
     (setq deft-extension "md")))
 
