@@ -46,6 +46,7 @@
           "auto-complete-etags"
           "bash-completion"
           "calendar"
+          "clojure-mode"
           "coffee-mode"
           "column-marker"
           "conf-mode"
