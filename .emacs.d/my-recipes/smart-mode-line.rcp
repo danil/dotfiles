@@ -15,8 +15,8 @@
                " end"       ;ruby-end-mode
                " gg"        ;git-gutter-mode
                " hl-s"      ;highlight-symbol-mode
+               " hs"        ;hideshow
                " rt"        ;ruby-tools-mode
-               ;; " hs"        ;hideshow
                )) (add-to-list 'sml/hidden-modes my-hidden-mode))
 
   (dolist (my-path-to-replace
