@@ -46,7 +46,11 @@
           "auto-complete-etags"
           "bash-completion"
           "calendar"
+
+          ;; Clojure.
+          "cider" ;clojure-mode dependency
           "clojure-mode"
+
           "coffee-mode"
           "column-marker"
           "conf-mode"
