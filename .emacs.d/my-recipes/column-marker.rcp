@@ -5,6 +5,7 @@
                       ;; 'whitespace-mode-hook
                       'awk-mode-hook
                       'change-log-mode-hook
+                      'clojure-mode-hook
                       'coffee-mode-hook
                       'conf-mode-hook
                       'css-mode-hook
