@@ -124,7 +124,6 @@
           "rinari"
           "rspec-compilation-mode"
           "rspec-mode"
-          "ruby-end"
           "ruby-hash-syntax"
           "ruby-mode"
           "ruby-pry"
