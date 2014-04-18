@@ -119,6 +119,7 @@
           "pretty-lambdada"
           "rainbow-delimiters"
           "rainbow-mode"
+          "re-builder"
           "replace"
           "rhtml-mode"
           "rinari"
