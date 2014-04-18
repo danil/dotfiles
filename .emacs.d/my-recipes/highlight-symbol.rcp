@@ -1,6 +1,7 @@
 (my-add-to-packages 'highlight-symbol)
 (my-add-mode-to-hooks 'highlight-symbol-mode
                       'awk-mode-hook
+                      'clojure-mode-hook
                       'coffee-mode-hook
                       'conf-mode-hook
                       'conf-space-mode-hook

@@ -3,6 +3,7 @@
 (my-add-mode-to-hooks 'git-gutter-mode
                       'awk-mode-hook
                       'c-mode-hook
+                      'clojure-mode-hook
                       'coffee-mode-hook
                       'conf-mode-hook
                       'css-mode-hook

@@ -5,6 +5,7 @@
   ;;   :group 'idle-highlight)
   (my-add-mode-to-hooks (lambda () (idle-highlight-mode t))
                         'awk-mode-hook
+                        'clojure-mode-hook
                         'coffee-mode-hook
                         'conf-mode-hook
                         'conf-space-mode-hook

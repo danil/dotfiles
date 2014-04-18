@@ -46,6 +46,11 @@
           "auto-complete-etags"
           "bash-completion"
           "calendar"
+
+          ;; Clojure.
+          "cider" ;clojure-mode dependency
+          "clojure-mode"
+
           "coffee-mode"
           "column-marker"
           "conf-mode"
@@ -114,12 +119,12 @@
           "pretty-lambdada"
           "rainbow-delimiters"
           "rainbow-mode"
+          "re-builder"
           "replace"
           "rhtml-mode"
           "rinari"
           "rspec-compilation-mode"
           "rspec-mode"
-          "ruby-end"
           "ruby-hash-syntax"
           "ruby-mode"
           "ruby-pry"
