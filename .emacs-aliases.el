@@ -215,11 +215,6 @@
 ;; (add-hook 'sql-interactive-mode-hook
 ;;           (function (lambda () (setq comint-input-ring-size 10000))))
 
-;;; Column number mode
-;;; <http://gnu.org/software/emacs/manual/html_node/emacs/Optional-Mode-Line.html>.
-;(setq line-number-mode t)
-(setq column-number-mode 1)
-
 ;;; IswitchB <http://emacswiki.org/IswitchBuffers>.
 ;; (iswitchb-mode 1)
 ;; (setq iswitchb-buffer-ignore '("^ " "*scratch*" "*Messages*"
