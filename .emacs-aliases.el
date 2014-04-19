@@ -252,18 +252,6 @@
 ;;; Cua mode <http://www.emacswiki.org/emacs/CuaMode>.
 (setq cua-enable-cua-keys nil) ;change case of a rectangle <http://stackoverflow.com/questions/6154545/emacs-change-case-of-a-rectangle#comment-7167904>.
 
-;;; Cron.
-(setq auto-mode-alist
-      (cons '("/crontab\\'" . shell-script-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/anacrontab\\'" . shell-script-mode) auto-mode-alist))
-
-;;; Shell scripts.
-(setq auto-mode-alist
-      (cons '("/\\.bash_aliases\\'" . shell-script-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/\\.ackrc\\'" . shell-script-mode) auto-mode-alist))
-
 ;;; JavaScript mode.
 ;;; HTML Components (HTCs or .htc)
 ;;; <http://en.wikipedia.org/wiki/HTML_Components>.
