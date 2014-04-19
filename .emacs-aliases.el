@@ -62,6 +62,7 @@
           "desktop"
           "diff-mode"
           "dired"
+          "dired-reuse-directory-buffer"
           "disp-table"
           "ebuild-mode"
           "ediff"
@@ -251,17 +252,6 @@
 ;; (setq iswitchb-buffer-ignore '("^ " "*scratch*" "*Messages*"
 ;;                                "*Completions*" "*Ibuffer*"))
 ;(setq iswitchb-default-method 'samewindow)
-
-;;; Dired.
-;;; Reuse directory buffer
-;;; <http://www.emacswiki.org/emacs/DiredReuseDirectoryBuffer>.
-(put 'dired-find-alternate-file 'disabled nil)
-(add-hook 'dired-mode-hook
-          (lambda ()
-            (define-key dired-mode-map (kbd "^")
-              (lambda () (interactive) (find-alternate-file "..")))
-                                        ; was dired-up-directory
-            ))
 
 ;;; Get rid of annoying backups, temporary files and autosaves.
 ;; Built-in backup settings
