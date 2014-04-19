@@ -105,6 +105,7 @@
           "magit-blame"
           "markdown-mode"
           "mmm-mode"
+          "my-backspace-fix"
           "my-color-theme"
           "my-project"
           "my-tags"
@@ -172,14 +173,6 @@
                     (setq last-input-event nil))
            (setq repeat-key nil)
            (push last-input-event unread-command-events))))))
-
-;;; BackspaceKey <http://emacswiki.org/BackspaceKey>.
-;; (global-set-key [(control h)] 'delete-backward-char)
-(defun my-backspace-fix ()
-  (keyboard-translate ?\C-h ?\C-?)
-  (define-key key-translation-map [?\C-h] [?\C-?]))
-(my-backspace-fix)
-(eval-after-load 'term-mode '(progn (my-backspace-fix)))
 
 ;;; Transient Mark mode <http://emacswiki.org/TransientMarkMode>.
 (transient-mark-mode 1)
