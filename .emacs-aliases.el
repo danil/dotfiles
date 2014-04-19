@@ -122,6 +122,7 @@
           "rainbow-delimiters"
           "rainbow-mode"
           "re-builder"
+          "recentf"
           "replace"
           "rhtml-mode"
           "rinari"
@@ -196,16 +197,6 @@
 ;;             (set-face-background 'show-paren-match "#002b36")
 ;;             ))
 ;;      ))
-
-;;; Recentf (open recent files)
-;;; <http://stackoverflow.com/questions/3527150/open-recent-in-emacs#answer-3527488>,
-;;; <http://emacswiki.org/RecentFiles>.
-(recentf-mode 1)
-;; If you make extensive use of Tramp, recentf will track those files
-;; too, and do it's periodic cleanup thing which can be a real mess
-;; since the files are remote. Prevent this by putting this in your
-;; startup file:
-(setq recentf-auto-cleanup 'never)
 
 ;;; Menu Bar
 ;;; <http://gnu.org/software/emacs/manual/html_node/emacs/Menu-Bars.html>,
