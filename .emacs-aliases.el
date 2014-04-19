@@ -116,6 +116,7 @@
           "occur-mode"
           "org-mode"
           "org-reveal"
+          "paren"
           "php-mode"
           "pomohist"
           "pretty-lambdada"
@@ -188,15 +189,6 @@
 (setq default-tab-width 4)
 (setq-default indent-tabs-mode nil)
 (setq standard-indent 2)
-;;; show-paren-mode <http://emacswiki.org/ShowParenMode>,
-;;; <http://emacswiki.org/ParenthesesAppearance>
-(show-paren-mode 1)
-;; (eval-after-load 'show-paren
-;;   '(progn
-;;      (cond ((equal frame-background-mode 'dark)
-;;             (set-face-background 'show-paren-match "#002b36")
-;;             ))
-;;      ))
 
 ;;; Menu Bar
 ;;; <http://gnu.org/software/emacs/manual/html_node/emacs/Menu-Bars.html>,
