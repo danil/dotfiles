@@ -252,12 +252,6 @@
 ;;; Cua mode <http://www.emacswiki.org/emacs/CuaMode>.
 (setq cua-enable-cua-keys nil) ;change case of a rectangle <http://stackoverflow.com/questions/6154545/emacs-change-case-of-a-rectangle#comment-7167904>.
 
-;;; JavaScript mode.
-;;; HTML Components (HTCs or .htc)
-;;; <http://en.wikipedia.org/wiki/HTML_Components>.
-(add-to-list 'auto-mode-alist '("\\.htc$" . js-mode))
-(setq js-indent-level 2)
-
 ;;; ANSI SGR (Select Graphic Rendition) escape sequences
 ;;; <http://www.emacswiki.org/emacs/AnsiColor>
 (require 'ansi-color)
