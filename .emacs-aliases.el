@@ -102,7 +102,6 @@
           "linum"
           "linum-format"
           "lisp-mode"
-          "lua"
           "lua-mode"
           "magit"
           "magit-blame"
@@ -252,10 +251,6 @@
 
 ;;; Cua mode <http://www.emacswiki.org/emacs/CuaMode>.
 (setq cua-enable-cua-keys nil) ;change case of a rectangle <http://stackoverflow.com/questions/6154545/emacs-change-case-of-a-rectangle#comment-7167904>.
-
-;;; Logrotate scripts.
-(add-to-list 'auto-mode-alist '("/etc/logrotate.d/" . shell-script-mode))
-(add-to-list 'auto-mode-alist '("\\.logrotate\\'" . shell-script-mode))
 
 ;;; Cron.
 (setq auto-mode-alist
