@@ -149,6 +149,7 @@
           "smex"
           "sort"
           "undo-tree"
+          "uniquify"
           "window"
           "window-numbering"
           "yaml-mode"
@@ -273,18 +274,6 @@
 ;;; Server <http://shreevatsa.wordpress.com/tag/emacs/>.
 ;; (remove-hook 'kill-buffer-query-functions
 ;;              'server-kill-buffer-query-function)
-
-;;; Uniquify
-;;; <http://gnu.org/software/emacs/manual/html_node/emacs/Uniquify.html>,
-;;; <http://emacs-fu.blogspot.ru/2009/11/making-buffer-names-unique.html>.
-(require 'uniquify)
-;; nil, forward, reverse, post-forward or post-forward-angle-brackets
-(setq
- uniquify-buffer-name-style 'post-forward ;'forward
- uniquify-separator ":" ;"/"
- ;; uniquify-after-kill-buffer-p t ;rename after killing uniquified
- ;; uniquify-ignore-buffers-re "^\\*" ;don't muck with special buffers
- )
 
 ;;; Browse Url with Epiphany.
 ;(setq browse-url-browser-function 'browse-url-epiphany)
