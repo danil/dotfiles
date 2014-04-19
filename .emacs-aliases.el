@@ -141,6 +141,7 @@
           "sass-mode"
           "savehist"
           "scss-mode"
+          "sgml-mode"
           "sh-script"
           "sieve-mode"
           "simp"
@@ -251,10 +252,6 @@
 
 ;;; Cua mode <http://www.emacswiki.org/emacs/CuaMode>.
 (setq cua-enable-cua-keys nil) ;change case of a rectangle <http://stackoverflow.com/questions/6154545/emacs-change-case-of-a-rectangle#comment-7167904>.
-
-;;; HTML mode.
-(add-to-list 'auto-mode-alist '("\\.lp\\'" . html-mode))
-(add-to-list 'auto-mode-alist '("\\.op\\'" . html-mode))
 
 ;;; Logrotate scripts.
 (add-to-list 'auto-mode-alist '("/etc/logrotate.d/" . shell-script-mode))
