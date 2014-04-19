@@ -178,9 +178,8 @@
            (setq repeat-key nil)
            (push last-input-event unread-command-events))))))
 
-;;; Transient Mark mode <http://emacswiki.org/TransientMarkMode>.
-(transient-mark-mode 1)
 
+(transient-mark-mode 1) ;Transient Mark mode <http://emacswiki.org/TransientMarkMode>
 ;(set-keyboard-coding-system 'mule-utf-8)
 ;(set-default-coding-systems 'utf-8)
 ;(set-terminal-coding-system 'utf-8)
@@ -189,16 +188,7 @@
 (setq default-tab-width 4)
 (setq-default indent-tabs-mode nil)
 (setq standard-indent 2)
-
-;;; Menu Bar
-;;; <http://gnu.org/software/emacs/manual/html_node/emacs/Menu-Bars.html>,
-;;; <http://emacswiki.org/MenuBar>.
-(menu-bar-mode -1)
-(setq initial-scratch-message
-";; This buffer is for notes you don't want to save, and for Lisp evaluation.
-;; If you want to create a file, visit that file with C-x C-f,
-;; then enter the text in that file's own buffer.
-")
+(menu-bar-mode -1) ;Menu Bar <http://gnu.org/software/emacs/manual/html_node/emacs/Menu-Bars.html>, <http://emacswiki.org/MenuBar>
 
 ;;; Environment variables.
 (setenv "DISABLE_PRY_RAILS" "1")
