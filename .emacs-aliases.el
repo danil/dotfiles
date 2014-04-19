@@ -67,6 +67,7 @@
           "ebuild-mode"
           "ediff"
           "emacs-lisp-mode"
+          "env"
           "erise"
           "etags-select"
           "ethan-wspace"
@@ -192,12 +193,6 @@
 (setq-default indent-tabs-mode nil)
 (setq standard-indent 2)
 (menu-bar-mode -1) ;Menu Bar <http://gnu.org/software/emacs/manual/html_node/emacs/Menu-Bars.html>, <http://emacswiki.org/MenuBar>
-
-;;; Environment variables.
-(setenv "DISABLE_PRY_RAILS" "1")
-(setenv "GIT_PAGER" "")
-(setenv "RAILS_TRUSTED_IP" "192.168.0.18") ;<https://github.com/charliesome/better_errors#security>.
-;; (setenv "ESHELL" (expand-file-name "/bin/zsh")) ;terminal <http://stackoverflow.com/questions/1568987/getting-emacs-to-respect-my-default-shell-options#1570246>
 
 ;; ;;; <http://emacswiki.org/ScrollBar>.
 ;; (scroll-bar-mode -1)
