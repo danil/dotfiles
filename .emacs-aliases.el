@@ -72,6 +72,7 @@
           "ethan-wspace"
           "expand-region"
           "files"
+          "files-backup"
           "fill"
           "findr"
           "fiplr"
@@ -223,36 +224,12 @@
 ;;                                "*Completions*" "*Ibuffer*"))
 ;(setq iswitchb-default-method 'samewindow)
 
-;;; Get rid of annoying backups, temporary files and autosaves.
-;; Built-in backup settings
-;; <http://www.emacswiki.org/emacs/BackupDirectory#toc2>.
-(setq
- backup-by-copying t           ;don't clobber symlinks
- backup-directory-alist
- '(("." . "~/.emacs-backups")) ;don't litter my fs tree
- delete-old-versions t
- kept-new-versions 6
- kept-old-versions 2
- version-control t)            ;use versioned backups
-;; ;; Redefining the make-backup-file-name function in order to get
-;; ;; backup files in ~/.backups/ rather than scattered around all over
-;; ;; the filesystem. Note that you must have a directory ~/.backups/
-;; ;; made.  This function looks first to see if that folder exists.  If
-;; ;; it does not the standard backup copy is made.
-;; (defun make-backup-file-name (file-name)
-;;   "Create the non-numeric backup file name for `file-name'."
-;;   (require 'dired)
-;;   (if (file-exists-p "~/.backups")
-;;       (concat (expand-file-name "~/.backups/")
-;;               (dired-replace-in-string "/" "!" file-name))
-;;     (concat file-name "~")))
-
 ;;; Server <http://shreevatsa.wordpress.com/tag/emacs/>.
 ;; (remove-hook 'kill-buffer-query-functions
 ;;              'server-kill-buffer-query-function)
 
 ;;; Browse Url with Epiphany.
-;(setq browse-url-browser-function 'browse-url-epiphany)
+;; (setq browse-url-browser-function 'browse-url-epiphany)
 
 ;; (setq browse-url-browser-function 'browse-url-generic
 ;;   browse-url-generic-program "epiphany"
