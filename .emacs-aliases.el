@@ -134,6 +134,7 @@
           "rust-mode"
           "rvm"
           "sass-mode"
+          "savehist"
           "scss-mode"
           "sh-script"
           "sieve-mode"
@@ -194,9 +195,6 @@
 ;;             (set-face-background 'show-paren-match "#002b36")
 ;;             ))
 ;;      ))
-
-;;; Session Management <http://emacswiki.org/SessionManagement>.
-(savehist-mode 1)
 
 ;;; Recentf (open recent files)
 ;;; <http://stackoverflow.com/questions/3527150/open-recent-in-emacs#answer-3527488>,
