@@ -88,6 +88,7 @@
           "highlight-current-line"
           "highlight-symbol"
           "ibuffer"
+          "ido"
           "ido-yes-or-no"
           "interprogram"
           "isearch"
@@ -245,31 +246,6 @@
 ;;       (concat (expand-file-name "~/.backups/")
 ;;               (dired-replace-in-string "/" "!" file-name))
 ;;     (concat file-name "~")))
-
-;;; Interactively do things.
-;; (ido-mode t)
-(ido-mode 'both) ;for buffers and files
-(setq
- ;; ido-save-directory-list-file "~/.emacs.d/cache/ido.last"
- ;; ido-ignore-buffers '("\\` " "^\*Mess" "^\*Back" ".*Completion" "^\*Ido" "^\*trace" "^\*compilation" "^\*GTAGS" "^session\.*") ;"^\*") ;ignore these guys
- ido-work-directory-list '("~/" "~/Desktop" "~/Documents" "~src")
- ido-case-fold  t                 ; be case-insensitive
-
- ido-enable-last-directory-history t ;remember last used dirs
- ido-max-work-directory-list   30    ;should be enough
- ido-max-work-file-list        50    ;remember many
- ido-use-filename-at-point     nil   ;don't use filename at point (annoying)
- ido-use-url-at-point          nil   ;don't use url at point (annoying)
-
- ido-enable-flex-matching      t     ;fuzzy matching <http://webcache.googleusercontent.com/search?q=cache:wOWaMK_w_joJ:emacsblog.org/2008/05/19/giving-ido-mode-a-second-chance/&hl=en&tbo=d&strip=1>
- ido-max-prospects             100   ;don't spam my minibuffer
- ido-confirm-unique-completion t     ;wait for RET, even with unique completion
-
- ido-max-directory-size 100000
- ;; ido-everywhere t
- ;; ido-use-virtual-buffers t           ;if Recentf is enabled
- )
-(setq confirm-nonexistent-file-or-buffer nil) ;when using ido, the confirmation is rather annoying...
 
 ;;; Server <http://shreevatsa.wordpress.com/tag/emacs/>.
 ;; (remove-hook 'kill-buffer-query-functions
