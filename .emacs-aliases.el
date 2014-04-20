@@ -108,6 +108,7 @@
           "magit-blame"
           "markdown-mode"
           "multi-web-mode"
+          "multiple-cursors"
           "my-backspace-fix"
           "my-color-theme"
           "my-project"

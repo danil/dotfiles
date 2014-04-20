@@ -1,0 +1,6 @@
+(my-add-to-packages 'multiple-cursors)
+
+(my-after-init
+  (global-set-key (my-kbd "b m c a") 'mc/mark-all-like-this)
+  (global-set-key (my-kbd "b m c n") 'mc/mark-next-like-this)
+  (global-set-key (my-kbd "b m c p") 'mc/mark-previous-like-this))
