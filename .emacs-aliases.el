@@ -123,6 +123,7 @@
           "php-mode"
           "pomohist"
           "pretty-lambdada"
+          "quickrun"
           "rainbow-delimiters"
           "rainbow-mode"
           "re-builder"
