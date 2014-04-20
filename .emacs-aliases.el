@@ -107,6 +107,7 @@
           "magit"
           "magit-blame"
           "markdown-mode"
+          "multi-web-mode"
           "my-backspace-fix"
           "my-color-theme"
           "my-project"

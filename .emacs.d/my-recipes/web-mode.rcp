@@ -4,10 +4,8 @@
   (my-add-auto-mode-to-patterns 'web-mode
                                 "\\.as[cp]x\\'"
                                 "\\.djhtml\\'"
-                                "\\.erb\\'"
                                 "\\.jsp\\'"
                                 "\\.jst\\.ejs\\'"
                                 "\\.mustache\\'"
                                 "\\.phtml\\'"
-                                "\\.r?html\\'"
                                 "\\.tpl\\.php\\'"))
