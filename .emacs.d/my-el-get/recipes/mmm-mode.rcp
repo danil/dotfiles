@@ -1,4 +1,5 @@
 (:name mmm-mode
        :description "Allow Multiple Major Modes in a buffer"
+       :website "https://github.com/purcell/mmm-mode"
        :type github
        :pkgname "purcell/mmm-mode")
