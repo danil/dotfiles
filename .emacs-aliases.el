@@ -57,20 +57,22 @@
           "crontab-mode"
           "css"
           "csv-mode"
-          "dart-mode"
           "deft"
           "desktop"
           "diff-mode"
           "dired"
+          "dired-reuse-directory-buffer"
           "disp-table"
           "ebuild-mode"
           "ediff"
           "emacs-lisp-mode"
+          "env"
           "erise"
           "etags-select"
           "ethan-wspace"
           "expand-region"
           "files"
+          "files-backup"
           "fill"
           "findr"
           "fiplr"
@@ -78,7 +80,6 @@
           "git-gutter"
           "git-modes"
           "gitignore-mode"
-          "go-mode"
           "haml-mode"
           "haskell-mode"
           "help"
@@ -87,6 +88,7 @@
           "highlight-current-line"
           "highlight-symbol"
           "ibuffer"
+          "ido"
           "ido-yes-or-no"
           "interprogram"
           "isearch"
@@ -99,12 +101,13 @@
           "linum"
           "linum-format"
           "lisp-mode"
-          "lua"
           "lua-mode"
           "magit"
           "magit-blame"
           "markdown-mode"
-          "mmm-mode"
+          "multi-web-mode"
+          "multiple-cursors"
+          "my-backspace-fix"
           "my-color-theme"
           "my-project"
           "my-tags"
@@ -114,14 +117,16 @@
           "occur-mode"
           "org-mode"
           "org-reveal"
+          "paren"
           "php-mode"
           "pomohist"
           "pretty-lambdada"
+          "quickrun"
           "rainbow-delimiters"
           "rainbow-mode"
           "re-builder"
+          "recentf"
           "replace"
-          "rhtml-mode"
           "rinari"
           "rspec-compilation-mode"
           "rspec-mode"
@@ -130,10 +135,11 @@
           "ruby-pry"
           "ruby-refactor"
           "ruby-tools"
-          "rust-mode"
           "rvm"
           "sass-mode"
+          "savehist"
           "scss-mode"
+          "sgml-mode"
           "sh-script"
           "sieve-mode"
           "simp"
@@ -144,6 +150,8 @@
           "smex"
           "sort"
           "undo-tree"
+          "uniquify"
+          "web-mode"
           "window"
           "window-numbering"
           "yaml-mode"
@@ -173,17 +181,8 @@
            (setq repeat-key nil)
            (push last-input-event unread-command-events))))))
 
-;;; BackspaceKey <http://emacswiki.org/BackspaceKey>.
-;; (global-set-key [(control h)] 'delete-backward-char)
-(defun my-backspace-fix ()
-  (keyboard-translate ?\C-h ?\C-?)
-  (define-key key-translation-map [?\C-h] [?\C-?]))
-(my-backspace-fix)
-(eval-after-load 'term-mode '(progn (my-backspace-fix)))
 
-;;; Transient Mark mode <http://emacswiki.org/TransientMarkMode>.
-(transient-mark-mode 1)
-
+(transient-mark-mode 1) ;Transient Mark mode <http://emacswiki.org/TransientMarkMode>
 ;(set-keyboard-coding-system 'mule-utf-8)
 ;(set-default-coding-systems 'utf-8)
 ;(set-terminal-coding-system 'utf-8)
@@ -192,44 +191,7 @@
 (setq default-tab-width 4)
 (setq-default indent-tabs-mode nil)
 (setq standard-indent 2)
-;;; show-paren-mode <http://emacswiki.org/ShowParenMode>,
-;;; <http://emacswiki.org/ParenthesesAppearance>
-(show-paren-mode 1)
-;; (eval-after-load 'show-paren
-;;   '(progn
-;;      (cond ((equal frame-background-mode 'dark)
-;;             (set-face-background 'show-paren-match "#002b36")
-;;             ))
-;;      ))
-
-;;; Session Management <http://emacswiki.org/SessionManagement>.
-(savehist-mode 1)
-
-;;; Recentf (open recent files)
-;;; <http://stackoverflow.com/questions/3527150/open-recent-in-emacs#answer-3527488>,
-;;; <http://emacswiki.org/RecentFiles>.
-(recentf-mode 1)
-;; If you make extensive use of Tramp, recentf will track those files
-;; too, and do it's periodic cleanup thing which can be a real mess
-;; since the files are remote. Prevent this by putting this in your
-;; startup file:
-(setq recentf-auto-cleanup 'never)
-
-;;; Menu Bar
-;;; <http://gnu.org/software/emacs/manual/html_node/emacs/Menu-Bars.html>,
-;;; <http://emacswiki.org/MenuBar>.
-(menu-bar-mode -1)
-(setq initial-scratch-message
-";; This buffer is for notes you don't want to save, and for Lisp evaluation.
-;; If you want to create a file, visit that file with C-x C-f,
-;; then enter the text in that file's own buffer.
-")
-
-;;; Environment variables.
-(setenv "DISABLE_PRY_RAILS" "1")
-(setenv "GIT_PAGER" "")
-(setenv "RAILS_TRUSTED_IP" "192.168.0.18") ;<https://github.com/charliesome/better_errors#security>.
-;; (setenv "ESHELL" (expand-file-name "/bin/zsh")) ;terminal <http://stackoverflow.com/questions/1568987/getting-emacs-to-respect-my-default-shell-options#1570246>
+(menu-bar-mode -1) ;Menu Bar <http://gnu.org/software/emacs/manual/html_node/emacs/Menu-Bars.html>, <http://emacswiki.org/MenuBar>
 
 ;; ;;; <http://emacswiki.org/ScrollBar>.
 ;; (scroll-bar-mode -1)
@@ -250,95 +212,18 @@
 ;; (add-hook 'sql-interactive-mode-hook
 ;;           (function (lambda () (setq comint-input-ring-size 10000))))
 
-;;; Column number mode
-;;; <http://gnu.org/software/emacs/manual/html_node/emacs/Optional-Mode-Line.html>.
-;(setq line-number-mode t)
-(setq column-number-mode 1)
-
 ;;; IswitchB <http://emacswiki.org/IswitchBuffers>.
 ;; (iswitchb-mode 1)
 ;; (setq iswitchb-buffer-ignore '("^ " "*scratch*" "*Messages*"
 ;;                                "*Completions*" "*Ibuffer*"))
 ;(setq iswitchb-default-method 'samewindow)
 
-;;; Dired.
-;;; Reuse directory buffer
-;;; <http://www.emacswiki.org/emacs/DiredReuseDirectoryBuffer>.
-(put 'dired-find-alternate-file 'disabled nil)
-(add-hook 'dired-mode-hook
-          (lambda ()
-            (define-key dired-mode-map (kbd "^")
-              (lambda () (interactive) (find-alternate-file "..")))
-                                        ; was dired-up-directory
-            ))
-
-;;; Get rid of annoying backups, temporary files and autosaves.
-;; Built-in backup settings
-;; <http://www.emacswiki.org/emacs/BackupDirectory#toc2>.
-(setq
- backup-by-copying t           ;don't clobber symlinks
- backup-directory-alist
- '(("." . "~/.emacs-backups")) ;don't litter my fs tree
- delete-old-versions t
- kept-new-versions 6
- kept-old-versions 2
- version-control t)            ;use versioned backups
-;; ;; Redefining the make-backup-file-name function in order to get
-;; ;; backup files in ~/.backups/ rather than scattered around all over
-;; ;; the filesystem. Note that you must have a directory ~/.backups/
-;; ;; made.  This function looks first to see if that folder exists.  If
-;; ;; it does not the standard backup copy is made.
-;; (defun make-backup-file-name (file-name)
-;;   "Create the non-numeric backup file name for `file-name'."
-;;   (require 'dired)
-;;   (if (file-exists-p "~/.backups")
-;;       (concat (expand-file-name "~/.backups/")
-;;               (dired-replace-in-string "/" "!" file-name))
-;;     (concat file-name "~")))
-
-;;; Interactively do things.
-;; (ido-mode t)
-(ido-mode 'both) ;for buffers and files
-(setq
- ;; ido-save-directory-list-file "~/.emacs.d/cache/ido.last"
- ;; ido-ignore-buffers '("\\` " "^\*Mess" "^\*Back" ".*Completion" "^\*Ido" "^\*trace" "^\*compilation" "^\*GTAGS" "^session\.*") ;"^\*") ;ignore these guys
- ido-work-directory-list '("~/" "~/Desktop" "~/Documents" "~src")
- ido-case-fold  t                 ; be case-insensitive
-
- ido-enable-last-directory-history t ;remember last used dirs
- ido-max-work-directory-list   30    ;should be enough
- ido-max-work-file-list        50    ;remember many
- ido-use-filename-at-point     nil   ;don't use filename at point (annoying)
- ido-use-url-at-point          nil   ;don't use url at point (annoying)
-
- ido-enable-flex-matching      t     ;fuzzy matching <http://webcache.googleusercontent.com/search?q=cache:wOWaMK_w_joJ:emacsblog.org/2008/05/19/giving-ido-mode-a-second-chance/&hl=en&tbo=d&strip=1>
- ido-max-prospects             100   ;don't spam my minibuffer
- ido-confirm-unique-completion t     ;wait for RET, even with unique completion
-
- ido-max-directory-size 100000
- ;; ido-everywhere t
- ;; ido-use-virtual-buffers t           ;if Recentf is enabled
- )
-(setq confirm-nonexistent-file-or-buffer nil) ;when using ido, the confirmation is rather annoying...
-
 ;;; Server <http://shreevatsa.wordpress.com/tag/emacs/>.
 ;; (remove-hook 'kill-buffer-query-functions
 ;;              'server-kill-buffer-query-function)
 
-;;; Uniquify
-;;; <http://gnu.org/software/emacs/manual/html_node/emacs/Uniquify.html>,
-;;; <http://emacs-fu.blogspot.ru/2009/11/making-buffer-names-unique.html>.
-(require 'uniquify)
-;; nil, forward, reverse, post-forward or post-forward-angle-brackets
-(setq
- uniquify-buffer-name-style 'post-forward ;'forward
- uniquify-separator ":" ;"/"
- ;; uniquify-after-kill-buffer-p t ;rename after killing uniquified
- ;; uniquify-ignore-buffers-re "^\\*" ;don't muck with special buffers
- )
-
 ;;; Browse Url with Epiphany.
-;(setq browse-url-browser-function 'browse-url-epiphany)
+;; (setq browse-url-browser-function 'browse-url-epiphany)
 
 ;; (setq browse-url-browser-function 'browse-url-generic
 ;;   browse-url-generic-program "epiphany"
@@ -360,32 +245,6 @@
 
 ;;; Cua mode <http://www.emacswiki.org/emacs/CuaMode>.
 (setq cua-enable-cua-keys nil) ;change case of a rectangle <http://stackoverflow.com/questions/6154545/emacs-change-case-of-a-rectangle#comment-7167904>.
-
-;;; HTML mode.
-(add-to-list 'auto-mode-alist '("\\.lp\\'" . html-mode))
-(add-to-list 'auto-mode-alist '("\\.op\\'" . html-mode))
-
-;;; Logrotate scripts.
-(add-to-list 'auto-mode-alist '("/etc/logrotate.d/" . shell-script-mode))
-(add-to-list 'auto-mode-alist '("\\.logrotate\\'" . shell-script-mode))
-
-;;; Cron.
-(setq auto-mode-alist
-      (cons '("/crontab\\'" . shell-script-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/anacrontab\\'" . shell-script-mode) auto-mode-alist))
-
-;;; Shell scripts.
-(setq auto-mode-alist
-      (cons '("/\\.bash_aliases\\'" . shell-script-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("/\\.ackrc\\'" . shell-script-mode) auto-mode-alist))
-
-;;; JavaScript mode.
-;;; HTML Components (HTCs or .htc)
-;;; <http://en.wikipedia.org/wiki/HTML_Components>.
-(add-to-list 'auto-mode-alist '("\\.htc$" . js-mode))
-(setq js-indent-level 2)
 
 ;;; ANSI SGR (Select Graphic Rendition) escape sequences
 ;;; <http://www.emacswiki.org/emacs/AnsiColor>
@@ -588,36 +447,6 @@ and Lisp-style nameing, e.g. `hello-world-string'."
 ;;          '(lambda ()
 ;;             (inf-ruby-keys)
 ;;             ))
-
-;;; Newsticker <http://www.nongnu.org/newsticker>,
-;;; <http://lists.gnu.org/archive/html/gnu-emacs-sources/2008-12/msg00009.html>.
-;; ;;(setq newsticker-groups-filename "~/MyEmacs/Configure-File/Newsticker/newsticker-groups")
-;; ;;(setq newsticker-imagecache-dirname "~/MyEmacs/Configure-File/Newsticker/newsticker-images")
-;; ;;(setq newsticker-dir "~/MyEmacs/Configure-File/Newsticker")
-;; (setq newsticker-automatically-mark-items-as-old nil)
-;; (setq newsticker-automatically-mark-visited-items-as-old nil)
-;; ;;(setq newsticker-retrieval-interval 600)
-;; (setq newsticker-html-renderer (quote w3m-region))
-;; ;;(setq newsticker-retrieval-method (quote extern))
-;; ;;(setq newsticker-treeview-treewindow-width 40)
-;; ;;(setq newsticker-treeview-listwindow-height 30)
-;; ;;(setq newsticker-wget-arguments (quote ("-q" "-O" "-" "--user-agent" "testing")))
-;; ;;(run-with-timer 0 newsticker-update-news-repeat 'newsticker-update-news)
-;; (setq newsticker-url-list-defaults
-;;       '(
-;;         ("bzr_day" "http://bzr-day.blogspot.com/feeds/posts/default?alt=rss")
-;;         ("emacs_planet_ru" "http://emacs.defun.ru/atom.xml")
-;;         ("jquery_blog" "http://feeds.feedburner.com/jquery/")
-;;         ("keplerproject_org_unix_installation" "http://keplerproject.org/en/UNIX_Installation.rss")
-;;         ("lj_ru_gentoo" "http://community.livejournal.com/ru_gentoo/data/rss")
-;;         ("openmoko_planet" "http://planet.openmoko.org/rss10.xml")
-;;         ("rail0rz" "http://feeds2.feedburner.com/railorz")
-;;         ("railscasts" "http://feeds.feedburner.com/railscasts")
-;;         ("railsclub_ru" "http://feeds2.feedburner.com/RailsClubRu")
-;;         ("ruby_noname_podcast" "http://ruby.rpod.ru/rss.xml")
-;;         ("rubyonrails_planet_ru" "http://planet.rubyonrails.ru/xml/rss")
-;;         ("softwaremaniacs_org" "http://softwaremaniacs.org/blog/feed/")
-;;         ))
 
 ;; ;; Redefining the make-auto-save-file-name function in order to get
 ;; ;; autosave files sent to a single directory.  Note that this function
