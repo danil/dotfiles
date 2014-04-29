@@ -1,0 +1,6 @@
+(:name dacobr-theme
+       :description "GNU Emacs DArk COntrasty BRight color theme"
+       :website "https://github.com/danil/dacobr"
+       :minimum-emacs-version "24"
+       :type github
+       :pkgname "danil/dacobr")

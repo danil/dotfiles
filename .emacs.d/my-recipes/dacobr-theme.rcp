@@ -1,0 +1,5 @@
+(my-add-to-packages 'dacobr-theme)
+
+(my-after-init
+  (add-to-list 'custom-theme-load-path
+               (concat user-emacs-directory "el-get/dacobr-theme")))
