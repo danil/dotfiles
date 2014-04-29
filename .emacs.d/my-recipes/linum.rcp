@@ -36,7 +36,6 @@
                       'sass-mode-hook
                       'sgml-mode-hook
                       'sh-mode-hook
-                      'shell-mode-hook
                       'sieve-mode-hook
                       'sql-mode-hook
                       'xml-mode-hook
