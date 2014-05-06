@@ -108,6 +108,7 @@
           "multi-web-mode"
           "multiple-cursors"
           "my-backspace-fix"
+          "my-beginning-of-line"
           "my-color-theme"
           "my-project"
           "my-tags"
@@ -262,20 +263,6 @@
          (string= (buffer-name buf) "*Shell Command Output*")
          (with-current-buffer buf
            (ansi-color-apply-on-region (point-min) (point-max))))))
-
-;;; Move point to beginning of line or "back to indentation"
-;;; <http://stackoverflow.com/questions/6035872/moving-to-the-start-of-a-code-line-emacs#7250027>.
-(defun my-beginning-of-line ()
-  "Move point to the beginning of the line; if that is already
-the current position of point, then move it to the beginning of text on the current line."
-  (interactive)
-  (let ((pt (point)))
-    (beginning-of-line)
-    (when (eq pt (point))
-      (beginning-of-line-text))))
-(global-set-key (kbd "C-a") 'my-beginning-of-line)
-;; (eval-after-load "cc-mode"
-;;      '(define-key c-mode-base-map (kbd "C-a") 'my-beginning-of-line))
 
 ;;; CamleCase and underscore inflection toggle
 ;;; <http://superuser.com/questions/126431/is-there-any-way-to-convert-camel-cased-names-to-use-underscores-in-emacs/126473#300048>,
