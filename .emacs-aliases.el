@@ -80,6 +80,7 @@
           "git-gutter"
           "git-modes"
           "gitignore-mode"
+          "go-mode"
           "haml-mode"
           "haskell-mode"
           "help"
