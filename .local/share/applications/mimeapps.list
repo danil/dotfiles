@@ -32,6 +32,7 @@ application/xml=google-chrome.desktop;firefox-bin.desktop;
 text/csv=leafpad.desktop;
 video/x-msvideo=userapp-mplayer-SAZLSV.desktop;
 application/x-font-ttf=userapp-leafpad-EACN4W.desktop;
+application/x-fictionbook+xml=leafpad.desktop;
 
 [Default Applications]
 application/pdf=evince.desktop
