@@ -1,5 +1,0 @@
-# <http://en.gentoo-wiki.com/wiki/Toolkit_Beautification>,
-# <https://wiki.archlinux.org/index.php/GTK%2B>.
-# gtk-icon-theme-name = "Tango"
-# gtk-icon-theme-name = "gnome"
-gtk-icon-theme-name = "Faenza-Dark"
