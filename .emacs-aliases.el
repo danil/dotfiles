@@ -62,6 +62,7 @@
           "diff-mode"
           "dired"
           "dired-reuse-directory-buffer"
+          "direx"
           "disp-table"
           "ebuild-mode"
           "ediff"
