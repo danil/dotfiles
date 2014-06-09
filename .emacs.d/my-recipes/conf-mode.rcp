@@ -15,6 +15,7 @@
                                 "/locale.gen\\'"
                                 "/mimeapps.list\\'"
                                 "/share/applications/defaults\\.list\\'"
+                                "/sshd_config\\'"
                                 "/sudoers\\'"
                                 "/tint2rc\\'"
                                 "\\.cnf\\'"

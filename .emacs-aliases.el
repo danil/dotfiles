@@ -62,6 +62,7 @@
           "diff-mode"
           "dired"
           "dired-reuse-directory-buffer"
+          "direx"
           "disp-table"
           "ebuild-mode"
           "ediff"
@@ -147,6 +148,7 @@
           "simp"
           "simple"
           "slim-mode"
+          "slime"
           "smart-mode-line"
           "smartparens"
           "smex"
@@ -182,7 +184,6 @@
                     (setq last-input-event nil))
            (setq repeat-key nil)
            (push last-input-event unread-command-events))))))
-
 
 (transient-mark-mode 1) ;Transient Mark mode <http://emacswiki.org/TransientMarkMode>
 ;(set-keyboard-coding-system 'mule-utf-8)
