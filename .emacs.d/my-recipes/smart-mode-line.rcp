@@ -21,7 +21,7 @@
 
   (dolist (my-path-to-replace
            '(("^:S\\(V?\\):\\([^:]+:\\)?\\([^/]+\\)/" ":S\\1:\\2\\3:")
-             ("^:S\\(V?\\):\\(c\\|cpp\\|el\\|go\\|md\\|python\\|ruby\\)/"
+             ("^:S\\(V?\\):\\(c\\|cpp\\|el\\|md\\|js\\|python\\|ruby\\|go\\)/"
               ":S\\1:")
              ("^~/src/" ":S:")
              ("^~/src/vendor/" ":SV:")
