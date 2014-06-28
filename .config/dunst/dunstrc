@@ -2,7 +2,7 @@
 # /usr/share/dunst/dunstrc
 
 [global]
-    font = Monospace 12
+    font = Monospace 14
 
     # allow a small subset of html markup:
     # <b>bold</b>
