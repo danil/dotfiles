@@ -11,6 +11,7 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 
+-- <https://github.com/blueyed/awesome-cyclefocus>.
 local cyclefocus = require('vendor/cyclefocus')
 
 -- {{{ Error handling
