@@ -13,7 +13,7 @@
 *cursorUnderline: false
 ! Get width and height of a terminal window: `tput cols` and `tput lines`
 ! <http://stackoverflow.com/questions/263890/how-do-i-find-the-width-height-of-a-terminal-window#263900>.
-*geometry:        87x54
+*geometry:        87x46
 *saveLines:       10000
 
 ! Xft <https://wiki.archlinux.org/index.php/Font_Configuration#Applications_without_fontconfig_support>.
