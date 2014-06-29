@@ -21,7 +21,8 @@
                                 "\\.cnf\\'"
                                 "\\.features\\'" ;cucumber features
                                 "\\.pkla\\'"
-                                "\\.theme\\'")
+                                "\\.theme\\'"
+                                "\\.xxkbrc\\'")
   ;; Gentoo configs.
   (my-add-auto-mode-to-patterns 'conf-mode
                                 "/etc/conf.d/"

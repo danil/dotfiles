@@ -1,0 +1,6 @@
+XXkb.controls.two_state: yes
+XXkb.controls.add_when_start: yes
+XXkb.controls.add_when_create: yes
+XXkb.controls.add_when_change: yes
+XXkb.controls.focusout: yes
+XXkb*label.text.1: EN
