@@ -5,6 +5,7 @@
 exec ratpoison -c "setenv PATH $HOME/bin:$PATH"
 
 escape C-grave
+# escape M-m
 
 # What's the shell?
 # <http://en.wikibooks.org/wiki/Using_Ratpoison/Example_Config>
