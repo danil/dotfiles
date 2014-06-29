@@ -11,6 +11,8 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 
+local cyclefocus = require('vendor/cyclefocus')
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -243,6 +245,12 @@ globalkeys = awful.util.table.join(
         client.focus:raise()
       end
   end),
+
+  -- Alt-Tab: cycle through all clients.
+  -- This must be a clientkeys mapping to have source_c available in the callback.
+  cyclefocus.key({ "Mod1" }, "Tab", 1, {
+      keys = {"Tab", "ISO_Left_Tab"}  -- default, could be left out
+  }),
 
   -- Standard program
   awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
