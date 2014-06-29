@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Wicd
+GenericName=Wicd !
+Comment=Wifi application
+Exec=wicd-gtk --tray
+Terminal=false
+Type=Application
+Icon=wicd
+Categories=Network;
+StartupNotify=false
