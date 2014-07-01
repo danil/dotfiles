@@ -1,5 +1,5 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.15 for danil on Sun Sep 16 14:16:32 2012.
+# Written by xscreensaver-demo 5.26 for danil on Tue Jul  1 02:09:36 2014.
 # http://www.jwz.org/xscreensaver/
 
 timeout:	0:05:00
@@ -34,8 +34,8 @@ grabVideoFrames:    False
 chooseRandomImages: False
 imageDirectory:	
 
-mode:		one
-selected:	0
+mode:		blank
+selected:	143
 
 textMode:	file
 textLiteral:	XScreenSaver
@@ -245,6 +245,11 @@ programs:								      \
   GL: 				companioncube -root			    \n\
   GL: 				hilbert -root				    \n\
   GL: 				tronbit -root				    \n\
+  GL: 				geodesic -root				    \n\
+				hexadrop -root				    \n\
+  GL: 				kaleidocycle -root			    \n\
+  GL: 				quasicrystal -root			    \n\
+  GL: 				unknownpleasures -root			    \n\
 
 
 pointerPollTime:    0:00:05
