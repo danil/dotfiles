@@ -21,6 +21,7 @@
                                 "\\.cnf\\'"
                                 "\\.features\\'" ;cucumber features
                                 "\\.pkla\\'"
+                                "\\.skippyrc\\'"
                                 "\\.theme\\'"
                                 "\\.xxkbrc\\'")
   ;; Gentoo configs.
