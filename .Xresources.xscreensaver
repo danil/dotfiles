@@ -1,5 +1,10 @@
 ! Xscreensaver.
 xscreensaver.mode: blank
+xscreensaver.dpmsEnabled:  True
+xscreensaver.dpmsQuickOff: True
+xscreensaver.dpmsStandby:  0:00:01
+xscreensaver.dpmsSuspend:  0:00:02
+xscreensaver.dpmsOff:      0:00:03
 xscreensaver.Dialog.labelFont:   -*-fixed-medium-r-*-*-*-140-*-*-*-*-iso8859-1
 xscreensaver.Dialog.unameFont:   -*-fixed-medium-r-*-*-*-140-*-*-*-*-iso8859-1
 xscreensaver.passwd.passwdFont:  -*-fixed-bold-r-*-*-*-140-*-*-*-*-iso8859-1
