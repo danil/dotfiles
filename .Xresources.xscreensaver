@@ -1,4 +1,4 @@
-! Xscreensaver.
+! Xscreensaver </usr/share/X11/app-defaults/XScreenSaver>.
 xscreensaver.mode: blank
 xscreensaver.dpmsEnabled:  True
 xscreensaver.dpmsQuickOff: True
