@@ -26,10 +26,10 @@
        (setq my-line-numbers-background "gray15")
        ;; Region.
        ;; (setq my-face-reginon-background "#002b36") ;#2E3436 ;set selection background color
-       ;; (set-face-attribute 'region nil :inverse-video t)
-       (set-face-attribute 'region nil
-                           :foreground "black"
-                           :background "yellow2")
+       (set-face-attribute 'region nil :inverse-video t)
+       ;; (set-face-attribute 'region nil
+       ;;                     :foreground "black"
+       ;;                     :background "yellow2")
 
        ;; Matches other than the current one by Isearch and Query Replace
        ;; <http://www.gnu.org/software/emacs/manual/html_node/emacs/Standard-Faces.html>.
