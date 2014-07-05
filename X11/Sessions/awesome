@@ -99,7 +99,7 @@ dex ~/.config/autostart/stardict.desktop \
     /etc/xdg/autostart/xfsettingsd.desktop \
     /etc/xdg/autostart/Gentoo-print-applet.desktop
 
-xchainkeys &
+xchainkeys -f ~/.config/xchainkeys/h6-gentoo-awesome.conf &
 xautolock -time 10 -locker 'i3lock --dpms -c 000000' &
 
 exec /usr/bin/awesome
