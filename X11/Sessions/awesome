@@ -87,7 +87,18 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
     done
 fi
 
-dex --autostart
+# Desktop Application Autostart Specification <http://standards.freedesktop.org/autostart-spec/autostart-spec-latest.html>,
+# <http://awesome.naquadah.org/wiki/Autostart#Freedesktop_autostart_way>,
+# <https://wiki.archlinux.org/index.php/Awesome#Autorun_programs>,
+# <https://github.com/jceb/dex>.
+dex ~/.config/autostart/stardict.desktop \
+    ~/.config/autostart/dropbox.desktop \
+    /etc/xdg/autostart/wicd-tray.desktop \
+    /etc/xdg/autostart/xfce4-power-manager.desktop \
+    /etc/xdg/autostart/xfce4-volumed.desktop \
+    /etc/xdg/autostart/xfsettingsd.desktop \
+    /etc/xdg/autostart/Gentoo-print-applet.desktop
+
 xchainkeys &
 xautolock -time 10 -locker 'i3lock --dpms -c 000000' &
 
