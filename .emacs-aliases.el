@@ -89,6 +89,7 @@
           "hideshow"
           "highlight-current-line"
           "highlight-symbol"
+          "hl-line"
           "ibuffer"
           "ido"
           "ido-yes-or-no"
