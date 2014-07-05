@@ -4,4 +4,4 @@
   (my-add-auto-mode-to-patterns 'js-mode
                                 "\\.htc\\'" ;HTML Components (HTCs or .htc) <http://en.wikipedia.org/wiki/HTML_Components>
                                 )
-  (my-eval-after-load 'js-mode (setq js-indent-level 2)))
+  (my-eval-after-load 'js (setq js-indent-level 2)))
