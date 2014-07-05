@@ -14,6 +14,9 @@ local menubar = require("menubar")
 -- <https://github.com/blueyed/awesome-cyclefocus>.
 local cyclefocus = require('vendor/cyclefocus')
 
+--- Revelation <http://awesome.naquadah.org/wiki/Revelation>.
+local revelation = require('vendor/revelation')
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -42,6 +45,9 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(awful.util.getdir("config") .. "/themes/default/theme.lua")
+
+--- Revelation <http://awesome.naquadah.org/wiki/Revelation>.
+revelation.init()
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
@@ -220,6 +226,9 @@ globalkeys = awful.util.table.join(
   awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
   awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
   awful.key({ modkey,           }, "Escape", awful.tag.history.restore),
+
+  --- Revelation <http://awesome.naquadah.org/wiki/Revelation>.
+  awful.key({ modkey, }, "e", revelation),
 
   awful.key({ modkey,           }, "j",
     function ()
