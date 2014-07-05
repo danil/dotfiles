@@ -17,4 +17,9 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
+# Make sure this is before the 'exec' command or it won't be sourced
+# <https://wiki.archlinux.org/index.php/xprofile#Making_it_compatible_with_xinit>.
+[ -f /etc/xprofile ] && source /etc/xprofile
+[ -f ~/.xprofile ] && source ~/.xprofile
+
 exec $1
