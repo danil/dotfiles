@@ -1,5 +1,4 @@
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
-# Write your default config options here!
 vo=gl
 #milhouse: vo=x11
 zoom=yes

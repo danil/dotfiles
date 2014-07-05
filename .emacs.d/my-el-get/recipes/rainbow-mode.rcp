@@ -1,4 +1,4 @@
 (:name rainbow-mode
-       :after (progn
-                (add-hook 'css-mode-hook (lambda () (rainbow-mode 1)))
-                (add-hook 'sass-mode-hook (lambda () (rainbow-mode 1)))))
+       :description "Colorize color names in buffers"
+       :minimum-emacs-version 24
+       :type elpa)

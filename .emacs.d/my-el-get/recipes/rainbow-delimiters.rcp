@@ -1,0 +1,5 @@
+(:name rainbow-delimiters
+       :description "Color nested parentheses, brackets, and braces according to their depth."
+       :website "https://github.com/jlr/rainbow-delimiters"
+       :type github
+       :pkgname "jlr/rainbow-delimiters")

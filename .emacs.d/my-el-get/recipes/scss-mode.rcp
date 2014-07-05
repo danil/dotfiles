@@ -1,3 +1,5 @@
 (:name scss-mode
-       :after (progn
-                (setq scss-compile-at-save nil)))
+       :description "Major mode for editing SCSS files(http://sass-lang.com)"
+       :type github
+       :pkgname "antonj/scss-mode"
+       :features scss-mode)

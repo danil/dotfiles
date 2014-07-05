@@ -1,5 +1,18 @@
 ! This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 ! URxvt.
+
+! <http://askubuntu.com/questions/22419/how-do-i-make-urxvt-render-xft-fonts#96779>.
+URxvt.font:           xft:monospace:pixelsize=16:antialias=true:hinting=true:autohint=true:style=regular
+URxvt.boldFont:       xft:monospace:pixelsize=16:antialias=true:hinting=true:autohint=true:style=bold
+URxvt.italicFont:     xft:monospace:pixelsize=16:antialias=true:hinting=true:autohint=true:style=italic
+URxvt.boldItalicFont: xft:monospace:pixelsize=16:antialias=true:hinting=true:autohint=true:style=bold italic
+
+! Font spacing.
+! By default in urxvt the distance between characters can feel too wide
+! <https://wiki.archlinux.org/index.php/rxvt-unicode#Font_spacing>,
+! <http://crunchbanglinux.org/wiki/urxvt#font_spacing>.
+URxvt.letterSpace: -1
+
 URxvt*scrollBar: true
 URxvt.scrollstyle: plain
 URxvt.scrollBar_right: true
@@ -21,9 +34,10 @@ URxvt.searchable-scrollback: CM-F
 
 ! Changing the font size on the fly
 ! <http://github.com/majutsushi/urxvt-font-size>.
-URxvt.font-size.step: 4
+URxvt.font-size.step: 1
 URxvt.keysym.C-A-plus: perl:font-size:increase
 URxvt.keysym.C-A-underscore: perl:font-size:decrease
+URxvt.keysym.C-A-parenright: perl:font-size:reset
 
 ! Matcher.
 URxvt*matcher.button: 3

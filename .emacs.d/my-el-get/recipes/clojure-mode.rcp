@@ -1,0 +1,5 @@
+(:name clojure-mode
+       :description "Emacs support for the Clojure language."
+       :website "https://github.com/clojure-emacs/clojure-mode"
+       :type github
+       :pkgname "clojure-emacs/clojure-mode")

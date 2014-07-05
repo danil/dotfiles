@@ -18,13 +18,14 @@
 
 ! Xft <https://wiki.archlinux.org/index.php/Font_Configuration#Applications_without_fontconfig_support>.
 ! Antialias <https://wiki.archlinux.org/index.php/Font_Configuration#Anti-aliasing>.
-Xft.antialias: 1
+Xft.antialias: true
 ! Autohint <http://wiki.gentoo.org/wiki/Fontconfig#Regarding_autohinter>.
-Xft.autohint:  0
+Xft.autohint:  false
 ! Hinting <https://wiki.archlinux.org/index.php/Font_Configuration#Byte-Code_Interpreter_.28BCI.29>.
-Xft.hinting:   1
-! Hintstyle <https://wiki.archlinux.org/index.php/Font_Configuration#Hint_style>,
-! <http://wiki.gentoo.org/wiki/Fontconfig#Forcing_hinting>.
+Xft.hinting:   true
+! Hintstyle <https://wiki.archlinux.org/index.php/Font_Configuration#Hintstyle>,
+! <http://wiki.gentoo.org/wiki/Fontconfig#Forcing_hinting>,
+! <https://wiki.archlinux.org/index.php/X_resources#Xft_resources>.
 Xft.hintstyle: hintfull
 ! Lcd filter <http://wiki.gentoo.org/wiki/Fontconfig#Using_sub-pixel_rendering>,
 ! <https://wiki.archlinux.org/index.php/Font_Configuration#LCD_filter>.
@@ -34,18 +35,6 @@ Xft.lcdfilter: lcddefault
 Xft.rgba:      rgb
 ! ! DPI <https://wiki.archlinux.org/index.php/Font_Configuration#Distorted_fonts>.
 ! Xft.dpi:       120.4
-
-! *font: -misc-fixed-medium-r-normal--18-120-100-100-c-90-iso10646-1,\
-!             -misc-fixed-medium-r-normal--8-80-75-75-c-50-iso10646-1,\
-!             -misc-fixed-medium-r-normal--8-80-75-75-c-50-iso10646-1,\
-!             -misc-fixed-medium-r-normal--14-130-75-75-c-70-iso10646-1,\
-!             -misc-fixed-medium-r-normal--13-120-75-75-c-80-iso10646-1
-! *font: xft:DejaVu Sans Mono:pixelsize=12:antialias=true:hinting=true:autohint=true
-! <http://askubuntu.com/questions/22419/how-do-i-make-urxvt-render-xft-fonts#96779>.
-*font:           xft:PragmataPro:pixelsize=13:antialias=true:hinting=true:autohint=true:style=regular
-*boldFont:       xft:PragmataPro:pixelsize=13:antialias=true:hinting=true:autohint=true:style=bold
-*italicFont:     xft:PragmataPro:pixelsize=13:antialias=true:hinting=true:autohint=true:style=italic
-*boldItalicFont: xft:PragmataPro:pixelsize=13:antialias=true:hinting=true:autohint=true:style=bold italic
 
 ! <https://wiki.archlinux.org/index.php/X11_Cursors>.
 Xcursor.theme: Vanilla-DMZ

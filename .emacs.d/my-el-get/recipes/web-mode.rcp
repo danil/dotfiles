@@ -1,0 +1,5 @@
+(:name web-mode
+       :description "emacs major mode for editing PHP/JSP/ASP HTML templates (with embedded CSS and JS blocks)"
+       :website "https://github.com/fxbois/web-mode"
+       :type github
+       :pkgname "fxbois/web-mode")

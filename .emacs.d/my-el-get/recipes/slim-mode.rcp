@@ -1,4 +1,5 @@
 (:name slim-mode
-       :pkgname "Syntax highlighting for Slim"
+       :description "Syntax highlighting for Slim"
        :website "http://slim-lang.com"
-       :type elpa)
+       :type github
+       :pkgname "slim-template/emacs-slim")

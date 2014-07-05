@@ -1,0 +1,6 @@
+(my-add-to-packages 'rhtml-mode)
+
+(my-after-init
+  (my-add-auto-mode-to-patterns 'rhtml-mode
+                                ;; "\\.html\.erb\\'"
+                                "\\.erb\\'"))

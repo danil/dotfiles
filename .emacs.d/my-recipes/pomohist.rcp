@@ -1,5 +1,5 @@
-(global-set-key (kbd "C-c d p p") 'pomohist-go-to-prev-position-with-repeat)
-(global-set-key (kbd "C-c d p n") 'pomohist-go-to-next-position-with-repeat)
+(global-set-key (my-kbd "p p") 'pomohist-go-to-prev-position-with-repeat)
+(global-set-key (my-kbd "p n") 'pomohist-go-to-next-position-with-repeat)
 (eval-after-load 'pomohist
   '(progn
      (add-hook 'pre-command-hook 'pomohist)

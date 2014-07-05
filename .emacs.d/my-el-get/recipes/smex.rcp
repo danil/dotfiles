@@ -3,15 +3,4 @@
        :type github
        :pkgname "nonsequitur/smex"
        :features smex
-       :post-init (smex-initialize)
-       :after (progn
-                (global-set-key (kbd "M-x") 'smex)
-                (global-set-key (kbd "M-X") 'smex-major-mode-commands)
-                ;; This is your old M-x.
-                (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
-                (eval-after-load 'smex
-                  '(progn
-                     (setq smex-history-length 100)
-                     (setq smex-key-advice-ignore-menu-bar 1) ;<http://stackoverflow.com/questions/19781529/how-to-disable-emacs-messages-like-you-can-run-the-command-x-with-y#comment-29432155>
-                     ))
-                ))
+       :post-init (smex-initialize))

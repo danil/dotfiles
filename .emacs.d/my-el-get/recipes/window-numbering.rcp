@@ -1,12 +1,5 @@
 (:name window-numbering
-       :type git
-       :url "git://github.com/nschum/window-numbering.el.git"
-       :after (progn
-                (autoload 'window-numbering-mode
-                  "window-numbering"
-                  "Numbered window shortcuts" t)
-                ;; ;; <http://blog.binchen.org/?p=512#sec-1>.
-                ;; (custom-set-faces
-                ;;  '(window-numbering-face
-                ;;    ((t (:foreground "brightmagenta" :background nil :weight normal :underline nil)))))
-                (window-numbering-mode 1)))
+       :description "Assigns numbers to Emacs windows to allow easy window navigation"
+       :website "https://github.com/nschum/window-numbering.el"
+       :type github
+       :pkgname "danil/window-numbering.el")

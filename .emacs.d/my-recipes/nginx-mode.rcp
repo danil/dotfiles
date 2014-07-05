@@ -1,3 +1,4 @@
+(my-add-to-packages 'nginx-mode)
 (eval-after-load 'nginx-mode
   '(progn
      (setq auto-mode-alist

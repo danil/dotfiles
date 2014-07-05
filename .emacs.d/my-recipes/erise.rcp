@@ -1,4 +1,5 @@
-(global-set-key (kbd "C-c d r i s") 'erise)
+(my-add-to-packages 'erise)
+(global-set-key (my-kbd "m r i s") 'erise)
 (eval-after-load 'erise
   '(progn
      ;; (setq erise-key-length-limit 30)

@@ -1,13 +1,6 @@
 (:name fiplr
-       :description "An Emacs Fuzzy Find in Project Package"
+       :description "Fuzzy Find in Project for Emacs"
        :website "https://github.com/d11wtq/fiplr"
-       :type elpa
-       :depends (grizzl package)
-       :repo ("melpa" . "http://melpa.milkbox.net/packages/")
-       :after (progn
-                (global-set-key (kbd "C-c f f") 'fiplr-find-file)
-                (add-hook 'grizzl-mode-hook
-                          (lambda ()
-                            (local-set-key (kbd "C-p") 'grizzl-set-selection+1)
-                            (local-set-key (kbd "C-n") 'grizzl-set-selection-1)))
-                ))
+       :type github
+       :pkgname "d11wtq/fiplr"
+       :depends grizzl)

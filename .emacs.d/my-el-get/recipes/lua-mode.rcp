@@ -1,7 +1,5 @@
 (:name lua-mode
-       :after (progn
-                (add-to-list 'auto-mode-alist
-                             '("\\.ws\\'" . lua-mode))
-                ;; <http://lua-users.org/wiki/LuaStyleGuide>,
-                ;; <http://stackoverflow.com/questions/4643206/how-to-configure-indentation-in-emacs-lua-mode#answer-4652043>
-                (setq lua-indent-level 2)))
+       :description "A major-mode for editing Lua scripts"
+       :website "https://github.com/immerrr/lua-mode"
+       :type git
+       :url "https://github.com/immerrr/lua-mode")
