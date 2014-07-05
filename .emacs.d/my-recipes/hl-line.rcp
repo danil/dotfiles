@@ -1,8 +1,8 @@
 (my-after-init
   (global-hl-line-mode)
   (my-eval-after-load 'hl-line
-    (set-face-attribute hl-line-face nil :inverse-video t)
-    (set-face-background 'highlight nil))
+    (set-face-background 'highlight nil)
+    (set-face-attribute hl-line-face nil :underline t))
   ;; (if global-hl-line-mode
   ;;     (dolist (hook '(ediff-mode-hook term-mode-hook))
   ;;       ;; <http://emacsblog.org/2007/04/09/highlight-the-current-line/#comment-284>.
