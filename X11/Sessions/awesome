@@ -89,5 +89,6 @@ fi
 
 dex --autostart
 xchainkeys &
+xautolock -time 10 -locker 'i3lock --dpms -c 000000' &
 
 exec /usr/bin/awesome
