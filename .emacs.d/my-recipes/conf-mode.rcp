@@ -19,9 +19,13 @@
                                 "/sudoers\\'"
                                 "/tint2rc\\'"
                                 "\\.cnf\\'"
+                                "\\.eixrc\\'"
                                 "\\.features\\'" ;cucumber features
+                                "\\.gtkrc.mine\\'"
                                 "\\.pkla\\'"
-                                "\\.theme\\'")
+                                "\\.skippyrc\\'"
+                                "\\.theme\\'"
+                                "\\.xxkbrc\\'")
   ;; Gentoo configs.
   (my-add-auto-mode-to-patterns 'conf-mode
                                 "/etc/conf.d/"

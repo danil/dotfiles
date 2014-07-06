@@ -103,3 +103,4 @@ Xcursor.theme: Vanilla-DMZ
 #include ".Xresources.urxvt"
 #include ".Xresources.uxterm"
 #include ".Xresources.emacs"
+#include ".Xresources.xscreensaver"
