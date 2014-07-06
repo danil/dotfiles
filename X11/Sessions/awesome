@@ -106,4 +106,9 @@ xchainkeys -f ~/.config/xchainkeys/h6-gentoo-awesome.conf &
 xset dpms 420 #suspend monitor after 7 minutes
 xautolock -time 10 -locker 'i3lock --dpms -c 000000' & #lock screen after 10 minutes
 
+xset r rate 300 30 #set the keyboard auto repeat parameters
+xset b off #turn off bell
+
+unclutter &
+
 exec /usr/bin/awesome
