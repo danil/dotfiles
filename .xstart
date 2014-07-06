@@ -18,4 +18,5 @@ fi
 xautolock -time 10 -locker 'i3lock --dpms -c 000000' & #lock screen after 10 minutes
 feh --bg-center ~/local/share/backgrounds/gentoo-znurt-larry-abducted-1440x900.png &
 # urxvtd --fork --quiet
-unclutter &
+unclutter & #hide mouse cursor after while
+xxkb & #keyboard layouts in tray
