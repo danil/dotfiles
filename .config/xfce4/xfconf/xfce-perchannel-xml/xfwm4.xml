@@ -15,7 +15,7 @@
     <property name="cycle_draw_frame" type="bool" value="true"/>
     <property name="cycle_hidden" type="bool" value="true"/>
     <property name="cycle_minimum" type="bool" value="true"/>
-    <property name="cycle_workspaces" type="bool" value="false"/>
+    <property name="cycle_workspaces" type="bool" value="true"/>
     <property name="double_click_time" type="int" value="250"/>
     <property name="double_click_distance" type="int" value="5"/>
     <property name="double_click_action" type="string" value="maximize"/>
@@ -47,16 +47,16 @@
     <property name="shadow_opacity" type="int" value="50"/>
     <property name="show_app_icon" type="bool" value="false"/>
     <property name="show_dock_shadow" type="bool" value="true"/>
-    <property name="show_frame_shadow" type="bool" value="false"/>
-    <property name="show_popup_shadow" type="bool" value="false"/>
+    <property name="show_frame_shadow" type="bool" value="true"/>
+    <property name="show_popup_shadow" type="bool" value="true"/>
     <property name="snap_resist" type="bool" value="false"/>
     <property name="snap_to_border" type="bool" value="true"/>
     <property name="snap_to_windows" type="bool" value="false"/>
     <property name="snap_width" type="int" value="10"/>
-    <property name="theme" type="string" value="Default"/>
+    <property name="theme" type="string" value="Numix Flat Dark"/>
     <property name="tile_on_move" type="bool" value="true"/>
     <property name="title_alignment" type="string" value="left"/>
-    <property name="title_font" type="string" value="Sans Bold 9"/>
+    <property name="title_font" type="string" value="Sans 12"/>
     <property name="title_horizontal_offset" type="int" value="0"/>
     <property name="title_shadow_active" type="string" value="false"/>
     <property name="title_shadow_inactive" type="string" value="false"/>
@@ -66,22 +66,17 @@
     <property name="unredirect_overlays" type="bool" value="true"/>
     <property name="urgent_blink" type="bool" value="false"/>
     <property name="use_compositing" type="bool" value="true"/>
-    <property name="workspace_count" type="int" value="9"/>
+    <property name="workspace_count" type="int" value="4"/>
     <property name="wrap_cycle" type="bool" value="true"/>
     <property name="wrap_layout" type="bool" value="true"/>
     <property name="wrap_resistance" type="int" value="10"/>
+    <property name="workspace_names" type="array">
+      <value type="string" value="Workspace 1"/>
+      <value type="string" value="Workspace 2"/>
+      <value type="string" value="Workspace 3"/>
+      <value type="string" value="Workspace 4"/>
+    </property>
     <property name="wrap_windows" type="bool" value="true"/>
     <property name="wrap_workspaces" type="bool" value="false"/>
-    <property name="workspace_names" type="array">
-      <value type="string" value="1"/>
-      <value type="string" value="2"/>
-      <value type="string" value="3"/>
-      <value type="string" value="4"/>
-      <value type="string" value="5"/>
-      <value type="string" value="6"/>
-      <value type="string" value="7"/>
-      <value type="string" value="8"/>
-      <value type="string" value="9"/>
-    </property>
   </property>
 </channel>
