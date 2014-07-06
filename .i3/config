@@ -151,6 +151,13 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        colors {
+                background #000000
+                statusline #ffffff
+
+                focused_workspace  #ff4500 #000000
+                inactive_workspace #888888 #000000
+        }
 }
 
 bindsym Mod1+Tab exec ~/.i3/alt_tab.sh
