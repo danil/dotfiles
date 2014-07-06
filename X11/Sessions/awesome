@@ -87,6 +87,9 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
     done
 fi
 
+~/.xstart
+xchainkeys -f ~/.config/xchainkeys/h6-gentoo-awesome.conf &
+
 # Desktop Application Autostart Specification <http://standards.freedesktop.org/autostart-spec/autostart-spec-latest.html>,
 # <http://awesome.naquadah.org/wiki/Autostart#Freedesktop_autostart_way>,
 # <https://wiki.archlinux.org/index.php/Awesome#Autorun_programs>,
@@ -98,17 +101,5 @@ dex ~/.config/autostart/stardict.desktop \
     /etc/xdg/autostart/xfce4-volumed.desktop \
     /etc/xdg/autostart/xfsettingsd.desktop \
     /etc/xdg/autostart/Gentoo-print-applet.desktop
-
-xchainkeys -f ~/.config/xchainkeys/h6-gentoo-awesome.conf &
-
-# Power management, screensaver and lock screen
-# <https://wiki.archlinux.org/index.php/i3#Screensaver_and_power_management>.
-xset dpms 420 #suspend monitor after 7 minutes
-xautolock -time 10 -locker 'i3lock --dpms -c 000000' & #lock screen after 10 minutes
-
-xset r rate 300 30 #set the keyboard auto repeat parameters
-xset b off #turn off bell
-
-unclutter &
 
 exec /usr/bin/awesome

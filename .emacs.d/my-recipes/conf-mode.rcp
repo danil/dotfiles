@@ -19,6 +19,7 @@
                                 "/sudoers\\'"
                                 "/tint2rc\\'"
                                 "\\.cnf\\'"
+                                "\\.eixrc\\'"
                                 "\\.features\\'" ;cucumber features
                                 "\\.gtkrc.mine\\'"
                                 "\\.pkla\\'"
