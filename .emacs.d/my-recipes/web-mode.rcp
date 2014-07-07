@@ -6,6 +6,5 @@
                                 "\\.djhtml\\'"
                                 "\\.jsp\\'"
                                 "\\.jst\\.ejs\\'"
-                                "\\.mustache\\'"
                                 "\\.phtml\\'"
                                 "\\.tpl\\.php\\'"))

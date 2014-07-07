@@ -1,0 +1,5 @@
+(:name mustache-mode
+       :description "Emacs Major Mode for Mustache"
+       :features mustache-mode
+       :type github
+       :pkgname "mustache/emacs")
