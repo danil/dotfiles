@@ -40,14 +40,14 @@ keysym Caps_Lock = Control_L
 ! keysym k = k K Up
 ! keysym l = l L Right
 
-! Remap Super to control key
-! <http://askubuntu.com/questions/137172/how-to-remap-superleft-key-to-control-key#137456>.
-remove mod4 = Super_L
-add control = Super_L
-remove mod4 = Super_R
-add control = Super_R
+! ! Remap Super to control key
+! ! <http://askubuntu.com/questions/137172/how-to-remap-superleft-key-to-control-key#137456>.
+! remove mod4 = Super_L
+! add control = Super_L
+! remove mod4 = Super_R
+! add control = Super_R
 
-! Remap Menu to control key
-! <http://ubuntuforums.org/showthread.php?t=820187&p=5126113#post5126113>.
-keycode 135 = Control_R
-add Control = Control_R
+! ! Remap Menu to control key
+! ! <http://ubuntuforums.org/showthread.php?t=820187&p=5126113#post5126113>.
+! keycode 135 = Control_R
+! add Control = Control_R

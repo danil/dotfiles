@@ -49,10 +49,12 @@
                                 "OrangeRed3") ;maroon3 ;yellow3
            (set-face-foreground 'highlight-symbol-face
                                 "black")))))
+
 (defun my-highlight-symbol-next-with-repeat ()
   (interactive)
   (my-with-repeat-while-press-last-key
     (highlight-symbol-next)))
+
 (defun my-highlight-symbol-prev-with-repeat ()
   (interactive)
   (my-with-repeat-while-press-last-key

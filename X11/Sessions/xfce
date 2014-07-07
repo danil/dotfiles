@@ -1,0 +1,6 @@
+#!/bin/sh
+# This file is part of Danil <danil@kutkevich.org> home.
+
+~/.xstart
+xchainkeys -f ~/.config/xchainkeys/h6-gentoo-xfce.conf &
+exec startxfce4
