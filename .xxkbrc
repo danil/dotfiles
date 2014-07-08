@@ -1,12 +1,7 @@
-XXkb.controls.two_state: no
-XXkb*label.text.1: E
-XXkb*label.text.2: R
 XXkb.mainwindow.type: tray
-XXkb.mainwindow.label.enable: yes
-XXkb.mainwindow.enable: yes
-XXkb.mainwindow.appicon: no
-XXkb.mainwindow.geometry: 12x14+0+0
-XXkb.mainwindow.label.background: #2d2d2d
-XXkb.mainwindow.label.foreground: #c3beb0
-XXkb.mainwindow.label.font: -misc-*-r-*-18-*
+XXkb.mainwindow.geometry: 20x12+0+0
 XXkb.button.enable: no
+XXkb.image.path: /usr/share/xxkb/
+# XXkb.image.path: /home/danil/local/share/xxkb
+XXkb.mainwindow.image.1: en.svg
+XXkb.mainwindow.image.2: ru.svg
