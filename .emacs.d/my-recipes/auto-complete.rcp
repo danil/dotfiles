@@ -18,6 +18,7 @@
                     lua-mode
                     magit-log-edit-mode
                     markdown-mode
+                    mustache-mode
                     nxml-mode
                     org-mode
                     python-mode

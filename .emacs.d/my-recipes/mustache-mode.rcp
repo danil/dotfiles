@@ -1,0 +1,6 @@
+(my-add-to-packages 'mustache-mode)
+
+(my-after-init
+  (my-add-auto-mode-to-patterns 'mustache-mode
+                                "\\.hs\\'"
+                                "\\.handlebars\\'"))

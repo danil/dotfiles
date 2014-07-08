@@ -109,6 +109,7 @@
           "markdown-mode"
           "multi-web-mode"
           "multiple-cursors"
+          "mustache-mode"
           "my-backspace-fix"
           "my-beginning-of-line"
           "my-color-theme"
