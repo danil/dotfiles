@@ -32,6 +32,7 @@
       <property name="names-visible" type="array">
         <value type="string" value="stardict"/>
         <value type="string" value="xfce4-power-manager"/>
+        <value type="string" value="thunderbird"/>
         <value type="string" value="xxkb"/>
         <value type="string" value="dropbox"/>
         <value type="string" value="wicd-client.py"/>

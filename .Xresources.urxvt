@@ -21,6 +21,9 @@ URxvt.scrollBar_right: true
 ! Scroll for White text on black background. Black (dark) theme.
 URxvt.scrollColor: gray40
 
+! Application icon (USE=pixbuf) <http://wiki.gentoo.org/wiki/URxvt#Application_icon>.
+URxvt.iconFile: /usr/share/icons/Faenza/apps/scalable/utilities-terminal.svg
+
 ! URxvtperl.
 ! See the urxvtperl manpage for details.
 ! You can find them in </usr/lib/urxvt/perl/>.

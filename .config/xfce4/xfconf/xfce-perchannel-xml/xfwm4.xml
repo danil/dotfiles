@@ -39,7 +39,7 @@
     <property name="repeat_urgent_blink" type="bool" value="false"/>
     <property name="resize_opacity" type="int" value="100"/>
     <property name="restore_on_move" type="bool" value="true"/>
-    <property name="scroll_workspaces" type="bool" value="true"/>
+    <property name="scroll_workspaces" type="bool" value="false"/>
     <property name="shadow_delta_height" type="int" value="0"/>
     <property name="shadow_delta_width" type="int" value="0"/>
     <property name="shadow_delta_x" type="int" value="0"/>
@@ -69,14 +69,14 @@
     <property name="workspace_count" type="int" value="4"/>
     <property name="wrap_cycle" type="bool" value="true"/>
     <property name="wrap_layout" type="bool" value="true"/>
-    <property name="wrap_resistance" type="int" value="10"/>
+    <property name="wrap_resistance" type="int" value="20"/>
     <property name="workspace_names" type="array">
       <value type="string" value="Workspace 1"/>
       <value type="string" value="Workspace 2"/>
       <value type="string" value="Workspace 3"/>
       <value type="string" value="Workspace 4"/>
     </property>
-    <property name="wrap_windows" type="bool" value="true"/>
+    <property name="wrap_windows" type="bool" value="false"/>
     <property name="wrap_workspaces" type="bool" value="false"/>
   </property>
 </channel>
