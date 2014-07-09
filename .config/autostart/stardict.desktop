@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=StarDict
+Name[ru]=StarDict
+Comment=Lookup words
+Comment[ru]=Поиск слова
+Exec=stardict
+Terminal=false
+Type=Application
+Icon=stardict
+StartupNotify=true
+Categories=Utility;Office;TextTools;Dictionary;
+X-GNOME-DocPath=stardict/stardict.xml

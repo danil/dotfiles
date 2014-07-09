@@ -1,0 +1,39 @@
+(my-add-to-packages 'auto-complete)
+(my-after-init
+  (my-eval-after-load 'auto-complete-config
+    (ac-config-default)
+    (dolist (mode '( ;<http://stackoverflow.com/questions/10779636/emacs-auto-complete-key-binding-didnt-work>
+                    clojure-mode
+                    coffee-mode
+                    conf-colon-mode
+                    conf-mode
+                    conf-space-mode
+                    conf-unix-mode
+                    conf-xdefaults-mode
+                    git-commit-mode
+                    haml-mode
+                    html-mode
+                    inf-ruby-mode
+                    less-css-mode
+                    lua-mode
+                    magit-log-edit-mode
+                    markdown-mode
+                    mustache-mode
+                    nxml-mode
+                    org-mode
+                    python-mode
+                    rhtml-mode
+                    rust-mode
+                    sass-mode
+                    scss-mode
+                    sgml-mode
+                    shell-mode
+                    sieve-mode
+                    sql-interactive-mode
+                    sql-mode
+                    yaml-mode
+                    ))
+      (add-to-list 'ac-modes mode))
+    (ac-linum-workaround) ;<https://github.com/auto-complete/auto-complete/blob/da864398a96805a2c79ac61fadeebd420ccb3cdc/doc/manual.md#linum-mode-tries-to-display-the-line-numbers-even-for-the-comletion-menu--linum-mode-bug>
+    (setq ac-ignore-case nil) ;preserve capitalization <http://stackoverflow.com/questions/15637536/how-do-i-preserve-capitalization-when-using-autocomplete-in-emacs>
+    (setq ac-disable-faces (quote (font-lock-doc-face)))))

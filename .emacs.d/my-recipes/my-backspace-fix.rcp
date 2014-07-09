@@ -1,0 +1,13 @@
+;;; BackspaceKey <http://emacswiki.org/BackspaceKey>.
+
+;; (global-set-key [(control h)] 'delete-backward-char)
+(my-after-init
+  (my-backspace-fix)
+  (my-eval-after-load 'term-mode (my-backspace-fix)))
+
+(defun my-backspace-fix ()
+  (keyboard-translate ?\C-h ?\C-?)
+  (define-key key-translation-map [?\C-h] [?\C-?]))
+
+(defun my-backspace-fix-i ()
+  (interactive) (my-backspace-fix))

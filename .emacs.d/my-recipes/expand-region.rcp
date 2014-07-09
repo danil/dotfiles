@@ -1,0 +1,17 @@
+(my-add-to-packages 'expand-region)
+(my-eval-after-load 'expand-region
+  (global-set-key (my-kbd "e e") 'er/expand-region)
+
+  (global-set-key (my-kbd "e w")   'er/mark-word)
+  (global-set-key (my-kbd "e s s") 'er/mark-symbol)
+  (global-set-key (my-kbd "e s p") 'er/mark-symbol-with-prefix)
+  (global-set-key (my-kbd "e n")   'er/mark-next-accessor)
+  (global-set-key (my-kbd "e m c")   'er/mark-method-call)
+  (global-set-key (my-kbd "e i q") 'er/mark-inside-quotes)
+  (global-set-key (my-kbd "e o q") 'er/mark-outside-quotes)
+  (global-set-key (my-kbd "e i p") 'er/mark-inside-pairs)
+  (global-set-key (my-kbd "e o p") 'er/mark-outside-pairs)
+  (global-set-key (my-kbd "e c")   'er/mark-comment)
+  (global-set-key (my-kbd "e u")   'er/mark-url)
+  (global-set-key (my-kbd "e m l") 'er/mark-email)
+  (global-set-key (my-kbd "e d")   'er/mark-defun))

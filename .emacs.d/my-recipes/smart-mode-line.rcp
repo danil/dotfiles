@@ -1,0 +1,34 @@
+(my-add-to-packages 'smart-mode-line)
+(autoload 'sml/setup "smart-mode-line" nil t)
+
+(my-after-init
+  (setq sml/theme frame-background-mode)
+  (sml/setup)
+
+  (dolist (my-hidden-mode '(
+                            " AC"        ;auto-complete-mode
+                            " ARev"      ;auto-revert-mode
+                            " Abbrev"    ;abbrev-mode
+                            " RubyRef"   ;ruby-refactor-mode
+                            " SP"        ;smartparens-mode
+                            " Undo-Tree" ;undo-tree-mode
+                            " end"       ;ruby-end-mode
+                            " gg"        ;git-gutter-mode
+                            " hl-s"      ;highlight-symbol-mode
+                            " hs"        ;hideshow
+                            " rt"        ;ruby-tools-mode
+                            )) (add-to-list 'sml/hidden-modes my-hidden-mode))
+
+  (dolist (my-path-to-replace
+           '(("^:S\\(V?\\):\\([^:]+:\\)?\\([^/]+\\)/" ":S\\1:\\2\\3:")
+             ("^:S\\(V?\\):\\(c\\|cpp\\|el\\|md\\|js\\|python\\|ruby\\|go\\|org\\)/"
+              ":S\\1:")
+             ("^~/src/" ":S:")
+             ("^~/src/vendor/" ":SV:")
+             ("^:SV\\([^:]\\):\\([^/]\\{0,6\\}\\)[^/]*?\\([^/]\\{0,4\\}\\)/"
+              ":SV\\1:\\2\\3:")
+             ("^~/src/vendor/waveaccess/" ":SVW:")
+             ("^~/src/vendor/molinos/" ":SVM:")
+             ("^~/src/vendor/avers/" ":SVP:")
+             ("^~/src/vendor/johnstudio/" ":SVJ:")))
+    (add-to-list 'sml/replacer-regexp-list my-path-to-replace)))

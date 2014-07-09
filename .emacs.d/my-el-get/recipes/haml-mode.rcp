@@ -1,0 +1,5 @@
+(:name haml-mode
+       :description "Major mode for editing Haml files"
+       ;; :depends from ruby-mode due to ruby-toggle-hash-syntax
+       :type github
+       :pkgname "nex3/haml-mode")

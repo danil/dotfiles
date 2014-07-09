@@ -69,32 +69,33 @@
 # "urxvtc"
 # # Fish shell <https://wiki.archlinux.org/index.php/Fish#Troubleshooting>.
 # "urxvt -e fish"
+# "urxvt -rv"
 "urxvt"
   Control + Shift + Mod1 + c
 
-# Editor.
-# Fish shell <https://wiki.archlinux.org/index.php/Fish#Troubleshooting>.
-"/home/danil/bin/ecx"
-  Control + Shift + Mod1 + e
+# # Editor.
+# # Fish shell <https://wiki.archlinux.org/index.php/Fish#Troubleshooting>.
+# "/home/danil/bin/ecx"
+#   Control + Shift + Mod1 + e
 
-# Show desktop
-# <http://ubuntuforums.org/showthread.php?t=1615199#td_post_10083165>.
-"/home/danil/bin/showdesktop.sh"
-  Control + Mod1 + d
+# # Show desktop
+# # <http://ubuntuforums.org/showthread.php?t=1615199#td_post_10083165>.
+# "/home/danil/bin/showdesktop.sh"
+#   Control + Mod1 + d
 
 # Compiz viewports switch
 # <http://superuser.com/questions/264281/wmctrl-says-i-have-one-workspace-when-i-actually-have-four#answer-264502>.
 # "wmctrl -o 0,0 && notify-send --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=900 '1' 'Desktop'"
-"wmctrl -o 0,0"
+"echo 1 > /tmp/danil_desktop_number ; wmctrl -o 0,0"
   Control + Mod1 + 1
 # "wmctrl -o 1440,0 && notify-send --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=900 '2' 'Desktop'"
-"wmctrl -o 1440,0"
+"echo 2 > /tmp/danil_desktop_number ; wmctrl -o 1440,0"
   Control + Mod1 + 2
 # "wmctrl -o 0,900 && notify-send --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=900 '3' 'Desktop'"
-"wmctrl -o 0,900"
+"echo 3 > /tmp/danil_desktop_number ; wmctrl -o 0,900"
   Control + Mod1 + 3
 # "wmctrl -o 1440,900 && notify-send --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=900 '4' 'Desktop'"
-"wmctrl -o 1440,900"
+"echo 4 > /tmp/danil_desktop_number ; wmctrl -o 1440,900"
   Control + Mod1 + 4
 
 # # TODO:
@@ -111,24 +112,24 @@
 # "wmctrl -r :ACTIVE: -e 0,1470,950,-1,-1 && wmctrl -o 1440,900"
 #   Control + Shift + Mod1 + 4
 
-# Dim screen backlight.
-"sleep 0.5 && xset dpms force off"
-  Control + Shift + Mod1 + d
+# # Dim screen backlight.
+# "sleep 0.5 && xset dpms force off"
+#   Control + Shift + Mod1 + d
 
-# Screensaver.
-# "xlock -mode deco & sleep 1 && xset dpms force off"
-"xscreensaver-command -lock && sleep 1 && xset dpms force off"
-  Control + Shift + Mod1 + l
+# # Screensaver.
+# # "xlock -mode deco & sleep 1 && xset dpms force off"
+# "xscreensaver-command -lock && sleep 1 && xset dpms force off"
+#   Control + Shift + Mod1 + l
 
-# Shutdown menu.
-# "/usr/bin/xfce4-session-logout"
-"~/src/python/shutdown_menu.py"
-  Control + Shift + Mod1 + 0
+# # Shutdown menu.
+# # "/usr/bin/xfce4-session-logout"
+# "~/src/python/shutdown_menu.py"
+#   Control + Shift + Mod1 + 0
 
-# S3 aka Suspend to RAM aka Sleep.
-# "xlock -mode deco& sudo hibernate-ram"
-"xscreensaver-command -lock && sudo hibernate-ram"
-  Control + Shift + Mod1 + 9
+# # S3 aka Suspend to RAM aka Sleep.
+# # "xlock -mode deco& sudo hibernate-ram"
+# "xscreensaver-command -lock && sudo hibernate-ram"
+#   Control + Shift + Mod1 + 9
 
 # # S4 aka Suspend to Disk aka Hibernate.
 # # "sudo hibernate"
@@ -169,9 +170,9 @@
 
 # Screenshot.
 # "import ~/tmp/screenshot.png"
-"shutter -s"
+# "shutter -s"
+"ksnapshot"
   Control + Shift + Mod1 + p
-  # Control + Shift + Mod1 + Print
 
 # # ALSA.
 # "amixer sset PCM 5%+ unmute"
@@ -195,8 +196,8 @@
 # "killall -SIGUSR1 tint2"
 #   Control + Shift + Mod1 + 2
 
-"/home/danil/bin/unless_electricsheep.sh"
-  Control + Shift + Mod1 + s
+# "/home/danil/bin/unless_electricsheep.sh"
+#   Control + Shift + Mod1 + s
 
 # # Listen
 # "listen --next"

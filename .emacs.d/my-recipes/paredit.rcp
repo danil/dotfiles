@@ -1,0 +1,4 @@
+(my-add-to-packages 'paredit)
+
+(autoload 'enable-paredit-mode "paredit")
+(autoload 'disable-paredit-mode "paredit")

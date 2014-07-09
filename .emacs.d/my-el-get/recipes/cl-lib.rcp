@@ -1,0 +1,7 @@
+(:name cl-lib
+       :description "Properly prefixed CL functions and macros"
+       :url "http://elpa.gnu.org/packages/cl-lib.html"
+       :builtin "24.3"
+       ;; :type github
+       ;; :pkgname "danil/cl-lib-fu"
+       :type elpa)

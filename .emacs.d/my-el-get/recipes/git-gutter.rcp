@@ -1,0 +1,5 @@
+(:name git-gutter
+       :description "Emacs port of GitGutter which is Sublime Text Plugin"
+       :website "https://github.com/syohex/emacs-git-gutter"
+       :type github
+       :pkgname "syohex/emacs-git-gutter")

@@ -1,0 +1,12 @@
+;;; Recentf (open recent files)
+;;; <http://stackoverflow.com/questions/3527150/open-recent-in-emacs#answer-3527488>,
+;;; <http://emacswiki.org/RecentFiles>.
+
+(my-after-init
+  (recentf-mode t)
+  (my-eval-after-load 'recentf-mode
+    ;; If you make extensive use of Tramp, recentf will track those files
+    ;; too, and do it's periodic cleanup thing which can be a real mess
+    ;; since the files are remote. Prevent this by putting this in your
+    ;; startup file:
+    (setq recentf-auto-cleanup 'never)))

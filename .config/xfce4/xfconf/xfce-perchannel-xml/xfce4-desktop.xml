@@ -12,9 +12,5 @@
   </property>
   <property name="desktop-icons" type="empty">
     <property name="icon-size" type="uint" value="32"/>
-    <property name="style" type="int" value="2"/>
-  </property>
-  <property name="desktop-menu" type="empty">
-    <property name="show-icons" type="bool" value="true"/>
   </property>
 </channel>

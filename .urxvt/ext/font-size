@@ -33,14 +33,15 @@
 #
 # USAGE
 #
-# Add font-size to the list of perl extensions:
-# URxvt.perl-ext-common: ...,font-size
+# Put the font-size script into $HOME/.urxvt/ext/ and add it to the list of
+# enabled perl-extensions in ~/.Xresources:
+#   URxvt.perl-ext-common: ...,font-size
 #
 # Add some keybindings:
-# URxvt.keysym.C-Up:     perl:font-size:increase
-# URxvt.keysym.C-Down:   perl:font-size:decrease
-# URxvt.keysym.C-S-Up:   perl:font-size:incglobal
-# URxvt.keysym.C-S-Down: perl:font-size:decglobal
+#   URxvt.keysym.C-Up:     perl:font-size:increase
+#   URxvt.keysym.C-Down:   perl:font-size:decrease
+#   URxvt.keysym.C-S-Up:   perl:font-size:incglobal
+#   URxvt.keysym.C-S-Down: perl:font-size:decglobal
 #
 # Supported functions:
 # - increase/decrease:
@@ -52,6 +53,18 @@
 #       same as incglobal/decglobal and also modify the ~/.Xresources file so
 #       the changed font sizes will persist over a restart of the X server or
 #       a reboot.
+#
+# You can also change the step size that the script will use to increase the
+# font size:
+#
+#   URxvt.font-size.step: 4
+#
+# The default step size is 1. This means that with this setting a size change
+# sequence would be for example 8->12->16->20 instead of 8->9->10->11->12 etc.
+# Please note that many X11 fonts are only available in specific sizes, though,
+# and odd sizes are often not available, resulting in an effective step size of
+# 2 instead of 1 in that case.
+
 
 use strict;
 use warnings;
@@ -68,6 +81,10 @@ sub on_start
     my ($self) = @_;
 
     $self->{step} = $self->x_resource("%.step") || 1;
+
+    foreach my $type (qw(font boldFont italicFont boldItalicFont)) {
+        $self->{$type} = $self->x_resource($type) || "undef";
+    }
 }
 
 sub on_user_command
@@ -88,6 +105,8 @@ sub on_user_command
         fonts_change_size($self,  $step, 2);
     } elsif ($cmd eq "font-size:decsave") {
         fonts_change_size($self, -$step, 2);
+    } elsif ($cmd eq "font-size:reset") {
+        fonts_reset($self);
     }
 }
 
@@ -126,6 +145,18 @@ sub fonts_change_size
         # write the new values back to the file
         my $xresources = readlink $ENV{"HOME"} . "/.Xresources";
         system("xrdb -edit " . $xresources);
+    }
+}
+
+sub fonts_reset
+{
+    my ($term) = @_;
+
+    foreach my $type (qw(font boldFont italicFont boldItalicFont)) {
+        my $initial = $term->{$type};
+        if ($initial ne "undef") {
+            font_apply_new($term, $initial, $type, 0);
+        }
     }
 }
 
@@ -201,7 +232,7 @@ sub font_change_size_xft
     my $new_size = 0;
 
     foreach my $piece (@pieces) {
-        if ($piece =~ /^(?:(?:pixel)?size=|[^=-]+-)(\d+)$/) {
+        if ($piece =~ /^(?:(?:pixel)?size=|[^=-]+-)(\d+(\.\d*)?)$/) {
             $size = $1;
 
             if ($basesize != 0) {

@@ -1,0 +1,5 @@
+(:name paredit
+       :description "Minor mode for editing parentheses"
+       :website "http://emacswiki.org/ParEdit"
+       :type http
+       :url "http://mumble.net/~campbell/emacs/paredit.el")

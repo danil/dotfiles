@@ -1,0 +1,3 @@
+(:name findr
+       :type git
+       :url "git://github.com/emacsmirror/findr.git")

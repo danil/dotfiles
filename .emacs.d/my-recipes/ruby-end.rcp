@@ -1,0 +1,2 @@
+(my-add-to-packages 'ruby-end)
+(add-hook 'ruby-mode-hook 'ruby-end-mode)

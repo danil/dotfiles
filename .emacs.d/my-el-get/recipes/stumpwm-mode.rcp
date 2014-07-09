@@ -1,0 +1,6 @@
+(:name stumpwm-mode
+       :description "Eval code into a running stumpwm"
+       :website "http://www.nongnu.org/stumpwm"
+       :depends slime
+       :type http
+       :url "https://raw2.github.com/sabetts/stumpwm/master/contrib/stumpwm-mode.el")

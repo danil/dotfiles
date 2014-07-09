@@ -1,0 +1,5 @@
+(:name ruby-end
+       :description "Emacs minor mode for automatic insertion of end blocks for Ruby"
+       :website "https://github.com/rejeep/ruby-end.el"
+       :type github
+       :pkgname "rejeep/ruby-end.el")
