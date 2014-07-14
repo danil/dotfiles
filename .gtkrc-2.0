@@ -1,7 +1,7 @@
 # -- THEME AUTO-WRITTEN DO NOT EDIT
-include "/usr/share/themes/Numix Flat Dark/gtk-2.0/gtkrc"
+include "/usr/share/themes/Xfce-dusk/gtk-2.0/gtkrc"
 
-gtk-theme-name  = "Numix Flat Dark"
+gtk-theme-name  = "Xfce-dusk"
 
 include "/home/danil/.gtkrc.mine"
 
