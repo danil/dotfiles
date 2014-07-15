@@ -8,6 +8,11 @@
         <property name="last-image" type="string" value="/home/danil/local/share/backgrounds/gentoo-znurt-larry-abducted-1440x900.png"/>
         <property name="last-single-image" type="string" value="/home/danil/local/share/backgrounds/gentoo-znurt-larry-abducted-1440x900.png"/>
       </property>
+      <property name="monitor1" type="empty">
+        <property name="image-path" type="string" value="/home/danil/local/share/backgrounds/gentoo-znurt-larry-abducted-1440x900.png"/>
+        <property name="last-image" type="string" value="/home/danil/local/share/backgrounds/gentoo-znurt-larry-abducted-1440x900.png"/>
+        <property name="last-single-image" type="string" value="/home/danil/local/share/backgrounds/gentoo-znurt-larry-abducted-1440x900.png"/>
+      </property>
     </property>
   </property>
   <property name="desktop-icons" type="empty">
