@@ -8,6 +8,7 @@ xset dpms 420      #suspend monitor after 7 minutes <https://wiki.archlinux.org/
 
 if [[ `hostname -s` == 'h3' ]]; then
     if hash argyll-dispwin 2>/dev/null; then
+        # <https://wiki.archlinux.org/index.php/ICC_Profiles#Argyll_CMS>.
         argyll-dispwin ~/t400s_082409.icm &
     elif hash dispwin 2>/dev/null; then
         dispwin ~/t400s_082409.icm &
