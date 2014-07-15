@@ -7,7 +7,7 @@ xset b off         #turn off bell
 xset r rate 300 30 #keyboard auto repeat parameters
 xset dpms 420      #suspend monitor after 7 minutes <https://wiki.archlinux.org/index.php/i3#Screensaver_and_power_management>
 
-if [[ `hostname -s` == "leela" ]]; then
+if [[ `hostname -s` == 'h3' ]]; then
     if hash argyll-dispwin 2>/dev/null; then
         argyll-dispwin ~/t400s_082409.icm &
     elif hash dispwin 2>/dev/null; then
