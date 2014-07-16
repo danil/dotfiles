@@ -44,12 +44,14 @@
           "auto-complete-css"
           "auto-complete-emacs-lisp"
           "auto-complete-etags"
+          "autopair"
           "bash-completion"
           "calendar"
 
           ;; Clojure.
           "cider" ;clojure-mode dependency
           "clojure-mode"
+          "smartparens"
 
           "coffee-mode"
           "column-marker"
@@ -151,7 +153,6 @@
           "slim-mode"
           "slime"
           "smart-mode-line"
-          "smartparens"
           "smex"
           "sort"
           "undo-tree"

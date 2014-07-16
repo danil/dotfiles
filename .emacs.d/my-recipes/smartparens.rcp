@@ -2,37 +2,8 @@
 (my-add-mode-to-hooks (lambda ()
                         (turn-on-smartparens-mode)
                         (turn-on-show-smartparens-mode))
-                      'awk-mode-hook
-                      'change-log-mode-hook
                       'cider-repl-mode-hook
-                      'clojure-mode-hook
-                      'coffee-mode-hook
-                      'conf-mode-hook
-                      'css-mode-hook
-                      'emacs-lisp-mode-hook
-                      'haml-mode-hook
-                      'haskell-mode-hook
-                      'html-mode-hook
-                      'java-mode-hook
-                      'js-mode-hook
-                      'less-css-mode-hook
-                      'lisp-mode-hook
-                      'lua-mode-hook
-                      'makefile-gmake-mode-hook
-                      'markdown-mode-hook
-                      'nxml-mode-hook
-                      'perl-mode-hook
-                      'php-mode-hook
-                      'python-mode-hook
-                      'ruby-mode-hook
-                      'rust-mode-hook
-                      'sass-mode-hook
-                      'sgml-mode-hook
-                      'sh-mode-hook
-                      'sieve-mode-hook
-                      'sql-mode-hook
-                      'xml-mode-hook
-                      'yaml-mode-hook)
+                      'clojure-mode-hook)
 (my-after-init
   (my-eval-after-load 'smartparens
     (sp-with-modes sp--lisp-modes (sp-local-pair "'" nil :actions nil)) ;adds `' as a local pair in lisp <https://github.com/Fuco1/smartparens/issues/286#issuecomment-32324743>, <https://github.com/Fuco1/smartparens/wiki/Pair-management#local-pair-definitions>
