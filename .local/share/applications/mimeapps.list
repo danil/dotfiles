@@ -18,7 +18,7 @@ application/x-extension-bin=userapp-file-roller-OQBS5V.desktop;
 application/rtf=libreoffice-writer.desktop;wine-extension-rtf.desktop;
 video/ogg=userapp-mplayer-SAZLSV.desktop;
 application/x-bzip-compressed-tar=mount-archive.desktop;file-roller.desktop;
-application/zip=mount-archive.desktop;file-roller.desktop;
+application/zip=mount-archive.desktop;file-roller.desktop;Thunar-folder-handler.desktop;xarchiver.desktop;
 application/x-rar=mount-archive.desktop;file-roller.desktop;
 application/octet-stream=leafpad.desktop;
 application/x-dbf=libreoffice-calc.desktop;file-roller.desktop;
@@ -33,6 +33,7 @@ text/csv=leafpad.desktop;
 video/x-msvideo=userapp-mplayer-SAZLSV.desktop;
 application/x-font-ttf=userapp-leafpad-EACN4W.desktop;
 application/x-fictionbook+xml=leafpad.desktop;
+application/vnd.adobe.flash.movie=mpv.desktop;userapp-leafpad-EACN4W.desktop;
 
 [Default Applications]
 application/pdf=evince.desktop
@@ -50,7 +51,7 @@ application/rtf=wine-extension-rtf.desktop
 video/ogg=userapp-mplayer-SAZLSV.desktop
 text/csv=leafpad.desktop
 application/x-bzip-compressed-tar=file-roller.desktop
-application/zip=file-roller.desktop
+application/zip=xarchiver.desktop
 application/x-rar=file-roller.desktop
 text/plain=leafpad.desktop
 application/octet-stream=leafpad.desktop
@@ -64,10 +65,10 @@ x-scheme-handler/http=google-chrome.desktop
 x-scheme-handler/https=google-chrome.desktop
 x-scheme-handler/about=google-chrome.desktop
 x-scheme-handler/unknown=google-chrome.desktop
+application/vnd.adobe.flash.movie=userapp-leafpad-EACN4W.desktop
 
 [Removed Associations]
 image/jpeg=wine-extension-jfif.desktop;wine-extension-jpeg.desktop;wine-extension-jpe.desktop;wine-extension-jpg.desktop;
 image/png=wine-extension-png.desktop;
 image/gif=wine-extension-gif.desktop;
 application/x-python-bytecode=leafpad.desktop;gedit.desktop;
-
