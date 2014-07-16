@@ -1,0 +1,4 @@
+(my-add-to-packages 'discover-my-major)
+(my-after-init
+  (my-eval-after-load 'discover-my-major
+))
