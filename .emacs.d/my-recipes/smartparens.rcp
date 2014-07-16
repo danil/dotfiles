@@ -2,6 +2,7 @@
 (my-add-mode-to-hooks (lambda ()
                         (turn-on-smartparens-mode)
                         (turn-on-show-smartparens-mode))
+                      'cider-repl-mode-hook
                       'clojure-mode-hook)
 (my-after-init
   (my-eval-after-load 'smartparens
