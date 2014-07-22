@@ -25,7 +25,8 @@
                                 "\\.pkla\\'"
                                 "\\.skippyrc\\'"
                                 "\\.theme\\'"
-                                "\\.xxkbrc\\'")
+                                "\\.xxkbrc\\'"
+                                "\\parcelliterc\\'")
   ;; Gentoo configs.
   (my-add-auto-mode-to-patterns 'conf-mode
                                 "/etc/conf.d/"

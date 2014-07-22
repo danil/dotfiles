@@ -5,7 +5,7 @@ PATH=~/bin:"${PATH}"
 PATH=~/local/bin:"${PATH}"
 
 # Tab completion
-# <http://en.gentoo-wiki.com/wiki/TAB-Completion#Installation>.
+# <http://wiki.gentoo.org/wiki/Bash#Tab_completion>.
 [[ -f /etc/profile.d/bash-completion.sh ]] && source /etc/profile.d/bash-completion.sh
 
 # Disable the XOFF (Ctrl-s) keystroke
