@@ -9,6 +9,7 @@
                             " AC"        ;auto-complete-mode
                             " ARev"      ;auto-revert-mode
                             " Abbrev"    ;abbrev-mode
+                            " Helm"      ;helm-mode
                             " RubyRef"   ;ruby-refactor-mode
                             " SP"        ;smartparens-mode
                             " Undo-Tree" ;undo-tree-mode
