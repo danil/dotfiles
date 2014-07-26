@@ -1,0 +1,3 @@
+(my-add-to-packages 'helm-ag)
+(my-after-init
+  (global-set-key (my-kbd "m h a a") 'helm-do-ag))
