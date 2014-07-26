@@ -10,6 +10,30 @@
 ;; (set-face-background 'region nil)
 ;; (set-background-color "#0f0f0f")
 (set-cursor-color "red") ;#aa0000
+
+(defface helm-selection
+    '((((background dark)) :background nil :underline t)
+      (((background light)) :background nil :underline t))
+  "Face for currently selected item in the helm buffer."
+  :group 'helm)
+
+(defface helm-source-header
+    '((((background dark))
+       :background nil
+       :foreground "RoyalBlue1"
+       :weight bold :height 1.3 :family "Monospace")
+      (((background light))
+       :background nil
+       :foreground nil
+       :weight bold :height 1.3 :family "Monospace"))
+  "Face for source header in the helm buffer."
+  :group 'helm)
+
+(defface helm-ff-directory
+    '((t (:inherit dired-directory)))
+  "Face used for directories in `helm-find-files'."
+  :group 'helm-files)
+
 (cond ((equal frame-background-mode 'light)
        (set-face-attribute 'my-default nil :foreground nil :background nil)
        (setq my-lazy-highlight-background "yellow1") ;lightgoldenrod2
