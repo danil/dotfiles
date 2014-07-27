@@ -1,0 +1,3 @@
+(my-add-to-packages 'helm-swoop)
+(my-after-init
+  (global-set-key (my-kbd "h f s") 'my-helm-find))

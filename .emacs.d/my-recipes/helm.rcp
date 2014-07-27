@@ -1,5 +1,21 @@
 (my-add-to-packages 'helm)
 (my-after-init
+  (global-set-key (kbd "C-x b") 'helm-mini)
+  (global-set-key (kbd "M-x") 'helm-M-x)
+  (global-set-key (kbd "M-y") 'helm-show-kill-ring)
+  (global-set-key (my-kbd "h f f") 'my-helm-find)
+  (global-set-key (my-kbd "h f g") 'helm-do-grep)
+  (global-set-key (my-kbd "h f l") 'helm-locate)
+  (global-set-key (my-kbd "h f o") 'helm-occur)
+  (global-set-key (my-kbd "h m r") 'helm-all-mark-rings)
+  (global-set-key (my-kbd "h m w") 'helm-man-woman)
+  (global-set-key (my-kbd "h r") 'helm-resume)
+
+  ;; (my-eval-after-load 'helm
+  ;;   (setq
+  ;;    helm-move-to-line-cycle-in-source t ; move to end or beginning of source
+  ;;    ))
+
   (defvar helm-map
     (let ((map (make-sparse-keymap)))
       (set-keymap-parent map minibuffer-local-map)
@@ -99,4 +115,10 @@
                     (helm-select-nth-action ,n))))
       map)
     "Keymap for helm.")
+
   (helm-mode t))
+
+(defun my-helm-find ()
+  (interactive)
+  (setq current-prefix-arg '(4))
+  (call-interactively 'helm-find))

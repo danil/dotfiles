@@ -34,6 +34,11 @@
   "Face used for directories in `helm-find-files'."
   :group 'helm-files)
 
+(defface helm-buffer-directory
+    '((t (:inherit dired-directory)))
+  "Face used for directories in `helm-buffers-list'."
+  :group 'helm-buffers)
+
 (cond ((equal frame-background-mode 'light)
        (set-face-attribute 'my-default nil :foreground nil :background nil)
        (setq my-lazy-highlight-background "yellow1") ;lightgoldenrod2

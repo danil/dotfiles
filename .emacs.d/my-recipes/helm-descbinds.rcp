@@ -1,0 +1,2 @@
+(my-add-to-packages 'helm-descbinds)
+(global-set-key (my-kbd "h d b") 'helm-descbinds)
