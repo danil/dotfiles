@@ -1,4 +1,5 @@
 ! This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+! <https://wiki.archlinux.org/index.php/x_resources>.
 ! `xrdb -load ~/.Xresources`,
 ! `xrdb -remove`,
 ! `xrdb -merge ~/.Xresources`.

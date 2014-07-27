@@ -1,0 +1,4 @@
+(my-add-to-packages 'helm-ag)
+(my-after-init
+  (global-set-key (my-kbd "h f a a") 'helm-do-ag)
+  (custom-set-variables '(helm-ag-command-option "--skip-vcs-ignores")))

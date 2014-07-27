@@ -10,8 +10,8 @@
 ;; (global-set-key (kbd "C-c f g") 'simp-project-rgrep)
 (my-after-init
   (my-eval-after-load 'simp
-    (setq simp-completing-read-command
-          (quote ido-completing-read))
+    ;; (setq simp-completing-read-command
+    ;;       (quote ido-completing-read))
     (setq grep-find-ignored-directories ()) ;due to bug <https://github.com/re5et/simp/issues/2>
     (let ((rails-ignore '(.git
                           coverage
