@@ -1,0 +1,5 @@
+(:name ido-vertical-mode
+       :description "makes ido-mode display vertically"
+       :website "https://github.com/gempesaw/ido-vertical-mode.el"
+       :type github
+       :pkgname "rson/ido-vertical-mode.el")

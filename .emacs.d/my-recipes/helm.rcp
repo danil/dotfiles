@@ -1,7 +1,7 @@
 (my-add-to-packages 'helm)
 (my-after-init
-  (global-set-key (kbd "C-x b") 'helm-mini)
-  (global-set-key (kbd "M-x") 'helm-M-x)
+  ;; (global-set-key (kbd "C-x b") 'helm-mini)
+  ;; (global-set-key (kbd "M-x") 'helm-M-x)
   (global-set-key (kbd "M-y") 'my-yank-pop)
   (global-set-key (my-kbd "h f f") 'my-helm-find)
   (global-set-key (my-kbd "h f g") 'helm-do-grep)
@@ -10,6 +10,8 @@
   (global-set-key (my-kbd "h m r") 'helm-all-mark-rings)
   (global-set-key (my-kbd "h m w") 'helm-man-woman)
   (global-set-key (my-kbd "h r") 'helm-resume)
+
+  (global-set-key (my-kbd "h m") 'helm-mini)
 
   (custom-set-variables '(helm-always-two-windows t)) ;look like minibuffer
 
@@ -118,7 +120,8 @@
       map)
     "Keymap for helm.")
 
-  (helm-mode t))
+  ;; (helm-mode t)
+  )
 
 (defun my-yank-pop (&optional arg)
   (interactive "P")

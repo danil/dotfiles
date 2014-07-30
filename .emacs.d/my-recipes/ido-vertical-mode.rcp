@@ -1,0 +1,6 @@
+(my-add-to-packages 'ido-vertical-mode)
+(my-after-init
+  (if (fboundp 'ido-mode)
+      (ido-vertical-mode t)
+    (my-eval-after-load 'ido
+      (ido-vertical-mode t))))
