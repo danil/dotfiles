@@ -11,6 +11,8 @@
   (global-set-key (my-kbd "h m w") 'helm-man-woman)
   (global-set-key (my-kbd "h r") 'helm-resume)
 
+  (custom-set-variables '(helm-always-two-windows t)) ;look like minibuffer
+
   ;; (my-eval-after-load 'helm
   ;;   (setq
   ;;    helm-move-to-line-cycle-in-source t ; move to end or beginning of source
