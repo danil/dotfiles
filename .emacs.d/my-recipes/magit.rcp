@@ -10,7 +10,8 @@
     (define-key magit-mode-map (my-kbd "v s s 1") 'magit-show-level-1-all)
     (define-key magit-mode-map (my-kbd "v s s 2") 'magit-show-level-2-all)
     (define-key magit-mode-map (my-kbd "v s s 3") 'magit-show-level-3-all)
-    (define-key magit-mode-map (my-kbd "v s s 4") 'magit-show-level-4-all))
+    (define-key magit-mode-map (my-kbd "v s s 4") 'magit-show-level-4-all)
+    (setq magit-completing-read-function 'magit-ido-completing-read)) ;use ido to look for branches <http://wikemacs.org/wiki/Magit#Use_ido_to_checkout_branches>
   (add-hook
    'magit-mode-hook
    (lambda ()
