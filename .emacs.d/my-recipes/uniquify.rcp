@@ -5,11 +5,12 @@
 (require 'uniquify)
 
 (my-after-init
+  (custom-set-variables '(uniquify-min-dir-content 20))
   (my-eval-after-load 'uniquify
     ;; nil, forward, reverse, post-forward or post-forward-angle-brackets
     (setq
      uniquify-buffer-name-style 'post-forward ;'forward
-     uniquify-separator ":" ;"/"
+     uniquify-separator "\t\t" ;"/"
      ;; uniquify-after-kill-buffer-p t ;rename after killing uniquified
      ;; uniquify-ignore-buffers-re "^\\*" ;don't muck with special buffers
      )))
