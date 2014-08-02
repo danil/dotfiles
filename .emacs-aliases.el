@@ -140,6 +140,7 @@
           "rainbow-mode"
           "re-builder"
           "recentf"
+          "recentf-ido-find-file"
           "replace"
           "rinari"
           "rspec-compilation-mode"
