@@ -5,7 +5,6 @@
 (my-after-init
   (recentf-mode t)
   (my-eval-after-load 'recentf-mode
-    (setq
-     recentf-auto-cleanup 'never ;if you make extensive use of Tramp, recentf will track those files too, and do it's periodic cleanup thing which can be a real mess since the files are remote
-     recentf-max-saved-items 100
-     recentf-max-menu-items 100)))
+    (setq recentf-auto-cleanup 'never ;if you make extensive use of Tramp, recentf will track those files too, and do it's periodic cleanup thing which can be a real mess since the files are remote
+          recentf-max-menu-items 100
+          recentf-max-saved-items 100)))
