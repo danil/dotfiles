@@ -89,6 +89,7 @@
           "helm"
           "helm-ag"
           "helm-descbinds"
+          "helm-ls-git"
           "helm-swoop"
           "help"
           "hi-lock"
