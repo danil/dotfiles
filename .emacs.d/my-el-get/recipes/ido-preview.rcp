@@ -1,0 +1,5 @@
+(:name ido-preview
+       :description "Viewing contests of current ido item you choose"
+       :depends noflet
+       :type emacswiki
+       :features ido-preview)
