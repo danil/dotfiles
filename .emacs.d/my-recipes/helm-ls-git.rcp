@@ -1,3 +1,3 @@
 (my-add-to-packages 'helm-ls-git)
 (my-after-init
-  (global-set-key (my-kbd "h v g g") 'helm-ls-git-ls))
+  (global-set-key (my-kbd "h v g l") 'helm-ls-git-ls))

@@ -89,6 +89,7 @@
           "helm"
           "helm-ag"
           "helm-descbinds"
+          "helm-git-grep"
           "helm-ls-git"
           "helm-swoop"
           "help"
