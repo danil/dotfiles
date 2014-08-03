@@ -1,2 +1,3 @@
-;;; Session Management <http://emacswiki.org/SessionManagement>.
+;;; Session Management <http://www.emacswiki.org/emacs/SaveHist>,
+;;; <http://emacswiki.org/SessionManagement>.
 (my-after-init (savehist-mode t))
