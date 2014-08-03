@@ -2,15 +2,22 @@
 ;;(desktop-save-mode 1)
 ;; <http://stackoverflow.com/questions/4477376/some-emacs-desktop-save-questions-how-to-change-it-to-save-in-emacs-d-emacs#answer-4485083>.
 
-(global-set-key (my-kbd "d s") 'save-my-desktop)
-(global-set-key (my-kbd "d l") 'load-my-desktop)
+(my-after-init
+  (global-set-key (my-kbd "d s") 'save-my-desktop)
+  (global-set-key (my-kbd "d l") 'load-my-desktop)
+  (setq desktop-path '("~/.emacs.d/")
+        desktop-dirname "~/.emacs.d/"
+        desktop-base-file-name "emacs-desktop"
+        desktop-base-lock-name "emacs-desktop.lock"))
+
 (defun save-my-desktop ()
   "Save the desktop"
   (interactive)
   (desktop-save-in-desktop-dir))
+
 (defun load-my-desktop ()
   "Load the desktop and enable autosaving"
   (interactive)
   (let ((desktop-load-locked-desktop "ask"))
     (desktop-read)
-    (desktop-save-mode 1)))
+    (desktop-save-mode t)))

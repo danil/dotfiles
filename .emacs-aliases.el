@@ -180,7 +180,6 @@
 (el-get-cleanup my-packages) ;remove all packages absent from `my-packages'
 (el-get 'sync my-packages)
 
-
 ;;; Setting key with repeat
 ;;; <http://stackoverflow.com/questions/7560094/two-key-shortcut-in-emacs-without-repressing-the-first-key#7560416>.
 (defmacro my-with-repeat-while-press-last-key (&rest body)
