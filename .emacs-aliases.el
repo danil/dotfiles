@@ -133,6 +133,7 @@
           "org-reveal"
           "paren"
           "php-mode"
+          "point-stack"
           "pomohist"
           "pretty-lambdada"
           "quickrun"
