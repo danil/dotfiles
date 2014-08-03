@@ -1,2 +1,5 @@
+;;; Cointains deprecatd (require 'assoc)
+;;; <http://www.emacswiki.org/emacs-en/assoc-deprecated>.
+
 (my-add-to-packages 'pointback)
 (my-after-init (global-pointback-mode))
