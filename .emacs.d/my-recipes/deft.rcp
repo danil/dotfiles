@@ -1,7 +1,7 @@
 (my-add-to-packages 'deft)
 
 (my-after-init
-  (global-set-key (my-kbd "m d") 'my-deft)
+  (global-set-key (my-kbd "c d") 'my-deft)
 
   (my-eval-after-load 'deft
     (setq deft-directory "~/Dropbox/notes") ;<http://jblevins.org/projects/deft>

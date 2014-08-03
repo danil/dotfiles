@@ -65,6 +65,7 @@
           "dired"
           "dired-reuse-directory-buffer"
           "direx"
+          "discover-my-major"
           "disp-table"
           "ebuild-mode"
           "ediff"
