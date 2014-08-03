@@ -1,9 +1,9 @@
 (add-hook 'occur-mode-hook (lambda () (setq truncate-lines t))) ;truncate lines <http://stackoverflow.com/questions/950340/how-do-you-activate-line-wrapping-in-emacs#950406>.
 
 (my-after-init
-  (global-set-key (my-kbd "b r o") 'my-occur) ;list-matching-lines
-  )
+  (global-set-key (kbd "M-s o") 'my-occur))
 
 (defun my-occur (&optional arg)
   (interactive "P")
-  (if arg (multi-occur) (occur)))
+  (if arg (call-interactively 'multi-occur-in-matching-buffers)
+    (call-interactively 'occur)))
