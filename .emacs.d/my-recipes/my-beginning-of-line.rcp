@@ -2,7 +2,7 @@
 ;;; <http://stackoverflow.com/questions/6035872/moving-to-the-start-of-a-code-line-emacs#7250027>.
 
 (global-set-key (kbd "C-a") 'my-beginning-of-line)
-(global-set-key (my-kbd "n l b") 'my-beginning-of-line)
+;; (global-set-key (my-kbd "n l b") 'my-beginning-of-line)
 
 (defun my-beginning-of-line ()
   "Move point to the beginning of the line; if that is already
