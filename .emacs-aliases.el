@@ -135,6 +135,7 @@
           "paren"
           "php-mode"
           "point-stack"
+          "pointback"
           "pomohist"
           "pretty-lambdada"
           "quickrun"

@@ -1,0 +1,2 @@
+(my-add-to-packages 'pointback)
+(my-after-init (global-pointback-mode))
