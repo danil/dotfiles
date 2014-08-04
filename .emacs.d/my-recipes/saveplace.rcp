@@ -1,0 +1,6 @@
+;;; <http://www.emacswiki.org/emacs/SavePlace>.
+(my-after-init
+  (require 'saveplace)
+  (my-eval-after-load 'saveplace
+    (setq-default save-place t)
+    (setq save-place-file "~/.emacs.d/saved-places")))

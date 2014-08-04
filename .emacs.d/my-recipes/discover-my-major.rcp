@@ -1,4 +1,3 @@
 (my-add-to-packages 'discover-my-major)
 (my-after-init
-  (my-eval-after-load 'discover-my-major
-))
+  (global-set-key (my-kbd "m d m") 'discover-my-major))

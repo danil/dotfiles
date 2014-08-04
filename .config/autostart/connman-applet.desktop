@@ -1,0 +1,9 @@
+[Desktop Entry]
+Categories=Network
+Comment=Connection Manager applet
+Encoding=UTF-8
+Exec=connman-applet
+Icon=stock_internet
+Name=Connection Manager
+Terminal=false
+Type=Application

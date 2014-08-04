@@ -1,0 +1,7 @@
+(:name point-stack
+       :description "Like forward/back for browser, but for emacs point"
+       :website "https://github.com/mattharrison/point-stack"
+       :features point-stack
+       :compile "point-stack.el"
+       :type github
+       :pkgname "mattharrison/point-stack")

@@ -1,3 +1,0 @@
-(my-after-init
-  (global-set-key (my-kbd "b r o") 'occur) ;list-matching-lines
-  )
