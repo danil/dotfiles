@@ -44,6 +44,8 @@ Xcursor.theme: Vanilla-DMZ
 ! Black (dark) theme.
 *background: #000000
 *foreground: #eaeaea
+! ! Blue.
+! *color12: #72729f9fcfcf
 
 ! ! Black (dark) theme from Ubuntu Gnome terminal.
 ! *background: #000000
