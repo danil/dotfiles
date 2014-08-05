@@ -4,6 +4,7 @@
                       'change-log-mode-hook
                       'clojure-mode-hook
                       'coffee-mode-hook
+                      'comint-mode-hook
                       'conf-mode-hook
                       'css-mode-hook
                       'emacs-lisp-mode-hook
@@ -34,4 +35,8 @@
                       'sql-mode-hook
                       'xml-mode-hook
                       'yaml-mode-hook)
-(custom-set-variables '(company-idle-delay .1))
+(custom-set-variables
+ '(company-idle-delay .1)
+ '(company-minimum-prefix-length 2)
+ '(company-transformers '(company-sort-by-occurrence))
+ )
