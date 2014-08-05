@@ -34,3 +34,4 @@
                       'sql-mode-hook
                       'xml-mode-hook
                       'yaml-mode-hook)
+(custom-set-variables '(company-idle-delay .1))
