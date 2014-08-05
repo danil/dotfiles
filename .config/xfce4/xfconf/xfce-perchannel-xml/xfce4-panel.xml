@@ -36,11 +36,12 @@
         <value type="string" value="stardict"/>
         <value type="string" value="wicd-client.py"/>
         <value type="string" value="skype"/>
+        <value type="string" value="connection manager"/>
+        <value type="string" value="gajim"/>
         <value type="string" value="parcellite"/>
         <value type="string" value="dropbox"/>
-        <value type="string" value="xfce4-power-manager"/>
         <value type="string" value="xxkb"/>
-        <value type="string" value="scp-dbus-service.py"/>
+        <value type="string" value="xfce4-power-manager"/>
         <value type="string" value="thunderbird"/>
       </property>
     </property>
