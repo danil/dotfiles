@@ -34,5 +34,8 @@
                       'sql-mode-hook
                       'xml-mode-hook
                       'yaml-mode-hook)
-(custom-set-variables '(company-idle-delay .1)
-                      '(company-minimum-prefix-length 2))
+(custom-set-variables
+ '(company-idle-delay .1)
+ '(company-minimum-prefix-length 2)
+ '(company-transformers '(company-sort-by-occurrence))
+ )
