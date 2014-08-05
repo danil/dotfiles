@@ -13,7 +13,7 @@
     <property name="brightness-level-on-ac" type="uint" value="1"/>
     <property name="dpms-on-battery-sleep" type="uint" value="1"/>
     <property name="brightness-on-battery" type="uint" value="9"/>
-    <property name="inactivity-on-ac" type="uint" value="60"/>
+    <property name="inactivity-on-ac" type="uint" value="350"/>
     <property name="inactivity-on-battery" type="uint" value="15"/>
     <property name="power-save-on-battery" type="bool" value="false"/>
   </property>
