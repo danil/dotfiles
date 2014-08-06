@@ -98,6 +98,7 @@
           "highlight-symbol"
           "ibuffer"
           "ido"
+          "ido-preview"
           "ido-ubiquitous"
           "ido-vertical-mode"
           "ido-yes-or-no"
