@@ -1,5 +1,5 @@
 (my-add-to-packages 'kill-ring-ido)
-(my-after-init (global-set-key (kbd "M-y") 'my-yank-pop-with-ido))
+;; (my-after-init (global-set-key (kbd "M-y") 'my-yank-pop-with-ido))
 
 (defun my-yank-pop-with-ido (&optional arg)
   (interactive "P")
