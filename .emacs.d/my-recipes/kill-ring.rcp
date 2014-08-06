@@ -1,0 +1,6 @@
+(global-set-key (kbd "M-y") 'my-yank-pop)
+(defun my-yank-pop (&optional arg)
+  (interactive "P")
+  (if arg
+      (call-interactively 'browse-kill-ring)
+    (call-interactively 'kill-ring-ido)))
