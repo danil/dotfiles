@@ -37,6 +37,7 @@
 (dolist (recipe
          '(
           "my-recipe-helpers"
+          "ace-jump-mode"
           "ag"
           "apache-mode"
           "autopair"
