@@ -42,6 +42,7 @@
           "apache-mode"
           "autopair"
           "bash-completion"
+          "browse-kill-ring"
           "calendar"
 
           ;; Clojure.
@@ -97,6 +98,7 @@
           "highlight-symbol"
           "ibuffer"
           "ido"
+          "ido-preview"
           "ido-ubiquitous"
           "ido-vertical-mode"
           "ido-yes-or-no"
@@ -106,6 +108,8 @@
           "js-mode"
           "js2-mode" ;coffee mode defaults to js2-mode, which is not present in Emacs by default
           "json-reformat"
+          "kill-ring"
+          "kill-ring-ido"
           "less" ;do not remove, used for generic scroll!
           "less-css-mode"
           "linum"
