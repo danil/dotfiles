@@ -1,3 +1,7 @@
 (my-add-to-packages 'ace-jump-mode)
 (autoload 'ace-jump-mode "ace-jump-mode" "Emacs quick move minor mode" t)
-(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+(my-after-init
+  (define-key global-map (my-kbd "SPC") 'ace-jump-mode)
+  (my-eval-after-load "ace-jump-mode"
+    (setq ace-jump-mode-gray-background nil) ;<https://github.com/winterTTr/ace-jump-mode/wiki/AceJump-FAQ#i-dont-like-the-gray-background-how-do-i-disable-it>
+    ))
