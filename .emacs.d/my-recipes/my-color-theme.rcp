@@ -12,32 +12,37 @@
 (set-cursor-color "red") ;#aa0000
 
 (defface helm-selection
-    '((((background dark)) :background nil :underline t)
-      (((background light)) :background nil :underline t))
+  '((((background dark)) :background nil :underline t)
+    (((background light)) :background nil :underline t))
   "Face for currently selected item in the helm buffer."
   :group 'helm)
 
 (defface helm-source-header
-    '((((background dark))
-       :background nil
-       :foreground "RoyalBlue1"
-       :weight bold :height 1.3 :family "Monospace")
-      (((background light))
-       :background nil
-       :foreground nil
-       :weight bold :height 1.3 :family "Monospace"))
+  '((((background dark))
+     :background nil
+     :foreground "RoyalBlue1"
+     :weight bold :height 1.3 :family "Monospace")
+    (((background light))
+     :background nil
+     :foreground nil
+     :weight bold :height 1.3 :family "Monospace"))
   "Face for source header in the helm buffer."
   :group 'helm)
 
 (defface helm-ff-directory
-    '((t (:inherit dired-directory)))
+  '((t (:inherit dired-directory)))
   "Face used for directories in `helm-find-files'."
   :group 'helm-files)
 
 (defface helm-buffer-directory
-    '((t (:inherit dired-directory)))
+  '((t (:inherit dired-directory)))
   "Face used for directories in `helm-buffers-list'."
   :group 'helm-buffers)
+
+(defface ace-jump-face-foreground
+  '((t (:inherit lazy-highlight)))
+  "Face for foreground of AceJump motion"
+  :group 'ace-jump)
 
 (cond ((equal frame-background-mode 'light)
        (set-face-attribute 'my-default nil :foreground nil :background nil)
