@@ -42,9 +42,6 @@ alias em='emerge --verbose --oneshot --color=y'
 alias cd-w='cd ~/src/vendor/waveaccess'
 alias cd-wm='cd ~/src/vendor/waveaccess/medapp'
 
-# Prompt.
-[[ -f ~/.bash_prompt.sh ]] && source ~/.bash_prompt.sh
-
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion #RVM bash completion <http://rvm.io/workflow/completion>
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
@@ -65,3 +62,6 @@ export SBCL_HOME=/usr/lib64/sbcl
 
 # # EVM (Emacs Version Manager) <https://github.com/rejeep/evm>.
 # PATH=$PATH:$HOME/.evm/bin
+
+# Prompt.
+[[ -f ~/.bash_prompt.sh ]] && source ~/.bash_prompt.sh
