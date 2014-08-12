@@ -60,7 +60,7 @@ function my_ps1_timer_show {
         echo -n " time:"$(($SECONDS - $my_ps1_timer_seconds))
     fi
 }
-function my_ps1_assign_variables {
+function my_ps1_dynamic_variables {
     # Exit status error
     # <http://brettterpstra.com/2009/11/17/my-new-favorite-bash-prompt>.
     exit_code=$?
@@ -81,7 +81,7 @@ function my_ps1_assign_variables {
     unset my_ps1_timer_seconds
 }
 trap 'my_ps1_timer_start' DEBUG
-PROMPT_COMMAND=my_ps1_assign_variables #assign PS1 variables dymaically <http://stackoverflow.com/questions/3058325/what-is-the-difference-between-ps1-and-prompt-command#3058390>
+PROMPT_COMMAND=my_ps1_dynamic_variables #assign PS1 variables dynamically <http://stackoverflow.com/questions/3058325/what-is-the-difference-between-ps1-and-prompt-command#3058390>
 PS1="${ps1_user}"
 PS1+="${ps1_red}"
 PS1+='${ps1_exit_code}'
