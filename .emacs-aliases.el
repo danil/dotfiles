@@ -173,6 +173,7 @@
           "window"
           "window-numbering"
           "yaml-mode"
+          "yascroll"
           ))
   (load-file (concat user-emacs-directory "my-recipes/" recipe ".rcp")))
 
