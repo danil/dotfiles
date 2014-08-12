@@ -48,7 +48,7 @@ function my_ps1_timer_start {
 function my_ps1_timer_show {
     local tmp=$(($SECONDS - $my_ps1_timer_seconds))
     let timer=${tmp}
-    if [[ ${timer} -gt 1 ]]; then
+    if [[ ${timer} -gt 4 ]]; then
         # cmd1 &
         # cmd1_pid=$!
         # sleep 10
