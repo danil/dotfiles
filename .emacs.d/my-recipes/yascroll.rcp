@@ -1,0 +1,2 @@
+(my-add-to-packages 'yascroll)
+(my-after-init (global-yascroll-bar-mode t))
