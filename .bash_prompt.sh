@@ -49,25 +49,31 @@ function my_ps1_timer_show {
     local tmp=$(($SECONDS - $my_ps1_timer_seconds))
     let timer=${tmp}
     if [[ ${timer} -gt 4 ]]; then
-        # cmd1 &
-        # cmd1_pid=$!
-        # sleep 10
-        # cmd2
-        # sleep 10
-        # cmd2
-        # wait $cmd1_pid
-        # playsuccess &
-        echo -n " time:"$(($SECONDS - $my_ps1_timer_seconds))
+        if command -v play >/dev/null 2>&1 && #how to check if a program exists <http://stackoverflow.com/questions/592620/how-to-check-if-a-program-exists-from-a-bash-script#677212>
+            [ -f /home/danil/local/share/sounds/complete.oga ]; then
+            # <http://en.wikipedia.org/wiki/Nohup#Overcoming_hanging>.
+            nohup play -q --no-show-progress \
+                /home/danil/local/share/sounds/complete.oga \
+                > /dev/null 2> /dev/null < /dev/null &
+        fi
+        if [[ ${my_exit_code} -eq 0 ]]; then
+            #low, normal, critical
+            my_notify_urgency="normal"
+        else
+            my_notify_urgency="critical"
+        fi
+        notify-send --urgency=$my_notify_urgency \
+            "Command exit:$my_exit_code time:$timer" \
+            "$my_previous_command"
+        echo -n " time:$timer"
     fi
 }
 function my_ps1_dynamic_variables {
-    # Exit status error
-    # <http://brettterpstra.com/2009/11/17/my-new-favorite-bash-prompt>.
-    exit_code=$?
-    if [[ $exit_code -eq 0 || $exit_code -ge 128 ]]; then #set an error string for the prompt, if applicable (ignore kill e. g. 130 script terminated by control-c <http://www.tldp.org/LDP/abs/html/exitcodes.html>)
+    my_exit_code=$? #exit status error <http://brettterpstra.com/2009/11/17/my-new-favorite-bash-prompt>
+    if [[ $my_exit_code -eq 0 || $my_exit_code -ge 128 ]]; then #set an error string for the prompt, if applicable (ignore kill e. g. 130 script terminated by control-c <http://www.tldp.org/LDP/abs/html/exitcodes.html>)
         ps1_exit_code=""
     else
-        ps1_exit_code=" error:$exit_code"
+        ps1_exit_code=" error:$my_exit_code"
     fi
 
     ps1_load="$(ps1_load)"
@@ -80,7 +86,9 @@ function my_ps1_dynamic_variables {
     my_ps1_timer_show="$(my_ps1_timer_show)"
     unset my_ps1_timer_seconds
 }
-trap 'my_ps1_timer_start' DEBUG
+my_trap='my_ps1_timer_start;'
+my_trap+='my_previous_command=$my_current_command; my_current_command=$BASH_COMMAND' #echo last command <http://stackoverflow.com/questions/6109225/bash-echoing-the-last-command-run#6110446>.
+trap "$my_trap" DEBUG
 PROMPT_COMMAND=my_ps1_dynamic_variables #assign PS1 variables dynamically <http://stackoverflow.com/questions/3058325/what-is-the-difference-between-ps1-and-prompt-command#3058390>
 PS1="${ps1_user}"
 PS1+="${ps1_red}"
