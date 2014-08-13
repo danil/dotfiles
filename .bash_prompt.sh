@@ -71,6 +71,8 @@ function my_ps1_timer_show {
     fi
 }
 if [ -f ~/.git-prompt/contrib/completion/git-prompt.sh ]; then
+    # Git prompt
+    # <http://github.com/git/git/blob/master/contrib/completion/git-prompt.sh>.
     GIT_PS1_SHOWCOLORHINTS=1
     GIT_PS1_SHOWDIRTYSTATE=1
     GIT_PS1_SHOWSTASHSTATE=1
@@ -110,5 +112,3 @@ PS1+="${ps1_pwd}"
 PS1+="${ps1_magenta}"'$(__git_ps1 " %s")'
 PS1+="\n"
 PS1+="${ps1_cyan}\$${ps1_plain} "
-# Git prompt
-# <http://github.com/git/git/blob/master/contrib/completion/git-prompt.sh>.
