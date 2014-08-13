@@ -70,6 +70,14 @@ function my_ps1_timer_show {
         echo -n " time:$timer"
     fi
 }
+if [ -f ~/.git-prompt/contrib/completion/git-prompt.sh ]; then
+    GIT_PS1_SHOWCOLORHINTS=1
+    GIT_PS1_SHOWDIRTYSTATE=1
+    GIT_PS1_SHOWSTASHSTATE=1
+    GIT_PS1_SHOWUNTRACKEDFILES=1
+    GIT_PS1_SHOWUPSTREAM="auto"
+    source ~/.git-prompt/contrib/completion/git-prompt.sh
+fi
 function my_ps1_dynamic_variables {
     my_exit_code=$? #exit status error <http://brettterpstra.com/2009/11/17/my-new-favorite-bash-prompt>
     if [[ $my_exit_code -eq 0 || $my_exit_code -ge 128 ]]; then #set an error string for the prompt, if applicable (ignore kill e. g. 130 script terminated by control-c <http://www.tldp.org/LDP/abs/html/exitcodes.html>)
@@ -104,11 +112,3 @@ PS1+="\n"
 PS1+="${ps1_cyan}\$${ps1_plain} "
 # Git prompt
 # <http://github.com/git/git/blob/master/contrib/completion/git-prompt.sh>.
-if [ -f ~/.git-prompt/contrib/completion/git-prompt.sh ]; then
-    GIT_PS1_SHOWCOLORHINTS=1
-    GIT_PS1_SHOWDIRTYSTATE=1
-    GIT_PS1_SHOWSTASHSTATE=1
-    GIT_PS1_SHOWUNTRACKEDFILES=1
-    GIT_PS1_SHOWUPSTREAM="auto"
-    source ~/.git-prompt/contrib/completion/git-prompt.sh
-fi
