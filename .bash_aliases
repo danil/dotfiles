@@ -1,5 +1,9 @@
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
+# Bash it <https://github.com/revans/bash-it>.
+export BASH_IT=$HOME/.bash_it #Path to the bash it configuration
+source $BASH_IT/bash_it.sh #load bash It
+
 # Set PATH so it includes user's private bin if it exists.
 PATH=~/bin:"${PATH}"
 PATH=~/local/bin:"${PATH}"
@@ -14,6 +18,7 @@ stty -ixon
 
 export EDITOR="vim" #export EDITOR="nano" #export EDITOR="/usr/bin/emacsclient -t"
 # export ALTERNATE_EDITOR="/usr/bin/emacs"
+export GIT_EDITOR='vim'
 export PAGER="/usr/bin/less -IM"
 export HISTSIZE=10000
 export HISTFILESIZE=10000
@@ -42,9 +47,6 @@ alias em='emerge --verbose --oneshot --color=y'
 alias cd-w='cd ~/src/vendor/waveaccess'
 alias cd-wm='cd ~/src/vendor/waveaccess/medapp'
 
-# Prompt.
-[[ -f ~/.bash_prompt.sh ]] && source ~/.bash_prompt.sh
-
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion #RVM bash completion <http://rvm.io/workflow/completion>
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
@@ -65,3 +67,6 @@ export SBCL_HOME=/usr/lib64/sbcl
 
 # # EVM (Emacs Version Manager) <https://github.com/rejeep/evm>.
 # PATH=$PATH:$HOME/.evm/bin
+
+# Prompt.
+[[ -f ~/.bash_prompt.sh ]] && source ~/.bash_prompt.sh
