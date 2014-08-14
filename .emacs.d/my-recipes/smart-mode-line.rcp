@@ -6,20 +6,20 @@
   (sml/setup)
 
   (dolist (my-hidden-mode '(
-                            " AC"        ;auto-complete-mode
-                            " ARev"      ;auto-revert-mode
-                            " Abbrev"    ;abbrev-mode
-                            " Helm"      ;helm-mode
+                            " AC" ;auto-complete-mode
+                            " ARev" ;auto-revert-mode
+                            " Abbrev" ;abbrev-mode
+                            " Helm" ;helm-mode
                             " MRev" ;magit-auto-revert-mode
-                            " RubyRef"   ;ruby-refactor-mode
-                            " SP"        ;smartparens-mode
+                            " RubyRef" ;ruby-refactor-mode
+                            " SP" ;smartparens-mode
                             " Undo-Tree" ;undo-tree-mode
-                            " end"       ;ruby-end-mode
-                            " gg"        ;git-gutter-mode
-                            " hl-s"      ;highlight-symbol-mode
-                            " hs"        ;hideshow
-                            " pair"      ;autopair
-                            " rt"        ;ruby-tools-mode
+                            " end" ;ruby-end-mode
+                            " gg" ;git-gutter-mode
+                            " hl-s" ;highlight-symbol-mode
+                            " hs" ;hideshow
+                            " pair" ;autopair
+                            " rt" ;ruby-tools-mode
                             )) (add-to-list 'sml/hidden-modes my-hidden-mode))
 
   (dolist (my-path-to-replace
