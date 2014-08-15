@@ -56,7 +56,7 @@ showAllDesktops = true
 showUnmapped = true
 preferredIconSize = 48
 clientDisplayModes = thumbnail icon filled none
-iconFillSpec = orig mid mid #00FFFF
+iconFillSpec = orig mid mid #000000
 fillSpec = orig mid mid #FFFFFF
 background =
 
