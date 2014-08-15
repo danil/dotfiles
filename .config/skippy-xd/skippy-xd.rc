@@ -38,7 +38,7 @@
 #
 
 [general]
-distance = 50
+distance = 30
 useNetWMFullscreen = true
 ignoreSkipTaskbar = true
 updateFreq = 10.0
@@ -66,7 +66,7 @@ showAll = true
 [normal]
 tint = black
 tintOpacity = 0
-opacity = 200
+opacity = 255
 
 [highlight]
 tint = #101020
@@ -79,12 +79,12 @@ followsMouse = true
 offsetX = 20
 offsetY = 20
 align = left
-border = #ffffff
-background = #404040
+border = #ff4500
+background = black
 opacity = 128
 text = #ffffff
 textShadow = black
-font = fixed-11:weight=bold
+font = Sans-12:weight=normal
 
 [bindings]
 miwMouse1 = focus
