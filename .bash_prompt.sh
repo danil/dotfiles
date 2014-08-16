@@ -10,13 +10,16 @@
 # 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
 # Background color codes:
 # 40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
-# <https://wiki.archlinux.org/index.php/Color_Bash_Prompt#.2Fetc.2FDIR_COLORS>.
-ps1_plain="\[\033[0m\]"
+# <https://wiki.archlinux.org/index.php/Color_Bash_Prompt#List_of_colors_for_prompt_and_Bash>
+# <http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html>.
 ps1_blue="\[\033[01;34m\]"
 ps1_cyan="\[\033[1;36m\]"
 ps1_green="\[\033[01;32m\]"
 ps1_magenta="\[\033[1;35m\]"
+ps1_plain="\[\033[0m\]"
 ps1_red="\[\033[1;31m\]"
+ps1_yellow="\[\033[1;33m\]"
+
 ps1_user="${ps1_green}\u@\h${ps1_plain}"
 ps1_pwd=" ${ps1_blue}\w${ps1_plain}"
 function ps1_jobs {
@@ -48,7 +51,7 @@ function my_ps1_timer_start {
 function my_ps1_timer_show {
     local tmp=$(($SECONDS - $my_ps1_timer_seconds))
     let timer=${tmp}
-    if [[ ${timer} -ge 10 ]]; then
+    if [[ ${timer} -ge 1 ]]; then
         if command -v play >/dev/null 2>&1 && #how to check if a program exists <http://stackoverflow.com/questions/592620/how-to-check-if-a-program-exists-from-a-bash-script#677212>
             [ -f /home/danil/local/share/sounds/complete.oga ]; then
             # <http://en.wikipedia.org/wiki/Nohup#Overcoming_hanging>.
@@ -107,8 +110,9 @@ PROMPT_COMMAND=my_ps1_dynamic_variables #assign PS1 variables dynamically <http:
 PS1="${ps1_user}"
 PS1+="${ps1_red}"
 PS1+='${ps1_exit_code}'
-PS1+='${my_ps1_timer_show}' #prompt last command time <http://stackoverflow.com/questions/1862510/how-can-the-last-commands-wall-time-be-put-in-the-bash-prompt#1862762>
 PS1+='${ps1_load}'
+PS1+="${ps1_yellow}"
+PS1+='${my_ps1_timer_show}' #prompt last command time <http://stackoverflow.com/questions/1862510/how-can-the-last-commands-wall-time-be-put-in-the-bash-prompt#1862762>
 PS1+='${ps1_jobs}'
 PS1+="${ps1_pwd}"
 PS1+="${ps1_magenta}"'$(__git_ps1 " %s")'
