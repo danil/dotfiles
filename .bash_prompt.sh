@@ -48,7 +48,7 @@ function my_ps1_timer_start {
 function my_ps1_timer_show {
     local tmp=$(($SECONDS - $my_ps1_timer_seconds))
     let timer=${tmp}
-    if [[ ${timer} -gt 4 ]]; then
+    if [[ ${timer} -ge 10 ]]; then
         if command -v play >/dev/null 2>&1 && #how to check if a program exists <http://stackoverflow.com/questions/592620/how-to-check-if-a-program-exists-from-a-bash-script#677212>
             [ -f /home/danil/local/share/sounds/complete.oga ]; then
             # <http://en.wikipedia.org/wiki/Nohup#Overcoming_hanging>.
