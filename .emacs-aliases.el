@@ -173,6 +173,7 @@
           "web-mode"
           "window"
           "window-numbering"
+          "winner-mode"
           "yaml-mode"
           "yascroll"
           ))
