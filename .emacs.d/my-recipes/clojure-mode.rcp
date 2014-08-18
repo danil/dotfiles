@@ -1,1 +1,2 @@
 (my-add-to-packages 'clojure-mode)
+(my-after-init (my-hooks-with-truncate-lines 'clojure-mode-hook))
