@@ -108,6 +108,7 @@
           "js-mode"
           "js2-mode" ;coffee mode defaults to js2-mode, which is not present in Emacs by default
           "json-reformat"
+          "kill-emacs"
           "kill-ring"
           "kill-ring-ido"
           "less" ;do not remove, used for generic scroll!
@@ -172,6 +173,7 @@
           "web-mode"
           "window"
           "window-numbering"
+          "winner-mode"
           "yaml-mode"
           "yascroll"
           ))
