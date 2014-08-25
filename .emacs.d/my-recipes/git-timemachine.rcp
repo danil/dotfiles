@@ -1,1 +1,2 @@
 (my-add-to-packages 'git-timemachine)
+(my-after-init (global-set-key (my-kbd "v r r") 'ag))

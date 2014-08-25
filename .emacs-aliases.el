@@ -81,6 +81,7 @@
           "git-commit-mode"
           "git-gutter"
           "git-modes"
+          "git-timemachine"
           "gitignore-mode"
           "go-mode"
           "haml-mode"
