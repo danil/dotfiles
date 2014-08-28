@@ -1,0 +1,35 @@
+(my-after-init
+  (my-add-mode-to-hooks 'subword-mode
+                        'ag-mode-hook
+                        'awk-mode-hook
+                        'change-log-mode-hook
+                        'clojure-mode-hook
+                        'coffee-mode-hook
+                        'conf-mode-hook
+                        'css-mode-hook
+                        'emacs-lisp-mode-hook
+                        'git-commit-mode-hook
+                        'haml-mode-hook
+                        'haskell-mode-hook
+                        'html-mode-hook
+                        'ibuffer-mode-hook
+                        'java-mode-hook
+                        'js-mode-hook
+                        'less-css-mode-hook
+                        'lisp-mode-hook
+                        'lua-mode-hook
+                        'makefile-gmake-mode-hook
+                        'markdown-mode-hook
+                        'nxml-mode-hook
+                        'perl-mode-hook
+                        'php-mode-hook
+                        'python-mode-hook
+                        'ruby-mode-hook
+                        'rust-mode-hook
+                        'sass-mode-hook
+                        'sgml-mode-hook
+                        'sh-mode-hook
+                        'sieve-mode-hook
+                        'sql-mode-hook
+                        'xml-mode-hook
+                        'yaml-mode-hook))

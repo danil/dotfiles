@@ -169,6 +169,7 @@
           "smart-mode-line"
           "smex"
           "sort"
+          "subword-mode"
           "undo-tree"
           "uniquify"
           "web-mode"
