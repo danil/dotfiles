@@ -29,6 +29,7 @@
     <property name="plugin-6" type="string" value="systray">
       <property name="names-visible" type="array">
         <value type="string" value="stardict"/>
+        <value type="string" value="google-chrome-stable"/>
         <value type="string" value="wicd-client.py"/>
         <value type="string" value="skype"/>
         <value type="string" value="connection manager"/>
