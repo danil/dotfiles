@@ -12,9 +12,13 @@
     <property name="brightness-level-on-battery" type="uint" value="1"/>
     <property name="brightness-level-on-ac" type="uint" value="1"/>
     <property name="dpms-on-battery-sleep" type="uint" value="1"/>
-    <property name="brightness-on-battery" type="uint" value="9"/>
+    <property name="brightness-on-battery" type="uint" value="30"/>
     <property name="inactivity-on-ac" type="uint" value="350"/>
     <property name="inactivity-on-battery" type="uint" value="15"/>
     <property name="power-save-on-battery" type="bool" value="false"/>
+    <property name="dpms-on-battery-off" type="uint" value="10"/>
+    <property name="dpms-on-ac-sleep" type="uint" value="9"/>
+    <property name="dpms-on-ac-off" type="uint" value="10"/>
+    <property name="brightness-on-ac" type="uint" value="9"/>
   </property>
 </channel>
