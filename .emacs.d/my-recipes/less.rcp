@@ -20,6 +20,7 @@
                       'less-css-mode-hook
                       'lisp-mode-hook
                       'lua-mode-hook
+                      'magit-commit-mode-hook
                       'magit-diff-mode-hook
                       'magit-status-mode-hook
                       'makefile-gmake-mode-hook
