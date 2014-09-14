@@ -1,15 +1,64 @@
 (my-add-to-packages 'less)
-(global-set-key (kbd "M-v") 'less-scroll-down-line)
-(global-set-key (kbd "C-v") 'less-scroll-up-line)
-(global-set-key (kbd "M-p") 'scroll-down-command)
-(global-set-key (kbd "M-n") 'scroll-up-command)
-;; (my-eval-after-load 'less
-;;                     ;; (add-hook 'find-file-hook
-;;                     ;;           '(lambda ()
-;;                     ;;              (when buffer-read-only
-;;                     ;;                (less-minor-mode-on))))
-;;                     ;; (global-set-key (kbd "ESC ESC ESC")
-;;                     ;;                 'less-minor-mode)
-;;                     ;; (global-set-key (kbd "M-S-v") 'scroll-down-command)
-;;                     ;; (global-set-key (kbd "C-S-v") 'scroll-up-command)
-;;                     )
+(my-add-mode-to-hooks (lambda ()
+                        (unless (equal (buffer-name) "*scratch*")
+                          (less-minor-mode-on)))
+                      'ag-mode-hook
+                      'awk-mode-hook
+                      'change-log-mode-hook
+                      'clojure-mode-hook
+                      'coffee-mode-hook
+                      'conf-mode-hook
+                      'css-mode-hook
+                      'emacs-lisp-mode-hook
+                      'git-commit-mode-hook
+                      'haml-mode-hook
+                      'haskell-mode-hook
+                      'html-mode-hook
+                      'ibuffer-mode-hook
+                      'java-mode-hook
+                      'js-mode-hook
+                      'less-css-mode-hook
+                      'lisp-mode-hook
+                      'lua-mode-hook
+                      'magit-commit-mode-hook
+                      'magit-diff-mode-hook
+                      'magit-status-mode-hook
+                      'makefile-gmake-mode-hook
+                      'markdown-mode-hook
+                      'nxml-mode-hook
+                      'perl-mode-hook
+                      'php-mode-hook
+                      'python-mode-hook
+                      'ruby-mode-hook
+                      'rust-mode-hook
+                      'sass-mode-hook
+                      'sgml-mode-hook
+                      'sh-mode-hook
+                      'sieve-mode-hook
+                      'sql-mode-hook
+                      'xml-mode-hook
+                      'yaml-mode-hook)
+;; (global-set-key (kbd "M-v") 'less-scroll-down-line)
+;; (global-set-key (kbd "C-v") 'less-scroll-up-line)
+;; (global-set-key (kbd "M-p") 'scroll-down-command)
+;; (global-set-key (kbd "M-n") 'scroll-up-command)
+(my-after-init
+  ;; (my-eval-after-load 'less
+  ;;   (add-hook 'find-file-hook
+  ;;             '(lambda ()
+  ;;                (when buffer-read-only
+  ;;                  (less-minor-mode-on))))
+  ;;   (global-set-key (kbd "ESC ESC ESC")
+  ;;                   'less-minor-mode)
+  ;;   (global-set-key (kbd "M-S-v") 'scroll-down-command)
+  ;;   (global-set-key (kbd "C-S-v") 'scroll-up-command))
+  (global-set-key (my-kbd "C-f") 'less-minor-mode)
+  (my-eval-after-load 'less
+    (define-key less-minor-mode-map (kbd " ") nil)
+    (define-key less-minor-mode-map (kbd "G") nil)
+    (define-key less-minor-mode-map (kbd "b") nil)
+    (define-key less-minor-mode-map (kbd "e") nil)
+    (define-key less-minor-mode-map (kbd "f") nil)
+    (define-key less-minor-mode-map (kbd "g") nil)
+    (define-key less-minor-mode-map (kbd "g") nil)
+    (define-key less-minor-mode-map (kbd "") nil)))

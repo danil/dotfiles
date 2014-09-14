@@ -3,9 +3,10 @@
 
 (my-after-init
   (setq sml/theme frame-background-mode)
+  (setq sml/no-confirm-load-theme t)
   (sml/setup)
 
-  (dolist (my-hidden-mode '(
+  (dolist (my-hidden-modes '(
                             " AC" ;auto-complete-mode
                             " ARev" ;auto-revert-mode
                             " Abbrev" ;abbrev-mode
@@ -18,9 +19,10 @@
                             " gg" ;git-gutter-mode
                             " hl-s" ;highlight-symbol-mode
                             " hs" ;hideshow
+                            " ing" ;indent-guide-mode
                             " pair" ;autopair
                             " rt" ;ruby-tools-mode
-                            )) (add-to-list 'sml/hidden-modes my-hidden-mode))
+                            )) (add-to-list 'sml/hidden-modes my-hidden-modes))
 
   (dolist (my-path-to-replace
            '(("^:S\\(V?\\):\\([^:]+:\\)?\\([^/]+\\)/" ":S\\1:\\2\\3:")

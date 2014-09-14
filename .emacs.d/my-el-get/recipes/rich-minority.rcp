@@ -1,0 +1,5 @@
+(:name rich-minority
+       :description "Clean-up and Beautify the list of minor-modes."
+       :website "https://github.com/Bruce-Connor/rich-minority"
+       :type github
+       :pkgname "Bruce-Connor/rich-minority")
