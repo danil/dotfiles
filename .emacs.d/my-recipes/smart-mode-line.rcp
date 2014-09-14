@@ -18,6 +18,7 @@
                             " gg" ;git-gutter-mode
                             " hl-s" ;highlight-symbol-mode
                             " hs" ;hideshow
+                            " ing" ;indent-guide-mode
                             " pair" ;autopair
                             " rt" ;ruby-tools-mode
                             )) (add-to-list 'sml/hidden-modes my-hidden-mode))
