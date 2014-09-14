@@ -103,6 +103,7 @@
           "ido-ubiquitous"
           "ido-vertical-mode"
           "ido-yes-or-no"
+          "indent-guide"
           "interprogram"
           "isearch"
           "jade-mode"

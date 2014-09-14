@@ -1,0 +1,3 @@
+#!/bin/sh
+# <http://petereisentraut.blogspot.ru/2009/07/adding-color-to-console-code-syntax.html>.
+source-highlight -fesc -oSTDOUT -i"$1" 2>/dev/null
