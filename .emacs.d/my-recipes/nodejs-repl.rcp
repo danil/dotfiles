@@ -1,4 +1,4 @@
 (my-add-to-packages 'nodejs-repl)
 
 (my-after-init
-  (custom-set-variables '(nodejs-repl-command "~/.nvm/v0.10.25/bin/node")))
+  (custom-set-variables '(nodejs-repl-command "~/.nvm/v0.11.13/bin/node")))

@@ -4,6 +4,7 @@
   (my-add-auto-mode-to-patterns 'shell-script-mode
                                 "/\\.ackrc\\'"
                                 "/\\.bash_aliases\\'"
+                                "/\\.lessfilter\\'"
                                 "/\\.xprofile\\'")
   ;; Cron.
   (my-add-auto-mode-to-patterns 'shell-script-mode
