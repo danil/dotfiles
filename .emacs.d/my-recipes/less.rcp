@@ -13,6 +13,7 @@
                       'git-commit-mode-hook
                       'haml-mode-hook
                       'haskell-mode-hook
+                      'help-mode-hook
                       'html-mode-hook
                       'ibuffer-mode-hook
                       'java-mode-hook
@@ -26,6 +27,7 @@
                       'makefile-gmake-mode-hook
                       'markdown-mode-hook
                       'nxml-mode-hook
+                      'org-mode-hook
                       'perl-mode-hook
                       'php-mode-hook
                       'python-mode-hook
