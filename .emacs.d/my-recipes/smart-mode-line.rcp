@@ -5,7 +5,15 @@
   (setq sml/theme frame-background-mode)
   (setq sml/no-confirm-load-theme t)
   (sml/setup)
-
+  (custom-set-faces '(sml/read-only ((((background dark))
+                                      :foreground "red"
+                                      :background "white"
+                                      :weight bold
+                                      )
+                                     (((background light))
+                                      :foreground "red"
+                                      :background "green"
+                                      :weight bold))))
   (dolist (my-hidden-modes '(
                             " AC" ;auto-complete-mode
                             " ARev" ;auto-revert-mode
