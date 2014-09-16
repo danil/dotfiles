@@ -14,6 +14,7 @@
                                       :foreground "red"
                                       :background "green"
                                       :weight bold))))
+  (custom-set-faces '(sml/git ((t :inherit (sml/not-modified sml/prefix)))))
   (dolist (my-hidden-modes '(
                             " AC" ;auto-complete-mode
                             " ARev" ;auto-revert-mode
