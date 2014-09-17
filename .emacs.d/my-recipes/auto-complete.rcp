@@ -1,6 +1,8 @@
 (my-add-to-packages 'auto-complete)
 (my-after-init
   (my-eval-after-load 'auto-complete-config
+    (add-to-list 'ac-dictionary-directories
+                 (expand-file-name "dict" default-directory))
     (ac-config-default)
     (dolist (mode '( ;<http://stackoverflow.com/questions/10779636/emacs-auto-complete-key-binding-didnt-work>
                     clojure-mode

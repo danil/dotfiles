@@ -1,5 +1,7 @@
 (:name auto-complete
-       :pkgname "auto-complete/auto-complete"
-       :type github
+       :website "https://github.com/auto-complete/auto-complete"
+       :description "The most intelligent auto-completion extension."
        :depends (popup fuzzy)
-       :features auto-complete-config)
+       :features auto-complete-config
+       :pkgname "auto-complete/auto-complete"
+       :type github)
