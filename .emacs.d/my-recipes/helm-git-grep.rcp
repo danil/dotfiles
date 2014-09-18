@@ -1,3 +1,3 @@
 (my-add-to-packages 'helm-git-grep)
 (my-after-init
-  (global-set-key (my-kbd "h v g g") 'helm-git-grep))
+  (global-set-key (my-kbd "m h v g g") 'helm-git-grep))

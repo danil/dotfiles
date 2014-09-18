@@ -1,6 +1,6 @@
 (:name readline-complete
        :description "Offers completions in shell mode"
        :website "https://github.com/monsanto/readline-complete.el"
-       :depends (company-mode)
+       :depends (auto-complete)
        :type github
        :pkgname "monsanto/readline-complete.el")

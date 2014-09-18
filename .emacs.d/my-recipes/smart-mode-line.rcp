@@ -5,6 +5,7 @@
   (setq sml/theme frame-background-mode)
   (setq sml/no-confirm-load-theme t)
   (sml/setup)
+  ;; (custom-set-variables '(sml/read-only-char "R"))
   (custom-set-faces '(sml/read-only ((((background dark))
                                       :foreground "red"
                                       :background "white"
