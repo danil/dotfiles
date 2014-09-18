@@ -1,6 +1,6 @@
 (my-add-to-packages 'column-marker)
 (autoload 'column-marker-1 "column-marker" nil t)
-(my-add-mode-to-hooks (lambda () (unless buffer-read-only (column-marker-1 79)))
+(my-add-mode-to-hooks (lambda () (column-marker-1 79))
                       ;; 'mail-mode-hook
                       ;; 'whitespace-mode-hook
                       'awk-mode-hook

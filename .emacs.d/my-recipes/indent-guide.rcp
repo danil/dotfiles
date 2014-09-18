@@ -32,5 +32,5 @@
 (my-after-init
   (my-eval-after-load 'indent-guide
     (set-face-foreground 'indent-guide-face "slateblue")
-    (setq indent-guide-char "\u00B7") ;· - interpunct or middle dot or middot
+    (setq indent-guide-char "\u00B7") ;"·" - interpunct or middle dot or middot
     (setq indent-guide-delay 0.7)))
