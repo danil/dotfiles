@@ -1,6 +1,6 @@
 (my-add-to-packages 'rich-minority)
 (my-after-init
-  (dolist (my-highlighted-mode '(
+  (dolist (my-highlighted-modes '(
                                  ("\\` Less\\'" 'face 'warning)
                                  ))
-    (add-to-list 'rm-text-properties my-highlighted-mode)))
+    (add-to-list 'rm-text-properties my-highlighted-modes)))
