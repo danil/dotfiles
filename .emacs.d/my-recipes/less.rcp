@@ -4,9 +4,11 @@
                                (not (member (buffer-name)
                                             '("*scratch*"
                                               "*autoload-file*")))
-                               (not (member
-                                     (file-name-nondirectory buffer-file-name)
-                                     '(".loaddefs.el"))))
+                               (not (and
+                                     buffer-file-name
+                                     (member
+                                      (file-name-nondirectory buffer-file-name)
+                                      '(".loaddefs.el")))))
                           (less-minor-mode-on)))
                       'ag-mode-hook
                       'awk-mode-hook
