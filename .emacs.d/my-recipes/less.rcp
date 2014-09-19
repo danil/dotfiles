@@ -1,9 +1,12 @@
 (my-add-to-packages 'less)
 (my-add-mode-to-hooks (lambda ()
                         (when (and
-                               (not (member (buffer-name) '("*scratch*" "*autoload-file*")))
-                               (not (member (buffer-file-name)
-                                            '("/home/danil/.emacs.d/el-get/.loaddefs.el"))))
+                               (not (member (buffer-name)
+                                            '("*scratch*"
+                                              "*autoload-file*")))
+                               (not (member
+                                     (file-name-nondirectory buffer-file-name)
+                                     '(".loaddefs.el"))))
                           (less-minor-mode-on)))
                       'ag-mode-hook
                       'awk-mode-hook

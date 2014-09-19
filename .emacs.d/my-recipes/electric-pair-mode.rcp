@@ -1,7 +1,6 @@
 (my-add-mode-to-hooks 'electric-pair-mode
                       'awk-mode-hook
                       'change-log-mode-hook
-                      'cider-repl-mode-hook
                       'coffee-mode-hook
                       'conf-mode-hook
                       'css-mode-hook
