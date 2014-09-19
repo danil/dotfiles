@@ -1,4 +1,4 @@
-(add-hook 'rlc-no-readline-hook (lambda () (company-mode -1)))
 (my-after-init
+  (add-hook 'rlc-no-readline-hook (lambda () (company-mode -1)))
   (my-eval-after-load 'company
     (push 'company-readline company-backends)))
