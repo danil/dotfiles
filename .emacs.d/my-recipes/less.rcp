@@ -1,12 +1,17 @@
 (my-add-to-packages 'less)
 (my-add-mode-to-hooks (lambda ()
-                        (unless (equal (buffer-name) "*scratch*")
+                        (when (and
+                               (not (member (buffer-name) '("*scratch*" "*autoload-file*")))
+                               (not (member (buffer-file-name)
+                                            '("/home/danil/.emacs.d/el-get/.loaddefs.el"))))
                           (less-minor-mode-on)))
                       'ag-mode-hook
                       'awk-mode-hook
                       'change-log-mode-hook
+                      'cider-stacktrace-mode-hook
                       'clojure-mode-hook
                       'coffee-mode-hook
+                      'compilation-mode-hook
                       'conf-mode-hook
                       'css-mode-hook
                       'dired-mode-hook

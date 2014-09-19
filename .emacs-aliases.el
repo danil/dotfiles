@@ -150,8 +150,6 @@
           "rainbow-delimiters"
           "rainbow-mode"
           "re-builder"
-          "readline-complete"
-          "readline-complete-auto-complete"
           "recentf"
           "recentf-ido-find-file"
           "rich-minority"
