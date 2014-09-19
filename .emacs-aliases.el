@@ -127,7 +127,6 @@
           "magit"
           "magit-blame"
           "markdown-mode"
-          "multi-web-mode"
           "multiple-cursors"
           "mustache-mode"
           "my-backspace-fix"
