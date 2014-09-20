@@ -1,5 +1,0 @@
-(:name window-numbering
-       :description "Assigns numbers to Emacs windows to allow easy window navigation"
-       :website "https://github.com/nschum/window-numbering.el"
-       :type github
-       :pkgname "danil/window-numbering.el")

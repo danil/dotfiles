@@ -1,6 +1,0 @@
-(:name projectile-rails
-       :description "Emacs Rails mode based on projectile"
-       :website "https://github.com/asok/projectile-rails"
-       :depends projectile
-       :type github
-       :pkgname "asok/projectile-rails")

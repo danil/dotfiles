@@ -1,5 +1,0 @@
-(:name nodejs-repl
-       :description "Run Node.js REPL and communicate the process"
-       :website "https://github.com/abicky/nodejs-repl.el"
-       :type github
-       :pkgname "abicky/nodejs-repl.el")

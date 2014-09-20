@@ -1,6 +1,0 @@
-(:name kill-ring-ido
-       :description "command for keyring browsing with ido"
-       :website "http://www.emacswiki.org/emacs/kill-ring-ido.el"
-       :depends noflet
-       :features kill-ring-ido
-       :type emacswiki)

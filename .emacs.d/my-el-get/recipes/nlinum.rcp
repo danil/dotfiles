@@ -1,6 +1,0 @@
-(:name nlinum
-       :description "like linum-mode, but uses jit-lock to be (hopefully) more efficient"
-       :website "http://elpa.gnu.org/packages/nlinum.html"
-       :type http
-       :url "http://elpa.gnu.org/packages/nlinum-1.5.el"
-       :localname "nlinum.el")

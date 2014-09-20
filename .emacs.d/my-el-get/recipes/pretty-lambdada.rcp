@@ -1,4 +1,0 @@
-(:name pretty-lambdada
-       :description "Map pairs of simultaneously pressed keys to commands."
-       :website "http://emacswiki.org/PrettyLambda"
-       :type emacswiki)
