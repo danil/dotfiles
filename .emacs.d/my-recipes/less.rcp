@@ -32,6 +32,7 @@
                       'less-css-mode-hook
                       'lisp-mode-hook
                       'lua-mode-hook
+                      'magit-branch-manager-mode-hook
                       'magit-commit-mode-hook
                       'magit-diff-mode-hook
                       'magit-log-mode-hook
