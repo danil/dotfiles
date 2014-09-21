@@ -1,3 +1,4 @@
+(my-add-to-packages 'helm)
 (my-add-to-packages 'helm-ag)
 (my-after-init
   (global-set-key (my-kbd "m h f a a") 'helm-do-ag)

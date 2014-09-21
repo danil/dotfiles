@@ -1,3 +1,4 @@
+(my-add-to-packages 'find-file-in-project)
 (my-add-to-packages 'etags-select)
 (global-set-key (kbd "M-.") 'etags-select-find-tag-at-point-or-region)
 (my-eval-after-load 'etags-select

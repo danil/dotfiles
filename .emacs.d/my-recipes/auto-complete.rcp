@@ -1,5 +1,7 @@
+(my-add-to-packages 'popup 'fuzzy)
 (my-add-to-packages 'auto-complete)
 (my-after-init
+  ;; <http://stackoverflow.com/questions/23232982/emacs-cannot-load-auto-complete-package#23234880>.
   (ac-config-default)
   (my-eval-after-load 'auto-complete-config
     (add-to-list 'ac-dictionary-directories

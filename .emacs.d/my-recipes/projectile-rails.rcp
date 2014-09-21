@@ -1,2 +1,3 @@
+(my-add-to-packages 'projectile)
 (my-add-to-packages 'projectile-rails)
 (add-hook 'projectile-mode-hook 'projectile-rails-on)

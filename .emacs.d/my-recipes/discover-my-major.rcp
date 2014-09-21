@@ -1,3 +1,4 @@
+(my-add-to-packages 'makey)
 (my-add-to-packages 'discover-my-major)
 (my-after-init
   (global-set-key (my-kbd "m d m") 'discover-my-major))

@@ -1,3 +1,4 @@
+(my-add-to-packages 'noflet)
 (my-add-to-packages 'kill-ring-ido)
 (my-after-init
   ;; (global-set-key (kbd "M-y") 'my-yank-pop-with-ido)

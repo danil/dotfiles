@@ -1,4 +1,6 @@
+(my-add-to-packages 'dash 'rich-minority)
 (my-add-to-packages 'smart-mode-line)
+
 (autoload 'sml/setup "smart-mode-line" nil t)
 
 (my-after-init
@@ -24,6 +26,7 @@
                             " Abbrev" ;abbrev-mode
                             " Helm" ;helm-mode
                             " MRev" ;magit-auto-revert-mode
+                            " Rbow" ;rainbow-mode
                             " RubyRef" ;ruby-refactor-mode
                             " SP" ;smartparens-mode
                             " Undo-Tree" ;undo-tree-mode

@@ -49,10 +49,11 @@
                   "calendar"
 
                   ;; Clojure.
-                  "cider" ;clojure-mode dependency
-                  "clojure-mode"
+                  "cider" ;clojure-mode dependency ;manual upgrade
+                  "clojure-mode" ;manual upgrade
                   "smartparens"
 
+                  "cc-vars"
                   "coffee-mode"
                   "column-marker"
                   "conf-mode"
@@ -86,7 +87,6 @@
                   "git-modes"
                   "git-timemachine"
                   "gitignore-mode"
-                  "go-mode"
                   "haml-mode"
                   "helm"
                   "helm-ag"
@@ -106,6 +106,7 @@
                   "ido-vertical-mode"
                   "ido-yes-or-no"
                   "indent-guide"
+                  "info"
                   "interprogram"
                   "isearch"
                   "js-mode"
@@ -133,7 +134,7 @@
                   "nodejs-repl"
                   "nvm"
                   "occur-mode"
-                  "org-mode"
+                  "org-mode" ;manual upgrade
                   "org-reveal"
                   "paren"
                   "point-stack"
