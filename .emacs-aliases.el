@@ -70,7 +70,6 @@
                   "disp-table"
                   "ebuild-mode"
                   "ediff"
-                  "electric-pair-mode"
                   "emacs-lisp-mode"
                   "env"
                   "erise"
