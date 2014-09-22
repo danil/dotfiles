@@ -1,5 +1,0 @@
-(:name nvm
-       :description "Manage Node versions within Emacs"
-       :website "https://github.com/rejeep/nvm.el"
-       :type github
-       :pkgname "rejeep/nvm.el")

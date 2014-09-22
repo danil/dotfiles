@@ -1,6 +1,0 @@
-(:name helm-git-grep
-       :description "helm for git-grep"
-       :website "https://github.com/yasuyk/helm-git-grep"
-       :depends helm
-       :type github
-       :pkgname "yasuyk/helm-git-grep")

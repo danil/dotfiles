@@ -1,4 +1,6 @@
+(my-add-to-packages 'dash)
 (my-add-to-packages 'smartparens)
+
 (my-add-mode-to-hooks (lambda ()
                         (turn-on-smartparens-mode)
                         (turn-on-show-smartparens-mode))

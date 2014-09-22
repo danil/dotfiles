@@ -1,5 +1,0 @@
-(:name rhtml-mode
-       :description "Major mode for editing RHTML files"
-       :website "https://github.com/eschulte/rhtml"
-       :type github
-       :pkgname "eschulte/rhtml")

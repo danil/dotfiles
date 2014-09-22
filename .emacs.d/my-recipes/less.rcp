@@ -1,10 +1,16 @@
 (my-add-to-packages 'less)
 (my-add-mode-to-hooks (lambda ()
                         (when (and
-                               (not (member (buffer-name) '("*scratch*" "*autoload-file*")))
-                               (not (member (buffer-file-name)
-                                            '("/home/danil/.emacs.d/el-get/.loaddefs.el"))))
+                               (not (member (buffer-name)
+                                            '("*scratch*"
+                                              " *autoload-file*")))
+                               (not (and
+                                     buffer-file-name
+                                     (member
+                                      (file-name-nondirectory buffer-file-name)
+                                      '(".loaddefs.el")))))
                           (less-minor-mode-on)))
+                      'Info-mode-hook
                       'ag-mode-hook
                       'awk-mode-hook
                       'change-log-mode-hook
@@ -24,11 +30,14 @@
                       'ibuffer-mode-hook
                       'java-mode-hook
                       'js-mode-hook
+                      'js2-mode-hook
                       'less-css-mode-hook
                       'lisp-mode-hook
                       'lua-mode-hook
+                      'magit-branch-manager-mode-hook
                       'magit-commit-mode-hook
                       'magit-diff-mode-hook
+                      'magit-log-mode-hook
                       'magit-status-mode-hook
                       'makefile-gmake-mode-hook
                       'markdown-mode-hook
@@ -44,6 +53,8 @@
                       'sh-mode-hook
                       'sieve-mode-hook
                       'sql-mode-hook
+                      'text-mode-hook
+                      'web-mode-hook
                       'xml-mode-hook
                       'yaml-mode-hook)
 ;; (global-set-key (kbd "M-v") 'less-scroll-down-line)

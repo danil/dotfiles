@@ -1,5 +1,5 @@
+(my-add-to-packages 'cl-lib)
 (my-add-to-packages 'slime)
-
 (my-after-init
   (setq inferior-lisp-program "/usr/bin/sbcl") ;set your lisp system
   )

@@ -1,5 +1,0 @@
-(:name makey
-       :description "Interactive commandline mode"
-       :website "https://github.com/mickeynp/makey"
-       :type github
-       :pkgname "mickeynp/makey")

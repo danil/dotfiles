@@ -1,5 +1,0 @@
-(:name "multi-web-mode"
-       :description "Multi Web Mode is a minor mode which makes web editing in Emacs much easier"
-       :website "https://github.com/fgallina/multi-web-mode"
-       :type github
-       :pkgname "fgallina/multi-web-mode")

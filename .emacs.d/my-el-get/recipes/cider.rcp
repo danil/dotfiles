@@ -1,9 +1,0 @@
-(:name cider
-       :description "CIDER is a Clojure IDE and REPL."
-       :website "https://github.com/clojure-emacs/cider"
-       :depends (dash queue clojure-mode pkg-info)
-       ;; :repo ("melpa" . "http://melpa.milkbox.net/packages/")
-       ;; :type elpa
-       :type github
-       :pkgname "clojure-emacs/cider"
-       :checkout "v0.7.0")

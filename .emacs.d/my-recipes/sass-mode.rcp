@@ -1,1 +1,2 @@
+(my-add-to-packages 'haml-mode)
 (my-add-to-packages 'sass-mode)

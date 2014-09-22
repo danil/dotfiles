@@ -1,3 +1,4 @@
+(my-add-to-packages 'inf-ruby 'jump 'ruby-compilation)
 (my-add-to-packages 'rinari)
 (autoload 'rinari-web-server "rinari" "Run Rails script/server." t)
 (my-after-init (global-rinari-mode))

@@ -1,5 +1,0 @@
-(:name ruby-tools
-       :description "Collection of handy functions for Emacs ruby-mode"
-       :website "https://github.com/rejeep/ruby-tools"
-       :type github
-       :pkgname "rejeep/ruby-tools")

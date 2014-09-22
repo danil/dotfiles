@@ -1,4 +1,0 @@
-(:name pointback
-       :description "Restore window points when returning to buffers"
-       :type http
-       :url "http://logic.at/prolog/pointback/pointback.el")

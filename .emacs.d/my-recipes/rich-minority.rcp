@@ -1,6 +1,6 @@
 (my-add-to-packages 'rich-minority)
 (my-after-init
   (dolist (my-highlighted-modes '(
-                                 ("\\` Less\\'" 'face 'warning)
+                                 ("\\` Less\\'" 'face 'font-lock-warning-face)
                                  ))
     (add-to-list 'rm-text-properties my-highlighted-modes)))

@@ -1,3 +1,4 @@
+(my-add-to-packages 'grizzl)
 (my-add-to-packages 'fiplr)
 (autoload 'fiplr-find-file "fiplr" nil t)
 (global-set-key (my-kbd "f f") 'fiplr-find-file)

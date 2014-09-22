@@ -1,5 +1,0 @@
-(:name browse-kill-ring
-       :description "Interactively insert items from kill-ring"
-       :website "https://github.com/browse-kill-ring/browse-kill-ring"
-       :type github
-       :pkgname "browse-kill-ring/browse-kill-ring")
