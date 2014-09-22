@@ -16,7 +16,6 @@
                       'lisp-mode-hook
                       'lua-mode-hook
                       'makefile-gmake-mode-hook
-                      'markdown-mode-hook
                       'nxml-mode-hook
                       'perl-mode-hook
                       'php-mode-hook
