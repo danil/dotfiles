@@ -28,3 +28,8 @@
                       'sql-mode-hook
                       'xml-mode-hook
                       'yaml-mode-hook)
+(my-after-init
+  ;; Electric pair mode is getting enabled globally , not just for abuffer
+  ;; <https://lists.gnu.org/archive/html/bug-gnu-emacs/2011-11/msg00354.html>.
+  (add-hook 'text-mode-hook
+            (lambda () (set (make-local-variable 'electric-pair-mode) nil))))
