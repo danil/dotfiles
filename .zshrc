@@ -75,7 +75,8 @@ alias ag='ag --smart-case --color-line-number "2;31"'
 #   print -P "\033AnSiTc %d"
 # fi
 
-# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" #load RVM (Ruby Version Manager) into a shell session *as a function* <http://rvm.rvm.io/rvm/install>
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # Bash-like navigation <http://superuser.com/questions/410356/how-do-you-make-zsh-meta-delete-behave-like-bash-to-make-it-delete-a-word-inst#416995>.
