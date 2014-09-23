@@ -33,6 +33,7 @@
                       'sh-mode-hook
                       'sieve-mode-hook
                       'sql-mode-hook
+                      'web-mode-hook
                       'xml-mode-hook
                       'yaml-mode-hook)
 (my-after-init
