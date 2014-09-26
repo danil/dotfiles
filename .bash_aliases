@@ -1,8 +1,8 @@
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-# Bash it <https://github.com/revans/bash-it>.
-export BASH_IT=$HOME/.bash_it #Path to the bash it configuration
-source $BASH_IT/bash_it.sh #load bash It
+# # Bash it <https://github.com/revans/bash-it>.
+# export BASH_IT=$HOME/.bash_it #Path to the bash it configuration
+# source $BASH_IT/bash_it.sh #load bash It
 
 # Set PATH so it includes user's private bin if it exists.
 PATH=~/bin:"${PATH}"
