@@ -9,6 +9,26 @@
     (message "Building project tags")
     (my-visit-tags dir)))
 
+;; (defun my-build-ruby-tags ()
+;;   (interactive)
+;;   (let ((executable "ripper-tags")
+;;         (dir (my-project-root)))
+;;     ;; --exclude=spec
+;;     ;; --exclude=test
+;;     ;; --force
+;;     ;; --format=emacs
+;;     ;; --recursive
+;;     ;; --tag-file=TAGS
+;;     (if (not (executable-find executable))
+;;         (message (format "`%s`command not found found" executable)
+;;       (message "Building project tags")
+;;       (shell-command
+;;        (format
+;;         "cd %s && %s --format=emacs --recursive --tag-file=TAGS --force"
+;;         dir
+;;         executable))
+;;       (my-visit-tags dir)))))
+
 (defun my-build-ruby-tags ()
   (interactive)
   (message "Building project tags")

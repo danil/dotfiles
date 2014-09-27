@@ -1,17 +1,21 @@
 ;;; Move point to beginning of line or "back to indentation"
 ;;; <http://stackoverflow.com/questions/6035872/moving-to-the-start-of-a-code-line-emacs#7250027>.
 
-(global-set-key (kbd "C-a") 'my-beginning-of-line)
-;; (global-set-key (my-kbd "n l b") 'my-beginning-of-line)
+(my-after-init
+  ;; (global-set-key (my-kbd "n l b") 'my-beginning-of-line)
+  (global-set-key (kbd "C-a") 'my-beginning-of-line))
 
-(defun my-beginning-of-line ()
-  "Move point to the beginning of the line; if that is already
-the current position of point, then move it to the beginning of text on the current line."
-  (interactive)
-  (let ((pt (point)))
-    (beginning-of-line)
-    (when (eq pt (point))
-      (beginning-of-line-text))))
+(defun my-beginning-of-line (&optional arg)
+  "Move point to the beginning of the line; if that is already the
+current position of point, then move it to the beginning of text on
+the current line."
+  (interactive "P")
+  (if arg
+      (beginning-of-line-text)
+    (let ((pt (point)))
+      (beginning-of-line)
+      (when (eq pt (point))
+        (beginning-of-line-text)))))
 
 ;; (my-after-init
 ;;   (eval-after-load "cc-mode"
