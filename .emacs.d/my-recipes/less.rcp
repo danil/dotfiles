@@ -42,6 +42,7 @@
                       'makefile-gmake-mode-hook
                       'markdown-mode-hook
                       'nxml-mode-hook
+                      'occur-mode-hook
                       'org-mode-hook
                       'perl-mode-hook
                       'php-mode-hook
