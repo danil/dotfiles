@@ -43,6 +43,7 @@
         <value type="string" value="xxkb"/>
         <value type="string" value="scp-dbus-service.py"/>
         <value type="string" value="thunderbird"/>
+        <value type="string" value="seafile-applet"/>
       </property>
     </property>
     <property name="plugin-7" type="string" value="xfce4-battery-plugin"/>
