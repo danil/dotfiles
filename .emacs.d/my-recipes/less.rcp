@@ -75,8 +75,8 @@
   (global-set-key (my-kbd "C-f") 'less-minor-mode)
   ;; (global-set-key (my-kbd "C-f") 'my-less-minor-mode-toggle)
   (my-eval-after-load 'less
-    (define-key less-minor-mode-map (kbd " ") nil)
     (define-key less-minor-mode-map (kbd "G") nil)
+    (define-key less-minor-mode-map (kbd "SPC") nil)
     (define-key less-minor-mode-map (kbd "b") nil)
     (define-key less-minor-mode-map (kbd "e") nil)
     (define-key less-minor-mode-map (kbd "f") nil)
