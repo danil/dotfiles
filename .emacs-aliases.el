@@ -81,6 +81,7 @@
                   "fill"
                   "findr"
                   "fiplr"
+                  "fish-mode"
                   "git-commit-mode"
                   "git-gutter"
                   "git-modes"
