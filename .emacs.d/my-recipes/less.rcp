@@ -8,7 +8,9 @@
                                      buffer-file-name
                                      (member
                                       (file-name-nondirectory buffer-file-name)
-                                      '(".loaddefs.el")))))
+                                      '("ag-autoloads.el"
+                                        "dash-autoloads.el"
+                                        ".loaddefs.el")))))
                           (less-minor-mode-on)))
                       'Info-mode-hook
                       'ag-mode-hook
