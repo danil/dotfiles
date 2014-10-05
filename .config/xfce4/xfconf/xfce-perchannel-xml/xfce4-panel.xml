@@ -35,6 +35,7 @@
         <value type="string" value="connection manager"/>
         <value type="string" value="gajim"/>
         <value type="string" value="pidgin"/>
+        <value type="string" value="bitcoin-qt"/>
         <value type="string" value="parcellite"/>
         <value type="string" value="dropbox"/>
         <value type="string" value="xxkb"/>
