@@ -42,6 +42,6 @@
                                 "/profiles/categories\\'"
                                 "/profiles/package.mask\\'"
                                 "/profiles/repo_name\\'"
-                                "var/lib/portage/world\\'")
+                                "\\world\\'")
   (my-add-auto-mode-to-patterns 'conf-xdefaults-mode "/\\.Xmodmap\\'")
   (my-hooks-with-truncate-lines 'conf-mode-hook))
