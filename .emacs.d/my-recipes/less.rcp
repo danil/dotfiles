@@ -13,6 +13,7 @@
                                         ".loaddefs.el")))))
                           (less-minor-mode-on)))
                       'Info-mode-hook
+                      'Man-mode-hook
                       'ag-mode-hook
                       'awk-mode-hook
                       'change-log-mode-hook
