@@ -1,5 +1,8 @@
 (my-add-to-packages 'dash 'queue 'clojure-mode 'pkg-info)
 (my-add-to-packages 'cider)
+
+(custom-set-variables '(cider-mode-line " cider"))
+
 (my-after-init
   (my-eval-after-load 'cider-mode
     (define-key cider-mode-map (kbd "C-c C-f") nil)))
