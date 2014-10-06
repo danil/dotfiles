@@ -8,9 +8,12 @@
                                      buffer-file-name
                                      (member
                                       (file-name-nondirectory buffer-file-name)
-                                      '(".loaddefs.el")))))
+                                      '("ag-autoloads.el"
+                                        "dash-autoloads.el"
+                                        ".loaddefs.el")))))
                           (less-minor-mode-on)))
                       'Info-mode-hook
+                      'Man-mode-hook
                       'ag-mode-hook
                       'awk-mode-hook
                       'change-log-mode-hook
@@ -22,6 +25,7 @@
                       'css-mode-hook
                       'dired-mode-hook
                       'emacs-lisp-mode-hook
+                      'fish-mode-hook
                       'git-commit-mode-hook
                       'haml-mode-hook
                       'haskell-mode-hook

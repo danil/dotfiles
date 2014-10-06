@@ -14,6 +14,7 @@
                     conf-space-mode
                     conf-unix-mode
                     conf-xdefaults-mode
+                    fish-mode
                     git-commit-mode
                     haml-mode
                     html-mode
