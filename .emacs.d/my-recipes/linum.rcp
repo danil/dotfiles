@@ -19,6 +19,7 @@
                       'html-mode-hook
                       'ibuffer-mode-hook
                       'inf-ruby-mode-hook
+                      'jade-mode-hook
                       'java-mode-hook
                       'js-mode-hook
                       'js2-mode-hook
