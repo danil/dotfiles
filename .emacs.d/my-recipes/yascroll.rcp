@@ -2,6 +2,7 @@
 (my-add-mode-to-hooks 'yascroll-bar-mode
                       'ag-mode-hook
                       'awk-mode-hook
+                      'c-mode-hook
                       'change-log-mode-hook
                       'clojure-mode-hook
                       'coffee-mode-hook
