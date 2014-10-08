@@ -20,6 +20,7 @@
                       'ibuffer-mode-hook
                       'java-mode-hook
                       'js-mode-hook
+                      'js2-mode-hook
                       'less-css-mode-hook
                       'lisp-mode-hook
                       'lua-mode-hook
@@ -40,6 +41,7 @@
                       'sh-mode-hook
                       'sieve-mode-hook
                       'sql-mode-hook
+                      'text-mode-hook
                       'xml-mode-hook
                       'yaml-mode-hook)
 ;; (global-set-key (kbd "M-v") 'less-scroll-down-line)

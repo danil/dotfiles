@@ -32,6 +32,7 @@
                     shell-mode
                     sieve-mode
                     sql-interactive-mode
+                    text-mode
                     sql-mode
                     yaml-mode
                     ))

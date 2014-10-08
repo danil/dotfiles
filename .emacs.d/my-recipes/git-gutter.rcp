@@ -13,6 +13,7 @@
                       'html-mode-hook
                       'java-mode-hook
                       'js-mode-hook
+                      'js2-mode-hook
                       'less-css-mode
                       'lisp-mode-hook
                       'lua-mode-hook
@@ -30,6 +31,7 @@
                       'sh-mode-hook
                       'sieve-mode-hook
                       'sql-mode-hook
+                      'text-mode-hook
                       'xml-mode-hook
                       'yaml-mode-hook)
 
