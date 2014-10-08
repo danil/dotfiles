@@ -179,6 +179,7 @@
           "smex"
           "sort"
           "subword-mode"
+          "text-mode"
           "undo-tree"
           "uniquify"
           "web-mode"
