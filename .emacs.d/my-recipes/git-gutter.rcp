@@ -11,6 +11,7 @@
                       'haml-mode-hook
                       'haskell-mode-hook
                       'html-mode-hook
+                      'jade-mode-hook
                       'java-mode-hook
                       'js-mode-hook
                       'js2-mode-hook

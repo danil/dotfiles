@@ -57,7 +57,7 @@ export SBCL_HOME=/usr/lib64/sbcl
 # Node.js
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
+[[ -r "$NVM_DIR/bash_completion" ]] && . "$NVM_DIR/bash_completion"
 
 # # Lua.
 # PATH=~/.luarocks/bin:"${PATH}"

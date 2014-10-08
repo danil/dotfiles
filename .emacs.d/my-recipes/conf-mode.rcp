@@ -5,6 +5,7 @@
                                 "/\\.gtkrc-2.0\\'"
                                 "/\\.inputrc\\'"
                                 "/\\.moc/keymap\\'"
+                                "/\\.npmrc\\'"
                                 "/\\.rvmrc\\'"
                                 "/\\.screenrc\\'"
                                 "/\\.tigrc\\'"
