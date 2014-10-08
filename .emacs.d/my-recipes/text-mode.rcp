@@ -1,0 +1,2 @@
+(my-after-init
+  (my-hooks-with-truncate-lines 'text-mode-hook))

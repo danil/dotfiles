@@ -4,6 +4,7 @@
                       ;; 'mail-mode-hook
                       ;; 'whitespace-mode-hook
                       'awk-mode-hook
+                      'c-mode-hook
                       'change-log-mode-hook
                       'clojure-mode-hook
                       'coffee-mode-hook
@@ -18,6 +19,7 @@
                       'jade-mode-hook
                       'java-mode-hook
                       'js-mode-hook
+                      'js2-mode-hook
                       'less-css-mode-hook
                       'lisp-mode-hook
                       'lua-mode-hook
@@ -35,6 +37,7 @@
                       'sh-mode-hook
                       'sieve-mode-hook
                       'sql-mode-hook
+                      'text-mode-hook
                       'web-mode-hook
                       'xml-mode-hook
                       'yaml-mode-hook)
