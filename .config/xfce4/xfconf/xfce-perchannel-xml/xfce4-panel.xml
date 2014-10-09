@@ -35,11 +35,14 @@
         <value type="string" value="connection manager"/>
         <value type="string" value="gajim"/>
         <value type="string" value="pidgin"/>
+        <value type="string" value="bitcoin-qt"/>
         <value type="string" value="parcellite"/>
         <value type="string" value="dropbox"/>
         <value type="string" value="xxkb"/>
         <value type="string" value="xfce4-power-manager"/>
+        <value type="string" value="seafile-applet"/>
         <value type="string" value="thunderbird"/>
+        <value type="string" value="seafile-applet"/>
       </property>
     </property>
     <property name="plugin-7" type="string" value="xfce4-battery-plugin"/>

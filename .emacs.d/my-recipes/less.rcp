@@ -16,6 +16,7 @@
                       'Man-mode-hook
                       'ag-mode-hook
                       'awk-mode-hook
+                      'c-mode-hook
                       'change-log-mode-hook
                       'cider-stacktrace-mode-hook
                       'clojure-mode-hook
