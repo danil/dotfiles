@@ -13,8 +13,10 @@
                       'haskell-mode-hook
                       'html-mode-hook
                       'ibuffer-mode-hook
+                      'jade-mode-hook
                       'java-mode-hook
                       'js-mode-hook
+                      'js2-mode-hook
                       'less-css-mode-hook
                       'lisp-mode-hook
                       'lua-mode-hook
