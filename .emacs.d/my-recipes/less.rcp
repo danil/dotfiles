@@ -78,8 +78,7 @@
   ;;                   'less-minor-mode)
   ;;   (global-set-key (kbd "M-S-v") 'scroll-down-command)
   ;;   (global-set-key (kbd "C-S-v") 'scroll-up-command))
-  (global-set-key (my-kbd "C-f") 'less-minor-mode)
-  ;; (global-set-key (my-kbd "C-f") 'my-less-minor-mode-toggle)
+  (global-set-key (my-kbd "C-f") 'my-less-minor-mode-toggle)
   (my-eval-after-load 'less
     (define-key less-minor-mode-map (kbd "G") nil)
     (define-key less-minor-mode-map (kbd "SPC") nil)
@@ -90,7 +89,8 @@
     (define-key less-minor-mode-map (kbd "g") nil)
     (define-key less-minor-mode-map (kbd "") nil)))
 
-;; (defun my-less-minor-mode-toggle ()
-;;   (interactive)
-;;   (call-interactively 'less-minor-mode)
-;;   (call-interactively 'save-buffer))
+(defun my-less-minor-mode-toggle ()
+  (interactive)
+  (when (and (not less-minor-mode) (buffer-file-name))
+    (call-interactively 'save-buffer))
+  (call-interactively 'less-minor-mode))
