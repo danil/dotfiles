@@ -8,6 +8,6 @@
 
 (defun my-clojure-less-minor-mode ()
   (interactive)
-  (when (not less-minor-mode)
+  (when (and (not less-minor-mode) (buffer-file-name))
     (cider-load-current-buffer))
   (call-interactively 'less-minor-mode))
