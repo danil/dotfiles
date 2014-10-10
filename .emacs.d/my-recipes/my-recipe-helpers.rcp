@@ -44,3 +44,8 @@
 (defun my-add-to-packages (&rest packages)
   (dolist (package packages)
     (add-to-list 'my-packages package)))
+
+(defun my-autoload-file-on-functions (file-name &rest functions)
+  "Autoload `file-name' if one of the given `functions' called."
+  (dolist (function-name functions)
+    (autoload function-name file-name nil t)))

@@ -1,1 +1,3 @@
 (my-add-to-packages 'jade-mode)
+(my-after-init
+  (my-hooks-with-truncate-lines 'jade-mode-hook))

@@ -1,6 +1,0 @@
-(:name fiplr
-       :description "Fuzzy Find in Project for Emacs"
-       :website "https://github.com/d11wtq/fiplr"
-       :type github
-       :pkgname "d11wtq/fiplr"
-       :depends grizzl)

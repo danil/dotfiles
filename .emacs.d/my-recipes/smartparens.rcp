@@ -1,4 +1,6 @@
+(my-add-to-packages 'dash)
 (my-add-to-packages 'smartparens)
+
 (my-add-mode-to-hooks (lambda ()
                         (turn-on-smartparens-mode)
                         (turn-on-show-smartparens-mode))
@@ -16,6 +18,7 @@
     (define-key sp-keymap (kbd "M-[") (lambda ()
                                         (interactive)
                                         (sp-wrap-with-pair "[")))
+    ;; (define-key sp-keymap (kbd "m s s k a") 'sp-splice-sexp-killing-around)
     (define-key sp-keymap (kbd "M-{") (lambda ()
                                         (interactive)
                                         (sp-wrap-with-pair "{")))))

@@ -1,6 +1,0 @@
-(:name ebuild-mode
-       :description "A utility to rebuild any kernel modules which you have installed"
-       :website "http://gentoo.org"
-       :type http-tar
-       :url "http://ftp.yandex.ru/gentoo-distfiles/distfiles/ebuild-mode-1.24.tar.xz"
-       :options ("xJf"))

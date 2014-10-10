@@ -1,8 +1,8 @@
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-# Bash it <https://github.com/revans/bash-it>.
-export BASH_IT=$HOME/.bash_it #Path to the bash it configuration
-source $BASH_IT/bash_it.sh #load bash It
+# # Bash it <https://github.com/revans/bash-it>.
+# export BASH_IT=$HOME/.bash_it #Path to the bash it configuration
+# source $BASH_IT/bash_it.sh #load bash It
 
 # Set PATH so it includes user's private bin if it exists.
 PATH=~/bin:"${PATH}"
@@ -49,7 +49,7 @@ alias cd-wm='cd ~/src/vendor/waveaccess/medapp'
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion #RVM bash completion <http://rvm.io/workflow/completion>
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # Steel Bank Common Lisp.
 export SBCL_HOME=/usr/lib64/sbcl
@@ -57,7 +57,7 @@ export SBCL_HOME=/usr/lib64/sbcl
 # Node.js
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
+[[ -r "$NVM_DIR/bash_completion" ]] && . "$NVM_DIR/bash_completion"
 
 # # Lua.
 # PATH=~/.luarocks/bin:"${PATH}"

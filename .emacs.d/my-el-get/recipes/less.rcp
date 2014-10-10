@@ -1,3 +1,0 @@
-(:name less
-       :type git
-       :url "git://github.com/emacsmirror/less.git")

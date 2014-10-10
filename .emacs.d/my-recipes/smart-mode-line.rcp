@@ -1,4 +1,6 @@
+(my-add-to-packages 'dash 'rich-minority)
 (my-add-to-packages 'smart-mode-line)
+
 (autoload 'sml/setup "smart-mode-line" nil t)
 
 (my-after-init
@@ -13,8 +15,10 @@
                                       )
                                      (((background light))
                                       :foreground "red"
-                                      :background "green"
                                       :weight bold))))
+  (custom-set-faces '(sml/global ((t (:foreground "gray60"
+                                                  :inverse-video nil)))))
+
   (custom-set-faces '(sml/git ((t :inherit (sml/not-modified sml/prefix)))))
   (dolist (my-hidden-modes '(
                             " AC" ;auto-complete-mode
@@ -22,6 +26,7 @@
                             " Abbrev" ;abbrev-mode
                             " Helm" ;helm-mode
                             " MRev" ;magit-auto-revert-mode
+                            " Rbow" ;rainbow-mode
                             " RubyRef" ;ruby-refactor-mode
                             " SP" ;smartparens-mode
                             " Undo-Tree" ;undo-tree-mode

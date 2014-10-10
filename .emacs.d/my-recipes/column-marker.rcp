@@ -11,10 +11,12 @@
                       'conf-mode-hook
                       'css-mode-hook
                       'emacs-lisp-mode-hook
+                      'fish-mode-hook
                       'git-commit-mode-hook
                       'haml-mode-hook
                       'haskell-mode-hook
                       'html-mode-hook
+                      'jade-mode-hook
                       'java-mode-hook
                       'js-mode-hook
                       'js2-mode-hook
@@ -36,6 +38,7 @@
                       'sieve-mode-hook
                       'sql-mode-hook
                       'text-mode-hook
+                      'web-mode-hook
                       'xml-mode-hook
                       'yaml-mode-hook)
 (my-after-init

@@ -1,3 +1,4 @@
+(my-add-to-packages 'company-mode)
 (my-after-init
   (add-hook 'rlc-no-readline-hook (lambda () (company-mode -1)))
   (my-eval-after-load 'company

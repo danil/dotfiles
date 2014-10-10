@@ -1,7 +1,0 @@
-(:name find-file-in-project
-       :description "Quick access to project files in Emacs"
-       :website "https://github.com/technomancy/find-file-in-project"
-       :load "find-file-in-project.el"
-       :compile ("find-file-in-project.el")
-       :type github
-       :pkgname "technomancy/find-file-in-project")

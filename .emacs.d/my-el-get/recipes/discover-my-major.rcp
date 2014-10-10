@@ -1,6 +1,0 @@
-(:name discover-my-major
-       :description "Discover key bindings and their meaning for the current Emacs major mode"
-       :website "https://github.com/steckerhalter/discover-my-major"
-       :depends makey
-       :type github
-       :pkgname "steckerhalter/discover-my-major")
