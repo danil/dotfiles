@@ -1,9 +1,11 @@
 (my-after-init
   (my-add-auto-mode-to-patterns 'conf-mode
+                                "/\\.config/skippy-xd/skippy-xd\\.rc\\'"
                                 "/\\.curlrc\\'"
                                 "/\\.gtkrc-2.0\\'"
                                 "/\\.inputrc\\'"
                                 "/\\.moc/keymap\\'"
+                                "/\\.npmrc\\'"
                                 "/\\.rvmrc\\'"
                                 "/\\.screenrc\\'"
                                 "/\\.tigrc\\'"
@@ -15,12 +17,18 @@
                                 "/locale.gen\\'"
                                 "/mimeapps.list\\'"
                                 "/share/applications/defaults\\.list\\'"
+                                "/sshd_config\\'"
                                 "/sudoers\\'"
                                 "/tint2rc\\'"
                                 "\\.cnf\\'"
+                                "\\.eixrc\\'"
                                 "\\.features\\'" ;cucumber features
+                                "\\.gtkrc.mine\\'"
                                 "\\.pkla\\'"
-                                "\\.theme\\'")
+                                "\\.skippyrc\\'"
+                                "\\.theme\\'"
+                                "\\.xxkbrc\\'"
+                                "\\parcelliterc\\'")
   ;; Gentoo configs.
   (my-add-auto-mode-to-patterns 'conf-mode
                                 "/etc/conf.d/"
@@ -35,6 +43,6 @@
                                 "/profiles/categories\\'"
                                 "/profiles/package.mask\\'"
                                 "/profiles/repo_name\\'"
-                                "var/lib/portage/world\\'")
+                                "\\world\\'")
   (my-add-auto-mode-to-patterns 'conf-xdefaults-mode "/\\.Xmodmap\\'")
   (my-hooks-with-truncate-lines 'conf-mode-hook))

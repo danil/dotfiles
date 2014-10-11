@@ -1,0 +1,8 @@
+[Desktop Entry]
+Comment=Keyboard layout indicator for tray
+Encoding=UTF-8
+Exec=xxkb
+Name=xxkb
+OnlyShowIn=XFCE;
+Terminal=false
+Type=Application

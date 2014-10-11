@@ -1,7 +1,11 @@
+(my-add-to-packages 'popup 'fuzzy)
 (my-add-to-packages 'auto-complete)
 (my-after-init
+  ;; <http://stackoverflow.com/questions/23232982/emacs-cannot-load-auto-complete-package#23234880>.
+  (ac-config-default)
   (my-eval-after-load 'auto-complete-config
-    (ac-config-default)
+    (add-to-list 'ac-dictionary-directories
+                 (expand-file-name "dict" default-directory))
     (dolist (mode '( ;<http://stackoverflow.com/questions/10779636/emacs-auto-complete-key-binding-didnt-work>
                     clojure-mode
                     coffee-mode
@@ -10,6 +14,7 @@
                     conf-space-mode
                     conf-unix-mode
                     conf-xdefaults-mode
+                    fish-mode
                     git-commit-mode
                     haml-mode
                     html-mode
@@ -18,6 +23,7 @@
                     lua-mode
                     magit-log-edit-mode
                     markdown-mode
+                    mustache-mode
                     nxml-mode
                     org-mode
                     python-mode
@@ -29,6 +35,7 @@
                     shell-mode
                     sieve-mode
                     sql-interactive-mode
+                    text-mode
                     sql-mode
                     yaml-mode
                     ))

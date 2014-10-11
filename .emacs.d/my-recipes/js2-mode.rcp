@@ -1,1 +1,11 @@
 (my-add-to-packages 'js2-mode)
+(autoload 'js2-mode "js2-mode" nil t)
+
+(my-after-init
+  (my-add-auto-mode-to-patterns 'js2-mode
+                                "\\.htc\\'" ;HTML Components (HTCs or .htc) <http://en.wikipedia.org/wiki/HTML_Components>
+                                "\\.js\\'"
+                                )
+  (my-eval-after-load 'js2-mode
+    (define-key js2-mode-map (kbd "C-c C-f") nil))
+  (my-hooks-with-truncate-lines 'js2-mode-hook))

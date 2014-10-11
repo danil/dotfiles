@@ -1,1 +1,13 @@
 (my-add-to-packages 'clojure-mode)
+
+(my-after-init
+  (my-hooks-with-truncate-lines 'clojure-mode-hook)
+
+  (my-eval-after-load 'clojure-mode
+    (define-key clojure-mode-map (my-kbd "C-f") 'my-clojure-less-minor-mode)))
+
+(defun my-clojure-less-minor-mode ()
+  (interactive)
+  (when (and (not less-minor-mode) (buffer-file-name))
+    (cider-load-current-buffer))
+  (call-interactively 'less-minor-mode))

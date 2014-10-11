@@ -6,9 +6,11 @@
   (my-eval-after-load 'org
     (setq org-log-done t)
 
-    ;; Interactively do things (Org-mode with Ido)
-    (add-hook 'org-mode-hook (lambda () (ido-mode t)))
-    (setq org-completion-use-ido t)
+    ;; Org-mode with Ido (interactively do things).
+    (if (featurep 'ido-mode)
+        (setq org-completion-use-ido t)
+      (my-eval-after-load 'ido
+        (setq org-completion-use-ido t)))
 
     ;; Org Clock.
     ;; Sometimes I change tasks I'm clocking

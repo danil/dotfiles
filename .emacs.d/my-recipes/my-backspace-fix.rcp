@@ -8,3 +8,6 @@
 (defun my-backspace-fix ()
   (keyboard-translate ?\C-h ?\C-?)
   (define-key key-translation-map [?\C-h] [?\C-?]))
+
+(defun my-backspace-fix-i ()
+  (interactive) (my-backspace-fix))

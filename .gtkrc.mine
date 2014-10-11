@@ -1,5 +1,16 @@
-# <http://en.gentoo-wiki.com/wiki/Toolkit_Beautification>,
 # <https://wiki.archlinux.org/index.php/GTK%2B>.
-# gtk-icon-theme-name = "Tango"
-# gtk-icon-theme-name = "gnome"
 gtk-icon-theme-name = "Faenza-Dark"
+
+# Font
+style "myfont" {
+    font_name = "Sans 12"
+}
+widget_class "*" style "myfont"
+gtk-font-name = "Sans 12"
+
+# <https://wiki.xfce.org/howto/xfwm4_theme#gtk_color_pickup>.
+style "dacobr" {
+    bg[INSENSITIVE] = "#000000"
+    bg[SELECTED] = "MidnightBlue"
+}
+widget "xfwm" style "dacobr"

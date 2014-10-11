@@ -1,6 +1,0 @@
-(:name simp
-       :description "A simple project defenition implementation for emacs."
-       :website "https://github.com/re5et/simp"
-       ;; :type elpa
-       :type github
-       :pkgname "re5et/simp")

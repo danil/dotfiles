@@ -1,1 +1,2 @@
+(my-add-to-packages 'slime)
 (my-add-to-packages 'stumpwm-mode)

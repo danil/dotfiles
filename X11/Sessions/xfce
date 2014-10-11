@@ -1,0 +1,5 @@
+#!/bin/sh
+# This file is part of Danil <danil@kutkevich.org> home.
+
+~/.xstart
+exec startxfce4

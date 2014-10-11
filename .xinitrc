@@ -17,21 +17,9 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
-# # Slim
-# # <http://en.gentoo-wiki.com/wiki/SLiM#Preparing_for_multiple_sessions>.
-# case $1 in
-#     compiz)
-#         # Running several applications from ~/.xinitrc
-#         # <https://wiki.archlinux.org/index.php/ConsoleKit#Running_several_applications_from_.7E.2F.xinitrc>.
-#         ~/.xstart_compiz
-#         # Since Slim 1.3.3 NO longer include ck-launch-session in .xinitrc
-#         # <https://wiki.archlinux.org/index.php/SLiM#Single_environments>.
-#         # exec dbus-launch compiz-manager
-#         exec bash -c "dbus-launch compiz-manager"
-#         ;;
-#     *)
-#         exec dbus-launch $DEFAULT_SESSION
-#         ;;
-# esac
+# Make sure this is before the 'exec' command or it won't be sourced
+# <https://wiki.archlinux.org/index.php/xprofile#Making_it_compatible_with_xinit>.
+[ -f /etc/xprofile ] && source /etc/xprofile
+[ -f ~/.xprofile ] && source ~/.xprofile
 
 exec $1

@@ -1,0 +1,2 @@
+(my-add-to-packages 'popwin)
+(my-after-init (popwin-mode t))

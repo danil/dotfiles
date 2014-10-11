@@ -2,8 +2,6 @@
 # Running several applications from ~/.xinitrc
 # <https://wiki.archlinux.org/index.php/ConsoleKit#Running_several_applications_from_.7E.2F.xinitrc>.
 
-~/.xstart
-
 # <https://wiki.archlinux.org/index.php/Udiskie#Installation>.
 udiskie &
 
@@ -29,12 +27,6 @@ killall nautilus ; dbus-launch nautilus --no-default-window &
 killall tint2 ; tint2 &
 # killall volumeicon ; dbus-launch volumeicon &
 killall volti ; dbus-launch volti &
-# killall avant-window-navigator ; dbus-launch avant-window-navigator &
-killall cairo-dock ; dbus-launch cairo-dock &
-# killall gnome-power-manager; dbus-launch gnome-power-manager &
-killall xfce4-power-manager ; dbus-launch xfce4-power-manager &
-killall wicd-gtk ; dbus-launch wicd-gtk --tray &
-killall parcellite ; parcellite &
 
 # # tint2 Double system tray icons
 # # <http://code.google.com/p/tint2/issues/detail?id=343#hc8>,
