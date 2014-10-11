@@ -19,6 +19,7 @@
                     haml-mode
                     html-mode
                     inf-ruby-mode
+                    jade-mode
                     less-css-mode
                     lua-mode
                     magit-log-edit-mode
