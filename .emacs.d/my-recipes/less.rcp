@@ -1,9 +1,7 @@
 (my-add-to-packages 'less)
 (my-add-mode-to-hooks (lambda ()
                         (when (and
-                               (not (member (buffer-name)
-                                            '("*scratch*"
-                                              " *autoload-file*")))
+                               (buffer-file-name)
                                (not (and
                                      buffer-file-name
                                      (member
