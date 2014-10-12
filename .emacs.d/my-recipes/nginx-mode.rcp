@@ -1,5 +1,5 @@
 (my-add-to-packages 'nginx-mode)
-(eval-after-load 'nginx-mode
-  '(progn
-     (setq auto-mode-alist
-           (add-to-list 'auto-mode-alist '("/etc/nginx/.*\\.conf\\'" . nginx-mode)))))
+
+(my-after-init
+  (my-add-auto-mode-to-patterns 'nginx-mode
+                                "/etc/nginx/.*\\.conf\\'"))

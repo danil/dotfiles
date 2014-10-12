@@ -54,6 +54,7 @@
  'magit-status-mode-hook
  'makefile-gmake-mode-hook
  'markdown-mode-hook
+ 'nginx-mode-hook
  'nxml-mode-hook
  'occur-mode-hook
  'org-mode-hook

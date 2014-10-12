@@ -20,6 +20,7 @@
                       'lua-mode-hook
                       'makefile-gmake-mode-hook
                       'markdown-mode-hook
+                      'nginx-mode-hook
                       'nxml-mode-hook
                       'org-mode-hook
                       'perl-mode-hook
