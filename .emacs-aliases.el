@@ -5,9 +5,10 @@
 ;;; <http://emacswiki.org/emacs/TruncateLines>.
 (set-default 'truncate-lines nil) ;wrap long lines
 
+(setq calendar-week-start-day t)
 (setq system-time-locale "C")
-(setq calendar-week-start-day 1)
-(global-font-lock-mode 1)
+
+(global-font-lock-mode t)
 
 ;;; Put <http://www.gnu.org/software/emacs/manual/html_node/elisp/Symbol-Plists.html>.
 ;; Horizontal Scrolling
@@ -105,6 +106,7 @@
                   "ido-ubiquitous"
                   "ido-vertical-mode"
                   "ido-yes-or-no"
+                  "indent"
                   "indent-guide"
                   "info"
                   "interprogram"
@@ -138,6 +140,7 @@
                   "org-mode" ;manual upgrade
                   "org-reveal"
                   "paren"
+                  "password-cache"
                   "point-stack"
                   "pomohist"
                   "pretty-lambdada"
@@ -211,9 +214,7 @@
 ;(set-terminal-coding-system 'utf-8)
 ;(modify-coding-system-alist 'file "/home/danil/src/vendor/prohq/avers/" 'utf-8)
 ;(set-language-environment 'cyrillic-koi8)
-(setq default-tab-width 4)
-(setq-default indent-tabs-mode nil)
-(setq standard-indent 2)
+
 (menu-bar-mode -1) ;Menu Bar <http://gnu.org/software/emacs/manual/html_node/emacs/Menu-Bars.html>, <http://emacswiki.org/MenuBar>
 
 ;; ;;; <http://emacswiki.org/ScrollBar>.

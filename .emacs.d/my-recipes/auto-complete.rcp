@@ -19,11 +19,13 @@
                     haml-mode
                     html-mode
                     inf-ruby-mode
+                    jade-mode
                     less-css-mode
                     lua-mode
                     magit-log-edit-mode
                     markdown-mode
                     mustache-mode
+                    nginx-mode
                     nxml-mode
                     org-mode
                     python-mode
