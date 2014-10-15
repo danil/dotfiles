@@ -20,6 +20,7 @@
                     html-mode
                     inf-ruby-mode
                     jade-mode
+                    json-mode
                     less-css-mode
                     lua-mode
                     magit-log-edit-mode
