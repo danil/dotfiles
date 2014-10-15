@@ -1,7 +1,9 @@
 (my-add-to-packages 'dash 'queue 'clojure-mode 'pkg-info)
 (my-add-to-packages 'cider)
 
-(custom-set-variables '(cider-mode-line " cider"))
+(custom-set-variables
+ '(cider-mode-line " cider")
+ '(cider-prompt-save-file-on-load nil))
 
 (my-after-init
   (my-eval-after-load 'cider-mode
