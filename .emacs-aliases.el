@@ -113,12 +113,13 @@
                   "isearch"
                   "jade-mode"
                   "js-mode"
-                  "js2-mode" ;coffee mode defaults to js2-mode, which is not present in Emacs by default
+                  "js2-mode"
+                  "json-mode"
                   "json-reformat"
                   "kill-emacs"
                   "kill-ring"
                   "kill-ring-ido"
-                  "less" ;do not remove, used for generic scroll!
+                  "less"
                   "less-css-mode"
                   "linum"
                   "linum-format"
