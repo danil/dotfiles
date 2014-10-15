@@ -8,10 +8,9 @@
 
 (defun my-clojure-less-minor-mode ()
   (interactive)
-  (when (and
-         (or
-          (not (boundp 'less-minor-mode))
-          (not less-minor-mode))
-         (buffer-file-name))
+  (when (and (or (not (boundp 'less-minor-mode))
+                 (not less-minor-mode))
+             (buffer-file-name))
+    (call-interactively 'save-buffer)
     (cider-load-current-buffer))
   (call-interactively 'less-minor-mode))
