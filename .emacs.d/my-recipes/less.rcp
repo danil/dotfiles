@@ -99,10 +99,11 @@
 
 (defun my-less-minor-mode-toggle ()
   (interactive)
-  (when (and
-         (or
-          (not (boundp 'less-minor-mode))
-          (not less-minor-mode))
-         (buffer-file-name))
+  (when (and (or (not (boundp 'less-minor-mode))
+                 (not less-minor-mode))
+             (buffer-file-name)
+             ;; (buffer-modified-p)
+             ;; (y-or-n-p (format "Save file %s? " (buffer-file-name)))
+             )
     (call-interactively 'save-buffer))
   (call-interactively 'less-minor-mode))

@@ -2,8 +2,7 @@
 (my-add-to-packages 'cider)
 
 (custom-set-variables
- '(cider-mode-line " cider")
- '(cider-prompt-save-file-on-load nil))
+ '(cider-mode-line " cider"))
 
 (my-after-init
   (my-eval-after-load 'cider-mode
