@@ -1,4 +1,7 @@
 (my-add-to-packages 'yascroll)
+
+(autoload 'yascroll-bar-mode "yascroll" nil t)
+
 (my-add-mode-to-hooks 'yascroll-bar-mode
                       'ag-mode-hook
                       'awk-mode-hook
@@ -29,6 +32,7 @@
                       'perl-mode-hook
                       'php-mode-hook
                       'python-mode-hook
+                      'rhtml-mode-hook
                       'ruby-mode-hook
                       'rust-mode-hook
                       'sass-mode-hook

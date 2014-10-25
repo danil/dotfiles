@@ -184,6 +184,7 @@
                   "yaml-mode"
                   "yascroll"
                   "yasnippet"
+                  "yasnippets"
                   ))
   (load-file (concat user-emacs-directory "my-recipes/" recipe ".rcp")))
 

@@ -5,49 +5,57 @@
 (my-after-init
   (yas-reload-all)
 
+  (my-eval-after-load 'yasnippet
+    ;; How to fix Yasnippet and Autocomplete tab key collision
+    ;; <http://sethlakowske.com/why-i-use-emacs/fix-yasnippet-and-autocomplete-tab-key-collision/>.
+    (define-key yas-minor-mode-map (kbd "<tab>") nil)
+    (define-key yas-minor-mode-map (kbd "TAB") nil)
+    ;; Set Yasnippet's key binding to shift+tab
+    (define-key yas-minor-mode-map (kbd "<backtab>") 'yas-expand))
+
   (my-add-mode-to-hooks 'yas-minor-mode
-                        'awk-mode
-                        'c-mode
-                        'clojure-mode
-                        'coffee-mode
-                        'conf-colon-mode
-                        'conf-mode
-                        'conf-space-mode
-                        'conf-unix-mode
-                        'conf-xdefaults-mode
-                        'css-mode
-                        'fish-mode
-                        'haml-mode
-                        'haskell-mode
-                        'html-mode
-                        'jade-mode
-                        'java-mode
-                        'js-mode
-                        'js2-mode
-                        'json-mode
-                        'less-css-mode
-                        'lisp-mode
-                        'lua-mode
-                        'makefile-gmake-mode
-                        'markdown-mode
-                        'mustache-mode
-                        'nginx-mode
-                        'nxml-mode
-                        'org-mode
-                        'perl-mode
-                        'php-mode
-                        'python-mode
-                        'rhtml-mode
-                        'ruby-mode
-                        'rust-mode
-                        'sass-mode
-                        'scss-mode
-                        'sgml-mode
-                        'sh-mode
-                        'shell-mode
-                        'sieve-mode
-                        'sql-mode
-                        'text-mode
-                        'web-mode
-                        'xml-mode
-                        'yaml-mode))
+                        'awk-mode-hook
+                        'c-mode-hook
+                        'clojure-mode-hook
+                        'coffee-mode-hook
+                        'conf-colon-mode-hook
+                        'conf-mode-hook
+                        'conf-space-mode-hook
+                        'conf-unix-mode-hook
+                        'conf-xdefaults-mode-hook
+                        'css-mode-hook
+                        'fish-mode-hook
+                        'haml-mode-hook
+                        'haskell-mode-hook
+                        'html-mode-hook
+                        'jade-mode-hook
+                        'java-mode-hook
+                        'js-mode-hook
+                        'js2-mode-hook
+                        'json-mode-hook
+                        'less-css-mode-hook
+                        'lisp-mode-hook
+                        'lua-mode-hook
+                        'makefile-gmake-mode-hook
+                        'markdown-mode-hook
+                        'mustache-mode-hook
+                        'nginx-mode-hook
+                        'nxml-mode-hook
+                        'org-mode-hook
+                        'perl-mode-hook
+                        'php-mode-hook
+                        'python-mode-hook
+                        'rhtml-mode-hook
+                        'ruby-mode-hook
+                        'rust-mode-hook
+                        'sass-mode-hook
+                        'scss-mode-hook
+                        'sgml-mode-hook
+                        'sh-mode-hook
+                        'shell-mode-hook
+                        'sieve-mode-hook
+                        'sql-mode-hook
+                        'text-mode-hook
+                        'web-mode-hook
+                        'xml-mode-hook
+                        'yaml-mode-hook))

@@ -24,6 +24,8 @@
                                            "my-auto-complete/dict")
                                    default-directory))
     (dolist (mode '( ;<http://stackoverflow.com/questions/10779636/emacs-auto-complete-key-binding-didnt-work>
+                    awk-mode
+                    c-mode
                     clojure-mode
                     coffee-mode
                     conf-colon-mode
@@ -31,32 +33,45 @@
                     conf-space-mode
                     conf-unix-mode
                     conf-xdefaults-mode
+                    css-mode
                     fish-mode
                     git-commit-mode
                     haml-mode
+                    haskell-mode
                     html-mode
                     inf-ruby-mode
                     jade-mode
+                    java-mode
+                    js-mode
+                    js2-mode
                     json-mode
                     less-css-mode
+                    lisp-mode
                     lua-mode
                     magit-log-edit-mode
+                    makefile-gmake-mode
                     markdown-mode
                     mustache-mode
                     nginx-mode
                     nxml-mode
                     org-mode
+                    perl-mode
+                    php-mode
                     python-mode
                     rhtml-mode
+                    ruby-mode
                     rust-mode
                     sass-mode
                     scss-mode
                     sgml-mode
+                    sh-mode
                     shell-mode
                     sieve-mode
                     sql-interactive-mode
-                    text-mode
                     sql-mode
+                    text-mode
+                    web-mode
+                    xml-mode
                     yaml-mode
                     ))
       (add-to-list 'ac-modes mode))

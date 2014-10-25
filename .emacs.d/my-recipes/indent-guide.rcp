@@ -20,6 +20,7 @@
                       'perl-mode-hook
                       'php-mode-hook
                       'python-mode-hook
+                      'rhtml-mode-hook
                       'ruby-mode-hook
                       'rust-mode-hook
                       'sass-mode-hook

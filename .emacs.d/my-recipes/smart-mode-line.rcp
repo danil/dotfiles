@@ -37,6 +37,7 @@
                             " ing" ;indent-guide-mode
                             " pair" ;autopair
                             " rt" ;ruby-tools-mode
+                            " yas";yas-minor-mode aka yasnippet
                             )) (add-to-list 'sml/hidden-modes my-hidden-modes))
 
   (dolist (my-path-to-replace
