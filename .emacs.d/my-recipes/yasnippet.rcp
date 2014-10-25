@@ -1,1 +1,53 @@
 (my-add-to-packages 'yasnippet)
+
+(autoload 'yas-reload-all "yasnippet" nil t)
+
+(my-after-init
+  (yas-reload-all)
+
+  (my-add-mode-to-hooks 'yas-minor-mode
+                        'awk-mode
+                        'c-mode
+                        'clojure-mode
+                        'coffee-mode
+                        'conf-colon-mode
+                        'conf-mode
+                        'conf-space-mode
+                        'conf-unix-mode
+                        'conf-xdefaults-mode
+                        'css-mode
+                        'fish-mode
+                        'haml-mode
+                        'haskell-mode
+                        'html-mode
+                        'jade-mode
+                        'java-mode
+                        'js-mode
+                        'js2-mode
+                        'json-mode
+                        'less-css-mode
+                        'lisp-mode
+                        'lua-mode
+                        'makefile-gmake-mode
+                        'markdown-mode
+                        'mustache-mode
+                        'nginx-mode
+                        'nxml-mode
+                        'org-mode
+                        'perl-mode
+                        'php-mode
+                        'python-mode
+                        'rhtml-mode
+                        'ruby-mode
+                        'rust-mode
+                        'sass-mode
+                        'scss-mode
+                        'sgml-mode
+                        'sh-mode
+                        'shell-mode
+                        'sieve-mode
+                        'sql-mode
+                        'text-mode
+                        'web-mode
+                        'xml-mode
+                        'yaml-mode))

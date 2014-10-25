@@ -5,7 +5,8 @@
   ;; <http://stackoverflow.com/questions/23232982/emacs-cannot-load-auto-complete-package#23234880>.
   (ac-config-default)
 
-  ;; The common sources for all modes.
+  ;; The common sources for all modes
+  ;; <https://github.com/gorakhargosh/emacs.d/blob/master/config-completion.el>.
   (custom-set-variables
    '(ac-sources
      '(ac-source-abbrev
@@ -14,7 +15,8 @@
        ac-source-words-in-same-mode-buffers
        ac-source-files-in-current-dir
        ac-source-filename
-       ac-source-dictionary)))
+       ac-source-dictionary
+       ac-source-yasnippet)))
 
   (my-eval-after-load 'auto-complete-config
     (add-to-list 'ac-dictionary-directories

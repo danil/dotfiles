@@ -183,6 +183,7 @@
                   "winner-mode"
                   "yaml-mode"
                   "yascroll"
+                  "yasnippet"
                   ))
   (load-file (concat user-emacs-directory "my-recipes/" recipe ".rcp")))
 
