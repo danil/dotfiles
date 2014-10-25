@@ -37,11 +37,11 @@
 ;;; My recipes.
 (dolist (recipe '(
                   "my-recipe-helpers"
+                  "ac-dabbrev"
                   "ag"
                   "apache-mode"
                   "auto-complete"
                   "auto-complete-chunk"
-                  "auto-complete-css"
                   "auto-complete-emacs-lisp"
                   "auto-complete-etags"
                   "auto-complete-nxml"

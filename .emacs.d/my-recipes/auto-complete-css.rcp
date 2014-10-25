@@ -1,2 +1,15 @@
 (my-add-to-packages 'auto-complete)
 (my-add-to-packages 'auto-complete-css)
+
+(autoload 'ac-css-setup "auto-complete-css" nil t)
+
+(my-after-init
+  (my-add-mode-to-hooks 'ac-css-setup
+                        'css-mode-hook
+                        'less-css-mode-hook
+                        'nxml-mode-hook
+                        'php-mode-hook
+                        'sass-mode-hook
+                        'scss-mode
+                        'web-mode-hook
+                        'xml-mode-hook))

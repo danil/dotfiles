@@ -1,11 +1,26 @@
 (my-add-to-packages 'popup 'fuzzy)
 (my-add-to-packages 'auto-complete)
+
 (my-after-init
   ;; <http://stackoverflow.com/questions/23232982/emacs-cannot-load-auto-complete-package#23234880>.
   (ac-config-default)
+
+  ;; The common sources for all modes.
+  (custom-set-variables
+   '(ac-sources
+     '(ac-source-abbrev
+       ac-source-dabbrev
+       ac-source-words-in-buffer
+       ac-source-words-in-same-mode-buffers
+       ac-source-files-in-current-dir
+       ac-source-filename
+       ac-source-dictionary)))
+
   (my-eval-after-load 'auto-complete-config
     (add-to-list 'ac-dictionary-directories
-                 (expand-file-name "dict" default-directory))
+                 (expand-file-name (concat user-emacs-directory
+                                           "my-auto-complete/dict")
+                                   default-directory))
     (dolist (mode '( ;<http://stackoverflow.com/questions/10779636/emacs-auto-complete-key-binding-didnt-work>
                     clojure-mode
                     coffee-mode
@@ -45,4 +60,11 @@
       (add-to-list 'ac-modes mode))
     (ac-linum-workaround) ;<https://github.com/auto-complete/auto-complete/blob/da864398a96805a2c79ac61fadeebd420ccb3cdc/doc/manual.md#linum-mode-tries-to-display-the-line-numbers-even-for-the-comletion-menu--linum-mode-bug>
     (setq ac-ignore-case nil) ;preserve capitalization <http://stackoverflow.com/questions/15637536/how-do-i-preserve-capitalization-when-using-autocomplete-in-emacs>
-    (setq ac-disable-faces (quote (font-lock-doc-face)))))
+    (setq ac-disable-faces (quote (font-lock-doc-face))))
+
+  (my-add-mode-to-hooks (lambda ()
+                          (add-to-list 'ac-sources
+                                       'ac-source-css-property))
+                        'less-css-mode-hook
+                        'sass-mode-hook
+                        'scss-mode-hook))
