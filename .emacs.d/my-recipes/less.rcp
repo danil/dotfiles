@@ -18,6 +18,7 @@
                         'conf-mode-hook
                         'css-mode-hook
                         'dired-mode-hook
+                        'emacs-lisp-mode-hook
                         'fish-mode-hook
                         'git-commit-mode-hook
                         'haml-mode-hook

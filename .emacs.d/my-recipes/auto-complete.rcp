@@ -34,6 +34,7 @@
                     conf-unix-mode
                     conf-xdefaults-mode
                     css-mode
+                    emacs-lisp-mode
                     fish-mode
                     git-commit-mode
                     haml-mode
