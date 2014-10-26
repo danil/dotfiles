@@ -1,5 +1,4 @@
 (my-add-to-packages 'json-reformat)
 (autoload 'json-reformat-region "json-reformat" nil t)
 (my-after-init
-  (my-eval-after-load 'js2-mode
-    (define-key js2-mode-map (my-kbd "m j j r") 'json-reformat-region)))
+  (global-set-key (my-kbd "m j j r") 'json-reformat-region))

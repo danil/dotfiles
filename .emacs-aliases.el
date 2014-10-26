@@ -37,11 +37,11 @@
 ;;; My recipes.
 (dolist (recipe '(
                   "my-recipe-helpers"
+                  "ac-dabbrev"
                   "ag"
                   "apache-mode"
                   "auto-complete"
                   "auto-complete-chunk"
-                  "auto-complete-css"
                   "auto-complete-emacs-lisp"
                   "auto-complete-etags"
                   "auto-complete-nxml"
@@ -99,8 +99,8 @@
                   "hi-lock"
                   "hideshow"
                   "highlight-current-line"
-                  "highlight-symbol"
                   "ibuffer"
+                  "idle-multi-highlight-mode"
                   "ido"
                   "ido-preview"
                   "ido-ubiquitous"
@@ -113,12 +113,13 @@
                   "isearch"
                   "jade-mode"
                   "js-mode"
-                  "js2-mode" ;coffee mode defaults to js2-mode, which is not present in Emacs by default
+                  "js2-mode"
+                  "json-mode"
                   "json-reformat"
                   "kill-emacs"
                   "kill-ring"
                   "kill-ring-ido"
-                  "less" ;do not remove, used for generic scroll!
+                  "less"
                   "less-css-mode"
                   "linum"
                   "linum-format"
@@ -182,6 +183,8 @@
                   "winner-mode"
                   "yaml-mode"
                   "yascroll"
+                  "yasnippet"
+                  "yasnippets"
                   ))
   (load-file (concat user-emacs-directory "my-recipes/" recipe ".rcp")))
 

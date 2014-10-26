@@ -34,6 +34,7 @@
   (my-add-auto-mode-to-patterns 'conf-mode
                                 "/etc/conf.d/"
                                 "/etc/env.d/"
+                                "/etc/init.d/"
                                 "/etc/portage/env/"
                                 "/etc/portage/package\\.keywords\\'"
                                 "/etc/portage/package\\.mask\\'"

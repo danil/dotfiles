@@ -1,3 +1,5 @@
+(my-add-to-packages 'idle-highlight-mode)
+
 (my-after-init
   ;; (defface idle-highlight
   ;;   '((nil (:inherit highlight)))

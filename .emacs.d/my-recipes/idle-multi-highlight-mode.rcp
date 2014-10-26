@@ -1,19 +1,20 @@
-(my-add-to-packages 'yasnippet)
+(my-add-to-packages 'idle-multi-highlight-mode)
 
-(autoload 'yas-reload-all "yasnippet" nil t)
+(custom-set-variables
+ '(idle-multi-highlight-idle-time 0.7))
+
+(defface idle-multi-highlight
+  '((((background dark))
+         :background "OrangeRed3"
+         :foreground "black")
+    (((background light))
+         :background "red"
+         :foreground "white"))
+  "Face used to highlight other occurrences of the word at point."
+  :group 'idle-multi-highlight)
 
 (my-after-init
-  (yas-reload-all)
-
-  (my-eval-after-load 'yasnippet
-    ;; How to fix Yasnippet and Autocomplete tab key collision
-    ;; <http://sethlakowske.com/why-i-use-emacs/fix-yasnippet-and-autocomplete-tab-key-collision/>.
-    (define-key yas-minor-mode-map (kbd "<tab>") nil)
-    (define-key yas-minor-mode-map (kbd "TAB") nil)
-    ;; Set Yasnippet's key binding to shift+tab
-    (define-key yas-minor-mode-map (kbd "<backtab>") 'yas-expand))
-
-  (my-add-mode-to-hooks 'yas-minor-mode
+  (my-add-mode-to-hooks (lambda () (idle-multi-highlight-mode t))
                         'awk-mode-hook
                         'c-mode-hook
                         'clojure-mode-hook
@@ -59,4 +60,5 @@
                         'text-mode-hook
                         'web-mode-hook
                         'xml-mode-hook
-                        'yaml-mode-hook))
+                        'yaml-mode-hook
+                        ))

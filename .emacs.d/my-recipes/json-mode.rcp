@@ -1,0 +1,9 @@
+(my-add-to-packages 'json-reformat)
+(my-add-to-packages 'json-snatcher)
+
+(my-add-to-packages 'json-mode)
+
+(my-after-init
+  (my-eval-after-load 'json-mode
+    (define-key json-mode-map (kbd "C-c C-f") nil)
+    (define-key json-mode-map (kbd "C-c C-p") nil)))
