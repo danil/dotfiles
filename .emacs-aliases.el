@@ -37,6 +37,7 @@
 ;;; My recipes.
 (dolist (recipe '(
                   "my-recipe-helpers"
+                  "ac-cider"
                   "ac-dabbrev"
                   "ag"
                   "apache-mode"

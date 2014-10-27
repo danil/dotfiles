@@ -16,6 +16,8 @@
   (my-add-mode-to-hooks 'yas-minor-mode
                         'awk-mode-hook
                         'c-mode-hook
+                        'cider-mode-hook
+                        'cider-repl-mode-hook
                         'clojure-mode-hook
                         'coffee-mode-hook
                         'conf-colon-mode-hook
