@@ -58,6 +58,7 @@
                         'sh-mode-hook
                         'shell-mode-hook
                         'sieve-mode-hook
+                        'sql-interactive-mode-hook
                         'sql-mode-hook
                         'text-mode-hook
                         'web-mode-hook
