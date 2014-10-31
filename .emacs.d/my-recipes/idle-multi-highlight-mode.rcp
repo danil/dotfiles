@@ -63,5 +63,4 @@
                         'text-mode-hook
                         'web-mode-hook
                         'xml-mode-hook
-                        'yaml-mode-hook
-                        ))
+                        'yaml-mode-hook))
