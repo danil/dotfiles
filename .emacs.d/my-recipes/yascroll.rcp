@@ -7,6 +7,8 @@
                       'awk-mode-hook
                       'c-mode-hook
                       'change-log-mode-hook
+                      'cider-mode-hook
+                      'cider-repl-mode-hook
                       'clojure-mode-hook
                       'coffee-mode-hook
                       'conf-mode-hook

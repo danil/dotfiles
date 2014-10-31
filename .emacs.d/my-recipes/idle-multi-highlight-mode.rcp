@@ -17,6 +17,8 @@
   (my-add-mode-to-hooks (lambda () (idle-multi-highlight-mode t))
                         'awk-mode-hook
                         'c-mode-hook
+                        'cider-mode-hook
+                        'cider-repl-mode-hook
                         'clojure-mode-hook
                         'coffee-mode-hook
                         'conf-colon-mode-hook
@@ -56,9 +58,9 @@
                         'sh-mode-hook
                         'shell-mode-hook
                         'sieve-mode-hook
+                        'sql-interactive-mode-hook
                         'sql-mode-hook
                         'text-mode-hook
                         'web-mode-hook
                         'xml-mode-hook
-                        'yaml-mode-hook
-                        ))
+                        'yaml-mode-hook))

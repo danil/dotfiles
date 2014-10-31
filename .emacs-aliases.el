@@ -37,6 +37,7 @@
 ;;; My recipes.
 (dolist (recipe '(
                   "my-recipe-helpers"
+                  "ac-cider"
                   "ac-dabbrev"
                   "ag"
                   "apache-mode"
@@ -99,8 +100,8 @@
                   "hi-lock"
                   "hideshow"
                   "highlight-current-line"
+                  "highlight-symbol"
                   "ibuffer"
-                  "idle-multi-highlight-mode"
                   "ido"
                   "ido-preview"
                   "ido-ubiquitous"
