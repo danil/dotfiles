@@ -16,6 +16,7 @@
                                 "/hosts\\'"
                                 "/locale.gen\\'"
                                 "/mimeapps.list\\'"
+                                "/robots.txt\\'"
                                 "/securetty\\'"
                                 "/share/applications/defaults\\.list\\'"
                                 "/sshd_config\\'"
