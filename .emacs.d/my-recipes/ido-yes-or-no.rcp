@@ -1,4 +1,0 @@
-(my-add-to-packages 'ido-yes-or-no)
-(my-after-init
-  (autoload 'ido-yes-or-no-mode "ido-yes-or-no" nil t)
-  (ido-yes-or-no-mode t))

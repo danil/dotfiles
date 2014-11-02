@@ -1,3 +1,0 @@
-(my-add-to-packages 'dash 's 'pkg-info)
-(my-add-to-packages 'projectile)
-(my-after-init (projectile-global-mode))

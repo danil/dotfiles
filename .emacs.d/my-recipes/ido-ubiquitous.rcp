@@ -1,4 +1,0 @@
-(my-add-to-packages 'ido-ubiquitous)
-(my-after-init
-  (ido-mode t)
-  (ido-ubiquitous-mode))

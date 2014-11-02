@@ -1,9 +1,0 @@
-(my-add-to-packages 'helm)
-(my-add-to-packages 'helm-swoop)
-
-(my-after-init
-  (global-set-key (my-kbd "m h f s") 'my-helm-swoop))
-
-(defun my-helm-swoop (&optional arg)
-  (interactive "P")
-  (if arg (helm-multi-swoop-all) (helm-swoop)))

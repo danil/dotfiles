@@ -1,2 +1,0 @@
-;;; Git modes <https://github.com/magit/git-modes>.
-(my-after-init (my-hooks-with-truncate-lines 'git-commit-mode-hook))

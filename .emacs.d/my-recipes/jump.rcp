@@ -1,2 +1,0 @@
-(my-add-to-packages 'findr 'inflections)
-(my-add-to-packages 'jump)
