@@ -1,7 +1,0 @@
-(my-add-to-packages 'org-mode 'htmlize)
-(my-add-to-packages 'org-reveal)
-(global-set-key (my-kbd "m o r e") 'org-reveal-export-to-html)
-;; (my-after-init
-;;   (my-eval-after-load 'org-reveal
-;;     (setq org-reveal-root
-;;           "//cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6/js/reveal.min.js")))

@@ -1,2 +1,0 @@
-;;; This version conflicts with builtin in rinari.
-(my-add-to-packages 'inf-ruby)

@@ -1,4 +1,0 @@
-(my-add-to-packages 'helm)
-(my-add-to-packages 'helm-descbinds)
-(autoload 'helm-descbinds-install "helm-descbinds")
-(global-set-key (my-kbd "m h ? b") 'helm-descbinds)
