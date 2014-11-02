@@ -1,5 +1,7 @@
 ;;; This file is part of Danil <danil@kutkevich.org> home.
-;(add-to-list 'load-path "~/share/emacs/site-lisp")
+
+;; Danil <http://emacswiki.org/DotEmacsDotD>,
+;; <http://emacs.stackexchange.com/questions/1/are-there-any-advantages-to-using-emacs-d-init-el-instead-of-emacs>.
 
 ;;; Truncation of Lines (toggle-truncate-lines)
 ;;; <http://emacswiki.org/emacs/TruncateLines>.
