@@ -1,7 +1,0 @@
-(my-after-init
-  (global-set-key (my-kbd "b b") 'bury-buffer-with-repeat)
-  (global-set-key (my-kbd "b r n") 'rename-buffer))
-
-(defun bury-buffer-with-repeat ()
-  (interactive)
-  (my-with-repeat-while-press-last-key (bury-buffer)))

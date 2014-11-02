@@ -1,2 +1,0 @@
-(my-add-to-packages 'inf-ruby)
-(my-add-to-packages 'ruby-compilation)

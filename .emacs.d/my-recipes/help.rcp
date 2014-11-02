@@ -1,3 +1,0 @@
-;;; My help
-;;; <http://www.gnu.org/software/emacs/manual/html_node/emacs/Help-Summary.html>.
-(my-after-init (global-set-key (my-kbd "?") 'help-command))

@@ -1,3 +1,0 @@
-(my-eval-after-load 'highlight-current-line
-  ;; Mark only to the end of line.
-  (highlight-current-line-whole-line-on nil))
