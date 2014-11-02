@@ -1,8 +1,7 @@
 Dotfiles
 ========
 
-This is my dotfiles, including shell environment, emacs configuration,
-and other misc scripts.
+This is my dotfiles, including shell environment and other misc scripts.
 
 Copying
 -------
