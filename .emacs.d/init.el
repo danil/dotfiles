@@ -1,5 +1,4 @@
 ;;; This file is part of Danil <danil@kutkevich.org> home.
-;(add-to-list 'load-path "~/share/emacs/site-lisp")
 
 ;;; Truncation of Lines (toggle-truncate-lines)
 ;;; <http://emacswiki.org/emacs/TruncateLines>.
