@@ -8,7 +8,7 @@ UXTerm*metaSendsEscape: true
 ! Shift Ctrl <Key>=: larger-vt-font() \n\
 ! Shift Ctrl <Key>-: smaller-vt-font()
 
-UXTerm*faceName: xft:Ubuntu Mono:pixelsize=14:antialias=true:hinting=true:autohint=true:style=regular
+UXTerm*faceName: xft:Monospace:pixelsize=18:antialias=true:hinting=true:autohint=true:style=regular
 UXTerm*faceSize:  14
 UXTerm*faceSize1: 8
 UXTerm*faceSize2: 9
