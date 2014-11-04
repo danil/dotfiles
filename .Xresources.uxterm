@@ -8,7 +8,11 @@ UXTerm*metaSendsEscape: true
 ! Shift Ctrl <Key>=: larger-vt-font() \n\
 ! Shift Ctrl <Key>-: smaller-vt-font()
 
-UXTerm*faceName: xft:Monospace:pixelsize=18:antialias=true:hinting=true:autohint=true:style=regular
+UXTerm*faceName:       xft:Monospace:pixelsize=18:antialias=true:hinting=true:autohint=true:style=regular
+UXTerm*boldFont:       xft:Monospace:pixelsize=18:antialias=true:hinting=true:autohint=true:style=bold
+UXTerm*italicFont:     xft:Monospace:pixelsize=18:antialias=true:hinting=true:autohint=true:style=italic
+UXTerm*boldItalicFont: xft:Monospace:pixelsize=18:antialias=true:hinting=true:autohint=true:style=bold italic
+
 UXTerm*faceSize:  14
 UXTerm*faceSize1: 8
 UXTerm*faceSize2: 9
