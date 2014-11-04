@@ -11,7 +11,7 @@ URxvt.boldItalicFont: xft:Monospace:pixelsize=18:antialias=true:hinting=true:aut
 ! By default in urxvt the distance between characters can feel too wide
 ! <https://wiki.archlinux.org/index.php/rxvt-unicode#Font_spacing>,
 ! <http://crunchbanglinux.org/wiki/urxvt#font_spacing>.
-URxvt.letterSpace: -1
+URxvt.letterSpace: -2
 
 URxvt*scrollBar: true
 URxvt.scrollstyle: plain
