@@ -34,6 +34,7 @@ video/x-msvideo=userapp-mplayer-SAZLSV.desktop;
 application/x-font-ttf=userapp-leafpad-EACN4W.desktop;
 application/x-fictionbook+xml=leafpad.desktop;
 application/vnd.adobe.flash.movie=mpv.desktop;userapp-leafpad-EACN4W.desktop;
+image/vnd.microsoft.icon=ristretto.desktop;zzz-gimp.desktop;
 
 [Default Applications]
 application/pdf=evince.desktop
@@ -66,10 +67,10 @@ x-scheme-handler/https=google-chrome.desktop
 x-scheme-handler/about=google-chrome.desktop
 x-scheme-handler/unknown=google-chrome.desktop
 application/vnd.adobe.flash.movie=userapp-leafpad-EACN4W.desktop
+image/vnd.microsoft.icon=zzz-gimp.desktop
 
 [Removed Associations]
 image/jpeg=wine-extension-jfif.desktop;wine-extension-jpeg.desktop;wine-extension-jpe.desktop;wine-extension-jpg.desktop;
 image/png=wine-extension-png.desktop;
 image/gif=wine-extension-gif.desktop;
 application/x-python-bytecode=leafpad.desktop;gedit.desktop;
-
