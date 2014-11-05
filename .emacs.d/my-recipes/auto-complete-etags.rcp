@@ -1,2 +1,0 @@
-(my-add-to-packages 'auto-complete)
-(my-add-to-packages 'auto-complete-etags)

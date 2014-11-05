@@ -1,8 +1,0 @@
-(my-add-to-packages 'cl-lib 'ruby-mode)
-(my-add-to-packages 'rspec-mode)
-
-(my-after-init
-  (add-hook 'dired-mode-hook 'rspec-dired-mode)
-  (my-eval-after-load 'rspec-mode
-    (setq rspec-use-rake-when-possible nil)
-    (setq rspec-use-rvm 1)))

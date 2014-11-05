@@ -1,2 +1,0 @@
-;;; buggy
-(my-add-to-packages 'auto-complete-ruby)

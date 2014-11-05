@@ -1,2 +1,0 @@
-(my-add-to-packages 'rust-mode)
-(my-after-init (my-hooks-with-truncate-lines 'rust-mode-hook))
