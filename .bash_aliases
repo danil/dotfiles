@@ -47,9 +47,12 @@ alias em='emerge --verbose --oneshot --color=y'
 alias cd-w='cd ~/src/vendor/waveaccess'
 alias cd-wm='cd ~/src/vendor/waveaccess/medapp'
 
-# rbenv.
+# rbenv <https://github.com/sstephenson/rbenv#basic-github-checkout>.
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+# Gems:
+[ -f "$HOME/.travis/travis.sh" ] && source "$HOME/.travis/travis.sh" #added by travis gem
 
 # # RVM (ruby version manager).
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
@@ -61,7 +64,7 @@ export SBCL_HOME=/usr/lib64/sbcl
 
 # Node.js
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  #this loads nvm
 [[ -r "$NVM_DIR/bash_completion" ]] && . "$NVM_DIR/bash_completion"
 
 # # Lua.

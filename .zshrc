@@ -75,9 +75,15 @@ alias ag='ag --smart-case --color-line-number "2;31"'
 #   print -P "\033AnSiTc %d"
 # fi
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+# rbenv <https://github.com/sstephenson/rbenv#basic-github-checkout>.
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+[ -f "$HOME/.travis/travis.sh" ] && source "$HOME/.travis/travis.sh" #added by travis gem
+
+# # RVM (ruby version manager).
+# export PATH="$PATH:$HOME/.rvm/bin" #add RVM to PATH for scripting
+# PATH=$PATH:$HOME/.rvm/bin #add RVM to PATH for scripting
 
 # Bash-like navigation <http://superuser.com/questions/410356/how-do-you-make-zsh-meta-delete-behave-like-bash-to-make-it-delete-a-word-inst#416995>.
 autoload -U select-word-style
