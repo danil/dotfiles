@@ -48,9 +48,11 @@ function ps1_load {
     fi
 }
 function ps1_outdated_packages {
-    local outdated_string="$(cat /etc/portage/package.outdated)"
-    if [[ ${outdated_string} -gt 0 ]]; then
-        echo -n " outdated:${outdated_string}"
+    if [[ -f /etc/portage/package.outdated ]]; then
+        local outdated_string="$(cat /etc/portage/package.outdated)"
+        if [[ ${outdated_string} -gt 0 ]]; then
+            echo -n " outdated:${outdated_string}"
+        fi
     fi
 }
 function my_ps1_timer_start {
