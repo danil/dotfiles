@@ -1,12 +1,6 @@
 ! This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 ! URxvt.
 
-! <http://askubuntu.com/questions/22419/how-do-i-make-urxvt-render-xft-fonts#96779>.
-URxvt.font:           xft:Monospace:pixelsize=18:antialias=true:hinting=true:autohint=true:style=regular
-URxvt.boldFont:       xft:Monospace:pixelsize=18:antialias=true:hinting=true:autohint=true:style=bold
-URxvt.italicFont:     xft:Monospace:pixelsize=18:antialias=true:hinting=true:autohint=true:style=italic
-URxvt.boldItalicFont: xft:Monospace:pixelsize=18:antialias=true:hinting=true:autohint=true:style=bold italic
-
 ! Font spacing.
 ! By default in urxvt the distance between characters can feel too wide
 ! <https://wiki.archlinux.org/index.php/rxvt-unicode#Font_spacing>,

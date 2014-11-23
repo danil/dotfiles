@@ -1,6 +1,6 @@
 [Desktop Entry]
 Encoding=UTF-8
-Exec=xchainkeys -f /home/danil/.config/xchainkeys/h6-gentoo-xfce.conf
+Exec=xchainkeys -f /home/danil/.config/xchainkeys/h5-ubuntu-unity.conf
 Name=xchainkeys
 OnlyShowIn=XFCE;
 Terminal=false

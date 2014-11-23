@@ -4,7 +4,7 @@
   <property name="Net" type="empty">
     <property name="ThemeName" type="string" value="Xfce-dusk"/>
     <property name="IconThemeName" type="string" value="Faenza-Dark"/>
-    <property name="DoubleClickTime" type="int" value="350"/>
+    <property name="DoubleClickTime" type="int" value="608"/>
     <property name="DoubleClickDistance" type="empty"/>
     <property name="DndDragThreshold" type="empty"/>
     <property name="CursorBlink" type="empty"/>
@@ -14,7 +14,7 @@
     <property name="EnableInputFeedbackSounds" type="empty"/>
   </property>
   <property name="Xft" type="empty">
-    <property name="DPI" type="empty"/>
+    <property name="DPI" type="int" value="120"/>
     <property name="Antialias" type="int" value="1"/>
     <property name="Hinting" type="empty"/>
     <property name="HintStyle" type="string" value="hintfull"/>
@@ -33,5 +33,8 @@
     <property name="MenuBarAccel" type="empty"/>
     <property name="CursorThemeName" type="empty"/>
     <property name="CursorThemeSize" type="empty"/>
+  </property>
+  <property name="Xfce" type="empty">
+    <property name="LastCustomDPI" type="int" value="120"/>
   </property>
 </channel>
