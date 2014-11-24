@@ -1,0 +1,9 @@
+[Desktop Entry]
+Categories=Qt;LXQt;
+Exec=lxqt-powermanagement
+GenericName=Power Manager
+Icon=xfpm-ac-adapter
+Name=LXQt Power Management
+OnlyShowIn=LXQt;LXDE;XFCE;
+StartupNotify=false
+Type=Application

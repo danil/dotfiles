@@ -6,9 +6,9 @@
 
 ! Cursor disappears with compiz and Xft font <http://bbs.archlinux.org/viewtopic.php?pid=991221>.
 ! *cursorUnderline: true
-*cursorBlink:     true
+*cursorBlink: true
 ! Dark theme.
-*cursorColor:     #ff0000
+*cursorColor: #ff0000
 ! ! White theme.
 ! *cursorColor:     #aa0000
 *cursorUnderline: false
@@ -17,13 +17,21 @@
 *geometry:        87x43
 *saveLines:       10000
 
-! Xft <https://wiki.archlinux.org/index.php/Font_Configuration#Applications_without_fontconfig_support>.
+! <http://askubuntu.com/questions/22419/how-do-i-make-urxvt-render-xft-fonts#96779>.
+*font:           xft:Monospace:pixelsize=18:antialias=true:hinting=true:autohint=true:style=regular
+*boldFont:       xft:Monospace:pixelsize=18:antialias=true:hinting=true:autohint=true:style=bold
+*italicFont:     xft:Monospace:pixelsize=18:antialias=true:hinting=true:autohint=true:style=italic
+*boldItalicFont: xft:Monospace:pixelsize=18:antialias=true:hinting=true:autohint=true:style=bold italic
+
+! Xft.
+! `xrdb -query | grep Xft`
+! <https://wiki.archlinux.org/index.php/Font_Configuration#Applications_without_fontconfig_support>.
 ! Antialias <https://wiki.archlinux.org/index.php/Font_Configuration#Anti-aliasing>.
 Xft.antialias: true
 ! Autohint <http://wiki.gentoo.org/wiki/Fontconfig#Regarding_autohinter>.
-Xft.autohint:  false
+Xft.autohint: false
 ! Hinting <https://wiki.archlinux.org/index.php/Font_Configuration#Byte-Code_Interpreter_.28BCI.29>.
-Xft.hinting:   true
+Xft.hinting: true
 ! Hintstyle <https://wiki.archlinux.org/index.php/Font_Configuration#Hintstyle>,
 ! <http://wiki.gentoo.org/wiki/Fontconfig#Forcing_hinting>,
 ! <https://wiki.archlinux.org/index.php/X_resources#Xft_resources>.
@@ -33,9 +41,9 @@ Xft.hintstyle: hintfull
 Xft.lcdfilter: lcddefault
 ! Sub-pixel rendering <http://wiki.gentoo.org/wiki/Fontconfig#Using_sub-pixel_rendering>,
 ! <https://wiki.archlinux.org/index.php/Font_Configuration#Subpixel_rendering>.
-Xft.rgba:      rgb
+Xft.rgba: rgb
 ! ! DPI <https://wiki.archlinux.org/index.php/Font_Configuration#Distorted_fonts>.
-! Xft.dpi:       120.4
+! Xft*dpi: 120
 
 ! <https://wiki.archlinux.org/index.php/X11_Cursors>.
 Xcursor.theme: Vanilla-DMZ
