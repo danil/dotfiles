@@ -11,9 +11,7 @@
       <property name="size" type="uint" value="24"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="6"/>
-        <value type="int" value="11"/>
         <value type="int" value="9"/>
-        <value type="int" value="2"/>
         <value type="int" value="1"/>
         <value type="int" value="5"/>
       </property>
@@ -37,6 +35,7 @@
         <value type="string" value="connection manager"/>
         <value type="string" value="gajim"/>
         <value type="string" value="pidgin"/>
+        <value type="string" value="lxqt-powermanagement"/>
         <value type="string" value="parcellite"/>
         <value type="string" value="dropbox"/>
         <value type="string" value="xfce4-power-manager"/>
@@ -53,8 +52,6 @@
       <property name="command" type="string" value="xfce4-mixer"/>
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
     </property>
-    <property name="plugin-11" type="string" value="showdesktop"/>
     <property name="plugin-1" type="string" value="genmon"/>
-    <property name="plugin-2" type="string" value="xfce4-battery-plugin"/>
   </property>
 </channel>
