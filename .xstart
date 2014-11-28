@@ -3,7 +3,7 @@
 # <https://wiki.archlinux.org/index.php/ConsoleKit#Running_several_applications_from_.7E.2F.xinitrc>.
 
 xset b off         #turn off bell
-xset r rate 300 30 #keyboard auto repeat parameters
+xset r rate 310 80 #keyboard auto repeat parameters
 xset dpms 420      #suspend monitor after 7 minutes <https://wiki.archlinux.org/index.php/i3#Screensaver_and_power_management>
 
 if [[ `hostname -s` == 'h3' ]]; then
