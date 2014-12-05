@@ -69,7 +69,7 @@ function my_ps1_timer_show {
                 /home/danil/local/share/sounds/complete.oga \
                 > /dev/null 2> /dev/null < /dev/null &
         fi
-        if notify-send -v play >/dev/null 2>&1 ; then
+        if command -v dunstify >/dev/null 2>&1 ; then
             notify_title="time:$timer"
             if [[ ${my_exit_code} -eq 0 ]]; then
                 #low, normal, critical
@@ -78,7 +78,7 @@ function my_ps1_timer_show {
                 my_notify_urgency="critical"
                 notify_title="exit:$my_exit_code $notify_title"
             fi
-            notify-send --urgency=$my_notify_urgency \
+            dunstify --urgency=$my_notify_urgency \
                 "$notify_title" \
                 "$my_previous_command"
         fi

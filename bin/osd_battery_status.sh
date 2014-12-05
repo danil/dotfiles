@@ -17,6 +17,6 @@
 # remaining capacity:      100 mAh
 # present voltage:         8262 mV
 
-notify-send "$(echo $(cat /proc/acpi/battery/BAT0/state \
-                       |sed -n -e '/^charging/ s/^.*:[ ]*\(\)/\1/p' \
-                               -e '/^remaining/ s/^.*:[ ]*\(\)/\1/p'))"
+dunstify "$(echo $(cat /proc/acpi/battery/BAT0/state \
+                    |sed -n -e '/^charging/ s/^.*:[ ]*\(\)/\1/p' \
+                            -e '/^remaining/ s/^.*:[ ]*\(\)/\1/p'))"
