@@ -1,0 +1,8 @@
+[Desktop Entry]
+Categories=Network;FileTransfer;
+Comment=Seafile desktop sync client
+Exec=seafile-applet
+Icon=seafile
+Name=Seafile
+TryExec=seafile-applet
+Type=Application
