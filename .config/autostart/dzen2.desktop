@@ -1,6 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Exec=i3status | dzen2 -x -155 -tw 150 -ta r -fn 'Monospace:pixelsize=20:antialias=true:hinting=true:autohint=true:style=regular'
-Name=dzen2
-Terminal=false
-Type=Application

@@ -16,6 +16,7 @@ if [[ `hostname -s` == 'h3' ]]; then
 fi
 
 # urxvtd --fork --quiet
+i3status | dzen2 -x -155 -tw 150 -ta r -fn 'Monospace:pixelsize=20:antialias=true:hinting=true:autohint=true:style=regular' &
 
 feh --bg-center ~/local/share/backgrounds/gentoo-znurt-larry-abducted-1440x900.png
 
