@@ -1,6 +1,6 @@
 [Desktop Entry]
 Encoding=UTF-8
-Exec=trayer-srg --widthtype request --edge top --align right
+Exec=trayer-srg --widthtype request --edge top --align right --distancefrom right --distance 155
 Name=trayer-srg
 Terminal=false
 Type=Application
