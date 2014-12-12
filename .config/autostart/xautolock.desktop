@@ -1,0 +1,7 @@
+[Desktop Entry]
+Comment=lock screen after 10 minutes
+Encoding=UTF-8
+Exec=xautolock -time 10 -locker ~/bin/my-lock.sh
+Name=xautolock
+Terminal=false
+Type=Application

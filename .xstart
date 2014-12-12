@@ -15,7 +15,14 @@ if [[ `hostname -s` == 'h3' ]]; then
     fi
 fi
 
-xautolock -time 10 -locker ~/bin/my-lock.sh & #lock screen after 10 minutes
-feh --bg-center ~/local/share/backgrounds/gentoo-znurt-larry-abducted-1440x900.png &
-unclutter -idle 1 & #hide mouse cursor after while
 # urxvtd --fork --quiet
+i3status | dzen2 -x -115 -tw 110 -ta r -fn 'Monospace:pixelsize=20:antialias=true:hinting=true:autohint=true:style=regular' &
+unclutter -idle 1 & #hide mouse cursor after while
+
+feh --bg-center ~/local/share/backgrounds/gentoo-znurt-larry-abducted-1440x900.png &
+
+# # Desktop Application Autostart Specification <http://standards.freedesktop.org/autostart-spec/autostart-spec-latest.html>,
+# # <http://awesome.naquadah.org/wiki/Autostart#Freedesktop_autostart_way>,
+# # <https://wiki.archlinux.org/index.php/Awesome#Autorun_programs>,
+# # <https://github.com/jceb/dex>.
+# dex --autostart
