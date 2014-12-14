@@ -6,13 +6,22 @@ xset b off         #turn off bell
 xset r rate 310 80 #keyboard auto repeat parameters
 xset dpms 420      #suspend monitor after 7 minutes <https://wiki.archlinux.org/index.php/i3#Screensaver_and_power_management>
 
+
+if hash argyll-dispwin 2>/dev/null; then
+    # <https://wiki.archlinux.org/index.php/ICC_Profiles#Argyll_CMS>.
+    display_calibrator=argyll-dispwin
+elif hash dispwin 2>/dev/null; then
+    # <https://wiki.archlinux.org/index.php/ICC_Profiles#dispwin>.
+    display_calibrator=dispwin
+elif hash xcalib 2>/dev/null; then
+    # <https://wiki.archlinux.org/index.php/ICC_Profiles#xcalib>.
+    display_calibrator=xcalib
+fi
+
 if [[ `hostname -s` == 'h3' ]]; then
-    if hash argyll-dispwin 2>/dev/null; then
-        # <https://wiki.archlinux.org/index.php/ICC_Profiles#Argyll_CMS>.
-        argyll-dispwin ~/t400s_082409.icm &
-    elif hash dispwin 2>/dev/null; then
-        dispwin ~/t400s_082409.icm &
-    fi
+    $display_calibrator ~/color_profile_thinkpad_t400s.icm &
+elif [[ `hostname -s` == 'h10' ]]; then
+    $display_calibrator ~/color_profile_thinkpad_t430.icc &
 fi
 
 # urxvtd --fork --quiet
