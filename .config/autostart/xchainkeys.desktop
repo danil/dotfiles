@@ -1,6 +1,6 @@
 [Desktop Entry]
 Encoding=UTF-8
-Exec=xchainkeys -f /home/danil/.config/xchainkeys/h9-gentoo-xfce.conf
+Exec=xchainkeys -f /home/danil/.config/xchainkeys/xfce.conf
 Name=xchainkeys
 OnlyShowIn=XFCE;
 Terminal=false
