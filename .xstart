@@ -25,7 +25,7 @@ elif [[ `hostname -s` == 'h10' ]]; then
 fi
 
 # urxvtd --fork --quiet
-i3status | dzen2 -x -115 -tw 110 -ta r -fn 'Monospace:pixelsize=20:antialias=true:hinting=true:autohint=true:style=regular' &
+killall i3status ; killall dzen2 ; i3status | dzen2 -x -192 -y 1 -tw 190 -ta r -fn 'Monospace:pixelsize=18:antialias=true:hinting=true:autohint=true:style=regular' &
 
 feh --bg-center ~/local/share/backgrounds/gentoo-znurt-larry-abducted-1440x900.png
 
