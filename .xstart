@@ -25,7 +25,7 @@ elif [[ `hostname -s` == 'h10' ]]; then
 fi
 
 # urxvtd --fork --quiet
-killall i3status ; killall dzen2 ; i3status | ~/bin/my-dzen2.sh &
+killall i3status ; killall dzen2 ; i3status | ~/src/py/i3-dzen2-bridge/i3-dzen-bridge.py | ~/bin/my-dzen2.sh &
 
 feh --bg-center ~/local/share/backgrounds/gentoo-znurt-larry-abducted-1440x900.png
 
