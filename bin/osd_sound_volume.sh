@@ -20,4 +20,4 @@ bar=$(for i in `seq 1 ${bar_size}`; do echo -n ${bar_symbol}; done)
 # let xxx=${tmp%.*}
 
 # <https://wiki.archlinux.org/index.php/Desktop_notifications#Usage_in_programming>.
-dunstify --replace=1 "Sound volume ${percentage}%\n${bar}"
+dunstify --replace=1 "♪ Sound volume ${percentage}%\n${bar}"
