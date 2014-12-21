@@ -1,36 +1,8 @@
 #! /bin/bash
+
 # Running several applications from ~/.xinitrc
 # <https://wiki.archlinux.org/index.php/ConsoleKit#Running_several_applications_from_.7E.2F.xinitrc>.
 
-xset b off         #turn off bell
-xset r rate 310 80 #keyboard auto repeat parameters
-xset dpms 420      #suspend monitor after 7 minutes <https://wiki.archlinux.org/index.php/i3#Screensaver_and_power_management>
-
-
-if hash argyll-dispwin 2>/dev/null; then
-    # <https://wiki.archlinux.org/index.php/ICC_Profiles#Argyll_CMS>.
-    display_calibrator=argyll-dispwin
-elif hash dispwin 2>/dev/null; then
-    # <https://wiki.archlinux.org/index.php/ICC_Profiles#dispwin>.
-    display_calibrator=dispwin
-elif hash xcalib 2>/dev/null; then
-    # <https://wiki.archlinux.org/index.php/ICC_Profiles#xcalib>.
-    display_calibrator=xcalib
-fi
-
-if [[ `hostname -s` == 'h3' ]]; then
-    $display_calibrator ~/color_profile_thinkpad_t400s.icm &
-elif [[ `hostname -s` == 'h10' ]]; then
-    $display_calibrator ~/color_profile_thinkpad_t430.icc &
-fi
-
 # urxvtd --fork --quiet
-killall i3status ; killall dzen2 ; i3status | ~/src/py/i3-dzen2-bridge/i3-dzen-bridge.py | ~/bin/my-dzen2.sh &
-
 feh --bg-center ~/local/share/backgrounds/gentoo-znurt-larry-abducted-1440x900.png
-
-# # Desktop Application Autostart Specification <http://standards.freedesktop.org/autostart-spec/autostart-spec-latest.html>,
-# # <http://awesome.naquadah.org/wiki/Autostart#Freedesktop_autostart_way>,
-# # <https://wiki.archlinux.org/index.php/Awesome#Autorun_programs>,
-# # <https://github.com/jceb/dex>.
-# dex --autostart
+killall i3status ; killall dzen2 ; i3status | ~/src/py/i3-dzen2-bridge/i3-dzen-bridge.py | ~/bin/my-dzen2.sh &
