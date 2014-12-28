@@ -37,8 +37,8 @@ alias less=$PAGER
 # alias e='~/.evm/installations/emacs-24.3/bin/emacs -nw'
 alias e='emacs -nw'
 # alias ec='~/.evm/installations/emacs-24.3/bin/emacsclient -t'
-alias ec='/usr/bin/emacsclient -t'
-# alias ecx='/usr/bin/emacsclient --alternate-editor="" -c "$@"'
+alias ec='emacsclient -t'
+# alias ecx='emacsclient --alternate-editor="" -c "$@"'
 alias g='git'
 # Silver searchers colors configurable <https://github.com/ggreer/the_silver_searcher/issues/90>.
 alias my-ag='ag --smart-case --color-line-number "2;31"'
