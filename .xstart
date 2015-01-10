@@ -1,21 +1,8 @@
 #! /bin/bash
+
 # Running several applications from ~/.xinitrc
 # <https://wiki.archlinux.org/index.php/ConsoleKit#Running_several_applications_from_.7E.2F.xinitrc>.
 
-xset b off         #turn off bell
-xset r rate 310 80 #keyboard auto repeat parameters
-xset dpms 420      #suspend monitor after 7 minutes <https://wiki.archlinux.org/index.php/i3#Screensaver_and_power_management>
-
-if [[ `hostname -s` == 'h3' ]]; then
-    if hash argyll-dispwin 2>/dev/null; then
-        # <https://wiki.archlinux.org/index.php/ICC_Profiles#Argyll_CMS>.
-        argyll-dispwin ~/t400s_082409.icm &
-    elif hash dispwin 2>/dev/null; then
-        dispwin ~/t400s_082409.icm &
-    fi
-fi
-
-xautolock -time 10 -locker ~/bin/my-lock.sh & #lock screen after 10 minutes
-feh --bg-center ~/local/share/backgrounds/gentoo-znurt-larry-abducted-1440x900.png &
-unclutter -idle 1 & #hide mouse cursor after while
 # urxvtd --fork --quiet
+feh --bg-center ~/local/share/backgrounds/gentoo-znurt-larry-abducted-1440x900.png
+killall i3status ; killall dzen2 ; i3status | ~/src/py/i3-dzen2-bridge/i3-dzen-bridge.py | ~/bin/my-dzen2.sh &

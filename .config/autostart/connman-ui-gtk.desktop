@@ -1,0 +1,10 @@
+[Desktop Entry]
+Categories=Network
+Comment=A full-featured GTK based trayicon UI for ConnMan
+Encoding=UTF-8
+Exec=connman-ui-gtk
+Icon=stock_internet
+Name=ConnMan UI
+OnlyShowIn=XFCE;
+Terminal=false
+Type=Application

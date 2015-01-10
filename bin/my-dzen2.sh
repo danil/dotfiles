@@ -1,5 +1,4 @@
 #! /bin/sh
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 # <https://wiki.archlinux.org/index.php/I3#Shutdown.2C_reboot.2C_lock_screen>.
-# xset dpms force off && slock
-i3lock --dpms -c 000000
+dzen2 -x -362 -y 1 -tw 360 -ta r -fn 'Monospace:pixelsize=18:antialias=true:hinting=true:autohint=true:style=regular'

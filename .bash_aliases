@@ -37,8 +37,8 @@ alias less=$PAGER
 # alias e='~/.evm/installations/emacs-24.3/bin/emacs -nw'
 alias e='emacs -nw'
 # alias ec='~/.evm/installations/emacs-24.3/bin/emacsclient -t'
-alias ec='/usr/bin/emacsclient -t'
-# alias ecx='/usr/bin/emacsclient --alternate-editor="" -c "$@"'
+alias ec='emacsclient -t'
+# alias ecx='emacsclient --alternate-editor="" -c "$@"'
 alias g='git'
 # Silver searchers colors configurable <https://github.com/ggreer/the_silver_searcher/issues/90>.
 alias my-ag='ag --smart-case --color-line-number "2;31"'
@@ -66,6 +66,7 @@ export SBCL_HOME=/usr/lib64/sbcl
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  #this loads nvm
 [[ -r "$NVM_DIR/bash_completion" ]] && . "$NVM_DIR/bash_completion"
+PATH="$HOME/node_modules/.bin:$PATH"
 
 # # Lua.
 # PATH=~/.luarocks/bin:"${PATH}"
@@ -73,7 +74,7 @@ export NVM_DIR="$HOME/.nvm"
 # export LUA_CPATH="/home/danil/.luarocks/lib/lua/5.1//?.so;./?.so;$LUA_CPATH"
 
 # # Emacs Cask <http://cask.github.io>.
-# PATH=$PATH:$HOME/.cask/bin
+# export PATH="$HOME/.cask/bin:$PATH"
 
 # # EVM (Emacs Version Manager) <https://github.com/rejeep/evm>.
 # PATH=$PATH:$HOME/.evm/bin
