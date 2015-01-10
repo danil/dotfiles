@@ -74,7 +74,7 @@ PATH="$HOME/node_modules/.bin:$PATH"
 # export LUA_CPATH="/home/danil/.luarocks/lib/lua/5.1//?.so;./?.so;$LUA_CPATH"
 
 # # Emacs Cask <http://cask.github.io>.
-# PATH=$PATH:$HOME/.cask/bin
+# export PATH="$HOME/.cask/bin:$PATH"
 
 # # EVM (Emacs Version Manager) <https://github.com/rejeep/evm>.
 # PATH=$PATH:$HOME/.evm/bin

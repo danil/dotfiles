@@ -39,6 +39,11 @@
 
 # Examples of commands:
 
+# # Alt+tab via Win+tab.
+# # "xdotool key super+Tab"
+# "xdotool keydown super && sleep .1 && xdotool key Tab key super"
+#   Mod1 + Tab
+
 #"xbindkeys_show"
 #  control+shift + q
 
@@ -65,13 +70,13 @@
 #"rxvt"
 #  Control + b:2 + Release
 
-# Terminal emulator.
-# "urxvtc"
-# # Fish shell <https://wiki.archlinux.org/index.php/Fish#Troubleshooting>.
-# "urxvt -e fish"
-# "urxvt -rv"
-"urxvt"
-  Control + Shift + Mod1 + c
+# # Terminal emulator.
+# # "urxvtc"
+# # # Fish shell <https://wiki.archlinux.org/index.php/Fish#Troubleshooting>.
+# # "urxvt -e fish"
+# # "urxvt -rv"
+# "urxvt"
+#   Control + Shift + Mod1 + c
 
 # # Editor.
 # # Fish shell <https://wiki.archlinux.org/index.php/Fish#Troubleshooting>.
@@ -83,20 +88,20 @@
 # "/home/danil/bin/showdesktop.sh"
 #   Control + Mod1 + d
 
-# Compiz viewports switch
-# <http://superuser.com/questions/264281/wmctrl-says-i-have-one-workspace-when-i-actually-have-four#answer-264502>.
-# "wmctrl -o 0,0 && dunstify --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=900 '1' 'Desktop'"
-"echo 1 > /tmp/danil_desktop_number ; wmctrl -o 0,0"
-  Control + Mod1 + 1
-# "wmctrl -o 1440,0 && dunstify --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=900 '2' 'Desktop'"
-"echo 2 > /tmp/danil_desktop_number ; wmctrl -o 1440,0"
-  Control + Mod1 + 2
-# "wmctrl -o 0,900 && dunstify --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=900 '3' 'Desktop'"
-"echo 3 > /tmp/danil_desktop_number ; wmctrl -o 0,900"
-  Control + Mod1 + 3
-# "wmctrl -o 1440,900 && dunstify --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=900 '4' 'Desktop'"
-"echo 4 > /tmp/danil_desktop_number ; wmctrl -o 1440,900"
-  Control + Mod1 + 4
+# # Compiz viewports switch
+# # <http://superuser.com/questions/264281/wmctrl-says-i-have-one-workspace-when-i-actually-have-four#answer-264502>.
+# # "wmctrl -o 0,0 && dunstify --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=900 '1' 'Desktop'"
+# "echo 1 > /tmp/danil_desktop_number ; wmctrl -o 0,0"
+#   Control + Mod1 + 1
+# # "wmctrl -o 1440,0 && dunstify --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=900 '2' 'Desktop'"
+# "echo 2 > /tmp/danil_desktop_number ; wmctrl -o 1440,0"
+#   Control + Mod1 + 2
+# # "wmctrl -o 0,900 && dunstify --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=900 '3' 'Desktop'"
+# "echo 3 > /tmp/danil_desktop_number ; wmctrl -o 0,900"
+#   Control + Mod1 + 3
+# # "wmctrl -o 1440,900 && dunstify --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=900 '4' 'Desktop'"
+# "echo 4 > /tmp/danil_desktop_number ; wmctrl -o 1440,900"
+#   Control + Mod1 + 4
 
 # # TODO:
 # # <http://askubuntu.com/questions/20530/how-can-i-find-the-location-on-the-desktop-of-a-window-on-the-command-line>,
@@ -153,8 +158,8 @@
 # "fbrun"
 #   Control + Shift + Mod1 + r
 
-"dmenu_run -b"
-  Control + Shift + Mod1 + r
+# "dmenu_run -b"
+#   Control + Shift + Mod1 + r
 
 # # Web browser.
 # "chromium"
@@ -168,11 +173,11 @@
 # "stardict"
 #   Control + Shift + Mod1 + t
 
-# Screenshot.
-# "import ~/tmp/screenshot.png"
-# "shutter -s"
-"ksnapshot"
-  Control + Shift + Mod1 + p
+# # Screenshot.
+# # "import ~/tmp/screenshot.png"
+# # "shutter -s"
+# "ksnapshot"
+#   Control + Shift + Mod1 + p
 
 # # ALSA.
 # "amixer sset PCM 5%+ unmute"
