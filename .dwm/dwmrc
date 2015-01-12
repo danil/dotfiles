@@ -1,0 +1,6 @@
+#!/bin/sh
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
+# Running several applications from ~/.xinitrc
+# <https://wiki.archlinux.org/index.php/ConsoleKit#Running_several_applications_from_.7E.2F.xinitrc>.
+[ -x ~/.xstart_dwm ] && ~/.xstart_dwm
