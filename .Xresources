@@ -18,10 +18,10 @@
 *saveLines:       10000
 
 ! <http://askubuntu.com/questions/22419/how-do-i-make-urxvt-render-xft-fonts#96779>.
-*font:           xft:Monospace:pixelsize=18:antialias=true:hinting=true:autohint=true:style=regular
-*boldFont:       xft:Monospace:pixelsize=18:antialias=true:hinting=true:autohint=true:style=bold
-*italicFont:     xft:Monospace:pixelsize=18:antialias=true:hinting=true:autohint=true:style=italic
-*boldItalicFont: xft:Monospace:pixelsize=18:antialias=true:hinting=true:autohint=true:style=bold italic
+*font:           xft:Monospace:pixelsize=22:antialias=true:hinting=true:autohint=true:style=regular
+*boldFont:       xft:Monospace:pixelsize=22:antialias=true:hinting=true:autohint=true:style=bold
+*italicFont:     xft:Monospace:pixelsize=22:antialias=true:hinting=true:autohint=true:style=italic
+*boldItalicFont: xft:Monospace:pixelsize=22:antialias=true:hinting=true:autohint=true:style=bold italic
 
 ! Xft.
 ! `xrdb -query | grep Xft`
@@ -53,67 +53,10 @@ Xcursor.theme: Vanilla-DMZ
 *background: #000000
 *foreground: #eaeaea
 
-! FIX: dark-blue color on black background hard to read
-! <http://hints.macworld.com/article.php?story=20040708210951539>.
-*color4: royalblue
-*color12: lightblue
-
-! ! Black (dark) theme from Ubuntu Gnome terminal.
-! *background: #000000
-! *foreground: #eeeeeeeeecec
-! ! Black.
-! *color0:  #000000
-! *color8:  #251f1f
-! ! Red.
-! *color1:  #cccc00000000
-! *color9:  #efef29292929
-! ! Green.
-! *color2:  #4e4e9a9a0606
-! *color10: #8a8ae2e23434
-! ! Yellow.
-! *color3:  #c4c4a0a00000
-! *color11: #fcfce9e94f4f
-! ! Blue.
-! *color4:  #34346565a4a4
-! *color12: #72729f9fcfcf
-! ! Magenta.
-! *color5:  #757550507b7b
-! *color13: #adad7f7fa8a8
-! ! Cyan.
-! *color6:  #060698209a9a
-! *color14: #3434e2e2e2e2
-! ! White.
-! *color7:  #d3d3d7d7cfcf
-! *color15: #eeeeeeeeecec
-
-! ! Black (dark) theme <http://wiki.gentoo.org/wiki/Rxvt-unicode#Color_theme>.
-! ! *background: #0f0f0f
-! *background: #0c0c0c
-! *foreground: #c8c8c8
-! ! Black.
-! *color0:  #251f1f
-! *color8:  #5e5e5e
-! ! Red.
-! *color1:  #eb4509
-! *color9:  #eb4509
-! ! Green.
-! *color2:  #94e76b
-! *color10: #95e76b
-! ! Yellow.
-! *color3:  #ffac18
-! *color11: #ffac18
-! ! Blue.
-! *color4:  #46aede
-! *color12: #46aede
-! ! Magenta.
-! *color5:  #e32c57
-! *color13: #e32c57
-! ! Cyan.
-! *color6:  #d6dbac
-! *color14: #d6dbac
-! ! White.
-! *color7:  #efefef
-! *color15: #efefef
+! ! FIX: dark-blue color on black background hard to read
+! ! <http://hints.macworld.com/article.php?story=20040708210951539>.
+! *color4: royalblue
+! *color12: lightblue
 
 ! Include multiple resource
 ! <http://www.nongnu.org/emacsdoc-fr/manuel/resources-x.html>,
