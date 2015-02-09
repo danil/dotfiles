@@ -2,5 +2,8 @@
 # set show-rev-graph = yes # Show revision graph?
 # color cursor white black #<http://ruderich.org/simon/config/tigrc>
 
+color "Merge: " default default
 color date cyan default
 color diff-index cyan default
+color diff-stat	cyan default
+color graph-commit blue default
