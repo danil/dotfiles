@@ -5,6 +5,8 @@
 
 [ -x ~/.xstart ] && ~/.xstart
 
+# xrandr --dpi 120 #<http://lists.suckless.org/dev/1410/23873.html>
+
 # Desktop Application Autostart Specification <http://standards.freedesktop.org/autostart-spec/autostart-spec-latest.html>,
 # <http://awesome.naquadah.org/wiki/Autostart#Freedesktop_autostart_way>,
 # <https://wiki.archlinux.org/index.php/Awesome#Autorun_programs>,
