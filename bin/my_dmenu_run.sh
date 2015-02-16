@@ -1,7 +1,7 @@
 #! /bin/bash
 # <http://tools.suckless.org/dmenu/scripts>.
 
-font=Monospace-14
+font="Monospace:pixelsize=23:antialias=true:hinting=true:autohint=true:style=regular"
 prompt="$USER@`hostname`"
 normal_fg=white
 normal_bg=black

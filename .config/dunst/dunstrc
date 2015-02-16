@@ -28,7 +28,7 @@
     sort = yes
 
     # Show how many messages are currently hidden (because of geometry)
-    indicate_hidden = yes
+    indicate_hidden = no
 
     # alignment of message text.
     # Possible values are "left", "center" and "right"
@@ -62,7 +62,7 @@
     # right side of the screen.  Y is measured from the top and down respectevly.
     # The width can be negative. In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "300x5-0+25"
+    geometry = "600x5-660+0"
 
     # The transparency of the window. range: [0; 100]
     # This option will only work if a compositing windowmanager is present (e.g. xcompmgr, compiz, etc..)
