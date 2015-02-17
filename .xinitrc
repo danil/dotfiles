@@ -15,6 +15,7 @@ session=${1:-dwm}
 case $session in
     dwm)
         [ -f ~/.dwm/dwmrc ] && source ~/.dwm/dwmrc
+        dwm_fifo=/tmp/dwm.fifo && rm -f $dwm_fifo && mkfifo $dwm_fifo
         exec dwm
         ;;
     xfce|xfce4)
