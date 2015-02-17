@@ -7,5 +7,6 @@ external_display="VGA1"
 
 if (xrandr | grep "$external_display connected" >/dev/null 2>&1); then
     xrandr --output $internal_display --off \
-           --output $external_display --auto
+           --output $external_display --auto \
+    && xset r rate 310 80
 fi
