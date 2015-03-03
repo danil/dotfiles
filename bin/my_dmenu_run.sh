@@ -15,6 +15,8 @@ function get_commands {
     fi
 }
 
+killall --quiet dunst &
+
 touch $history_path &&
 
 sed -i -e '$a\' $history_path &&
