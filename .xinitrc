@@ -10,16 +10,17 @@
 
 # <https://wiki.archlinux.org/index.php/xinitrc#Making_a_DE.2FWM_choice>.
 # Here Xfce is kept as default.
-session=${1:-xfce}
+session=${1:-dwm}
 
 case $session in
+    dwm)
+        [ -f ~/.dwm/dwmrc ] && source ~/.dwm/dwmrc
+        dwm_fifo=/tmp/dwm.fifo && rm -f $dwm_fifo && mkfifo $dwm_fifo
+        exec dwm
+        ;;
     xfce|xfce4)
         [ -x ~/.xstart ] && ~/.xstart
         exec startxfce4
-        ;;
-    dwm)
-        [ -f ~/.dwm/dwmrc ] && source ~/.dwm/dwmrc
-        exec dwm
         ;;
     stump|stumpwm)
         exec stumpwm
