@@ -1,12 +1,7 @@
 #! /bin/bash
 # <http://tools.suckless.org/dmenu/scripts>.
 
-font="Monospace:pixelsize=23:antialias=true:hinting=true:autohint=true:style=regular"
 prompt="$USER@`hostname`"
-normal_fg=white
-normal_bg=black
-selected_fg=black
-selected_bg=OrangeRed1
 history_path=$HOME/.dmenu_history
 
 function get_commands {
@@ -20,6 +15,8 @@ function get_commands {
     fi
 }
 
+killall --quiet dunst &
+
 touch $history_path &&
 
 sed -i -e '$a\' $history_path &&
@@ -30,7 +27,5 @@ sed -i -e '$a\' $history_path &&
     #     | awk ' !x[$0]++'                              # removing duplicate lines without sorting <http://stackoverflow.com/questions/11532157/unix-removing-duplicate-lines-without-sorting#11532197>
     (tac $history_path ; get_commands | sort -u) \
         | awk ' !x[$0]++' \
-        | dmenu -fn $font -p $prompt \
-        -nf $normal_fg -nb $normal_bg \
-        -sf $selected_fg -sb $selected_bg $@
+        | dmenu -p $prompt $@
 ) | tee --append $history_path | ${SHELL:-"/bin/sh"} &
