@@ -73,6 +73,10 @@ PATH="$HOME/node_modules/.bin:$PATH"
 # export LUA_PATH="/home/danil/.luarocks/share/lua/5.1//?.lua;./?.lua;$LUA_PATH"
 # export LUA_CPATH="/home/danil/.luarocks/lib/lua/5.1//?.so;./?.so;$LUA_CPATH"
 
+# Go <http://golang.org/doc/code.html#GOPATH>.
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin #for convenience, add the workspace's bin subdirectory to your PATH
+
 # # Emacs Cask <http://cask.github.io>.
 # export PATH="$HOME/.cask/bin:$PATH"
 
