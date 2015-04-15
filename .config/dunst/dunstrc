@@ -2,7 +2,7 @@
 # /usr/share/dunst/dunstrc
 
 [global]
-    font = Monospace 13
+    font = Monospace 14
 
     # allow a small subset of html markup:
     # <b>bold</b>
@@ -62,7 +62,7 @@
     # right side of the screen.  Y is measured from the top and down respectevly.
     # The width can be negative. In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "-1100x5-550+1"
+    geometry = "-1100x5-550+0"
 
     # The transparency of the window. range: [0; 100]
     # This option will only work if a compositing windowmanager is present (e.g. xcompmgr, compiz, etc..)
@@ -127,7 +127,7 @@
     browser = /usr/bin/firefox -new-tab
 
 [frame]
-    width = 3
+    width = 0
     color = "#ff4500"
 
 # [shortcuts]
@@ -152,18 +152,18 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the '#' and following  would be interpreted as a comment.
-    background = "#222222"
-    foreground = "#888888"
+    background = "#404040"
+    foreground = "#ffffff"
     timeout = 10
 
 [urgency_normal]
-    background = "#000000"
+    background = "#ff4500"
     foreground = "#ffffff"
     timeout = 10
 
 [urgency_critical]
     background = "#ffffff"
-    foreground = "#ff0000"
+    foreground = "#ff4500"
     timeout = 0
 
 
