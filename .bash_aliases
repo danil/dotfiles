@@ -35,17 +35,14 @@ alias ls='ls --color'
 alias ll='ls -l --all --human-readable'
 alias less=$PAGER
 # alias e='~/.evm/installations/emacs-24.3/bin/emacs -nw'
-alias e='emacs -nw'
+alias e='emacs --no-window-system'
 # alias ec='~/.evm/installations/emacs-24.3/bin/emacsclient -t'
-alias ec='emacsclient -t'
+alias ec='emacsclient --tty'
 # alias ecx='emacsclient --alternate-editor="" -c "$@"'
-alias g='git'
 # Silver searchers colors configurable <https://github.com/ggreer/the_silver_searcher/issues/90>.
 alias my-ag='ag --smart-case --color-line-number "2;31"'
 alias dm='my_dmenu_run.sh'
 alias em='emerge --verbose --oneshot --color=y'
-alias cd-w='cd ~/src/vendor/waveaccess'
-alias cd-wm='cd ~/src/vendor/waveaccess/medapp'
 
 # rbenv <https://github.com/sstephenson/rbenv#basic-github-checkout>.
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -72,6 +69,10 @@ PATH="$HOME/node_modules/.bin:$PATH"
 # PATH=~/.luarocks/bin:"${PATH}"
 # export LUA_PATH="/home/danil/.luarocks/share/lua/5.1//?.lua;./?.lua;$LUA_PATH"
 # export LUA_CPATH="/home/danil/.luarocks/lib/lua/5.1//?.so;./?.so;$LUA_CPATH"
+
+# Go <http://golang.org/doc/code.html#GOPATH>.
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin #for convenience, add the workspace's bin subdirectory to your PATH
 
 # # Emacs Cask <http://cask.github.io>.
 # export PATH="$HOME/.cask/bin:$PATH"
