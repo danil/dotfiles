@@ -3,7 +3,7 @@
 
 function osd_progress_bar {
     local percentage=${1}
-    local bar_max_size=28
+    local bar_max_size=55
     local bar_symbol='#'
     local bar_size=$(echo ${bar_max_size}*${percentage}/100 | bc)
 
