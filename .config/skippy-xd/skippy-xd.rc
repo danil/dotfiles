@@ -79,12 +79,12 @@ followsMouse = true
 offsetX = 20
 offsetY = 20
 align = left
-border = red
-background = white
+border = OrangeRed1
+background = OrangeRed1
 opacity = 128
-text = red
+text = white
 textShadow = black
-font = Sans-12:weight=normal
+font = Sans-22:weight=normal
 
 [bindings]
 miwMouse1 = focus
