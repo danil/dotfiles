@@ -41,8 +41,6 @@ alias ec='emacsclient --tty'
 # alias ecx='emacsclient --alternate-editor="" -c "$@"'
 # Silver searchers colors configurable <https://github.com/ggreer/the_silver_searcher/issues/90>.
 alias my-ag='ag --smart-case --color-line-number "2;31"'
-alias dm='my_dmenu_run.sh'
-alias em='emerge --verbose --oneshot --color=y'
 
 # rbenv <https://github.com/sstephenson/rbenv#basic-github-checkout>.
 export PATH="$HOME/.rbenv/bin:$PATH"
