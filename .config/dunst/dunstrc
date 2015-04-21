@@ -128,7 +128,7 @@
 
 [frame]
     width = 0
-    color = "#ff4500"
+    color = "#000000"
 
 # [shortcuts]
 #     # shortcuts are specified as [modifier+][modifier+]...key
