@@ -3,12 +3,11 @@
 
 function osd_progress_bar {
     local percentage=${1}
-    if [[ -f /tmp/osd-progress-bar-sizeg ]]; then
+    if [[ -f /tmp/osd-progress-bar-size ]]; then
         local bar_max_size=$(cat /tmp/osd-progress-bar-size)
     else
         local bar_max_size=24
     fi
-    local bar_max_size=$(cat /tmp/osd-progress-bar-size)
     local bar_max_size=${bar_max_size:-24}
     local bar_symbol='#'
     local bar_size=$(echo ${bar_max_size}*${percentage}/100 | bc)
