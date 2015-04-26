@@ -6,6 +6,6 @@ source osd_progress_bar.sh
 percentage=$(echo_screen_backlight.sh)
 
 # <https://wiki.archlinux.org/index.php/Desktop_notifications#Usage_in_programming>.
-dunstify --replace=1 \
+dunstify --replace=1 --urgency=low \
          "☀ Screen backlight ${percentage}%" \
          "$(osd_progress_bar ${percentage})"
