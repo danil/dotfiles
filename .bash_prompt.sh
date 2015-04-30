@@ -73,7 +73,7 @@ function my_ps1_timer_show {
             notify_title="time:$timer"
             if [[ ${my_exit_code} -eq 0 ]]; then
                 #low, normal, critical
-                my_notify_urgency="normal"
+                my_notify_urgency="low"
             else
                 my_notify_urgency="critical"
                 notify_title="exit:$my_exit_code $notify_title"
