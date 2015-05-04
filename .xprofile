@@ -28,6 +28,8 @@ xset b off #turn off bell
 xset dpms 420 #suspend monitor after 7 minutes <https://wiki.archlinux.org/index.php/i3#Screensaver_and_power_management>
 ~/bin/my-keyboard-auto-repeat-rate.sh
 
+hash light 2>/dev/null && light -I #restore the previously saved brightness <https://github.com/haikarainen/light>
+
 if hash argyll-dispwin 2>/dev/null; then
     # <https://wiki.archlinux.org/index.php/ICC_Profiles#Argyll_CMS>.
     display_calibrator=argyll-dispwin
