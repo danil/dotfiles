@@ -4,10 +4,11 @@
 guard :rspec do
   notification :tmux,
                change_color: false,
-               color_location: 'status-left-bg', #to customize which tmux element will change color
-               failed: 'black',
+               color_location: 'status-right-fg', #to customize which tmux element will change color
+               failed: 'red',
                pending: 'black',
-               success: 'black'
+               success: 'black',
+               display_message: true
   notification :emacs,
                change_color: false,
                failed: 'black',
