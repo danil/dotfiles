@@ -77,5 +77,8 @@ export PATH=$PATH:$GOPATH/bin #for convenience, add the workspace's bin subdirec
 # # EVM (Emacs Version Manager) <https://github.com/rejeep/evm>.
 # PATH=$PATH:$HOME/.evm/bin
 
+# pip (python package management system).
+export PATH=$PATH:$HOME/.local/bin
+
 # Prompt.
 [[ -f ~/.bash_prompt.sh ]] && source ~/.bash_prompt.sh
