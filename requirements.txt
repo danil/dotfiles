@@ -1,0 +1,20 @@
+# Htop replacement <https://github.com/nicolargo/glances>.
+glances
+
+# cURL replacement <http://httpie.org>.
+httpie
+
+# Youtube player <https://github.com/np1/mps-youtube>.
+mps-youtube
+
+# Real-time metrics for nginx server <https://github.com/lebinh/ngxtop>.
+ngxtop
+
+# Evaluate python expression like `py 2*2` <https://github.com/Russell91/pythonpy>.
+pythonpy
+
+# DB snapshot and restore <https://github.com/fastmonkeys/stellar>.
+stellar
+
+# Youtube downloader <https://github.com/rg3/youtube-dl>.
+youtube-dl
