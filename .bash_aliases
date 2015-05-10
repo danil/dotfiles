@@ -53,6 +53,8 @@ eval "$(rbenv init -)"
 
 [ -f "$HOME/.travis/travis.sh" ] && source "$HOME/.travis/travis.sh" #added by travis gem
 
+export PATH=$PATH:$HOME/deps/bin #bpkg bash package manager <https://github.com/bpkg/bpkg#installing-packages>
+
 # Steel Bank Common Lisp.
 export SBCL_HOME=/usr/lib64/sbcl
 
@@ -76,6 +78,9 @@ export PATH=$PATH:$GOPATH/bin #for convenience, add the workspace's bin subdirec
 
 # # EVM (Emacs Version Manager) <https://github.com/rejeep/evm>.
 # PATH=$PATH:$HOME/.evm/bin
+
+# pip (python package management system).
+export PATH=$PATH:$HOME/.local/bin
 
 # Prompt.
 [[ -f ~/.bash_prompt.sh ]] && source ~/.bash_prompt.sh
