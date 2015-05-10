@@ -53,7 +53,7 @@ eval "$(rbenv init -)"
 
 [ -f "$HOME/.travis/travis.sh" ] && source "$HOME/.travis/travis.sh" #added by travis gem
 
-export PATH=$PATH:$HOME/deps/bin #bpkg <https://github.com/bpkg/bpkg#installing-packages>
+export PATH=$PATH:$HOME/deps/bin #bpkg bash package manager <https://github.com/bpkg/bpkg#installing-packages>
 
 # Steel Bank Common Lisp.
 export SBCL_HOME=/usr/lib64/sbcl
