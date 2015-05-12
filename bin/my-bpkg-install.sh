@@ -3,7 +3,7 @@
 my_install='bpkg install'
 
 bpkg update
-rm ~/deps/bin/*
+rm --force ~/deps/bin/*
 
 $my_install bpkg/sha1dir #get the sha1 of a directory
 $my_install sstephenson/bats #bash automated testing system <https://github.com/sstephenson/bats>
