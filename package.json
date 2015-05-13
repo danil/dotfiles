@@ -1,0 +1,22 @@
+{
+  "name": "home",
+  "version": "0.0.0",
+  "description": "Danil Kutkevich home",
+  "homepage": "http://danil.kutkevich.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danil/dotfiles.git"
+  },
+  "bugs": {
+    "url": "https://github.com/danil/dotfiles/issues"
+  },
+  "license": "ISC",
+  "author": "Danil Kutkevich",
+  "dependencies": {},
+  "devDependencies": {
+    "surge": "latest"
+  },
+  "engines": {
+    "node": "latest"
+  }
+}
