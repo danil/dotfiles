@@ -73,6 +73,9 @@ PATH="$HOME/node_modules/.bin:$PATH"
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin #for convenience, add the workspace's bin subdirectory to your PATH
 
+# gvm (Go version manager) <https://github.com/moovweb/gvm>.
+[[ -s "/home/danil/.gvm/scripts/gvm" ]] && source "/home/danil/.gvm/scripts/gvm"
+
 # # Emacs Cask <http://cask.github.io>.
 # export PATH="$HOME/.cask/bin:$PATH"
 
