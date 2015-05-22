@@ -163,6 +163,7 @@ GEM
     thread_safe (0.3.5)
     tilt (2.0.1)
     tins (1.5.1)
+    translit (0.1.5)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     unparser (0.2.3)
@@ -196,3 +197,4 @@ DEPENDENCIES
   rubycritic
   sandi_meter
   tailor
+  translit
