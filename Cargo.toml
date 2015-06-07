@@ -1,0 +1,10 @@
+[project]
+name = "home"
+version = "0.0.0"
+authors = ["Danil Kutkevich <danil@kutkevich.org>"]
+
+[lib]
+name = "home"
+
+[dependencies]
+xsv = "*"
