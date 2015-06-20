@@ -5,15 +5,20 @@
   "homepage": "http://danil.kutkevich.org",
   "repository": {
     "type": "git",
-    "url": "https://github.com/danil/dotfiles.git"
+    "url": "git@git.kutkevich.org:sieves.git"
   },
   "bugs": {
-    "url": "https://github.com/danil/dotfiles/issues"
+    "url": "danil@kutkevich.org"
   },
   "license": "ISC",
   "author": "Danil Kutkevich",
   "dependencies": {},
   "devDependencies": {
+    "csvtojson": "latest",
+    "jshint": "latest",
+    "json": "latest",
+    "jsonlint": "latest",
+    "lodash": "latest",
     "surge": "latest"
   },
   "engines": {
