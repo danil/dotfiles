@@ -21,3 +21,6 @@ youtube-dl
 
 # Corrects previous console command <https://github.com/nvbn/thefuck>.
 thefuck
+
+# Used by Emacs Flycheck.
+pylint
