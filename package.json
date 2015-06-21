@@ -19,6 +19,7 @@
     "json": "latest",
     "jsonlint": "latest",
     "lodash": "latest",
+    "purify-css": "latest",
     "surge": "latest"
   },
   "engines": {
