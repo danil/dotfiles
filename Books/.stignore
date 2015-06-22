@@ -1,0 +1,3 @@
+// <http://docs.syncthing.net/users/ignoring.html>.
+#include .stignore_global
+/.FBReader
