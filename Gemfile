@@ -7,6 +7,7 @@ group :development do
   gem 'backup' # backup system utility
   gem 'brakeman' # static security vulnerability scanner for rails <http://brakemanscanner.org>, <https://github.com/presidentbeef/brakeman>
   gem 'flay' # find code structural similarities `flay path/to/source` <https://github.com/seattlerb/flay>
+  gem 'heroku'
   gem 'mailcatcher' # `mailcatcher --http-ip 0.0.0.0` <https://github.com/sj26/mailcatcher>
   gem 'mdl' # markdown lint tool <https://github.com/mivok/markdownlint>
   gem 'rails_best_practices' # code metric tool for rails `rails_best_practices path/to/source `
