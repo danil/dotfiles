@@ -10,6 +10,7 @@ group :development do
   gem 'heroku'
   gem 'mailcatcher' # `mailcatcher --http-ip 0.0.0.0` <https://github.com/sj26/mailcatcher>
   gem 'mdl' # markdown lint tool <https://github.com/mivok/markdownlint>
+  gem 'rails'
   gem 'rails_best_practices' # code metric tool for rails `rails_best_practices path/to/source `
   gem 'reek' # code smell detector for ruby `reek path/to/source` <https://github.com/troessner/reek>
   gem 'roodi' # find ruby code design issues `roodi path/to/source` <https://github.com/roodi/roodi>
