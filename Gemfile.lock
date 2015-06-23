@@ -104,6 +104,9 @@ GEM
       excon (~> 0.44)
       multi_json (~> 1.8)
     highline (1.6.21)
+    hpricot (0.8.6)
+    html2slim (0.2.0)
+      hpricot
     http-cookie (1.0.2)
       domain_name (~> 0.5)
     i18n (0.7.0)
@@ -285,6 +288,7 @@ DEPENDENCIES
   brakeman
   flay
   heroku
+  html2slim
   mailcatcher
   mdl
   rails
