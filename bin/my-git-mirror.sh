@@ -1,7 +1,8 @@
 #! /bin/bash
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-my_mirror_command="git push --quiet"
+my_mirror_push_command="git push --quiet" # push commits to mirror
+my_mirror_tags_command="git push --quiet --tags" # push tags to mirror
 my_mirror_vendors=(
     "gitlab"
     "gogs"
@@ -17,7 +18,8 @@ function my-mirror-for {
 
     for vendor in "${my_mirror_vendors[@]}"
     do
-        $my_mirror_command ${vendor} ${branches}
+        $my_mirror_push_command ${vendor} ${branches}
+        $my_mirror_tags_command ${vendor} ${branches}
     done
 }
 
