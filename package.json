@@ -15,6 +15,7 @@
   "dependencies": {},
   "devDependencies": {
     "csvtojson": "latest",
+    "jsfmt": "latest",
     "jshint": "latest",
     "json": "latest",
     "jsonlint": "latest",
