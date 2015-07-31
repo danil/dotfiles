@@ -15,6 +15,7 @@
   "dependencies": {},
   "devDependencies": {
     "bower": "latest",
+    "coffee": "latest",
     "csvtojson": "latest",
     "jshint": "latest",
     "json": "latest",
