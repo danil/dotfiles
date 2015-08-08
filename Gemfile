@@ -6,6 +6,7 @@ group :development do
   gem 'awesome_print' # nice highlighting/indentation in ruby console <https://github.com/michaeldv/awesome_print>
   gem 'backup' # backup system utility
   gem 'brakeman' # static security vulnerability scanner for rails <http://brakemanscanner.org>, <https://github.com/presidentbeef/brakeman>
+  gem 'csvlint' # validate csv a-la: `csvlint path/to/file.csv` # path/to/file.csv is VALID
   gem 'flay' # find code structural similarities `flay path/to/source` <https://github.com/seattlerb/flay>
   gem 'mailcatcher' # `mailcatcher --http-ip 0.0.0.0` <https://github.com/sj26/mailcatcher>
   gem 'mdl' # markdown lint tool <https://github.com/mivok/markdownlint>
