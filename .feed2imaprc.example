@@ -96,12 +96,6 @@ feeds:
   #   filter: "/usr/bin/iconv -f cp1251 -t utf8"
   #   target: [ *gmail, "feed_interzet_vacancy" ]
 
-  # Jimny Blog <http://jimnyblog.ru>
-  - name: jimnyblog_ru
-    url: http://feeds.feedburner.com/JimnyBlog
-    target: [ *gmail, "feeds" ]
-    ignore-hash: true
-
   # # JohnStudio.
   # # News <http://now.john.ru/news>.
   # - name: john_ru_now_news
