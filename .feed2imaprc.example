@@ -96,6 +96,12 @@ feeds:
   #   filter: "/usr/bin/iconv -f cp1251 -t utf8"
   #   target: [ *gmail, "feed_interzet_vacancy" ]
 
+  # Jimny Blog <http://jimnyblog.ru>
+  - name: jimnyblog_ru
+    url: http://feeds.feedburner.com/JimnyBlog
+    target: [ *gmail, "feeds" ]
+    ignore-hash: true
+
   # # JohnStudio.
   # # News <http://now.john.ru/news>.
   # - name: john_ru_now_news
@@ -105,6 +111,16 @@ feeds:
   # - name: john_ru_now_activity
   #   url: http://now.john.ru/activity.atom?key=8fd685597558e3c9cf8240a03bcc087fc2dde2e8
   #   target: [ *gmail, "feeds" ]
+
+  # <http://habrahabr.ru/hub/go/>.
+  - name: habrahabr_go
+    url: http://habrahabr.ru/rss/hub/go/
+    target: [ *gmail, "go_feeds" ]
+
+  # <http://habrahabr.ru/hub/rust/>.
+  - name: habrahabr_rust
+    url: http://habrahabr.ru/rss/hub/rust/
+    target: [ *gmail, "rust_feeds" ]
 
   # Probably temporary down.
   # - name: keplerproject_org_unix_installation
