@@ -66,22 +66,17 @@
 
 # Danil.
 default-email: danil@kutkevich.org
-target-refix: &gmail "imaps://danil%40kutkevich.org:password@imap.gmail.com/"
+target-refix: &gmail "imaps://danil%40kutkevich.org:0sx46q6U@imap.gmail.com/"
 feeds:
-  - name: bzr_day
-    url: http://bzr-day.blogspot.com/feeds/posts/default?alt=rss
-    target: [ *gmail, "feed_bzr_day" ]
+  # - name: bzr_day
+  #   url: http://bzr-day.blogspot.com/feeds/posts/default?alt=rss
+  #   target: [ *gmail, "feed_bzr_day" ]
 
   # # Belarus Ruby on Rails User Group <http://belarusrubyonrails.org>.
   # - name: belarusrubyonrails_org
   #   execurl: "wget -q -O http://belarusrubyonrails.org/index2.php?option=ds-syndicate&version=1&feed_id=1"
   #   filter: "/usr/bin/iconv -f cp1251 -t utf8"
   #   target: [ *gmail, "feeds" ]
-
-  - name: clubsyaru_bem
-    url: http://clubs.ya.ru/bem/rss/posts.xml
-    target: [ *gmail, "feeds" ]
-    ignore-hash: true
 
   # Emacs Planet Russian <http://planet.emacsen.org/ru>.
   # Probably temporary down.
@@ -117,55 +112,52 @@ feeds:
   #   url: http://now.john.ru/activity.atom?key=8fd685597558e3c9cf8240a03bcc087fc2dde2e8
   #   target: [ *gmail, "feeds" ]
 
-  - name: jquery_blog
-    url: http://feeds.feedburner.com/jquery/
-    target: [ *gmail, "feed_jquery_blog" ]
-    ignore-hash: true
-  - name: nodejsru
-    url: http://nodejs.ru/feed
-    target: [ *gmail, "feeds_js" ]
   # Probably temporary down.
   # - name: keplerproject_org_unix_installation
   #   url: http://keplerproject.org/en/UNIX_Installation.rss
   #   target: [ *gmail, "feed_keplerproject_org_unix_installation" ]
   #   always-new: true
-  # - name: keplerproject_org_xavante_examples
-  #   url: http://www.keplerproject.org/en/Xavante_Examples.rss
-  #   target: [ *gmail, "feeds" ]
-  #   always-new: true
+
   - name: luarocks_org_installation_for_unix
     url: http://luarocks.org/en/Installation_instructions_for_Unix.rss
     target: [ *gmail, "feeds_lua" ]
     always-new: true
+
   - name: kovodstvo
     url: http://www.artlebedev.ru/kovodstvo/sections/kovodstvo.rdf
     target: [ *gmail, "feeds" ]
 
-  # # Lisp Planet Russian <http://lisper.ru/planet>.
-  # - name: lisper_ru_planet
-  #   url: http://lisper.ru/planet/atom.xml
-  #   target: [ *gmail, "feeds_lisp" ]
+  # Lisp Planet Russian <http://lisper.ru/planet>.
+  - name: lisper_ru_planet
+    url: http://lisper.ru/planet/atom.xml
+    target: [ *gmail, "feeds_lisp" ]
 
   # LiveJournal.
   - name: lj_ru_lisp
     url: http://ru-lisp.livejournal.com/data/rss/
     target: [ *gmail, "feeds_lisp" ]
+
   - name: lj_ru_lua
     url: http://ru-lua.livejournal.com/data/rss/
     target: [ *gmail, "feeds_lua" ]
+
   - name: ilovelua_wordpress_com
     url: http://ilovelua.wordpress.com/feed/
     target: [ *gmail, "feeds_lua" ]
+
   - name: lj_ru_perl
     url: http://ru-perl.livejournal.com/data/rss/
     target: [ *gmail, "feeds_perl" ]
     ignore-hash: true
+
   - name: lj_ru_scheme
     url: http://ru-scheme.livejournal.com/data/rss/
     target: [ *gmail, "feeds_lisp" ]
+
   - name: lj_ru_emacs
     url: http://ru-emacs.livejournal.com/data/rss/
     target: [ *gmail, "community_emacs" ]
+
   - name: lj_ru_gentoo
     url: http://ru-gentoo.livejournal.com/data/rss/
     target: [ *gmail, "community_gentoo" ]
@@ -176,63 +168,53 @@ feeds:
   #   url: http://planet.openmoko.org/rss10.xml
   #   target: [ *gmail, "feeds_openmoko" ]
   #   ignore-hash: true
-  - name: linuxphone_ru
-    url: http://feeds2.feedburner.com/LinuxPhone
-    target: [ *gmail, "feeds_openmoko" ]
-  # <http://linuxphone.ru/forum/viewforum.php?f=1>
+
+  # <http://linuxphone.ru>.
   - name: linuxphone_ru_forum
-    url: http://www.linuxphone.ru/forum/rss.php?show=openmoko
+    url: http://feeds2.feedburner.com/LinuxPhone
     target: [ *gmail, "feeds_openmoko" ]
     ignore-hash: true
 
-  - name: rail0rz
-    url: http://feeds2.feedburner.com/railorz
-    target: [ *gmail, "feed_rail0rz" ]
+  # <http://railscasts.com>.
   - name: railscasts
     disable:
     url: http://feeds.feedburner.com/railscasts
     target: [ *gmail, "feed_railscasts" ]
-  - name: railsclub_ru
-    url: http://feeds2.feedburner.com/RailsClubRu
-    target: [ *gmail, "feed_railsclub_ru" ]
-    always-new: true
 
   # <http://rubyflow.ru>.
   - name: rubyflow_ru
     url: http://feeds.feedburner.com/rubyflowru
     target: [ *gmail, "feed_rubyflow_ru" ]
 
-  # Ruby NoName Podcast <http://ruby.rpod.ru>.
+  # Ruby NoName Podcast <http://rubynoname.ru>.
   - name: ruby_noname_podcast
-    url: http://ruby.rpod.ru/rss.xml
+    url: http://feeds.feedburner.com/rubynoname-standalone
     target: [ *gmail, "feeds_ruby" ]
 
+  # <http://rubyjobs.ru>.
   - name: rubyjobsru
     url: http://feeds2.feedburner.com/rubyjobsru
     target: [ *gmail, "feeds_ruby" ]
+
   # 502 Bad Gateway.
   # - name: rubyonrails_planet_ru
   #   url: http://planet.rubyonrails.ru/xml/rss
   #   target: [ *gmail, "feed_rubyonrails_planet_ru" ]
-  - name: softwaremaniacs_org
-    url: http://softwaremaniacs.org/blog/feed/
-    target: [ *gmail, "feed_softwaremaniacs_org" ]
-    ignore-hash: true
 
-  # Spbruby <http://spbruby.org> twitt <http://twitter.com/spbruby>.
-  - name: spbruby
-    url: http://twitter.com/statuses/user_timeline/62568431.rss
-    target: [ *gmail, "feeds_ruby" ]
+  # - name: softwaremaniacs_org
+  #   url: http://softwaremaniacs.org/blog/feed/
+  #   target: [ *gmail, "feed_softwaremaniacs_org" ]
+  #   ignore-hash: true
 
-  # Piter.rb <http://piterrb.heroku.com> twitt <http://twitter.com/piterrb>.
-  - name: piterrb
-    url: http://twitter.com/statuses/user_timeline/185978901.rss
-    target: [ *gmail, "feeds_ruby" ]
+  # # Spbruby <http://spbruby.org> twitt <http://twitter.com/spbruby>.
+  # - name: spbruby
+  #   url: http://twitter.com/statuses/user_timeline/62568431.rss
+  #   target: [ *gmail, "feeds_ruby" ]
 
-  # # Sergey Gershun twitt <http://twitter.com/sergeygershun>.
-  # - name: sergeygershun_twitt
-  #   url: http://twitter.com/statuses/user_timeline/17778993.rss
-  #   target: [ *gmail, "feeds" ]
+  # # Piter.rb <http://piterrb.heroku.com> twitt <http://twitter.com/piterrb>.
+  # - name: piterrb
+  #   url: http://twitter.com/statuses/user_timeline/185978901.rss
+  #   target: [ *gmail, "feeds_ruby" ]
 
 # Local Variables:
 # mode: conf
