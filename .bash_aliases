@@ -1,8 +1,8 @@
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
 # Set PATH so it includes user's private bin if it exists.
-PATH=~/bin:"${PATH}"
-PATH=~/local/bin:"${PATH}"
+PATH="${HOME}"/bin:"${PATH}"
+PATH="${HOME}"/local/bin:"${PATH}"
 
 # Tab completion
 # <http://wiki.gentoo.org/wiki/Bash#Tab_completion>.
@@ -51,7 +51,7 @@ export NVM_DIR="$HOME/.nvm"
 PATH="$HOME/node_modules/.bin:$PATH"
 
 # # Lua.
-# PATH=~/.luarocks/bin:"${PATH}"
+# PATH="${HOME}"/.luarocks/bin:"${PATH}"
 # export LUA_PATH="/home/danil/.luarocks/share/lua/5.1//?.lua;./?.lua;$LUA_PATH"
 # export LUA_CPATH="/home/danil/.luarocks/lib/lua/5.1//?.so;./?.so;$LUA_CPATH"
 
@@ -72,4 +72,4 @@ export PATH="$HOME/.cask/bin:$PATH"
 export PATH=$PATH:$HOME/.local/bin
 
 # Prompt.
-[[ -f ~/.bash_prompt.sh ]] && source ~/.bash_prompt.sh
+[[ -f "${HOME}"/.bash_prompt.sh ]] && source "${HOME}"/.bash_prompt.sh
