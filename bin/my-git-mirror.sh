@@ -26,6 +26,7 @@ function my-mirror-for {
 my-mirror-for "dotfiles.git" "h10-gentoo-danil h2-gentoo-danil h3-arch-danil h3-gentoo-danil h4-sailfish-nemo h5-ubuntu-danil h6-gentoo-danil h7-ubuntu-medapp h9-gentoo-danil hl7rus-ubuntu-danil homer-gentoo-danil jobtest_molinos_ru lisa-gentoo-danil"
 my-mirror-for "el/ferm-mode.git" "master"
 my-mirror-for "el/ido-describe-bindings.git" "master"
+my-mirror-for "el/ido-occur.git" "master"
 my-mirror-for "el/init.el.git" "h10-gentoo-danil h2-gentoo-danil h3-gentoo-danil h5-ubuntu-danil h6-gentoo-danil h9-gentoo-danil"
 my-mirror-for "etc.git" "h10-gentoo h2-gentoo h3-arch h3-gentoo h4-sailfish h5-ubuntu h6-gentoo h9-gentoo homer-gentoo lisa-gentoo"
 my-mirror-for "grubs.git" "h3-gentoo h6-gentoo h8-gentoo homer-gentoo"
