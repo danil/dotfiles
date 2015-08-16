@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.2.2'
 
 group :development do
-  gem 'activesupport' # replaces non-ASCII characters with an ASCII approximation <http://api.rubyonrails.org/classes/ActiveSupport/Inflector.html# method-i-transliterate>
+  gem 'activesupport' # replaces non-ascii characters with an ascii approximation <http://api.rubyonrails.org/classes/ActiveSupport/Inflector.html# method-i-transliterate>
   gem 'awesome_print' # nice highlighting/indentation in ruby console <https://github.com/michaeldv/awesome_print>
   gem 'backup' # backup system utility
   gem 'brakeman' # static security vulnerability scanner for rails <http://brakemanscanner.org>, <https://github.com/presidentbeef/brakeman>
@@ -17,6 +17,7 @@ group :development do
   gem 'ruby-lint' # used by emacs flycheck
   gem 'rubycritic' # generate ruby code quality report <https://github.com/whitesmith/rubycritic>
   gem 'sandi_meter' # analysis ruby code `sandi_meter path/to/source` <https://github.com/makaroni4/sandi_meter>
+  gem 'sqlint' # sql linter <https://github.com/purcell/sqlint>
   gem 't' # create twitter timeline backup <http://blog.jphpsf.com/2012/05/07/backing-up-your-twitter-account-with-t>
   gem 'tailor' # check style of ruby files (indentation and so on) `tailor path/to/source` <https://github.com/turboladen/tailor>
 end

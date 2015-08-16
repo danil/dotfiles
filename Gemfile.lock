@@ -112,6 +112,8 @@ GEM
     open_uri_redirections (0.2.1)
     parser (2.2.2.5)
       ast (>= 1.1, < 3.0)
+    pg_query (0.6.2)
+      json (~> 1.8)
     powerpack (0.1.1)
     procto (0.0.2)
     rack (1.6.1)
@@ -171,6 +173,8 @@ GEM
       eventmachine (~> 1.0.0)
       thin (~> 1.5.0)
     slop (3.6.0)
+    sqlint (0.1.1)
+      pg_query (~> 0.5)
     sqlite3 (1.3.10)
     t (2.9.0)
       geokit (>= 1.8.3, < 2)
@@ -243,5 +247,6 @@ DEPENDENCIES
   ruby-lint
   rubycritic
   sandi_meter
+  sqlint
   t
   tailor
