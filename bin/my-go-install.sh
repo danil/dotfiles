@@ -11,4 +11,5 @@ $my_install github.com/lukasmartinelli/pgfutter #import csv and json into postgr
 $my_install github.com/monochromegane/the_platinum_searcher #ag and ack replacement <https://github.com/monochromegane/the_platinum_searcher>
 $my_install github.com/noraesae/orange-cat/cmd/orange #markdown preview
 $my_install github.com/rakyll/boom #http load generator (a-la ab)
+$my_install github.com/rapidloop/rtop #remote top over ssh
 $my_install github.com/schachmat/wego #weather
