@@ -8,6 +8,7 @@ group :development do
   gem 'brakeman' # static security vulnerability scanner for rails <http://brakemanscanner.org>, <https://github.com/presidentbeef/brakeman>
   gem 'csvlint' # validate csv a-la: `csvlint path/to/file.csv` # path/to/file.csv is VALID
   gem 'flay' # find code structural similarities `flay path/to/source` <https://github.com/seattlerb/flay>
+  gem 'htty' # http statefull interactive client (a-la ftp client)
   gem 'mailcatcher' # `mailcatcher --http-ip 0.0.0.0` <https://github.com/sj26/mailcatcher>
   gem 'mdl' # markdown lint tool <https://github.com/mivok/markdownlint>
   gem 'rails_best_practices' # code metric tool for rails `rails_best_practices path/to/source `
