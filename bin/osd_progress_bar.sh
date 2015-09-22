@@ -6,7 +6,7 @@ function osd_progress_bar {
     if [[ -f /tmp/osd-progress-bar-size ]]; then
         local bar_max_size=$(cat /tmp/osd-progress-bar-size)
     else
-        local bar_max_size=24
+        local bar_max_size=28
     fi
     local bar_max_size=${bar_max_size:-24}
     local bar_symbol='#'
