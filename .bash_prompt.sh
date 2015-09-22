@@ -70,7 +70,7 @@ function my_ps1_timer_show {
                 > /dev/null 2> /dev/null < /dev/null &
         fi
         if command -v dunstify >/dev/null 2>&1 ; then
-            notify_title="time:$timer"
+            notify_title="◷ $timer"
             if [[ ${my_exit_code} -eq 0 ]]; then
                 #low, normal, critical
                 my_notify_urgency="low"
