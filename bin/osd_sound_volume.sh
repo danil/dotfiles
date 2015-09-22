@@ -7,5 +7,5 @@ percentage=$(echo_sound_volume.sh)
 
 # <https://wiki.archlinux.org/index.php/Desktop_notifications#Usage_in_programming>.
 dunstify --replace=1 --urgency=low \
-         "♪ Sound volume ${percentage}%" \
+         "♪ ${percentage}%" \
          "$(osd_progress_bar ${percentage})"
