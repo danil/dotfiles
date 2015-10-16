@@ -24,3 +24,6 @@ thefuck
 
 # Used by Emacs Flycheck.
 pylint
+
+# Default amazon aws ec2 client.
+awscli
