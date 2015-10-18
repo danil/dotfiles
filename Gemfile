@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.2'
+ruby '2.2.3'
 
 group :development do
   gem 'activesupport' # replaces non-ASCII characters with an ASCII approximation <http://api.rubyonrails.org/classes/ActiveSupport/Inflector.html# method-i-transliterate>
