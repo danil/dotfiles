@@ -49,10 +49,10 @@ PS4='[$EPOCHREALTIME] '; PS1=$'\001\r''${|
 } '"$PS1 "
 \alias ls=ls
 \unalias ls
-\alias l='ls -F'
-\alias la='l -a'
+\alias l='ls --directory --color'
+\alias la='l --all'
 \alias ll='l -l'
-\alias lo='l -alo'
+\alias lo='l -lo --all'
 \alias doch='sudo mksh -c "$(\builtin fc -ln -1)"'
 \command -v rot13 >/dev/null || \alias rot13='tr \
     abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ \
