@@ -65,8 +65,8 @@ export PATH="$PATH":"$GOPATH"/bin #for convenience, add the workspace's bin subd
 # rsvm (Rust version manager) <https://github.com/sdepold/rsvm>.
 [[ -s /home/danil/.rsvm/rsvm.sh ]] && . /home/danil/.rsvm/rsvm.sh #this loads rsvm
 
-# # Emacs Cask <http://cask.github.io>.
-# export PATH="$HOME/.cask/bin:$PATH"
+# Emacs Cask <http://cask.github.io>.
+export PATH="$HOME/.cask/bin:$PATH"
 
 # pip (python package management system).
 export PATH="$PATH":"$HOME"/.local/bin
