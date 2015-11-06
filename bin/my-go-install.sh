@@ -12,4 +12,6 @@ $my_install github.com/monochromegane/the_platinum_searcher #ag and ack replacem
 $my_install github.com/noraesae/orange-cat/cmd/orange #markdown preview
 $my_install github.com/rakyll/boom #http load generator (a-la ab)
 $my_install github.com/rapidloop/rtop #remote top over ssh
+$my_install github.com/rlmcpherson/s3gof3r/gof3r #s3 client
+$my_install github.com/russross/blackfriday-tool #markdown
 $my_install github.com/schachmat/wego #weather
