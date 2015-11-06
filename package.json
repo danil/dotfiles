@@ -21,7 +21,10 @@
     "json": "latest",
     "jsonlint": "latest",
     "lodash": "latest",
+<<<<<<< HEAD
     "purify-css": "latest",
+=======
+>>>>>>> 0e3de1e185224dc0411588950a781d25e079f422
     "surge": "latest"
   },
   "engines": {
