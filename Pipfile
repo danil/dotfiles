@@ -28,11 +28,5 @@ stellar
 # Corrects previous console command <https://github.com/nvbn/thefuck>.
 thefuck
 
-# Used by Emacs Flycheck.
-pylint
-
-# Default amazon aws ec2 client.
-awscli
-
 # Youtube downloader <https://github.com/rg3/youtube-dl>.
 youtube-dl
