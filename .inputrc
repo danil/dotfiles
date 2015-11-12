@@ -11,3 +11,7 @@ set show-all-if-ambiguous On
 # add this:
 # "\e[1~": beginning-of-line
 # "\e[4~": end-of-line
+
+# # This is actually equivalent to "\C-?": delete-char
+# # <http://superuser.com/questions/641095/bash-how-to-globally-fix-h-and-backspace-problems#641116>.
+# "\e[3~": delete-char
