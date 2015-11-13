@@ -2,6 +2,7 @@
 
 my_install='go get -v -u'
 
+$my_install github.com/BurntSushi/toml/cmd/tomlv #toml validator
 $my_install github.com/github/hub #github helper <https://github.com/github/hub>
 $my_install github.com/golang/lint/golint #used by emacs flycheck
 $my_install github.com/jgrahamc/httpdiff #diff http requests <https://github.com/jgrahamc/httpdiff>
