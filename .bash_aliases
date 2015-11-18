@@ -50,10 +50,15 @@ export NVM_DIR="$HOME/.nvm"
 [[ -r "$NVM_DIR/bash_completion" ]] && . "$NVM_DIR/bash_completion"
 PATH="$HOME/node_modules/.bin:$PATH"
 
+# # lenv (Lua version manager) <https://github.com/mah0x211/lenv>.
+# export PATH="$HOME"/.lenv/bin:"$HOME"/.lenv/current/bin:$PATH
+# export LUA_PATH="$HOME"'/.lenv/current/luarocks/share/?.lua;'"$HOME"'/.lenv/current/luarocks/share/?/init.lua;;'
+# export LUA_CPATH="$HOME"'/.lenv/current/luarocks/lib/?.so;;'
+
 # # Lua.
 # PATH="$HOME"/.luarocks/bin:"$PATH"
-# export LUA_PATH="/home/danil/.luarocks/share/lua/5.1//?.lua;./?.lua;$LUA_PATH"
-# export LUA_CPATH="/home/danil/.luarocks/lib/lua/5.1//?.so;./?.so;$LUA_CPATH"
+# export LUA_PATH="$HOME""/.luarocks/share/lua/5.1//?.lua;./?.lua;$LUA_PATH"
+# export LUA_CPATH="$HOME""/.luarocks/lib/lua/5.1//?.so;./?.so;$LUA_CPATH"
 
 # Go <http://golang.org/doc/code.html#GOPATH>.
 export GOPATH="$HOME"/go
