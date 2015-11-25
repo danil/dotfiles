@@ -19,3 +19,4 @@ $my_install github.com/rapidloop/rtop #remote top over ssh
 $my_install github.com/rlmcpherson/s3gof3r/gof3r #s3 client
 $my_install github.com/russross/blackfriday-tool #markdown
 $my_install github.com/schachmat/wego #weather
+$my_install golang.org/x/tools/cmd/godoc #documentation
