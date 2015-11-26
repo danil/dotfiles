@@ -1,8 +1,8 @@
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
 # Set PATH so it includes user's private bin if it exists.
-PATH=~/bin:"${PATH}"
-PATH=~/local/bin:"${PATH}"
+PATH="$HOME"/bin:"$PATH"
+PATH="$HOME"/local/bin:"$PATH"
 
 # Tab completion
 # <http://wiki.gentoo.org/wiki/Bash#Tab_completion>.
@@ -39,7 +39,7 @@ eval "$(rbenv init -)"
 
 [ -f "$HOME/.travis/travis.sh" ] && source "$HOME/.travis/travis.sh" #added by travis gem
 
-export PATH=$PATH:$HOME/deps/bin #bpkg bash package manager <https://github.com/bpkg/bpkg#installing-packages>
+export PATH="$PATH":"$HOME"/deps/bin #bpkg bash package manager <https://github.com/bpkg/bpkg#installing-packages>
 
 # Steel Bank Common Lisp.
 export SBCL_HOME=/usr/lib64/sbcl
@@ -50,14 +50,19 @@ export NVM_DIR="$HOME/.nvm"
 [[ -r "$NVM_DIR/bash_completion" ]] && . "$NVM_DIR/bash_completion"
 PATH="$HOME/node_modules/.bin:$PATH"
 
+# # lenv (Lua version manager) <https://github.com/mah0x211/lenv>.
+# export PATH="$HOME"/.lenv/bin:"$HOME"/.lenv/current/bin:$PATH
+# export LUA_PATH="$HOME"'/.lenv/current/luarocks/share/?.lua;'"$HOME"'/.lenv/current/luarocks/share/?/init.lua;;'
+# export LUA_CPATH="$HOME"'/.lenv/current/luarocks/lib/?.so;;'
+
 # # Lua.
-# PATH=~/.luarocks/bin:"${PATH}"
-# export LUA_PATH="/home/danil/.luarocks/share/lua/5.1//?.lua;./?.lua;$LUA_PATH"
-# export LUA_CPATH="/home/danil/.luarocks/lib/lua/5.1//?.so;./?.so;$LUA_CPATH"
+# PATH="$HOME"/.luarocks/bin:"$PATH"
+# export LUA_PATH="$HOME""/.luarocks/share/lua/5.1//?.lua;./?.lua;$LUA_PATH"
+# export LUA_CPATH="$HOME""/.luarocks/lib/lua/5.1//?.so;./?.so;$LUA_CPATH"
 
 # Go <http://golang.org/doc/code.html#GOPATH>.
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin #for convenience, add the workspace's bin subdirectory to your PATH
+export GOPATH="$HOME"/go
+export PATH="$PATH":"$GOPATH"/bin #for convenience, add the workspace's bin subdirectory to your PATH
 
 # gvm (Go version manager) <https://github.com/moovweb/gvm>.
 [[ -s "/home/danil/.gvm/scripts/gvm" ]] && source "/home/danil/.gvm/scripts/gvm"
@@ -65,11 +70,11 @@ export PATH=$PATH:$GOPATH/bin #for convenience, add the workspace's bin subdirec
 # rsvm (Rust version manager) <https://github.com/sdepold/rsvm>.
 [[ -s /home/danil/.rsvm/rsvm.sh ]] && . /home/danil/.rsvm/rsvm.sh #this loads rsvm
 
-# # Emacs Cask <http://cask.github.io>.
-# export PATH="$HOME/.cask/bin:$PATH"
+# Emacs Cask <http://cask.github.io>.
+export PATH="$HOME/.cask/bin:$PATH"
 
 # pip (python package management system).
-export PATH=$PATH:$HOME/.local/bin
+export PATH="$PATH":"$HOME"/.local/bin
 
 # Prompt.
-[[ -f ~/.bash_prompt.sh ]] && source ~/.bash_prompt.sh
+[[ -f "$HOME"/.bash_prompt.sh ]] && source "$HOME"/.bash_prompt.sh

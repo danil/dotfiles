@@ -2,7 +2,7 @@
 
 # Disable internal monitor and enable external monitor
 # <https://wiki.archlinux.org/index.php/xrandr#Example_1>.
-internal_display="LVDS1"
+internal_display="eDP1"
 external_display="HDMI1"
 
 if (xrandr | grep "$external_display connected" >/dev/null 2>&1); then

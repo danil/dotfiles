@@ -4,6 +4,17 @@ Dotfiles
 This is my dotfiles, including shell environment
 and other misc scripts.
 
+Used utils lists
+----------------
+
+* Bash script: bin/my-bpkg-install.sh
+* C: bin/my-clib-install.sh
+* Go: bin/my-go-install.sh
+* Node.js: package.json
+* Python: requirements.txt
+* Ruby: Gemfile
+* Rust: Cargo.toml
+
 Copying
 -------
 
