@@ -270,6 +270,9 @@ GEM
       launchy
       mixlib-cli
     sass (3.4.19)
+    scss-lint (0.38.0)
+      rainbow (~> 2.0)
+      sass (~> 3.4.1)
     sexp_processor (4.6.0)
     simple_oauth (0.3.1)
     sinatra (1.4.6)
@@ -374,6 +377,7 @@ DEPENDENCIES
   ruby-lint
   rubycritic
   sandi_meter
+  scss-lint
   sqlint
   t
   tailor
