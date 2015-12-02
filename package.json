@@ -23,6 +23,7 @@
     "jshint": "latest",
     "json": "latest",
     "jsonlint": "latest",
+    "less": "latest",
     "lodash": "latest",
     "purify-css": "latest",
     "surge": "latest"
