@@ -20,10 +20,10 @@
     "coffeelint": "latest",
     "csslint": "latest",
     "csvtojson": "latest",
-    "jscs": "latest",
     "eslint": "latest",
     "handlebars": "latest",
     "jade": "latest",
+    "jscs": "latest",
     "jsfmt": "latest",
     "jshint": "latest",
     "json": "latest",
@@ -31,6 +31,7 @@
     "less": "latest",
     "lodash": "latest",
     "purify-css": "latest",
+    "standard": "latest",
     "surge": "latest"
   },
   "engines": {
