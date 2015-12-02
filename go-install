@@ -21,4 +21,7 @@ $my_install github.com/rlmcpherson/s3gof3r/gof3r #s3 client
 $my_install github.com/rogpeppe/godef #used by emacs for jump to the definition of the expression at point
 $my_install github.com/russross/blackfriday-tool #markdown
 $my_install github.com/schachmat/wego #weather
+$my_install go get github.com/kisielk/errcheck #used by emacs flycheck
 $my_install golang.org/x/tools/cmd/godoc #documentation
+$my_install golang.org/x/tools/cmd/gorename
+$my_install golang.org/x/tools/cmd/vet #used by emacs flycheck
