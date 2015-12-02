@@ -16,7 +16,7 @@
   "devDependencies": {
     "bower": "latest",
     "cloc": "latest",
-    "coffee": "latest",
+    "coffee-script": "latest",
     "csvtojson": "latest",
     "jade": "latest",
     "jsfmt": "latest",
