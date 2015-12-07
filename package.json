@@ -16,14 +16,22 @@
   "devDependencies": {
     "bower": "latest",
     "cloc": "latest",
-    "coffee": "latest",
+    "coffee-script": "latest",
+    "coffeelint": "latest",
+    "csslint": "latest",
     "csvtojson": "latest",
+    "eslint": "latest",
+    "handlebars": "latest",
+    "jade": "latest",
+    "jscs": "latest",
     "jsfmt": "latest",
     "jshint": "latest",
     "json": "latest",
     "jsonlint": "latest",
+    "less": "latest",
     "lodash": "latest",
     "purify-css": "latest",
+    "standard": "latest",
     "surge": "latest"
   },
   "engines": {

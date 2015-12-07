@@ -4,6 +4,9 @@ awscli
 # Htop replacement <https://github.com/nicolargo/glances>.
 glances
 
+# Python checker used by Emacs Flycheck.
+flake8
+
 # cURL replacement <http://httpie.org>.
 httpie
 
