@@ -76,5 +76,8 @@ export PATH="$HOME/.cask/bin:$PATH"
 # pip (python package management system).
 export PATH="$PATH":"$HOME"/.local/bin
 
+# Travis gem tab auto completion.
+[ -f "$HOME"/.travis/travis.sh ] && source "$HOME"/.travis/travis.sh
+
 # Prompt.
 [[ -f "$HOME"/.bash_prompt.sh ]] && source "$HOME"/.bash_prompt.sh

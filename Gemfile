@@ -25,4 +25,5 @@ group :development do
   gem 'sqlint' # sql linter <https://github.com/purcell/sqlint>
   gem 't' # create twitter timeline backup <http://blog.jphpsf.com/2012/05/07/backing-up-your-twitter-account-with-t>
   gem 'tailor' # check style of ruby files (indentation and so on) `tailor path/to/source` <https://github.com/turboladen/tailor>
+  gem 'travis'
 end
