@@ -3,6 +3,7 @@
 *.elc
 *.swp
 *~
+.DS_Store
 /TAGS
 /projectile-bookmarks.eld
 projectile.cache
