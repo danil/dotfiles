@@ -1,8 +1,9 @@
-*.a
 *#
 *.#*
+*.a
 *.elc
 *.swp
+*.test
 *~
 .DS_Store
 /TAGS
