@@ -30,7 +30,7 @@ my-mirror-for "dotfiles.git" "h2-gentoo-danil h11-gentoo-danil h4-sailfish-nemo 
 my-mirror-for "el/ferm-mode.git" "master"
 my-mirror-for "el/ido-describe-bindings.git" "master"
 my-mirror-for "el/ido-occur.git" "master"
-my-mirror-for "el/init.el.git" "trash h2-gentoo-danil h11-gentoo-danil h5-ubuntu-danil"
+my-mirror-for "el/init.el.git" "master trash"
 my-mirror-for "etc.git" "h2-gentoo h11-gentoo h4-sailfish h5-ubuntu"
 my-mirror-for "grubs.git" "h3-gentoo h6-gentoo h8-gentoo homer-gentoo"
 my-mirror-for "js/homepage.git" "master"
