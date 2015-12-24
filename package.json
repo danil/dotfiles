@@ -32,7 +32,8 @@
     "lodash": "latest",
     "purify-css": "latest",
     "standard": "latest",
-    "surge": "latest"
+    "surge": "latest",
+    "validate-dockerfile": "latest"
   },
   "engines": {
     "node": "latest"
