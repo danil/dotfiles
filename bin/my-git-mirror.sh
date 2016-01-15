@@ -3,40 +3,31 @@
 
 my_mirror_push_command="git push --quiet --tags"
 
-# "bitbucket"
-# "github"
-# "gitlab"
-# "gogs"
-my_mirror_vendors=(
-    "gitlab"
-    "github"
-)
-
 function my-mirror-for {
-    local name=${1}
-    local branches=${2}
+    local name=$1
+    local vendors=$2
+    local branches=$3
 
     cd /var/git/$name
 
-    for vendor in "${my_mirror_vendors[@]}"
-    do
-        $my_mirror_push_command ${vendor} ${branches}
+    # <http://stackoverflow.com/questions/17249665/splitting-a-comma-separated-string-into-multiple-words-so-that-i-can-loop-throug#17249721>.
+    for vendor in ${vendors// / }; do
+        $my_mirror_push_command $vendor $branches
     done
 }
 
-my-mirror-for "dotfiles.git" "h2-gentoo-danil h11-gentoo-danil h4-sailfish-nemo h5-ubuntu-danil"
-my-mirror-for "el/ferm-mode.git" "master"
-my-mirror-for "el/ido-describe-bindings.git" "master"
-my-mirror-for "el/ido-occur.git" "master"
-my-mirror-for "el/init.el.git" "master trash"
-my-mirror-for "etc.git" "h2-gentoo h11-gentoo h4-sailfish h5-ubuntu"
-my-mirror-for "go/tgtm.git" "master"
-my-mirror-for "grubs.git" "h3-gentoo h6-gentoo h8-gentoo homer-gentoo"
-my-mirror-for "js/homepage.git" "master"
-my-mirror-for "kernels.git" "h11-gentoo"
-my-mirror-for "keys.git" "master"
-my-mirror-for "md/rc.git" "master"
-my-mirror-for "sh/overlays.git" "master net-analyzer/linode-longview sys-apps/mdp unsupported"
-my-mirror-for "sieves.git" "master"
-my-mirror-for "worlds.git" "h2 h11"
-my-mirror-for "zones.git" "master"
+my-mirror-for "dotfiles.git"                 "gitlab gogs github" "h11-gentoo-danil h2-gentoo-danil h4-sailfish-nemo h5-ubuntu-danil"
+my-mirror-for "el/ferm-mode.git"             "gitlab gogs github" "master"
+my-mirror-for "el/ido-describe-bindings.git" "gitlab gogs github" "master"
+my-mirror-for "el/ido-occur.git"             "gitlab gogs github" "master"
+my-mirror-for "el/init.el.git"               "gitlab gogs github" "master trash"
+my-mirror-for "etc.git"                      "gitlab gogs github" "h11-gentoo h2-gentoo h4-sailfish h5-ubuntu"
+my-mirror-for "go/tgtm.git"                  "gitlab github"      "master"
+my-mirror-for "js/homepage.git"              "gitlab gogs github" "master"
+my-mirror-for "kernels.git"                  "gitlab gogs github" "h11-gentoo"
+my-mirror-for "keys.git"                     "gitlab gogs github" "master"
+my-mirror-for "md/rc.git"                    "gitlab gogs github" "master"
+my-mirror-for "sh/overlays.git"              "gitlab gogs github" "master net-analyzer/linode-longview sys-apps/mdp unsupported"
+my-mirror-for "sieves.git"                   "gitlab gogs github" "master"
+my-mirror-for "worlds.git"                   "gitlab gogs github" "h11 h2"
+my-mirror-for "zones.git"                    "gitlab gogs github" "master"
