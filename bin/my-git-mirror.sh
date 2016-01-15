@@ -10,8 +10,10 @@ function my-mirror-for {
 
     cd /var/git/$name
 
+    # <http://stackoverflow.com/questions/1469849/how-to-split-one-string-into-multiple-strings-separated-by-at-least-one-space-in#1469863>,
+    # <http://unix.stackexchange.com/questions/47557/in-a-bash-shell-script-writing-a-for-loop-that-iterates-over-string-values#47560>,
     # <http://stackoverflow.com/questions/17249665/splitting-a-comma-separated-string-into-multiple-words-so-that-i-can-loop-throug#17249721>.
-    for vendor in ${vendors// / }; do
+    for vendor in $vendors; do
         $my_mirror_push_command $vendor $branches
     done
 }
