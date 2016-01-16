@@ -46,10 +46,16 @@ export PATH="$PATH":"$HOME"/deps/bin #bpkg bash package manager <https://github.
 export SBCL_HOME=/usr/lib64/sbcl
 
 # Node.js
-export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  #this loads nvm
-[[ -r "$NVM_DIR/bash_completion" ]] && . "$NVM_DIR/bash_completion"
 export PATH="$HOME/node_modules/.bin:$PATH"
+
+# n (Node.js version manager)
+export N_PREFIX="$HOME"/n
+export PATH="$N_PREFIX/bin:$PATH"
+
+# # nvm (Node.js version manager)
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  #this loads nvm
+# [[ -r "$NVM_DIR/bash_completion" ]] && . "$NVM_DIR/bash_completion"
 
 # # lenv (Lua version manager) <https://github.com/mah0x211/lenv>.
 # export PATH="$HOME"/.lenv/bin:"$HOME"/.lenv/current/bin:$PATH
