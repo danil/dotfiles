@@ -37,7 +37,8 @@ alias ec='emacsclient --tty'
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-[ -f "$HOME/.travis/travis.sh" ] && source "$HOME/.travis/travis.sh" #added by travis gem
+# Travis CI gem.
+[ -f "$HOME"/.travis/travis.sh ] && source "$HOME"/.travis/travis.sh #auto completion
 
 export PATH="$PATH":"$HOME"/deps/bin #bpkg bash package manager <https://github.com/bpkg/bpkg#installing-packages>
 
@@ -75,9 +76,6 @@ export PATH="$HOME/.cask/bin:$PATH"
 
 # pip (python package management system).
 export PATH="$PATH":"$HOME"/.local/bin
-
-# Travis gem tab auto completion.
-[ -f "$HOME"/.travis/travis.sh ] && source "$HOME"/.travis/travis.sh
 
 # Prompt.
 [[ -f "$HOME"/.bash_prompt.sh ]] && source "$HOME"/.bash_prompt.sh
