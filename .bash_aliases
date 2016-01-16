@@ -46,9 +46,9 @@ export SBCL_HOME=/usr/lib64/sbcl
 
 # Node.js
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  #this loads nvm
+# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  #this loads nvm
 [[ -r "$NVM_DIR/bash_completion" ]] && . "$NVM_DIR/bash_completion"
-PATH="$HOME/node_modules/.bin:$PATH"
+export PATH="$HOME/node_modules/.bin:$PATH"
 
 # # lenv (Lua version manager) <https://github.com/mah0x211/lenv>.
 # export PATH="$HOME"/.lenv/bin:"$HOME"/.lenv/current/bin:$PATH
