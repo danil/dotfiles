@@ -22,6 +22,7 @@ packages="$packages github.com/russross/blackfriday-tool" #markdown
 packages="$packages github.com/schachmat/wego" #weather
 packages="$packages github.com/zquestz/s" #open default browser and web search
 packages="$packages golang.org/x/tools/cmd/godoc" #documentation
+packages="$packages golang.org/x/tools/cmd/goimports" #used by emacs as `gofmt` command replacement for adding/removing golang import lines
 packages="$packages golang.org/x/tools/cmd/gorename"
 packages="$packages golang.org/x/tools/cmd/vet" #used by emacs flycheck
 
