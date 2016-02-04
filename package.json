@@ -18,6 +18,7 @@
     "cloc": "latest",
     "coffee-script": "latest",
     "coffeelint": "latest",
+    "csscomb": "latest",
     "csslint": "latest",
     "csvtojson": "latest",
     "eslint": "latest",
