@@ -51,7 +51,3 @@ folderfilter = lambda foldername: foldername not in [ '[Gmail]/All Mail',
 realdelete = no
 trashfolder = [Gmail]/Trash
 spamfolder = [Gmail]/Spam
-
-# Local Variables:
-# mode: conf
-# End:
