@@ -74,8 +74,10 @@ export PATH="$PATH":"$GOPATH"/bin #for convenience, add the workspace's bin subd
 # gvm (Go version manager) <https://github.com/moovweb/gvm>.
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
+# Rust.
 # rsvm (Rust version manager) <https://github.com/sdepold/rsvm>.
 [[ -s "$HOME"/.rsvm/rsvm.sh ]] && . "$HOME"/.rsvm/rsvm.sh #this loads rsvm
+export PATH="$PATH":"$HOME"/.cargo/bin #be sure to add `/home/danil/.cargo/bin` to your PATH to be able to run the installed binaries
 
 # Emacs Cask <http://cask.github.io>.
 export PATH="$HOME/.cask/bin:$PATH"
