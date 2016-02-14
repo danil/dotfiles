@@ -1,6 +1,7 @@
 #!/bin/sh
 
 packages="$packages github.com/BurntSushi/toml/cmd/tomlv" #toml validator
+packages="$packages github.com/cortesi/devd/cmd/devd" #local http/webserver for developers
 packages="$packages github.com/danil/tgtm" #tweets go to mail (twitter client)
 packages="$packages github.com/github/hub" #github helper <https://github.com/github/hub>
 packages="$packages github.com/golang/lint/golint" #used by emacs flycheck
