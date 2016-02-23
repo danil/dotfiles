@@ -7,6 +7,9 @@ glances
 # Python checker used by Emacs Flycheck.
 flake8
 
+# CLI commands format howto for example: $ howdoi format date bash > DATE=`date +%Y-%m-%d`
+howdoi
+
 # cURL replacement <http://httpie.org>.
 httpie
 
