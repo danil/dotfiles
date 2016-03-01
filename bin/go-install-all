@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 packages="$packages github.com/BurntSushi/toml/cmd/tomlv" #toml validator
 packages="$packages github.com/cortesi/devd/cmd/devd" #local http/webserver for developers
