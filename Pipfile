@@ -25,6 +25,10 @@ ngxtop
 # Ping graph <https://github.com/orf/gping>.
 pinggraph
 
+# Linter for prose
+# <https://github.com/amperser/proselint>, <http://proselint.com>.
+proselint
+
 # Used by Emacs Flycheck.
 pylint
 
