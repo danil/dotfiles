@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# packages="$packages xsv" #http load testing <https://github.com/imjacobclark/Herd>
+packages="$packages --git=https://github.com/hopey-dishwasher/termpix" #draw images in an ANSI terminal <https://github.com/hopey-dishwasher/termpix>
+packages="$packages --git=https://github.com/ogham/exa" #ls replacement <https://github.com/ogham/exa>
+packages="$packages cargo-count" #counting lines of code in rust projects <https://github.com/kbknapp/cargo-count>
+packages="$packages racer" #rust code completion <https://github.com/phildawes/racer>
+packages="$packages rustfmt" #rust formating <https://github.com/rust-lang-nursery/rustfmt>
+packages="$packages tokei" #cloc (count lines of code) <https://github.com/Aaronepower/tokei>
+
+for package in $packages; do
+    cargo install --jobs=3 $package
+done
