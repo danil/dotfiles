@@ -31,7 +31,7 @@ alias ec='emacsclient --tty'
 
 # clib is an C package manager <https://github.com/clibs/clib>.
 # Run `c-install-all`.
-PATH="$HOME"/bin:"$PATH"
+export PATH="$HOME"/bin:"$PATH"
 
 # bpkg bash package manager <https://github.com/bpkg/bpkg#installing-packages>.
 # Run `bash-install-all`.
