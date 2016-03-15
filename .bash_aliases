@@ -44,8 +44,7 @@ export PATH="$HOME/.cask/bin:$PATH"
 # Run `go-install-all`.
 export GOPATH="$HOME"/go
 export PATH="$PATH":"$GOPATH"/bin #for convenience, add the workspace's bin subdirectory to your PATH
-# gvm (Go version manager) <https://github.com/moovweb/gvm>.
-[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+# [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm" #gvm (Go version manager) <https://github.com/moovweb/gvm>
 
 # Rust.
 export PATH="$PATH":"$HOME"/.cargo/bin #be sure to add `/home/danil/.cargo/bin` to your PATH to be able to run the installed binaries
