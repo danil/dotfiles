@@ -18,6 +18,7 @@ function my-mirror-for {
     done
 }
 
+my-mirror-for "dotfiles-playbooks.git"       "github" "master"
 my-mirror-for "dotfiles.git"                 "gitlab gogs github" "h11-gentoo-danil h2-gentoo-danil h4-sailfish-nemo h5-ubuntu-danil"
 my-mirror-for "el/ferm-mode.git"             "gitlab gogs github" "master"
 my-mirror-for "el/ido-describe-bindings.git" "gitlab gogs github" "master"
