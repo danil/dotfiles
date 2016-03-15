@@ -48,8 +48,7 @@ export PATH="$PATH":"$GOPATH"/bin #for convenience, add the workspace's bin subd
 
 # Rust.
 export PATH="$PATH":"$HOME"/.cargo/bin #be sure to add `/home/danil/.cargo/bin` to your PATH to be able to run the installed binaries
-# rsvm (Rust version manager) <https://github.com/sdepold/rsvm>.
-[[ -s "$HOME"/.rsvm/rsvm.sh ]] && . "$HOME"/.rsvm/rsvm.sh #this loads rsvm
+[[ -s "$HOME"/.rsvm/rsvm.sh ]] && . "$HOME"/.rsvm/rsvm.sh #rsvm (Rust version manager) <https://github.com/sdepold/rsvm>
 
 # Steel Bank Common Lisp.
 export SBCL_HOME=/usr/lib64/sbcl
@@ -58,9 +57,7 @@ export SBCL_HOME=/usr/lib64/sbcl
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-# pip (python package management system).
-# Run `go-install-all`.
-export PATH="$PATH":"$HOME"/.local/bin
+export PATH="$PATH":"$HOME"/.local/bin #pip (python package management system) run `python-install-all`
 
 # # Lua.
 # PATH="$HOME"/.luarocks/bin:"$PATH"
