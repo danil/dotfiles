@@ -18,8 +18,12 @@
     "cloc": "latest",
     "coffee-script": "latest",
     "coffeelint": "latest",
+    "csscomb": "// CSS formater used by emacs.",
+    "csscomb": "latest",
     "csslint": "latest",
     "csvtojson": "latest",
+    "diff-so-fancy": "// More readable diff format `git diff --color | diff-so-fancy`.",
+    "diff-so-fancy": "latest",
     "eslint": "latest",
     "handlebars": "latest",
     "jade": "latest",
@@ -33,6 +37,8 @@
     "purify-css": "latest",
     "standard": "latest",
     "surge": "latest",
+    "tldr": "// Community-driven man pages <https://github.com/tldr-pages/tldr>, <http://tldr-pages.github.io>",
+    "tldr": "latest",
     "validate-dockerfile": "latest"
   },
   "engines": {

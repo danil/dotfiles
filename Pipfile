@@ -7,8 +7,14 @@ glances
 # Python checker used by Emacs Flycheck.
 flake8
 
+# CLI commands format howto for example: $ howdoi format date bash > DATE=`date +%Y-%m-%d`
+howdoi
+
 # cURL replacement <http://httpie.org>.
 httpie
+
+# List files affected by command for example `rm -rf /` <https://github.com/p-e-w/maybe>
+maybe
 
 # Youtube player <https://github.com/np1/mps-youtube>.
 mps-youtube
@@ -18,6 +24,10 @@ ngxtop
 
 # Ping graph <https://github.com/orf/gping>.
 pinggraph
+
+# Linter for prose
+# <https://github.com/amperser/proselint>, <http://proselint.com>.
+proselint
 
 # Used by Emacs Flycheck.
 pylint

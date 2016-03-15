@@ -1,6 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 
 packages="$packages github.com/BurntSushi/toml/cmd/tomlv" #toml validator
+packages="$packages github.com/cortesi/devd/cmd/devd" #local http/webserver for developers
 packages="$packages github.com/danil/tgtm" #tweets go to mail (twitter client)
 packages="$packages github.com/github/hub" #github helper <https://github.com/github/hub>
 packages="$packages github.com/golang/lint/golint" #used by emacs flycheck
@@ -20,7 +21,10 @@ packages="$packages github.com/rlmcpherson/s3gof3r/gof3r" #s3 client
 packages="$packages github.com/rogpeppe/godef" #used by emacs for jump to the definition of the expression at point
 packages="$packages github.com/russross/blackfriday-tool" #markdown
 packages="$packages github.com/schachmat/wego" #weather
+packages="$packages github.com/uber-common/cpustat" #top alternative
+packages="$packages github.com/zquestz/s" #open default browser and web search
 packages="$packages golang.org/x/tools/cmd/godoc" #documentation
+packages="$packages golang.org/x/tools/cmd/goimports" #used by emacs as `gofmt` command replacement for adding/removing golang import lines
 packages="$packages golang.org/x/tools/cmd/gorename"
 packages="$packages golang.org/x/tools/cmd/vet" #used by emacs flycheck
 
