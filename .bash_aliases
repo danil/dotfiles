@@ -29,16 +29,11 @@ alias less=$PAGER
 alias e='emacs --no-window-system'
 alias ec='emacsclient --tty'
 
-# clib is an C package manager <https://github.com/clibs/clib>.
-# Run `c-install-all`.
-export PATH="$HOME"/bin:"$PATH"
+export PATH="$HOME"/bin:"$PATH" #clib is an C package manager <https://github.com/clibs/clib> run `c-install-all`
 
-# bpkg bash package manager <https://github.com/bpkg/bpkg#installing-packages>.
-# Run `bash-install-all`.
-export PATH="$PATH":"$HOME"/deps/bin
+export PATH="$PATH":"$HOME"/deps/bin #bpkg bash package manager <https://github.com/bpkg/bpkg#installing-packages> run `bash-install-all`
 
-# Emacs Cask <http://cask.github.io>.
-export PATH="$HOME/.cask/bin:$PATH"
+export PATH="$HOME/.cask/bin:$PATH" #emacs cask <http://cask.github.io>
 
 # Go <http://golang.org/doc/code.html#GOPATH>.
 # Run `go-install-all`.
