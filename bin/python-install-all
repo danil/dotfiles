@@ -1,3 +1,4 @@
 #!/bin/bash
 
-pip install --user --upgrade --requirement ~/Pipfile
+pip2 install --user --upgrade --requirement ~/Pipfile2
+pip3 install --user --upgrade --requirement ~/Pipfile3
