@@ -41,5 +41,8 @@ stellar
 # Corrects previous console command <https://github.com/nvbn/thefuck>.
 thefuck
 
+# Video downloader (universal) <https://github.com/soimort/you-get>.
+you-get
+
 # Youtube downloader <https://github.com/rg3/youtube-dl>.
 youtube-dl
