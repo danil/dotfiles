@@ -18,6 +18,8 @@
     "cloc": "latest",
     "coffee-script": "latest",
     "coffeelint": "latest",
+    "cson": "// JSON for CoffeeScript notation <https://github.com/bevry/cson>",
+    "cson": "latest",
     "csscomb": "// CSS formater used by emacs.",
     "csscomb": "latest",
     "csslint": "latest",
