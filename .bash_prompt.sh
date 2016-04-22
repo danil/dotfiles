@@ -70,19 +70,19 @@ function my_ps1_timer_show {
                 > /dev/null 2> /dev/null < /dev/null &
         fi
         if command -v dunstify >/dev/null 2>&1 ; then
-            notify_title="◷ $timer"
+            notify_title="${timer}s" # ◷
             if [[ ${my_exit_code} -eq 0 ]]; then
                 #low, normal, critical
                 my_notify_urgency="low"
             else
                 my_notify_urgency="critical"
-                notify_title="☢ $my_exit_code $notify_title"
+                notify_title="!$my_exit_code $notify_title" # ☢
             fi
             dunstify --urgency=$my_notify_urgency \
                 "$notify_title" \
                 "$my_previous_command"
         fi
-        echo -n " ◷ $timer"
+        echo -n " ${timer}s" # ◷
     fi
 }
 if [ -f ~/.git-prompt/contrib/completion/git-prompt.sh ]; then
@@ -100,7 +100,7 @@ function my_ps1_dynamic_variables {
     if [[ $my_exit_code -eq 0 || $my_exit_code -ge 128 ]]; then #set an error string for the prompt, if applicable (ignore kill e. g. 130 script terminated by control-c <http://www.tldp.org/LDP/abs/html/exitcodes.html>)
         ps1_exit_code=""
     else
-        ps1_exit_code=" ☢ $my_exit_code" # ⚠ ☠ ☹ ☣
+        ps1_exit_code=" !$my_exit_code" # ☢ ⚠ ☠ ☹ ☣
     fi
 
     ps1_load="$(ps1_load)"
