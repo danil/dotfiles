@@ -30,4 +30,38 @@ packages="$packages golang.org/x/tools/cmd/godoc" #documentation
 packages="$packages golang.org/x/tools/cmd/goimports" #used by emacs as `gofmt` command replacement for adding/removing golang import lines
 packages="$packages golang.org/x/tools/cmd/gorename"
 
-go get -v -u $packages
+export install=${install:-1}
+export update=${update:--1}
+export verbose=${verbose:--1}
+
+while [ $# -gt 0 ]; do
+    case "$1" in
+        --install)
+            let install=1
+            ;;
+        --update)
+            let update=1
+            ;;
+        --verbose)
+            let verbose=1
+            ;;
+        *)
+            printf "***************************\n"
+            printf "* Error: Invalid argument.*\n"
+            printf "***************************\n"
+            exit 1
+    esac
+    shift
+done
+
+command="go get -v"
+
+if [[ $update -eq 1 ]] ; then
+    command="$command -u"
+fi
+
+if [[ $verbose -eq 1 ]] ; then
+    command="$command -v"
+fi
+
+$command $packages
