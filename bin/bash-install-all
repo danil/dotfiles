@@ -4,6 +4,7 @@
 packages="$packages bpkg/sha1dir" #get the sha1 of a directory
 packages="$packages rauchg/spot" #file search utility <https://github.com/rauchg/spot>
 packages="$packages rylnd/shpec" #test shell scripts <https://github.com/rylnd/shpec>
+packages="$packages tj/mad" #markdown manual page viewer <https://github.com/tj/mad>
 
 bpkg update
 rm --force "$HOME"/deps/bin/*
