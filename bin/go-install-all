@@ -6,6 +6,7 @@ packages="$packages github.com/danil/tgtm" #tweets go to mail (twitter client)
 packages="$packages github.com/digitalocean/doctl/cmd/doctl" #digitalocean command line tool
 packages="$packages github.com/github/hub" #github helper <https://github.com/github/hub>
 packages="$packages github.com/golang/lint/golint" #used by emacs flycheck
+packages="$packages github.com/jasonmoo/smlr" #jpeg encoder
 packages="$packages github.com/jgrahamc/httpdiff" #diff http requests <https://github.com/jgrahamc/httpdiff>
 packages="$packages github.com/jingweno/ccat" #colorizing cat <https://github.com/jingweno/ccat>
 packages="$packages github.com/kahing/goofys" #mount s3 file system
