@@ -85,15 +85,15 @@ function my_ps1_timer_show {
         echo -n " ${timer}s" # ◷
     fi
 }
-if [ -f ~/.git-prompt/contrib/completion/git-prompt.sh ]; then
+if [ -f ~/.git-prompt.sh ]; then
     # Git prompt
     # <http://github.com/git/git/blob/master/contrib/completion/git-prompt.sh>.
     GIT_PS1_SHOWCOLORHINTS=1
     GIT_PS1_SHOWDIRTYSTATE=1
-    GIT_PS1_SHOWSTASHSTATE=1
+    # GIT_PS1_SHOWSTASHSTATE=1
     GIT_PS1_SHOWUNTRACKEDFILES=1
     GIT_PS1_SHOWUPSTREAM="auto"
-    source ~/.git-prompt/contrib/completion/git-prompt.sh
+    source ~/.git-prompt.sh
 fi
 function my_ps1_dynamic_variables {
     my_exit_code=$? #exit status error <http://brettterpstra.com/2009/11/17/my-new-favorite-bash-prompt>
