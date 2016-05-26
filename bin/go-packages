@@ -1,10 +1,12 @@
 #!/bin/bash
 
+# packages="$packages golang.org/x/tools/cmd/godoc" #documentation
 packages="$packages github.com/BurntSushi/toml/cmd/tomlv" #toml validator
 packages="$packages github.com/cortesi/devd/cmd/devd" #local http/webserver for developers
 packages="$packages github.com/danil/tgtm" #tweets go to mail (twitter client)
 packages="$packages github.com/digitalocean/doctl/cmd/doctl" #digitalocean command line tool
 packages="$packages github.com/github/hub" #github helper <https://github.com/github/hub>
+packages="$packages github.com/go-swagger/go-swagger/cmd/swagger" #swagger cli validator
 packages="$packages github.com/golang/lint/golint" #used by emacs flycheck
 packages="$packages github.com/jasonmoo/smlr" #jpeg encoder
 packages="$packages github.com/jgrahamc/httpdiff" #diff http requests <https://github.com/jgrahamc/httpdiff>
@@ -26,7 +28,6 @@ packages="$packages github.com/sanathp/statusok" #http status monitoring
 packages="$packages github.com/schachmat/wego" #weather
 packages="$packages github.com/uber-common/cpustat" #top alternative
 packages="$packages github.com/zquestz/s" #open default browser and web search
-packages="$packages golang.org/x/tools/cmd/godoc" #documentation
 packages="$packages golang.org/x/tools/cmd/goimports" #used by emacs as `gofmt` command replacement for adding/removing golang import lines
 packages="$packages golang.org/x/tools/cmd/gorename"
 
