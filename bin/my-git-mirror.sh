@@ -1,8 +1,6 @@
 #! /bin/bash
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-my_mirror_push_command="git push --quiet --tags"
-
 function my-mirror-for {
     local name=$1
     local vendors=$2
@@ -14,7 +12,8 @@ function my-mirror-for {
     # <http://unix.stackexchange.com/questions/47557/in-a-bash-shell-script-writing-a-for-loop-that-iterates-over-string-values#47560>,
     # <http://stackoverflow.com/questions/17249665/splitting-a-comma-separated-string-into-multiple-words-so-that-i-can-loop-throug#17249721>.
     for vendor in $vendors; do
-        $my_mirror_push_command $vendor $branches
+        git fetch --all
+        git push --quiet --tags $vendor $branches
     done
 }
 
