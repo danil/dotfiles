@@ -62,9 +62,10 @@ export PATH="$PATH":"$HOME"/.local/bin #pip (python package management system) r
 # Node.js
 export PATH="$HOME/node_modules/.bin:$PATH"
 
-# n (Node.js version manager)
+# n (Node.js version manager).
+# Added by n-install (see http://git.io/n-install-repo).
 export N_PREFIX="$HOME"/n
-export PATH="$N_PREFIX/bin:$PATH"
+[[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
 
 # # nvm (Node.js version manager)
 # export NVM_DIR="$HOME/.nvm"
