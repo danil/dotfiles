@@ -11,7 +11,7 @@ stty -ixon
 export EDITOR="vim" #export EDITOR="nano" #export EDITOR="/usr/bin/emacsclient -t"
 # export ALTERNATE_EDITOR="/usr/bin/emacs"
 export GIT_EDITOR='vim'
-export PAGER="/usr/bin/less -IM"
+# export PAGER="/usr/bin/less -IM" #not working(
 export HISTSIZE=10000
 export HISTFILESIZE=10000
 export HISTCONTROL=ignoredups:erasedups
@@ -25,7 +25,7 @@ export HISTCONTROL=ignoredups:erasedups
 alias sudo='sudo '
 alias ls='ls --color'
 alias ll='ls -l --all --human-readable'
-alias less=$PAGER
+# alias less=$PAGER
 alias e='emacs --no-window-system'
 alias ec='emacsclient --tty'
 
