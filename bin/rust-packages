@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# packages="$packages --git=https://github.com/esphen/wsta.git" #some websocket cli (compile openssl errors)
 # packages="$packages xsv" #http load testing <https://github.com/imjacobclark/Herd>
 packages="$packages --git=https://github.com/hopey-dishwasher/termpix" #draw images in an ANSI terminal <https://github.com/hopey-dishwasher/termpix>
 packages="$packages --git=https://github.com/ogham/exa" #ls replacement <https://github.com/ogham/exa>
