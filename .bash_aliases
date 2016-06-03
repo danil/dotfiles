@@ -41,9 +41,8 @@ export GOPATH="$HOME"/go
 export PATH="$PATH":"$GOPATH"/bin #for convenience, add the workspace's bin subdirectory to your PATH
 # [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm" #gvm (Go version manager) <https://github.com/moovweb/gvm>
 
-# Rust.
-export PATH="$PATH":"$HOME"/.cargo/bin #be sure to add `/home/danil/.cargo/bin` to your PATH to be able to run the installed binaries
-[[ -s "$HOME"/.rsvm/rsvm.sh ]] && . "$HOME"/.rsvm/rsvm.sh #rsvm (Rust version manager) <https://github.com/sdepold/rsvm>
+# Rust (rust toolchain installer https://www.rustup.rs).
+export PATH="$HOME"/.cargo/bin:"$PATH" #be sure to add `/home/danil/.cargo/bin` to your PATH to be able to run the installed binaries
 
 # Steel Bank Common Lisp.
 export SBCL_HOME=/usr/lib64/sbcl
