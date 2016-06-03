@@ -27,6 +27,8 @@
     "diff-so-fancy": "// More readable diff format `git diff --color | diff-so-fancy`.",
     "diff-so-fancy": "latest",
     "eslint": "latest",
+    "git-stats": "// github-like statistics",
+    "git-stats": "latest",
     "handlebars": "latest",
     "jade": "latest",
     "jscs": "latest",
