@@ -24,7 +24,7 @@ while [ $# -gt 0 ]; do
     shift
 done
 
-command="go get -v"
+command="go get"
 
 if [[ $update -eq 1 ]] ; then
     command="$command -u"
