@@ -1,14 +1,56 @@
 #!/bin/bash
 
-# packages="$packages --git=https://github.com/esphen/wsta.git" #some websocket cli (compile openssl errors)
-# packages="$packages xsv" #http load testing <https://github.com/imjacobclark/Herd>
+export jobs=${update:-2}
+export update=${update:--1}
+export verbose=${verbose:--1}
+
+while [ $# -gt 0 ]; do
+    case "$1" in
+        --jobs=*)
+            let jobs="${1#*=}"
+            ;;
+        --update)
+            let update=1
+            ;;
+        --verbose)
+            let verbose=1
+            ;;
+        *)
+            printf "***************************\n"
+            printf "* Error: Invalid argument.*\n"
+            printf "***************************\n"
+            exit 1
+    esac
+    shift
+done
+
+install_command="cargo install"
+uninstall_command="cargo uninstall"
+
+[[ $jobs -gt 0 ]] && install_command="$install_command --jobs=$jobs"
+
+if [[ $verbose -eq 1 ]] ; then
+    install_command="$install_command --verbose"
+    uninstall_command="$uninstall_command --verbose"
+
+    echo "jobs=$jobs"
+    echo "update=$update"
+fi
+
+packages="$packages --git=https://github.com/esphen/wsta.git" #pipe-friendly websocket cli
 packages="$packages --git=https://github.com/hopey-dishwasher/termpix" #draw images in an ANSI terminal <https://github.com/hopey-dishwasher/termpix>
+packages="$packages --git=https://github.com/imjacobclark/Herd.git" #http load testing (a-la ab)
 packages="$packages --git=https://github.com/ogham/exa" #ls replacement <https://github.com/ogham/exa>
 packages="$packages cargo-count" #counting lines of code in rust projects <https://github.com/kbknapp/cargo-count>
 packages="$packages racer" #rust code completion <https://github.com/phildawes/racer>
 packages="$packages rustfmt" #rust formating <https://github.com/rust-lang-nursery/rustfmt>
 packages="$packages tokei" #cloc metric (count lines of code) <https://github.com/Aaronepower/tokei>
+packages="$packages xsv" #csv cli (indexing, slicing, analyzing, splitting and joining) <https://github.com/BurntSushi/xsv>
 
 for package in $packages; do
-    cargo install --jobs=3 $package
+    if [[ $update -eq 1 ]] ; then
+        $uninstall_command $package
+    fi
+
+    $install_command $package
 done
