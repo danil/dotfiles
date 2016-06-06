@@ -24,15 +24,11 @@ while [ $# -gt 0 ]; do
     shift
 done
 
-command="go get"
+install_command="go get"
 
-if [[ $update -eq 1 ]] ; then
-    command="$command -u"
-fi
+[[ $update -eq 1 ]] && install_command="$install_command -u"
 
-if [[ $verbose -eq 1 ]] ; then
-    command="$command -v"
-fi
+[[ $verbose -eq 1 ]] && install_command="$install_command -v"
 
 # packages="$packages github.com/go-swagger/go-swagger/cmd/swagger" #swagger cli validator `swagger validate http://example.org/path/to/swagger.json`
 # packages="$packages github.com/ichinaski/pxl" #display images in the terminal (freeze terminal)
@@ -67,4 +63,4 @@ packages="$packages github.com/zquestz/s" #open default browser and web search
 packages="$packages golang.org/x/tools/cmd/goimports" #used by emacs as `gofmt` command replacement for adding/removing golang import lines
 packages="$packages golang.org/x/tools/cmd/gorename"
 
-$command $packages
+$install_command $packages
