@@ -25,6 +25,9 @@ mps-youtube
 # Real-time metrics for nginx server <https://github.com/lebinh/ngxtop>.
 ngxtop
 
+# PostgreSQL activity monitoring <https://github.com/julmon/pg_activity>.
+pg_activity
+
 # Ping graph <https://github.com/orf/gping>.
 pinggraph
 
