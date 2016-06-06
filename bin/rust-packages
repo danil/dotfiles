@@ -48,6 +48,7 @@ packages="$packages tokei" #cloc metric (count lines of code) <https://github.co
 packages="$packages xsv" #csv cli (indexing, slicing, analyzing, splitting and joining) <https://github.com/BurntSushi/xsv>
 
 for package in $packages; do
+    # TODO: To fix "update". Extract only package name from "package" string.
     if [[ $update -eq 1 ]] ; then
         $uninstall_command $package
     fi
