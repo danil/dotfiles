@@ -3,6 +3,26 @@
 # prompt="$USER@`hostname`"
 # dmenu -p $prompt
 
+command="dmenu"
+
+number_of_lines=${number_of_lines:-1}
+
+while [ $# -gt 0 ]; do
+    case "$1" in
+        --lines=*)
+            let number_of_lines="${1#*=}"
+            ;;
+        *)
+            printf "***************************\n"
+            printf "* Error: Invalid argument.*\n"
+            printf "***************************\n"
+            exit 1
+    esac
+    shift
+done
+
+[[ $number_of_lines -gt 1 ]] && command="$command -l $number_of_lines"
+
 # <http://tools.suckless.org/dmenu/scripts/dmenu_run_with_command_history>
 
 cachedir=${XDG_CACHE_HOME:-"$HOME/.cache"}
@@ -28,7 +48,7 @@ awk -v histfile=$historyfile '
 			x[$0]=1
 		}
 	} !x[$0]++ ' "$cache" \
-	| dmenu "$@" \
+	| $command "$@" \
 	| awk -v histfile=$historyfile '
 		BEGIN {
 			FS=OFS="\t"
