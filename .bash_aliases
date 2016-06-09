@@ -58,8 +58,17 @@ export PATH="$PATH":"$HOME"/.local/bin #pip (python package management system) r
 # export LUA_PATH="$HOME""/.luarocks/share/lua/5.1//?.lua;./?.lua;$LUA_PATH"
 # export LUA_CPATH="$HOME""/.luarocks/lib/lua/5.1//?.so;./?.so;$LUA_CPATH"
 
-# Node.js
-export PATH="$HOME/node_modules/.bin:$PATH"
+# # lenv (Lua version manager) <https://github.com/mah0x211/lenv>.
+# export PATH="$HOME"/.lenv/bin:"$HOME"/.lenv/current/bin:$PATH
+# export LUA_PATH="$HOME"'/.lenv/current/luarocks/share/?.lua;'"$HOME"'/.lenv/current/luarocks/share/?/init.lua;;'
+# export LUA_CPATH="$HOME"'/.lenv/current/luarocks/lib/?.so;;'
+
+# Travis CI gem.
+[ -f "$HOME"/.travis/travis.sh ] && source "$HOME"/.travis/travis.sh #auto completion
+
+# Node.js and npm.
+# WARNING: Do NOT give priority to npm executables!!!
+export PATH="$PATH:$HOME/node_modules/.bin"
 
 # n (Node.js version manager).
 # Added by n-install (see http://git.io/n-install-repo).
@@ -70,14 +79,6 @@ export N_PREFIX="$HOME"/n
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  #this loads nvm
 # [[ -r "$NVM_DIR/bash_completion" ]] && . "$NVM_DIR/bash_completion"
-
-# # lenv (Lua version manager) <https://github.com/mah0x211/lenv>.
-# export PATH="$HOME"/.lenv/bin:"$HOME"/.lenv/current/bin:$PATH
-# export LUA_PATH="$HOME"'/.lenv/current/luarocks/share/?.lua;'"$HOME"'/.lenv/current/luarocks/share/?/init.lua;;'
-# export LUA_CPATH="$HOME"'/.lenv/current/luarocks/lib/?.so;;'
-
-# Travis CI gem.
-[ -f "$HOME"/.travis/travis.sh ] && source "$HOME"/.travis/travis.sh #auto completion
 
 # Prompt.
 [[ -f "$HOME"/.bash_prompt.sh ]] && source "$HOME"/.bash_prompt.sh
