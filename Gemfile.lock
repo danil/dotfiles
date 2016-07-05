@@ -263,9 +263,10 @@ GEM
       launchy
       mixlib-cli
     sass (3.4.22)
-    scss-lint (0.38.0)
-      rainbow (~> 2.0)
-      sass (~> 3.4.1)
+    scss_lint (0.48.0)
+      rake (>= 0.9, < 12)
+      sass (~> 3.4.15)
+    scss_lint_reporter_checkstyle (0.2.0)
     sexp_processor (4.7.0)
     simple_oauth (0.3.1)
     sinatra (1.4.7)
@@ -369,7 +370,8 @@ DEPENDENCIES
   ruby-lint
   rubycritic
   sandi_meter
-  scss-lint
+  scss_lint
+  scss_lint_reporter_checkstyle
   sqlint
   t
   tailor
