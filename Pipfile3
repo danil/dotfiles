@@ -1,6 +1,9 @@
 # Default amazon aws ec2 client <https://github.com/aws/aws-cli>.
 awscli
 
+# Bash scripts checker a-la pep8 (used by Emacs Flycheck) <https://github.com/openstack-dev/bashate>.
+bashate
+
 # Htop replacement <https://github.com/nicolargo/glances>.
 glances
 
