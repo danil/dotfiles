@@ -38,6 +38,8 @@
     "jsonlint": "latest",
     "less": "latest",
     "lodash": "latest",
+    "nodemon": "// restart node.js server if files changed <https://github.com/remy/nodemon>",
+    "nodemon": "latest",
     "purify-css": "latest",
     "standard": "latest",
     "surge": "latest",
