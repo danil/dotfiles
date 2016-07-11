@@ -1,0 +1,30 @@
+{
+  "extends": [
+    ".eslintrc.json"
+  ],
+  "env": {
+    "es6": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions" : {
+    "ecmaVersion": 6,
+    "ecmaFeatures" : {
+      "impliedStrict": true
+    }
+  },
+  "rules": {
+    "arrow-parens": [2, "as-needed"], // require parens in arrow function arguments
+    "arrow-spacing": 1, // require space before/after arrow function's arrow
+    "no-confusing-arrow": 2, // disallow arrow functions where they could be confused with comparisons
+    "no-useless-constructor": 1, // disallow unnecessary constructor
+    "no-var": 2, // require let or const instead of var
+    "object-shorthand": [2, "always", { "ignoreConstructors": true }], // require method and property shorthand syntax for object literals
+    "prefer-arrow-callback": 1, // suggest using arrow functions as callbacks
+    "prefer-const": 1, // suggest using const declaration for variables that are never modified after declared
+    "prefer-rest-params": 1, // suggest using the rest parameters instead of arguments
+    "prefer-spread": 1, // suggest using the spread operator instead of .apply()
+    "prefer-template": 2, // suggest using template literals instead of strings concatenation
+    "require-yield": 2, // disallow generator functions that do not have yield
+    "template-curly-spacing": [2, "never"] // enforce spacing around embedded expressions of template strings
+  }
+}
