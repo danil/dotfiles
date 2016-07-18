@@ -30,7 +30,6 @@ install_command="go get"
 
 [[ $verbose -eq 1 ]] && install_command="$install_command -v"
 
-# packages="$packages github.com/go-swagger/go-swagger/cmd/swagger" #swagger cli validator `swagger validate http://example.org/path/to/swagger.json`
 # packages="$packages github.com/ichinaski/pxl" #display images in the terminal (freeze terminal)
 # packages="$packages golang.org/x/tools/cmd/godoc" #documentation
 packages="$packages github.com/BurntSushi/toml/cmd/tomlv" #toml validator
@@ -38,6 +37,7 @@ packages="$packages github.com/cortesi/devd/cmd/devd" #local http/webserver for 
 packages="$packages github.com/danil/tgtm" #tweets go to mail (twitter client)
 packages="$packages github.com/digitalocean/doctl/cmd/doctl" #digitalocean command line tool
 packages="$packages github.com/github/hub" #github helper <https://github.com/github/hub>
+packages="$packages github.com/go-swagger/go-swagger/cmd/swagger" #swagger cli validator `swagger validate http://example.org/path/to/swagger.json`
 packages="$packages github.com/golang/lint/golint" #used by emacs flycheck `golint -set_exit_status ./...`
 packages="$packages github.com/jasonmoo/smlr" #jpeg encoder
 packages="$packages github.com/jgrahamc/httpdiff" #diff http requests <https://github.com/jgrahamc/httpdiff>
@@ -58,6 +58,7 @@ packages="$packages github.com/rogpeppe/godef" #used by emacs for jump to the de
 packages="$packages github.com/russross/blackfriday-tool" #markdown
 packages="$packages github.com/sanathp/statusok" #http status monitoring
 packages="$packages github.com/schachmat/wego" #weather
+packages="$packages github.com/shurcooL/markdownfmt" #like gofmt, but for markdown (used by emacs)
 packages="$packages github.com/uber-common/cpustat" #top alternative
 packages="$packages github.com/zquestz/s" #open default browser and web search
 packages="$packages golang.org/x/tools/cmd/goimports" #used by emacs as `gofmt` command replacement for adding/removing golang import lines
