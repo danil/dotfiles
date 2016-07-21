@@ -17,7 +17,7 @@ group :development do
   gem 'rails_best_practices' # code metric tool for rails `rails_best_practices path/to/source `
   gem 'reek' # code smell detector for ruby `reek path/to/source` <https://github.com/troessner/reek>
   gem 'roodi' # find ruby code design issues `roodi path/to/source` <https://github.com/roodi/roodi>
-  gem 'rubocop' # code analyzer based on ruby style guide `rubocop path/to/source` <https://github.com/bbatsov/rubocop>
+  gem 'rubocop' # code analyzer based on ruby style guide used by emacs flycheck `rubocop path/to/source` <https://github.com/bbatsov/rubocop>
   gem 'ruby-lint' # used by emacs flycheck
   gem 'rubycritic' # generate ruby code quality report <https://github.com/whitesmith/rubycritic>
   gem 'sandi_meter' # analysis ruby code `sandi_meter path/to/source` <https://github.com/makaroni4/sandi_meter>
