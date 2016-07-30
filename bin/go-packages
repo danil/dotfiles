@@ -33,6 +33,7 @@ install_command="go get"
 # packages="$packages github.com/ichinaski/pxl" #display images in the terminal (freeze terminal)
 # packages="$packages golang.org/x/tools/cmd/godoc" #documentation
 packages="$packages github.com/BurntSushi/toml/cmd/tomlv" #toml validator
+packages="$packages github.com/HewlettPackard/gas" #inspects go source code for security problems
 packages="$packages github.com/client9/misspell/cmd/misspell" #find misspelled words (typos) in source files
 packages="$packages github.com/cortesi/devd/cmd/devd" #local http/webserver for developers
 packages="$packages github.com/danil/ptichka/cmd/ptichka" #fetch tweets and send by SMTP (twitter client)
