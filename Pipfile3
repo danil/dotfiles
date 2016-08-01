@@ -51,6 +51,9 @@ stellar
 # Corrects previous console command <https://github.com/nvbn/thefuck>.
 thefuck
 
+# Converts web documents (HTML with CSS, SVG, …) to PDF http://weasyprint.org
+WeasyPrint
+
 # Video downloader (universal) <https://github.com/soimort/you-get>.
 you-get
 
