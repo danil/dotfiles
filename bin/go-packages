@@ -63,6 +63,7 @@ packages="$packages github.com/rlmcpherson/s3gof3r/gof3r" #s3 (amazon aws) clien
 packages="$packages github.com/rogpeppe/godef" #used by emacs for jump to the definition of the expression at point
 packages="$packages github.com/russross/blackfriday-tool" #markdown
 packages="$packages github.com/sanathp/statusok" #http status monitoring
+packages="$packages github.com/sanbornm/mp" #email to json `cat path/to/email | mp`
 packages="$packages github.com/schachmat/wego" #weather
 packages="$packages github.com/shurcooL/markdownfmt" #like gofmt, but for markdown (used by emacs)
 packages="$packages github.com/sourcegraph/checkup/cmd/checkup" #health checks a-la pingdom
