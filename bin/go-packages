@@ -68,7 +68,9 @@ packages="$packages github.com/schachmat/wego" #weather
 packages="$packages github.com/shurcooL/markdownfmt" #like gofmt, but for markdown (used by emacs)
 packages="$packages github.com/sourcegraph/checkup/cmd/checkup" #health checks a-la pingdom
 packages="$packages github.com/uber-common/cpustat" #top alternative
+packages="$packages github.com/variadico/noti/cmd/noti" #notification when a process completes
 packages="$packages github.com/zquestz/s" #open default browser and web search
+packages="$packages github.com/zyedidia/micro/..." #nano alternative, text editor `micro`
 packages="$packages golang.org/x/tools/cmd/goimports" #used by emacs as `gofmt` command replacement for adding/removing golang import lines
 packages="$packages golang.org/x/tools/cmd/gorename"
 
