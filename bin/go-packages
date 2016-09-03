@@ -32,7 +32,7 @@ install_command="go get"
 
 # packages="$packages github.com/digitalocean/doctl/cmd/doctl" #digitalocean command line tool (error while getting: fatal: no submodule mapping found in .gitmodules for path 'vendor/github.com/vektra/errors')
 # packages="$packages github.com/ichinaski/pxl" #display images in the terminal (freeze terminal)
-# packages="$packages github.com/ncw/rclone" #rsync for cloud storage (s3, dropbox, google drive)
+# packages="$packages github.com/ncw/rclone" #rsync for s3, dropbox, google drive cloud storage (error <https://github.com/ncw/rclone/pull/665>)
 # packages="$packages golang.org/x/tools/cmd/godoc" #documentation
 packages="$packages github.com/BurntSushi/toml/cmd/tomlv" #toml validator
 packages="$packages github.com/HewlettPackard/gas" #inspects go source code for security problems
