@@ -45,6 +45,7 @@ packages="$packages github.com/github/hub" #github helper <https://github.com/gi
 packages="$packages github.com/go-swagger/go-swagger/cmd/swagger" #swagger cli validator `swagger validate http://example.org/path/to/swagger.json`
 packages="$packages github.com/golang/lint/golint" #used by emacs flycheck `golint -set_exit_status ./...`
 packages="$packages github.com/gordonklaus/ineffassign" #detect ineffectual assignments in go code
+packages="$packages github.com/gravitational/teleconsole" #a-la ssh behind vpn (for example use whith tmux)
 packages="$packages github.com/jasonmoo/smlr" #jpeg encoder
 packages="$packages github.com/jgrahamc/httpdiff" #diff http requests <https://github.com/jgrahamc/httpdiff>
 packages="$packages github.com/jingweno/ccat" #colorizing cat <https://github.com/jingweno/ccat>
@@ -68,6 +69,7 @@ packages="$packages github.com/sanbornm/mp" #email to json `cat path/to/email | 
 packages="$packages github.com/schachmat/wego" #weather
 packages="$packages github.com/shurcooL/markdownfmt" #like gofmt, but for markdown (used by emacs)
 packages="$packages github.com/sourcegraph/checkup/cmd/checkup" #health checks a-la pingdom
+packages="$packages github.com/tomnomnom/gron" #greppable json (query) `gron "https://api.github.com/repos/tomnomnom/gron/commits?per_page=1" | fgrep "commit.author"`
 packages="$packages github.com/uber-common/cpustat" #top alternative
 packages="$packages github.com/variadico/noti/cmd/noti" #notification when a process completes
 packages="$packages github.com/zquestz/s" #open default browser and web search
