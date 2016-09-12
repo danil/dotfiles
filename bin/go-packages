@@ -76,5 +76,6 @@ packages="$packages github.com/zquestz/s" #open default browser and web search
 packages="$packages github.com/zyedidia/micro/..." #nano alternative, text editor `micro`
 packages="$packages golang.org/x/tools/cmd/goimports" #used by emacs as `gofmt` command replacement for adding/removing golang import lines
 packages="$packages golang.org/x/tools/cmd/gorename"
+packages="$packages golang.org/x/tools/cmd/guru" #used by emacs
 
 $install_command $packages
