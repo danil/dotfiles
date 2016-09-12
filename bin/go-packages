@@ -39,7 +39,7 @@ packages="$packages github.com/HewlettPackard/gas" #inspects go source code for 
 packages="$packages github.com/client9/misspell/cmd/misspell" #find misspelled words (typos) in source files
 packages="$packages github.com/constabulary/gb/..." #best package manager?
 packages="$packages github.com/cortesi/devd/cmd/devd" #local http/webserver for developers `devd --address=0.0.0.0 --livewatch ./`
-packages="$packages github.com/danil/ptichka/cmd/ptichka" #fetch tweets and send by SMTP (twitter client)
+packages="$packages github.com/danil/ptichka" #fetch tweets and send by SMTP (twitter client)
 packages="$packages github.com/fzipp/gocyclo" #calculate cyclomatic complexities of functions in go source code according to the following rules: 1 is the base complexity of a function +1 for each 'if', 'for', 'case', '&&' or '||'
 packages="$packages github.com/github/hub" #github helper <https://github.com/github/hub>
 packages="$packages github.com/go-swagger/go-swagger/cmd/swagger" #swagger cli validator `swagger validate http://example.org/path/to/swagger.json`
