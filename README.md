@@ -11,11 +11,11 @@ Install my utils:
 
     cd && bundle install
     cd && npm install
-    ~/bin/bash-install-all
-    ~/bin/c-install-all
-    ~/bin/go-install-all
-    ~/bin/python-install-all
-    ~/bin/rust-install-all
+    ~/bin/bash-packages
+    ~/bin/c-packages
+    ~/bin/go-packages --update
+    ~/bin/python-packages
+    ~/bin/rust-packages --update
 
 Copying
 -------
