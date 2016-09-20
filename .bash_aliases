@@ -1,9 +1,5 @@
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-# Set PATH so it includes user's private bin if it exists.
-PATH=~/bin:"${PATH}"
-PATH=~/local/bin:"${PATH}"
-
 # Tab completion
 # <http://wiki.gentoo.org/wiki/Bash#Tab_completion>.
 [[ -f /etc/profile.d/bash-completion.sh ]] && source /etc/profile.d/bash-completion.sh
@@ -15,9 +11,9 @@ stty -ixon
 export EDITOR="vim" #export EDITOR="nano" #export EDITOR="/usr/bin/emacsclient -t"
 # export ALTERNATE_EDITOR="/usr/bin/emacs"
 export GIT_EDITOR='vim'
-export PAGER="/usr/bin/less -IM"
-export HISTSIZE=10000
-export HISTFILESIZE=10000
+# export PAGER="/usr/bin/less -IM" #not working(
+export HISTSIZE=30000
+export HISTFILESIZE=30000
 export HISTCONTROL=ignoredups:erasedups
 # See /usr/share/terminfo/*/
 # export TERM=rxvt-256color
@@ -29,47 +25,60 @@ export HISTCONTROL=ignoredups:erasedups
 alias sudo='sudo '
 alias ls='ls --color'
 alias ll='ls -l --all --human-readable'
-alias less=$PAGER
+# alias less=$PAGER
 alias e='emacs --no-window-system'
 alias ec='emacsclient --tty'
+
+export PATH="$HOME"/bin:"$PATH" #clib is an C package manager <https://github.com/clibs/clib> run `c-install-all`
+
+export PATH="$PATH":"$HOME"/deps/bin #bpkg bash package manager <https://github.com/bpkg/bpkg#installing-packages> run `bash-install-all`
+
+export PATH="$HOME/.cask/bin:$PATH" #emacs cask <http://cask.github.io>
+
+# Go <http://golang.org/doc/code.html#GOPATH>.
+# Run `go-install-all`.
+export GOPATH="$HOME"/go
+export PATH="$PATH":"$GOPATH"/bin #for convenience, add the workspace's bin subdirectory to your PATH
+# [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm" #gvm (Go version manager) <https://github.com/moovweb/gvm>
+
+# Rust (rust toolchain installer https://www.rustup.rs).
+export PATH="$HOME"/.cargo/bin:"$PATH" #be sure to add `/home/danil/.cargo/bin` to your PATH to be able to run the installed binaries
+
+# Steel Bank Common Lisp.
+export SBCL_HOME=/usr/lib64/sbcl
 
 # rbenv <https://github.com/sstephenson/rbenv#basic-github-checkout>.
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-[ -f "$HOME/.travis/travis.sh" ] && source "$HOME/.travis/travis.sh" #added by travis gem
-
-export PATH=$PATH:$HOME/deps/bin #bpkg bash package manager <https://github.com/bpkg/bpkg#installing-packages>
-
-# Steel Bank Common Lisp.
-export SBCL_HOME=/usr/lib64/sbcl
-
-# Node.js
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  #this loads nvm
-[[ -r "$NVM_DIR/bash_completion" ]] && . "$NVM_DIR/bash_completion"
-PATH="$HOME/node_modules/.bin:$PATH"
+export PATH="$PATH":"$HOME"/.local/bin #pip (python package management system) run `python-install-all`
 
 # # Lua.
-# PATH=~/.luarocks/bin:"${PATH}"
-# export LUA_PATH="/home/danil/.luarocks/share/lua/5.1//?.lua;./?.lua;$LUA_PATH"
-# export LUA_CPATH="/home/danil/.luarocks/lib/lua/5.1//?.so;./?.so;$LUA_CPATH"
+# PATH="$HOME"/.luarocks/bin:"$PATH"
+# export LUA_PATH="$HOME""/.luarocks/share/lua/5.1//?.lua;./?.lua;$LUA_PATH"
+# export LUA_CPATH="$HOME""/.luarocks/lib/lua/5.1//?.so;./?.so;$LUA_CPATH"
 
-# Go <http://golang.org/doc/code.html#GOPATH>.
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin #for convenience, add the workspace's bin subdirectory to your PATH
+# # lenv (Lua version manager) <https://github.com/mah0x211/lenv>.
+# export PATH="$HOME"/.lenv/bin:"$HOME"/.lenv/current/bin:$PATH
+# export LUA_PATH="$HOME"'/.lenv/current/luarocks/share/?.lua;'"$HOME"'/.lenv/current/luarocks/share/?/init.lua;;'
+# export LUA_CPATH="$HOME"'/.lenv/current/luarocks/lib/?.so;;'
 
-# gvm (Go version manager) <https://github.com/moovweb/gvm>.
-[[ -s "/home/danil/.gvm/scripts/gvm" ]] && source "/home/danil/.gvm/scripts/gvm"
+# Travis CI gem.
+[ -f "$HOME"/.travis/travis.sh ] && source "$HOME"/.travis/travis.sh #auto completion
 
-# rsvm (Rust version manager) <https://github.com/sdepold/rsvm>.
-[[ -s /home/danil/.rsvm/rsvm.sh ]] && . /home/danil/.rsvm/rsvm.sh #this loads rsvm
+# Node.js and npm.
+# WARNING: Do NOT give priority to npm executables!!!
+export PATH="$PATH:$HOME/node_modules/.bin"
 
-# # Emacs Cask <http://cask.github.io>.
-# export PATH="$HOME/.cask/bin:$PATH"
+# n (Node.js version manager).
+# Added by n-install (see http://git.io/n-install-repo).
+export N_PREFIX="$HOME"/n
+[[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
 
-# pip (python package management system).
-export PATH=$PATH:$HOME/.local/bin
+# # nvm (Node.js version manager)
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  #this loads nvm
+# [[ -r "$NVM_DIR/bash_completion" ]] && . "$NVM_DIR/bash_completion"
 
 # Prompt.
-[[ -f ~/.bash_prompt.sh ]] && source ~/.bash_prompt.sh
+[[ -f "$HOME"/.bash_prompt.sh ]] && source "$HOME"/.bash_prompt.sh

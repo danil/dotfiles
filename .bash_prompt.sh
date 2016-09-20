@@ -70,37 +70,37 @@ function my_ps1_timer_show {
                 > /dev/null 2> /dev/null < /dev/null &
         fi
         if command -v dunstify >/dev/null 2>&1 ; then
-            notify_title="time:$timer"
+            notify_title="${timer}s" # ◷
             if [[ ${my_exit_code} -eq 0 ]]; then
                 #low, normal, critical
                 my_notify_urgency="low"
             else
                 my_notify_urgency="critical"
-                notify_title="exit:$my_exit_code $notify_title"
+                notify_title="${my_exit_code}! $notify_title" # ☢
             fi
             dunstify --urgency=$my_notify_urgency \
                 "$notify_title" \
                 "$my_previous_command"
         fi
-        echo -n " time:$timer"
+        echo -n " ${timer}s" # ◷
     fi
 }
-if [ -f ~/.git-prompt/contrib/completion/git-prompt.sh ]; then
+if [ -f ~/.git-prompt.sh ]; then
     # Git prompt
     # <http://github.com/git/git/blob/master/contrib/completion/git-prompt.sh>.
     GIT_PS1_SHOWCOLORHINTS=1
     GIT_PS1_SHOWDIRTYSTATE=1
-    GIT_PS1_SHOWSTASHSTATE=1
+    # GIT_PS1_SHOWSTASHSTATE=1
     GIT_PS1_SHOWUNTRACKEDFILES=1
     GIT_PS1_SHOWUPSTREAM="auto"
-    source ~/.git-prompt/contrib/completion/git-prompt.sh
+    source ~/.git-prompt.sh
 fi
 function my_ps1_dynamic_variables {
     my_exit_code=$? #exit status error <http://brettterpstra.com/2009/11/17/my-new-favorite-bash-prompt>
     if [[ $my_exit_code -eq 0 || $my_exit_code -ge 128 ]]; then #set an error string for the prompt, if applicable (ignore kill e. g. 130 script terminated by control-c <http://www.tldp.org/LDP/abs/html/exitcodes.html>)
         ps1_exit_code=""
     else
-        ps1_exit_code=" error:$my_exit_code"
+        ps1_exit_code=" ${my_exit_code}!" # ☢ ⚠ ☠ ☹ ☣
     fi
 
     ps1_load="$(ps1_load)"

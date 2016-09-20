@@ -1,6 +1,13 @@
 *#
 *.#*
+*.a
+*.cache
+*.elc
 *.swp
+*.test
 *~
+.DS_Store
 /TAGS
 /projectile-bookmarks.eld
+npm-debug.log
+projectile.cache
