@@ -7,7 +7,9 @@ keycode 166 =
 ! XF86Forward.
 keycode 167 =
 
-! ! Swap control/ctrl/ctl and meta/alt keys
+! Swap `control/ctrl/ctl` and `meta/alt` keys;
+! and make the `Caps_Lock` key be a `control/ctrl/ctl`
+! and make the `Print` key be a `meta/alt` key (h10 ThinkPad t430);
 ! <http://xahlee.info/linux/linux_swap_control_and_alt_xmodmap.html>.
 clear control
 clear mod1
@@ -15,6 +17,11 @@ keycode 37 = Alt_L Meta_L
 keycode 105 = Alt_R Meta_R
 keycode 64 = Control_L
 keycode 108 = Control_R
+! Caps_Lock.
+clear Lock
+keycode 66 = Control_L
+! h10 ThinkPad t430.
+keycode 107 = Alt_R Meta_R
 add control = Control_L Control_R
 add mod1 = Alt_L Meta_L
 
