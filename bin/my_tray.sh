@@ -7,7 +7,7 @@ trayer-srg \
     --align right \
     --widthtype request \
     --height 22 \
-    --distancefrom right --distance 490 \
+    --distancefrom right --distance 495 \
     --transparent true \
     --alpha 0 \
     --tint 000000 &
