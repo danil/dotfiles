@@ -1,7 +1,7 @@
 #! /bin/sh
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-killall trayer-srg 2> /dev/null
+killall trayer-srg &> /dev/null
 trayer-srg \
     --edge top \
     --align right \
@@ -12,5 +12,5 @@ trayer-srg \
     --alpha 0 \
     --tint 000000 &
 
-killall xxkb 2> /dev/null
+killall xxkb &> /dev/null
 xxkb &
