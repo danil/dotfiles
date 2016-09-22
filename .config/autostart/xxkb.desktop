@@ -2,7 +2,6 @@
 Comment=Keyboard layout indicator for tray
 Encoding=UTF-8
 Exec=xxkb
-Hidden=true
 Name=xxkb
 OnlyShowIn=XFCE;
 Terminal=false
