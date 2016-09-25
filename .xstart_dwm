@@ -5,6 +5,14 @@
 
 [ -x ~/.xstart ] && ~/.xstart
 
+# <http://dwm.suckless.org/tutorial>,
+# <https://wiki.archlinux.org/index.php/dwm#Statusbar_configuration>,
+# <https://wiki.gentoo.org/wiki/Dwm#Settings_file_.28dwm.rc.29>.
+# xsetroot -name " "
+# suckless lightweight status monitor uses WM_NAME
+# <https://github.com/drkh5h/slstatus#starting>.
+slstatus -d
+
 # xrandr --dpi 120 #<http://lists.suckless.org/dev/1410/23873.html>
 
 # Desktop Application Autostart Specification <http://standards.freedesktop.org/autostart-spec/autostart-spec-latest.html>,
