@@ -57,6 +57,7 @@ function ps1_outdated_packages {
 }
 function ps1_unread_mails {
     if [ -s /var/mail/$(whoami) ] ; then
+        # <http://serverfault.com/questions/171833/display-number-of-messages-in-linux-mail-queue#289177>
         let mails_count=$(mail --file /var/mail/$(whoami) --headers \
                                  | sed '/^>* *[0-9]/d' \
                                  | wc -l)
@@ -76,7 +77,7 @@ function my_ps1_timer_show {
     let timer=${tmp}
     if [[ ${timer} -ge 10 ]]; then
         if command -v play >/dev/null 2>&1 && #how to check if a program exists <http://stackoverflow.com/questions/592620/how-to-check-if-a-program-exists-from-a-bash-script#677212>
-            [ -f /home/$(whoami)/local/share/sounds/complete.oga ]; then
+               [ -f /home/$(whoami)/local/share/sounds/complete.oga ]; then
             # <http://en.wikipedia.org/wiki/Nohup#Overcoming_hanging>.
             nohup play -q --no-show-progress \
                   /home/$(whoami)/local/share/sounds/complete.oga \
