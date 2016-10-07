@@ -50,7 +50,9 @@ export SBCL_HOME=/usr/lib64/sbcl
 
 # rbenv <https://github.com/sstephenson/rbenv#basic-github-checkout>.
 export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+if hash rbenv 2>/dev/null; then
+    eval "$(rbenv init -)"
+fi
 
 export PATH="$PATH":"$HOME"/.local/bin #pip (python package management system) run `python-install-all`
 
