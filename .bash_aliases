@@ -11,9 +11,9 @@ stty -ixon
 export EDITOR="vim" #export EDITOR="nano" #export EDITOR="/usr/bin/emacsclient -t"
 # export ALTERNATE_EDITOR="/usr/bin/emacs"
 export GIT_EDITOR='vim'
-export PAGER="/usr/bin/less -IM"
-export HISTSIZE=10000
-export HISTFILESIZE=10000
+# export PAGER="/usr/bin/less -IM" #not working(
+export HISTSIZE=30000
+export HISTFILESIZE=30000
 export HISTCONTROL=ignoredups:erasedups
 # See /usr/share/terminfo/*/
 # export TERM=rxvt-256color
@@ -25,7 +25,7 @@ export HISTCONTROL=ignoredups:erasedups
 alias sudo='sudo '
 alias ls='ls --color'
 alias ll='ls -l --all --human-readable'
-alias less=$PAGER
+# alias less=$PAGER
 alias e='emacs --no-window-system'
 alias ec='emacsclient --tty'
 
@@ -41,9 +41,8 @@ export GOPATH="$HOME"/go
 export PATH="$PATH":"$GOPATH"/bin #for convenience, add the workspace's bin subdirectory to your PATH
 # [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm" #gvm (Go version manager) <https://github.com/moovweb/gvm>
 
-# Rust.
-export PATH="$PATH":"$HOME"/.cargo/bin #be sure to add `/home/danil/.cargo/bin` to your PATH to be able to run the installed binaries
-[[ -s "$HOME"/.rsvm/rsvm.sh ]] && . "$HOME"/.rsvm/rsvm.sh #rsvm (Rust version manager) <https://github.com/sdepold/rsvm>
+# Rust (rust toolchain installer https://www.rustup.rs).
+export PATH="$HOME"/.cargo/bin:"$PATH" #be sure to add `/home/danil/.cargo/bin` to your PATH to be able to run the installed binaries
 
 # Steel Bank Common Lisp.
 export SBCL_HOME=/usr/lib64/sbcl
@@ -61,8 +60,17 @@ export PATH="$PATH":"$HOME"/.local/bin #pip (python package management system) r
 # export LUA_PATH="$HOME""/.luarocks/share/lua/5.1//?.lua;./?.lua;$LUA_PATH"
 # export LUA_CPATH="$HOME""/.luarocks/lib/lua/5.1//?.so;./?.so;$LUA_CPATH"
 
-# Node.js
-export PATH="$HOME/node_modules/.bin:$PATH"
+# # lenv (Lua version manager) <https://github.com/mah0x211/lenv>.
+# export PATH="$HOME"/.lenv/bin:"$HOME"/.lenv/current/bin:$PATH
+# export LUA_PATH="$HOME"'/.lenv/current/luarocks/share/?.lua;'"$HOME"'/.lenv/current/luarocks/share/?/init.lua;;'
+# export LUA_CPATH="$HOME"'/.lenv/current/luarocks/lib/?.so;;'
+
+# Travis CI gem.
+[ -f "$HOME"/.travis/travis.sh ] && source "$HOME"/.travis/travis.sh #auto completion
+
+# Node.js and npm.
+# WARNING: Do NOT give priority to npm executables!!!
+export PATH="$PATH:$HOME/node_modules/.bin"
 
 # n (Node.js version manager).
 # Added by n-install (see http://git.io/n-install-repo).
@@ -73,14 +81,6 @@ export N_PREFIX="$HOME"/n
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  #this loads nvm
 # [[ -r "$NVM_DIR/bash_completion" ]] && . "$NVM_DIR/bash_completion"
-
-# # lenv (Lua version manager) <https://github.com/mah0x211/lenv>.
-# export PATH="$HOME"/.lenv/bin:"$HOME"/.lenv/current/bin:$PATH
-# export LUA_PATH="$HOME"'/.lenv/current/luarocks/share/?.lua;'"$HOME"'/.lenv/current/luarocks/share/?/init.lua;;'
-# export LUA_CPATH="$HOME"'/.lenv/current/luarocks/lib/?.so;;'
-
-# Travis CI gem.
-[ -f "$HOME"/.travis/travis.sh ] && source "$HOME"/.travis/travis.sh #auto completion
 
 # Prompt.
 [[ -f "$HOME"/.bash_prompt.sh ]] && source "$HOME"/.bash_prompt.sh

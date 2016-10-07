@@ -30,9 +30,9 @@ function ps1_jobs {
     fi
 }
 function ps1_pwd {
-  local my_pwd=$(echo $PWD \
-      | sed --expression="s|^$HOME|~|" --expression='s-\([^/.]\)[^/]*/-\1/-g')
-  echo -n " ${ps1_blue}${my_pwd}${ps1_plain}"
+    local my_pwd=$(echo $PWD \
+                          | sed --expression="s|^$HOME|~|" --expression='s-\([^/.]\)[^/]*/-\1/-g')
+    echo -n " ${ps1_blue}${my_pwd}${ps1_plain}"
 }
 function ps1_load {
     # Prompt load average
@@ -55,6 +55,19 @@ function ps1_outdated_packages {
         fi
     fi
 }
+function ps1_unread_mails {
+    if [ -s /var/mail/$(whoami) ] ; then
+        let mails_count=$(mail --file /var/mail/$(whoami) --headers \
+                                 | sed '/^>* *[0-9]/d' \
+                                 | wc -l)
+
+    else
+        let mails_count=0
+    fi
+    if [[ ${mails_count} -gt 0 ]]; then
+        echo -n " mail:${mails_count}"
+    fi
+}
 function my_ps1_timer_start {
     my_ps1_timer_seconds=${my_ps1_timer_seconds:-$SECONDS}
 }
@@ -63,11 +76,11 @@ function my_ps1_timer_show {
     let timer=${tmp}
     if [[ ${timer} -ge 10 ]]; then
         if command -v play >/dev/null 2>&1 && #how to check if a program exists <http://stackoverflow.com/questions/592620/how-to-check-if-a-program-exists-from-a-bash-script#677212>
-            [ -f /home/danil/local/share/sounds/complete.oga ]; then
+            [ -f /home/$(whoami)/local/share/sounds/complete.oga ]; then
             # <http://en.wikipedia.org/wiki/Nohup#Overcoming_hanging>.
             nohup play -q --no-show-progress \
-                /home/danil/local/share/sounds/complete.oga \
-                > /dev/null 2> /dev/null < /dev/null &
+                  /home/$(whoami)/local/share/sounds/complete.oga \
+                  > /dev/null 2> /dev/null < /dev/null &
         fi
         if command -v dunstify >/dev/null 2>&1 ; then
             notify_title="${timer}s" # ◷
@@ -79,13 +92,13 @@ function my_ps1_timer_show {
                 notify_title="${my_exit_code}! $notify_title" # ☢
             fi
             dunstify --urgency=$my_notify_urgency \
-                "$notify_title" \
-                "$my_previous_command"
+                     "$notify_title" \
+                     "$my_previous_command"
         fi
         echo -n " ${timer}s" # ◷
     fi
 }
-if [ -f ~/.git-prompt.sh ]; then
+if [ -f /home/$(whoami)/.git-prompt.sh ]; then
     # Git prompt
     # <http://github.com/git/git/blob/master/contrib/completion/git-prompt.sh>.
     GIT_PS1_SHOWCOLORHINTS=1
@@ -93,7 +106,7 @@ if [ -f ~/.git-prompt.sh ]; then
     # GIT_PS1_SHOWSTASHSTATE=1
     GIT_PS1_SHOWUNTRACKEDFILES=1
     GIT_PS1_SHOWUPSTREAM="auto"
-    source ~/.git-prompt.sh
+    source /home/$(whoami)/.git-prompt.sh
 fi
 function my_ps1_dynamic_variables {
     my_exit_code=$? #exit status error <http://brettterpstra.com/2009/11/17/my-new-favorite-bash-prompt>
@@ -105,6 +118,7 @@ function my_ps1_dynamic_variables {
 
     ps1_load="$(ps1_load)"
     ps1_jobs="$(ps1_jobs)"
+    ps1_unread_mails="$(ps1_unread_mails)"
     ps1_outdated_packages="$(ps1_outdated_packages)"
 
     # History between sessions <http://briancarper.net/blog/248>.
@@ -124,6 +138,7 @@ PS1+='${ps1_exit_code}'
 PS1+="${ps1_yellow}"
 PS1+='${my_ps1_timer_show}' #prompt last command time <http://stackoverflow.com/questions/1862510/how-can-the-last-commands-wall-time-be-put-in-the-bash-prompt#1862762>
 PS1+="${ps1_white}"
+PS1+='${ps1_unread_mails}'
 PS1+='${ps1_outdated_packages}'
 PS1+='${ps1_load}'
 PS1+='${ps1_jobs}'
