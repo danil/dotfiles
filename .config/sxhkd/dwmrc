@@ -1,0 +1,19 @@
+# This file is part of Danil <danil@kutkevich.org> home.
+
+# "ctrl+t" replaying hack.
+control + t ; t
+    bash -c "killall sxhkd && xdotool key ctrl+t && xdotool key ctrl+t && sxhkd -c $HOME/.config/sxhkd/dwmrc"
+
+control + t : v : {j,k,m,u}
+    { \
+        audio-lower-volume.sh && osd_sound_volume.sh, \
+        audio-raise-volume.sh && osd_sound_volume.sh, \
+        amixer sset Master mute && osd_sound_volume.sh, \
+        amixer sset Master unmute && osd_sound_volume.sh
+    }
+
+# dwm tags.
+control + t ; {0-9}
+    echo -n view{0-9} > /tmp/dwm.fifo
+control + t ; w ; {0-9}
+    echo -n tag{0-9} > /tmp/dwm.fifo
