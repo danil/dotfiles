@@ -85,18 +85,29 @@ function my_ps1_timer_show {
         fi
         if command -v dunstify >/dev/null 2>&1 ; then
             notify_title="${timer}s" # ◷
-            if [[ ${my_exit_code} -eq 0 ]]; then
-                #low, normal, critical
-                my_notify_urgency="low"
-            else
-                my_notify_urgency="critical"
-                notify_title="${my_exit_code}! $notify_title" # ☢
-            fi
-            dunstify --urgency=$my_notify_urgency \
-                     "$notify_title" \
-                     "$my_previous_command"
+            # <http://tldp.org/LDP/abs/html/exitcodes.html>.
+            case $my_exit_code in
+                0)
+                    # low, normal, critical.
+                    my_notify_urgency="low"
+                    ;;
+                *)
+                    my_notify_urgency="critical"
+                    notify_title="${my_exit_code}! $notify_title" # ☢
+                    ;;
+            esac
+            case $my_exit_code in
+                130|148)
+                # this is `ctrl-c`.
+                ;;
+                *)
+                    dunstify --urgency=$my_notify_urgency \
+                             "$notify_title" \
+                             "$my_previous_command"
+                    ;;
+            esac
+            echo -n " ${timer}s" # ◷
         fi
-        echo -n " ${timer}s" # ◷
     fi
 }
 if [ -f /home/$(whoami)/.git-prompt.sh ]; then
