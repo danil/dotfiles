@@ -1,5 +1,10 @@
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export LC_TYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 # Tab completion
 # <http://wiki.gentoo.org/wiki/Bash#Tab_completion>.
 [[ -f /etc/profile.d/bash-completion.sh ]] && source /etc/profile.d/bash-completion.sh
