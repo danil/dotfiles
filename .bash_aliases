@@ -28,6 +28,7 @@ alias ll='ls -l --all --human-readable'
 # alias less=$PAGER
 alias e='emacs --no-window-system'
 alias ec='emacsclient --tty'
+alias ag='ag --width=5000'
 
 export PATH="$HOME"/bin:"$PATH" #clib is an C package manager <https://github.com/clibs/clib> run `c-install-all`
 
