@@ -3,9 +3,10 @@
 # Running several applications from ~/.xinitrc
 # <https://wiki.archlinux.org/index.php/ConsoleKit#Running_several_applications_from_.7E.2F.xinitrc>.
 
-# urxvtd --fork --quiet
 feh --bg-center ~/local/share/backgrounds/gentoo-znurt-larry-abducted-1440x900.png
-killall i3status ; killall dzen2 ; i3status | ~/src/py/i3-dzen2-bridge/i3-dzen-bridge.py | ~/bin/my_dzen2.sh &
+
+# urxvtd --fork --quiet
+# killall i3status ; killall dzen2 ; i3status | ~/src/py/i3-dzen2-bridge/i3-dzen-bridge.py | ~/bin/my_dzen2.sh &
 
 # # Danil.
 # # h11 Latitude e7250.
