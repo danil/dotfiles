@@ -88,10 +88,16 @@ function my_ps1_timer_show {
             ;;
     esac
 
+    # Interactive commands.
     case $my_previous_command in
-        tmux*|emacs*|vim*|htop*) # interactive commands
-            return 0
-            ;;
+        alsamixer*) return 0 ;;
+        emacs*|sudo?emacs*) return 0 ;;
+        git*log*|sudo?git*log*|git*rebase*|sudo?git*rebase*) return 0 ;;
+        htop*|sudo?htop*) return 0 ;;
+        less*|sudo?less*) return 0 ;;
+        make*menuconfig*|sudo?make*menuconfig*) return 0 ;;
+        tmux*|sudo?tmux) return 0 ;;
+        vim*|sudo?vim*) return 0 ;;
     esac
 
     if command -v play >/dev/null 2>&1 && #how to check if a program exists <http://stackoverflow.com/questions/592620/how-to-check-if-a-program-exists-from-a-bash-script#677212>
