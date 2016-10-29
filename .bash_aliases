@@ -13,9 +13,9 @@ export LC_ALL=en_US.UTF-8
 # <http://superuser.com/questions/124845/can-you-disable-the-ctrl-s-xoff-keystroke-in-putty#155875>.
 stty -ixon
 
-export EDITOR="vim" #export EDITOR="nano" #export EDITOR="/usr/bin/emacsclient -t"
+export EDITOR="vim" #export EDITOR="vim" #export EDITOR="/usr/bin/emacsclient -t"
 # export ALTERNATE_EDITOR="/usr/bin/emacs"
-export GIT_EDITOR='vim'
+export GIT_EDITOR='emacs'
 # export PAGER="/usr/bin/less -IM" #not working(
 export HISTSIZE=30000
 export HISTFILESIZE=30000
