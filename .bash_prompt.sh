@@ -98,6 +98,7 @@ function my_ps1_timer_show {
         make*menuconfig*|sudo?make*menuconfig*) return 0 ;;
         tmux*|sudo?tmux) return 0 ;;
         vim*|sudo?vim*) return 0 ;;
+        mosh*) return 0 ;;
     esac
 
     if command -v play >/dev/null 2>&1 && #how to check if a program exists <http://stackoverflow.com/questions/592620/how-to-check-if-a-program-exists-from-a-bash-script#677212>
