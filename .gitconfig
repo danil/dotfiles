@@ -21,3 +21,4 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = emacs
+	pager = `test \"$TERM\" = \"dumb\" && echo cat || echo less`
