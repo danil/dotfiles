@@ -47,6 +47,7 @@ packages="$packages github.com/davecheney/httpstat" #http statistics (a-la curl 
 packages="$packages github.com/fzipp/gocyclo" #calculate cyclomatic complexities of functions in go source code according to the following rules: 1 is the base complexity of a function +1 for each 'if', 'for', 'case', '&&' or '||'
 packages="$packages github.com/github/hub" #github helper <https://github.com/github/hub>
 packages="$packages github.com/go-swagger/go-swagger/cmd/swagger" #swagger cli validator `swagger validate http://example.org/path/to/swagger.json`
+packages="$packages github.com/godoctor/godoctor" #used by emacs for variables reanming
 packages="$packages github.com/golang/lint/golint" #used by emacs flycheck `golint -set_exit_status ./...`
 packages="$packages github.com/gordonklaus/ineffassign" #detect ineffectual assignments in go code
 packages="$packages github.com/jasonmoo/smlr" #jpeg encoder
