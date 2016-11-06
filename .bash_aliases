@@ -1,5 +1,10 @@
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export LC_TYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 # Tab completion
 # <http://wiki.gentoo.org/wiki/Bash#Tab_completion>.
 [[ -f /etc/profile.d/bash-completion.sh ]] && source /etc/profile.d/bash-completion.sh
@@ -8,9 +13,9 @@
 # <http://superuser.com/questions/124845/can-you-disable-the-ctrl-s-xoff-keystroke-in-putty#155875>.
 stty -ixon
 
-export EDITOR="vim" #export EDITOR="nano" #export EDITOR="/usr/bin/emacsclient -t"
+export EDITOR="vim" #export EDITOR="vim" #export EDITOR="/usr/bin/emacsclient -t"
 # export ALTERNATE_EDITOR="/usr/bin/emacs"
-export GIT_EDITOR='vim'
+export GIT_EDITOR='emacs'
 # export PAGER="/usr/bin/less -IM" #not working(
 export HISTSIZE=30000
 export HISTFILESIZE=30000
@@ -28,6 +33,7 @@ alias ll='ls -l --all --human-readable'
 # alias less=$PAGER
 alias e='emacs --no-window-system'
 alias ec='emacsclient --tty'
+alias ag='ag --width=5000'
 
 export PATH="$HOME"/bin:"$PATH" #clib is an C package manager <https://github.com/clibs/clib> run `c-install-all`
 

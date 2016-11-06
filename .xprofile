@@ -42,7 +42,7 @@ elif hash xcalib 2>/dev/null; then
 fi
 
 if [[ `hostname -s` == 'h3' ]]; then
-    $display_calibrator ~/color_profile_thinkpad_t400s.icm &
+    $display_calibrator ~/Dropbox/thinkpad_t400s.icm &
 elif [[ `hostname -s` == 'h10' ]]; then
-    $display_calibrator ~/color_profile_thinkpad_t430.icc &
+    $display_calibrator ~/Dropbox/thinkpad_t430.icc &
 fi

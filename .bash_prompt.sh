@@ -57,6 +57,7 @@ function ps1_outdated_packages {
 }
 function ps1_unread_mails {
     if [ -s /var/mail/$(whoami) ] ; then
+        # <http://serverfault.com/questions/171833/display-number-of-messages-in-linux-mail-queue#289177>
         let mails_count=$(mail --file /var/mail/$(whoami) --headers \
                                  | sed '/^>* *[0-9]/d' \
                                  | wc -l)
@@ -74,28 +75,56 @@ function my_ps1_timer_start {
 function my_ps1_timer_show {
     local tmp=$(($SECONDS - $my_ps1_timer_seconds))
     let timer=${tmp}
-    if [[ ${timer} -ge 10 ]]; then
-        if command -v play >/dev/null 2>&1 && #how to check if a program exists <http://stackoverflow.com/questions/592620/how-to-check-if-a-program-exists-from-a-bash-script#677212>
-            [ -f /home/$(whoami)/local/share/sounds/complete.oga ]; then
-            # <http://en.wikipedia.org/wiki/Nohup#Overcoming_hanging>.
-            nohup play -q --no-show-progress \
-                  /home/$(whoami)/local/share/sounds/complete.oga \
-                  > /dev/null 2> /dev/null < /dev/null &
-        fi
-        if command -v dunstify >/dev/null 2>&1 ; then
-            notify_title="${timer}s" # ◷
-            if [[ ${my_exit_code} -eq 0 ]]; then
-                #low, normal, critical
+
+    if [[ ${timer} -lt 10 ]]; then # too fast command
+        return 0
+    fi
+
+    echo -n " ${timer}s" # ◷
+
+    case $my_exit_code in
+        130|148) # interactively interrupted by `ctrl-c`
+            return 0
+            ;;
+    esac
+
+    # Interactive commands.
+    case $my_previous_command in
+        alsamixer*) return 0 ;;
+        emacs*|sudo?emacs*) return 0 ;;
+        git*log*|sudo?git*log*|git*rebase*|sudo?git*rebase*) return 0 ;;
+        htop*|sudo?htop*) return 0 ;;
+        less*|sudo?less*) return 0 ;;
+        make*menuconfig*|sudo?make*menuconfig*) return 0 ;;
+        tmux*|sudo?tmux) return 0 ;;
+        vim*|sudo?vim*) return 0 ;;
+        mosh*) return 0 ;;
+    esac
+
+    if command -v play >/dev/null 2>&1 && #how to check if a program exists <http://stackoverflow.com/questions/592620/how-to-check-if-a-program-exists-from-a-bash-script#677212>
+           [ -f /home/$(whoami)/local/share/sounds/complete.oga ]; then
+        # <http://en.wikipedia.org/wiki/Nohup#Overcoming_hanging>.
+        nohup play -q --no-show-progress \
+              /home/$(whoami)/local/share/sounds/complete.oga \
+              > /dev/null 2> /dev/null < /dev/null &
+    fi
+
+    if command -v dunstify >/dev/null 2>&1 ; then
+        notify_title="${timer}s" # ◷
+        # <http://tldp.org/LDP/abs/html/exitcodes.html>.
+        case $my_exit_code in
+            0)
+                # low, normal, critical.
                 my_notify_urgency="low"
-            else
+                ;;
+            *)
                 my_notify_urgency="critical"
                 notify_title="${my_exit_code}! $notify_title" # ☢
-            fi
-            dunstify --urgency=$my_notify_urgency \
-                     "$notify_title" \
-                     "$my_previous_command"
-        fi
-        echo -n " ${timer}s" # ◷
+                ;;
+        esac
+        dunstify --urgency=$my_notify_urgency \
+                 "$notify_title" \
+                 "$my_previous_command"
     fi
 }
 if [ -f /home/$(whoami)/.git-prompt.sh ]; then
