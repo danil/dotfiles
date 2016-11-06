@@ -18,6 +18,8 @@
 # Global .gitignore
 # <https://help.github.com/articles/ignoring-files#global-gitignore>,
 # <http://stackoverflow.com/questions/7335420/global-git-ignore#7335487>.
+# Emacs eshell <https://hexmode.com/2016/05/making-git-and-emacs-eshell-work-together>.
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = emacs
+	pager = `test \"$TERM\" = \"dumb\" && echo cat || echo less`
