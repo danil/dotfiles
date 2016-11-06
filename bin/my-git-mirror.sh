@@ -16,7 +16,10 @@ function my-mirror-for {
     done
 }
 
-my-mirror-for "cv.git"                       "gitlab github" "gh-pages"
+# my-mirror-for "cv.git"                       "gitlab github" "gh-pages"
+# my-mirror-for "go/client-server-example.git" "github"             "master"
+# my-mirror-for "go/count-words-server-example.git" "github"        "master"
+# my-mirror-for "go/ptichka.git"               "gitlab github"      "master"
 my-mirror-for "dotfiles-playbooks.git"       "github" "master"
 my-mirror-for "dotfiles.git"                 "gitlab gogs github" "h2-gentoo-danil h10-gentoo-danil h4-sailfish-nemo"
 my-mirror-for "el/ferm-mode.git"             "gitlab gogs github" "master"
@@ -24,9 +27,7 @@ my-mirror-for "el/ido-describe-bindings.git" "gitlab gogs github" "master"
 my-mirror-for "el/ido-occur.git"             "gitlab gogs github" "master"
 my-mirror-for "el/init.el.git"               "gitlab gogs github" "master trash"
 my-mirror-for "etc.git"                      "gitlab gogs github" "h2-gentoo h10-gentoo h4-sailfish"
-my-mirror-for "go/client-server-example.git" "github"             "master"
-my-mirror-for "go/jsonapi-sqlite-readonly-example.git" "github"   "master"
-my-mirror-for "go/ptichka.git"               "gitlab github"      "master"
+my-mirror-for "go/count-word-in-urls-example.git" "github"        "master"
 my-mirror-for "js/homepage.git"              "gitlab gogs github" "master"
 my-mirror-for "kernels.git"                  "gitlab gogs github" "h10-gentoo"
 my-mirror-for "keys.git"                     "gitlab gogs github" "master"
