@@ -13,6 +13,7 @@ Try https://github.com/baskerville/sxhkd
 * https://github.com/haya14busa/reviewdog (post linter comments to github)
 * https://github.com/jedisct1/piknik (copy/paste over the network)
 * https://github.com/kjk/fofou (forum egine software)
+* https://github.com/rhinoman/wikifeat (wiki engin software)
 * https://godoc.org/github.com/go-kit/kit/log (a-lagocraft health)
 
 ## Rust
