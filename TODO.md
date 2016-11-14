@@ -6,6 +6,7 @@ Try https://github.com/baskerville/sxhkd
 
 ## Go
 
+* https://godoc.org/github.com/go-kit/kit/log (a-lagocraft health)
 * https://github.com/apex/apex (aws lambda)
 * https://github.com/eawsy (aws lambda)
 * https://github.com/elwinar/rambler (sql migrations)
