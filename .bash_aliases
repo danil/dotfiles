@@ -80,7 +80,7 @@ export PATH="$PATH:$HOME/node_modules/.bin"
 
 # n (Node.js version manager).
 # Added by n-install (see http://git.io/n-install-repo).
-export N_PREFIX="$HOME"/n
+export N_PREFIX="$HOME"
 [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
 
 # # nvm (Node.js version manager)
