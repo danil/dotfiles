@@ -88,5 +88,9 @@ export N_PREFIX="$HOME"/n
 # [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  #this loads nvm
 # [[ -r "$NVM_DIR/bash_completion" ]] && . "$NVM_DIR/bash_completion"
 
+# PHP Composer.
+export COMPOSER_PREFIX="$HOME/vendor"
+[[ :$PATH: == *":$COMPOSER_PREFIX/bin:"* ]] || PATH+=":$COMPOSER_PREFIX/bin"
+
 # Prompt.
 [[ -f "$HOME"/.bash_prompt.sh ]] && source "$HOME"/.bash_prompt.sh
