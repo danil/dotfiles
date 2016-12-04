@@ -55,36 +55,3 @@ file=ropshard1_sharddb_${dateprefix2}.zip
 printf "\n"
 echo === $file ===
 eval "$cmd ${url}:/var/ropshard1_backups/${dateprefix1}-sharddb.zip $dir/$file"
-
-# mkdir -p /home/danil/backups/social/
-# mkdir -p /home/danil/backups/vseguru/
-# mkdir -p /home/danil/backups/flintvk/
-# mkdir -p /home/danil/backups/shard1/
-
-# scp -P 22022 \
-#     danil@78.46.51.206:/var/social_backups/`date +%Y-%m-%d`-backup.zip \
-#     /home/danil/backups/social
-
-# scp -P 22022 \
-#     danil@78.46.51.206:/var/social_backups/`date +%Y-%m-%d`-maindb.zip \
-#     /home/danil/backups/social
-
-# scp -P 22022 \
-#     danil@78.46.51.206:/var/flintvk_backups/`date +%Y-%m-%d`-backup.zip \
-#     /home/danil/backups/flintvk
-
-# # scp -P 22022 \
-# #     danil@78.46.51.206:/var/vseguru_backups/`date +%Y-%m-%d`-backup.zip \
-# #     /home/danil/backups/vseguru
-
-# scp -P 22022 \
-#     danil@78.46.51.206:/var/ropshard1_backups/`date +%Y-%m-%d`-shard.zip \
-#     /home/danil/backups/shard1
-
-# scp -P 22022 \
-#     danil@78.46.51.206:/var/ropshard1_backups/`date +%Y-%m-%d`-sharddb.zip \
-#     /home/danil/backups/shard1
-
-# find /home/danil/backups/social -name "*.zip" -mtime +10 -delete
-# find /home/danil/backups/shard1 -name "*.zip" -mtime +10 -delete
-# find /home/danil/backups/flintvk -name "*.zip" -mtime +10 -delete
