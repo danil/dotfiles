@@ -2,7 +2,7 @@
 
 dir=${dir:-./}
 cmd="rsync --rsh 'ssh -p 22022' --checksum --human-readable --archive --partial --progress --stats"
-url="danil@78.46.51.206"
+url="danil@staging.armor5games.com"
 dateprefix1=$(date --utc +%Y-%m-%d)
 dateprefix2=$(date --utc +%Y%m%dZ)
 
