@@ -3,8 +3,8 @@
 dir=${dir:-./}
 cmd="rsync --rsh 'ssh -p 22022' --checksum --human-readable --archive --partial --progress --stats"
 url="danil@staging.armor5games.com"
-dateprefix1=$(date --utc +%Y-%m-%d)
-dateprefix2=$(date --utc +%Y%m%d)
+urldate=$(date --utc +%Y-%m-%d)
+filedate=$(date --utc +%Y%m%d)
 
 while [ $# -gt 0 ]; do
     case "$1" in
@@ -32,26 +32,26 @@ if ! command -v rsync >/dev/null 2>&1; then
 
 fi
 
-file=social.zip-${dateprefix2}
+file=social.zip-${filedate}
 echo === $file ===
-eval "$cmd ${url}:/var/social_backups/${dateprefix1}-backup.zip $dir/$file"
+eval "$cmd ${url}:/var/social_backups/${urldate}-backup.zip $dir/$file"
 
-file=social_maindb.zip-${dateprefix2}
+file=social_maindb.zip-${filedate}
 printf "\n"
 echo === $file ===
-eval "$cmd ${url}:/var/social_backups/${dateprefix1}-maindb.zip $dir/$file"
+eval "$cmd ${url}:/var/social_backups/${urldate}-maindb.zip $dir/$file"
 
-file=flintvk.zip-${dateprefix2}
+file=flintvk.zip-${filedate}
 printf "\n"
 echo === $file ===
-eval "$cmd ${url}:/var/flintvk_backups/${dateprefix1}-backup.zip $dir/$file"
+eval "$cmd ${url}:/var/flintvk_backups/${urldate}-backup.zip $dir/$file"
 
-file=ropshard1_shard.zip-${dateprefix2}
+file=ropshard1_shard.zip-${filedate}
 printf "\n"
 echo === $file ===
-eval "$cmd ${url}:/var/ropshard1_backups/${dateprefix1}-shard.zip $dir/$file"
+eval "$cmd ${url}:/var/ropshard1_backups/${urldate}-shard.zip $dir/$file"
 
-file=ropshard1_sharddb.zip-${dateprefix2}
+file=ropshard1_sharddb.zip-${filedate}
 printf "\n"
 echo === $file ===
-eval "$cmd ${url}:/var/ropshard1_backups/${dateprefix1}-sharddb.zip $dir/$file"
+eval "$cmd ${url}:/var/ropshard1_backups/${urldate}-sharddb.zip $dir/$file"
