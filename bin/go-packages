@@ -1,10 +1,18 @@
 #!/bin/bash
 
+export install=${install:-1}
+export purge=${purge:--1}
 export update=${update:--1}
 export verbose=${verbose:--1}
 
 while [ $# -gt 0 ]; do
     case "$1" in
+        --install)
+            let install=1
+            ;;
+        --purge)
+            let purge=1
+            ;;
         --update)
             let update=1
             ;;
@@ -20,70 +28,83 @@ while [ $# -gt 0 ]; do
     shift
 done
 
-install_command="go get"
+function install {
+    install_command="go get"
 
-[[ $update -eq 1 ]] && install_command="$install_command -u"
+    [[ $update -eq 1 ]] && install_command="$install_command -u"
 
-[[ $verbose -eq 1 ]] && install_command="$install_command -v"
+    [[ $verbose -eq 1 ]] && install_command="$install_command -v"
 
-# Gometalinter.
-# Concurrently run golang lint tools and normalise their output
-# <https://github.com/alecthomas/gometalinter>.
-$install_command gopkg.in/alecthomas/gometalinter.v1 || exit 1
-gometalinter --install || exit 1
+    # Gometalinter.
+    # Concurrently run golang lint tools and normalise their output
+    # <https://github.com/alecthomas/gometalinter>.
+    $install_command gopkg.in/alecthomas/gometalinter.v1 || exit 1
+    gometalinter --install || exit 1
+    packages="$packages github.com/GoASTScanner/gas" #inspects go source code for security problems
+    packages="$packages github.com/client9/misspell/cmd/misspell" #find misspelled words (typos) in source files
+    packages="$packages github.com/fzipp/gocyclo" #calculate cyclomatic complexities of functions in go source code according to the following rules: 1 is the base complexity of a function +1 for each 'if', 'for', 'case', '&&' or '||'
+    packages="$packages github.com/golang/lint/golint" #used by emacs flycheck `golint -set_exit_status ./...`
+    packages="$packages github.com/gordonklaus/ineffassign" #detect ineffectual assignments in go code
+    packages="$packages github.com/jgautheron/goconst/cmd/goconst"
+    packages="$packages github.com/kisielk/errcheck" #used by emacs flycheck `errcheck -verbose -asserts ./...`
+    packages="$packages github.com/mdempsky/unconvert" #identify unnecessary type conversions (i.e. expressions T(x) where x already has type T) `unconvert -v .`
+    packages="$packages github.com/mibk/dupl"
+    packages="$packages github.com/mvdan/interfacer/cmd/interfacer" #suggests interface types (foo.go:10:19: f can be io.Reader)
+    packages="$packages github.com/walle/lll/..."
+    packages="$packages golang.org/x/tools/cmd/goimports" #used by emacs as `gofmt` command replacement for adding/removing golang import lines
+    packages="$packages golang.org/x/tools/cmd/gotype"
+    packages="$packages honnef.co/go/simple/cmd/gosimple"
+    packages="$packages honnef.co/go/staticcheck/cmd/staticcheck"
+    packages="$packages honnef.co/go/unused/cmd/unused"
 
-# packages="$packages github.com/crufter/borg" #terminal based search engine for bash commands `borg "list all files in dir"`
-# packages="$packages github.com/danil/ptichka" #fetch tweets and send by SMTP (twitter client)
-# packages="$packages github.com/digitalocean/doctl/cmd/doctl" #digitalocean command line tool (error while getting: fatal: no submodule mapping found in .gitmodules for path 'vendor/github.com/vektra/errors')
-# packages="$packages github.com/github/hub" #github helper <https://github.com/github/hub>
-# packages="$packages github.com/gravitational/teleconsole" #a-la ssh behind vpn (for example use whith tmux) compilation error(
-# packages="$packages github.com/ichinaski/pxl" #display images in the terminal (freeze terminal)
-# packages="$packages github.com/jasonmoo/smlr" #jpeg encoder
-# packages="$packages github.com/jingweno/ccat" #colorizing cat <https://github.com/jingweno/ccat>
-# packages="$packages github.com/laurent22/massren" #rename multiple files using text editor <https://github.com/laurent22/massren>
-# packages="$packages github.com/lukasmartinelli/pgfutter" #import csv and json into postgresql
-# packages="$packages github.com/maruel/panicparse/cmd/pp" # pipe stderr and format like that: `go run buggy.go |&pp`
-# packages="$packages github.com/ncw/rclone" #rsync for s3, dropbox, google drive cloud storage (error <https://github.com/ncw/rclone/pull/665>)
-# packages="$packages github.com/noraesae/orange-cat/cmd/orange" #markdown preview
-# packages="$packages github.com/rapidloop/rtop" #remote top over ssh
-# packages="$packages github.com/reconquest/orgalorg" #parallel ssh commands and file synchronization
-# packages="$packages github.com/russross/blackfriday-tool" #markdown
-# packages="$packages github.com/sanathp/statusok" #http status monitoring
-# packages="$packages github.com/sanbornm/mp" #email to json `cat path/to/email | mp`
-# packages="$packages github.com/schachmat/wego" #weather
-# packages="$packages github.com/shurcooL/markdownfmt" #like gofmt, but for markdown (used by emacs)
-# packages="$packages github.com/sourcegraph/checkup/cmd/checkup" #health checks a-la pingdom
-# packages="$packages github.com/tomnomnom/gron" #greppable json (query) `gron "https://api.github.com/repos/tomnomnom/gron/commits?per_page=1" | fgrep "commit.author"`
-# packages="$packages github.com/uber-common/cpustat" #top alternative
-# packages="$packages github.com/variadico/noti/cmd/noti" #notification when a process completes
-# packages="$packages github.com/yudai/gotty" #share terminal in web browser <https://github.com/yudai/gotty>
-# packages="$packages github.com/zquestz/s" #open default browser and web search
-# packages="$packages github.com/zyedidia/micro/..." #nano alternative, text editor `micro` (compilation error(
-# packages="$packages golang.org/x/tools/cmd/godoc" #documentation
-packages="$packages github.com/BurntSushi/toml/cmd/tomlv" #toml validator
-packages="$packages github.com/HewlettPackard/gas" #inspects go source code for security problems
-packages="$packages github.com/client9/misspell/cmd/misspell" #find misspelled words (typos) in source files
-packages="$packages github.com/constabulary/gb/..." #best package manager?
-packages="$packages github.com/cortesi/devd/cmd/devd" #local http/webserver for developers `devd --address=0.0.0.0 --livewatch ./`
-packages="$packages github.com/davecheney/httpstat" #http statistics (a-la curl --head)
-packages="$packages github.com/fzipp/gocyclo" #calculate cyclomatic complexities of functions in go source code according to the following rules: 1 is the base complexity of a function +1 for each 'if', 'for', 'case', '&&' or '||'
-packages="$packages github.com/go-swagger/go-swagger/cmd/swagger" #swagger cli validator `swagger validate http://example.org/path/to/swagger.json`
-packages="$packages github.com/godoctor/godoctor" #used by emacs for variables reanming
-packages="$packages github.com/golang/lint/golint" #used by emacs flycheck `golint -set_exit_status ./...`
-packages="$packages github.com/gordonklaus/ineffassign" #detect ineffectual assignments in go code
-packages="$packages github.com/jgrahamc/httpdiff" #diff http requests <https://github.com/jgrahamc/httpdiff>
-packages="$packages github.com/kahing/goofys" #mount s3 (amazon aws) file system
-packages="$packages github.com/kisielk/errcheck" #used by emacs flycheck `errcheck -verbose -asserts ./...`
-packages="$packages github.com/mdempsky/unconvert" #identify unnecessary type conversions (i.e. expressions T(x) where x already has type T) `unconvert -v .`
-packages="$packages github.com/monochromegane/the_platinum_searcher/..." #ag and ack replacement <https://github.com/monochromegane/the_platinum_searcher>
-packages="$packages github.com/mvdan/interfacer" #suggests interface types (foo.go:10:19: f can be io.Reader)
-packages="$packages github.com/nsf/gocode" #used by emacs auto complete
-packages="$packages github.com/rakyll/hey" #http load generator (a-la ab apach benchmark)
-packages="$packages github.com/rlmcpherson/s3gof3r/gof3r" #s3 (amazon aws) client
-packages="$packages github.com/rogpeppe/godef" #used by emacs for jump to the definition of the expression at point
-packages="$packages github.com/tigrawap/goader" #s3/http/disk benchmark (a-la ab apach benchmark)
-packages="$packages golang.org/x/tools/cmd/goimports" #used by emacs as `gofmt` command replacement for adding/removing golang import lines
-packages="$packages golang.org/x/tools/cmd/gorename"
-packages="$packages golang.org/x/tools/cmd/guru" #used by emacs
+    # packages="$packages github.com/crufter/borg" #terminal based search engine for bash commands `borg "list all files in dir"`
+    # packages="$packages github.com/danil/ptichka" #fetch tweets and send by SMTP (twitter client)
+    # packages="$packages github.com/digitalocean/doctl/cmd/doctl" #digitalocean command line tool (error while getting: fatal: no submodule mapping found in .gitmodules for path 'vendor/github.com/vektra/errors')
+    # packages="$packages github.com/github/hub" #github helper <https://github.com/github/hub>
+    # packages="$packages github.com/gravitational/teleconsole" #a-la ssh behind vpn (for example use whith tmux) compilation error(
+    # packages="$packages github.com/ichinaski/pxl" #display images in the terminal (freeze terminal)
+    # packages="$packages github.com/jasonmoo/smlr" #jpeg encoder
+    # packages="$packages github.com/jingweno/ccat" #colorizing cat <https://github.com/jingweno/ccat>
+    # packages="$packages github.com/laurent22/massren" #rename multiple files using text editor <https://github.com/laurent22/massren>
+    # packages="$packages github.com/lukasmartinelli/pgfutter" #import csv and json into postgresql
+    # packages="$packages github.com/maruel/panicparse/cmd/pp" # pipe stderr and format like that: `go run buggy.go |&pp`
+    # packages="$packages github.com/ncw/rclone" #rsync for s3, dropbox, google drive cloud storage (error <https://github.com/ncw/rclone/pull/665>)
+    # packages="$packages github.com/noraesae/orange-cat/cmd/orange" #markdown preview
+    # packages="$packages github.com/rapidloop/rtop" #remote top over ssh
+    # packages="$packages github.com/reconquest/orgalorg" #parallel ssh commands and file synchronization
+    # packages="$packages github.com/russross/blackfriday-tool" #markdown
+    # packages="$packages github.com/sanathp/statusok" #http status monitoring
+    # packages="$packages github.com/sanbornm/mp" #email to json `cat path/to/email | mp`
+    # packages="$packages github.com/schachmat/wego" #weather
+    # packages="$packages github.com/shurcooL/markdownfmt" #like gofmt, but for markdown (used by emacs)
+    # packages="$packages github.com/sourcegraph/checkup/cmd/checkup" #health checks a-la pingdom
+    # packages="$packages github.com/tomnomnom/gron" #greppable json (query) `gron "https://api.github.com/repos/tomnomnom/gron/commits?per_page=1" | fgrep "commit.author"`
+    # packages="$packages github.com/uber-common/cpustat" #top alternative
+    # packages="$packages github.com/variadico/noti/cmd/noti" #notification when a process completes
+    # packages="$packages github.com/yudai/gotty" #share terminal in web browser <https://github.com/yudai/gotty>
+    # packages="$packages github.com/zquestz/s" #open default browser and web search
+    # packages="$packages github.com/zyedidia/micro/..." #nano alternative, text editor `micro` (compilation error(
+    # packages="$packages golang.org/x/tools/cmd/godoc" #documentation
+    packages="$packages github.com/BurntSushi/toml/cmd/tomlv" #toml validator
+    packages="$packages github.com/constabulary/gb/..." #best package manager?
+    packages="$packages github.com/cortesi/devd/cmd/devd" #local http/webserver for developers `devd --address=0.0.0.0 --livewatch ./`
+    packages="$packages github.com/davecheney/httpstat" #http statistics (a-la curl --head)
+    packages="$packages github.com/go-swagger/go-swagger/cmd/swagger" #swagger cli validator `swagger validate http://example.org/path/to/swagger.json`
+    packages="$packages github.com/godoctor/godoctor" #used by emacs for variables reanming
+    packages="$packages github.com/jgrahamc/httpdiff" #diff http requests <https://github.com/jgrahamc/httpdiff>
+    packages="$packages github.com/kahing/goofys" #mount s3 (amazon aws) file system
+    packages="$packages github.com/monochromegane/the_platinum_searcher/..." #ag and ack replacement <https://github.com/monochromegane/the_platinum_searcher>
+    packages="$packages github.com/nsf/gocode" #used by emacs auto complete
+    packages="$packages github.com/rakyll/hey" #http load generator (a-la ab apach benchmark)
+    packages="$packages github.com/rlmcpherson/s3gof3r/gof3r" #s3 (amazon aws) client
+    packages="$packages github.com/rogpeppe/godef" #used by emacs for jump to the definition of the expression at point
+    packages="$packages github.com/tigrawap/goader" #s3/http/disk benchmark (a-la ab apach benchmark)
+    packages="$packages golang.org/x/tools/cmd/gorename"
+    packages="$packages golang.org/x/tools/cmd/guru" #used by emacs
 
-$install_command $packages || exit 1
+    $install_command $packages || exit 1
+}
+
+if [[ $install -eq 1 ]]; then
+    install
+fi
