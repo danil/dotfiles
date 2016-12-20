@@ -1,14 +1,8 @@
 #! /bin/sh
 
-tagrevision="$(git rev-list --tags --max-count=1 2>/dev/null)"
-if [ -z "$tagrevision" ] || [ "$tagrevision" = "" ]; then
-    echo "Error: the old version is unknown"
-    exit 1
-fi
-
-oldversion="$(git describe --tags $tagrevision)"
+oldversion="$(git describe --abbrev=0 --tags 2>/dev/null)"
 if [ -z "$oldversion" ] || [ "$oldversion" = "" ]; then
-    echo "Error: the old version is unknown"
+    echo "fatal: the old version is unknown"
     exit 1
 fi
 
