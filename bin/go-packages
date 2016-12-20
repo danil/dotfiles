@@ -1,7 +1,7 @@
 #!/bin/bash
 
-export install=${install:-1}
-export purge=${purge:--1}
+export install=${install:--1}
+export uninstall=${uninstall:--1}
 export update=${update:--1}
 export verbose=${verbose:--1}
 
@@ -10,8 +10,8 @@ while [ $# -gt 0 ]; do
         --install)
             let install=1
             ;;
-        --purge)
-            let purge=1
+        --uninstall)
+            let uninstall=1
             ;;
         --update)
             let update=1
@@ -105,6 +105,34 @@ function install {
     $install_command $packages || exit 1
 }
 
-if [[ $install -eq 1 ]]; then
-    install
+function uninstall {
+    if [ -z "$GOPATH" ]; then
+        echo 'fatal: $GOPATH not set'
+        exit 1
+    fi
+
+    rm --force "$GOPATH"/bin/*
+    rm --recursive --force "$GOPATH"/pkg/*
+    for i in "$GOPATH"/src/*; do
+        case $i in
+            */armor5games.com) continue ;;
+        esac
+
+        for j in "$i"/*; do
+            case $j in
+                */github.com/danil) continue ;;
+            esac
+
+            rm --recursive --force "$j"
+        done
+    done
+    find "$GOPATH"/src -type d -empty -delete #remove empy directories
+}
+
+count=0
+[[ $uninstall -eq 1 ]] && count=$((count+1)) && uninstall
+[[ $install -eq 1 ]] && count=$((count+1)) && install
+
+if [[ ${count} -lt 1 ]]; then
+    printf "usage: go-packages [--install] [--uninstall] [--update] [--verbose]\n"
 fi
