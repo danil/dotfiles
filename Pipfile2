@@ -1,4 +1,4 @@
 # Ansible prior to version 2 (uses python 2).
-ansible<2
+ansible>=2.2
 # Ansible amazon aws dependency.
 boto
