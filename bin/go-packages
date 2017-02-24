@@ -86,6 +86,7 @@ function install {
     # packages="$packages github.com/zyedidia/micro/..." #nano alternative, text editor `micro` (compilation error(
     # packages="$packages golang.org/x/tools/cmd/godoc" #documentation
     packages="$packages github.com/BurntSushi/toml/cmd/tomlv" #toml validator
+    packages="$packages github.com/cloudflare/cloudflare-go/cmd/flarectl" #cloudflare cli `CF_API_EMAIL=your.name@example.org CF_API_KEY=your_api_key flarectl zone dns example.org`
     packages="$packages github.com/constabulary/gb/..." #best package manager?
     packages="$packages github.com/cortesi/devd/cmd/devd" #local http/webserver for developers `devd --address=0.0.0.0 --livewatch ./`
     packages="$packages github.com/davecheney/httpstat" #http statistics (a-la curl --head)
@@ -98,7 +99,9 @@ function install {
     packages="$packages github.com/rakyll/hey" #http load generator (a-la ab apach benchmark)
     packages="$packages github.com/rlmcpherson/s3gof3r/gof3r" #s3 (amazon aws) client
     packages="$packages github.com/rogpeppe/godef" #used by emacs for jump to the definition of the expression at point
+    packages="$packages github.com/svent/sift" #print lines matching a regexp a-la grep or ag
     packages="$packages github.com/tigrawap/goader" #s3/http/disk benchmark (a-la ab apach benchmark)
+    packages="$packages github.com/wallix/awless" #aws client
     packages="$packages golang.org/x/tools/cmd/gorename"
     packages="$packages golang.org/x/tools/cmd/guru" #used by emacs
 
