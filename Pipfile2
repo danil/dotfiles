@@ -2,3 +2,7 @@
 ansible>=2.2
 # Ansible amazon aws dependency.
 boto
+
+# Wrapper for the cloudflare client api v4:
+# `CF_API_EMAIL=your.name@example.org CF_API_KEY=your_api_key cli4 /zones`
+cloudflare
