@@ -87,6 +87,7 @@ function install {
     # packages="$packages golang.org/x/tools/cmd/godoc" #documentation
     packages="$packages github.com/BurntSushi/toml/cmd/tomlv" #toml validator
     packages="$packages github.com/cloudflare/cloudflare-go/cmd/flarectl" #cloudflare cli `CF_API_EMAIL=your.name@example.org CF_API_KEY=your_api_key flarectl zone dns example.org`
+    packages="$packages github.com/codesenberg/bombardier" #a-la ab apach benchmark `bombardier http://example.org`
     packages="$packages github.com/constabulary/gb/..." #best package manager?
     packages="$packages github.com/cortesi/devd/cmd/devd" #local http/webserver for developers `devd --address=0.0.0.0 --livewatch ./`
     packages="$packages github.com/davecheney/httpstat" #http statistics (a-la curl --head)
@@ -117,13 +118,10 @@ function uninstall {
     rm --force "$GOPATH"/bin/*
     rm --recursive --force "$GOPATH"/pkg/*
     for i in "$GOPATH"/src/*; do
-        case $i in
-            */armor5games.com) continue ;;
-        esac
-
         for j in "$i"/*; do
             case $j in
                 */github.com/danil) continue ;;
+                */bitbucket.org/armor5games) continue ;;
             esac
 
             rm --recursive --force "$j"
