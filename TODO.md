@@ -10,6 +10,7 @@ Try https://github.com/baskerville/sxhkd
 * https://github.com/eawsy (aws lambda)
 * https://github.com/elwinar/rambler (sql migrations)
 * https://github.com/gliderlabs/sigil
+* https://github.com/gobuffalo/buffalo (web framework with default conventions a-la rails)
 * https://github.com/haya14busa/reviewdog (post linter comments to github)
 * https://github.com/jedisct1/piknik (copy/paste over the network)
 * https://github.com/kjk/fofou (forum egine software)
