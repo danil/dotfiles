@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.3.1'
+ruby '2.4.0'
 
 group :development do
   gem 'activesupport' # replaces non-ascii characters with an ascii approximation <http://api.rubyonrails.org/classes/ActiveSupport/Inflector.html#method-i-transliterate>
@@ -11,6 +11,7 @@ group :development do
   gem 'heroku'
   gem 'html2slim'
   gem 'htty' # http statefull interactive client (a-la ftp client)
+  gem 'jekyll' # static blog <https://github.com/jekyll/jekyll>
   gem 'mailcatcher' # `pkill --full mailcatcher ; mailcatcher --http-ip 0.0.0.0` <https://github.com/sj26/mailcatcher>
   gem 'mdl' # markdown lint tool <https://github.com/mivok/markdownlint>
   gem 'rails'
