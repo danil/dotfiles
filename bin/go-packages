@@ -86,6 +86,7 @@ function install {
     # packages="$packages github.com/zyedidia/micro/..." #nano alternative, text editor `micro` (compilation error(
     # packages="$packages golang.org/x/tools/cmd/godoc" #documentation
     packages="$packages github.com/BurntSushi/toml/cmd/tomlv" #toml validator
+    packages="$packages github.com/StackExchange/dnscontrol" #dns dsl and cli for bind, cloudflare and so on
     packages="$packages github.com/cloudflare/cloudflare-go/cmd/flarectl" #cloudflare cli `CF_API_EMAIL=your.name@example.org CF_API_KEY=your_api_key flarectl zone dns example.org`
     packages="$packages github.com/codesenberg/bombardier" #a-la ab apach benchmark `bombardier http://example.org`
     packages="$packages github.com/constabulary/gb/..." #best package manager?
@@ -95,6 +96,8 @@ function install {
     packages="$packages github.com/godoctor/godoctor" #used by emacs for variables reanming
     packages="$packages github.com/jgrahamc/httpdiff" #diff http requests <https://github.com/jgrahamc/httpdiff>
     packages="$packages github.com/kahing/goofys" #mount s3 (amazon aws) file system
+    packages="$packages github.com/knq/usql" #sql client for postgresql, mysql, sqlite, oracle and microsoft sql server
+    packages="$packages github.com/mattes/migrate" #database migrations cli
     packages="$packages github.com/monochromegane/the_platinum_searcher/..." #ag and ack replacement <https://github.com/monochromegane/the_platinum_searcher>
     packages="$packages github.com/nsf/gocode" #used by emacs auto complete
     packages="$packages github.com/rakyll/hey" #http load generator (a-la ab apach benchmark)
