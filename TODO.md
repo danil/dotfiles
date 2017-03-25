@@ -6,6 +6,8 @@ Try https://github.com/baskerville/sxhkd
 
 ## Go
 
+* https://github.com/StackExchange/httpunit dead simple net status cli (a-la pingdom)
+* https://github.com/abadojack/whatlanggo (natural language detection library)
 * https://github.com/apex/apex (aws lambda)
 * https://github.com/eawsy (aws lambda)
 * https://github.com/elwinar/rambler (sql migrations)
