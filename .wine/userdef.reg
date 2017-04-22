@@ -3,7 +3,9 @@ WINE REGISTRY Version 2
 
 #arch=win32
 
-[Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders] 1287152943
+[Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders] 1492852091
+#time=1d2bb47f755dede
+"Administrative Tools"="C:\\users\\danil\\Start Menu\\Programs\\Administrative Tools"
 "AppData"="C:\\users\\danil\\Application Data"
 "Cache"="C:\\users\\danil\\Local Settings\\Temporary Internet Files"
 "Cookies"="C:\\users\\danil\\Cookies"
@@ -24,8 +26,16 @@ WINE REGISTRY Version 2
 "Start Menu"="C:\\users\\danil\\Start Menu"
 "StartUp"="C:\\users\\danil\\Start Menu\\Programs\\StartUp"
 "Templates"="C:\\users\\danil\\Templates"
+"{374DE290-123F-4565-9164-39C4925E467B}"="C:\\users\\danil\\Downloads"
+"{4C5C32FF-BB9D-43B0-B5B4-2D72E54EAAA4}"="C:\\users\\danil\\Saved Games"
+"{56784854-C6CB-462B-8169-88E350ACB882}"="C:\\users\\danil\\Contacts"
+"{7D1D3A04-DEBB-4115-95CF-2F29DA2920DA}"="C:\\users\\danil\\Searches"
+"{A520A1A4-1780-4FF6-BD18-167343C5AF16}"="C:\\users\\danil\\AppData\\LocalLow"
+"{BFB9D5E0-C6A9-404C-B2B2-AE6DB6AF4968}"="C:\\users\\danil\\Links"
 
-[Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders] 1287152943
+[Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders] 1492852091
+#time=1d2bb47f755d628
+"Administrative Tools"=str(2):"%USERPROFILE%\\Start Menu\\Programs\\Administrative Tools"
 "AppData"=str(2):"%USERPROFILE%\\Application Data"
 "Cache"=str(2):"%USERPROFILE%\\Local Settings\\Temporary Internet Files"
 "Cookies"=str(2):"%USERPROFILE%\\Cookies"
@@ -46,3 +56,9 @@ WINE REGISTRY Version 2
 "Start Menu"=str(2):"%USERPROFILE%\\Start Menu"
 "StartUp"=str(2):"%USERPROFILE%\\Start Menu\\Programs\\StartUp"
 "Templates"=str(2):"%USERPROFILE%\\Templates"
+"{374DE290-123F-4565-9164-39C4925E467B}"=str(2):"%USERPROFILE%\\Downloads"
+"{4C5C32FF-BB9D-43B0-B5B4-2D72E54EAAA4}"=str(2):"%USERPROFILE%\\Saved Games"
+"{56784854-C6CB-462B-8169-88E350ACB882}"=str(2):"%USERPROFILE%\\Contacts"
+"{7D1D3A04-DEBB-4115-95CF-2F29DA2920DA}"=str(2):"%USERPROFILE%\\Searches"
+"{A520A1A4-1780-4FF6-BD18-167343C5AF16}"=str(2):"%USERPROFILE%\\AppData\\LocalLow"
+"{BFB9D5E0-C6A9-404C-B2B2-AE6DB6AF4968}"=str(2):"%USERPROFILE%\\Links"
