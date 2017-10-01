@@ -38,7 +38,8 @@ function install {
     # Gometalinter.
     # Concurrently run golang lint tools and normalise their output
     # <https://github.com/alecthomas/gometalinter>.
-    $install_command gopkg.in/alecthomas/gometalinter.v1 || exit 1
+    # $install_command gopkg.in/alecthomas/gometalinter.v1 || exit 1
+    $install_command github.com/alecthomas/gometalinter || exit 1
     gometalinter --install || exit 1
     packages="$packages github.com/GoASTScanner/gas" #inspects go source code for security problems
     packages="$packages github.com/client9/misspell/cmd/misspell" #find misspelled words (typos) in source files
@@ -110,6 +111,7 @@ function install {
     packages="$packages github.com/wallix/awless" #aws client
     packages="$packages golang.org/x/tools/cmd/gorename"
     packages="$packages golang.org/x/tools/cmd/guru" #used by emacs
+    packages="$packages honnef.co/go/tools/cmd/megacheck" #used by emacs flycheck
     packages="$packages honnef.co/go/tools/cmd/unused" #checks Go code for unused constants, variables, functions and types
 
     $install_command $packages || exit 1
