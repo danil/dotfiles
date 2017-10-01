@@ -49,13 +49,13 @@ function install {
     packages="$packages github.com/kisielk/errcheck" #used by emacs flycheck `errcheck -verbose -asserts ./...`
     packages="$packages github.com/mdempsky/unconvert" #identify unnecessary type conversions (i.e. expressions T(x) where x already has type T) `unconvert -v .`
     packages="$packages github.com/mibk/dupl"
-    packages="$packages github.com/mvdan/interfacer/cmd/interfacer" #suggests interface types (foo.go:10:19: f can be io.Reader)
+    packages="$packages mvdan.cc/interfacer" #suggests interface types (foo.go:10:19: f can be io.Reader)
     packages="$packages github.com/walle/lll/..."
     packages="$packages golang.org/x/tools/cmd/goimports" #used by emacs as `gofmt` command replacement for adding/removing golang import lines
     packages="$packages golang.org/x/tools/cmd/gotype"
-    packages="$packages honnef.co/go/simple/cmd/gosimple"
-    packages="$packages honnef.co/go/staticcheck/cmd/staticcheck"
-    packages="$packages honnef.co/go/unused/cmd/unused"
+    packages="$packages honnef.co/go/tools/cmd/gosimple"
+    packages="$packages honnef.co/go/tools/cmd/staticcheck"
+    packages="$packages honnef.co/go/tools/cmd/unused"
 
     # packages="$packages github.com/crufter/borg" #terminal based search engine for bash commands `borg "list all files in dir"`
     # packages="$packages github.com/danil/ptichka" #fetch tweets and send by SMTP (twitter client)
@@ -95,10 +95,11 @@ function install {
     packages="$packages github.com/fd0/machma" #parallel cli task execution with each command progress
     packages="$packages github.com/go-swagger/go-swagger/cmd/swagger" #swagger cli validator `swagger validate http://example.org/path/to/swagger.json`
     packages="$packages github.com/godoctor/godoctor" #used by emacs for variables reanming
+    packages="$packages github.com/golang/dep/cmd/dep" #golang dependency management official tool (a-la gems or eggs)
     packages="$packages github.com/jgrahamc/httpdiff" #diff http requests <https://github.com/jgrahamc/httpdiff>
     packages="$packages github.com/kahing/goofys" #mount s3 (amazon aws) file system
     packages="$packages github.com/knq/usql" #sql client for postgresql, mysql, sqlite, oracle and microsoft sql server
-    packages="$packages github.com/mattes/migrate" #database migrations cli
+    packages="$packages github.com/mattes/migrate/cli" #database migrations cli
     packages="$packages github.com/monochromegane/the_platinum_searcher/..." #ag and ack replacement <https://github.com/monochromegane/the_platinum_searcher>
     packages="$packages github.com/nsf/gocode" #used by emacs auto complete
     packages="$packages github.com/rakyll/hey" #http load generator (a-la ab apach benchmark)
@@ -109,6 +110,7 @@ function install {
     packages="$packages github.com/wallix/awless" #aws client
     packages="$packages golang.org/x/tools/cmd/gorename"
     packages="$packages golang.org/x/tools/cmd/guru" #used by emacs
+    packages="$packages honnef.co/go/tools/cmd/unused" #checks Go code for unused constants, variables, functions and types
 
     $install_command $packages || exit 1
 }
