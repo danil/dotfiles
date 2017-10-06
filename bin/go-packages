@@ -106,6 +106,7 @@ function install {
     packages="$packages github.com/rakyll/hey" #http load generator (a-la ab apach benchmark)
     packages="$packages github.com/rlmcpherson/s3gof3r/gof3r" #s3 (amazon aws) client
     packages="$packages github.com/rogpeppe/godef" #used by emacs for jump to the definition of the expression at point
+    packages="$packages github.com/simeji/jid" #interactive jq
     packages="$packages github.com/svent/sift" #print lines matching a regexp a-la grep or ag
     packages="$packages github.com/tigrawap/goader" #s3/http/disk benchmark (a-la ab apach benchmark)
     packages="$packages github.com/wallix/awless" #aws client
