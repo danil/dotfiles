@@ -93,4 +93,10 @@ export COMPOSER_PREFIX="$HOME/vendor"
 [[ :$PATH: == *":$COMPOSER_PREFIX/bin:"* ]] || PATH+=":$COMPOSER_PREFIX/bin"
 
 # Prompt.
+# function _update_ps1() {
+#     PS1="$(~/go/bin/powerline-go -error $?)"
+# }
+# if [ "$TERM" != "linux" ]; then
+#     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+# fi
 [[ -f "$HOME"/.bash_prompt.sh ]] && source "$HOME"/.bash_prompt.sh
