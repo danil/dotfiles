@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.4.0'
+ruby '2.4.2'
 
 group :development do
   gem 'activesupport' # replaces non-ascii characters with an ascii approximation <http://api.rubyonrails.org/classes/ActiveSupport/Inflector.html#method-i-transliterate>
@@ -14,6 +14,7 @@ group :development do
   gem 'jekyll' # static blog <https://github.com/jekyll/jekyll>
   gem 'mailcatcher' # `pkill --full mailcatcher ; mailcatcher --http-ip 0.0.0.0` <https://github.com/sj26/mailcatcher>
   gem 'mdl' # markdown lint tool <https://github.com/mivok/markdownlint>
+  gem 'neovim' # neovim ruby support
   gem 'rails'
   gem 'rails_best_practices' # code metric tool for rails `rails_best_practices path/to/source `
   gem 'reek' # code smell detector for ruby `reek path/to/source` <https://github.com/troessner/reek>
