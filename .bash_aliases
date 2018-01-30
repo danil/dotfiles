@@ -47,12 +47,6 @@ export GOPATH="$HOME"/go
 export PATH="$PATH":"$GOPATH"/bin #for convenience, add the workspace's bin subdirectory to your PATH
 # [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm" #gvm (Go version manager) <https://github.com/moovweb/gvm>
 
-# Rust (rust toolchain installer https://www.rustup.rs).
-export PATH="$HOME"/.cargo/bin:"$PATH" #be sure to add `/home/danil/.cargo/bin` to your PATH to be able to run the installed binaries
-
-# Steel Bank Common Lisp.
-export SBCL_HOME=/usr/lib64/sbcl
-
 # rbenv <https://github.com/sstephenson/rbenv#basic-github-checkout>.
 export PATH="$HOME/.rbenv/bin:$PATH"
 if hash rbenv 2>/dev/null; then
@@ -60,16 +54,6 @@ if hash rbenv 2>/dev/null; then
 fi
 
 export PATH="$PATH":"$HOME"/.local/bin #pip (python package management system) run `python-install-all`
-
-# # Lua.
-# PATH="$HOME"/.luarocks/bin:"$PATH"
-# export LUA_PATH="$HOME""/.luarocks/share/lua/5.1//?.lua;./?.lua;$LUA_PATH"
-# export LUA_CPATH="$HOME""/.luarocks/lib/lua/5.1//?.so;./?.so;$LUA_CPATH"
-
-# # lenv (Lua version manager) <https://github.com/mah0x211/lenv>.
-# export PATH="$HOME"/.lenv/bin:"$HOME"/.lenv/current/bin:$PATH
-# export LUA_PATH="$HOME"'/.lenv/current/luarocks/share/?.lua;'"$HOME"'/.lenv/current/luarocks/share/?/init.lua;;'
-# export LUA_CPATH="$HOME"'/.lenv/current/luarocks/lib/?.so;;'
 
 # Travis CI gem.
 [ -f "$HOME"/.travis/travis.sh ] && source "$HOME"/.travis/travis.sh #auto completion
@@ -91,6 +75,22 @@ export N_PREFIX="$HOME"
 # PHP Composer.
 export COMPOSER_PREFIX="$HOME/vendor"
 [[ :$PATH: == *":$COMPOSER_PREFIX/bin:"* ]] || PATH+=":$COMPOSER_PREFIX/bin"
+
+# # Lua.
+# PATH="$HOME"/.luarocks/bin:"$PATH"
+# export LUA_PATH="$HOME""/.luarocks/share/lua/5.1//?.lua;./?.lua;$LUA_PATH"
+# export LUA_CPATH="$HOME""/.luarocks/lib/lua/5.1//?.so;./?.so;$LUA_CPATH"
+
+# # lenv (Lua version manager) <https://github.com/mah0x211/lenv>.
+# export PATH="$HOME"/.lenv/bin:"$HOME"/.lenv/current/bin:$PATH
+# export LUA_PATH="$HOME"'/.lenv/current/luarocks/share/?.lua;'"$HOME"'/.lenv/current/luarocks/share/?/init.lua;;'
+# export LUA_CPATH="$HOME"'/.lenv/current/luarocks/lib/?.so;;'
+
+# # Rust (rust toolchain installer https://www.rustup.rs).
+# export PATH="$HOME"/.cargo/bin:"$PATH" #be sure to add `/home/danil/.cargo/bin` to your PATH to be able to run the installed binaries
+
+# # Steel Bank Common Lisp.
+# export SBCL_HOME=/usr/lib64/sbcl
 
 # Prompt.
 # function _update_ps1() {
