@@ -39,12 +39,12 @@ function gmail_filtering()
    --                                       "debian-russian.lists.debian.org" )
    -- mailbox:move_messages(gmail.list_debian_russian, result)
 
-   -- Django russian mailing list filtering.
-   local mailbox = gmail.INBOX
-   local result = mailbox:is_unseen() *
-                  mailbox:contain_field( "List-Id",
-                                         "django-russian.googlegroups.com" )
-   mailbox:move_messages(gmail.list_django_russian, result)
+   -- -- Django russian mailing list filtering.
+   -- local mailbox = gmail.INBOX
+   -- local result = mailbox:is_unseen() *
+   --                mailbox:contain_field( "List-Id",
+   --                                       "django-russian.googlegroups.com" )
+   -- mailbox:move_messages(gmail.list_django_russian, result)
 
    -- Erlang в России mailing list filtering.
    -- <http://groups.google.com/group/erlang-russian>
@@ -98,11 +98,11 @@ function gmail_filtering()
                   mailbox:contain_field("List-Id", "ror2ru.googlegroups.com")
    mailbox:move_messages(gmail.list_ror2ru, result)
 
-   -- SPb Haskell User Group mailing list filtering.
-   local mailbox = gmail.INBOX
-   local result = mailbox:is_unseen() *
-                  mailbox:contain_field("List-Id", "spbhug.googlegroups.com")
-   mailbox:move_messages(gmail.lists, result)
+   -- -- SPb Haskell User Group mailing list filtering.
+   -- local mailbox = gmail.INBOX
+   -- local result = mailbox:is_unseen() *
+   --                mailbox:contain_field("List-Id", "spbhug.googlegroups.com")
+   -- mailbox:move_messages(gmail.lists, result)
 
    -- Emacs.
 
