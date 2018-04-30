@@ -41,8 +41,8 @@ function danil_at_kutkevich_org_filtering()
     mailbox:contain_field("list-post", "<spb-archlinux.googlegroups.com>")
   mailbox:move_messages(danil_at_kutkevich_org.lists, result)
 
--- } elsif header :is ["list-id", "list-post"] ["ru_bzr.googlegroups.com", "<ru_bzr.googlegroups.com>"] {
---   fileinto "INBOX.lists";
+  -- } elsif header :is ["list-id", "list-post"] ["ru_bzr.googlegroups.com", "<ru_bzr.googlegroups.com>"] {
+  --   fileinto "INBOX.lists";
 
 
 end
