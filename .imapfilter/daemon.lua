@@ -10,6 +10,6 @@ require "config/gmail"
 -- endlessly, executing the commands in the forever() function and
 -- sleeping for 600 seconds between intervals:
 function forever()
-   gmail_filtering()
+  pcall(gmail_filtering())
 end
 become_daemon(600, forever)
