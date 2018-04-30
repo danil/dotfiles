@@ -7,9 +7,9 @@ options.subscribe = true
 ----------------
 --  Accounts  --
 ----------------
-gmail = IMAP {
+your_name_at_example_org = IMAP {
    server = "imap.example.org",
    username = "name@example.org",
    password = "password",
-   ssl = "ssl3",
+   ssl = "tls12",
 }
