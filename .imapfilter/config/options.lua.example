@@ -4,13 +4,12 @@
 options.timeout = 120
 options.subscribe = true
 
-
 ----------------
 --  Accounts  --
 ----------------
-gmail = IMAP {
-   server = "imap.gmail.com",
-   username = "danil@kutkevich.org",
+your_name_at_example_org = IMAP {
+   server = "imap.example.org",
+   username = "name@example.org",
    password = "password",
-   ssl = "ssl3",
+   ssl = "tls12",
 }
