@@ -1,6 +1,7 @@
+-- https://github.com/lefcha/imapfilter/blob/master/samples/extend.lua
 package.path = package.path .. ";/home/danil/.imapfilter/?.lua"
 require "config/options"
-require "config/gmail"
+require "config/danil_at_kutkevich_org"
 
 -- IMAPFilter can be detached from the controlling terminal and run in
 -- the background as a system daemon.
@@ -10,6 +11,6 @@ require "config/gmail"
 -- endlessly, executing the commands in the forever() function and
 -- sleeping for 600 seconds between intervals:
 function forever()
-  pcall(gmail_filtering())
+  pcall(danil_at_kutkevich_org_filtering())
 end
-become_daemon(600, forever)
+become_daemon(3, forever)
