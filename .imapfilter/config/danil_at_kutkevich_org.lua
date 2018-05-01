@@ -1,5 +1,31 @@
 -- -*- coding: utf-8-unix; -*-
 function filtering_danil_at_kutkevich_org()
+  -- h2 host messages filtering
+  local mailbox = danil_at_kutkevich_org.INBOX
+  local result = mailbox:is_unseen() *
+    mailbox:contain_from("h2.kutkevich.org") *
+    mailbox:contain_subject("/usr/sbin/run-crons") *
+    (mailbox:contain_body("q: Updating ebuild cache in /usr/portage") +
+     mailbox:contain_body("remote: To create a merge request for"))
+  mailbox:move_messages(danil_at_kutkevich_org.kutkevich_org_h2, result)
+
+  -- h10 host messages filtering
+  local mailbox = danil_at_kutkevich_org.INBOX
+  local result = mailbox:is_unseen() *
+    mailbox:contain_from("h10.kutkevich.org") *
+    mailbox:contain_subject("Anacron job 'cron.daily'")
+  mailbox:move_messages(danil_at_kutkevich_org.kutkevich_org_h10, result)
+
+  -- ah9 host messages filtering
+  local mailbox = danil_at_kutkevich_org.INBOX
+  local result = mailbox:is_unseen() *
+    mailbox:contain_from("ah9.armor5games.com") *
+    mailbox:contain_subject("/usr/sbin/anacron") *
+    (mailbox:contain_body("run-parts: /etc/cron.monthly/ieee-data exited with return code 1") +
+       (mailbox:contain_body("exim4-base") +
+          mailbox:contain_body("WARNING: purging the environment")))
+  mailbox:move_messages(danil_at_kutkevich_org.armor5games_com_ah9, result)
+
   -- luadns.com messages filtering
   local mailbox = danil_at_kutkevich_org.INBOX
   local result = mailbox:is_unseen() *
@@ -76,6 +102,12 @@ function filtering_danil_at_kutkevich_org()
     mailbox:contain_from("builds@drone.io") *
     mailbox:contain_subject("[SUCCESS]")
   mailbox:move_messages(danil_at_kutkevich_org.sieve_trash, result)
+
+  -- fail2ban (now on the h2) notifications messages filtering
+  local mailbox = danil_at_kutkevich_org.INBOX
+  local result = mailbox:is_unseen() *
+    mailbox:contain_subject("[Fail2Ban]")
+  mailbox:move_messages(danil_at_kutkevich_org.fail2ban, result)
 
   -- forum.rustycrate.ru mailing list messages filtering
   local mailbox = danil_at_kutkevich_org.INBOX
