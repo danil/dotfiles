@@ -16,14 +16,6 @@ function danilkutkevich_at_gmail_com_filtering()
   mailbox:mark_seen(result)
   mailbox:move_messages(gmail.vtb, result)
 
-  -- Bazaar по-русски mailing list filtering
-  -- <http://groups.google.com/group/ru_bz>.
-  -- 1 fail.
-  -- local mailbox = gmail.INBOX
-  -- local result = mailbox:is_unseen() *
-  --                mailbox:contain_field("List-Id", "ru_bzr.googlegroups.com")
-  -- mailbox:move_messages(gmail.lists, result)
-
   -- debian-user in Russian mailing list filtering
   -- <http://lists.debian.org/debian-russian>.
   -- local mailbox = gmail.INBOX
