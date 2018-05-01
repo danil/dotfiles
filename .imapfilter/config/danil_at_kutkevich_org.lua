@@ -70,12 +70,48 @@ function filtering_danil_at_kutkevich_org()
     mailbox:contain_subject("[SUCCESS]")
   mailbox:move_messages(danil_at_kutkevich_org.sieve_trash, result)
 
-  -- drone.io success notifications messages filtering
+  -- drone.io "success" notifications messages filtering
   local mailbox = danil_at_kutkevich_org.INBOX
   local result = mailbox:is_unseen() *
     mailbox:contain_from("builds@drone.io") *
     mailbox:contain_subject("[SUCCESS]")
   mailbox:move_messages(danil_at_kutkevich_org.sieve_trash, result)
+
+  -- forum.rustycrate.ru mailing list messages filtering
+  local mailbox = danil_at_kutkevich_org.INBOX
+  local result = mailbox:is_unseen() *
+    mailbox:contain_field("list-id", "forum.rustycrate.ru")
+  mailbox:move_messages(danil_at_kutkevich_org.rustycrate_ru_list, result)
+
+  -- rust-russian mailing list messages filtering
+  local mailbox = danil_at_kutkevich_org.INBOX
+  local result = mailbox:is_unseen() *
+    mailbox:contain_field("list-id", "rust-russian.googlegroups.com")
+  mailbox:move_messages(danil_at_kutkevich_org.rust_russian_list, result)
+
+  -- jamendo.com "new music" notifications messages filtering
+  local mailbox = danil_at_kutkevich_org.INBOX
+  local result = mailbox:is_unseen() *
+    mailbox:contain_from("no-reply@jamendo.com") *
+    mailbox:contain_subject("new music")
+  mailbox:move_messages(danil_at_kutkevich_org.jamendo, result)
+
+  -- webzilla.com annoying notifications messages filtering
+  local mailbox = danil_at_kutkevich_org.INBOX
+  local result = mailbox:is_unseen() *
+    mailbox:contain_from("no-reply@webzilla.com") *
+    mailbox:contain_subject("Webzilla - Invoice") *
+    mailbox:contain_subject("is paid") *
+    mailbox:contain_body("Total due: EUR 0.00")
+  mailbox:move_messages(danil_at_kutkevich_org.sieve_trash, result)
+
+  -- redfoxoutdoor.com annoying messages filtering
+  local mailbox = danil_at_kutkevich_org.INBOX
+  local result = mailbox:is_unseen() *
+    mailbox:contain_from("red fox") *
+    mailbox:contain_from("planetasport@retailrocket.net") *
+    mailbox:contain_field("Reply-To", "info@planeta-sport.ru")
+  mailbox:move_messages(danil_at_kutkevich_org.redfox, result)
 
   -- armor5games cyrillic messages filtering
   local mailbox = danil_at_kutkevich_org.INBOX
@@ -94,7 +130,6 @@ function filtering_danil_at_kutkevich_org()
     mailbox:contain_from("support@bugsnag.com") *
     mailbox:contain_subject("Some events are being dropped due to sampling")
   mailbox:move_messages(danil_at_kutkevich_org.sieve_trash, result)
-
 end
 
 function messages_to_armor5games(mailbox)
