@@ -151,8 +151,10 @@ function filtering_danil_at_kutkevich_org()
     messages_to_armor5games(mailbox) -
     messages_from_armor5games_hosts(mailbox) -
     mailbox:contain_from("notifications@bugsnag.com") *
-    (mailbox:match_subject("[а-яА-Я]") +
-       mailbox:match_body("[а-яА-Я]"))
+    (mailbox:contain_body("здравствуйте") +
+       mailbox:contain_body("уважением") +
+       mailbox:contain_body("резюме") +
+       mailbox:contain_body("портфолио"))
   mailbox:move_messages(danil_at_kutkevich_org.sieve_trash, result)
 
   -- armor5games/bugsnag annoying messages filtering
