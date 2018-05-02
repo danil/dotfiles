@@ -11,6 +11,6 @@ require "config/danil_at_kutkevich_org"
 -- endlessly, executing the commands in the forever() function and
 -- sleeping for 600 seconds between intervals:
 function forever()
-  pcall(danil_at_kutkevich_org_filtering())
+  pcall(danil_at_kutkevich_org_filtering)
 end
 become_daemon(3, forever)
