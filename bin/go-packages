@@ -88,6 +88,7 @@ function install {
     # packages="$packages golang.org/x/tools/cmd/godoc" #documentation
     packages="$packages github.com/BurntSushi/toml/cmd/tomlv" #toml validator
     packages="$packages github.com/StackExchange/dnscontrol" #dns dsl and cli for bind, cloudflare and so on
+    packages="$packages github.com/boyter/scc" #a-la sloc/cloc
     packages="$packages github.com/cloudflare/cloudflare-go/cmd/flarectl" #cloudflare cli `CF_API_EMAIL=your.name@example.org CF_API_KEY=your_api_key flarectl zone dns example.org`
     packages="$packages github.com/codesenberg/bombardier" #a-la ab apach benchmark `bombardier http://example.org`
     packages="$packages github.com/constabulary/gb/..." #best package manager?
