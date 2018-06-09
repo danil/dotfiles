@@ -102,10 +102,10 @@ function my_ps1_timer_show {
     esac
 
     if command -v play >/dev/null 2>&1 && #how to check if a program exists <http://stackoverflow.com/questions/592620/how-to-check-if-a-program-exists-from-a-bash-script#677212>
-           [ -f /home/$(whoami)/local/share/sounds/complete.oga ]; then
+           [ -f $(eval echo ~$(whoami))/local/share/sounds/complete.oga ]; then
         # <http://en.wikipedia.org/wiki/Nohup#Overcoming_hanging>.
         nohup play -q --no-show-progress \
-              /home/$(whoami)/local/share/sounds/complete.oga \
+              $(eval echo ~$(whoami))/local/share/sounds/complete.oga \
               > /dev/null 2> /dev/null < /dev/null &
     fi
 
@@ -127,7 +127,7 @@ function my_ps1_timer_show {
                  "$my_previous_command"
     fi
 }
-if [ -f /home/$(whoami)/.git-prompt.sh ]; then
+if [ -f $(eval echo ~$(whoami))/.git-prompt.sh ]; then
     # Git prompt
     # <http://github.com/git/git/blob/master/contrib/completion/git-prompt.sh>.
     GIT_PS1_SHOWCOLORHINTS=1
@@ -135,7 +135,7 @@ if [ -f /home/$(whoami)/.git-prompt.sh ]; then
     # GIT_PS1_SHOWSTASHSTATE=1
     GIT_PS1_SHOWUNTRACKEDFILES=1
     GIT_PS1_SHOWUPSTREAM="auto"
-    source /home/$(whoami)/.git-prompt.sh
+    source $(eval echo ~$(whoami))/.git-prompt.sh
 fi
 function my_ps1_dynamic_variables {
     my_exit_code=$? #exit status error <http://brettterpstra.com/2009/11/17/my-new-favorite-bash-prompt>
