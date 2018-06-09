@@ -6,7 +6,7 @@ function my-mirror-for {
     local vendors=$2
     local branches=$3
 
-    cd /var/git/$name
+    cd $(eval echo '~git')/$name
 
     # <http://stackoverflow.com/questions/1469849/how-to-split-one-string-into-multiple-strings-separated-by-at-least-one-space-in#1469863>,
     # <http://unix.stackexchange.com/questions/47557/in-a-bash-shell-script-writing-a-for-loop-that-iterates-over-string-values#47560>,
