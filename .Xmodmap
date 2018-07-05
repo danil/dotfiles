@@ -7,47 +7,30 @@ keycode 166 =
 ! XF86Forward.
 keycode 167 =
 
-! Swap Caps_Lock and Control_L
-! <http://emacswiki.org/EmacsCrashTips#toc1>,
-! <http://emacswiki.org/MovingTheCtrlKey#toc3>.
-! <http://columbia.edu/~djv/docs/keyremap.html>.
-! Make the Caps Lock key be a Control key
-! <http://askubuntu.com/questions/23491/how-to-change-capslock-key-to-produce-a>.
-remove Lock = Caps_Lock
-add Control = Caps_Lock
-keysym Caps_Lock = Control_L
+! Swap `control/ctrl/ctl` and `meta/alt` keys;
+! and make the `Caps_Lock` key be a `control/ctrl/ctl`
+! and make the `Print` key be a `meta/alt` key (h10 ThinkPad t430);
+! <http://xahlee.info/linux/linux_swap_control_and_alt_xmodmap.html>.
+clear control
+clear mod1
+keycode 37 = Alt_L Meta_L
+keycode 105 = Alt_R Meta_R
+keycode 64 = Control_L
+keycode 108 = Control_R
+! Caps_Lock.
+clear Lock
+keycode 66 = Control_L
+! h10 ThinkPad t430.
+keycode 107 = Alt_R Meta_R
+add control = Control_L Control_R
+add mod1 = Alt_L Meta_L
 
-! ! Make less be a Alt_L
-! ! <http://askubuntu.com/questions/24916/how-do-i-remap-certain-keys#24930>.
-! keycode 94 = Alt_L
-
-! Make the Left Control key be a Caps Lock key.
-! remove Control = Control_L
-! add Lock = Control_L
-
-! <http://code.google.com/p/legacymicsnotes/wiki/ConfigFiles>,
-! <http://haskell.org/pipermail/xmonad/2007-December/003709.html>.
-! add mod1 = Alt_L
-! remove mod1 = Alt_R
-! add mod3 = Alt_R
-
-! ! hjkl
-! ! <http://superuser.com/questions/213051/remap-arrow-keys-to-winijkl-on-linux/228548#answer-228548>,
-! ! <http://superuser.com/questions/96299/mapping-superhjkl-to-arrow-keys-under-x/111968#answer-111968>/
-! keycode 133 = Mode_switch Super_L Super_L Super_L
-! keysym h = h H Left
-! keysym j = j J Down
-! keysym k = k K Up
-! keysym l = l L Right
-
-! ! Remap Super to control key
-! ! <http://askubuntu.com/questions/137172/how-to-remap-superleft-key-to-control-key#137456>.
-! remove mod4 = Super_L
-! add control = Super_L
-! remove mod4 = Super_R
-! add control = Super_R
-
-! ! Remap Menu to control key
-! ! <http://ubuntuforums.org/showthread.php?t=820187&p=5126113#post5126113>.
-! keycode 135 = Control_R
-! add Control = Control_R
+! ! Swap Caps_Lock and Control_L
+! ! <http://emacswiki.org/EmacsCrashTips#toc1>,
+! ! <http://emacswiki.org/MovingTheCtrlKey#toc3>.
+! ! <http://columbia.edu/~djv/docs/keyremap.html>.
+! ! Make the Caps Lock key be a Control key
+! ! <http://askubuntu.com/questions/23491/how-to-change-capslock-key-to-produce-a>.
+! remove Lock = Caps_Lock
+! add Control = Caps_Lock
+! keysym Caps_Lock = Control_L

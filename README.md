@@ -4,21 +4,23 @@ Dotfiles
 This is my dotfiles, including shell environment
 and other misc scripts.
 
-Used utils lists
-----------------
+Utils
+-----
 
-* Bash script: bin/my-bpkg-install.sh
-* C: bin/my-clib-install.sh
-* Go: bin/my-go-install.sh
-* Node.js: package.json
-* Python: requirements.txt
-* Ruby: Gemfile
-* Rust: Cargo.toml
+Install my utils:
+
+    cd && bundle install
+    cd && npm install
+    ~/bin/bash-packages
+    ~/bin/c-packages
+    ~/bin/go-packages --update
+    ~/bin/python-packages
+    ~/bin/rust-packages --update
 
 Copying
 -------
 
-Copyright (C) 2015 Danil Kutkevich <danil@kutkevich.org>
+Copyright (C) 2016 Danil Kutkevich <danil@kutkevich.org>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.3'
+ruby '2.4.2'
 
 group :development do
   gem 'activesupport' # replaces non-ascii characters with an ascii approximation <http://api.rubyonrails.org/classes/ActiveSupport/Inflector.html#method-i-transliterate>
@@ -11,18 +11,22 @@ group :development do
   gem 'heroku'
   gem 'html2slim'
   gem 'htty' # http statefull interactive client (a-la ftp client)
-  gem 'mailcatcher' # `mailcatcher --http-ip 0.0.0.0` <https://github.com/sj26/mailcatcher>
+  gem 'jekyll' # static blog <https://github.com/jekyll/jekyll>
+  gem 'mailcatcher' # `pkill --full mailcatcher ; mailcatcher --http-ip 0.0.0.0` <https://github.com/sj26/mailcatcher>
   gem 'mdl' # markdown lint tool <https://github.com/mivok/markdownlint>
+  gem 'neovim' # neovim ruby support
   gem 'rails'
   gem 'rails_best_practices' # code metric tool for rails `rails_best_practices path/to/source `
   gem 'reek' # code smell detector for ruby `reek path/to/source` <https://github.com/troessner/reek>
   gem 'roodi' # find ruby code design issues `roodi path/to/source` <https://github.com/roodi/roodi>
-  gem 'rubocop' # code analyzer based on ruby style guide `rubocop path/to/source` <https://github.com/bbatsov/rubocop>
+  gem 'rubocop' # code analyzer based on ruby style guide used by emacs flycheck `rubocop path/to/source` <https://github.com/bbatsov/rubocop>
   gem 'ruby-lint' # used by emacs flycheck
   gem 'rubycritic' # generate ruby code quality report <https://github.com/whitesmith/rubycritic>
   gem 'sandi_meter' # analysis ruby code `sandi_meter path/to/source` <https://github.com/makaroni4/sandi_meter>
-  gem 'scss-lint' # scss checker used by emacs flycheck
+  gem 'scss_lint' # scss checker used by emacs flycheck <https://github.com/brigade/scss-lint>
+  gem 'scss_lint_reporter_checkstyle' # used by emacs flycheck
   gem 'sqlint' # sql linter <https://github.com/purcell/sqlint>
   gem 't' # create twitter timeline backup <http://blog.jphpsf.com/2012/05/07/backing-up-your-twitter-account-with-t>
   gem 'tailor' # check style of ruby files (indentation and so on) `tailor path/to/source` <https://github.com/turboladen/tailor>
+  gem 'travis'
 end

@@ -2,7 +2,7 @@
 # /usr/share/dunst/dunstrc
 
 [global]
-    font = Monospace 11
+    font = DejaVu Sans Mono 12
 
     # allow a small subset of html markup:
     # <b>bold</b>
@@ -62,7 +62,7 @@
     # right side of the screen.  Y is measured from the top and down respectevly.
     # The width can be negative. In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "-940x5-480+0"
+    geometry = "-1050-610+0"
 
     # The transparency of the window. range: [0; 100]
     # This option will only work if a compositing windowmanager is present (e.g. xcompmgr, compiz, etc..)
@@ -152,18 +152,39 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the '#' and following  would be interpreted as a comment.
-    background = "#1e90ff"
-    foreground = "#000000"
+    # # MediumBlue
+    # background = "#0000cd"
+    # # blue4 DarkBlue
+    # background = "#00008b"
+    # # DeepSkyBlue4
+    # background = "#00688b"
+    # NavyBlue
+    background = "#000080"
+    foreground = "#dddddd"
     timeout = 10
 
 [urgency_normal]
-    background = "#7cfc00"
-    foreground = "#000000"
+    # # green4
+    # background = "#008b00"
+    # DarkGreen
+    background = "#006400"
+    foreground = "#eeeeee"
     timeout = 10
 
 [urgency_critical]
-    background = "#ff4500"
-    foreground = "#000000"
+    # # red3
+    # background = "#cd0000"
+    # # firebrick
+    # background = "#b22222"
+    # # red4 DarkRed
+    # background = "#8b0000"
+    # # IndianRed4
+    # background = "#8b3a3a"
+    # # brown4
+    # background = "#8b2323"
+    # firebrick4
+    background = "#8b1a1a"
+    foreground = "#eeeeee"
     timeout = 0
 
 

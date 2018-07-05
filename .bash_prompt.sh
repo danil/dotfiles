@@ -30,9 +30,9 @@ function ps1_jobs {
     fi
 }
 function ps1_pwd {
-  local my_pwd=$(echo $PWD \
-      | sed --expression="s|^$HOME|~|" --expression='s-\([^/.]\)[^/]*/-\1/-g')
-  echo -n " ${ps1_blue}${my_pwd}${ps1_plain}"
+    local my_pwd=$(echo $PWD \
+                          | sed --expression="s|^$HOME|~|" --expression='s-\([^/.]\)[^/]*/-\1/-g')
+    echo -n " ${ps1_blue}${my_pwd}${ps1_plain}"
 }
 function ps1_load {
     # Prompt load average
@@ -55,56 +55,101 @@ function ps1_outdated_packages {
         fi
     fi
 }
+function ps1_unread_mails {
+    if [ -s /var/mail/$(whoami) ] ; then
+        # <http://serverfault.com/questions/171833/display-number-of-messages-in-linux-mail-queue#289177>
+        let mails_count=$(mail --file /var/mail/$(whoami) --headers \
+                                 | sed '/^>* *[0-9]/d' \
+                                 | wc -l)
+
+    else
+        let mails_count=0
+    fi
+    if [[ ${mails_count} -gt 0 ]]; then
+        echo -n " mail:${mails_count}"
+    fi
+}
 function my_ps1_timer_start {
     my_ps1_timer_seconds=${my_ps1_timer_seconds:-$SECONDS}
 }
 function my_ps1_timer_show {
     local tmp=$(($SECONDS - $my_ps1_timer_seconds))
     let timer=${tmp}
-    if [[ ${timer} -ge 10 ]]; then
-        if command -v play >/dev/null 2>&1 && #how to check if a program exists <http://stackoverflow.com/questions/592620/how-to-check-if-a-program-exists-from-a-bash-script#677212>
-            [ -f /home/danil/local/share/sounds/complete.oga ]; then
-            # <http://en.wikipedia.org/wiki/Nohup#Overcoming_hanging>.
-            nohup play -q --no-show-progress \
-                /home/danil/local/share/sounds/complete.oga \
-                > /dev/null 2> /dev/null < /dev/null &
-        fi
-        if command -v dunstify >/dev/null 2>&1 ; then
-            notify_title="◷ $timer"
-            if [[ ${my_exit_code} -eq 0 ]]; then
-                #low, normal, critical
+
+    if [[ ${timer} -lt 10 ]]; then # too fast command
+        return 0
+    fi
+
+    echo -n " ${timer}s" # ◷
+
+    case $my_exit_code in
+        130|148) # interactively interrupted by `ctrl-c`
+            return 0
+            ;;
+    esac
+
+    # Interactive commands.
+    case $my_previous_command in
+        alsamixer*) return 0 ;;
+        emacs*|sudo?emacs*) return 0 ;;
+        git*log*|sudo?git*log*|git*rebase*|sudo?git*rebase*) return 0 ;;
+        htop*|sudo?htop*) return 0 ;;
+        less*|sudo?less*) return 0 ;;
+        make*menuconfig*|sudo?make*menuconfig*) return 0 ;;
+        tmux*|sudo?tmux) return 0 ;;
+        vim*|sudo?vim*) return 0 ;;
+        lftp*) return 0 ;;
+        mosh*) return 0 ;;
+        mongo*) return 0 ;;
+    esac
+
+    if command -v play >/dev/null 2>&1 && #how to check if a program exists <http://stackoverflow.com/questions/592620/how-to-check-if-a-program-exists-from-a-bash-script#677212>
+           [ -f $(eval echo ~$(whoami))/local/share/sounds/complete.oga ]; then
+        # <http://en.wikipedia.org/wiki/Nohup#Overcoming_hanging>.
+        nohup play -q --no-show-progress \
+              $(eval echo ~$(whoami))/local/share/sounds/complete.oga \
+              > /dev/null 2> /dev/null < /dev/null &
+    fi
+
+    if command -v dunstify >/dev/null 2>&1 ; then
+        notify_title="${timer}s" # ◷
+        # <http://tldp.org/LDP/abs/html/exitcodes.html>.
+        case $my_exit_code in
+            0)
+                # low, normal, critical.
                 my_notify_urgency="low"
-            else
+                ;;
+            *)
                 my_notify_urgency="critical"
-                notify_title="☢ $my_exit_code $notify_title"
-            fi
-            dunstify --urgency=$my_notify_urgency \
-                "$notify_title" \
-                "$my_previous_command"
-        fi
-        echo -n " ◷ $timer"
+                notify_title="${my_exit_code}! $notify_title" # ☢
+                ;;
+        esac
+        dunstify --urgency=$my_notify_urgency \
+                 "$notify_title" \
+                 "$my_previous_command"
     fi
 }
-if [ -f ~/.git-prompt/contrib/completion/git-prompt.sh ]; then
+if [ -f $(eval echo ~$(whoami))/.git-prompt.sh ]; then
     # Git prompt
     # <http://github.com/git/git/blob/master/contrib/completion/git-prompt.sh>.
     GIT_PS1_SHOWCOLORHINTS=1
     GIT_PS1_SHOWDIRTYSTATE=1
-    GIT_PS1_SHOWSTASHSTATE=1
+    # GIT_PS1_SHOWSTASHSTATE=1
     GIT_PS1_SHOWUNTRACKEDFILES=1
     GIT_PS1_SHOWUPSTREAM="auto"
-    source ~/.git-prompt/contrib/completion/git-prompt.sh
+    source $(eval echo ~$(whoami))/.git-prompt.sh
 fi
 function my_ps1_dynamic_variables {
     my_exit_code=$? #exit status error <http://brettterpstra.com/2009/11/17/my-new-favorite-bash-prompt>
     if [[ $my_exit_code -eq 0 || $my_exit_code -ge 128 ]]; then #set an error string for the prompt, if applicable (ignore kill e. g. 130 script terminated by control-c <http://www.tldp.org/LDP/abs/html/exitcodes.html>)
         ps1_exit_code=""
     else
-        ps1_exit_code=" ☢ $my_exit_code" # ⚠ ☠ ☹ ☣
+        ps1_exit_code=" ${my_exit_code}!" # ☢ ⚠ ☠ ☹ ☣
     fi
 
     ps1_load="$(ps1_load)"
     ps1_jobs="$(ps1_jobs)"
+    ps1_unread_mails="$(ps1_unread_mails)"
     ps1_outdated_packages="$(ps1_outdated_packages)"
 
     # History between sessions <http://briancarper.net/blog/248>.
@@ -124,6 +169,7 @@ PS1+='${ps1_exit_code}'
 PS1+="${ps1_yellow}"
 PS1+='${my_ps1_timer_show}' #prompt last command time <http://stackoverflow.com/questions/1862510/how-can-the-last-commands-wall-time-be-put-in-the-bash-prompt#1862762>
 PS1+="${ps1_white}"
+PS1+='${ps1_unread_mails}'
 PS1+='${ps1_outdated_packages}'
 PS1+='${ps1_load}'
 PS1+='${ps1_jobs}'
