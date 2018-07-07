@@ -66,6 +66,7 @@ function install {
     # packages="$packages github.com/ichinaski/pxl" #display images in the terminal (freeze terminal)
     # packages="$packages github.com/jasonmoo/smlr" #jpeg encoder
     # packages="$packages github.com/jingweno/ccat" #colorizing cat <https://github.com/jingweno/ccat>
+    # packages="$packages github.com/knq/usql" #sql client for postgresql, mysql, sqlite, oracle and microsoft sql server
     # packages="$packages github.com/laurent22/massren" #rename multiple files using text editor <https://github.com/laurent22/massren>
     # packages="$packages github.com/lukasmartinelli/pgfutter" #import csv and json into postgresql
     # packages="$packages github.com/maruel/panicparse/cmd/pp" # pipe stderr and format like that: `go run buggy.go |&pp`
@@ -97,11 +98,10 @@ function install {
     packages="$packages github.com/fd0/machma" #parallel cli task execution with each command progress
     packages="$packages github.com/go-swagger/go-swagger/cmd/swagger" #swagger cli validator `swagger validate http://example.org/path/to/swagger.json`
     packages="$packages github.com/godoctor/godoctor" #used by emacs for variables reanming
+    packages="$packages github.com/golang-migrate/migrate/cli" #database migrations cli
     packages="$packages github.com/golang/dep/cmd/dep" #golang dependency management official tool (a-la gems or eggs)
     packages="$packages github.com/jgrahamc/httpdiff" #diff http requests <https://github.com/jgrahamc/httpdiff>
     packages="$packages github.com/kahing/goofys" #mount s3 (amazon aws) file system
-    packages="$packages github.com/knq/usql" #sql client for postgresql, mysql, sqlite, oracle and microsoft sql server
-    packages="$packages github.com/mattes/migrate/cli" #database migrations cli
     packages="$packages github.com/monochromegane/the_platinum_searcher/..." #ag and ack replacement <https://github.com/monochromegane/the_platinum_searcher>
     packages="$packages github.com/nsf/gocode" #used by emacs auto complete
     packages="$packages github.com/rakyll/hey" #http load generator (a-la ab apach benchmark)
