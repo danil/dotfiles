@@ -6,8 +6,8 @@
 #     pager = ""
 
 [user]
+	email = danil.kutkevich@xena.exchange
 	name = Danil Kutkevich
-	email = danil@kutkevich.org
 
 # [color]
 #     diff = always
