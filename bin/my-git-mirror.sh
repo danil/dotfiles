@@ -21,7 +21,7 @@ function my-mirror-for {
 # my-mirror-for "go/count-words-server-example.git" "github"        "master"
 # my-mirror-for "go/ptichka.git"               "gitlab github"      "master"
 my-mirror-for "dotfiles-playbooks.git"       "github"        "master"
-my-mirror-for "dotfiles.git"                 "gitlab github" "h2-gentoo-danil h10-gentoo-danil h4-sailfish-nemo"
+my-mirror-for "dotfiles.git"                 "gitlab github" "h2-gentoo-danil h10-gentoo-danil h17-ubuntu-danil"
 my-mirror-for "el/ferm-mode.git"             "gitlab github" "master"
 my-mirror-for "el/ido-describe-bindings.git" "gitlab github" "master"
 my-mirror-for "el/ido-occur.git"             "gitlab github" "master"
