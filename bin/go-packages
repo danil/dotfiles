@@ -58,6 +58,7 @@ function install {
     packages="$packages honnef.co/go/tools/cmd/staticcheck"
     packages="$packages honnef.co/go/tools/cmd/unused"
 
+    # packages="$packages github.com/blackjack/webcam/examples/stdout_streamer" #webcam a-la mpv/mplayer
     # packages="$packages github.com/crufter/borg" #terminal based search engine for bash commands `borg "list all files in dir"`
     # packages="$packages github.com/danil/ptichka" #fetch tweets and send by SMTP (twitter client)
     # packages="$packages github.com/digitalocean/doctl/cmd/doctl" #digitalocean command line tool (error while getting: fatal: no submodule mapping found in .gitmodules for path 'vendor/github.com/vektra/errors')
