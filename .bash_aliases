@@ -92,44 +92,43 @@ export COMPOSER_PREFIX="$HOME/vendor"
 # # Steel Bank Common Lisp.
 # export SBCL_HOME=/usr/lib64/sbcl
 
-function wm_notify_last_command {
-    local previous_command=$1
-    local previous_errcode=$2
-    local previous_seconds=$3
-    # Interactive commands.
-    case $previous_command in
-        alsamixer*) return 0 ;;
-        emacs*|sudo?emacs*) return 0 ;;
-        git*log*|sudo?git*log*|git*rebase*|sudo?git*rebase*) return 0 ;;
-        htop*|sudo?htop*) return 0 ;;
-        less*|sudo?less*) return 0 ;;
-        make*menuconfig*|sudo?make*menuconfig*) return 0 ;;
-        tmux*|sudo?tmux) return 0 ;;
-        vim*|sudo?vim*) return 0 ;;
-        lftp*) return 0 ;;
-        mosh*) return 0 ;;
-        mongo*) return 0 ;;
-    esac
-    command -v dunstify >/dev/null 2>&1 || return 0
-    if [[ ${previous_seconds} -lt 1 ]]; then # too fast command
-        return 0
-    fi
-    notify_title="${previous_seconds}s" # ◷
-    # <http://tldp.org/LDP/abs/html/exitcodes.html>.
-    case $__ERRCODE in
-        0)
-            # low, normal, critical.
-            my_notify_urgency="low"
-            ;;
-        *)
-            my_notify_urgency="critical"
-            notify_title="${previous_errcode}! $__DURATION" # ☢
-            ;;
-    esac
-    dunstify --urgency=$my_notify_urgency "$notify_title" "$previous_command"
-}
-
 # # Prompt powerline-go.
+# function wm_notify_last_command {
+#     local previous_command=$1
+#     local previous_errcode=$2
+#     local previous_seconds=$3
+#     # Interactive commands.
+#     case $previous_command in
+#         alsamixer*) return 0 ;;
+#         emacs*|sudo?emacs*) return 0 ;;
+#         git*log*|sudo?git*log*|git*rebase*|sudo?git*rebase*) return 0 ;;
+#         htop*|sudo?htop*) return 0 ;;
+#         less*|sudo?less*) return 0 ;;
+#         make*menuconfig*|sudo?make*menuconfig*) return 0 ;;
+#         tmux*|sudo?tmux) return 0 ;;
+#         vim*|sudo?vim*) return 0 ;;
+#         lftp*) return 0 ;;
+#         mosh*) return 0 ;;
+#         mongo*) return 0 ;;
+#     esac
+#     command -v dunstify >/dev/null 2>&1 || return 0
+#     if [[ ${previous_seconds} -lt 1 ]]; then # too fast command
+#         return 0
+#     fi
+#     notify_title="${previous_seconds}s" # ◷
+#     # <http://tldp.org/LDP/abs/html/exitcodes.html>.
+#     case $__ERRCODE in
+#         0)
+#             # low, normal, critical.
+#             my_notify_urgency="low"
+#             ;;
+#         *)
+#             my_notify_urgency="critical"
+#             notify_title="${previous_errcode}! $__DURATION" # ☢
+#             ;;
+#     esac
+#     dunstify --urgency=$my_notify_urgency "$notify_title" "$previous_command"
+# }
 # INTERACTIVE_BASHPID_TIMER="/tmp/${USER}.START.$$"
 # PS0='$(echo $SECONDS > "$INTERACTIVE_BASHPID_TIMER")'
 # function _update_ps1() {
