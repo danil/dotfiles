@@ -105,6 +105,7 @@ function install {
     packages="$packages github.com/monochromegane/the_platinum_searcher/..." #ag and ack replacement <https://github.com/monochromegane/the_platinum_searcher>
     packages="$packages github.com/nsf/gocode" #used by emacs auto complete
     packages="$packages github.com/rakyll/hey" #http load generator (a-la ab apach benchmark)
+    packages="$packages github.com/justjanne/powerline-go" #a powerline style prompt for shell
     packages="$packages github.com/rlmcpherson/s3gof3r/gof3r" #s3 (amazon aws) client
     packages="$packages github.com/rogpeppe/godef" #used by emacs for jump to the definition of the expression at point
     packages="$packages github.com/simeji/jid/cmd/jid" #interactive jq
