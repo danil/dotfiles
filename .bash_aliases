@@ -129,47 +129,48 @@ function wm_notify_last_command {
     dunstify --urgency=$my_notify_urgency "$notify_title" "$previous_command"
 }
 
+# # Prompt powerline-go.
+# INTERACTIVE_BASHPID_TIMER="/tmp/${USER}.START.$$"
+# PS0='$(echo $SECONDS > "$INTERACTIVE_BASHPID_TIMER")'
+# function _update_ps1() {
+#     local __ERRCODE=$?
+#     local __DURATION=0
+#     if [ -e $INTERACTIVE_BASHPID_TIMER ]; then
+#         local __END=$SECONDS
+#         local __START=$(cat "$INTERACTIVE_BASHPID_TIMER")
+#         __DURATION="$(($__END - ${__START:-__END}))"
+#         rm -f "$INTERACTIVE_BASHPID_TIMER"
+#     fi
+#     # aws,cwd,docker,dotenv,exit,git,gitlite,hg,host,jobs,load,nix-shell,perlbrew,perms,root,shell-var,ssh,termtitle,time,user,venv,node
+#     modules=""
+#     modules+="venv"
+#     modules+=",user"
+#     modules+=",host"
+#     modules+=",ssh"
+#     modules+=",cwd"
+#     modules+=",perms"
+#     modules+=",git"
+#     modules+=",jobs"
+#     modules+=",exit"
+#     modules+=",root"
+#     args=()
+#     args+=( " -mode flat" )
+#     args+=( " -newline" )
+#     args+=( " -error $__ERRCODE" )
+#     args+=( " -numeric-exit-codes" )
+#     args+=( " -shell bash" )
+#     args+=( " -colorize-hostname" )
+#     if [[ ${__DURATION} -gt 2 ]] ; then
+#         modules+=",duration"
+#         args+=( " -duration $__DURATION" )
+#     fi
+#     args+=( " -modules ${modules[@]}" )
+#     PS1="$(powerline-go ${args[@]})"
+#     wm_notify_last_command "$previous_command" "$__ERRCODE" "$__DURATION"
+# }
+# trap 'previous_command=$this_command; this_command=$BASH_COMMAND' DEBUG
+# if [ "$TERM" != "linux" ]; then
+#     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+# fi
 # Prompt.
-# [[ -f "$HOME"/.bash_prompt.sh ]] && source "$HOME"/.bash_prompt.sh
-INTERACTIVE_BASHPID_TIMER="/tmp/${USER}.START.$$"
-PS0='$(echo $SECONDS > "$INTERACTIVE_BASHPID_TIMER")'
-function _update_ps1() {
-    local __ERRCODE=$?
-    local __DURATION=0
-    if [ -e $INTERACTIVE_BASHPID_TIMER ]; then
-        local __END=$SECONDS
-        local __START=$(cat "$INTERACTIVE_BASHPID_TIMER")
-        __DURATION="$(($__END - ${__START:-__END}))"
-        rm -f "$INTERACTIVE_BASHPID_TIMER"
-    fi
-    # aws,cwd,docker,dotenv,exit,git,gitlite,hg,host,jobs,load,nix-shell,perlbrew,perms,root,shell-var,ssh,termtitle,time,user,venv,node
-    modules=""
-    modules+="venv"
-    modules+=",user"
-    modules+=",host"
-    modules+=",ssh"
-    modules+=",cwd"
-    modules+=",perms"
-    modules+=",git"
-    modules+=",jobs"
-    modules+=",exit"
-    modules+=",root"
-    args=()
-    args+=( " -mode flat" )
-    args+=( " -newline" )
-    args+=( " -error $__ERRCODE" )
-    args+=( " -numeric-exit-codes" )
-    args+=( " -shell bash" )
-    args+=( " -colorize-hostname" )
-    if [[ ${__DURATION} -gt 2 ]] ; then
-        modules+=",duration"
-        args+=( " -duration $__DURATION" )
-    fi
-    args+=( " -modules ${modules[@]}" )
-    PS1="$(powerline-go ${args[@]})"
-    wm_notify_last_command "$previous_command" "$__ERRCODE" "$__DURATION"
-}
-trap 'previous_command=$this_command; this_command=$BASH_COMMAND' DEBUG
-if [ "$TERM" != "linux" ]; then
-    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-fi
+[[ -f "$HOME"/.bash_prompt.sh ]] && source "$HOME"/.bash_prompt.sh
