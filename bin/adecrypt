@@ -4,19 +4,21 @@ set -e
 
 file=$1
 
-[[ ! -z  $file ]] && (>&2 echo 'Argument is missing') ; exit 1
+if [[ -z  $file ]]; then
+    (>&2 echo 'Argument is missing') ; exit 1
+fi
 
 if ! [[ $file = *[!\ ]* ]]; then
     (>&2 echo "Invalid argument: $file") ; exit 1
 fi
 
-if ! [ -f "./${file}.asc" ]; then
-    (>&2 echo "Nothing to encrypt. File ${file}.asc not found!")
+if ! [ -f "./${file}.gz.asc" ]; then
+    (>&2 echo "Nothing to encrypt. File ${file}.gz.asc not found!")
     exit 1
 fi
 
-if [ -f "./$file" ]; then
-    mv -i "./$file" "./$file.$(date +%Y%m%dT%H%M%S%Z)"
+if [ -f "./${file}.gz" ]; then
+    mv -i "./${file}.gz" "./${file}$(date --utc +%Y%m%dT%H%M%SZ).gz"
 fi
 
-gpg --decrypt --output - "./${file}.asc" > "./$file"
+gpg --decrypt --output - "./${file}.gz.asc" > "./${file}.gz"
