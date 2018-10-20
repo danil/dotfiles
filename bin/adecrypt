@@ -21,4 +21,4 @@ if [ -f "./${file}.gz" ]; then
     mv -i "./${file}.gz" "./${file}$(date --utc +%Y%m%dT%H%M%SZ).gz"
 fi
 
-gpg --decrypt --output - "./${file}.gz.asc" > "./${file}.gz"
+gpg --decrypt --output "./${file}.gz" "./${file}.gz.asc"
