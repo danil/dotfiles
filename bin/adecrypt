@@ -2,18 +2,33 @@
 
 set -e
 
-file=$1
+export stdout=${stdout:--1}
+
+while [ $# -gt 0 ]; do
+    case "$1" in
+        --stdout)
+            let stdout=1
+            ;;
+        --file=*)
+            file="${1#*=}"
+            ;;
+        *)
+            (>&2 echo 'Invalid argument')
+            exit 1
+    esac
+    shift
+done
 
 if [[ -z  $file ]]; then
-    (>&2 echo 'Argument is missing') ; exit 1
+    (>&2 echo 'File name argument is missing') ; exit 1
 fi
 
 if ! [[ $file = *[!\ ]* ]]; then
-    (>&2 echo "Invalid argument: $file") ; exit 1
+    (>&2 echo "Invalid file name argument: $file") ; exit 1
 fi
 
 if ! [ -f "./${file}.gz.asc" ]; then
-    (>&2 echo "Nothing to encrypt. File ${file}.gz.asc not found!")
+    (>&2 echo "Nothing to encrypt. File ${file}.gz.asc not found")
     exit 1
 fi
 
@@ -21,4 +36,9 @@ if [ -f "./${file}.gz" ]; then
     mv -i "./${file}.gz" "./${file}$(date --utc +%Y%m%dT%H%M%SZ).gz"
 fi
 
-gpg --decrypt --output "./${file}.gz" "./${file}.gz.asc"
+
+if [[ $stdout -eq 1 ]]; then
+    gpg --decrypt --output - "./${file}.gz.asc"
+else
+    gpg --decrypt --output "./${file}.gz" "./${file}.gz.asc"
+fi
