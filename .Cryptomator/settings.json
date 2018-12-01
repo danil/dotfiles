@@ -1,0 +1,10 @@
+{
+  "directories": [],
+  "askedForUpdateCheck": true,
+  "checkForUpdatesEnabled": true,
+  "port": 42427,
+  "numTrayNotifications": 3,
+  "preferredGvfsScheme": "dav",
+  "debugMode": false,
+  "preferredVolumeImpl": "FUSE"
+}
