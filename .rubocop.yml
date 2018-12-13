@@ -1,8 +1,14 @@
-Style/FrozenStringLiteralComment:
+Layout/AlignHash:
   Enabled: false
-Style/Encoding:
+Layout/EmptyLineAfterGuardClause:
+  Enabled: false
+Lint/ShadowedArgument:
   Enabled: false
 Metrics/LineLength:
   Enabled: false
-Layout/EmptyLineAfterGuardClause:
+Style/Encoding:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/ParallelAssignment:
   Enabled: false
