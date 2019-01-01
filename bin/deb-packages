@@ -1,0 +1,66 @@
+#!/bin/bash
+
+# Benchmarks a-la `ab`.
+packages="$packages bonnie++"
+packages="$packages apache2-utils"
+packages="$packages dbench"
+packages="$packages siege"
+packages="$packages sysbench" # cpu and memory benchmarks
+packages="$packages tiobench" # TODO: find this package
+packages="$packages wrk" # c http benchmark tool <https://github.com/wg/wrk>
+
+# Common packages.
+packages="$packages makepasswd" # password generator
+packages="$packages pwgen" # password generator
+packages="$packages docker" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
+# packages="$packages app-misc/colordiff"
+# packages="$packages app-misc/fdupes" # find duplicate files
+# packages="$packages app-misc/jo" # json output from a shell <https://github.com/jpmens/jo>
+# packages="$packages app-misc/jq" # json console formater <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>
+# packages="$packages app-misc/progress" # progress bar for cp, rm, dd, ... <https://github.com/Xfennec/progress>
+# packages="$packages app-misc/tmux"
+# packages="$packages app-shells/bash-completion"
+# packages="$packages app-text/dos2unix"
+# packages="$packages app-text/multitail" # a-la tail with colors
+# packages="$packages dev-libs/xxhash"
+# packages="$packages dev-util/icdiff" # two columns diff
+# packages="$packages dev-util/source-highlight" # highlighted source code in less (less filter)
+# packages="$packages dev-vcs/git"
+# packages="$packages dev-vcs/git-extras"
+# packages="$packages dev-vcs/git-flow" # saving time on git branch creation/deleteion <https://github.com/nvie/gitflow>, <https://danielkummer.github.io/git-flow-cheatsheet>
+# packages="$packages dev-vcs/tig"
+# packages="$packages mail-filter/imapfilter"
+# packages="$packages mail-mta/exim" # deliver local mail to /var/mail
+# packages="$packages media-gfx/jhead" # rename jpeg's by exif date `jhead -n%Y%m%d-%H%M%S file.jpg`
+# packages="$packages media-gfx/pngcrush" # PNG image size optimizing <http://en.wikipedia.org/wiki/Pngcrush>
+# packages="$packages net-analyzer/netcat" # network connection tool like telnet
+# packages="$packages net-analyzer/ngrep"
+# packages="$packages net-analyzer/traceroute" # traceroute and traceroute6
+# packages="$packages net-dns/bind-tools" # `dig`, `host` and `nslookup`
+# packages="$packages net-ftp/lftp"
+# packages="$packages net-ftp/pure-ftpd" # because vsftpd is annoying
+# packages="$packages net-mail/mailutils" # read local mail from /var/mail
+# packages="$packages net-mail/swaks" # command line smtp testing, including tls and auth
+# packages="$packages net-misc/dhcpcd"
+# packages="$packages net-misc/mosh"
+# packages="$packages net-misc/ntp"
+# packages="$packages net-misc/rclone" # a-la rsync for s3, dropbox, google drive and so on
+# packages="$packages net-misc/telnet-bsd"
+# packages="$packages net-misc/whois"
+# packages="$packages net-p2p/syncthing" # dropbox replacement
+# packages="$packages sci-mathematics/genius" # console-based calculator
+# packages="$packages sys-apps/lsb-release" # release version compliant to Linux Standard Base (LSB)
+# packages="$packages sys-apps/lshw" # hardware detection <https://wiki.gentoo.org/wiki/Lshw>
+# packages="$packages sys-apps/mdp" # markdown presentation tool
+# packages="$packages sys-apps/mlocate"
+# packages="$packages sys-apps/pciutils" # lspci is an pci hardware detection <https://wiki.gentoo.org/wiki/Pciutils>, <https://www.gentoo.org/doc/en/handbook/handbook-amd64.xml?style=printable&part=1&chap=7#doc_chap2>
+# packages="$packages sys-apps/the_silver_searcher"
+# packages="$packages sys-apps/usbutils" # lsusb is an usb hardware detection <https://wiki.gentoo.org/wiki/Usbutils>
+# packages="$packages sys-devel/bc" # used by bash prompt
+# packages="$packages sys-fs/ncdu" # diskspace usage is an baobab and gt5 replacement
+# packages="$packages sys-process/lsof"
+# packages="$packages www-client/elinks" # cli http and bittorrent client
+# packages="$packages www-servers/nginx"
+
+
+aptitude install $packages
