@@ -13,3 +13,4 @@ function my-mirror-private {
 
 my-mirror-private "defts.git"        "github" "master"
 my-mirror-private "errocketbank.git" "github" "master"
+my-mirror-private "md/rcc.git"       "github" "master"
