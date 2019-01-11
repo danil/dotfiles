@@ -14,19 +14,6 @@ function my-mirror-public {
     done
 }
 
-function my-mirror-private {
-    local name=$1
-    local vendors=$2
-    local branches=$3
-    cd $(eval echo '~danil')/git/$name
-    for vendor in $vendors; do
-        git push --quiet --tags $vendor $branches
-    done
-}
-
-my-mirror-private "defts.git"                   "github"        "master"
-my-mirror-private "errocketbank.git"            "github"        "master"
-
 # my-mirror-public "cv.git"                       "gitlab github" "gh-pages"
 # my-mirror-public "go/client-server-example.git" "github"             "master"
 # my-mirror-public "go/count-words-server-example.git" "github"        "master"
