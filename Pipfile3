@@ -5,6 +5,9 @@ awscli
 # Bash scripts checker a-la pep8 (used by Emacs Flycheck) <https://github.com/openstack-dev/bashate>.
 bashate
 
+# Docker compose
+docker-compose
+
 # Htop replacement <https://github.com/nicolargo/glances>.
 glances
 
