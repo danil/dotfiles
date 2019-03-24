@@ -92,11 +92,13 @@ function install {
     packages="$packages github.com/codesenberg/bombardier" #a-la ab apach benchmark `bombardier http://example.org`
     packages="$packages github.com/constabulary/gb/..." #best package manager?
     packages="$packages github.com/cortesi/devd/cmd/devd" #local http/webserver for developers `devd --address=0.0.0.0 --livewatch ./`
+    packages="$packages github.com/dachad/tcpgoon" #tcp concurrent connections benchmark
     packages="$packages github.com/davecheney/httpstat" #http statistics (a-la curl --head)
     packages="$packages github.com/fd0/machma" #parallel cli task execution with each command progress
     packages="$packages github.com/github/hub" #github helper <https://github.com/github/hub>
     packages="$packages github.com/go-swagger/go-swagger/cmd/swagger" #swagger cli validator `swagger validate http://example.org/path/to/swagger.json`
     packages="$packages github.com/godoctor/godoctor" #used by emacs for variables reanming
+    packages="$packages github.com/golang-migrate/migrate/cli" #database migrations cli
     packages="$packages github.com/golang/dep/cmd/dep" #golang dependency management official tool (a-la gems or eggs)
     packages="$packages github.com/golangci/golangci-lint/cmd/golangci-lint" #a-la gometalinter
     packages="$packages github.com/jgrahamc/httpdiff" #diff http requests <https://github.com/jgrahamc/httpdiff>

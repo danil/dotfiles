@@ -37,11 +37,8 @@ alias ag='ag --width=5000'
 alias sloc='scc'
 
 export PATH="$HOME"/bin:"$PATH" #clib is an C package manager <https://github.com/clibs/clib> run `c-install-all`
-
 export PATH="$HOME"/sbin:"$PATH"
-
 export PATH="$PATH":"$HOME"/deps/bin #bpkg bash package manager <https://github.com/bpkg/bpkg#installing-packages> run `bash-install-all`
-
 export PATH="$HOME/.cask/bin:$PATH" #emacs cask <http://cask.github.io>
 
 # Go <http://golang.org/doc/code.html#GOPATH>.
@@ -175,4 +172,10 @@ export COMPOSER_PREFIX="$HOME/vendor"
 #     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 # fi
 # Prompt.
+# function _update_ps1() {
+#     PS1="$(~/go/bin/powerline-go -error $?)"
+# }
+# if [ "$TERM" != "linux" ]; then
+#     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+# fi
 [[ -f "$HOME"/.bash_prompt.sh ]] && source "$HOME"/.bash_prompt.sh

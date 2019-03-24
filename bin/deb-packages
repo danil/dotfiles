@@ -1,0 +1,36 @@
+#!/bin/bash
+
+install_command="aptitude install"
+
+# Compilation.
+packages="$packages build-essential"
+packages="$packages libx11-dev"
+packages="$packages libxft-dev"
+
+# Common packages.
+packages="$packages curl"
+packages="$packages emacs26-nox"
+packages="$packages git"
+packages="$packages htop"
+packages="$packages mosh"
+packages="$packages pwgen" # password generator
+packages="$packages silversearcher-ag"
+packages="$packages tmux"
+packages="$packages xsel"
+# packages="$packages makepasswd" # password generator
+# packages="$packages docker" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
+
+# Desktop.
+packages="$packages fonts-fantasque-sans"
+packages="$packages gnome-tweak-tool"
+
+# # Benchmarks a-la `ab`.
+# packages="$packages bonnie++"
+# packages="$packages apache2-utils"
+# packages="$packages dbench"
+# packages="$packages siege"
+# packages="$packages sysbench" # cpu and memory benchmarks
+# packages="$packages tiobench" # TODO: find this package
+# packages="$packages wrk" # c http benchmark tool <https://github.com/wg/wrk>
+
+$install_command $packages || exit 1

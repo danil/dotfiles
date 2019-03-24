@@ -14,13 +14,14 @@ group :development do
   gem 'html2slim'
   gem 'htty' # http statefull interactive client (a-la ftp client)
   gem 'jekyll' # static blog <https://github.com/jekyll/jekyll>
+  gem 'mailcatcher' # `pkill --full mailcatcher ; mailcatcher --http-ip 0.0.0.0` <https://github.com/sj26/mailcatcher>
   gem 'mdl' # markdown lint tool <https://github.com/mivok/markdownlint>
   gem 'neovim' # neovim ruby support
   gem 'rails'
   gem 'rails_best_practices' # code metric tool for rails `rails_best_practices path/to/source `
   gem 'reek' # code smell detector for ruby `reek path/to/source` <https://github.com/troessner/reek>
   gem 'roodi' # find ruby code design issues `roodi path/to/source` <https://github.com/roodi/roodi>
-  gem 'rubocop', '>= 0.64' # code analyzer based on ruby style guide used by emacs flycheck `rubocop path/to/source` <https://github.com/bbatsov/rubocop>
+  gem 'rubocop' # code analyzer based on ruby style guide used by emacs flycheck `rubocop path/to/source` <https://github.com/bbatsov/rubocop>
   gem 'ruby-lint' # used by emacs flycheck
   gem 'rubycritic' # generate ruby code quality report <https://github.com/whitesmith/rubycritic>
   gem 'rufo' # source code formater/beautifier a-la gofmt
