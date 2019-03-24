@@ -41,6 +41,10 @@ export PATH="$PATH":"$HOME"/deps/bin #bpkg bash package manager <https://github.
 
 export PATH="$HOME/.cask/bin:$PATH" #emacs cask <http://cask.github.io>
 
+# Debian/Ubuntu
+export DEBFULLNAME="Danil Kutkevich"
+export DEBEMAIL="danil@kutkevich.org"
+
 # Go <http://golang.org/doc/code.html#GOPATH>.
 # Run `go-install-all`.
 export GOPATH="$HOME"/go
