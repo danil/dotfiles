@@ -27,13 +27,15 @@ if ! [[ $file = *[!\ ]* ]]; then
     (>&2 echo "Invalid file name argument: $file") ; exit 1
 fi
 
-if ! [ -f "./${file}.gz.asc" ]; then
-    (>&2 echo "Nothing to encrypt. File ${file}.gz.asc not found")
+if ! [ -f "./${file}.tar.gz.asc" ]; then
+    (>&2 echo "Nothing to decrypt. File ${file}.tar.gz.asc not found")
     exit 1
 fi
 
 if [[ $stdout -eq 1 ]]; then
-    gpg --decrypt --output - "./${file}.gz.asc"
+    gpg --decrypt --output - "./${file}.tar.gz.asc" \
+        | tar --extract --gzip --to-stdout --file -
 else
-    gpg --decrypt --output "./${file}.gz" "./${file}.gz.asc"
+    gpg --decrypt --output "./${file}.tar.gz" "./${file}.tar.gz.asc"
+    tar --extract --gzip --file "./${file}.tar.gz"
 fi

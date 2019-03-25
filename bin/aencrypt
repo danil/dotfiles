@@ -22,12 +22,35 @@ if ! [[ $file = *[!\ ]* ]]; then
     (>&2 echo "Invalid file name argument: $file") ; exit 1
 fi
 
-if ! [ -f "./${file}.gz" ]; then
-    (>&2 echo "Nothing to encrypt. File ${file}.gz not found!") ; exit 1
+# if ! [ -f "./${file}.gz" ]; then
+#     (>&2 echo "Nothing to encrypt. File ${file}.gz not found!") ; exit 1
+# fi
+
+find_args=(
+    ./
+    -maxdepth 1
+    -type f
+    ! \( -name "*.tar*" \)
+    -and ! \( -name "*.asc" \)
+    -and ! \( -name "*.enc" \)
+    -and ! \( -name ".git*" \)
+)
+
+if [[ -n $(find "${find_args[@]}") ]] ; then
+    echo 'To encrypt:'
+    find "${find_args[@]}"
+else
+    (>&2 echo "Nothing to encrypt") ; exit 1
 fi
 
-if [ -f "./${file}.gz.asc" ]; then
-    mv -i "./${file}.gz.asc" "./${file}$(date --utc +%Y%m%dT%H%M%SZ).gz.asc"
+if [ -f "./${file}.tar.gz.asc" ]; then
+    mv -i \
+        "./${file}.tar.gz.asc" \
+        "./${file}$(date --utc +%Y%m%dT%H%M%SZ).tar.gz.asc"
 fi
 
-gpg --symmetric --armor "./${file}.gz" || exit 1
+find "${find_args[@]}" \
+    | tar --create --gzip --to-stdout --files-from - \
+    > "./${file}.tar.gz"
+
+gpg --symmetric --armor "./${file}.tar.gz" || exit 1
