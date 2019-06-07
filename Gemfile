@@ -1,9 +1,10 @@
 source 'https://rubygems.org'
-ruby '2.6.1' # er requirements # ruby '2.4.2'
+ruby '2.6.3' # er requirements # ruby '2.4.2'
 
 group :development do
   # gem 'heroku' # installation fail
   # gem 'mailcatcher' # use github.com/mailhog/MailHog instead # `pkill --full mailcatcher ; mailcatcher --http-ip 0.0.0.0` <https://github.com/sj26/mailcatcher>
+  # gem 'travis' # installation fail
   gem 'activesupport' # replaces non-ascii characters with an ascii approximation <http://api.rubyonrails.org/classes/ActiveSupport/Inflector.html#method-i-transliterate>
   gem 'awesome_print' # nice highlighting/indentation in ruby console <https://github.com/michaeldv/awesome_print>
   gem 'backup' # backup system utility
@@ -31,5 +32,4 @@ group :development do
   gem 'sqlint' # sql linter <https://github.com/purcell/sqlint>
   gem 't' # create twitter timeline backup <http://blog.jphpsf.com/2012/05/07/backing-up-your-twitter-account-with-t>
   gem 'tailor' # check style of ruby files (indentation and so on) `tailor path/to/source` <https://github.com/turboladen/tailor>
-  gem 'travis'
 end
