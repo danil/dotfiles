@@ -10,5 +10,5 @@
 
 ;; (set-contrib-dir *stumpwm-contrib-dir*)
 
-(load (concat *stumpwm-config-dir* "stumptray.lisp"))
-(load (concat *stumpwm-config-dir* "mem.lisp"))
+;; (load (concat *stumpwm-config-dir* "stumptray.lisp"))
+;; (load (concat *stumpwm-config-dir* "mem.lisp"))
