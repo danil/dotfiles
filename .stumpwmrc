@@ -3,7 +3,7 @@
 (in-package :stumpwm)
 
 ;;; Variables.
-(defparameter MY-X-TERM "urxvt"
+(defparameter MY-X-TERM "st"
   "What shall be the command run when we want an X terminal?")
 (defparameter MY-HOME-DIR (getenv "HOME"))
 (defparameter MY-USER (getenv "USER"))
@@ -61,13 +61,13 @@
 
 (defcommand my-dmenu-run () () (run-shell-command "~/bin/my_dmenu_run.sh"))
 (defcommand my-set-keyboard-auto-repeat () ()
-  (run-shell-command "xset r rate 300 30")) ;set the keyboard auto repeat parameters
+  (run-shell-command "xset r rate 300 30")) ; set the keyboard auto repeat parameters
 (defcommand my-set-terminal-bell () ()
-  (run-shell-command "xset b off")) ;turn off bell
+  (run-shell-command "xset b off")) ; turn off bell
 (defcommand my-set-background (background) ()
   (run-shell-command (concatenate 'string "feh --bg-center " background)))
 (defcommand my-set-cursor-name (cursor-name) ()
-  (run-shell-command (concatenate 'string "xsetroot -cursor_name " cursor-name))) ;<https://github.com/stumpwm/stumpwm/wiki/FAQ#why-is-the-mouse-pointer-an-x-and-how-do-i-change-it>
+  (run-shell-command (concatenate 'string "xsetroot -cursor_name " cursor-name))) ; <https://github.com/stumpwm/stumpwm/wiki/FAQ#why-is-the-mouse-pointer-an-x-and-how-do-i-change-it>
 (defcommand my-run-power-manager () () (run-shell-command "xfce4-power-manager"))
 (defcommand my-run-wireless-manager () ()
   (run-shell-command
@@ -83,9 +83,9 @@
 
 ;;; Key binding.
 ;; (define-key *root-map* (kbd "C-q") "show-battery-status") ;battery status
-;; (define-key *root-map* (kbd "q") "show-cpu-load") ;cpu load
-;; (define-key *top-map* (kbd "C-M-G") "vgroups") ;groups (virtual desktops or workspaces) <http://nongnu.org/stumpwm/manual/stumpwm_8.html>
-(define-key *top-map* (kbd "C-M-M") "mode-line") ;mode line <http://nongnu.org/stumpwm/manual/stumpwm_7.html>
+;; (define-key *root-map* (kbd "q") "show-cpu-load") ; cpu load
+;; (define-key *top-map* (kbd "C-M-G") "vgroups") ; groups (virtual desktops or workspaces) <http://nongnu.org/stumpwm/manual/stumpwm_8.html>
+(define-key *top-map* (kbd "C-M-M") "mode-line") ; mode line <http://nongnu.org/stumpwm/manual/stumpwm_7.html>
 (define-key *root-map* (kbd "!") "my-dmenu-run")
 ;; (define-key *root-map* (kbd "x") "next")
 
@@ -94,7 +94,7 @@
       (list
        "[%n " MY-PROMPT "] "
        "%W "
-       "^>" ;right align
+       "^>" ; right align
        '(:eval (run-shell-command MY-LOAD-COMMAND t))
        " %t %M/%P% "
        '(:eval (run-shell-command MY-DATE-COMMAND t))
@@ -126,7 +126,7 @@
 ;;   (when (probe-file quicklisp-init)
 ;;     (load quicklisp-init)))
 
-(ql:quickload "stumptray") ;<https://github.com/stumpwm/stumpwm-contrib/blob/master/util/stumptray/README.org>.
+(ql:quickload "stumptray") ; <https://github.com/stumpwm/stumpwm-contrib/blob/master/util/stumptray/README.org>.
 ;; (run-commands "stumptray")
 
 (ql:quickload "cpu")
