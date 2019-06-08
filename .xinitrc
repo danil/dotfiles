@@ -18,12 +18,12 @@ case $session in
         dwm_fifo=/tmp/dwm.fifo && rm -f $dwm_fifo && mkfifo $dwm_fifo
         exec dwm
         ;;
+    stumpwm)
+        exec stumpwm
+        ;;
     xfce|xfce4)
         [ -x ~/.xstart ] && ~/.xstart
         exec startxfce4
-        ;;
-    stump|stumpwm)
-        exec stumpwm
         ;;
     # No known session, try to run it as command
     *)
