@@ -55,6 +55,8 @@ fi
 
 export PATH="$PATH":"$HOME"/.local/bin #pip (python package management system) run `python-install-all`
 
+export PATH="$PATH":"$HOME"/.local/usr/local/bin #dwm make install here
+
 # Travis CI gem.
 [ -f "$HOME"/.travis/travis.sh ] && source "$HOME"/.travis/travis.sh #auto completion
 
