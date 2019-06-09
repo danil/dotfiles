@@ -4,6 +4,7 @@ install_command="aptitude install"
 
 # Compilation.
 packages="$packages build-essential"
+packages="$packages devscripts" # ???
 packages="$packages libx11-dev"
 packages="$packages libxft-dev"
 
@@ -21,8 +22,34 @@ packages="$packages xsel"
 # packages="$packages docker" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
 
 # Desktop.
+# packages="$packages xcalib" # returns: "Error - unsupported ramp size 0" (load icc/icm display color profiles (only calibration curves) <https://wiki.archlinux.org/index.php/ICC_Profiles#xcalib>)
+packages="$packages argyll" # load icc/icm display color profiles <https://wiki.archlinux.org/index.php/ICC_Profiles#Argyll_CMS>
+packages="$packages duplicity" # backuping
 packages="$packages fonts-fantasque-sans"
 packages="$packages gnome-tweak-tool"
+
+# Suckless (dwm and so on and suckless dependencies/requirements)
+packages="$packages build-essential" # suckless dependency
+packages="$packages libx11-dev" # suckless dependency
+packages="$packages libxinerama-dev" # suckless dependency
+packages="$packages sharutils" # suckless dependency
+packages="$packages stterm" # st
+packages="$packages suckless-tools" # suckless dependency
+
+# Yaru community theme <https://github.com/ubuntu/yaru>,
+# <https://itsfoss.com/ubuntu-community-theme>.
+packages="$packages ubuntu-communitheme-session"
+
+# Employer Rocketbank.
+packages="$packages elasticsearch" # `deb https://artifacts.elastic.co/packages/5.x/apt stable main` elasticsearch 5 <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>
+packages="$packages glide" # `add-apt-repository ppa:masterminds/glide` golang glide vendor package management <https://github.com/Masterminds/glide>
+packages="$packages kubectl" # `deb https://apt.kubernetes.io/ kubernetes-xenial main` <https://kubernetes.io/docs/tasks/tools/install-kubectl>
+packages="$packages openconnect" # alternative vpn
+packages="$packages postgresql-11" # `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
+packages="$packages postgresql-9.6"  # `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
+packages="$packages redis"
+packages="$packages ruby-rmagick"
+packages="$packages vpnc" # vpn
 
 # # Benchmarks a-la `ab`.
 # packages="$packages bonnie++"
