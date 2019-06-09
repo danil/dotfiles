@@ -68,6 +68,7 @@ x-scheme-handler/about=google-chrome.desktop
 x-scheme-handler/unknown=google-chrome.desktop
 application/vnd.adobe.flash.movie=userapp-leafpad-EACN4W.desktop
 image/vnd.microsoft.icon=zzz-gimp.desktop
+x-scheme-handler/tg=telegramdesktop.desktop
 
 [Removed Associations]
 image/jpeg=wine-extension-jfif.desktop;wine-extension-jpeg.desktop;wine-extension-jpe.desktop;wine-extension-jpg.desktop;

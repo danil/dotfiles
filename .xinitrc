@@ -19,13 +19,14 @@ case $session in
         # exec ck-launch-session dbus-launch --sh-syntax --exit-with-session /home/danil/.local/usr/local/bin/dwm
         # exec dbus-launch --exit-with-session /home/danil/.local/usr/local/bin/dwm
         # exec /home/danil/.local/usr/local/bin/dwm
+        exec ~/.local/usr/local/bin/dwm
+        ;;
+    stump|stumpwm)
+        exec ~/bin/stumpwm
         ;;
     xfce|xfce4)
         [ -x ~/.xstart ] && ~/.xstart
         exec startxfce4
-        ;;
-    stump|stumpwm)
-        exec stumpwm
         ;;
     # No known session, try to run it as command
     *)

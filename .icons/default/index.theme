@@ -1,3 +1,5 @@
-# <http://xaprb.com/blog/2006/04/24/beautiful-x11-cursors>.
+# This file is written by LXAppearance. Do not edit.
 [Icon Theme]
-Inherits=Vanilla-DMZ
+Name=Default
+Comment=Default Cursor Theme
+Inherits=Adwaita

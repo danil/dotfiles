@@ -1,4 +1,6 @@
+*.a
 *.log
+*.min.js
 *.tags
 TAGS
 tags

@@ -1,5 +1,12 @@
 # Default amazon aws ec2 client <https://github.com/aws/aws-cli>.
+# `aws --version`.
 awscli
+
+# Bash scripts checker a-la pep8 (used by Emacs Flycheck) <https://github.com/openstack-dev/bashate>.
+bashate
+
+# Docker compose
+docker-compose
 
 # Htop replacement <https://github.com/nicolargo/glances>.
 glances
@@ -7,8 +14,17 @@ glances
 # Python checker used by Emacs Flycheck.
 flake8
 
+# CLI commands format howto for example: $ howdoi format date bash > DATE=`date +%Y-%m-%d`
+howdoi
+
+# Interactive command-line HTTP client with autocomplete
+http-prompt
+
 # cURL replacement <http://httpie.org>.
 httpie
+
+# List files affected by command for example `rm -rf /` <https://github.com/p-e-w/maybe>
+maybe
 
 # Youtube player <https://github.com/np1/mps-youtube>.
 mps-youtube
@@ -16,8 +32,15 @@ mps-youtube
 # Real-time metrics for nginx server <https://github.com/lebinh/ngxtop>.
 ngxtop
 
+# PostgreSQL activity monitoring <https://github.com/julmon/pg_activity>.
+pg_activity
+
 # Ping graph <https://github.com/orf/gping>.
 pinggraph
+
+# Linter for prose
+# <https://github.com/amperser/proselint>, <http://proselint.com>.
+proselint
 
 # Used by Emacs Flycheck.
 pylint
@@ -30,6 +53,12 @@ stellar
 
 # Corrects previous console command <https://github.com/nvbn/thefuck>.
 thefuck
+
+# Converts web documents (HTML with CSS, SVG, …) to PDF http://weasyprint.org
+WeasyPrint
+
+# Video downloader (universal) <https://github.com/soimort/you-get>.
+you-get
 
 # Youtube downloader <https://github.com/rg3/youtube-dl>.
 youtube-dl
