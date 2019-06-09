@@ -41,14 +41,14 @@ packages="$packages suckless-tools" # suckless dependency
 packages="$packages ubuntu-communitheme-session"
 
 # Employer Rocketbank.
-packages="$packages elasticsearch" # `deb https://artifacts.elastic.co/packages/5.x/apt stable main` elasticsearch 5 <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>
-packages="$packages glide" # `add-apt-repository ppa:masterminds/glide` golang glide vendor package management <https://github.com/Masterminds/glide>
+packages="$packages elasticsearch" # felix `deb https://artifacts.elastic.co/packages/5.x/apt stable main` elasticsearch 5 <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>
+packages="$packages glide" # go/german `add-apt-repository ppa:masterminds/glide` golang glide vendor package management <https://github.com/Masterminds/glide>
 packages="$packages kubectl" # `deb https://apt.kubernetes.io/ kubernetes-xenial main` <https://kubernetes.io/docs/tasks/tools/install-kubectl>
 packages="$packages openconnect" # alternative vpn
 packages="$packages postgresql-11" # `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
-packages="$packages postgresql-9.6"  # `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
-packages="$packages redis"
-packages="$packages ruby-rmagick"
+packages="$packages postgresql-9.6"  # felix `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
+packages="$packages redis" # felix
+packages="$packages ruby-rmagick" # felix
 packages="$packages vpnc" # vpn
 
 # # Benchmarks a-la `ab`.
