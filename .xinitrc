@@ -15,8 +15,10 @@ session=${1:-dwm}
 case $session in
     dwm)
         [ -f ~/.dwm/dwmrc ] && source ~/.dwm/dwmrc
-        dwm_fifo=/tmp/dwm.fifo && rm -f $dwm_fifo && mkfifo $dwm_fifo
-        exec dwm
+        f=/tmp/dwm.fifo && rm -f $f && mkfifo $f
+        # exec ck-launch-session dbus-launch --sh-syntax --exit-with-session /home/danil/.local/usr/local/bin/dwm
+        # exec dbus-launch --exit-with-session /home/danil/.local/usr/local/bin/dwm
+        # exec /home/danil/.local/usr/local/bin/dwm
         ;;
     xfce|xfce4)
         [ -x ~/.xstart ] && ~/.xstart
