@@ -50,6 +50,7 @@ export DEBEMAIL="danil@kutkevich.org"
 # Go <http://golang.org/doc/code.html#GOPATH>.
 # Run `go-install-all`.
 export GOPATH="$HOME"/go
+export PATH="$PATH":/usr/lib/go-1.12/bin #ubuntu go 12
 export PATH="$PATH":"$GOPATH"/bin #for convenience, add the workspace's bin subdirectory to your PATH
 # [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm" #gvm (Go version manager) <https://github.com/moovweb/gvm>
 
