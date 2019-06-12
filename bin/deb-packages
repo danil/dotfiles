@@ -1,93 +1,97 @@
 #!/bin/bash
-
+remove_command="aptitude remove"
 install_command="aptitude install"
 
 # Compilation.
-packages="$packages build-essential"
-packages="$packages devscripts" # ???
-packages="$packages libx11-dev"
-packages="$packages libxft-dev"
+install="$install build-essential"
+install="$install devscripts" # ???
+install="$install libx11-dev"
+install="$install libxft-dev"
 
 # Common packages.
-packages="$packages chrome-gnome-shell" # chrome/gnome extension integration
-packages="$packages curl"
-packages="$packages emacs26-nox"
-packages="$packages git"
-packages="$packages htop"
-packages="$packages mosh"
-packages="$packages postgresql-server-dev-11" # required by pg_activity is an postgresql activity monitoring <https://github.com/julmon/pg_activity>
-packages="$packages postgresql-server-dev-9.6" # required by pg_activity is an postgresql activity monitoring <https://github.com/julmon/pg_activity>
-packages="$packages pwgen" # password generator
-packages="$packages silversearcher-ag"
-packages="$packages tmux"
-packages="$packages xsel"
-# packages="$packages makepasswd" # password generator
-# packages="$packages docker" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
+install="$install curl"
+install="$install emacs26-nox"
+install="$install git"
+install="$install htop"
+install="$install mosh"
+install="$install postgresql-server-dev-11" # required by pg_activity is an postgresql activity monitoring <https://github.com/julmon/pg_activity>
+install="$install postgresql-server-dev-9.6" # required by pg_activity is an postgresql activity monitoring <https://github.com/julmon/pg_activity>
+install="$install pwgen" # password generator
+install="$install silversearcher-ag"
+install="$install tmux"
+install="$install xsel"
+# install="$install makepasswd" # password generator
+# install="$install docker" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
 
 # Golang.
-packages="$packages golang"
-packages="$packages golang-race-detector-runtime"
+install="$install golang"
+install="$install golang-race-detector-runtime"
 
 # Python.
-packages="$packages python-pip"
-packages="$packages python3-pip"
+install="$install python-pip"
+install="$install python3-pip"
 
 # Ruby.
-# packages="$packages libssl1.0-dev" # required by ruby 2.3.7 (libssl1.0-dev conflicts with libssl-dev)
-packages="$packages libreadline-dev" # required by ruby 2.6.3
-packages="$packages libsqlite3-dev" # required by sqlite3 which required by mailcatcher
-packages="$packages libssl-dev" # required by ruby 2.6.3 (libssl-dev conflicts with libssl1.0-dev)
+# install="$install libssl1.0-dev" # required by ruby 2.3.7 (libssl1.0-dev conflicts with libssl-dev)
+install="$install libreadline-dev" # required by ruby 2.6.3
+install="$install libsqlite3-dev" # required by sqlite3 which required by mailcatcher
+install="$install libssl-dev" # required by ruby 2.6.3 (libssl-dev conflicts with libssl1.0-dev)
 
 # Desktop.
-# packages="$packages xcalib" # returns: "Error - unsupported ramp size 0" (load icc/icm display color profiles (only calibration curves) <https://wiki.archlinux.org/index.php/ICC_Profiles#xcalib>)
-packages="$packages gnome-shell-extension-impatience" # speed up the gnome-shell animation speed
-packages="$packages gnome-shell-extension-move-clock" # move clock extension for GNOME shell
+# install="$install xcalib" # returns: "Error - unsupported ramp size 0" (load icc/icm display color profiles (only calibration curves) <https://wiki.archlinux.org/index.php/ICC_Profiles#xcalib>)
+install="$install argyll" # load icc/icm display color profiles <https://wiki.archlinux.org/index.php/ICC_Profiles#Argyll_CMS>
+install="$install duplicity" # backuping
+install="$install fonts-fantasque-sans"
 
-packages="$packages argyll" # load icc/icm display color profiles <https://wiki.archlinux.org/index.php/ICC_Profiles#Argyll_CMS>
-packages="$packages duplicity" # backuping
-packages="$packages fonts-fantasque-sans"
-packages="$packages gnome-tweak-tool"
+# Gnome.
+remove="$remove gnome-shell-extension-ubuntu-dock"
+remove="$remove ubuntu-desktop"
+install="$install chrome-gnome-shell" # chrome/gnome extension integration
+install="$install gnome-shell-extension-impatience" # speed up the gnome-shell animation speed
+install="$install gnome-shell-extension-move-clock" # move clock extension for GNOME shell
+install="$install gnome-tweak-tool"
 
 # Suckless (dwm and so on and suckless dependencies/requirements)
-packages="$packages build-essential" # suckless dependency
-packages="$packages libx11-dev" # suckless dependency
-packages="$packages libxinerama-dev" # suckless dependency
-packages="$packages sharutils" # suckless dependency
-packages="$packages stterm" # st
-packages="$packages suckless-tools" # suckless dependency
+install="$install build-essential" # suckless dependency
+install="$install libx11-dev" # suckless dependency
+install="$install libxinerama-dev" # suckless dependency
+install="$install sharutils" # suckless dependency
+install="$install stterm" # st
+install="$install suckless-tools" # suckless dependency
 
 # Yaru community theme <https://github.com/ubuntu/yaru>,
 # <https://itsfoss.com/ubuntu-community-theme>.
-packages="$packages ubuntu-communitheme-session"
+install="$install ubuntu-communitheme-session"
 
 # Docker
 # <https://docs.docker.com/install/linux/docker-ce/ubuntu>.
-packages="$packages apt-transport-https" # required by docker ppa <https://docs.docker.com/install/linux/docker-ce/ubuntu>
-packages="$packages ca-certificates" # required by docker ppa <https://docs.docker.com/install/linux/docker-ce/ubuntu>
-packages="$packages docker-ce"
-packages="$packages software-properties-common" # required by docker ppa <https://docs.docker.com/install/linux/docker-ce/ubuntu>
+install="$install apt-transport-https" # required by docker ppa <https://docs.docker.com/install/linux/docker-ce/ubuntu>
+install="$install ca-certificates" # required by docker ppa <https://docs.docker.com/install/linux/docker-ce/ubuntu>
+install="$install docker-ce"
+install="$install software-properties-common" # required by docker ppa <https://docs.docker.com/install/linux/docker-ce/ubuntu>
 
 # Employer Rocketbank.
-packages="$packages apt-transport-https" # required by elasticsearch ppa <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#deb-repo>
-packages="$packages elasticsearch" # felix `deb https://artifacts.elastic.co/packages/5.x/apt stable main` elasticsearch 5 <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>
-packages="$packages glide" # go/german `add-apt-repository ppa:masterminds/glide` golang glide vendor package management <https://github.com/Masterminds/glide>
-packages="$packages golang"
-packages="$packages kubectl" # `deb https://apt.kubernetes.io/ kubernetes-xenial main` <https://kubernetes.io/docs/tasks/tools/install-kubectl>
-packages="$packages libmagickwand-dev" # required by rmagick by felix
-packages="$packages network-manager-vpnc-gnome" # cisco vpn client plugin for the gnome
-packages="$packages openconnect" # alternative vpn
-packages="$packages postgresql-11" # `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
-packages="$packages postgresql-9.6"  # felix `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
-packages="$packages redis" # felix
-packages="$packages vpnc" # cisco vpn client
+install="$install apt-transport-https" # required by elasticsearch ppa <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#deb-repo>
+install="$install elasticsearch" # felix `deb https://artifacts.elastic.co/packages/5.x/apt stable main` elasticsearch 5 <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>
+install="$install glide" # go/german `add-apt-repository ppa:masterminds/glide` golang glide vendor package management <https://github.com/Masterminds/glide>
+install="$install golang"
+install="$install kubectl" # `deb https://apt.kubernetes.io/ kubernetes-xenial main` <https://kubernetes.io/docs/tasks/tools/install-kubectl>
+install="$install libmagickwand-dev" # required by rmagick by felix
+install="$install network-manager-vpnc-gnome" # cisco vpn client plugin for the gnome
+install="$install openconnect" # alternative vpn
+install="$install postgresql-11" # `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
+install="$install postgresql-9.6"  # felix `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
+install="$install redis" # felix
+install="$install vpnc" # cisco vpn client
 
 # # Benchmarks a-la `ab`.
-# packages="$packages bonnie++"
-# packages="$packages apache2-utils"
-# packages="$packages dbench"
-# packages="$packages siege"
-# packages="$packages sysbench" # cpu and memory benchmarks
-# packages="$packages tiobench" # TODO: find this package
-# packages="$packages wrk" # c http benchmark tool <https://github.com/wg/wrk>
+# install="$install bonnie++"
+# install="$install apache2-utils"
+# install="$install dbench"
+# install="$install siege"
+# install="$install sysbench" # cpu and memory benchmarks
+# install="$install tiobench" # TODO: find this package
+# install="$install wrk" # c http benchmark tool <https://github.com/wg/wrk>
 
-$install_command $packages || exit 1
+$remove_command  $remove  || exit 1
+$install_command $install || exit 1
