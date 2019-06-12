@@ -9,6 +9,7 @@ packages="$packages libx11-dev"
 packages="$packages libxft-dev"
 
 # Common packages.
+packages="$packages chrome-gnome-shell" # chrome/gnome extension integration
 packages="$packages curl"
 packages="$packages emacs26-nox"
 packages="$packages git"
@@ -17,16 +18,30 @@ packages="$packages mosh"
 packages="$packages postgresql-server-dev-11" # required by pg_activity is an postgresql activity monitoring <https://github.com/julmon/pg_activity>
 packages="$packages postgresql-server-dev-9.6" # required by pg_activity is an postgresql activity monitoring <https://github.com/julmon/pg_activity>
 packages="$packages pwgen" # password generator
-packages="$packages python-pip"
-packages="$packages python3-pip"
 packages="$packages silversearcher-ag"
 packages="$packages tmux"
 packages="$packages xsel"
 # packages="$packages makepasswd" # password generator
 # packages="$packages docker" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
 
+# Python.
+packages="$packages python-pip"
+packages="$packages python3-pip"
+
+# Ruby.
+# packages="$packages libssl1.0-dev" # required by ruby 2.3.7 (libssl1.0-dev conflicts with libssl-dev)
+packages="$packages libreadline-dev" # required by ruby 2.6.3
+packages="$packages libsqlite3-dev" # required by sqlite3 which required by mailcatcher
+packages="$packages libssl-dev" # required by ruby 2.6.3 (libssl-dev conflicts with libssl1.0-dev)
+
 # Desktop.
 # packages="$packages xcalib" # returns: "Error - unsupported ramp size 0" (load icc/icm display color profiles (only calibration curves) <https://wiki.archlinux.org/index.php/ICC_Profiles#xcalib>)
+packages="$packages gnome-shell-extension-appindicator" # app indicators for gnome shell
+packages="$packages gnome-shell-extension-impatience" # speed up the gnome-shell animation speed
+packages="$packages gnome-shell-extension-move-clock" # move clock extension for GNOME shell
+packages="$packages gnome-shell-extension-system-monitor" # display system information in GNOME Shell status bar
+packages="$packages gnome-shell-extension-ubuntu-dock" # ubuntu dock for gnome shell
+
 packages="$packages argyll" # load icc/icm display color profiles <https://wiki.archlinux.org/index.php/ICC_Profiles#Argyll_CMS>
 packages="$packages duplicity" # backuping
 packages="$packages fonts-fantasque-sans"
@@ -48,12 +63,13 @@ packages="$packages ubuntu-communitheme-session"
 packages="$packages elasticsearch" # felix `deb https://artifacts.elastic.co/packages/5.x/apt stable main` elasticsearch 5 <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>
 packages="$packages glide" # go/german `add-apt-repository ppa:masterminds/glide` golang glide vendor package management <https://github.com/Masterminds/glide>
 packages="$packages kubectl" # `deb https://apt.kubernetes.io/ kubernetes-xenial main` <https://kubernetes.io/docs/tasks/tools/install-kubectl>
+packages="$packages libmagickwand-dev" # required by rmagick by felix
+packages="$packages network-manager-vpnc-gnome" # cisco vpn client plugin for the gnome
 packages="$packages openconnect" # alternative vpn
 packages="$packages postgresql-11" # `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
 packages="$packages postgresql-9.6"  # felix `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
 packages="$packages redis" # felix
-packages="$packages ruby-rmagick" # felix
-packages="$packages vpnc" # vpn
+packages="$packages vpnc" # cisco vpn client
 
 # # Benchmarks a-la `ab`.
 # packages="$packages bonnie++"
