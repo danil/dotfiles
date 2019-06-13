@@ -38,6 +38,7 @@ install="$install libsqlite3-dev" # required by sqlite3 which required by mailca
 install="$install libssl-dev" # required by ruby 2.6.3 (libssl-dev conflicts with libssl1.0-dev)
 
 # Desktop.
+# install="$install dunst" # a-la notify-osd
 # install="$install xcalib" # returns: "Error - unsupported ramp size 0" (load icc/icm display color profiles (only calibration curves) <https://wiki.archlinux.org/index.php/ICC_Profiles#xcalib>)
 install="$install argyll" # load icc/icm display color profiles <https://wiki.archlinux.org/index.php/ICC_Profiles#Argyll_CMS>
 install="$install duplicity" # backuping
@@ -46,9 +47,9 @@ install="$install fonts-fantasque-sans"
 # Gnome.
 remove="$remove gnome-shell-extension-ubuntu-dock"
 remove="$remove ubuntu-desktop"
+# install="$install gnome-shell-extension-move-clock" # move clock extension for GNOME shell
 install="$install chrome-gnome-shell" # chrome/gnome extension integration
 install="$install gnome-shell-extension-impatience" # speed up the gnome-shell animation speed
-install="$install gnome-shell-extension-move-clock" # move clock extension for GNOME shell
 install="$install gnome-tweak-tool"
 
 # Suckless (dwm and so on and suckless dependencies/requirements)
@@ -68,6 +69,7 @@ install="$install ubuntu-communitheme-session"
 install="$install apt-transport-https" # required by docker ppa <https://docs.docker.com/install/linux/docker-ce/ubuntu>
 install="$install ca-certificates" # required by docker ppa <https://docs.docker.com/install/linux/docker-ce/ubuntu>
 install="$install docker-ce"
+install="$install meld" # gnome diff (gtk)
 install="$install software-properties-common" # required by docker ppa <https://docs.docker.com/install/linux/docker-ce/ubuntu>
 
 # Employer Rocketbank.
