@@ -2,17 +2,11 @@
 remove_command="aptitude remove"
 install_command="aptitude install"
 
-# Compilation.
-install="$install build-essential"
-install="$install devscripts" # ???
-install="$install libx11-dev"
-install="$install libxft-dev"
-
 # Common packages.
 install="$install curl"
-install="$install emacs26-nox"
 install="$install git"
 install="$install htop"
+install="$install lm-sensors" # cpu temperate used by slstatus
 install="$install mosh"
 install="$install postgresql-server-dev-11" # required by pg_activity is an postgresql activity monitoring <https://github.com/julmon/pg_activity>
 install="$install postgresql-server-dev-9.6" # required by pg_activity is an postgresql activity monitoring <https://github.com/julmon/pg_activity>
@@ -22,6 +16,16 @@ install="$install tmux"
 install="$install xsel"
 # install="$install makepasswd" # password generator
 # install="$install docker" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
+
+# Emacs.
+install="$install emacs26-el" # find/navigate elisp function source code <https://unix.stackexchange.com/questions/73100/how-to-attach-elisp-function-source-code-in-emacs>
+install="$install emacs26-nox"
+
+# Compil.
+install="$install build-essential"
+install="$install devscripts" # ???
+install="$install libx11-dev"
+install="$install libxft-dev"
 
 # Golang.
 install="$install golang"
