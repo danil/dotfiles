@@ -3,7 +3,7 @@
 # prompt="$USER@`hostname`"
 # dmenu -p $prompt
 
-command="dmenu"
+command="/home/danil/.local/usr/local/bin/dmenu"
 
 number_of_lines=${number_of_lines:-1}
 
