@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
 source osd_progress_bar.sh

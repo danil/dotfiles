@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/bin/bash
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
 # Enable internal monitor and disable external monitor
 # <https://wiki.archlinux.org/index.php/xrandr#Example_1>.

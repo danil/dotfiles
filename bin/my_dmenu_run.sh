@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # prompt="$USER@`hostname`"
 # dmenu -p $prompt

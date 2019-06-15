@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 # Get active window id
 # <http://superuser.com/questions/382616/detecting-currently-active-window#533254>.

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 # `xprofile` is similar in syntax and in concept to `xinitrc`
 # <https://wiki.archlinux.org/index.php/xprofile>.
