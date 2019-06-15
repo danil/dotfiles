@@ -2,8 +2,10 @@
 # `aws --version`.
 awscli
 
-# Bash scripts checker a-la pep8 (used by Emacs Flycheck) <https://github.com/openstack-dev/bashate>.
-bashate
+# Bash scripts checker a-la pep8 (used by Emacs Flycheck)
+# <https://github.com/openstack-dev/bashate>.
+# By emacs flycheck for now using shellcheck instead fo bashate
+# bashate
 
 # Docker compose
 docker-compose
