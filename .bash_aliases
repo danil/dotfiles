@@ -91,8 +91,8 @@ export COMPOSER_PREFIX="$HOME/vendor"
 # export LUA_PATH="$HOME"'/.lenv/current/luarocks/share/?.lua;'"$HOME"'/.lenv/current/luarocks/share/?/init.lua;;'
 # export LUA_CPATH="$HOME"'/.lenv/current/luarocks/lib/?.so;;'
 
-# # Rust (rust toolchain installer https://www.rustup.rs).
-# export PATH="$HOME"/.cargo/bin:"$PATH" #be sure to add `/home/danil/.cargo/bin` to your PATH to be able to run the installed binaries
+# Rust (rust toolchain installer https://rustup.rs).
+export PATH="$HOME/.cargo/bin:$PATH" #be sure to add `/home/danil/.cargo/bin` to your PATH to be able to run the installed binaries
 
 # # Steel Bank Common Lisp.
 # export SBCL_HOME=/usr/lib64/sbcl
