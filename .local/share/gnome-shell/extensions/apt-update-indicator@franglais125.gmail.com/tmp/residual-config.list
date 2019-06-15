@@ -4,7 +4,11 @@ i3-wm
 i3lock
 i3status
 libelementary2
+libexo-common
+libgarcon-common
+libthunarx-2-0
 libxdg-basedir1
+libxfce4ui-common
 linux-image-4.15.0-29-generic
 linux-image-4.15.0-43-generic
 linux-image-4.15.0-46-generic
@@ -17,5 +21,14 @@ linux-modules-extra-4.15.0-46-generic
 nm-tray
 suru-icon-theme
 terminology-data
+thunar
+thunar-data
+thunar-volman
+tumbler-common
 xfce4-appfinder
+xfce4-panel
+xfce4-session
+xfce4-settings
+xfdesktop4
+xubuntu-icon-theme
 xxkb
