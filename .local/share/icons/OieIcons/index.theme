@@ -1,0 +1,34 @@
+[Icon Theme]
+Name=OieIcons
+Comment=Lines of icons for fun 
+
+Inherits=breeze-dark,Papirus-Dark,Papirus,Yaru,Numix-Circle
+
+Example=directory-x-normal
+
+FollowsColorScheme=true
+
+
+# Directory list
+Directories=scalable/apps,scalable/mimetypes,scalable/devices
+
+[scalable/apps]
+Size=48
+Context=Applications
+MinSize=8
+MaxSize=512
+Type=Scalable
+
+[scalable/mimetypes]
+Size=22
+Context=MimeTypes
+MinSize=22
+MaxSize=512
+Type=Scalable
+
+[scalable/devices]
+Size=48
+Context=Devices
+Type=Scalable
+MinSize=16
+MaxSize=96
