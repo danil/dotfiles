@@ -9,7 +9,7 @@
       </description>
     </key>
     <key name="toggle-unified-overview" type="as">
-      <default><![CDATA[['<Super><Ctl>tab']]]></default>
+      <default><![CDATA[['<Super>Space']]]></default>
       <summary>Keybinding to open overview for all windows</summary>
       <description>
         Keybinding to open overview for all windows
