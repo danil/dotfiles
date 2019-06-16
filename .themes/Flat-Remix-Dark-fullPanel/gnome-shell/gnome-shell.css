@@ -677,7 +677,7 @@ StScrollBar {
   font-size: .9em;
   height: 2em;
   color: #FFF;
-  background: rgba(0, 0, 0, 1); /* full opaque black top bar (black without transparency) ~~~~Danil <danil@kutkevich.org */
+  background: rgba(0, 0, 0, 1); /* full opaque black top bar (black without transparency) <https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#RGB_transparency_variations> ~~~~Danil <danil@kutkevich.org */
   background-gradient-direction: none; }
   #panel.unlock-screen, #panel.login-screen, #panel.lock-screen {
     background-color: transparent; }
