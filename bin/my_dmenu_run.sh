@@ -1,4 +1,6 @@
 #!/bin/bash
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+# TODO: To investigate stdout/stderr notification <https://ncoop.github.io/2017/06/06/get-dmenu-output-through-notify-send>
 
 # prompt="$USER@`hostname`"
 # dmenu -p $prompt
