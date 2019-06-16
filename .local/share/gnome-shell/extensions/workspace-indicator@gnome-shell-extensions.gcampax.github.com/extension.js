@@ -136,7 +136,7 @@ let _indicator;
 
 function enable() {
     _indicator = new WorkspaceIndicator;
-    Main.panel.addToStatusArea('workspace-indicator', _indicator);
+    Main.panel.addToStatusArea('workspace-indicator', _indicator, 1, "left"); // <https://askubuntu.com/questions/453969/how-can-i-order-gnome3-shell-extensions-at-the-top#661015> ~~~~Danil <danil@kutkevich.org>
 }
 
 function disable() {

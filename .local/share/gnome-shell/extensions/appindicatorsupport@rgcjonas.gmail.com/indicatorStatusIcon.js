@@ -112,7 +112,7 @@ var IndicatorStatusIcon = new Lang.Class({
         this._updateStatus();
         this._updateMenu();
 
-        Main.panel.addToStatusArea("appindicator-"+this._indicator.uniqueId, this, 1, 'right')
+        Main.panel.addToStatusArea("appindicator-"+this._indicator.uniqueId, this, 3, 'right'); // <https://askubuntu.com/questions/453969/how-can-i-order-gnome3-shell-extensions-at-the-top#661015> ~~~~Danil <danil@kutkevich.org>
     },
 
     _boxClicked: function(actor, event) {

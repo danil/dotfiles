@@ -110,7 +110,7 @@ var AptUpdateIndicator = new Lang.Class({
         this._settings = Utils.getSettings();
         this._bindSignals();
 
-        Main.panel.addToStatusArea('AptUpdateIndicator', this);
+        Main.panel.addToStatusArea('AptUpdateIndicator', this, 2, "right");
 
         this._shortcutIsSet = false;
         this._toggleShortcut();
