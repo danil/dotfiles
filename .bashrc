@@ -17,8 +17,8 @@ shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 # Danil <danil@kutkevich.org>.
-HISTSIZE=30000
-HISTFILESIZE=30000
+HISTSIZE=50000
+HISTFILESIZE=50000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
