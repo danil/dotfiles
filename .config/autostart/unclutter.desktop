@@ -5,3 +5,4 @@ Exec=unclutter -idle 5
 Name=unclutter
 Terminal=false
 Type=Application
+X-GNOME-Autostart-enabled=false

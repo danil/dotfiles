@@ -6,3 +6,4 @@ Name=xxkb
 OnlyShowIn=XFCE;
 Terminal=false
 Type=Application
+X-GNOME-Autostart-enabled=false

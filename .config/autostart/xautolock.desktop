@@ -5,3 +5,4 @@ Exec=/home/danil/bin/my_autolock.sh
 Name=xautolock
 Terminal=false
 Type=Application
+X-GNOME-Autostart-enabled=false

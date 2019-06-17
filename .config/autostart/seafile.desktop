@@ -7,3 +7,4 @@ Icon=seafile
 Name=Seafile
 TryExec=seafile-applet
 Type=Application
+X-GNOME-Autostart-enabled=false

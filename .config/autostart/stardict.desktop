@@ -1,12 +1,11 @@
 [Desktop Entry]
 Categories=Utility;Office;TextTools;Dictionary;
 Comment=Lookup words
-Comment[ru]=Поиск слова
 Exec=stardict
 Icon=stardict
 Name=StarDict
-Name[ru]=StarDict
 StartupNotify=true
 Terminal=false
 Type=Application
 X-GNOME-DocPath=stardict/stardict.xml
+X-GNOME-Autostart-enabled=false

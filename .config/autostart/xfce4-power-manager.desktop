@@ -1,12 +1,11 @@
 [Desktop Entry]
 Comment=Power management for the Xfce desktop
-Comment[ru]=Управление питанием для окружения рабочего стола Xfce
 Exec=xfce4-power-manager
 Hidden=true
 Icon=xfpm-ac-adapter
 Name=Power Manager
-Name[ru]=Менеджер питания
 OnlyShowIn=XFCE;
 StartupNotify=false
 Terminal=false
 Type=Application
+X-GNOME-Autostart-enabled=false

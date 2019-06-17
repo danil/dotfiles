@@ -1,8 +1,6 @@
 [Desktop Entry]
 Name=PNMixer
-GenericName[ru]=Микшер для панели уведомлений
 GenericName=System Tray Mixer
-Comment[ru]=Звуковой микшер для панели уведомлений
 Comment=An audio mixer for the system tray
 # TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 Keywords=alsa;audio;mixer;sound;
@@ -13,3 +11,4 @@ Icon=pnmixer
 Terminal=false
 Type=Application
 Categories=AudioVideo;
+X-GNOME-Autostart-enabled=false
