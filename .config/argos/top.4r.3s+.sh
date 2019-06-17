@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo "<span weight='normal'>$(/home/danil/.local/usr/local/bin/slstatus -s -1)</span>                          x | size=12 font='DejaVu Sans Mono'"
+echo "<span weight='normal'>$(/home/danil/.local/usr/local/bin/slstatus -s -1)</span>                 x | size=11 font='DejaVu Sans Mono'"
 echo "---"
 
 if [ "$ARGOS_MENU_OPEN" == "true" ]; then
