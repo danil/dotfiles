@@ -16,7 +16,7 @@ stty -ixon
 export EDITOR="vim" #export EDITOR="vim" #export EDITOR="/usr/bin/emacsclient -t"
 # export ALTERNATE_EDITOR="/usr/bin/emacs"
 export GIT_EDITOR='emacs'
-# export PAGER="/usr/bin/less -IM" #not working(
+# export PAGER="/usr/bin/less --IGNORE-CASE --LONG-PROMPT" #not working(
 export HISTSIZE=50000
 export HISTFILESIZE=50000
 export HISTCONTROL=ignoredups:erasedups
