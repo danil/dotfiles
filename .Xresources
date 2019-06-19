@@ -65,3 +65,4 @@ Xcursor.theme: Vanilla-DMZ
 #include ".Xresources.uxterm"
 #include ".Xresources.emacs"
 #include ".Xresources.xscreensaver"
+#include ".Xresources.rofi"
