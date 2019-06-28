@@ -128,6 +128,23 @@ function my_ps1_timer_show {
                  "$notify_title" \
                  "$my_previous_command"
     fi
+    if command -v notify-send >/dev/null 2>&1 ; then
+        notify_title="${timer}s" # ◷
+        # <http://tldp.org/LDP/abs/html/exitcodes.html>.
+        case $my_exit_code in
+            0)
+                # low, normal, critical.
+                my_notify_urgency="low"
+                ;;
+            *)
+                my_notify_urgency="critical"
+                notify_title="${my_exit_code}! $notify_title" # ☢
+                ;;
+        esac
+        notify-send --urgency=$my_notify_urgency \
+                    "$notify_title" \
+                    "$my_previous_command"
+    fi
 }
 if [ -f $(eval echo ~$(whoami))/.git-prompt.sh ]; then
     # Git prompt
