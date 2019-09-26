@@ -173,6 +173,8 @@ my_trap+='my_previous_command=$my_current_command; my_current_command=$BASH_COMM
 trap "$my_trap" DEBUG
 PROMPT_COMMAND=my_ps1_dynamic_variables #assign PS1 variables dynamically <http://stackoverflow.com/questions/3058325/what-is-the-difference-between-ps1-and-prompt-command#3058390>
 PS1="${ps1_user}"
+PS1+=" \D{%H:%M:%S%Z}"
+PS1+="${ps1_time}"
 PS1+="${ps1_red}"
 PS1+='${ps1_exit_code}'
 PS1+="${ps1_yellow}"
