@@ -112,38 +112,30 @@ function my_ps1_timer_show {
     fi
 
     if command -v dunstify >/dev/null 2>&1 ; then
-        notify_title="${timer}s" # ◷
-        # <http://tldp.org/LDP/abs/html/exitcodes.html>.
-        case $my_exit_code in
-            0)
-                # low, normal, critical.
-                my_notify_urgency="low"
-                ;;
-            *)
-                my_notify_urgency="critical"
-                notify_title="${my_exit_code}! $notify_title" # ☢
-                ;;
-        esac
-        dunstify --urgency=$my_notify_urgency \
-                 "$notify_title" \
-                 "$my_previous_command"
+        notify_command=dunstify
+    elif command -v notify-send >/dev/null 2>&1 ; then
+        notify_command=notify-send
     fi
-    if command -v notify-send >/dev/null 2>&1 ; then
+    if [ ! -z "$notify_command" ]; then
         notify_title="${timer}s" # ◷
         # <http://tldp.org/LDP/abs/html/exitcodes.html>.
         case $my_exit_code in
             0)
                 # low, normal, critical.
                 my_notify_urgency="low"
+                $notify_command --urgency=$my_notify_urgency \
+                                "$notify_title" \
+                                "$my_previous_command"
                 ;;
             *)
                 my_notify_urgency="critical"
                 notify_title="${my_exit_code}! $notify_title" # ☢
+                $notify_command --urgency=$my_notify_urgency \
+                                --icon=$HOME/.local/share/icons/Flat-Remix-Blue-Dark/apps/scalable/apport.svg \
+                                "$notify_title" \
+                                "$my_previous_command"
                 ;;
         esac
-        notify-send --urgency=$my_notify_urgency \
-                    "$notify_title" \
-                    "$my_previous_command"
     fi
 }
 if [ -f $(eval echo ~$(whoami))/.git-prompt.sh ]; then
