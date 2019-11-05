@@ -3,6 +3,8 @@
     "MD013": {"line_length": 1000},
     "MD026": "no-trailing-punctuation",
     "MD026": false,
+    "MD034": "no-bare-urls",
+    "MD034": false,
     "MD046": "code-block-style",
     "MD046": {"style":"consistent"},
     "MD046": false
