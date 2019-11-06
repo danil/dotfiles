@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.6.3' # er requirements # ruby '2.4.2'
+ruby '2.6.4' # er requirements # ruby '2.4.2'
 
 group :development do
   # gem 'heroku' # installation fail
@@ -12,12 +12,14 @@ group :development do
   gem 'csvlint' # validate csv a-la: `csvlint path/to/file.csv` # path/to/file.csv is VALID
   gem 'fasterer' # linter suggests faster realisation of the same functionality
   gem 'flay' # find code structural similarities `flay path/to/source` <https://github.com/seattlerb/flay>
+  gem 'gem-ripper-tags' # ctags
   gem 'html2slim'
   gem 'htty' # http statefull interactive client (a-la ftp client)
   gem 'jekyll' # static blog <https://github.com/jekyll/jekyll>
   gem 'mailcatcher' # `pkill --full mailcatcher ; mailcatcher --http-ip 0.0.0.0` <https://github.com/sj26/mailcatcher>
   gem 'mdl' # markdown lint tool <https://github.com/mivok/markdownlint>
   gem 'neovim' # neovim ruby support
+  gem 'oj' # json recursive deep marshaller a-la rails marshaller
   gem 'rails'
   gem 'rails_best_practices' # code metric tool for rails `rails_best_practices path/to/source `
   gem 'reek' # code smell detector for ruby `reek path/to/source` <https://github.com/troessner/reek>
