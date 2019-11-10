@@ -1,0 +1,9 @@
+[Desktop Entry]
+Hidden=false
+Name=Tresorit
+Exec=/home/danil/.local/share/tresorit/tresorit --hidden
+Terminal=false
+Type=Application
+Icon=/home/danil/.local/share/tresorit/tresorit.png
+X-GNOME-Autostart-Delay=60
+X-GNOME-Autostart-enabled=true
