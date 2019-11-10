@@ -42,7 +42,6 @@ export PATH="$PATH":"$HOME"/deps/bin #bpkg bash package manager <https://github.
 export PATH="$HOME/.cask/bin:$PATH" #emacs cask <http://cask.github.io>
 export PATH="$PATH":"$HOME"/.local/bin #pip (python package management system) run `python-install-all`
 export PATH="$PATH":"$HOME"/.local/usr/local/bin #dwm make install here
-export PATH="$PATH":"$HOME"/.local/share/tresorit #sync app <https://tresorit.com>
 
 # Debian/Ubuntu
 export DEBFULLNAME="Danil Kutkevich"
