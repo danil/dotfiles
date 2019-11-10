@@ -94,6 +94,9 @@ export COMPOSER_PREFIX="$HOME/vendor"
 # Rust (rust toolchain installer https://rustup.rs).
 export PATH="$HOME/.cargo/bin:$PATH" #be sure to add `/home/danil/.cargo/bin` to your PATH to be able to run the installed binaries
 
+# Dart <https://dart.dev/get-dart>.
+export PATH="$PATH:/usr/lib/dart/bin"
+
 # # Steel Bank Common Lisp.
 # export SBCL_HOME=/usr/lib64/sbcl
 
