@@ -5,11 +5,11 @@ group :development do
   # gem 'heroku' # installation fail
   # gem 'mailcatcher' # use github.com/mailhog/MailHog instead # `pkill --full mailcatcher ; mailcatcher --http-ip 0.0.0.0` <https://github.com/sj26/mailcatcher>
   # gem 'travis' # installation fail
+  # gem 'csvlint' # ruby slower than go; validate csv a-la: `csvlint path/to/file.csv` # path/to/file.csv is VALID
   gem 'activesupport' # replaces non-ascii characters with an ascii approximation <http://api.rubyonrails.org/classes/ActiveSupport/Inflector.html#method-i-transliterate>
   gem 'awesome_print' # nice highlighting/indentation in ruby console <https://github.com/michaeldv/awesome_print>
   gem 'backup' # backup system utility
   gem 'brakeman' # static security vulnerability scanner for rails <http://brakemanscanner.org>, <https://github.com/presidentbeef/brakeman>
-  gem 'csvlint' # validate csv a-la: `csvlint path/to/file.csv` # path/to/file.csv is VALID
   gem 'fasterer' # linter suggests faster realisation of the same functionality
   gem 'flay' # find code structural similarities `flay path/to/source` <https://github.com/seattlerb/flay>
   gem 'gem-ripper-tags' # ctags
