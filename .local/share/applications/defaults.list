@@ -9,3 +9,4 @@ application/pdf=evince.desktop
 application/x-bittorrent=transmission-gtk.desktop
 text/comma-separated-values=libreoffice-calc.desktop
 x-scheme-handler/dustforce=Dustforce.desktop
+x-scheme-handler/tresorit=tresorit.desktop
