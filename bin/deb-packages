@@ -3,37 +3,51 @@ remove_command="aptitude remove"
 install_command="aptitude install"
 
 # Common packages.
+# install="$install makepasswd" # password generator
+# install="$install protobuf-compiler" # version to old/outdated(
 install="$install curl"
+install="$install genius" # calculator
 install="$install git"
 install="$install htop"
+install="$install jq" # json console formater <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>
 install="$install lm-sensors" # ??? cpu temperate used by slstatus
 install="$install mosh"
+install="$install ncdu" # diskspace usage is an baobab and gt5 replacement
+install="$install neovim"
+install="$install net-tools" # ifconfig cli
 install="$install postgresql-server-dev-11" # required by pg_activity is an postgresql activity monitoring <https://github.com/julmon/pg_activity>
 install="$install postgresql-server-dev-9.6" # required by pg_activity is an postgresql activity monitoring <https://github.com/julmon/pg_activity>
 install="$install pwgen" # password generator
 install="$install silversearcher-ag"
+install="$install syncthing" # dropbox replacement: deb https://apt.syncthing.net/ syncthing release
 install="$install tmux"
-install="$install xsel"
-# install="$install makepasswd" # password generator
-# install="$install docker" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
-
-# Emacs.
-install="$install emacs26-el" # find/navigate elisp function source code <https://unix.stackexchange.com/questions/73100/how-to-attach-elisp-function-source-code-in-emacs>
-install="$install emacs26-nox"
+install="$install tree" # displays an indented directory tree
+install="$install whois"
 
 # Compil.
 install="$install build-essential"
 install="$install devscripts" # ???
-install="$install libx11-dev"
-install="$install libxft-dev"
+install="$install libx11-dev" # ???
+install="$install libxft-dev" # ???
+
+# Emacs.
+install="$install emacs26-el" # find/navigate elisp function source code <https://unix.stackexchange.com/questions/73100/how-to-attach-elisp-function-source-code-in-emacs>
+install="$install emacs26-nox"
+install="$install shellcheck" # used by flycheck
+
+# # PostgreSQL
+# install="$install pgcenter" # https://github.com/lesovsky/pgcenter/releases install: dpkg --install path/to/pgcenter.deb
 
 # Golang.
 install="$install golang"
 install="$install golang-race-detector-runtime"
 
-# Python.
-install="$install python-pip"
-install="$install python3-pip"
+# Rust.
+# install="$install libgtk-3-dev" # required by fontfinder  https://github.com/mmstick/fontfinder
+# install="$install libwebkit2gtk-4.0-dev" # required by fontfinder  https://github.com/mmstick/fontfinder
+
+# Dart <https://dart.dev/get-dart>.
+install="$install dart"
 
 # Ruby.
 # install="$install libssl1.0-dev" # required by ruby 2.3.7 (libssl1.0-dev conflicts with libssl-dev)
@@ -41,38 +55,86 @@ install="$install libreadline-dev" # required by ruby 2.6.3
 install="$install libsqlite3-dev" # required by sqlite3 which required by mailcatcher
 install="$install libssl-dev" # required by ruby 2.6.3 (libssl-dev conflicts with libssl1.0-dev)
 
-# Desktop.
+# Python.
+install="$install python-pip"
+install="$install python3-pip"
+
+# Javascript
+install="$install npm"
+
+# X11/xorg/desktop.
 # install="$install dunst" # a-la notify-osd
+# install="$install font-manager" # list bitmap ??? fonts
+# install="$install fonts-noto" # awesome serif font ???
 # install="$install xcalib" # returns: "Error - unsupported ramp size 0" (load icc/icm display color profiles (only calibration curves) <https://wiki.archlinux.org/index.php/ICC_Profiles#xcalib>)
+# install="$install xclip" # tmux and xorg clipboard integration <https://github.com/tmux-plugins/tmux-yank#linux-requirements>
 install="$install argyll" # load icc/icm display color profiles <https://wiki.archlinux.org/index.php/ICC_Profiles#Argyll_CMS>
 install="$install duplicity" # backuping
-install="$install fonts-fantasque-sans"
+install="$install fonts-fantasque-sans" # terminal/code/mono/programming font
+install="$install fonts-hack-ttf" # terminal/code/mono/programming font
+install="$install maim" # takes screenshots of desktop
+install="$install mousepad" # simple text editor for xfce <https://github.com/codebrainz/mousepad>
+install="$install pk-update-icon " # display notifications about software updates
+install="$install xsel" # copy selection in termina to the xorg clipboard (used by emacs and urxvt) <https://wiki.archlinux.org/index.php/rxvt-unicode#Automatic_Script_Management>
+
+# Xfce4.
+# install="$install thunar"
+# install="$install thunar-archive-plugin"
+# install="$install thunar-dropbox-plugin"
+# install="$install thunar-megasync"
+# install="$install thunar-volman"
+# install="$install xfce4"
+# install="$install xfdashboard" # overview all windows
 
 # Gnome.
+remove="$remove gnome-shell-extension-appindicator"
 remove="$remove gnome-shell-extension-ubuntu-dock"
 remove="$remove ubuntu-desktop"
 # install="$install gnome-shell-extension-move-clock" # move clock extension for GNOME shell
+# install="$install ubuntu-communitheme-session" # yaru community theme <https://github.com/ubuntu/yaru>, <https://itsfoss.com/ubuntu-community-theme>.
 install="$install chrome-gnome-shell" # chrome/gnome extension integration
 install="$install gnome-shell-extension-impatience" # speed up the gnome-shell animation speed
 install="$install gnome-tweak-tool"
 
 # Suckless (dwm and so on and suckless dependencies/requirements)
+# install="$install gxkb" # a-la xxkb (destroy xchainkeys)
+# install="$install rofi" # a-la dmenu for open windows
+# install="$install xfdashboard" # a-la compiz expose/gnome overview (works only with running xfce session)
 install="$install build-essential" # suckless dependency
+install="$install feh" # view image
+install="$install i3lock" # xscreensaver replacement
 install="$install libx11-dev" # suckless dependency
 install="$install libxinerama-dev" # suckless dependency
+install="$install lxappearance" # change/switch gtk2/gtk3 themes
 install="$install sharutils" # suckless dependency
 install="$install stterm" # st
 install="$install suckless-tools" # suckless dependency
+install="$install volumeicon-alsa" # sound/volume icon indicator <https://github.com/Maato/volumeicon>
+install="$install xautolock" # used by i3lock
+install="$install xxkb" # keyboard/language layout indicator (flag) for tray
 
-# Yaru community theme <https://github.com/ubuntu/yaru>,
-# <https://itsfoss.com/ubuntu-community-theme>.
-install="$install ubuntu-communitheme-session"
+# Skippy-XD is an full-screen task-switcher for X11
+# <https://github.com/richardgv/skippy-xd>
+install="$install libimlib2-dev"
+install="$install libfontconfig1-dev"
+install="$install libfreetype6-dev"
+install="$install libx11-dev"
+install="$install libxext-dev"
+install="$install libxft-dev"
+install="$install libxrender-dev"
+install="$install zlib1g-dev"
+install="$install libxinerama-dev"
+install="$install libxcomposite-dev"
+install="$install libxdamage-dev"
+install="$install libxfixes-dev"
+install="$install libxmu-dev"
 
 # Docker
 # <https://docs.docker.com/install/linux/docker-ce/ubuntu>.
 install="$install apt-transport-https" # required by docker ppa <https://docs.docker.com/install/linux/docker-ce/ubuntu>
 install="$install ca-certificates" # required by docker ppa <https://docs.docker.com/install/linux/docker-ce/ubuntu>
-install="$install docker-ce"
+install="$install docker-ce" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
+install="$install golang-docker-credential-helpers" # credential helper stores encrypted passwords in d-bus secret service instead of unencrypted password in plain file <https://docs.docker.com/engine/reference/commandline/login/#credentials-store>
 install="$install meld" # gnome diff (gtk)
 install="$install software-properties-common" # required by docker ppa <https://docs.docker.com/install/linux/docker-ce/ubuntu>
 
@@ -80,7 +142,7 @@ install="$install software-properties-common" # required by docker ppa <https://
 install="$install apt-transport-https" # required by elasticsearch ppa <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#deb-repo>
 install="$install elasticsearch" # felix `deb https://artifacts.elastic.co/packages/5.x/apt stable main` elasticsearch 5 <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>
 install="$install glide" # go/german `add-apt-repository ppa:masterminds/glide` golang glide vendor package management <https://github.com/Masterminds/glide>
-install="$install golang"
+install="$install golang-go"
 install="$install kubectl" # `deb https://apt.kubernetes.io/ kubernetes-xenial main` <https://kubernetes.io/docs/tasks/tools/install-kubectl>
 install="$install libmagickwand-dev" # required by rmagick by felix
 install="$install network-manager-vpnc-gnome" # cisco vpn client plugin for the gnome
@@ -89,6 +151,7 @@ install="$install postgresql-11" # `deb http://apt.postgresql.org/pub/repos/apt/
 install="$install postgresql-9.6"  # felix `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
 install="$install redis" # felix
 install="$install vpnc" # cisco vpn client
+install="$install yarn" # (NOTE: before add ppa!) js package manager required by rails asset pipeline precompilation (before install add ppa <https://yarnpkg.com/lang/en/docs/install/#debian-stable>)
 
 # # Benchmarks a-la `ab`.
 # install="$install bonnie++"
