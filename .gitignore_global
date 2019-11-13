@@ -12,6 +12,7 @@
 .stglobalignore
 .stignore
 /TAGS
+/flycheck_*.proto
 /projectile-bookmarks.eld
 npm-debug.log
 projectile.cache
