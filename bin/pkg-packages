@@ -5,7 +5,7 @@ install_command="pkg install"
 # Common packages.
 install="$install git"
 install="$install pwgen" # password generator
-install="$install dropbear" # a-la openssh replacement
+install="$install openssh"
 
 # remove="$remove package_to_remove"
 
