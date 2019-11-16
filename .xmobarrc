@@ -1,7 +1,0 @@
-Config { commands = [ Run StdinReader
-                    , Run Com "/home/danil/bin/alsa_volume.sh" [] "alsa_volume" 10
-                    ]
-       , sepChar = "@"
-       , alignSep = "}{"
-       , template = "@StdinReader@ }{ Volume <fc=white>@alsa_volume@%</fc>"
-       }

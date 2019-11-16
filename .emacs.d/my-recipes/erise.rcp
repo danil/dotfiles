@@ -1,7 +1,0 @@
-(my-add-to-packages 'erise)
-(global-set-key (my-kbd "m r i s") 'erise)
-(eval-after-load 'erise
-  '(progn
-     ;; (setq erise-key-length-limit 30)
-     ;; (setq erise-shell-command "erise")
-     ))

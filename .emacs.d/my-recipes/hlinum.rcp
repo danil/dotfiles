@@ -1,2 +1,0 @@
-(my-add-to-packages 'hlinum)
-(my-after-init (my-eval-after-load 'hlinum (hlinum-activate)))

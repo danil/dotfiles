@@ -1,2 +1,0 @@
-;;; Session Management <http://emacswiki.org/SessionManagement>.
-(my-after-init (savehist-mode t))

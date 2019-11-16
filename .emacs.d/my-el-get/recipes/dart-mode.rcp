@@ -1,5 +1,0 @@
-(:name dart-mode
-       :description "An Emacs mode for the Dart language"
-       :website "https://github.com/nex3/dart-mode"
-       :type github
-       :pkgname "nex3/dart-mode")

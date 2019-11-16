@@ -1,22 +1,24 @@
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-# Set PATH so it includes user's private bin if it exists.
-PATH=~/bin:"${PATH}"
-PATH=~/local/bin:"${PATH}"
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export LC_TYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 # Tab completion
-# <http://en.gentoo-wiki.com/wiki/TAB-Completion#Installation>.
+# <http://wiki.gentoo.org/wiki/Bash#Tab_completion>.
 [[ -f /etc/profile.d/bash-completion.sh ]] && source /etc/profile.d/bash-completion.sh
 
 # Disable the XOFF (Ctrl-s) keystroke
 # <http://superuser.com/questions/124845/can-you-disable-the-ctrl-s-xoff-keystroke-in-putty#155875>.
 stty -ixon
 
-export EDITOR="vim" #export EDITOR="nano" #export EDITOR="/usr/bin/emacsclient -t"
+export EDITOR="vim" #export EDITOR="vim" #export EDITOR="/usr/bin/emacsclient -t"
 # export ALTERNATE_EDITOR="/usr/bin/emacs"
-export PAGER="/usr/bin/less -IM"
-export HISTSIZE=10000
-export HISTFILESIZE=10000
+export GIT_EDITOR='emacs'
+# export PAGER="/usr/bin/less --IGNORE-CASE --LONG-PROMPT" #not working(
+export HISTSIZE=50000
+export HISTFILESIZE=50000
 export HISTCONTROL=ignoredups:erasedups
 # See /usr/share/terminfo/*/
 # export TERM=rxvt-256color
@@ -28,40 +30,160 @@ export HISTCONTROL=ignoredups:erasedups
 alias sudo='sudo '
 alias ls='ls --color'
 alias ll='ls -l --all --human-readable'
-alias less=$PAGER
-# alias e='~/.evm/installations/emacs-24.3/bin/emacs -nw'
-alias e='emacs -nw'
-# alias ec='~/.evm/installations/emacs-24.3/bin/emacsclient -t'
-alias ec='/usr/bin/emacsclient -t'
-# alias ecx='/usr/bin/emacsclient --alternate-editor="" -c "$@"'
-alias g='git'
-# Silver searchers colors configurable <https://github.com/ggreer/the_silver_searcher/issues/90>.
-alias ag='ag --smart-case --color-line-number "2;31"'
-alias dm='my_dmenu_run.sh'
-alias em='emerge --verbose --oneshot --color=y'
-alias cd-w='cd ~/src/vendor/waveaccess'
-alias cd-wm='cd ~/src/vendor/waveaccess/medapp'
+# alias less=$PAGER
+alias e='emacs --no-window-system'
+alias ec='emacsclient --tty'
+alias ag='ag --width=5000'
+alias sloc='scc'
 
-# Prompt.
-[[ -f ~/.bash_prompt.sh ]] && source ~/.bash_prompt.sh
+export PATH="$HOME"/bin:"$PATH" #clib is an C package manager <https://github.com/clibs/clib> run `c-install-all`
+export PATH="$HOME"/sbin:"$PATH"
+export PATH="$PATH":"$HOME"/deps/bin #bpkg bash package manager <https://github.com/bpkg/bpkg#installing-packages> run `bash-install-all`
+export PATH="$HOME/.cask/bin:$PATH" #emacs cask <http://cask.github.io>
+export PATH="$PATH":"$HOME"/.local/bin #pip (python package management system) run `python-install-all`
+export PATH="$PATH":"$HOME"/.local/usr/local/bin #dwm make install here
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-[[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion #RVM bash completion <http://rvm.io/workflow/completion>
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# Debian/Ubuntu
+export DEBFULLNAME="Danil Kutkevich"
+export DEBEMAIL="danil@kutkevich.org"
 
-# Steel Bank Common Lisp.
-export SBCL_HOME=/usr/lib64/sbcl
+# Go <http://golang.org/doc/code.html#GOPATH>.
+# Run `go-install-all`.
+export GOPATH="$HOME"/go
+export PATH="$PATH":/usr/lib/go-1.12/bin #ubuntu go 12
+export PATH="$PATH":"$GOPATH"/bin #for convenience, add the workspace's bin subdirectory to your PATH
+# [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm" #gvm (Go version manager) <https://github.com/moovweb/gvm>
 
-# Node.js
-[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
+# rbenv <https://github.com/sstephenson/rbenv#basic-github-checkout>.
+export PATH="$HOME/.rbenv/bin:$PATH"
+if hash rbenv 2>/dev/null; then
+    eval "$(rbenv init -)"
+fi
+
+# Travis CI gem.
+[ -f "$HOME"/.travis/travis.sh ] && source "$HOME"/.travis/travis.sh #auto completion
+
+# Node.js and npm.
+# WARNING: Do NOT give priority to npm executables!!!
+export PATH="$PATH:$HOME/node_modules/.bin"
+
+# n (Node.js version manager).
+# Added by n-install (see http://git.io/n-install-repo).
+export N_PREFIX="$HOME"
+[[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
+
+# # nvm (Node.js version manager)
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  #this loads nvm
+# [[ -r "$NVM_DIR/bash_completion" ]] && . "$NVM_DIR/bash_completion"
+
+# PHP Composer.
+export COMPOSER_PREFIX="$HOME/vendor"
+[[ :$PATH: == *":$COMPOSER_PREFIX/bin:"* ]] || PATH+=":$COMPOSER_PREFIX/bin"
 
 # # Lua.
-# PATH=~/.luarocks/bin:"${PATH}"
-# export LUA_PATH="/home/danil/.luarocks/share/lua/5.1//?.lua;./?.lua;$LUA_PATH"
-# export LUA_CPATH="/home/danil/.luarocks/lib/lua/5.1//?.so;./?.so;$LUA_CPATH"
+# PATH="$HOME"/.luarocks/bin:"$PATH"
+# export LUA_PATH="$HOME""/.luarocks/share/lua/5.1//?.lua;./?.lua;$LUA_PATH"
+# export LUA_CPATH="$HOME""/.luarocks/lib/lua/5.1//?.so;./?.so;$LUA_CPATH"
 
-# # Emacs Cask <http://cask.github.io>.
-# PATH=$PATH:$HOME/.cask/bin
+# # lenv (Lua version manager) <https://github.com/mah0x211/lenv>.
+# export PATH="$HOME"/.lenv/bin:"$HOME"/.lenv/current/bin:$PATH
+# export LUA_PATH="$HOME"'/.lenv/current/luarocks/share/?.lua;'"$HOME"'/.lenv/current/luarocks/share/?/init.lua;;'
+# export LUA_CPATH="$HOME"'/.lenv/current/luarocks/lib/?.so;;'
 
-# # EVM (Emacs Version Manager) <https://github.com/rejeep/evm>.
-# PATH=$PATH:$HOME/.evm/bin
+# Rust (rust toolchain installer https://rustup.rs).
+export PATH="$HOME/.cargo/bin:$PATH" #be sure to add `/home/danil/.cargo/bin` to your PATH to be able to run the installed binaries
+
+# Dart <https://dart.dev/get-dart>.
+export PATH="$PATH:/usr/lib/dart/bin"
+
+# # Steel Bank Common Lisp.
+# export SBCL_HOME=/usr/lib64/sbcl
+
+# # Prompt powerline-go.
+# function wm_notify_last_command {
+#     local previous_command=$1
+#     local previous_errcode=$2
+#     local previous_seconds=$3
+#     # Interactive commands.
+#     case $previous_command in
+#         alsamixer*) return 0 ;;
+#         emacs*|sudo?emacs*) return 0 ;;
+#         git*log*|sudo?git*log*|git*rebase*|sudo?git*rebase*) return 0 ;;
+#         htop*|sudo?htop*) return 0 ;;
+#         less*|sudo?less*) return 0 ;;
+#         make*menuconfig*|sudo?make*menuconfig*) return 0 ;;
+#         tmux*|sudo?tmux) return 0 ;;
+#         vim*|sudo?vim*) return 0 ;;
+#         lftp*) return 0 ;;
+#         mosh*) return 0 ;;
+#         mongo*) return 0 ;;
+#     esac
+#     command -v dunstify >/dev/null 2>&1 || return 0
+#     if [[ ${previous_seconds} -lt 1 ]]; then # too fast command
+#         return 0
+#     fi
+#     notify_title="${previous_seconds}s" # ◷
+#     # <http://tldp.org/LDP/abs/html/exitcodes.html>.
+#     case $__ERRCODE in
+#         0)
+#             # low, normal, critical.
+#             my_notify_urgency="low"
+#             ;;
+#         *)
+#             my_notify_urgency="critical"
+#             notify_title="${previous_errcode}! $__DURATION" # ☢
+#             ;;
+#     esac
+#     dunstify --urgency=$my_notify_urgency "$notify_title" "$previous_command"
+# }
+# INTERACTIVE_BASHPID_TIMER="/tmp/${USER}.START.$$"
+# PS0='$(echo $SECONDS > "$INTERACTIVE_BASHPID_TIMER")'
+# function _update_ps1() {
+#     local __ERRCODE=$?
+#     local __DURATION=0
+#     if [ -e $INTERACTIVE_BASHPID_TIMER ]; then
+#         local __END=$SECONDS
+#         local __START=$(cat "$INTERACTIVE_BASHPID_TIMER")
+#         __DURATION="$(($__END - ${__START:-__END}))"
+#         rm -f "$INTERACTIVE_BASHPID_TIMER"
+#     fi
+#     # aws,cwd,docker,dotenv,exit,git,gitlite,hg,host,jobs,load,nix-shell,perlbrew,perms,root,shell-var,ssh,termtitle,time,user,venv,node
+#     modules=""
+#     modules+="venv"
+#     modules+=",user"
+#     modules+=",host"
+#     modules+=",ssh"
+#     modules+=",cwd"
+#     modules+=",perms"
+#     modules+=",git"
+#     modules+=",jobs"
+#     modules+=",exit"
+#     modules+=",root"
+#     args=()
+#     args+=( " -mode flat" )
+#     args+=( " -newline" )
+#     args+=( " -error $__ERRCODE" )
+#     args+=( " -numeric-exit-codes" )
+#     args+=( " -shell bash" )
+#     args+=( " -colorize-hostname" )
+#     if [[ ${__DURATION} -gt 2 ]] ; then
+#         modules+=",duration"
+#         args+=( " -duration $__DURATION" )
+#     fi
+#     args+=( " -modules ${modules[@]}" )
+#     PS1="$(powerline-go ${args[@]})"
+#     wm_notify_last_command "$previous_command" "$__ERRCODE" "$__DURATION"
+# }
+# trap 'previous_command=$this_command; this_command=$BASH_COMMAND' DEBUG
+# if [ "$TERM" != "linux" ]; then
+#     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+# fi
+# Prompt.
+# function _update_ps1() {
+#     PS1="$(~/go/bin/powerline-go -error $?)"
+# }
+# if [ "$TERM" != "linux" ]; then
+#     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+# fi
+[[ -f "$HOME"/.bash_prompt.sh ]] && source "$HOME"/.bash_prompt.sh

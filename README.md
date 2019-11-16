@@ -1,13 +1,26 @@
 Dotfiles
 ========
 
-This is my dotfiles, including shell environment, emacs configuration,
+This is my dotfiles, including shell environment
 and other misc scripts.
+
+Utils
+-----
+
+Install my utils:
+
+    cd && bundle install
+    cd && npm install
+    ~/bin/bash-packages
+    ~/bin/c-packages
+    ~/bin/go-packages --update
+    ~/bin/python-packages
+    ~/bin/rust-packages --update
 
 Copying
 -------
 
-Copyright (C) 2014 Danil Kutkevich <danil@kutkevich.org>
+Copyright (C) 2019 Danil Kutkevich <danil@kutkevich.org>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

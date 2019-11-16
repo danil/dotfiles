@@ -1,4 +1,0 @@
-;;; Tool bar <http://emacswiki.org/ToolBar#toc1>,
-;;; <http://superuser.com/questions/127420/how-can-i-hide-the-tool-bar-in-emacs-persistently#127422>.
-(my-after-init (my-eval-after-load 'tool-bar
-                 (if window-system (tool-bar-mode -1))))

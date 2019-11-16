@@ -1,5 +1,0 @@
-(:name auto-complete
-       :pkgname "auto-complete/auto-complete"
-       :type github
-       :depends (popup fuzzy)
-       :features auto-complete-config)
