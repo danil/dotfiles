@@ -6,6 +6,7 @@ install_command="pkg install"
 install="$install git"
 install="$install pwgen" # password generator
 install="$install openssh"
+install="$install neovim"
 
 # remove="$remove package_to_remove"
 
