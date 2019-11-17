@@ -79,6 +79,7 @@ install="$install pk-update-icon " # display notifications about software update
 install="$install xsel" # copy selection in termina to the xorg clipboard (used by emacs and urxvt) <https://wiki.archlinux.org/index.php/rxvt-unicode#Automatic_Script_Management>
 install="$install meld" # gnome diff (gtk)
 install="$install mpv" # a-la mplayer replacement
+install="$install mesa-utils" # provide glxgears util for the 3d compositor testing
 
 # Xfce4.
 # install="$install thunar"
