@@ -25,7 +25,8 @@ install="$install tree" # displays an indented directory tree
 install="$install whois"
 
 # Compil.
-install="$install build-essential"
+install="$install build-essential" # compiler?
+install="$install automake" # required by xchainkeys
 install="$install devscripts" # ???
 install="$install libx11-dev" # ???
 install="$install libxft-dev" # ???
