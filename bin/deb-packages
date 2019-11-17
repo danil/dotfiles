@@ -77,6 +77,8 @@ install="$install maim" # takes screenshots of desktop
 install="$install mousepad" # simple text editor for xfce <https://github.com/codebrainz/mousepad>
 install="$install pk-update-icon " # display notifications about software updates
 install="$install xsel" # copy selection in termina to the xorg clipboard (used by emacs and urxvt) <https://wiki.archlinux.org/index.php/rxvt-unicode#Automatic_Script_Management>
+install="$install meld" # gnome diff (gtk)
+install="$install mpv" # a-la mplayer replacement
 
 # Xfce4.
 # install="$install thunar"
@@ -136,7 +138,6 @@ install="$install apt-transport-https" # required by docker ppa <https://docs.do
 install="$install ca-certificates" # required by docker ppa <https://docs.docker.com/install/linux/docker-ce/ubuntu>
 install="$install docker-ce" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
 install="$install golang-docker-credential-helpers" # credential helper stores encrypted passwords in d-bus secret service instead of unencrypted password in plain file <https://docs.docker.com/engine/reference/commandline/login/#credentials-store>
-install="$install meld" # gnome diff (gtk)
 install="$install software-properties-common" # required by docker ppa <https://docs.docker.com/install/linux/docker-ce/ubuntu>
 
 # Employer Rocketbank.
