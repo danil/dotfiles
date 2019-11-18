@@ -64,6 +64,7 @@ function install {
     # packages="$packages github.com/ichinaski/pxl" # display images in the terminal (freeze terminal)
     # packages="$packages github.com/jasonmoo/smlr" # jpeg encoder
     # packages="$packages github.com/jingweno/ccat" # colorizing cat <https://github.com/jingweno/ccat>
+    # packages="$packages github.com/kahing/goofys" # mount s3 (amazon aws) file system (error while getting: fatal: git pull --ff-only You are not currently on a branch. Please specify which branch you want to merge with)
     # packages="$packages github.com/laurent22/massren" # rename multiple files using text editor <https://github.com/laurent22/massren>
     # packages="$packages github.com/lukasmartinelli/pgfutter" # import csv and json into postgresql
     # packages="$packages github.com/maruel/panicparse/cmd/pp" #  pipe stderr and format like that: `go run buggy.go |&pp`
@@ -103,7 +104,6 @@ function install {
     packages="$packages github.com/jgrahamc/httpdiff" # diff http requests <https://github.com/jgrahamc/httpdiff>
     packages="$packages github.com/jpillora/cloud-torrent" # bit torrent client with localhost web gui interface
     packages="$packages github.com/justjanne/powerline-go" # a powerline style prompt for shell
-    packages="$packages github.com/kahing/goofys" # mount s3 (amazon aws) file system
     packages="$packages github.com/mailhog/MailHog" # smtp mail consumer a-la ruby mailcatcher: `MailHog`
     packages="$packages github.com/mattes/migrate/cli" # database migrations cli
     packages="$packages github.com/monochromegane/the_platinum_searcher/..." # ag and ack replacement <https://github.com/monochromegane/the_platinum_searcher>
