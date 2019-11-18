@@ -40,8 +40,8 @@ install="$install shellcheck" # used by flycheck
 # install="$install pgcenter" # https://github.com/lesovsky/pgcenter/releases install: dpkg --install path/to/pgcenter.deb
 
 # Golang.
+# install="$install golang-race-detector-runtime" # FIXME: where is race detector for the go 1.13?
 install="$install golang"
-install="$install golang-race-detector-runtime"
 
 # Rust.
 # install="$install libgtk-3-dev" # required by fontfinder  https://github.com/mmstick/fontfinder
@@ -60,8 +60,9 @@ install="$install libssl-dev" # required by ruby 2.6.3 (libssl-dev conflicts wit
 install="$install python-pip"
 install="$install python3-pip"
 
-# Javascript
-install="$install npm"
+# Nodejs/Javascript by nodesource.com's ppa
+install="$install nodejs" # nodesource.com's nodejs provides latest version of the npm
+install="$install curl dirmngr apt-transport-https lsb-release ca-certificates" # required by nodesource.com's ppa
 
 # X11/xorg/desktop.
 # install="$install dunst" # a-la notify-osd
@@ -79,16 +80,17 @@ install="$install pk-update-icon " # display notifications about software update
 install="$install xsel" # copy selection in termina to the xorg clipboard (used by emacs and urxvt) <https://wiki.archlinux.org/index.php/rxvt-unicode#Automatic_Script_Management>
 install="$install meld" # gnome diff (gtk)
 install="$install mpv" # a-la mplayer replacement
-install="$install mesa-utils" # provide glxgears util for the 3d compositor testing
+install="$install mesa-utils" # provides glxgears util for the 3d compositor testing
+install="$install libnotify-bin" # a-la notify-osd
 
 # Xfce4.
-# install="$install thunar"
-# install="$install thunar-archive-plugin"
-# install="$install thunar-dropbox-plugin"
-# install="$install thunar-megasync"
-# install="$install thunar-volman"
-# install="$install xfce4"
 # install="$install xfdashboard" # overview all windows
+install="$install thunar"
+install="$install thunar-archive-plugin"
+install="$install thunar-dropbox-plugin"
+install="$install thunar-megasync"
+install="$install thunar-volman"
+install="$install xfce4" # provides notifyd/xfce4-notifyd is an notifications daemon (used/required by dwm)
 
 # Gnome.
 remove="$remove gnome-shell-extension-appindicator"
@@ -135,11 +137,9 @@ install="$install libxmu-dev"
 
 # Docker
 # <https://docs.docker.com/install/linux/docker-ce/ubuntu>.
-install="$install apt-transport-https" # required by docker ppa <https://docs.docker.com/install/linux/docker-ce/ubuntu>
-install="$install ca-certificates" # required by docker ppa <https://docs.docker.com/install/linux/docker-ce/ubuntu>
 install="$install docker-ce" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
 install="$install golang-docker-credential-helpers" # credential helper stores encrypted passwords in d-bus secret service instead of unencrypted password in plain file <https://docs.docker.com/engine/reference/commandline/login/#credentials-store>
-install="$install software-properties-common" # required by docker ppa <https://docs.docker.com/install/linux/docker-ce/ubuntu>
+install="$install apt-transport-https ca-certificates software-properties-common" # required by docker ppa <https://docs.docker.com/install/linux/docker-ce/ubuntu>
 
 # Employer Rocketbank.
 install="$install apt-transport-https" # required by elasticsearch ppa <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#deb-repo>
