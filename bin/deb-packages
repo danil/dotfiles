@@ -61,6 +61,8 @@ install="$install python-pip"
 install="$install python3-pip"
 
 # Nodejs/Javascript by nodesource.com's ppa
+# <https://github.com/nodesource/distributions/blob/master/README.md>,
+# <https://computingforgeeks.com/installing-node-js-10-lts-on-ubuntu-18-04-16-04-debian-9>
 install="$install nodejs" # nodesource.com's nodejs provides latest version of the npm
 install="$install curl dirmngr apt-transport-https lsb-release ca-certificates" # required by nodesource.com's ppa
 
