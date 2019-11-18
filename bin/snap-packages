@@ -1,0 +1,11 @@
+#!/bin/bash
+# remove_command="snap remove"
+install_command="snap install"
+
+# X11/xorg/desktop.
+install="$install snap-store"
+
+# remove="$remove package-to-remove"
+
+# $remove_command  $remove  || exit 1
+$install_command $install || exit 1
