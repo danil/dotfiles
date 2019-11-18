@@ -1,3 +1,3 @@
 #! /bin/bash
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
-light -U 1
+sudo light -U 1
