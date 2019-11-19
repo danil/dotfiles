@@ -37,12 +37,9 @@ if [[ $verbose -eq 1 ]] ; then
     echo "update=$update"
 fi
 
-packages="$packages --git=https://github.com/esphen/wsta.git" #pipe-friendly websocket cli
-packages="$packages --git=https://github.com/hopey-dishwasher/termpix" #draw images in an ANSI terminal <https://github.com/hopey-dishwasher/termpix>
-packages="$packages --git=https://github.com/imjacobclark/Herd.git" #http load testing (a-la ab)
 packages="$packages --git=https://github.com/ogham/exa" #ls replacement <https://github.com/ogham/exa>
+packages="$packages --version=2.0.13 racer" #rust code completion <https://github.com/phildawes/racer>, latest racer failed to compile with error: could not compile `rustc-ap-graphviz` <https://github.com/racer-rust/racer/issues/868#issuecomment-459017685>
 packages="$packages cargo-count" #counting lines of code in rust projects <https://github.com/kbknapp/cargo-count>
-packages="$packages racer" #rust code completion <https://github.com/phildawes/racer>
 packages="$packages ripgrep" #search tool a-la ag (silver searcher) <https://github.com/BurntSushi/ripgrep>
 packages="$packages rustfmt" #rust formating <https://github.com/rust-lang-nursery/rustfmt>
 packages="$packages tokei" #cloc metric (count lines of code) <https://github.com/Aaronepower/tokei>
