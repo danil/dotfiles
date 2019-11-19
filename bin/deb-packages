@@ -44,8 +44,8 @@ install="$install shellcheck" # used by flycheck
 install="$install golang"
 
 # Rust.
-# install="$install libgtk-3-dev" # required by fontfinder  https://github.com/mmstick/fontfinder
-# install="$install libwebkit2gtk-4.0-dev" # required by fontfinder  https://github.com/mmstick/fontfinder
+# install="$install libgtk-3-dev" # required by fontfinder https://github.com/mmstick/fontfinder
+# install="$install libwebkit2gtk-4.0-dev" # required by fontfinder https://github.com/mmstick/fontfinder
 
 # Dart <https://dart.dev/get-dart>.
 install="$install dart"
