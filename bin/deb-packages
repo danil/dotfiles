@@ -88,24 +88,21 @@ install="$install mpv" # a-la mplayer replacement
 install="$install mesa-utils" # provides glxgears util for the 3d compositor testing
 install="$install libnotify-bin" # a-la notify-osd
 
+# Dunst/dunstify (respects org.freedesktop.Notifications)
+# <https://github.com/dunst-project/dunst>
+# install="$install libc6 libcairo2 libgdk-pixbuf2.0-0 libglib2.0-0 libpango-1.0-0 libpangocairo-1.0-0 libx11-6 libxdg-basedir1 libxinerama1 libxrandr2 libxss1" # runtime dependencies
+# install="$install dunst" # installing from source into ~/.local/bin
+install="$install libdbus-1-dev libnotify-dev libxrandr-dev libpango1.0-dev libx11-dev libxinerama-dev libxss-dev libglib2.0-dev libgtk-3-dev libxdg-basedir-dev" # compiltime dependencies
+
 # Xfce4.
 # install="$install xfdashboard" # overview all windows
+# install="$install xfce4"
+# install="$install xfce4-notifyd" # notifications daemon (used by dwm)
 install="$install thunar"
 install="$install thunar-archive-plugin"
 install="$install thunar-dropbox-plugin"
 install="$install thunar-megasync"
 install="$install thunar-volman"
-install="$install xfce4" # provides notifyd/xfce4-notifyd is an notifications daemon (used/required by dwm)
-
-# Gnome.
-remove="$remove gnome-shell-extension-appindicator"
-remove="$remove gnome-shell-extension-ubuntu-dock"
-remove="$remove ubuntu-desktop"
-# install="$install gnome-shell-extension-move-clock" # move clock extension for GNOME shell
-# install="$install ubuntu-communitheme-session" # yaru community theme <https://github.com/ubuntu/yaru>, <https://itsfoss.com/ubuntu-community-theme>.
-install="$install chrome-gnome-shell" # chrome/gnome extension integration
-install="$install gnome-shell-extension-impatience" # speed up the gnome-shell animation speed
-install="$install gnome-tweak-tool"
 
 # Suckless (dwm and so on and suckless dependencies/requirements)
 # install="$install gxkb" # a-la xxkb (destroy xchainkeys)
@@ -123,6 +120,16 @@ install="$install suckless-tools" # installs dmenu and more
 install="$install volumeicon-alsa" # sound/volume icon indicator <https://github.com/Maato/volumeicon>
 install="$install xautolock" # used by i3lock
 install="$install xxkb" # keyboard/language layout indicator (flag) for tray
+
+# Gnome.
+remove="$remove gnome-shell-extension-appindicator"
+remove="$remove gnome-shell-extension-ubuntu-dock"
+remove="$remove ubuntu-desktop"
+# install="$install gnome-shell-extension-move-clock" # move clock extension for GNOME shell
+# install="$install ubuntu-communitheme-session" # yaru community theme <https://github.com/ubuntu/yaru>, <https://itsfoss.com/ubuntu-community-theme>.
+install="$install chrome-gnome-shell" # chrome/gnome extension integration
+install="$install gnome-shell-extension-impatience" # speed up the gnome-shell animation speed
+install="$install gnome-tweak-tool"
 
 # Skippy-XD is an full-screen task-switcher for X11
 # <https://github.com/richardgv/skippy-xd>
