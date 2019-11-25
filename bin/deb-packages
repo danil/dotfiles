@@ -153,6 +153,10 @@ install="$install docker-ce" # `curl -fsSL https://download.docker.com/linux/ubu
 install="$install golang-docker-credential-helpers" # credential helper stores encrypted passwords in d-bus secret service instead of unencrypted password in plain file <https://docs.docker.com/engine/reference/commandline/login/#credentials-store>
 install="$install apt-transport-https ca-certificates software-properties-common" # required by docker ppa <https://docs.docker.com/install/linux/docker-ce/ubuntu>
 
+# Mongodb
+install="$install mongodb-org" # latest stable version of the mongodb server
+install="$install gnupg" # required by mongodb <https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu>
+
 # Employer Rocketbank.
 install="$install apt-transport-https" # required by elasticsearch ppa <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#deb-repo>
 install="$install elasticsearch" # felix `deb https://artifacts.elastic.co/packages/5.x/apt stable main` elasticsearch 5 <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>
