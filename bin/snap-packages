@@ -3,7 +3,7 @@
 install_command="snap install"
 
 # X11/xorg/desktop.
-install="$install snap-store"
+install="$install telegram-desktop"
 
 # remove="$remove package-to-remove"
 
