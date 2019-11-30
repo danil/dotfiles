@@ -3,6 +3,7 @@ remove_command="pkg remove"
 install_command="pkg install"
 
 # Common packages.
+install="$install bash-completion"
 install="$install openssh"
 install="$install neovim"
 install="$install emacs"
