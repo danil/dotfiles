@@ -9,8 +9,8 @@ hardstatus string '%{gk}[%{wk}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= 
 ## UTF-8.
 defutf8 on
 
-## C-] as the command key.
-escape ^t
+## C-t as the command key.
+escape ^Tt
 
 ## Do not trash BackSpace, usually DEL.
 bindkey -k kb
