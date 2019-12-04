@@ -19,7 +19,6 @@ install="$install postgresql-server-dev-11" # required by pg_activity is an post
 install="$install postgresql-server-dev-9.6" # required by pg_activity is an postgresql activity monitoring <https://github.com/julmon/pg_activity>
 install="$install pwgen" # password generator
 install="$install syncthing" # dropbox replacement: deb https://apt.syncthing.net/ syncthing release
-install="$install tmux"
 install="$install tree" # displays an indented directory tree
 install="$install whois"
 
@@ -30,6 +29,10 @@ install="$install devscripts" # ???
 install="$install libx11-dev" # ???
 install="$install libxft-dev" # ???
 
+# Tmux.
+install="$install tmux" # operational system wide
+install="$install pkg-config libevent-dev libncurses-dev" # compiltime dependencies
+
 # Emacs.
 install="$install emacs26-el" # find/navigate elisp function source code <https://unix.stackexchange.com/questions/73100/how-to-attach-elisp-function-source-code-in-emacs>
 install="$install emacs26-nox"
@@ -37,7 +40,7 @@ install="$install shellcheck" # used by flycheck
 
 # The silver searcher (ag) <https://github.com/ggreer/the_silver_searcher>
 # install="$install silversearcher-ag" # installing from source into ~/.local/bin
-install="$install automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev" # compile dependencies/requirements
+install="$install automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev" # compiltime dependencies
 
 # # PostgreSQL
 # install="$install pgcenter" # https://github.com/lesovsky/pgcenter/releases install: dpkg --install path/to/pgcenter.deb
