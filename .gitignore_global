@@ -9,7 +9,6 @@
 .DS_Store
 .projectile
 .ruby-version
-.stglobalignore
 .stignore
 /TAGS
 /flycheck_*.proto
