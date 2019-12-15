@@ -14,6 +14,7 @@ install="$install htop"
 install="$install mosh" # ssh over bad/mobile network
 install="$install dnsutils" # dig
 install="$install ncdu" # storage usage a-la baobab
+install="$install mc" # midnight commander
 
 # remove="$remove package_to_remove"
 
