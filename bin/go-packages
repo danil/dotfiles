@@ -60,6 +60,7 @@ function install {
     # packages="$packages github.com/crufter/borg" # terminal based search engine for bash commands `borg "list all files in dir"`
     # packages="$packages github.com/danil/ptichka" # fetch tweets and send by SMTP (twitter client)
     # packages="$packages github.com/digitalocean/doctl/cmd/doctl" # digitalocean command line tool (error while getting: fatal: no submodule mapping found in .gitmodules for path 'vendor/github.com/vektra/errors')
+    # packages="$packages github.com/golang-migrate/migrate/cli" # database migrations cli (compilation error: github.com/kshvakov/clickhouse: github.com/kshvakov/clickhouse@v1.3.12: parsing go.mod: module declares its path as: github.com/ClickHouse/clickhouse-go but was required as: github.com/kshvakov/clickhouse)
     # packages="$packages github.com/gravitational/teleconsole" # a-la ssh behind vpn (for example use whith tmux) compilation error(
     # packages="$packages github.com/ichinaski/pxl" # display images in the terminal (freeze terminal)
     # packages="$packages github.com/jasonmoo/smlr" # jpeg encoder
@@ -98,7 +99,6 @@ function install {
     packages="$packages github.com/github/hub" # github helper <https://github.com/github/hub>
     packages="$packages github.com/go-swagger/go-swagger/cmd/swagger" # swagger cli validator `swagger validate http://example.org/path/to/swagger.json`
     packages="$packages github.com/godoctor/godoctor" # used by emacs for variables reanming
-    packages="$packages github.com/golang-migrate/migrate/cli" # database migrations cli
     packages="$packages github.com/golang/dep/cmd/dep" # golang dependency management official tool (a-la gems or eggs)
     packages="$packages github.com/golangci/golangci-lint/cmd/golangci-lint" # a-la gometalinter
     packages="$packages github.com/jgrahamc/httpdiff" # diff http requests <https://github.com/jgrahamc/httpdiff>
