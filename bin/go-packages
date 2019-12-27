@@ -119,6 +119,7 @@ function install {
     packages="$packages golang.org/x/tools/cmd/goimports" # used by emacs as `gofmt` command replacement for adding/removing golang import lines
     packages="$packages github.com/wallix/awless" # aws client
     packages="$packages github.com/Clever/csvlint" # csv lint
+    packages="$packages github.com/gokcehan/lf" # file manager for the cli/command line/terminal a-la mc (midnight commander)
 
     # packages="$packages github.com/knq/usql" # sql client for postgresql, mysql, sqlite, oracle and microsoft sql server
     # packages="$packages honnef.co/go/tools/cmd/megacheck" # used by emacs flycheck
