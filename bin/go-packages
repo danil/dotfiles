@@ -1,0 +1,70 @@
+#!/bin/bash
+
+export install=${install:--1}
+export uninstall=${uninstall:--1}
+export update=${update:--1}
+export verbose=${verbose:--1}
+
+while [ $# -gt 0 ]; do
+    case "$1" in
+        --install)
+            let install=1
+            ;;
+        --uninstall)
+            let uninstall=1
+            ;;
+        --update)
+            let update=1
+            ;;
+        --verbose)
+            let verbose=1
+            ;;
+        *)
+            printf "***************************\n"
+            printf "* Error: Invalid argument.*\n"
+            printf "***************************\n"
+            exit 1
+    esac
+    shift
+done
+
+function install {
+    install_command="go get"
+
+    [[ $update -eq 1 ]] && install_command="$install_command -u"
+
+    [[ $verbose -eq 1 ]] && install_command="$install_command -v"
+
+    packages="$packages github.com/gokcehan/lf" # file manager for the cli/command line/terminal a-la mc (midnight commander)
+
+    $install_command $packages || exit 1
+}
+
+function uninstall {
+    if [ -z "$GOPATH" ]; then
+        echo 'fatal: $GOPATH not set'
+        exit 1
+    fi
+
+    rm --force "$GOPATH"/bin/*
+    rm --recursive --force "$GOPATH"/pkg/*
+    for i in "$GOPATH"/src/*; do
+        for j in "$i"/*; do
+            case $j in
+                */github.com/danil) continue ;;
+                */bitbucket.org/armor5games) continue ;;
+            esac
+
+            rm --recursive --force "$j"
+        done
+    done
+    find "$GOPATH"/src -type d -empty -delete #remove empy directories
+}
+
+count=0
+[[ $uninstall -eq 1 ]] && count=$((count+1)) && uninstall
+[[ $install -eq 1 ]] && count=$((count+1)) && install
+
+if [[ ${count} -lt 1 ]]; then
+    printf "usage: go-packages [--install] [--uninstall] [--update] [--verbose]\n"
+fi
