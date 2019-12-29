@@ -100,7 +100,7 @@ function install {
     packages="$packages github.com/go-swagger/go-swagger/cmd/swagger" # swagger cli validator `swagger validate http://example.org/path/to/swagger.json`
     packages="$packages github.com/godoctor/godoctor" # used by emacs for variables reanming
     packages="$packages github.com/golang/dep/cmd/dep" # golang dependency management official tool (a-la gems or eggs)
-    packages="$packages github.com/golangci/golangci-lint/cmd/golangci-lint" # a-la gometalinter
+    packages="$packages github.com/golangci/golangci-lint/cmd/golangci-lint" # used by emacs a-la gometalinter
     packages="$packages github.com/jgrahamc/httpdiff" # diff http requests <https://github.com/jgrahamc/httpdiff>
     packages="$packages github.com/jpillora/cloud-torrent" # bit torrent client with localhost web gui interface
     packages="$packages github.com/justjanne/powerline-go" # a powerline style prompt for shell
