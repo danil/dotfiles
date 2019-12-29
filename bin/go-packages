@@ -35,7 +35,11 @@ function install {
 
     [[ $verbose -eq 1 ]] && install_command="$install_command -v"
 
-    packages="$packages github.com/gokcehan/lf" # file manager for the cli/command line/terminal a-la mc (midnight commander)
+    # packages="$packages github.com/gokcehan/lf" # file manager for the cli/command line/terminal a-la mc/midnight commander (termux does not support)
+    packages="$packages github.com/golangci/golangci-lint/cmd/golangci-lint" # used by emacs a-la gometalinter
+    packages="$packages github.com/nsf/gocode" # used by emacs auto complete
+    packages="$packages github.com/rogpeppe/godef" # used by emacs for jump to the definition of the expression at point
+    packages="$packages golang.org/x/tools/cmd/goimports" # used by emacs as `gofmt` command replacement for adding/removing golang import lines
 
     $install_command $packages || exit 1
 }
