@@ -1,5 +1,7 @@
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
+echo -ne "\033]12;#ff0000\007"
+
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export LC_TYPE=en_US.UTF-8
