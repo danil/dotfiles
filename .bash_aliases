@@ -1,5 +1,7 @@
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
+# Red currsor
+# <https://github.com/termux/termux-app/issues/757#issuecomment-425609825>.
 echo -ne "\033]12;#ff0000\007"
 
 export LANG=en_US.UTF-8
