@@ -21,6 +21,7 @@ install="$install pwgen" # password generator
 install="$install syncthing" # dropbox replacement: deb https://apt.syncthing.net/ syncthing release
 install="$install tree" # displays an indented directory tree
 install="$install whois"
+install="$install uswsusp" # systemctl hibernate
 
 # Compil.
 install="$install build-essential" # compiler?
