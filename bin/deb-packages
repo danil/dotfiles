@@ -5,12 +5,13 @@ install_command="aptitude install"
 # Common packages.
 # install="$install makepasswd" # password generator
 # install="$install protobuf-compiler" # version to old/outdated(
+# install="$install nginx"
 install="$install curl"
 install="$install genius" # calculator
 install="$install git"
 install="$install htop"
 install="$install jq" # json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>
-install="$install lm-sensors" # ??? cpu temperate used by slstatus
+install="$install lm-sensors" # FIXME: is the cpu temperate by ls sensors used by plain status or by slstatus?
 install="$install mosh"
 install="$install ncdu" # diskspace usage is an baobab and gt5 replacement
 install="$install neovim"
@@ -22,6 +23,7 @@ install="$install syncthing" # dropbox replacement: deb https://apt.syncthing.ne
 install="$install tree" # displays an indented directory tree
 install="$install whois"
 install="$install uswsusp" # systemctl hibernate
+install="$install openssh-server"
 
 # Compil.
 install="$install build-essential" # compiler?
