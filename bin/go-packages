@@ -87,6 +87,7 @@ function install {
     # packages="$packages github.com/zyedidia/micro/..." # nano alternative, text editor `micro` (compilation error(
     # packages="$packages golang.org/x/tools/cmd/godoc" # documentation
     packages="$packages github.com/BurntSushi/toml/cmd/tomlv" # toml validator
+    packages="$packages github.com/Clever/csvlint" # csv lint
     packages="$packages github.com/StackExchange/dnscontrol" # dns dsl and cli for bind, cloudflare and so on
     packages="$packages github.com/boyter/scc" # a-la sloc/cloc
     packages="$packages github.com/cloudflare/cloudflare-go/cmd/flarectl" # cloudflare cli `CF_API_EMAIL=your.name@example.org CF_API_KEY=your_api_key flarectl zone dns example.org`
@@ -94,11 +95,14 @@ function install {
     packages="$packages github.com/constabulary/gb/..." # best package manager?
     packages="$packages github.com/cortesi/devd/cmd/devd" # local http/webserver for developers `devd --address=0.0.0.0 --livewatch ./`
     packages="$packages github.com/dachad/tcpgoon" # tcp concurrent connections benchmark
+    packages="$packages github.com/danil/plainstatus/examples/plainstatus1" # a-la slstatus
+    packages="$packages github.com/danil/plainstatus/examples/plainstatus2" # a-la slstatus
     packages="$packages github.com/davecheney/httpstat" # http statistics (a-la curl --head)
     packages="$packages github.com/fd0/machma" # parallel cli task execution with each command progress
     packages="$packages github.com/github/hub" # github helper <https://github.com/github/hub>
     packages="$packages github.com/go-swagger/go-swagger/cmd/swagger" # swagger cli validator `swagger validate http://example.org/path/to/swagger.json`
     packages="$packages github.com/godoctor/godoctor" # used by emacs for variables reanming
+    packages="$packages github.com/gokcehan/lf" # file manager for the cli/command line/terminal a-la mc (midnight commander)
     packages="$packages github.com/golang/dep/cmd/dep" # golang dependency management official tool (a-la gems or eggs)
     packages="$packages github.com/golangci/golangci-lint/cmd/golangci-lint" # used by emacs a-la gometalinter
     packages="$packages github.com/jgrahamc/httpdiff" # diff http requests <https://github.com/jgrahamc/httpdiff>
@@ -114,12 +118,10 @@ function install {
     packages="$packages github.com/simeji/jid/cmd/jid" # interactive jq
     packages="$packages github.com/svent/sift" # print lines matching a regexp a-la grep or ag
     packages="$packages github.com/tigrawap/goader" # s3/http/disk benchmark (a-la ab apach benchmark)
+    packages="$packages github.com/wallix/awless" # aws client
+    packages="$packages golang.org/x/tools/cmd/goimports" # used by emacs as `gofmt` command replacement for adding/removing golang import lines
     packages="$packages golang.org/x/tools/cmd/gorename"
     packages="$packages golang.org/x/tools/cmd/guru" # used by emacs
-    packages="$packages golang.org/x/tools/cmd/goimports" # used by emacs as `gofmt` command replacement for adding/removing golang import lines
-    packages="$packages github.com/wallix/awless" # aws client
-    packages="$packages github.com/Clever/csvlint" # csv lint
-    packages="$packages github.com/gokcehan/lf" # file manager for the cli/command line/terminal a-la mc (midnight commander)
 
     # packages="$packages github.com/knq/usql" # sql client for postgresql, mysql, sqlite, oracle and microsoft sql server
     # packages="$packages honnef.co/go/tools/cmd/megacheck" # used by emacs flycheck
