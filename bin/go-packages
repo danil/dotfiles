@@ -108,6 +108,7 @@ function install {
     packages="$packages github.com/jgrahamc/httpdiff" # diff http requests <https://github.com/jgrahamc/httpdiff>
     packages="$packages github.com/jpillora/cloud-torrent" # bit torrent client with localhost web gui interface
     packages="$packages github.com/justjanne/powerline-go" # a powerline style prompt for shell
+    packages="$packages github.com/kr/pretty" # pretty-printing for go values
     packages="$packages github.com/mailhog/MailHog" # smtp mail consumer a-la ruby mailcatcher: `MailHog`
     packages="$packages github.com/mattes/migrate/cli" # database migrations cli
     packages="$packages github.com/monochromegane/the_platinum_searcher/..." # ag and ack replacement <https://github.com/monochromegane/the_platinum_searcher>

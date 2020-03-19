@@ -3,5 +3,6 @@
 *.#*
 *.swp
 *~
+.git
+.gitignore
 /TAGS
-/projectile-bookmarks.eld
