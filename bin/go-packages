@@ -123,6 +123,7 @@ function install {
     packages="$packages golang.org/x/tools/cmd/goimports" # used by emacs as `gofmt` command replacement for adding/removing golang import lines
     packages="$packages golang.org/x/tools/cmd/gorename"
     packages="$packages golang.org/x/tools/cmd/guru" # used by emacs
+    packages="$packages golang.org/x/tools/gopls" # golang lsp (language server protocol) or GO111MODULE=on go get golang.org/x/tools/gopls@latest
 
     # packages="$packages github.com/knq/usql" # sql client for postgresql, mysql, sqlite, oracle and microsoft sql server
     # packages="$packages honnef.co/go/tools/cmd/megacheck" # used by emacs flycheck
