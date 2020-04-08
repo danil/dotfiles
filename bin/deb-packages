@@ -103,7 +103,7 @@ install="$install xsel" # copy selection in termina to the xorg clipboard (used 
 # Invert colors on xorg/xrandr
 # <https://superuser.com/questions/208746/invert-colors-on-x-or-xfce4#1494872#209083>.
 install="$install libxcb-randr0-dev"
-install="$install xcalib"
+install="$install xcalib" # `xcalib -i -a` invert colors on xorg/xrandr <https://superuser.com/questions/208746/invert-colors-on-x-or-xfce4#1494872#209083>
 
 # Dunst/dunstify (respects org.freedesktop.Notifications)
 # <https://github.com/dunst-project/dunst>
