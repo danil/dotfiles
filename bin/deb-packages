@@ -7,6 +7,7 @@ install_command="aptitude install"
 # install="$install protobuf-compiler" # version to old/outdated(
 # install="$install nginx"
 install="$install curl"
+install="$install dos2unix" # convert text file line endings between CRLF and LF
 install="$install genius" # calculator
 install="$install git"
 install="$install htop"
@@ -16,14 +17,14 @@ install="$install mosh"
 install="$install ncdu" # diskspace usage is an baobab and gt5 replacement
 install="$install neovim"
 install="$install net-tools" # ifconfig cli
+install="$install openssh-server"
 install="$install postgresql-server-dev-11" # required by pg_activity is an postgresql activity monitoring <https://github.com/julmon/pg_activity>
 install="$install postgresql-server-dev-9.6" # required by pg_activity is an postgresql activity monitoring <https://github.com/julmon/pg_activity>
 install="$install pwgen" # password generator
 install="$install syncthing" # dropbox replacement: deb https://apt.syncthing.net/ syncthing release
 install="$install tree" # displays an indented directory tree
-install="$install whois"
 install="$install uswsusp" # systemctl hibernate
-install="$install openssh-server"
+install="$install whois"
 
 # Compil.
 install="$install build-essential" # compiler?
@@ -80,20 +81,29 @@ install="$install curl dirmngr apt-transport-https lsb-release ca-certificates" 
 # install="$install dunst" # a-la notify-osd
 # install="$install font-manager" # list bitmap ??? fonts
 # install="$install fonts-noto" # awesome serif font ???
+# install="$install gimp" # a-la photoshop
 # install="$install xcalib" # returns: "Error - unsupported ramp size 0" (load icc/icm display color profiles (only calibration curves) <https://wiki.archlinux.org/index.php/ICC_Profiles#xcalib>)
 # install="$install xclip" # tmux and xorg clipboard integration <https://github.com/tmux-plugins/tmux-yank#linux-requirements>
 install="$install argyll" # load icc/icm display color profiles <https://wiki.archlinux.org/index.php/ICC_Profiles#Argyll_CMS>
+install="$install brave" # a-la google chrome
 install="$install duplicity" # backuping
+install="$install firefox" # works normal with graylog's text box (input box), text field (input field)
 install="$install fonts-fantasque-sans" # terminal/code/mono/programming font
 install="$install fonts-hack-ttf" # terminal/code/mono/programming font
+install="$install google-chrome-stable"
+install="$install libnotify-bin" # a-la notify-osd
 install="$install maim" # takes screenshots of desktop
+install="$install meld" # gnome diff (gtk)
+install="$install mesa-utils" # provides glxgears util for the 3d compositor testing
 install="$install mousepad" # simple text editor for xfce <https://github.com/codebrainz/mousepad>
+install="$install mpv" # a-la mplayer replacement
 install="$install pk-update-icon " # display notifications about software updates
 install="$install xsel" # copy selection in termina to the xorg clipboard (used by emacs and urxvt) <https://wiki.archlinux.org/index.php/rxvt-unicode#Automatic_Script_Management>
-install="$install meld" # gnome diff (gtk)
-install="$install mpv" # a-la mplayer replacement
-install="$install mesa-utils" # provides glxgears util for the 3d compositor testing
-install="$install libnotify-bin" # a-la notify-osd
+
+# Invert colors on xorg/xrandr
+# <https://superuser.com/questions/208746/invert-colors-on-x-or-xfce4#1494872#209083>.
+install="$install libxcb-randr0-dev"
+install="$install xcalib"
 
 # Dunst/dunstify (respects org.freedesktop.Notifications)
 # <https://github.com/dunst-project/dunst>
