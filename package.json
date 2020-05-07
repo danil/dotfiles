@@ -45,9 +45,7 @@
             "validate-dockerfile": "latest"
         },
         "jsonlint": "latest",
-        "markdownlint-cli": "0.19.0",
-        "js-yaml": "required by emacs flycheck",
-        "js-yaml": "latest"
+        "markdownlint-cli": "0.19.0"
     },
     "engines": {
         "node": "latest"
