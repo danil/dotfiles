@@ -44,7 +44,7 @@ pinggraph
 # <https://github.com/amperser/proselint>, <http://proselint.com>.
 proselint
 
-# Used by Emacs Flycheck.
+# Used/required by Emacs Flycheck.
 pylint
 
 # Evaluate python expression like `py 2*2` <https://github.com/Russell91/pythonpy>.
@@ -61,6 +61,9 @@ WeasyPrint
 
 # Video downloader (universal) <https://github.com/soimort/you-get>.
 you-get
+
+# Used/required by emacs Flycheck.
+yamllint
 
 # Youtube downloader <https://github.com/rg3/youtube-dl>.
 youtube-dl
