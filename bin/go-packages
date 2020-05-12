@@ -86,27 +86,27 @@ function install {
     # packages="$packages github.com/zquestz/s" # open default browser and web search
     # packages="$packages github.com/zyedidia/micro/..." # nano alternative, text editor `micro` (compilation error(
     # packages="$packages golang.org/x/tools/cmd/godoc" # documentation
-    packages="$packages github.com/BurntSushi/toml/cmd/tomlv" # toml validator
+    # packages="$packages github.com/StackExchange/dnscontrol" # dns dsl and cli for bind, cloudflare and so on (error: build github.com/StackExchange/dnscontrol: cannot load github.com/hexonet/go-sdk/client: module github.com/hexonet/go-sdk@latest found (v2.3.0+incompatible), but does not contain package github.com/hexonet/go-sdk/client)
+    # packages="$packages github.com/constabulary/gb/..." # best package manager?
+    # packages="$packages github.com/jpillora/cloud-torrent" # bit torrent client with localhost web gui interface (error: ../../../go/pkg/mod/github.com/jpillora/cloud-torrent@v0.0.0-20180427161701-1a741e3d8dd2/engine/engine.go:43:8: undefined: torrent.Config)
+    # packages="$packages github.com/codesenberg/bombardier" # a-la ab apach benchmark `bombardier http://example.org` (error: ../../../go/pkg/mod/github.com/codesenberg/bombardier@v1.2.4/bombardier.go:73:8: b.bar.ShowSpeed undefined (type *pb.ProgressBar has no field or method ShowSpeed))
+    # packages="$packages github.com/golang/dep/cmd/dep" # golang dependency management official tool (a-la gems or eggs) (error: ../../../go/pkg/mod/github.com/golang/dep@v0.5.4/gps/constraint.go:149:4: undefined: semver.Constraint)
+    packages="$packages github.com/BurntSushi/toml/cmd/tomlv" # toml validator (error: build github.com/constabulary/gb/cmd/gb: cannot load github.com/constabulary/gb/internal/vendor: module github.com/constabulary/gb@latest found (v0.4.4), but does not contain package github.com/constabulary/gb/internal/vendor)
     packages="$packages github.com/Clever/csvlint" # csv lint
-    packages="$packages github.com/StackExchange/dnscontrol" # dns dsl and cli for bind, cloudflare and so on
     packages="$packages github.com/boyter/scc" # a-la sloc/cloc
     packages="$packages github.com/cloudflare/cloudflare-go/cmd/flarectl" # cloudflare cli `CF_API_EMAIL=your.name@example.org CF_API_KEY=your_api_key flarectl zone dns example.org`
-    packages="$packages github.com/codesenberg/bombardier" # a-la ab apach benchmark `bombardier http://example.org`
-    packages="$packages github.com/constabulary/gb/..." # best package manager?
     packages="$packages github.com/cortesi/devd/cmd/devd" # local http/webserver for developers `devd --address=0.0.0.0 --livewatch ./`
     packages="$packages github.com/dachad/tcpgoon" # tcp concurrent connections benchmark
-    packages="$packages github.com/danil/plainstatus/examples/plainstatus1" # a-la slstatus
-    packages="$packages github.com/danil/plainstatus/examples/plainstatus2" # a-la slstatus
+    packages="$packages github.com/danil/plainstatus/examples/plainstatus1@1f0a4b2b33a3" # a-la slstatus
+    packages="$packages github.com/danil/plainstatus/examples/plainstatus2@1f0a4b2b33a3" # a-la slstatus
     packages="$packages github.com/davecheney/httpstat" # http statistics (a-la curl --head)
     packages="$packages github.com/fd0/machma" # parallel cli task execution with each command progress
     packages="$packages github.com/github/hub" # github helper <https://github.com/github/hub>
     packages="$packages github.com/go-swagger/go-swagger/cmd/swagger" # swagger cli validator `swagger validate http://example.org/path/to/swagger.json`
     packages="$packages github.com/godoctor/godoctor" # used by emacs for variables reanming
     packages="$packages github.com/gokcehan/lf" # file manager for the cli/command line/terminal a-la mc (midnight commander)
-    packages="$packages github.com/golang/dep/cmd/dep" # golang dependency management official tool (a-la gems or eggs)
-    packages="$packages github.com/golangci/golangci-lint/cmd/golangci-lint" # used by emacs a-la gometalinter
+    packages="$packages github.com/golangci/golangci-lint/cmd/golangci-lint@v1.26.0" # used by emacs a-la gometalinter
     packages="$packages github.com/jgrahamc/httpdiff" # diff http requests <https://github.com/jgrahamc/httpdiff>
-    packages="$packages github.com/jpillora/cloud-torrent" # bit torrent client with localhost web gui interface
     packages="$packages github.com/justjanne/powerline-go" # a powerline style prompt for shell
     packages="$packages github.com/kr/pretty" # pretty-printing for go values
     packages="$packages github.com/mailhog/MailHog" # smtp mail consumer a-la ruby mailcatcher: `MailHog`
@@ -129,7 +129,7 @@ function install {
     # packages="$packages honnef.co/go/tools/cmd/megacheck" # used by emacs flycheck
     # packages="$packages honnef.co/go/tools/cmd/unused" # checks Go code for unused constants, variables, functions and types
 
-    $install_command $packages || exit 1
+    GO111MODULE=on $install_command $packages || exit 1
 }
 
 function uninstall {
