@@ -1,1 +1,1 @@
-/home/danil/.xinitrc
+/mnt/trash/home/danil/.xinitrc
