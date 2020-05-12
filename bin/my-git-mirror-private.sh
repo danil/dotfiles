@@ -11,6 +11,8 @@ function my-mirror-private {
     done
 }
 
-my-mirror-private "defts.git"        "github" "master"
-my-mirror-private "errocketbank.git" "github" "master"
-my-mirror-private "md/rcc.git"       "github" "master"
+my-mirror-private "notes.git"                        "github" "master"
+my-mirror-private "errocketbank.git"                 "github" "master"
+my-mirror-private "vendor/armor5games/bhgdeploy.git" "github" "master"
+my-mirror-private "vendor/armor5games/bhgserver.git" "github" "master"
+my-mirror-private "vendor/armor5games/ropserver.git" "github" "master"
