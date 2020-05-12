@@ -1,0 +1,41 @@
+#! /bin/bash
+
+set -e
+
+export stdout=${stdout:--1}
+
+while [ $# -gt 0 ]; do
+    case "$1" in
+        --stdout)
+            let stdout=1
+            ;;
+        --file=*)
+            file="${1#*=}"
+            ;;
+        *)
+            (>&2 echo 'Invalid argument')
+            exit 1
+    esac
+    shift
+done
+
+if [[ -z  $file ]]; then
+    (>&2 echo 'File name argument is missing') ; exit 1
+fi
+
+if ! [[ $file = *[!\ ]* ]]; then
+    (>&2 echo "Invalid file name argument: $file") ; exit 1
+fi
+
+if ! [ -f "./${file}.tar.gz.asc" ]; then
+    (>&2 echo "Nothing to decrypt. File ${file}.tar.gz.asc not found")
+    exit 1
+fi
+
+if [[ $stdout -eq 1 ]]; then
+    gpg --decrypt --output - "./${file}.tar.gz.asc" \
+        | tar --extract --gzip --to-stdout --file -
+else
+    gpg --decrypt --output "./${file}.tar.gz" "./${file}.tar.gz.asc"
+    tar --extract --gzip --file "./${file}.tar.gz"
+fi
