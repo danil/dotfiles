@@ -29,7 +29,7 @@ fi
 find_args=(
     ./
     -maxdepth 1
-    \( -type f -or -type d \)
+    \( -type d -or -type f -or -type l \)
     ! -path ./
     ! \(
         -name "*.tar*"
