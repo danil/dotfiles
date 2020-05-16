@@ -26,6 +26,7 @@ install="$install syncthing" # dropbox replacement: deb https://apt.syncthing.ne
 install="$install tree" # displays an indented directory tree
 install="$install uswsusp" # systemctl hibernate
 install="$install whois"
+install="$install zstd" # a-la gz/xz compression
 
 # Compil.
 install="$install build-essential" # compiler?
