@@ -1,0 +1,13 @@
+#!/bin/bash
+install_command="pacman --sync --verbose"
+
+# Common packages.
+install="$install core/sudo"
+install="$install extra/git"
+install="$install extra/vim"
+install="$install community/emacs-nox"
+
+# Goalng.
+install="$install community/go"
+
+$install_command $install || exit 1
