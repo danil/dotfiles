@@ -2,12 +2,19 @@
 install_command="pacman --sync --needed --verbose"
 
 # Common packages.
+install="$install community/emacs-nox"
 install="$install core/sudo"
 install="$install extra/git"
+install="$install extra/htop"
 install="$install extra/vim"
-install="$install community/emacs-nox"
+
+# Server.
+install="$install extra/ntp"
 
 # Golang.
 install="$install community/go"
+
+# Kubernetes/k8s.
+install="$install community/docker"
 
 $install_command $install || exit 1
