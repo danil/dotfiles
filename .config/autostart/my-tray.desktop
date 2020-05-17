@@ -1,9 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Exec=/home/danil/bin/my_tray.sh
-Hidden=true
-Name=My tray
-OnlyShowIn=XFCE;
-Terminal=false
-Type=Application
-X-GNOME-Autostart-enabled=false

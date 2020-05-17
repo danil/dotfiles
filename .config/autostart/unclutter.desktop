@@ -1,8 +1,0 @@
-[Desktop Entry]
-Comment=hide mouse cursor after while
-Encoding=UTF-8
-Exec=unclutter -idle 5
-Name=unclutter
-Terminal=false
-Type=Application
-X-GNOME-Autostart-enabled=false
