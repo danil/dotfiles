@@ -3,6 +3,7 @@ install_command="pacman --sync --needed --verbose"
 
 # Common packages.
 install="$install community/emacs-nox"
+install="$install core/mlocate"
 install="$install core/sudo"
 install="$install extra/git"
 install="$install extra/htop"
@@ -16,5 +17,6 @@ install="$install community/go"
 
 # Kubernetes/k8s.
 install="$install community/docker"
+install="$install community/kubectl"
 
 $install_command $install || exit 1
