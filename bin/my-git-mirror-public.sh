@@ -18,13 +18,15 @@ function my-mirror-public {
 # my-mirror-public "go/client-server-example.git" "github"             "master"
 # my-mirror-public "go/count-words-server-example.git" "github"        "master"
 # my-mirror-public "go/ptichka.git"               "gitlab github"      "master"
+# my-mirror-public "el/ido-describe-bindings.git" "gitlab github" "master" # archived
+# my-mirror-public "el/ido-occur.git"             "gitlab github" "master" # archived
+# my-mirror-public "sieves.git"                   "gitlab github" "master" # archived
+# my-mirror-public "suckless/slstatus.git"        "github"        "master" # archived
 my-mirror-public "debsrc/dwm.git"               "github"        "bionic"
 my-mirror-public "debsrc/stterm.git"            "github"        "bionic"
 my-mirror-public "dotfiles-playbooks.git"       "github"        "master"
 my-mirror-public "dotfiles.git"                 "gitlab github" "h2-gentoo-danil h10-gentoo-danil h17-ubuntu-danil h18-termux-danil h19-ubuntu-danil"
 my-mirror-public "el/ferm-mode.git"             "gitlab github" "master"
-my-mirror-public "el/ido-describe-bindings.git" "gitlab github" "master"
-my-mirror-public "el/ido-occur.git"             "gitlab github" "master"
 my-mirror-public "el/init.el.git"               "gitlab github" "master trash"
 my-mirror-public "etc.git"                      "gitlab github" "h2-gentoo h10-gentoo h4-sailfish h19-ubuntu"
 my-mirror-public "example.git"                  "bitbucket"     "a c b10"
@@ -42,10 +44,8 @@ my-mirror-public "md/rc.git"                    "gitlab github" "master"
 my-mirror-public "md/rcc.git"                   "github"        "master"
 my-mirror-public "sh/overlays.git"              "gitlab github" "master net-analyzer/linode-longview sys-apps/mdp unsupported"
 my-mirror-public "sh/rsa_signature_example.git" "bitbucket"     "master"
-my-mirror-public "sieves.git"                   "gitlab github" "master"
 my-mirror-public "suckless/dmenu.git"           "github"       "master"
 my-mirror-public "suckless/dwm.git"             "github"        "master"
-my-mirror-public "suckless/slstatus.git"        "github"        "master"
 my-mirror-public "usr.git"                      "github"        "h10-ubuntu h19-ubuntu"
 my-mirror-public "utils.git"                    "gitlab github" "master"
 my-mirror-public "worlds.git"                   "gitlab github" "h2 h10"
