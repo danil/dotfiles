@@ -1,5 +1,7 @@
 #!/bin/bash
+# user=danil
 install_command="pacman --sync --needed --verbose"
+# install_aur_command="yay --aur --sync --noprovides --noconfirm --verbose"
 
 # Common packages.
 install="$install community/emacs-nox"
@@ -8,6 +10,9 @@ install="$install core/sudo"
 install="$install extra/git"
 install="$install extra/htop"
 install="$install extra/vim"
+
+# Arch.
+install="$install base-devel" # package group required to build PKGBUILD package from aur (arch user repository)
 
 # Server.
 install="$install extra/ntp"
@@ -18,5 +23,9 @@ install="$install community/go"
 # Kubernetes/k8s.
 install="$install community/docker"
 install="$install community/kubectl"
+# install_aur="$install_aur aur/kubeadm-bin"
+# install_aur="$install_aur aur/kubelet-bin"
 
 $install_command $install || exit 1
+# echo $user
+# su $user --shell=/bin/bash --command "$install_aur_command $install_aur" || exit 1
