@@ -7,6 +7,7 @@ install_command="aptitude install"
 # install="$install makepasswd" # password generator
 # install="$install nginx"
 # install="$install protobuf-compiler" # version to old/outdated(
+install="$install bc" # used by bash prompt, console-based calculator utility
 install="$install curl"
 install="$install dos2unix" # convert text file line endings between CRLF and LF
 install="$install genius" # calculator
