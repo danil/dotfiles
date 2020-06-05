@@ -81,6 +81,7 @@ install="$install nodejs" # nodesource.com's nodejs provides latest version of t
 install="$install curl dirmngr apt-transport-https lsb-release ca-certificates" # required by nodesource.com's ppa
 
 # X11/xorg/desktop.
+# install="$install brave-browser" # a-la google chrome
 # install="$install dunst" # a-la notify-osd
 # install="$install font-manager" # list bitmap ??? fonts
 # install="$install fonts-noto" # awesome serif font ???
@@ -88,7 +89,6 @@ install="$install curl dirmngr apt-transport-https lsb-release ca-certificates" 
 # install="$install xcalib" # returns: "Error - unsupported ramp size 0" (load icc/icm display color profiles (only calibration curves) <https://wiki.archlinux.org/index.php/ICC_Profiles#xcalib>)
 # install="$install xclip" # tmux and xorg clipboard integration <https://github.com/tmux-plugins/tmux-yank#linux-requirements>
 install="$install argyll" # load icc/icm display color profiles <https://wiki.archlinux.org/index.php/ICC_Profiles#Argyll_CMS>
-install="$install brave" # a-la google chrome
 install="$install duplicity" # backuping
 install="$install firefox" # works normal with graylog's text box (input box), text field (input field)
 install="$install fonts-fantasque-sans" # terminal/code/mono/programming font
