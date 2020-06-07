@@ -1,0 +1,3 @@
+machine my.domain.tld
+  login my-login
+  password my_super_secure_password
