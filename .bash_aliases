@@ -100,6 +100,11 @@ export PATH="$PATH:/usr/lib/dart/bin"
 # # Steel Bank Common Lisp.
 # export SBCL_HOME=/usr/lib64/sbcl
 
+# Updates PATH for Yandex Cloud CLI.
+if [ -f "$HOME"/yandex-cloud/path.bash.inc ]; then source "$HOME"/yandex-cloud/path.bash.inc; fi
+# Enables shell command completion for yc (Yandex Cloud).
+if [ -f "$HOME"/yandex-cloud/completion.bash.inc ]; then source "$HOME"/yandex-cloud/completion.bash.inc; fi
+
 # # Prompt powerline-go.
 # function wm_notify_last_command {
 #     local previous_command=$1
