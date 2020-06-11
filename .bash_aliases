@@ -43,6 +43,8 @@ export PATH="$HOME/.cask/bin:$PATH" #emacs cask <http://cask.github.io>
 export PATH="$PATH":"$HOME"/.local/bin #pip (python package management system) run `python-install-all`
 export PATH="$PATH":"$HOME"/.local/usr/local/bin #dwm make install here
 
+[ -f "$HOME"/.netrc/.netrc ] && export NETRC="$HOME"/.netrc/.netrc
+
 # Debian/Ubuntu
 export DEBFULLNAME="Danil Kutkevich"
 export DEBEMAIL="danil@kutkevich.org"
