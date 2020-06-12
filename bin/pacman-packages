@@ -13,6 +13,7 @@ install="$install extra/vim"
 
 # Arch.
 install="$install base-devel" # package group required to build PKGBUILD package from aur (arch user repository)
+install="$install extra/namcap" # analysis utility that checks binary packages and source PKGBUILDs for common mistakes <https://wiki.archlinux.org/index.php/Namcap>
 
 # Server.
 install="$install extra/ntp"
