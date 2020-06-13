@@ -10,7 +10,8 @@ export LC_ALL=en_US.UTF-8
 [[ -f /etc/profile.d/bash-completion.sh ]] && source /etc/profile.d/bash-completion.sh
 
 # Disable the XOFF (Ctrl-s) keystroke
-# <http://superuser.com/questions/124845/can-you-disable-the-ctrl-s-xoff-keystroke-in-putty#155875>.
+# <http://superuser.com/questions/124845/can-you-disable-the-ctrl-s-xoff-keystroke-in-putty#155875>,
+# <https://wiki.archlinux.org/index.php/Readline#History>.
 stty -ixon
 
 export EDITOR="vim" #export EDITOR="vim" #export EDITOR="/usr/bin/emacsclient -t"
@@ -46,6 +47,11 @@ export PATH="$PATH":"$HOME"/.local/usr/local/bin #dwm make install here
 # Debian/Ubuntu
 export DEBFULLNAME="Danil Kutkevich"
 export DEBEMAIL="danil@kutkevich.org"
+
+# Command not found.
+# Automatically search the official repositories, when entering an unrecognized command
+# <https://wiki.archlinux.org/index.php/Bash#Command_not_found>.
+[ -f /usr/share/doc/pkgfile/command-not-found.bash ] && source /usr/share/doc/pkgfile/command-not-found.bash
 
 # Go <http://golang.org/doc/code.html#GOPATH>.
 # Run `go-install-all`.

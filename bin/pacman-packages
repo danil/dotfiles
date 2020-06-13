@@ -42,17 +42,6 @@ packages="$packages sysstat"
 packages="$packages vim"
 packages="$packages whois"
 
-# Common user space packages.
-packages="$packages bc" # used by bash prompt, console-based calculator utility
-packages="$packages emacs-nox" # community/emacs-nox
-packages="$packages git" # extra/git
-packages="$packages htop" # extra/htop
-packages="$packages mlocate" # core/mlocate
-packages="$packages mosh" # ssh replacement
-packages="$packages sudo" # core/sudo
-packages="$packages tmux" # community/tmux
-packages="$packages vim" # extra/vim
-
 # Compile and so on.
 # packages="$packages base-devel" # package group required to build PKGBUILD package from aur (arch user repository)
 packages="$packages autoconf"
@@ -79,6 +68,18 @@ packages="$packages sed"
 packages="$packages sudo"
 packages="$packages texinfo"
 packages="$packages which"
+
+# Common user space packages.
+packages="$packages bc" # used by bash prompt, console-based calculator utility
+packages="$packages emacs-nox" # community/emacs-nox
+packages="$packages git" # extra/git
+packages="$packages htop" # extra/htop
+packages="$packages mlocate" # core/mlocate
+packages="$packages mosh" # ssh replacement
+packages="$packages pkgfile" # extra/pkgfile: searching files from packages in the official repositories
+packages="$packages sudo" # core/sudo
+packages="$packages tmux" # community/tmux
+packages="$packages vim" # extra/vim
 
 # Arch.
 packages="$packages namcap" # extra/namcap: analysis utility that checks binary packages and source PKGBUILDs for common mistakes <https://wiki.archlinux.org/index.php/Namcap>
