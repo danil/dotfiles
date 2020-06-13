@@ -20,16 +20,67 @@ while [ $# -gt 0 ]; do
     shift
 done
 
-# Common packages.
+# Systme packages.
+packages="$packages base"
+packages="$packages curl"
+packages="$packages e2fsprogs"
+packages="$packages grub"
+packages="$packages haveged"
+packages="$packages inetutils"
+packages="$packages iotop"
+packages="$packages linux"
+packages="$packages linux-firmware"
+packages="$packages lsof"
+packages="$packages man-db"
+packages="$packages man-pages"
+packages="$packages mtr"
+packages="$packages nano"
+packages="$packages net-tools"
+packages="$packages openssh"
+packages="$packages sudo"
+packages="$packages sysstat"
+packages="$packages vim"
+packages="$packages whois"
+
+# Common user space packages.
+packages="$packages bc" # used by bash prompt, console-based calculator utility
 packages="$packages emacs-nox" # community/emacs-nox
 packages="$packages git" # extra/git
 packages="$packages htop" # extra/htop
 packages="$packages mlocate" # core/mlocate
+packages="$packages mosh" # ssh replacement
 packages="$packages sudo" # core/sudo
+packages="$packages tmux" # community/tmux
 packages="$packages vim" # extra/vim
 
+# Compile and so on.
+# packages="$packages base-devel" # package group required to build PKGBUILD package from aur (arch user repository)
+packages="$packages autoconf"
+packages="$packages automake"
+packages="$packages binutils"
+packages="$packages bison"
+packages="$packages fakeroot"
+packages="$packages file"
+packages="$packages findutils"
+packages="$packages flex"
+packages="$packages gawk"
+packages="$packages gcc"
+packages="$packages gettext"
+packages="$packages grep"
+packages="$packages groff"
+packages="$packages gzip"
+packages="$packages libtool"
+packages="$packages m4"
+packages="$packages make"
+packages="$packages pacman"
+packages="$packages patch"
+packages="$packages pkgconf"
+packages="$packages sed"
+packages="$packages sudo"
+packages="$packages texinfo"
+packages="$packages which"
+
 # Arch.
-packages="$packages base-devel" # package group required to build PKGBUILD package from aur (arch user repository)
 packages="$packages namcap" # extra/namcap: analysis utility that checks binary packages and source PKGBUILDs for common mistakes <https://wiki.archlinux.org/index.php/Namcap>
 
 # Server.
@@ -47,6 +98,7 @@ packages="$packages kubectl" # community/kubectl
 packages=$(echo $packages | tr " " "\n" | sort | tr "\n" " ")
 
 count=0
+# <https://wiki.archlinux.org/index.php/Pacman/Tips_and_tricks#Install_packages_from_a_list>.
 [[ $depclean -eq 1 ]] && count=$((count+1)) && pacman --remove --recursive --unneeded --verbose $(comm -23 <(pacman --query --quiet | sort) <(echo "$packages yay" | tr " " "\n" | sort))
 [[ $install -eq 1 ]] && count=$((count+1)) && pacman --sync --needed --verbose $packages
 
