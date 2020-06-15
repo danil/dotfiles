@@ -20,7 +20,7 @@ while [ $# -gt 0 ]; do
     shift
 done
 
-# Systme packages.
+# Inital packages (from linode image).
 packages="$packages base"
 packages="$packages curl"
 packages="$packages grub"
@@ -48,23 +48,13 @@ packages="$packages automake"
 packages="$packages binutils"
 packages="$packages bison"
 packages="$packages fakeroot"
-packages="$packages file"
-packages="$packages findutils"
 packages="$packages flex"
-packages="$packages gawk"
 packages="$packages gcc"
-packages="$packages gettext"
-packages="$packages grep"
-packages="$packages groff"
-packages="$packages gzip"
 packages="$packages libtool"
 packages="$packages m4"
 packages="$packages make"
-packages="$packages pacman"
 packages="$packages patch"
 packages="$packages pkgconf"
-packages="$packages sed"
-packages="$packages sudo"
 packages="$packages texinfo"
 packages="$packages which"
 
@@ -76,9 +66,7 @@ packages="$packages htop" # extra/htop
 packages="$packages mlocate" # core/mlocate
 packages="$packages mosh" # ssh replacement
 packages="$packages pkgfile" # extra/pkgfile: searching files from packages in the official repositories
-packages="$packages sudo" # core/sudo
 packages="$packages tmux" # community/tmux
-packages="$packages vim" # extra/vim
 
 # Arch.
 packages="$packages namcap" # extra/namcap: analysis utility that checks binary packages and source PKGBUILDs for common mistakes <https://wiki.archlinux.org/index.php/Namcap>
