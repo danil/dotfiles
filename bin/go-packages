@@ -1,164 +1,98 @@
 #!/bin/bash
 
-export install=${install:--1}
-export uninstall=${uninstall:--1}
-export update=${update:--1}
-export verbose=${verbose:--1}
+# # Gometalinter.
+# # Concurrently run golang lint tools and normalise their output
+# # <https://github.com/alecthomas/gometalinter>.
+# # $install_command gopkg.in/alecthomas/gometalinter.v1 || exit 1
+# $install_command github.com/alecthomas/gometalinter || exit 1
+# gometalinter --install || exit 1
+# packages="$packages github.com/GoASTScanner/gas" # inspects go source code for security problems
+# packages="$packages github.com/client9/misspell/cmd/misspell" # find misspelled words (typos) in source files
+# packages="$packages github.com/fzipp/gocyclo" # calculate cyclomatic complexities of functions in go source code according to the following rules: 1 is the base complexity of a function +1 for each 'if', 'for', 'case', '&&' or '||'
+# packages="$packages github.com/golang/lint/golint" # used by emacs flycheck `golint -set_exit_status ./...`
+# packages="$packages github.com/gordonklaus/ineffassign" # detect ineffectual assignments in go code
+# packages="$packages github.com/jgautheron/goconst/cmd/goconst"
+# packages="$packages github.com/kisielk/errcheck" # used by emacs flycheck `errcheck -verbose -asserts ./...`
+# packages="$packages github.com/mdempsky/unconvert" # identify unnecessary type conversions (i.e. expressions T(x) where x already has type T) `unconvert -v .`
+# packages="$packages github.com/mibk/dupl"
+# packages="$packages mvdan.cc/interfacer" # suggests interface types (foo.go:10:19: f can be io.Reader)
+# packages="$packages github.com/walle/lll/..."
+# packages="$packages golang.org/x/tools/cmd/gotype"
+# packages="$packages honnef.co/go/tools/cmd/gosimple"
+# packages="$packages honnef.co/go/tools/cmd/staticcheck"
+# packages="$packages honnef.co/go/tools/cmd/unused"
 
-while [ $# -gt 0 ]; do
-    case "$1" in
-        --install)
-            let install=1
-            ;;
-        --uninstall)
-            let uninstall=1
-            ;;
-        --update)
-            let update=1
-            ;;
-        --verbose)
-            let verbose=1
-            ;;
-        *)
-            printf "***************************\n"
-            printf "* Error: Invalid argument.*\n"
-            printf "***************************\n"
-            exit 1
-    esac
-    shift
-done
+# packages="$packages github.com/crufter/borg" # terminal based search engine for bash commands `borg "list all files in dir"`
+# packages="$packages github.com/danil/ptichka" # fetch tweets and send by SMTP (twitter client)
+# packages="$packages github.com/digitalocean/doctl/cmd/doctl" # digitalocean command line tool (error while getting: fatal: no submodule mapping found in .gitmodules for path 'vendor/github.com/vektra/errors')
+# packages="$packages github.com/golang-migrate/migrate/cli" # database migrations cli (compilation error: github.com/kshvakov/clickhouse: github.com/kshvakov/clickhouse@v1.3.12: parsing go.mod: module declares its path as: github.com/ClickHouse/clickhouse-go but was required as: github.com/kshvakov/clickhouse)
+# packages="$packages github.com/gravitational/teleconsole" # a-la ssh behind vpn (for example use whith tmux) compilation error(
+# packages="$packages github.com/ichinaski/pxl" # display images in the terminal (freeze terminal)
+# packages="$packages github.com/jasonmoo/smlr" # jpeg encoder
+# packages="$packages github.com/jingweno/ccat" # colorizing cat <https://github.com/jingweno/ccat>
+# packages="$packages github.com/kahing/goofys" # mount s3 (amazon aws) file system (error while getting: fatal: git pull --ff-only You are not currently on a branch. Please specify which branch you want to merge with)
+# packages="$packages github.com/laurent22/massren" # rename multiple files using text editor <https://github.com/laurent22/massren>
+# packages="$packages github.com/lukasmartinelli/pgfutter" # import csv and json into postgresql
+# packages="$packages github.com/maruel/panicparse/cmd/pp" #  pipe stderr and format like that: `go run buggy.go |&pp`
+# packages="$packages github.com/ncw/rclone" # rsync for s3, dropbox, google drive cloud storage (error <https://github.com/ncw/rclone/pull/665>)
+# packages="$packages github.com/noraesae/orange-cat/cmd/orange" # markdown preview
+# packages="$packages github.com/rapidloop/rtop" # remote top over ssh
+# packages="$packages github.com/reconquest/orgalorg" # parallel ssh commands and file synchronization
+# packages="$packages github.com/russross/blackfriday-tool" # markdown
+# packages="$packages github.com/sanathp/statusok" # http status monitoring
+# packages="$packages github.com/sanbornm/mp" # email to json `cat path/to/email | mp`
+# packages="$packages github.com/schachmat/wego" # weather
+# packages="$packages github.com/shurcooL/markdownfmt" # like gofmt, but for markdown (used by emacs)
+# packages="$packages github.com/sourcegraph/checkup/cmd/checkup" # health checks a-la pingdom
+# packages="$packages github.com/tomnomnom/gron" # greppable json (query) `gron "https://api.github.com/repos/tomnomnom/gron/commits?per_page=1" | fgrep "commit.author"`
+# packages="$packages github.com/uber-common/cpustat" # top alternative
+# packages="$packages github.com/variadico/noti/cmd/noti" # notification when a process completes
+# packages="$packages github.com/yudai/gotty" # share terminal in web browser <https://github.com/yudai/gotty>
+# packages="$packages github.com/zquestz/s" # open default browser and web search
+# packages="$packages github.com/zyedidia/micro/..." # nano alternative, text editor `micro` (compilation error(
+# packages="$packages golang.org/x/tools/cmd/godoc" # documentation
+# packages="$packages github.com/StackExchange/dnscontrol" # dns dsl and cli for bind, cloudflare and so on (error: build github.com/StackExchange/dnscontrol: cannot load github.com/hexonet/go-sdk/client: module github.com/hexonet/go-sdk@latest found (v2.3.0+incompatible), but does not contain package github.com/hexonet/go-sdk/client)
+# packages="$packages github.com/constabulary/gb/..." # best package manager?
+# packages="$packages github.com/jpillora/cloud-torrent" # bit torrent client with localhost web gui interface (error: ../../../go/pkg/mod/github.com/jpillora/cloud-torrent@v0.0.0-20180427161701-1a741e3d8dd2/engine/engine.go:43:8: undefined: torrent.Config)
+# packages="$packages github.com/codesenberg/bombardier" # a-la ab apach benchmark `bombardier http://example.org` (error: ../../../go/pkg/mod/github.com/codesenberg/bombardier@v1.2.4/bombardier.go:73:8: b.bar.ShowSpeed undefined (type *pb.ProgressBar has no field or method ShowSpeed))
+# packages="$packages github.com/knq/usql" # sql client for postgresql, mysql, sqlite, oracle and microsoft sql server
+# packages="$packages honnef.co/go/tools/cmd/megacheck" # used by emacs flycheck
+# packages="$packages honnef.co/go/tools/cmd/unused" # checks Go code for unused constants, variables, functions and types
 
-function install {
-    install_command="go get"
+packages="$packages github.com/BurntSushi/toml/cmd/tomlv@v0.3.1" # toml validator (error: build github.com/constabulary/gb/cmd/gb: cannot load github.com/constabulary/gb/internal/vendor: module github.com/constabulary/gb@latest found (v0.4.4), but does not contain package github.com/constabulary/gb/internal/vendor)
+packages="$packages github.com/Clever/csvlint/cmd/csvlint@v0.2.0" # csv lint
+packages="$packages github.com/boyter/scc@v2.12.0" # a-la sloc/cloc
+packages="$packages github.com/cloudflare/cloudflare-go/cmd/flarectl@v0.12.0" # cloudflare cli `CF_API_EMAIL=your.name@example.org CF_API_KEY=your_api_key flarectl zone dns example.org`
+packages="$packages github.com/cortesi/devd/cmd/devd@v0.0.0-20200427000907-c1a3bfba27d8" # local http/webserver for developers `devd --address=0.0.0.0 --livewatch ./`
+packages="$packages github.com/dachad/tcpgoon@v0.0.0-20200511183141-945d9f576acb" # tcp concurrent connections benchmark
+packages="$packages github.com/danil/plainstatus/examples/plainstatus1@1f0a4b2b33a3" # a-la slstatus
+packages="$packages github.com/danil/plainstatus/examples/plainstatus2@1f0a4b2b33a3" # a-la slstatus
+packages="$packages github.com/davecheney/httpstat@v1.0.0" # http statistics (a-la curl --head)
+packages="$packages github.com/fd0/machma@v0.0.0-20180831184041-8cc009340f18" # parallel cli task execution with each command progress
+packages="$packages github.com/github/hub@v2.11.2" # github helper <https://github.com/github/hub>
+packages="$packages github.com/go-swagger/go-swagger/cmd/swagger@v0.23.0" # swagger cli validator `swagger validate http://example.org/path/to/swagger.json`
+packages="$packages github.com/godoctor/godoctor@v0.0.0-20181123222458-69df17f3a6f6" # used by emacs for variables reanming
+packages="$packages github.com/gokcehan/lf@v0.0.0-20200611011140-0e3910652af9" # file manager for the cli/command line/terminal a-la mc (midnight commander)
+packages="$packages github.com/golangci/golangci-lint/cmd/golangci-lint@v1.26.0" # used by emacs a-la gometalinter
+packages="$packages github.com/google/wire/cmd/wire@v0.4.0" # compile/static/generate dj (dependency injection)
+packages="$packages github.com/jgrahamc/httpdiff@v1.0.0" # diff http requests <https://github.com/jgrahamc/httpdiff>
+packages="$packages github.com/justjanne/powerline-go@v1.17.0" # a powerline style prompt for shell
+packages="$packages github.com/kr/pretty@v0.2.0" # pretty-printing for go values
+packages="$packages github.com/mailhog/MailHog@v1.0.0" # smtp mail consumer a-la ruby mailcatcher: `MailHog`
+packages="$packages github.com/mattes/migrate/cli@v3.0.1" # database migrations cli
+packages="$packages github.com/monochromegane/the_platinum_searcher/cmd/pt@v2.2.0" # ag and ack replacement <https://github.com/monochromegane/the_platinum_searcher>
+packages="$packages github.com/nsf/gocode@v0.0.0-20190302080247-5bee97b48836" # used by emacs auto complete
+packages="$packages github.com/rakyll/hey@v0.1.3" # http load generator (a-la ab apach benchmark)
+packages="$packages github.com/rlmcpherson/s3gof3r/gof3r@v0.5.0" # s3 (amazon aws) client
+packages="$packages github.com/rogpeppe/godef@v1.1.2" # used by emacs for jump to the definition of the expression at point
+packages="$packages github.com/simeji/jid/cmd/jid@v0.7.6" # interactive jq
+packages="$packages github.com/svent/sift@v0.9.0" # print lines matching a regexp a-la grep or ag
+packages="$packages github.com/tigrawap/goader@v1.4.2" # s3/http/disk benchmark (a-la ab apach benchmark)
+packages="$packages github.com/wallix/awless@v0.1.11" # aws client
+packages="$packages golang.org/dl/gotip@v0.0.0-20200611200201-72429b14455f" # compiles and runs the go command from the development tree <https://godoc.org/golang.org/dl/gotip>
+packages="$packages golang.org/x/tools/cmd/goimports@v0.0.0-20200612220849-54c614fe050c" # used by emacs as `gofmt` command replacement for adding/removing golang import lines
+packages="$packages golang.org/x/tools/cmd/gorename@v0.0.0-20200612220849-54c614fe050c"
+packages="$packages golang.org/x/tools/cmd/guru@v0.0.0-20200612220849-54c614fe050c" # used by emacs
+packages="$packages golang.org/x/tools/gopls@v0.4.1" # golang lsp (language server protocol) or GO111MODULE=on go get golang.org/x/tools/gopls@latest
 
-    [[ $update -eq 1 ]] && install_command="$install_command -u"
-
-    [[ $verbose -eq 1 ]] && install_command="$install_command -v"
-
-    # # Gometalinter.
-    # # Concurrently run golang lint tools and normalise their output
-    # # <https://github.com/alecthomas/gometalinter>.
-    # # $install_command gopkg.in/alecthomas/gometalinter.v1 || exit 1
-    # $install_command github.com/alecthomas/gometalinter || exit 1
-    # gometalinter --install || exit 1
-    # packages="$packages github.com/GoASTScanner/gas" # inspects go source code for security problems
-    # packages="$packages github.com/client9/misspell/cmd/misspell" # find misspelled words (typos) in source files
-    # packages="$packages github.com/fzipp/gocyclo" # calculate cyclomatic complexities of functions in go source code according to the following rules: 1 is the base complexity of a function +1 for each 'if', 'for', 'case', '&&' or '||'
-    # packages="$packages github.com/golang/lint/golint" # used by emacs flycheck `golint -set_exit_status ./...`
-    # packages="$packages github.com/gordonklaus/ineffassign" # detect ineffectual assignments in go code
-    # packages="$packages github.com/jgautheron/goconst/cmd/goconst"
-    # packages="$packages github.com/kisielk/errcheck" # used by emacs flycheck `errcheck -verbose -asserts ./...`
-    # packages="$packages github.com/mdempsky/unconvert" # identify unnecessary type conversions (i.e. expressions T(x) where x already has type T) `unconvert -v .`
-    # packages="$packages github.com/mibk/dupl"
-    # packages="$packages mvdan.cc/interfacer" # suggests interface types (foo.go:10:19: f can be io.Reader)
-    # packages="$packages github.com/walle/lll/..."
-    # packages="$packages golang.org/x/tools/cmd/gotype"
-    # packages="$packages honnef.co/go/tools/cmd/gosimple"
-    # packages="$packages honnef.co/go/tools/cmd/staticcheck"
-    # packages="$packages honnef.co/go/tools/cmd/unused"
-
-    # packages="$packages github.com/crufter/borg" # terminal based search engine for bash commands `borg "list all files in dir"`
-    # packages="$packages github.com/danil/ptichka" # fetch tweets and send by SMTP (twitter client)
-    # packages="$packages github.com/digitalocean/doctl/cmd/doctl" # digitalocean command line tool (error while getting: fatal: no submodule mapping found in .gitmodules for path 'vendor/github.com/vektra/errors')
-    # packages="$packages github.com/golang-migrate/migrate/cli" # database migrations cli (compilation error: github.com/kshvakov/clickhouse: github.com/kshvakov/clickhouse@v1.3.12: parsing go.mod: module declares its path as: github.com/ClickHouse/clickhouse-go but was required as: github.com/kshvakov/clickhouse)
-    # packages="$packages github.com/gravitational/teleconsole" # a-la ssh behind vpn (for example use whith tmux) compilation error(
-    # packages="$packages github.com/ichinaski/pxl" # display images in the terminal (freeze terminal)
-    # packages="$packages github.com/jasonmoo/smlr" # jpeg encoder
-    # packages="$packages github.com/jingweno/ccat" # colorizing cat <https://github.com/jingweno/ccat>
-    # packages="$packages github.com/kahing/goofys" # mount s3 (amazon aws) file system (error while getting: fatal: git pull --ff-only You are not currently on a branch. Please specify which branch you want to merge with)
-    # packages="$packages github.com/laurent22/massren" # rename multiple files using text editor <https://github.com/laurent22/massren>
-    # packages="$packages github.com/lukasmartinelli/pgfutter" # import csv and json into postgresql
-    # packages="$packages github.com/maruel/panicparse/cmd/pp" #  pipe stderr and format like that: `go run buggy.go |&pp`
-    # packages="$packages github.com/ncw/rclone" # rsync for s3, dropbox, google drive cloud storage (error <https://github.com/ncw/rclone/pull/665>)
-    # packages="$packages github.com/noraesae/orange-cat/cmd/orange" # markdown preview
-    # packages="$packages github.com/rapidloop/rtop" # remote top over ssh
-    # packages="$packages github.com/reconquest/orgalorg" # parallel ssh commands and file synchronization
-    # packages="$packages github.com/russross/blackfriday-tool" # markdown
-    # packages="$packages github.com/sanathp/statusok" # http status monitoring
-    # packages="$packages github.com/sanbornm/mp" # email to json `cat path/to/email | mp`
-    # packages="$packages github.com/schachmat/wego" # weather
-    # packages="$packages github.com/shurcooL/markdownfmt" # like gofmt, but for markdown (used by emacs)
-    # packages="$packages github.com/sourcegraph/checkup/cmd/checkup" # health checks a-la pingdom
-    # packages="$packages github.com/tomnomnom/gron" # greppable json (query) `gron "https://api.github.com/repos/tomnomnom/gron/commits?per_page=1" | fgrep "commit.author"`
-    # packages="$packages github.com/uber-common/cpustat" # top alternative
-    # packages="$packages github.com/variadico/noti/cmd/noti" # notification when a process completes
-    # packages="$packages github.com/yudai/gotty" # share terminal in web browser <https://github.com/yudai/gotty>
-    # packages="$packages github.com/zquestz/s" # open default browser and web search
-    # packages="$packages github.com/zyedidia/micro/..." # nano alternative, text editor `micro` (compilation error(
-    # packages="$packages golang.org/x/tools/cmd/godoc" # documentation
-    # packages="$packages github.com/StackExchange/dnscontrol" # dns dsl and cli for bind, cloudflare and so on (error: build github.com/StackExchange/dnscontrol: cannot load github.com/hexonet/go-sdk/client: module github.com/hexonet/go-sdk@latest found (v2.3.0+incompatible), but does not contain package github.com/hexonet/go-sdk/client)
-    # packages="$packages github.com/constabulary/gb/..." # best package manager?
-    # packages="$packages github.com/jpillora/cloud-torrent" # bit torrent client with localhost web gui interface (error: ../../../go/pkg/mod/github.com/jpillora/cloud-torrent@v0.0.0-20180427161701-1a741e3d8dd2/engine/engine.go:43:8: undefined: torrent.Config)
-    # packages="$packages github.com/codesenberg/bombardier" # a-la ab apach benchmark `bombardier http://example.org` (error: ../../../go/pkg/mod/github.com/codesenberg/bombardier@v1.2.4/bombardier.go:73:8: b.bar.ShowSpeed undefined (type *pb.ProgressBar has no field or method ShowSpeed))
-    # packages="$packages github.com/golang/dep/cmd/dep" # golang dependency management official tool (a-la gems or eggs) (error: ../../../go/pkg/mod/github.com/golang/dep@v0.5.4/gps/constraint.go:149:4: undefined: semver.Constraint)
-    packages="$packages github.com/BurntSushi/toml/cmd/tomlv" # toml validator (error: build github.com/constabulary/gb/cmd/gb: cannot load github.com/constabulary/gb/internal/vendor: module github.com/constabulary/gb@latest found (v0.4.4), but does not contain package github.com/constabulary/gb/internal/vendor)
-    packages="$packages github.com/Clever/csvlint" # csv lint
-    packages="$packages github.com/boyter/scc" # a-la sloc/cloc
-    packages="$packages github.com/cloudflare/cloudflare-go/cmd/flarectl" # cloudflare cli `CF_API_EMAIL=your.name@example.org CF_API_KEY=your_api_key flarectl zone dns example.org`
-    packages="$packages github.com/cortesi/devd/cmd/devd" # local http/webserver for developers `devd --address=0.0.0.0 --livewatch ./`
-    packages="$packages github.com/dachad/tcpgoon" # tcp concurrent connections benchmark
-    packages="$packages github.com/danil/plainstatus/examples/plainstatus1@1f0a4b2b33a3" # a-la slstatus
-    packages="$packages github.com/danil/plainstatus/examples/plainstatus2@1f0a4b2b33a3" # a-la slstatus
-    packages="$packages github.com/davecheney/httpstat" # http statistics (a-la curl --head)
-    packages="$packages github.com/fd0/machma" # parallel cli task execution with each command progress
-    packages="$packages github.com/github/hub" # github helper <https://github.com/github/hub>
-    packages="$packages github.com/go-swagger/go-swagger/cmd/swagger" # swagger cli validator `swagger validate http://example.org/path/to/swagger.json`
-    packages="$packages github.com/godoctor/godoctor" # used by emacs for variables reanming
-    packages="$packages github.com/gokcehan/lf" # file manager for the cli/command line/terminal a-la mc (midnight commander)
-    packages="$packages github.com/golangci/golangci-lint/cmd/golangci-lint@v1.26.0" # used by emacs a-la gometalinter
-    packages="$packages github.com/google/wire/cmd/wire@v0.4.0" # compile/static/generate dj (dependency injection)
-    packages="$packages github.com/jgrahamc/httpdiff" # diff http requests <https://github.com/jgrahamc/httpdiff>
-    packages="$packages github.com/justjanne/powerline-go" # a powerline style prompt for shell
-    packages="$packages github.com/kr/pretty" # pretty-printing for go values
-    packages="$packages github.com/mailhog/MailHog" # smtp mail consumer a-la ruby mailcatcher: `MailHog`
-    packages="$packages github.com/mattes/migrate/cli" # database migrations cli
-    packages="$packages github.com/monochromegane/the_platinum_searcher/..." # ag and ack replacement <https://github.com/monochromegane/the_platinum_searcher>
-    packages="$packages github.com/nsf/gocode" # used by emacs auto complete
-    packages="$packages github.com/rakyll/hey" # http load generator (a-la ab apach benchmark)
-    packages="$packages github.com/rlmcpherson/s3gof3r/gof3r" # s3 (amazon aws) client
-    packages="$packages github.com/rogpeppe/godef" # used by emacs for jump to the definition of the expression at point
-    packages="$packages github.com/simeji/jid/cmd/jid" # interactive jq
-    packages="$packages github.com/svent/sift" # print lines matching a regexp a-la grep or ag
-    packages="$packages github.com/tigrawap/goader" # s3/http/disk benchmark (a-la ab apach benchmark)
-    packages="$packages github.com/wallix/awless" # aws client
-    packages="$packages golang.org/dl/gotip" # compiles and runs the go command from the development tree <https://godoc.org/golang.org/dl/gotip>
-    packages="$packages golang.org/x/tools/cmd/goimports" # used by emacs as `gofmt` command replacement for adding/removing golang import lines
-    packages="$packages golang.org/x/tools/cmd/gorename"
-    packages="$packages golang.org/x/tools/cmd/guru" # used by emacs
-    packages="$packages golang.org/x/tools/gopls" # golang lsp (language server protocol) or GO111MODULE=on go get golang.org/x/tools/gopls@latest
-
-    # packages="$packages github.com/knq/usql" # sql client for postgresql, mysql, sqlite, oracle and microsoft sql server
-    # packages="$packages honnef.co/go/tools/cmd/megacheck" # used by emacs flycheck
-    # packages="$packages honnef.co/go/tools/cmd/unused" # checks Go code for unused constants, variables, functions and types
-
-    GO111MODULE=on $install_command $packages || exit 1
-}
-
-function uninstall {
-    if [ -z "$GOPATH" ]; then
-        echo 'fatal: $GOPATH not set'
-        exit 1
-    fi
-
-    rm --force "$GOPATH"/bin/*
-    rm --recursive --force "$GOPATH"/pkg/*
-    for i in "$GOPATH"/src/*; do
-        for j in "$i"/*; do
-            case $j in
-                */github.com/danil) continue ;;
-                */bitbucket.org/armor5games) continue ;;
-            esac
-
-            rm --recursive --force "$j"
-        done
-    done
-    find "$GOPATH"/src -type d -empty -delete #remove empy directories
-}
-
-count=0
-[[ $uninstall -eq 1 ]] && count=$((count+1)) && uninstall
-[[ $install -eq 1 ]] && count=$((count+1)) && install
-
-if [[ ${count} -lt 1 ]]; then
-    printf "usage: go-packages [--install] [--uninstall] [--update] [--verbose]\n"
-fi
+GO111MODULE=on go get -v $packages || exit 1
