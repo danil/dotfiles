@@ -41,7 +41,7 @@ packages="$packages sysstat"
 packages="$packages vim"
 packages="$packages whois"
 
-# Compile and so on.
+# Compile/make and so on.
 # packages="$packages base-devel" # package group required to build PKGBUILD package from aur (arch user repository)
 packages="$packages autoconf"
 packages="$packages automake"
