@@ -1,7 +1,7 @@
 #!/bin/bash
 
-export install=${install:--1}
-export depclean=${depclean:--1}
+install=${install:--1}
+depclean=${depclean:--1}
 
 while [ $# -gt 0 ]; do
     case "$1" in
@@ -23,7 +23,6 @@ done
 # Systme packages.
 packages="$packages base"
 packages="$packages curl"
-packages="$packages e2fsprogs"
 packages="$packages grub"
 packages="$packages haveged"
 packages="$packages inetutils"
@@ -70,7 +69,7 @@ packages="$packages texinfo"
 packages="$packages which"
 
 # Common user space packages.
-packages="$packages bc" # used by bash prompt, console-based calculator utility
+packages="$packages bc" # extra/bc: used by bash prompt, console-based calculator utility
 packages="$packages emacs-nox" # community/emacs-nox
 packages="$packages git" # extra/git
 packages="$packages htop" # extra/htop
@@ -93,18 +92,14 @@ packages="$packages go" # community/go
 # Kubernetes/k8s.
 packages="$packages docker" # community/docker
 packages="$packages kubectl" # community/kubectl
-# packages_aur="$packages_aur kubeadm-bin" # aur/kubeadm-bin
-# packages_aur="$packages_aur kubelet-bin" # aur/kubelet-bin
+# packages="$packages kubeadm-bin" # aur/kubeadm-bin
+# packages="$packages kubelet-bin" # aur/kubelet-bin
 
 packages=$(echo $packages | tr " " "\n" | sort | tr "\n" " ")
 
 count=0
 # <https://wiki.archlinux.org/index.php/Pacman/Tips_and_tricks#Install_packages_from_a_list>.
-[[ $depclean -eq 1 ]] && count=$((count+1)) && pacman --remove --recursive --unneeded --verbose $(comm -23 <(pacman --query --quiet | sort) <(echo "$packages yay" | tr " " "\n" | sort))
+[[ $depclean -eq 1 ]] && count=$((count+1)) && pacman --remove --recursive --unneeded --verbose $(comm -23 <(pacman --query --quiet | sort) <(echo $packages | tr " " "\n" | sort))
 [[ $install -eq 1 ]] && count=$((count+1)) && pacman --sync --needed --verbose $packages
 
-# install_aur_command="yay --aur --sync --noprovides --noconfirm --verbose"
-
-if [[ ${count} -lt 1 ]]; then
-    printf "usage: pacman-packages [--install] [--depclean]\n"
-fi
+[[ ${count} -lt 1 ]] && printf "usage: pacman-packages [--install] [--depclean]\n"
