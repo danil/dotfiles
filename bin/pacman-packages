@@ -45,17 +45,13 @@ packages="$packages whois"
 # packages="$packages base-devel" # package group required to build PKGBUILD package from aur (arch user repository)
 packages="$packages autoconf"
 packages="$packages automake"
-packages="$packages binutils"
 packages="$packages bison"
 packages="$packages fakeroot"
 packages="$packages flex"
 packages="$packages gcc"
-packages="$packages libtool"
-packages="$packages m4"
 packages="$packages make"
 packages="$packages patch"
 packages="$packages pkgconf"
-packages="$packages texinfo"
 packages="$packages which"
 
 # Common user space packages.
