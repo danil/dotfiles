@@ -1,4 +1,4 @@
-Layout/AlignHash:
+Layout/HashAlignment:
   Enabled: false
 Layout/EmptyLineAfterGuardClause:
   Enabled: false
@@ -24,7 +24,7 @@ Naming/AccessorMethodName:
   Enabled: false
 Naming/HeredocDelimiterNaming:
   Enabled: false
-Naming/UncommunicativeMethodParamName:
+Naming/MethodParameterName:
   Enabled: false
 Style/Encoding:
   Enabled: false
