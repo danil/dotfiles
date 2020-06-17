@@ -10,7 +10,8 @@ export LC_ALL=en_US.UTF-8
 [[ -f /etc/profile.d/bash-completion.sh ]] && source /etc/profile.d/bash-completion.sh
 
 # Disable the XOFF (Ctrl-s) keystroke
-# <http://superuser.com/questions/124845/can-you-disable-the-ctrl-s-xoff-keystroke-in-putty#155875>.
+# <http://superuser.com/questions/124845/can-you-disable-the-ctrl-s-xoff-keystroke-in-putty#155875>,
+# <https://wiki.archlinux.org/index.php/Readline#History>.
 stty -ixon
 
 export EDITOR="vim" #export EDITOR="vim" #export EDITOR="/usr/bin/emacsclient -t"
@@ -34,7 +35,6 @@ alias ll='ls -l --all --human-readable'
 alias e='emacs --no-window-system'
 alias ec='emacsclient --tty'
 alias ag='ag --width=5000'
-alias sloc='scc'
 
 export PATH="$HOME"/bin:"$PATH" #clib is an C package manager <https://github.com/clibs/clib> run `c-install-all`
 export PATH="$HOME"/sbin:"$PATH"
