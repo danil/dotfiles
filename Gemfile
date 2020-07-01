@@ -7,7 +7,7 @@ group :development do
   # gem 'travis' # installation fail
   # gem 'csvlint' # ruby slower than go; validate csv a-la: `csvlint path/to/file.csv` # path/to/file.csv is VALID
   gem 'activesupport' # replaces non-ascii characters with an ascii approximation <http://api.rubyonrails.org/classes/ActiveSupport/Inflector.html#method-i-transliterate>
-  gem 'awesome_print' # nice highlighting/indentation in ruby console <https://github.com/michaeldv/awesome_print>
+  gem 'amazing_print' # a-la awesome_print pretty printing/highlighting/indentation in ruby stdout/console <https://github.com/amazing-print/amazing_print>
   gem 'backup' # backup system utility
   gem 'brakeman' # static security vulnerability scanner for rails <http://brakemanscanner.org>, <https://github.com/presidentbeef/brakeman>
   gem 'fasterer' # linter suggests faster realisation of the same functionality
