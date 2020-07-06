@@ -73,6 +73,7 @@ packages="$packages github.com/github/hub@v2.11.2" # github helper <https://gith
 packages="$packages github.com/go-swagger/go-swagger/cmd/swagger@v0.23.0" # swagger cli validator `swagger validate http://example.org/path/to/swagger.json`
 packages="$packages github.com/godoctor/godoctor@v0.0.0-20181123222458-69df17f3a6f6" # used by emacs for variables reanming
 packages="$packages github.com/gokcehan/lf@v0.0.0-20200611011140-0e3910652af9" # file manager for the cli/command line/terminal a-la mc (midnight commander)
+packages="$packages github.com/golang/protobuf/protoc-gen-go@v1.4.2" # protoc dependency, required for protobuf go compilation
 packages="$packages github.com/golangci/golangci-lint/cmd/golangci-lint@v1.26.0" # used by emacs a-la gometalinter
 packages="$packages github.com/google/wire/cmd/wire@v0.4.0" # compile/static/generate dj (dependency injection)
 packages="$packages github.com/jgrahamc/httpdiff@v1.0.0" # diff http requests <https://github.com/jgrahamc/httpdiff>
