@@ -186,6 +186,6 @@ PS1+='${ps1_jobs}'
 PS1+="${ps1_pwd}"
 PS1+="${ps1_magenta}"'$(__git_ps1 " %s")'
 PS1+="${ps1_white}"
-PS1+=" \D{%H:%M:%S%Z}"
+PS1+=" \D{%d-%b-%Y %H:%M:%S%Z}"
 PS1+="\n"
 PS1+="${ps1_cyan}\$${ps1_plain} "
