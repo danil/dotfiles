@@ -61,8 +61,10 @@ packages="$packages git" # extra/git
 packages="$packages htop" # extra/htop
 packages="$packages mlocate" # core/mlocate
 packages="$packages mosh" # ssh replacement
+packages="$packages pigz" # parallel gzip for multi-processor, multi-core
 packages="$packages pkgfile" # extra/pkgfile: searching files from packages in the official repositories
 packages="$packages tmux" # community/tmux
+packages="$packages zstd" # a-la gz/xz compression
 
 # Arch.
 packages="$packages namcap" # extra/namcap: analysis utility that checks binary packages and source PKGBUILDs for common mistakes <https://wiki.archlinux.org/index.php/Namcap>
