@@ -26,6 +26,7 @@ install="$install postgresql-server-dev-9.6" # required by pg_activity is an pos
 install="$install pwgen" # password generator
 install="$install syncthing" # dropbox replacement: deb https://apt.syncthing.net/ syncthing release
 install="$install tree" # displays an indented directory tree
+install="$install uni2ascii" # to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`
 install="$install uswsusp" # systemctl hibernate
 install="$install whois"
 install="$install zstd" # a-la gz/xz compression
