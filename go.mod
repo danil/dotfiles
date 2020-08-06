@@ -22,6 +22,7 @@ require (
 	github.com/go-swagger/go-swagger v0.23.0 // indirect
 	github.com/godoctor/godoctor v0.0.0-20181123222458-69df17f3a6f6 // indirect
 	github.com/gokcehan/lf v0.0.0-20200611011140-0e3910652af9 // indirect
+	github.com/golang/protobuf v1.4.2 // indirect
 	github.com/golangci/golangci-lint v1.26.0 // indirect
 	github.com/google/go-github v17.0.0+incompatible // indirect
 	github.com/google/go-querystring v1.0.0 // indirect
@@ -36,6 +37,7 @@ require (
 	github.com/jgrahamc/httpdiff v1.0.0 // indirect
 	github.com/justjanne/powerline-go v1.17.0 // indirect
 	github.com/kballard/go-shellquote v0.0.0-20180428030007-95032a82bc51 // indirect
+	github.com/kyleconroy/sqlc v1.5.0 // indirect
 	github.com/mailhog/MailHog v1.0.0 // indirect
 	github.com/mailhog/MailHog-Server v1.0.0 // indirect
 	github.com/mailhog/MailHog-UI v1.0.0 // indirect
@@ -60,6 +62,7 @@ require (
 	github.com/rlmcpherson/s3gof3r v0.5.0 // indirect
 	github.com/rogpeppe/godef v1.1.2 // indirect
 	github.com/shiena/ansicolor v0.0.0-20151119151921-a422bbe96644 // indirect
+	github.com/sideshow/apns2 v0.20.0 // indirect
 	github.com/simeji/jid v0.7.6 // indirect
 	github.com/svent/go-flags v0.0.0-20141123140740-4bcbad344f03 // indirect
 	github.com/svent/go-nbreader v0.0.0-20150201200112-7cef48da76dc // indirect
