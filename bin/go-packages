@@ -79,6 +79,7 @@ packages="$packages github.com/google/wire/cmd/wire@v0.4.0" # compile/static/gen
 packages="$packages github.com/jgrahamc/httpdiff@v1.0.0" # diff http requests <https://github.com/jgrahamc/httpdiff>
 packages="$packages github.com/justjanne/powerline-go@v1.17.0" # a powerline style prompt for shell
 packages="$packages github.com/kr/pretty@v0.2.0" # pretty-printing for go values
+packages="$packages github.com/kyleconroy/sqlc/cmd/sqlc@v1.5.0" # generate type safe go from sql
 packages="$packages github.com/mailhog/MailHog@v1.0.0" # smtp mail consumer a-la ruby mailcatcher: `MailHog`
 packages="$packages github.com/mattes/migrate/cli@v3.0.1" # database migrations cli
 packages="$packages github.com/monochromegane/the_platinum_searcher/cmd/pt@v2.2.0" # ag and ack replacement <https://github.com/monochromegane/the_platinum_searcher>
@@ -95,6 +96,5 @@ packages="$packages golang.org/x/tools/cmd/goimports@v0.0.0-20200612220849-54c61
 packages="$packages golang.org/x/tools/cmd/gorename@v0.0.0-20200612220849-54c614fe050c"
 packages="$packages golang.org/x/tools/cmd/guru@v0.0.0-20200612220849-54c614fe050c" # used by emacs
 packages="$packages golang.org/x/tools/gopls@v0.4.1" # golang lsp (language server protocol) or GO111MODULE=on go get golang.org/x/tools/gopls@latest
-packages="$packages github.com/kyleconroy/sqlc/cmd/sqlc@v1.5.0" # generate type safe go from sql
 
 GO111MODULE=on go get -v $packages || exit 1
