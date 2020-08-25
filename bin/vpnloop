@@ -1,0 +1,36 @@
+#! /bin/bash
+
+set -e
+
+while [ $# -gt 0 ]; do
+    case "$1" in
+        --host=*)
+            host="${1#*=}"
+            ;;
+        --user=*)
+            user="${1#*=}"
+            ;;
+        *)
+            (>&2 echo 'Invalid argument')
+            exit 1
+    esac
+    shift
+done
+
+usage="Usage: vpnloop"
+usage="$usage --host=\"your.domain.tld\""
+usage="$usage --user=\"your_user\""
+
+[ -z "$host" ] || [ "$host" = "" ] && (>&2 echo "$usage")  && exit 1
+[ -z "$user" ] || [ "$user" = "" ] && (>&2 echo "$usage") && exit 1
+
+while true
+do
+    killall openconnect || true
+    openconnect $host \
+                --protocol=gp \
+                --user=$user \
+                --reconnect-timeout=0 \
+                --passwd-on-stdin < ~/.openconnect
+    sleep 60
+done
