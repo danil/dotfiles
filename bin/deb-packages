@@ -147,11 +147,13 @@ install="$install xautolock" # used by i3lock
 install="$install xxkb" # keyboard/language layout indicator (flag) for tray
 
 # Gnome.
+remove="$remove evince" # pdf viewer not remembers last page(
 remove="$remove gnome-shell-extension-appindicator"
 remove="$remove gnome-shell-extension-ubuntu-dock"
 remove="$remove ubuntu-desktop"
 # install="$install gnome-shell-extension-move-clock" # move clock extension for GNOME shell
 # install="$install ubuntu-communitheme-session" # yaru community theme <https://github.com/ubuntu/yaru>, <https://itsfoss.com/ubuntu-community-theme>.
+install="$install atril" # pdf viewer remembers last page https://github.com/mate-desktop/atril
 install="$install chrome-gnome-shell" # chrome/gnome extension integration
 install="$install gnome-shell-extension-impatience" # speed up the gnome-shell animation speed
 install="$install gnome-tweak-tool"
