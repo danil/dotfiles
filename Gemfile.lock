@@ -70,7 +70,7 @@ GEM
     brakeman (4.8.2)
     buftok (0.2.0)
     builder (3.2.4)
-    code_analyzer (0.5.1)
+    code_analyzer (0.5.2)
       sexp_processor
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
@@ -110,6 +110,7 @@ GEM
     geokit (1.13.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    grpc-tools (1.32.0)
     haml (5.1.2)
       temple (>= 0.8.0)
       tilt
@@ -198,7 +199,7 @@ GEM
     mixlib-config (3.0.6)
       tomlrb
     msgpack (1.3.3)
-    multi_json (1.14.1)
+    multi_json (1.15.0)
     multipart-post (2.1.1)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
@@ -207,7 +208,7 @@ GEM
       msgpack (~> 1.1)
       multi_json (~> 1.0)
     nio4r (2.5.2)
-    nokogiri (1.10.9)
+    nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
     oauth (0.5.4)
     oj (3.10.6)
@@ -278,13 +279,13 @@ GEM
     roodi (5.0.0)
       ruby_parser (~> 3.2, >= 3.2.2)
     rouge (3.20.0)
-    rubocop (0.86.0)
+    rubocop (0.87.1)
       parallel (~> 1.10)
-      parser (>= 2.7.0.1)
+      parser (>= 2.7.1.1)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 1.7)
       rexml
-      rubocop-ast (>= 0.0.3, < 1.0)
+      rubocop-ast (>= 0.1.0, < 1.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 2.0)
     rubocop-ast (0.1.0)
@@ -403,7 +404,7 @@ GEM
       coercible (~> 1.0)
       descendants_tracker (~> 0.0, >= 0.0.3)
       equalizer (~> 0.0, >= 0.0.9)
-    websocket-driver (0.7.2)
+    websocket-driver (0.7.3)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
     zeitwerk (2.3.1)
@@ -419,6 +420,7 @@ DEPENDENCIES
   fasterer
   flay
   gem-ripper-tags
+  grpc-tools
   html2slim
   htty
   jekyll

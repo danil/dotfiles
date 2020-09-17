@@ -13,6 +13,7 @@ group :development do
   gem 'fasterer' # linter suggests faster realisation of the same functionality
   gem 'flay' # find code structural similarities `flay path/to/source` <https://github.com/seattlerb/flay>
   gem 'gem-ripper-tags' # ctags
+  gem 'grpc-tools'
   gem 'html2slim'
   gem 'htty' # http statefull interactive client (a-la ftp client)
   gem 'jekyll' # static blog <https://github.com/jekyll/jekyll>
