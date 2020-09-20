@@ -54,6 +54,7 @@ export DEBEMAIL="danil@kutkevich.org"
 export GOPATH="$HOME"/go
 export PATH="$PATH":/usr/lib/go-1.12/bin #ubuntu go 12
 export PATH="$PATH":"$GOPATH"/bin #for convenience, add the workspace's bin subdirectory to your PATH
+# export PATH="$PATH:$(go env GOPATH)/bin"
 # [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm" #gvm (Go version manager) <https://github.com/moovweb/gvm>
 
 # rbenv <https://github.com/sstephenson/rbenv#basic-github-checkout>.
