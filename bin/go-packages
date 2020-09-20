@@ -98,8 +98,8 @@ packages="$packages golang.org/x/tools/cmd/guru@v0.0.0-20200612220849-54c614fe05
 packages="$packages golang.org/x/tools/gopls@v0.4.1" # golang lsp (language server protocol) or GO111MODULE=on go get golang.org/x/tools/gopls@latest
 
 # protobuf/protoc/grpc
-packages="$packages github.com/golang/protobuf/protoc-gen-go@v1.4.2" # protoc dependency, required for protobuf go compilation
 packages="$packages google.golang.org/grpc@v1.32.0" # protoc dependency, required for protobuf go compilation
-# packages="$packages google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest" # the v1.20 protoc-gen-go does not support generating grpc service definitions. In the future, grpc service generation will be supported by a new protoc-gen-go-grpc plugin provided by the go grpc project <https://github.com/protocolbuffers/protobuf-go/releases/tag/v1.20.0#v1.20-grpc-support>
+packages="$packages github.com/golang/protobuf/protoc-gen-go@v1.4.2" # protoc dependency, required for protobuf go compilation
+packages="$packages google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest" # the v1.20 protoc-gen-go does not support generating grpc service definitions. In the future, grpc service generation will be supported by a new protoc-gen-go-grpc plugin provided by the go grpc project <https://github.com/protocolbuffers/protobuf-go/releases/tag/v1.20.0#v1.20-grpc-support>
 
 GO111MODULE=on go get -v $packages || exit 1
