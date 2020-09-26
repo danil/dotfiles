@@ -101,5 +101,6 @@ packages="$packages golang.org/x/tools/gopls@v0.4.1" # golang lsp (language serv
 packages="$packages google.golang.org/grpc@v1.32.0" # the grpc explicit version fixes error: undefined grpc.SupportPackageIsVersion7 <https://stackoverflow.com/questions/63662787/undefined-grpc-supportpackageisversion7-grpc-serviceregistrar#comment112579010_63664342>
 packages="$packages github.com/golang/protobuf/protoc-gen-go@v1.4.2" # protoc dependency, required for protobuf go compilation
 packages="$packages google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest" # the v1.20 protoc-gen-go does not support generating grpc service definitions. grpc service generation supported by the protoc-gen-go-grpc plugin provided by the go grpc project <https://github.com/protocolbuffers/protobuf-go/releases/tag/v1.20.0#v1.20-grpc-support>
+packages="$packages github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway@v1.15.0" # the v1.20 protoc-gen-go does not support generating grpc service definitions. grpc service generation supported by the protoc-gen-go-grpc plugin provided by the go grpc project <https://github.com/protocolbuffers/protobuf-go/releases/tag/v1.20.0#v1.20-grpc-support>
 
 GO111MODULE=on go get -v $packages || exit 1
