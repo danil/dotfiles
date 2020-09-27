@@ -46,8 +46,8 @@ install="$install tmux" # operational system wide
 install="$install pkg-config libevent-dev libncurses-dev" # compiltime dependencies
 
 # Emacs.
-install="$install emacs26-el" # find/navigate elisp function source code <https://unix.stackexchange.com/questions/73100/how-to-attach-elisp-function-source-code-in-emacs>
-install="$install emacs26-nox"
+install="$install emacs27-el" # find/navigate elisp function source code <https://unix.stackexchange.com/questions/73100/how-to-attach-elisp-function-source-code-in-emacs>
+install="$install emacs27-nox"
 install="$install shellcheck" # used by emacs flycheck
 
 # The silver searcher (ag) <https://github.com/ggreer/the_silver_searcher>
