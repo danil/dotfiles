@@ -20,14 +20,23 @@
 # <http://stackoverflow.com/questions/7335420/global-git-ignore#7335487>.
 # Emacs eshell <https://hexmode.com/2016/05/making-git-and-emacs-eshell-work-together>.
 [core]
+  # Committing only a file's permissions
+  # <https://stackoverflow.com/questions/10516201/updating-and-committing-only-a-files-permissions-using-git-version-control#10516406>.
+  filemode = true
 	excludesfile = ~/.gitignore_global
 	editor = emacs
 	pager = `test \"$TERM\" = \"dumb\" && echo cat || echo less --IGNORE-CASE --LONG-PROMPT`
+[url "git@gitlab.rocketbank.sexy:backend/"]
+	insteadOf = https://gitlab.rocketbank.sexy/backend/
+[url "git@github.com:rrebellion/"]
+	insteadOf = https://github.com/rrebellion/
 # [url "git@gitlab.com:armor5games/"]
 # 	insteadOf = https://gitlab.com/armor5games/
 # [url "git@gitlab.rocketbank.sexy/"]
 # 	insteadOf = https://gitlab.rocketbank.sexy/
-[url "git@gitlab.rocketbank.sexy:pub/"]
-	insteadOf = https://gitlab.rocketbank.sexy/pub/
-[url "git@gitlab.rocketbank.sexy:backend/"]
-	insteadOf = https://gitlab.rocketbank.sexy/backend/
+# [url "git@gitlab.rocketbank.sexy:"]
+# 	insteadOf = https://gitlab.rocketbank.sexy/
+# [url "git@gitlab.rocketbank.sexy:pub/"]
+# 	insteadOf = https://gitlab.rocketbank.sexy/pub/
+# [url "git@github.com:rrebellion/spacegunmod/"]
+# 	insteadOf = https://gitlab.rocketbank.sexy/backend/random-values/spacegun/
