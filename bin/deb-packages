@@ -2,14 +2,18 @@
 remove_command="aptitude remove"
 install_command="aptitude install"
 
+# TODO: install ntp
+
 # Common packages.
 # install="$install jp2a" # converts jpg to ascii
 # install="$install makepasswd" # password generator
 # install="$install nginx"
 # install="$install protobuf-compiler" # version to old/outdated(
+install="$install apt-transport-https" # required by custom ppa
 install="$install bc" # used by bash prompt, console-based calculator utility
 install="$install curl"
 install="$install dos2unix" # convert text file line endings between CRLF and LF
+install="$install dropbox"
 install="$install genius" # calculator
 install="$install git"
 install="$install goaccess" # analyze nginx/apache log in real-time
@@ -17,6 +21,8 @@ install="$install hping3" # a-la interactive ping https://github.com/antirez/hpi
 install="$install htop"
 install="$install jq" # json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>
 install="$install lm-sensors" # FIXME: is the cpu temperate by ls sensors used by plain status or by slstatus?
+install="$install mkusb usb-pack-efi" # create bootable usb <https://help.ubuntu.com/community/mkusb#Quick_start_manual_and_mkusb_PPA>
+install="$install mlocate" # locate/updatedb
 install="$install mosh" # ssh replacement
 install="$install ncdu" # diskspace usage is an baobab and gt5 replacement
 install="$install neovim"
@@ -36,18 +42,23 @@ install="$install zstd" # a-la gz/xz compression
 
 # Compil.
 install="$install build-essential" # compiler?
-install="$install automake" # required by xchainkeys
+install="$install automake" # required by tmux/xchainkeys
 install="$install devscripts" # ???
 install="$install libx11-dev" # ???
 install="$install libxft-dev" # ???
+install="$install make" # required by all)
 
-# Tmux.
-install="$install tmux" # operational system wide
-install="$install pkg-config libevent-dev libncurses-dev" # compiltime dependencies
+# # Tmux install from source instead.
+# install="$install tmux" # operational system wide
+# install="$install pkg-config libevent-dev libncurses-dev" # compiltime dependencies
+
+# # Emacs 27 on Ubuntu 20.04 crashes all the time.
+# install="$install emacs27-el" # find/navigate elisp function source code <https://unix.stackexchange.com/questions/73100/how-to-attach-elisp-function-source-code-in-emacs>
+# install="$install emacs27-nox"
 
 # Emacs.
-install="$install emacs27-el" # find/navigate elisp function source code <https://unix.stackexchange.com/questions/73100/how-to-attach-elisp-function-source-code-in-emacs>
-install="$install emacs27-nox"
+install="$install emacs-el" # find/navigate elisp function source code <https://unix.stackexchange.com/questions/73100/how-to-attach-elisp-function-source-code-in-emacs>
+install="$install emacs-nox"
 install="$install shellcheck" # used by emacs flycheck
 
 # The silver searcher (ag) <https://github.com/ggreer/the_silver_searcher>
@@ -58,9 +69,8 @@ install="$install automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev" # com
 # install="$install pgcenter" # https://github.com/lesovsky/pgcenter/releases install: dpkg --install path/to/pgcenter.deb
 
 # Golang.
-# install="$install golang-race-detector-runtime" # FIXME: where is race detector for the go 1.13?
-# install="$install golang" # 1.14 not respects godef
-install="$install golang-1.13-doc golang-1.13-go golang-1.13-src"
+# install="$install golang-race-detector-runtime" # FIXME: where is race detector for the go 1.15?
+install="$install golang-1.15-doc golang-1.15-go golang-1.15-src"
 
 # Rust.
 # install="$install libgtk-3-dev" # required by fontfinder https://github.com/mmstick/fontfinder
@@ -76,7 +86,7 @@ install="$install libsqlite3-dev" # required by sqlite3 which required by mailca
 install="$install libssl-dev" # required by ruby 2.6.3 (libssl-dev conflicts with libssl1.0-dev)
 
 # Python.
-install="$install python-pip"
+# install="$install python-pip" # python 2 pip no longer supported by ubuntu
 install="$install python3-pip"
 
 # Nodejs/Javascript by nodesource.com's ppa
@@ -87,7 +97,6 @@ install="$install curl dirmngr apt-transport-https lsb-release ca-certificates" 
 
 # X11/xorg/desktop.
 # install="$install brave-browser" # a-la google chrome
-# install="$install dunst" # a-la notify-osd
 # install="$install font-manager" # list bitmap ??? fonts
 # install="$install fonts-noto" # awesome serif font ???
 # install="$install gimp" # a-la photoshop
@@ -96,17 +105,20 @@ install="$install curl dirmngr apt-transport-https lsb-release ca-certificates" 
 install="$install argyll" # load icc/icm display color profiles <https://wiki.archlinux.org/index.php/ICC_Profiles#Argyll_CMS>
 install="$install duplicity" # backuping
 install="$install firefox" # works normal with graylog's text box (input box), text field (input field)
-install="$install fonts-fantasque-sans" # terminal/code/mono/programming font
+install="$install fonts-fantasque-sans" # terminal/code/mono/programming font (gnome-terminal issue https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=960629)
 install="$install fonts-hack-ttf" # terminal/code/mono/programming font
 install="$install google-chrome-stable"
 install="$install libnotify-bin" # a-la notify-osd
+install="$install light" # used by xchainkeys and ~/.xprofile
 install="$install maim" # takes screenshots of desktop
 install="$install meld" # gnome diff (gtk)
 install="$install mesa-utils" # provides glxgears util for the 3d compositor testing
 install="$install mousepad" # simple text editor for xfce <https://github.com/codebrainz/mousepad>
 install="$install mpv" # a-la mplayer replacement
 install="$install pk-update-icon " # display notifications about software updates
+install="$install ubuntu-restricted-extras" # playing video in browser instead of download <https://askubuntu.com/questions/1122579/firefox-downloads-the-video-instead-of-playing-it#1122668>, <https://askubuntu.com/questions/56446/how-do-i-install-the-ubuntu-restricted-extras-package#56448>
 install="$install xsel" # copy selection in termina to the xorg clipboard (used by emacs and urxvt) <https://wiki.archlinux.org/index.php/rxvt-unicode#Automatic_Script_Management>
+install="$install xterm" # backup terminal additional to the st/stterm
 
 # Invert colors on xorg/xrandr
 # <https://superuser.com/questions/208746/invert-colors-on-x-or-xfce4#1494872#209083>.
@@ -116,24 +128,24 @@ install="$install xcalib" # `xcalib -i -a` invert colors on xorg/xrandr <https:/
 # Dunst/dunstify (respects org.freedesktop.Notifications)
 # <https://github.com/dunst-project/dunst>
 # install="$install libc6 libcairo2 libgdk-pixbuf2.0-0 libglib2.0-0 libpango-1.0-0 libpangocairo-1.0-0 libx11-6 libxdg-basedir1 libxinerama1 libxrandr2 libxss1" # runtime dependencies
-# install="$install dunst" # installing from source into ~/.local/bin
-install="$install libdbus-1-dev libnotify-dev libxrandr-dev libpango1.0-dev libx11-dev libxinerama-dev libxss-dev libglib2.0-dev libgtk-3-dev libxdg-basedir-dev" # compiltime dependencies
+# install="$install dunst" # instead compilling from source into ~/.local/bin # a-la notify-osd
+install="$install libdbus-1-dev libnotify-dev libxrandr-dev libpango1.0-dev libx11-dev libxinerama-dev libxss-dev libglib2.0-dev libgtk-3-dev libxdg-basedir-dev" # compiltime dependencies <https://github.com/dunst-project/dunst/wiki/Dependencies>
 
 # Xfce4.
 # install="$install xfdashboard" # overview all windows
 # install="$install xfce4"
 # install="$install xfce4-notifyd" # notifications daemon (used by dwm)
+# install="$install thunar-megasync" # not using
 install="$install thunar"
 install="$install thunar-archive-plugin"
 install="$install thunar-dropbox-plugin"
-install="$install thunar-megasync"
 install="$install thunar-volman"
 
 # Suckless (dwm and so on and suckless dependencies/requirements)
 # install="$install gxkb" # a-la xxkb (destroy xchainkeys)
 # install="$install rofi" # a-la dmenu for open windows
 # install="$install xfdashboard" # a-la compiz expose/gnome overview (works only with running xfce session)
-# install="$install stterm" # succless st terminal (installing from source into ~/.local/bin)
+# install="$install stterm" # instead compiling from source into ~/.local/bin # succless st terminal
 install="$install build-essential" # suckless dependency
 install="$install feh" # view image
 install="$install i3lock" # xscreensaver replacement
@@ -147,49 +159,35 @@ install="$install xautolock" # used by i3lock
 install="$install xxkb" # keyboard/language layout indicator (flag) for tray
 
 # Gnome.
+# remove="$remove gnome-shell-extension-appindicator"
+# remove="$remove gnome-shell-extension-ubuntu-dock"
+# remove="$remove ubuntu-desktop"
 remove="$remove evince" # pdf viewer not remembers last page(
-remove="$remove gnome-shell-extension-appindicator"
-remove="$remove gnome-shell-extension-ubuntu-dock"
-remove="$remove ubuntu-desktop"
 # install="$install gnome-shell-extension-move-clock" # move clock extension for GNOME shell
-# install="$install ubuntu-communitheme-session" # yaru community theme <https://github.com/ubuntu/yaru>, <https://itsfoss.com/ubuntu-community-theme>.
+# install="$install chrome-gnome-shell" # chrome/gnome extension integration
+# install="$install gnome-shell-extension-impatience" # speed up the gnome-shell animation speed
 install="$install atril" # pdf viewer remembers last page https://github.com/mate-desktop/atril
-install="$install chrome-gnome-shell" # chrome/gnome extension integration
-install="$install gnome-shell-extension-impatience" # speed up the gnome-shell animation speed
-install="$install gnome-tweak-tool"
-
-# Skippy-XD is an full-screen task-switcher for X11
-# <https://github.com/richardgv/skippy-xd>
-install="$install libimlib2-dev"
-install="$install libfontconfig1-dev"
-install="$install libfreetype6-dev"
-install="$install libx11-dev"
-install="$install libxext-dev"
-install="$install libxft-dev"
-install="$install libxrender-dev"
-install="$install zlib1g-dev"
-install="$install libxinerama-dev"
-install="$install libxcomposite-dev"
-install="$install libxdamage-dev"
-install="$install libxfixes-dev"
-install="$install libxmu-dev"
+install="$install gnome-tweak-tool" # provides gnome-tweaks command (in addition to gnome-control-center)
 
 # Docker
 # <https://docs.docker.com/install/linux/docker-ce/ubuntu>.
 install="$install docker-ce" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
 install="$install golang-docker-credential-helpers" # credential helper stores encrypted passwords in d-bus secret service instead of unencrypted password in plain file <https://docs.docker.com/engine/reference/commandline/login/#credentials-store>
-install="$install apt-transport-https ca-certificates software-properties-common" # required by docker ppa <https://docs.docker.com/install/linux/docker-ce/ubuntu>
+install="$install apt-transport-https ca-certificates gnupg-agent software-properties-common" # required by docker ppa <https://docs.docker.com/install/linux/docker-ce/ubuntu>
 
 # Mongodb
 install="$install mongodb-org" # latest stable version of the mongodb server
 install="$install gnupg" # required by mongodb <https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu>
 
+# K8s kubernetes.
+install="$install kubectl" # `deb https://apt.kubernetes.io/ kubernetes-xenial main` <https://kubernetes.io/docs/tasks/tools/install-kubectl>
+install="$install gnupg2" # required by kubectl
+
 # Employer Rocketbank.
+# install="$install glide" # german does not use glide # go/german `add-apt-repository ppa:masterminds/glide` golang glide vendor package management <https://github.com/Masterminds/glide>
 install="$install apt-transport-https" # required by elasticsearch ppa <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#deb-repo>
 install="$install elasticsearch" # felix `deb https://artifacts.elastic.co/packages/5.x/apt stable main` elasticsearch 5 <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>
-install="$install glide" # go/german `add-apt-repository ppa:masterminds/glide` golang glide vendor package management <https://github.com/Masterminds/glide>
 install="$install golang-go"
-install="$install kubectl" # `deb https://apt.kubernetes.io/ kubernetes-xenial main` <https://kubernetes.io/docs/tasks/tools/install-kubectl>
 install="$install libmagickwand-dev" # required by rmagick by felix
 install="$install libpcap-dev" # required by github.com/google/gopacket/pcap (go/src/github.com/google/gopacket/pcap/pcap_unix.go:34:10: fatal error: pcap.h: No such file or directory)
 install="$install network-manager-vpnc-gnome" # cisco vpn client plugin for the gnome
@@ -209,6 +207,22 @@ install="$install yarn" # (NOTE: before add ppa!) js package manager required by
 # install="$install sysbench" # cpu and memory benchmarks
 # install="$install tiobench" # TODO: find this package
 # install="$install wrk" # c http benchmark tool <https://github.com/wg/wrk>
+
+# # never used Skippy-XD is an full-screen task-switcher for X11
+# # <https://github.com/richardgv/skippy-xd>
+# install="$install libimlib2-dev"
+# install="$install libfontconfig1-dev"
+# install="$install libfreetype6-dev"
+# install="$install libx11-dev"
+# install="$install libxext-dev"
+# install="$install libxft-dev"
+# install="$install libxrender-dev"
+# install="$install zlib1g-dev"
+# install="$install libxinerama-dev"
+# install="$install libxcomposite-dev"
+# install="$install libxdamage-dev"
+# install="$install libxfixes-dev"
+# install="$install libxmu-dev"
 
 $remove_command  $remove  || exit 1
 $install_command $install || exit 1
