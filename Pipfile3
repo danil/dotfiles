@@ -22,8 +22,9 @@ howdoi
 # Interactive command-line HTTP client with autocomplete
 http-prompt
 
-# cURL replacement <http://httpie.org>.
-httpie
+# # cURL replacement <http://httpie.org>.
+# # ERROR: httpie 2.2.0 has requirement Pygments>=2.5.2, but you'll have pygments 2.3.1 which is incompatible.
+# httpie
 
 # List files affected by command for example `rm -rf /` <https://github.com/p-e-w/maybe>
 maybe
