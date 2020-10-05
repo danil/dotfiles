@@ -16,7 +16,7 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-# Danil <danil@kutkevich.org>.
+# ~~~~<danil@kutkevich.org>.
 HISTSIZE=50000
 HISTFILESIZE=50000
 
