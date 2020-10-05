@@ -6,6 +6,7 @@ require (
 	github.com/110y/go-expr-completion v0.0.0-20200824041004-e0522b3074fc // indirect
 	github.com/Clever/csvlint v0.2.0 // indirect
 	github.com/Djarvur/go-err113 v0.1.0 // indirect
+	github.com/astaxie/bat v0.0.2 // indirect
 	github.com/atotto/clipboard v0.1.2 // indirect
 	github.com/aws/aws-sdk-go v1.32.1 // indirect
 	github.com/boltdb/bolt v1.3.1 // indirect
@@ -47,6 +48,7 @@ require (
 	github.com/justjanne/powerline-go v1.17.0 // indirect
 	github.com/kballard/go-shellquote v0.0.0-20180428030007-95032a82bc51 // indirect
 	github.com/kyleconroy/sqlc v1.5.0 // indirect
+	github.com/logrusorgru/aurora v2.0.3+incompatible // indirect
 	github.com/magiconair/properties v1.8.3 // indirect
 	github.com/mailhog/MailHog v1.0.0 // indirect
 	github.com/mailhog/MailHog-Server v1.0.0 // indirect
@@ -68,8 +70,10 @@ require (
 	github.com/monochromegane/go-home v0.0.0-20151024104835-25d9dda59392 // indirect
 	github.com/monochromegane/terminal v0.0.0-20161222050454-9bc47e2707d9 // indirect
 	github.com/monochromegane/the_platinum_searcher v2.2.0+incompatible // indirect
+	github.com/nojima/httpie-go v0.6.0 // indirect
 	github.com/nsf/gocode v0.0.0-20190302080247-5bee97b48836 // indirect
 	github.com/ogier/pflag v0.0.1 // indirect
+	github.com/pborman/getopt v1.1.0 // indirect
 	github.com/pelletier/go-toml v1.8.1 // indirect
 	github.com/philhofer/fwd v1.0.0 // indirect
 	github.com/quasilyte/regex/syntax v0.0.0-20200805063351-8f842688393c // indirect
@@ -91,11 +95,14 @@ require (
 	github.com/tigrawap/goader v1.4.2 // indirect
 	github.com/timakin/bodyclose v0.0.0-20200424151742-cb6215831a94 // indirect
 	github.com/tinylib/msgp v1.1.2 // indirect
+	github.com/vbauerster/mpb/v5 v5.3.0 // indirect
 	github.com/wallix/awless v0.1.11 // indirect
 	github.com/wallix/awless-scheduler v0.0.6 // indirect
 	github.com/wallix/triplestore v0.0.0-20180213143850-4099dd913851 // indirect
 	github.com/willf/bitset v1.1.10 // indirect
 	golang.org/dl v0.0.0-20200611200201-72429b14455f // indirect
+	golang.org/x/crypto v0.0.0-20201002170205-7f63de1d35b0 // indirect
+	golang.org/x/sys v0.0.0-20201005172224-997123666555 // indirect
 	golang.org/x/tools v0.0.0-20200918201133-e94ab7288189 // indirect
 	golang.org/x/tools/gopls v0.4.1 // indirect
 	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
