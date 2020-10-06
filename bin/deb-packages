@@ -41,8 +41,8 @@ install="$install whois"
 install="$install zstd" # a-la gz/xz compression
 
 # Compil.
-install="$install build-essential" # compiler?
 install="$install automake" # required by tmux/xchainkeys
+install="$install build-essential" # compiler?
 install="$install devscripts" # ???
 install="$install libx11-dev" # ???
 install="$install libxft-dev" # ???
@@ -104,12 +104,14 @@ install="$install curl dirmngr apt-transport-https lsb-release ca-certificates" 
 # install="$install xclip" # tmux and xorg clipboard integration <https://github.com/tmux-plugins/tmux-yank#linux-requirements>
 install="$install argyll" # load icc/icm display color profiles <https://wiki.archlinux.org/index.php/ICC_Profiles#Argyll_CMS>
 install="$install duplicity" # backuping
+install="$install feh" # view image
 install="$install firefox" # works normal with graylog's text box (input box), text field (input field)
 install="$install fonts-fantasque-sans" # terminal/code/mono/programming font (gnome-terminal issue https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=960629)
 install="$install fonts-hack-ttf" # terminal/code/mono/programming font
 install="$install google-chrome-stable"
 install="$install libnotify-bin" # a-la notify-osd
 install="$install light" # used by xchainkeys and ~/.xprofile
+install="$install lxappearance" # change/switch gtk2/gtk3 themes
 install="$install maim" # takes screenshots of desktop
 install="$install meld" # gnome diff (gtk)
 install="$install mesa-utils" # provides glxgears util for the 3d compositor testing
@@ -141,22 +143,29 @@ install="$install thunar-archive-plugin"
 install="$install thunar-dropbox-plugin"
 install="$install thunar-volman"
 
-# Suckless (dwm and so on and suckless dependencies/requirements)
-# install="$install gxkb" # a-la xxkb (destroy xchainkeys)
-# install="$install rofi" # a-la dmenu for open windows
-# install="$install xfdashboard" # a-la compiz expose/gnome overview (works only with running xfce session)
-# install="$install stterm" # instead compiling from source into ~/.local/bin # succless st terminal
-install="$install build-essential" # suckless dependency
-install="$install feh" # view image
+# i3.
+# install="$install i3blocks"
+install="$install i3-wm"
 install="$install i3lock" # xscreensaver replacement
-install="$install libx11-dev" # suckless dependency
-install="$install libxinerama-dev" # suckless dependency
-install="$install lxappearance" # change/switch gtk2/gtk3 themes
-install="$install sharutils" # suckless dependency
+install="$install i3status"
 install="$install suckless-tools" # installs dmenu and more
-install="$install volumeicon-alsa" # sound/volume icon indicator <https://github.com/Maato/volumeicon>
 install="$install xautolock" # used by i3lock
 install="$install xxkb" # keyboard/language layout indicator (flag) for tray
+
+# # Suckless (dwm and so on and suckless dependencies/requirements)
+# # install="$install gxkb" # a-la xxkb (destroy xchainkeys)
+# # install="$install rofi" # a-la dmenu for open windows
+# # install="$install xfdashboard" # a-la compiz expose/gnome overview (works only with running xfce session)
+# # install="$install stterm" # instead compiling from source into ~/.local/bin # succless st terminal
+# # install="$install volumeicon-alsa" # instead using i3 (i3status) # sound/volume icon indicator <https://github.com/Maato/volumeicon>
+# install="$install build-essential" # suckless dependency
+# install="$install i3lock" # xscreensaver replacement
+# install="$install libx11-dev" # suckless dependency
+# install="$install libxinerama-dev" # suckless dependency
+# install="$install sharutils" # suckless dependency
+# install="$install suckless-tools" # installs dmenu and more
+# install="$install xautolock" # used by i3lock
+# install="$install xxkb" # keyboard/language layout indicator (flag) for tray
 
 # Gnome.
 # remove="$remove gnome-shell-extension-appindicator"
@@ -186,6 +195,7 @@ install="$install gnupg2" # required by kubectl
 # Employer Rocketbank.
 # install="$install glide" # german does not use glide # go/german `add-apt-repository ppa:masterminds/glide` golang glide vendor package management <https://github.com/Masterminds/glide>
 install="$install apt-transport-https" # required by elasticsearch ppa <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#deb-repo>
+install="$install docker-ce" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
 install="$install elasticsearch" # felix `deb https://artifacts.elastic.co/packages/5.x/apt stable main` elasticsearch 5 <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>
 install="$install golang-go"
 install="$install libmagickwand-dev" # required by rmagick by felix
@@ -198,6 +208,10 @@ install="$install postgresql-9.6"  # felix `deb http://apt.postgresql.org/pub/re
 install="$install redis" # felix
 install="$install vpnc" # cisco vpn client
 install="$install yarn" # (NOTE: before add ppa!) js package manager required by rails asset pipeline precompilation (before install add ppa <https://yarnpkg.com/lang/en/docs/install/#debian-stable>)
+
+install_hook="$install_hook systemctl disable docker"
+install_hook="$install_hook systemctl disable postgresql"
+install_hook="$install_hook systemctl disable redis-server"
 
 # # Benchmarks a-la `ab`.
 # install="$install bonnie++"
@@ -226,3 +240,4 @@ install="$install yarn" # (NOTE: before add ppa!) js package manager required by
 
 $remove_command  $remove  || exit 1
 $install_command $install || exit 1
+$install_hook

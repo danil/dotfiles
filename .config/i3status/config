@@ -1,0 +1,58 @@
+# This file is part of Danil <danil@kutkevich.org> home.
+
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+general {
+        colors = true
+        interval = 2
+}
+
+order += "battery 0"
+order += "load"
+order += "cpu_temperature 0"
+order += "memory"
+order += "disk /"
+order += "volume master"
+order += "tztime local"
+
+battery 0 {
+        format = "%status%percentage"
+        integer_battery_capacity = true
+        last_full_capacity = true
+}
+
+load {
+        format = "%1min"
+}
+
+cpu_temperature 0 {
+        path = "/sys/devices/platform/coretemp.0/hwmon/hwmon*/temp1_input"
+        format = "%degrees°"
+}
+
+memory {
+        format = "%available"
+        threshold_degraded = "1G"
+        format_degraded = "MEMORY < %available"
+}
+
+disk "/" {
+        format = "%avail"
+}
+
+volume master {
+        format = "♪%volume"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
+
+tztime local {
+        format = "%b-%d-%a %Z %R"
+}
