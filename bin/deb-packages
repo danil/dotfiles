@@ -131,6 +131,10 @@ install="$install xcalib" # `xcalib -i -a` invert colors on xorg/xrandr <https:/
 # install="$install dunst" # instead compilling from source into ~/.local/bin # a-la notify-osd
 install="$install libdbus-1-dev libnotify-dev libxrandr-dev libpango1.0-dev libx11-dev libxinerama-dev libxss-dev libglib2.0-dev libgtk-3-dev libxdg-basedir-dev" # compiltime dependencies <https://github.com/dunst-project/dunst/wiki/Dependencies>
 
+# alttab.
+install="$install libx11-dev libxmu-dev libxft-dev libxrender-dev libxrandr-dev libpng-dev uthash-dev" # compiltime dependencies <https://github.com/sagb/alttab/blob/master/INSTALL.md>
+install="$install libxpm-dev" # compiltime dependencies <https://github.com/sagb/alttab/issues/108#issuecomment-703225763>
+
 # Xfce4.
 # install="$install xfdashboard" # overview all windows
 # install="$install xfce4"
