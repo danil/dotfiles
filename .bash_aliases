@@ -14,6 +14,7 @@ export LC_ALL=en_US.UTF-8
 # <https://wiki.archlinux.org/index.php/Readline#History>.
 stty -ixon
 
+export TERMINAL="xterm"
 export EDITOR="vim" #export EDITOR="vim" #export EDITOR="/usr/bin/emacsclient -t"
 # export ALTERNATE_EDITOR="/usr/bin/emacs"
 export GIT_EDITOR='emacs'
