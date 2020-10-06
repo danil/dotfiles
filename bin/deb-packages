@@ -102,6 +102,7 @@ install="$install curl dirmngr apt-transport-https lsb-release ca-certificates" 
 # install="$install gimp" # a-la photoshop
 # install="$install xcalib" # returns: "Error - unsupported ramp size 0" (load icc/icm display color profiles (only calibration curves) <https://wiki.archlinux.org/index.php/ICC_Profiles#xcalib>)
 # install="$install xclip" # tmux and xorg clipboard integration <https://github.com/tmux-plugins/tmux-yank#linux-requirements>
+install="$install alacritty" # terminal emulator a-la st/xterm
 install="$install argyll" # load icc/icm display color profiles <https://wiki.archlinux.org/index.php/ICC_Profiles#Argyll_CMS>
 install="$install duplicity" # backuping
 install="$install feh" # view image
@@ -120,7 +121,7 @@ install="$install mpv" # a-la mplayer replacement
 install="$install pk-update-icon " # display notifications about software updates
 install="$install ubuntu-restricted-extras" # playing video in browser instead of download <https://askubuntu.com/questions/1122579/firefox-downloads-the-video-instead-of-playing-it#1122668>, <https://askubuntu.com/questions/56446/how-do-i-install-the-ubuntu-restricted-extras-package#56448>
 install="$install xsel" # copy selection in termina to the xorg clipboard (used by emacs and urxvt) <https://wiki.archlinux.org/index.php/rxvt-unicode#Automatic_Script_Management>
-install="$install xterm" # backup terminal additional to the st/stterm
+install="$install xterm" # backup/fallback terminal additional to the st/stterm/alacritty
 
 # Invert colors on xorg/xrandr
 # <https://superuser.com/questions/208746/invert-colors-on-x-or-xfce4#1494872#209083>.
@@ -133,15 +134,12 @@ install="$install xcalib" # `xcalib -i -a` invert colors on xorg/xrandr <https:/
 # install="$install dunst" # instead compilling from source into ~/.local/bin # a-la notify-osd
 install="$install libdbus-1-dev libnotify-dev libxrandr-dev libpango1.0-dev libx11-dev libxinerama-dev libxss-dev libglib2.0-dev libgtk-3-dev libxdg-basedir-dev" # compiltime dependencies <https://github.com/dunst-project/dunst/wiki/Dependencies>
 
-# Xfce4.
-# install="$install xfdashboard" # overview all windows
-# install="$install xfce4"
-# install="$install xfce4-notifyd" # notifications daemon (used by dwm)
-# install="$install thunar-megasync" # not using
-install="$install thunar"
-install="$install thunar-archive-plugin"
-install="$install thunar-dropbox-plugin"
-install="$install thunar-volman"
+# Suckless st terminal.
+# # install="$install stterm" # instead compiling from source into ~/.local/bin # succless st terminal
+install="$install build-essential libx11-dev libxinerama-dev sharutils suckless-tools"
+
+# xtitle used by i3blocks/i3 <https://github.com/baskerville/xtitle>.
+install="$install libxcb-ewmh-dev libxcb-icccm4-dev libxcb-util0-dev" # compiltime dependencies
 
 # i3.
 # install="$install i3blocks"
@@ -152,7 +150,7 @@ install="$install suckless-tools" # installs dmenu and more
 install="$install xautolock" # used by i3lock
 install="$install xxkb" # keyboard/language layout indicator (flag) for tray
 
-# # Suckless (dwm and so on and suckless dependencies/requirements)
+# # Suckless dwm.
 # # install="$install gxkb" # a-la xxkb (destroy xchainkeys)
 # # install="$install rofi" # a-la dmenu for open windows
 # # install="$install xfdashboard" # a-la compiz expose/gnome overview (works only with running xfce session)
@@ -166,6 +164,16 @@ install="$install xxkb" # keyboard/language layout indicator (flag) for tray
 # install="$install suckless-tools" # installs dmenu and more
 # install="$install xautolock" # used by i3lock
 # install="$install xxkb" # keyboard/language layout indicator (flag) for tray
+
+# Xfce4.
+# install="$install xfdashboard" # overview all windows
+# install="$install xfce4"
+# install="$install xfce4-notifyd" # notifications daemon (used by dwm)
+# install="$install thunar-megasync" # not using
+install="$install thunar"
+install="$install thunar-archive-plugin"
+install="$install thunar-dropbox-plugin"
+install="$install thunar-volman"
 
 # Gnome.
 # remove="$remove gnome-shell-extension-appindicator"

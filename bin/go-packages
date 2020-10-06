@@ -67,8 +67,8 @@ packages="$packages github.com/boyter/scc@v2.12.0" # a-la sloc/cloc
 packages="$packages github.com/cloudflare/cloudflare-go/cmd/flarectl@v0.12.0" # cloudflare cli `CF_API_EMAIL=your.name@example.org CF_API_KEY=your_api_key flarectl zone dns example.org`
 packages="$packages github.com/cortesi/devd/cmd/devd@v0.0.0-20200427000907-c1a3bfba27d8" # local http/webserver for developers `devd --address=0.0.0.0 --livewatch ./`
 packages="$packages github.com/dachad/tcpgoon@v0.0.0-20200511183141-945d9f576acb" # tcp concurrent connections benchmark
-packages="$packages github.com/danil/plainstatus/examples/plainstatus1@v0.0.1" # a-la slstatus
-packages="$packages github.com/danil/plainstatus/examples/plainstatus2@v0.0.1" # a-la slstatus
+packages="$packages github.com/danil/plainstatus/examples/plainstatus1@v0.0.3" # a-la slstatus
+packages="$packages github.com/danil/plainstatus/examples/plainstatus2@v0.0.3" # a-la slstatus
 packages="$packages github.com/davecheney/httpstat@v1.0.0" # http statistics (a-la curl --head)
 packages="$packages github.com/fd0/machma@v0.0.0-20180831184041-8cc009340f18" # parallel cli task execution with each command progress
 packages="$packages github.com/github/hub@v2.11.2" # github helper <https://github.com/github/hub>

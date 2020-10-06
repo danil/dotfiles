@@ -25,6 +25,10 @@ battery 0 {
         format = "%status%percentage"
         integer_battery_capacity = true
         last_full_capacity = true
+        status_chr = "⚡"
+        status_bat = "🔋"
+        status_unk = "?"
+        status_full = "☻"
 }
 
 load {

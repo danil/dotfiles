@@ -1,0 +1,11 @@
+[title]
+# chrome/firefox workaround
+# <https://github.com/vivien/i3blocks/issues/366#issuecomment-481331176>.
+command=~/.local/usr/local/bin/xtitle -s | cat
+interval=persist
+separator=false
+separator_block_width=15
+
+[plainstatus]
+command=~/go/bin/plainstatus1 -1
+interval=1

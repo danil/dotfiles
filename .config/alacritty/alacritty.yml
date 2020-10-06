@@ -1,0 +1,61 @@
+---
+# <https://github.com/tmcdonell/config-alacritty/blob/master/alacritty.yml>.
+
+# Font configuration (changes require restart)
+font:
+  # Point size of the font
+  size: 14.0
+
+colors:
+  # Default colors
+  primary:
+    # black
+    background: '#000000'
+    # gray90
+    foreground: '#e5e5e5'
+
+  # Normal colors
+  normal:
+    # black
+    black: '#000000'
+    # red3
+    red: '#cd0000'
+    # green3
+    green: '#00cd00'
+    # yellow3
+    yellow: '#cdcd00'
+    # blue2
+    blue: '#0000ee'
+    # magenta3
+    magenta: '#cd00cd'
+    # cyan3
+    cyan: '#00cdcd'
+    # gray90
+    white: '#e5e5e5'
+
+  # Bright colors
+  bright:
+    # #7f7f7f
+    black: '#7f7f7f'
+    # red
+    red: '#ff0000'
+    # green
+    green: '#00ff00'
+    # yellow
+    yellow: '#ffff00'
+    blue: '#5c5cff'
+    # #ff00ff
+    magenta: '#ff00ff'
+    # cyan
+    cyan: '#00ffff'
+    # white
+    white: '#ffffff'
+
+# FIXME: cursor color wtf?
+custom_cursor_colors: true
+cursor:
+  text: '#ff0000'
+  cursor: '#ff0000'
+vi_mode_cursor:
+  text: '#ff0000'
+  cursor: '#ff0000'
