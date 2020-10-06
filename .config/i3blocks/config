@@ -1,4 +1,5 @@
 [title]
+# xtitle <https://github.com/baskerville/xtitle>.
 # chrome/firefox workaround
 # <https://github.com/vivien/i3blocks/issues/366#issuecomment-481331176>.
 command=~/.local/usr/local/bin/xtitle -s | cat
