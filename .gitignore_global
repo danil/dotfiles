@@ -11,6 +11,7 @@
 .ruby-version
 .stglobalignore
 .stignore
+/.idea
 /TAGS
 /flycheck_*.proto
 /projectile-bookmarks.eld
