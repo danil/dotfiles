@@ -3,9 +3,21 @@
 install_command="snap install"
 
 # X11/xorg/desktop.
+install="$install flameshot" # https://github.com/flameshot-org/flameshot
 install="$install telegram-desktop"
+
+install_classic="$install_classic intellij-idea-ultimate"
 
 # remove="$remove package-to-remove"
 
-# $remove_command  $remove  || exit 1
-$install_command $install || exit 1
+# for package in $remove; do
+#     $remove_command $package || exit 1
+# done
+
+for package in $install; do
+    $install_command $package || exit 1
+done
+
+for package in $install_classic ; do
+    $install_command $package --classic || exit 1
+done
