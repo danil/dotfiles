@@ -181,7 +181,7 @@ hide_edge_borders smart
 # https://i3wm.org/docs/userguide.html#_changing_colors
 #cd0000 red3
 #ffff00 yellow1
-# class                 border  backgr. text    indicator child_border
+# colorclass            border  backgr. text    indicator child_border
 client.focused          #4c7899 #285577 #ffffff #2e9ef4   $hi
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -195,7 +195,9 @@ bar {
                 background $bg
                 statusline $fg
 
-                focused_workspace  $hi $bg $fg
-                inactive_workspace #888888 $bg
+                # colorclass       border  backgr. text
+                focused_workspace  $hi     $bg     $fg
+                inactive_workspace #333333 $bg     #888888
+                urgent_workspace   $ac $bg         #888888
         }
 }
