@@ -14,6 +14,23 @@
 
 set $mod Mod4
 
+# Colors
+# Black
+set $bg #000000
+# White
+set $fg #ffffff
+# OrangeRed1
+set $hi #ff4500
+set $ac #efef8f
+#ffff00 yellow1
+
+# set $tx #??????
+# set $ia #??????
+# set $be #??????
+# set $yw #??????
+# set $gn #??????
+# set $rd #??????
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -162,11 +179,10 @@ default_floating_border pixel 5
 hide_edge_borders smart
 
 # https://i3wm.org/docs/userguide.html#_changing_colors
-#ff4500 OrangeRed1
 #cd0000 red3
 #ffff00 yellow1
 # class                 border  backgr. text    indicator child_border
-client.focused          #4c7899 #285577 #ffffff #2e9ef4   #ff4500
+client.focused          #4c7899 #285577 #ffffff #2e9ef4   $hi
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -176,10 +192,10 @@ bar {
         # status_command i3status
         status_command SCRIPT_DIR=~/.config/i3blocks i3blocks
         colors {
-                background #000000
-                statusline #ffffff
+                background $bg
+                statusline $fg
 
-                focused_workspace  #ff4500 #000000
-                inactive_workspace #888888 #000000
+                focused_workspace  $hi $bg $fg
+                inactive_workspace #888888 $bg
         }
 }
