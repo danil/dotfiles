@@ -36,7 +36,6 @@ install="$install syncthing" # dropbox replacement: deb https://apt.syncthing.ne
 install="$install tig" # git interactive cli
 install="$install tree" # displays an indented directory tree
 install="$install uni2ascii" # to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`
-install="$install uswsusp" # systemctl hibernate
 install="$install whois"
 install="$install zstd" # a-la gz/xz compression
 
@@ -99,7 +98,6 @@ install="$install curl dirmngr apt-transport-https lsb-release ca-certificates" 
 # install="$install brave-browser" # a-la google chrome
 # install="$install font-manager" # list bitmap ??? fonts
 # install="$install fonts-noto" # awesome serif font ???
-# install="$install gimp" # a-la photoshop
 # install="$install xcalib" # returns: "Error - unsupported ramp size 0" (load icc/icm display color profiles (only calibration curves) <https://wiki.archlinux.org/index.php/ICC_Profiles#xcalib>)
 # install="$install xclip" # tmux and xorg clipboard integration <https://github.com/tmux-plugins/tmux-yank#linux-requirements>
 install="$install alacritty" # terminal emulator a-la st/xterm
@@ -109,6 +107,7 @@ install="$install feh" # view image
 install="$install firefox" # works normal with graylog's text box (input box), text field (input field)
 install="$install fonts-fantasque-sans" # terminal/code/mono/programming font (gnome-terminal issue https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=960629)
 install="$install fonts-hack-ttf" # terminal/code/mono/programming font
+install="$install gimp" # a-la photoshop
 install="$install google-chrome-stable"
 install="$install libnotify-bin" # a-la notify-osd
 install="$install light" # used by xchainkeys and ~/.xprofile
@@ -120,10 +119,11 @@ install="$install mousepad" # simple text editor for xfce <https://github.com/co
 install="$install mpv" # a-la mplayer replacement
 install="$install pk-update-icon " # display notifications about software updates
 install="$install ubuntu-restricted-extras" # playing video in browser instead of download <https://askubuntu.com/questions/1122579/firefox-downloads-the-video-instead-of-playing-it#1122668>, <https://askubuntu.com/questions/56446/how-do-i-install-the-ubuntu-restricted-extras-package#56448>
+install="$install uswsusp" # systemctl hibernate
 install="$install xsel" # copy selection in termina to the xorg clipboard (used by emacs and urxvt) <https://wiki.archlinux.org/index.php/rxvt-unicode#Automatic_Script_Management>
 install="$install xterm" # backup/fallback terminal additional to the st/stterm/alacritty
 
-# Invert colors on xorg/xrandr
+# Invert colors on x11/xorg/xrandr
 # <https://superuser.com/questions/208746/invert-colors-on-x-or-xfce4#1494872#209083>.
 install="$install libxcb-randr0-dev"
 install="$install xcalib" # `xcalib -i -a` invert colors on xorg/xrandr <https://superuser.com/questions/208746/invert-colors-on-x-or-xfce4#1494872#209083>
