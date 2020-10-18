@@ -21,61 +21,60 @@ while [ $# -gt 0 ]; do
 done
 
 # Inital packages (from linode image).
-packages="$packages base"
-packages="$packages curl"
-packages="$packages grub"
-packages="$packages haveged"
-packages="$packages inetutils"
-packages="$packages iotop"
-packages="$packages linux"
-packages="$packages linux-firmware"
-packages="$packages lsof"
-packages="$packages man-db"
-packages="$packages man-pages"
-packages="$packages mtr"
-packages="$packages nano"
-packages="$packages neovim"
-packages="$packages net-tools"
-packages="$packages openssh"
-packages="$packages pigz" # parallel gzip for multi-processor, multi-core
-packages="$packages sudo"
-packages="$packages sysstat"
-packages="$packages whois"
+packages="$packages base" # core/base
+packages="$packages curl" # core/curl
+packages="$packages grub" # core/grub
+packages="$packages haveged" # extra/haveged
+packages="$packages inetutils" # core/inetutils
+packages="$packages iotop" # community/iotop
+packages="$packages linux" # core/linux
+packages="$packages linux-firmware" # core/linux-firmware
+packages="$packages lsof" # extra/lsof
+packages="$packages man-db" # core/man-db
+packages="$packages man-pages" # core/man-pages
+packages="$packages mtr" # extra/mtr
+packages="$packages nano" # core/nano
+packages="$packages neovim" # community/neovim
+packages="$packages net-tools" # core/net-tools
+packages="$packages openssh" # core/openssh
+packages="$packages pigz" # community/pigz: parallel gzip for multi-processor, multi-core
+packages="$packages sudo" # core/sudo
+packages="$packages sysstat" # community/sysstat
+packages="$packages whois" # extra/whois
 
 # Compile/make and so on.
 # packages="$packages base-devel" # package group required to build PKGBUILD package from aur (arch user repository)
-packages="$packages autoconf"
-packages="$packages automake"
-packages="$packages bison"
-packages="$packages fakeroot"
-packages="$packages flex"
-packages="$packages gcc"
-packages="$packages make"
-packages="$packages patch"
-packages="$packages pkgconf"
-packages="$packages which"
+packages="$packages autoconf" # core/autoconf
+packages="$packages automake" # core/automake
+packages="$packages bison" # core/bison
+packages="$packages fakeroot" # core/fakeroot
+packages="$packages flex" # core/flex
+packages="$packages gcc" # core/gcc
+packages="$packages make" # core/make
+packages="$packages patch" # core/patch
+packages="$packages pkgconf" # core/pkgconf
+packages="$packages which" # core/which
 
 # Common user space packages.
-# packages="$packages genius" # calculator
-# packages="$packages hping3" # a-la interactive ping https://github.com/antirez/hping
+# packages="$packages genius" # extra/genius: calculator
+# packages="$packages hping3" # TODO: install from aur # a-la interactive ping https://github.com/antirez/hping
 # packages="$packages uni2ascii" # TODO: install from aur # to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`
 packages="$packages bc" # extra/bc: used by bash prompt, console-based calculator utility
-packages="$packages dos2unix" # convert text file line endings between CRLF and LF
+packages="$packages dos2unix" # community/dos2unix: convert text file line endings between CRLF and LF
 packages="$packages emacs-nox" # community/emacs-nox
 packages="$packages git" # extra/git
-packages="$packages goaccess" # analyze nginx/apache log in real-time
-packages="$packages htop" # extra/htop
-packages="$packages jq" # json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>
+packages="$packages goaccess" # community/goaccess: analyze nginx/apache log in real-time
+packages="$packages htop" # extra/htop: extra/htop
+packages="$packages jq" # community/jq: json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>
 packages="$packages mlocate" # core/mlocate
-packages="$packages mosh" # ssh replacement
-packages="$packages ncdu" # diskspace usage is an baobab and gt5 replacement
-packages="$packages pigz" # parallel gzip for multi-processor, multi-core
+packages="$packages mosh" # community/mosh: ssh replacement
+packages="$packages ncdu" # community/ncdu: diskspace usage is an baobab and gt5 replacement
 packages="$packages pkgfile" # extra/pkgfile: searching files from packages in the official repositories
-packages="$packages pwgen" # password generator
-packages="$packages syncthing" # dropbox replacement: deb https://apt.syncthing.net/ syncthing release
-packages="$packages tig" # git interactive cli
+packages="$packages pwgen" # community/pwgen: password generator
+packages="$packages syncthing" # community/syncthing: dropbox replacement: deb https://apt.syncthing.net/ syncthing release
+packages="$packages tig" # community/tig: git interactive cli
 packages="$packages tmux" # community/tmux
-packages="$packages tree" # displays an indented directory tree
+packages="$packages tree" # extra/tree: displays an indented directory tree
 packages="$packages zstd" # a-la gz/xz compression
 
 # Arch.
@@ -83,6 +82,7 @@ packages="$packages namcap" # extra/namcap: analysis utility that checks binary 
 
 # Server.
 packages="$packages ntp" # extra/ntp
+packages="$packages nginx" # extra/nginx
 
 # Golang.
 packages="$packages go" # community/go
