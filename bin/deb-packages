@@ -9,6 +9,7 @@ install_command="aptitude install"
 # install="$install makepasswd" # password generator
 # install="$install nginx"
 # install="$install protobuf-compiler" # version to old/outdated(
+install="$install apache2-utils" # provides htpasswd utility is an nginx/apach basic authentication password generator
 install="$install apt-transport-https" # required by custom ppa
 install="$install bc" # used by bash prompt, console-based calculator utility
 install="$install curl"
