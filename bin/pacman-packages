@@ -59,6 +59,7 @@ packages="$packages which" # core/which
 # packages="$packages genius" # extra/genius: calculator
 # packages="$packages hping3" # TODO: install from aur # a-la interactive ping https://github.com/antirez/hping
 # packages="$packages uni2ascii" # TODO: install from aur # to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`
+packages="$packages apache" # provides htpasswd utility is an nginx/apach basic authentication password generator
 packages="$packages bc" # extra/bc: used by bash prompt, console-based calculator utility
 packages="$packages dos2unix" # community/dos2unix: convert text file line endings between CRLF and LF
 packages="$packages emacs-nox" # community/emacs-nox
