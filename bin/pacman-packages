@@ -71,18 +71,19 @@ packages="$packages mosh" # community/mosh: ssh replacement
 packages="$packages ncdu" # community/ncdu: diskspace usage is an baobab and gt5 replacement
 packages="$packages pkgfile" # extra/pkgfile: searching files from packages in the official repositories
 packages="$packages pwgen" # community/pwgen: password generator
+packages="$packages rsync" # extra/rsync
 packages="$packages syncthing" # community/syncthing: dropbox replacement: deb https://apt.syncthing.net/ syncthing release
 packages="$packages tig" # community/tig: git interactive cli
 packages="$packages tmux" # community/tmux
 packages="$packages tree" # extra/tree: displays an indented directory tree
-packages="$packages zstd" # a-la gz/xz compression
+packages="$packages zstd" # core/zstd: a-la gz/xz compression
 
 # Arch.
 packages="$packages namcap" # extra/namcap: analysis utility that checks binary packages and source PKGBUILDs for common mistakes <https://wiki.archlinux.org/index.php/Namcap>
 
 # Server.
-packages="$packages ntp" # extra/ntp
 packages="$packages nginx" # extra/nginx
+packages="$packages ntp" # extra/ntp
 
 # Golang.
 packages="$packages go" # community/go
