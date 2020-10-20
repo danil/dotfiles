@@ -51,13 +51,13 @@ install="$install make" # required by all)
 # install="$install tmux" # operational system wide
 # install="$install pkg-config libevent-dev libncurses-dev" # compiltime dependencies
 
-# # Emacs 27 on Ubuntu 20.04 crashes all the time.
-# install="$install emacs27-el" # find/navigate elisp function source code <https://unix.stackexchange.com/questions/73100/how-to-attach-elisp-function-source-code-in-emacs>
-# install="$install emacs27-nox"
-
 # Emacs.
-install="$install emacs-el" # find/navigate elisp function source code <https://unix.stackexchange.com/questions/73100/how-to-attach-elisp-function-source-code-in-emacs>
-install="$install emacs-nox"
+# install="$install emacs-el" # find/navigate elisp function source code <https://unix.stackexchange.com/questions/73100/how-to-attach-elisp-function-source-code-in-emacs>
+# install="$install emacs-nox"
+install="$install aspell-en" # used by emacs auto complete
+install="$install aspell-ru" # used by emacs auto complete
+install="$install emacs27-el" # find/navigate elisp function source code <https://unix.stackexchange.com/questions/73100/how-to-attach-elisp-function-source-code-in-emacs>
+install="$install emacs27-nox"
 install="$install shellcheck" # used by emacs flycheck
 
 # The silver searcher (ag) <https://github.com/ggreer/the_silver_searcher>
