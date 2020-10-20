@@ -147,6 +147,7 @@ install="$install libxcb-ewmh-dev libxcb-icccm4-dev libxcb-util0-dev" # compilti
 install="$install i3-wm"
 install="$install i3lock" # xscreensaver replacement
 install="$install suckless-tools" # installs dmenu and more
+install="$install volumeicon-alsa" # sound/volume icon indicator <https://github.com/Maato/volumeicon>
 install="$install xautolock" # used by i3lock
 install="$install xxkb" # keyboard/language layout indicator (flag) for tray
 
