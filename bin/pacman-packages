@@ -84,7 +84,6 @@ packages="$packages namcap" # extra/namcap: analysis utility that checks binary 
 
 # Server.
 packages="$packages nginx" # extra/nginx
-packages="$packages ntp" # extra/ntp
 
 # Golang.
 packages="$packages go" # community/go
