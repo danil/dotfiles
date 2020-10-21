@@ -1,4 +1,69 @@
 <configuration version="32">
+    <folder id="5cfzi-lnjpr" label="Notes" path="/mnt/sync/danil/Notes" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+        <filesystemType>basic</filesystemType>
+        <device id="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6" introducedBy=""></device>
+        <device id="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK" introducedBy=""></device>
+        <device id="YSILUWZ-HUBI6QS-SXYT7AS-W6WKKHS-RXRSK3O-B65PL65-XYXPOBA-LHTYEAP" introducedBy="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK"></device>
+        <device id="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW" introducedBy="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK"></device>
+        <minDiskFree unit="%">1</minDiskFree>
+        <versioning>
+            <cleanupIntervalS>0</cleanupIntervalS>
+        </versioning>
+        <copiers>0</copiers>
+        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
+        <hashers>0</hashers>
+        <order>random</order>
+        <ignoreDelete>false</ignoreDelete>
+        <scanProgressIntervalS>0</scanProgressIntervalS>
+        <pullerPauseS>0</pullerPauseS>
+        <maxConflicts>10</maxConflicts>
+        <disableSparseFiles>false</disableSparseFiles>
+        <disableTempIndexes>false</disableTempIndexes>
+        <paused>false</paused>
+        <weakHashThresholdPct>25</weakHashThresholdPct>
+        <markerName>.stfolder</markerName>
+        <copyOwnershipFromParent>false</copyOwnershipFromParent>
+        <modTimeWindowS>0</modTimeWindowS>
+        <maxConcurrentWrites>0</maxConcurrentWrites>
+        <disableFsync>false</disableFsync>
+        <blockPullOrder>standard</blockPullOrder>
+        <copyRangeMethod>standard</copyRangeMethod>
+        <caseSensitiveFS>false</caseSensitiveFS>
+        <junctionsAsDirs>false</junctionsAsDirs>
+    </folder>
+    <folder id="at7a3-rnepr" label="Books" path="/mnt/sync/danil/Books" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+        <filesystemType>basic</filesystemType>
+        <device id="CRP2GG7-HRM6BEL-44DOJQZ-USO4R6V-QJYJNVL-BL4GKCP-LPR7DR7-53D3MQD" introducedBy="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK"></device>
+        <device id="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6" introducedBy=""></device>
+        <device id="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK" introducedBy=""></device>
+        <device id="YSILUWZ-HUBI6QS-SXYT7AS-W6WKKHS-RXRSK3O-B65PL65-XYXPOBA-LHTYEAP" introducedBy="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK"></device>
+        <device id="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW" introducedBy="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK"></device>
+        <minDiskFree unit="%">1</minDiskFree>
+        <versioning>
+            <cleanupIntervalS>0</cleanupIntervalS>
+        </versioning>
+        <copiers>0</copiers>
+        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
+        <hashers>0</hashers>
+        <order>random</order>
+        <ignoreDelete>false</ignoreDelete>
+        <scanProgressIntervalS>0</scanProgressIntervalS>
+        <pullerPauseS>0</pullerPauseS>
+        <maxConflicts>10</maxConflicts>
+        <disableSparseFiles>false</disableSparseFiles>
+        <disableTempIndexes>false</disableTempIndexes>
+        <paused>false</paused>
+        <weakHashThresholdPct>25</weakHashThresholdPct>
+        <markerName>.stfolder</markerName>
+        <copyOwnershipFromParent>false</copyOwnershipFromParent>
+        <modTimeWindowS>0</modTimeWindowS>
+        <maxConcurrentWrites>0</maxConcurrentWrites>
+        <disableFsync>false</disableFsync>
+        <blockPullOrder>standard</blockPullOrder>
+        <copyRangeMethod>standard</copyRangeMethod>
+        <caseSensitiveFS>false</caseSensitiveFS>
+        <junctionsAsDirs>false</junctionsAsDirs>
+    </folder>
     <folder id="default" label="Default Folder" path="/home/danil/Sync" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
         <device id="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6" introducedBy=""></device>
@@ -28,7 +93,134 @@
         <caseSensitiveFS>false</caseSensitiveFS>
         <junctionsAsDirs>false</junctionsAsDirs>
     </folder>
+    <folder id="jsd4s-swqkp" label="Src" path="/mnt/sync/danil/Src" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+        <filesystemType>basic</filesystemType>
+        <device id="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6" introducedBy=""></device>
+        <device id="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK" introducedBy=""></device>
+        <minDiskFree unit="%">1</minDiskFree>
+        <versioning>
+            <cleanupIntervalS>0</cleanupIntervalS>
+        </versioning>
+        <copiers>0</copiers>
+        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
+        <hashers>0</hashers>
+        <order>random</order>
+        <ignoreDelete>false</ignoreDelete>
+        <scanProgressIntervalS>0</scanProgressIntervalS>
+        <pullerPauseS>0</pullerPauseS>
+        <maxConflicts>10</maxConflicts>
+        <disableSparseFiles>false</disableSparseFiles>
+        <disableTempIndexes>false</disableTempIndexes>
+        <paused>false</paused>
+        <weakHashThresholdPct>25</weakHashThresholdPct>
+        <markerName>.stfolder</markerName>
+        <copyOwnershipFromParent>false</copyOwnershipFromParent>
+        <modTimeWindowS>0</modTimeWindowS>
+        <maxConcurrentWrites>0</maxConcurrentWrites>
+        <disableFsync>false</disableFsync>
+        <blockPullOrder>standard</blockPullOrder>
+        <copyRangeMethod>standard</copyRangeMethod>
+        <caseSensitiveFS>false</caseSensitiveFS>
+        <junctionsAsDirs>false</junctionsAsDirs>
+    </folder>
+    <folder id="krbr4-es5n4" label="Podcasts" path="/mnt/sync/danil/Podcasts" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+        <filesystemType>basic</filesystemType>
+        <device id="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6" introducedBy=""></device>
+        <device id="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK" introducedBy=""></device>
+        <device id="YSILUWZ-HUBI6QS-SXYT7AS-W6WKKHS-RXRSK3O-B65PL65-XYXPOBA-LHTYEAP" introducedBy="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK"></device>
+        <device id="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW" introducedBy="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK"></device>
+        <minDiskFree unit="%">1</minDiskFree>
+        <versioning>
+            <cleanupIntervalS>0</cleanupIntervalS>
+        </versioning>
+        <copiers>0</copiers>
+        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
+        <hashers>0</hashers>
+        <order>random</order>
+        <ignoreDelete>false</ignoreDelete>
+        <scanProgressIntervalS>0</scanProgressIntervalS>
+        <pullerPauseS>0</pullerPauseS>
+        <maxConflicts>10</maxConflicts>
+        <disableSparseFiles>false</disableSparseFiles>
+        <disableTempIndexes>false</disableTempIndexes>
+        <paused>false</paused>
+        <weakHashThresholdPct>25</weakHashThresholdPct>
+        <markerName>.stfolder</markerName>
+        <copyOwnershipFromParent>false</copyOwnershipFromParent>
+        <modTimeWindowS>0</modTimeWindowS>
+        <maxConcurrentWrites>0</maxConcurrentWrites>
+        <disableFsync>false</disableFsync>
+        <blockPullOrder>standard</blockPullOrder>
+        <copyRangeMethod>standard</copyRangeMethod>
+        <caseSensitiveFS>false</caseSensitiveFS>
+        <junctionsAsDirs>false</junctionsAsDirs>
+    </folder>
+    <folder id="xi2ew-z6l3e" label="Sync" path="/mnt/sync/danil/Sync" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+        <filesystemType>basic</filesystemType>
+        <device id="CRP2GG7-HRM6BEL-44DOJQZ-USO4R6V-QJYJNVL-BL4GKCP-LPR7DR7-53D3MQD" introducedBy="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK"></device>
+        <device id="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6" introducedBy=""></device>
+        <device id="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK" introducedBy=""></device>
+        <device id="YSILUWZ-HUBI6QS-SXYT7AS-W6WKKHS-RXRSK3O-B65PL65-XYXPOBA-LHTYEAP" introducedBy="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK"></device>
+        <device id="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW" introducedBy="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK"></device>
+        <minDiskFree unit="%">1</minDiskFree>
+        <versioning>
+            <cleanupIntervalS>0</cleanupIntervalS>
+        </versioning>
+        <copiers>0</copiers>
+        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
+        <hashers>0</hashers>
+        <order>random</order>
+        <ignoreDelete>false</ignoreDelete>
+        <scanProgressIntervalS>0</scanProgressIntervalS>
+        <pullerPauseS>0</pullerPauseS>
+        <maxConflicts>10</maxConflicts>
+        <disableSparseFiles>false</disableSparseFiles>
+        <disableTempIndexes>false</disableTempIndexes>
+        <paused>false</paused>
+        <weakHashThresholdPct>25</weakHashThresholdPct>
+        <markerName>.stfolder</markerName>
+        <copyOwnershipFromParent>false</copyOwnershipFromParent>
+        <modTimeWindowS>0</modTimeWindowS>
+        <maxConcurrentWrites>0</maxConcurrentWrites>
+        <disableFsync>false</disableFsync>
+        <blockPullOrder>standard</blockPullOrder>
+        <copyRangeMethod>standard</copyRangeMethod>
+        <caseSensitiveFS>false</caseSensitiveFS>
+        <junctionsAsDirs>false</junctionsAsDirs>
+    </folder>
+    <device id="CRP2GG7-HRM6BEL-44DOJQZ-USO4R6V-QJYJNVL-BL4GKCP-LPR7DR7-53D3MQD" name="h10" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK">
+        <address>dynamic</address>
+        <paused>false</paused>
+        <autoAcceptFolders>false</autoAcceptFolders>
+        <maxSendKbps>0</maxSendKbps>
+        <maxRecvKbps>0</maxRecvKbps>
+        <maxRequestKiB>0</maxRequestKiB>
+    </device>
     <device id="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6" name="h20" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
+        <address>dynamic</address>
+        <paused>false</paused>
+        <autoAcceptFolders>false</autoAcceptFolders>
+        <maxSendKbps>0</maxSendKbps>
+        <maxRecvKbps>0</maxRecvKbps>
+        <maxRequestKiB>0</maxRequestKiB>
+    </device>
+    <device id="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK" name="h2" compression="metadata" introducer="true" skipIntroductionRemovals="false" introducedBy="">
+        <address>dynamic</address>
+        <paused>false</paused>
+        <autoAcceptFolders>false</autoAcceptFolders>
+        <maxSendKbps>0</maxSendKbps>
+        <maxRecvKbps>0</maxRecvKbps>
+        <maxRequestKiB>0</maxRequestKiB>
+    </device>
+    <device id="YSILUWZ-HUBI6QS-SXYT7AS-W6WKKHS-RXRSK3O-B65PL65-XYXPOBA-LHTYEAP" name="h18" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK">
+        <address>dynamic</address>
+        <paused>false</paused>
+        <autoAcceptFolders>false</autoAcceptFolders>
+        <maxSendKbps>0</maxSendKbps>
+        <maxRecvKbps>0</maxRecvKbps>
+        <maxRequestKiB>0</maxRequestKiB>
+    </device>
+    <device id="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW" name="h19" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK">
         <address>dynamic</address>
         <paused>false</paused>
         <autoAcceptFolders>false</autoAcceptFolders>
@@ -38,8 +230,11 @@
     </device>
     <gui enabled="true" tls="false" debugging="false">
         <address>127.0.0.1:8384</address>
+        <user>danil</user>
+        <password>$2a$10$QLm5E9blMylYGFyC40sTv.T6uwILcSdd0MkHlgHtMGLCWWVv/RZuy</password>
         <apikey>tVjeENbRRPmxgu62TpNsexFL47AqRMGJ</apikey>
-        <theme>default</theme>
+        <theme>black</theme>
+        <insecureSkipHostcheck>true</insecureSkipHostcheck>
     </gui>
     <ldap></ldap>
     <options>
@@ -59,9 +254,9 @@
         <natLeaseMinutes>60</natLeaseMinutes>
         <natRenewalMinutes>30</natRenewalMinutes>
         <natTimeoutSeconds>10</natTimeoutSeconds>
-        <urAccepted>0</urAccepted>
-        <urSeen>0</urSeen>
-        <urUniqueID></urUniqueID>
+        <urAccepted>3</urAccepted>
+        <urSeen>3</urSeen>
+        <urUniqueID>HqXRDnbh</urUniqueID>
         <urURL>https://data.syncthing.net/newdata</urURL>
         <urPostInsecurely>false</urPostInsecurely>
         <urInitialDelayS>1800</urInitialDelayS>
@@ -76,7 +271,6 @@
         <releasesURL>https://upgrades.syncthing.net/meta.json</releasesURL>
         <overwriteRemoteDeviceNamesOnConnect>false</overwriteRemoteDeviceNamesOnConnect>
         <tempIndexMinBlocks>10</tempIndexMinBlocks>
-        <unackedNotificationID>authenticationUserAndPassword</unackedNotificationID>
         <trafficClass>0</trafficClass>
         <defaultFolderPath>~</defaultFolderPath>
         <setLowPriority>true</setLowPriority>
