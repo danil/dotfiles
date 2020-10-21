@@ -61,8 +61,10 @@ packages="$packages which" # core/which
 # packages="$packages uni2ascii" # TODO: install from aur # to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`
 packages="$packages apache" # provides htpasswd utility is an nginx/apach basic authentication password generator
 packages="$packages bc" # extra/bc: used by bash prompt, console-based calculator utility
+packages="$packages bind" # extra/bind: provides host utility
 packages="$packages dos2unix" # community/dos2unix: convert text file line endings between CRLF and LF
 packages="$packages emacs-nox" # community/emacs-nox
+packages="$packages fdupes" # community/fdupes: find duplicate files
 packages="$packages git" # extra/git
 packages="$packages goaccess" # community/goaccess: analyze nginx/apache log in real-time
 packages="$packages htop" # extra/htop: extra/htop
@@ -71,6 +73,7 @@ packages="$packages mlocate" # core/mlocate
 packages="$packages mosh" # community/mosh: ssh replacement
 packages="$packages ncdu" # community/ncdu: diskspace usage is an baobab and gt5 replacement
 packages="$packages pkgfile" # extra/pkgfile: searching files from packages in the official repositories
+packages="$packages progress" # community/progress: progress bar for cp, rm, dd and so on https://github.com/Xfennec/progress
 packages="$packages pwgen" # community/pwgen: password generator
 packages="$packages rsync" # extra/rsync
 packages="$packages syncthing" # community/syncthing: dropbox replacement: deb https://apt.syncthing.net/ syncthing release
@@ -82,7 +85,8 @@ packages="$packages zstd" # core/zstd: a-la gz/xz compression
 # Arch.
 packages="$packages namcap" # extra/namcap: analysis utility that checks binary packages and source PKGBUILDs for common mistakes <https://wiki.archlinux.org/index.php/Namcap>
 
-# Server.
+# Nginx.
+packages="$packages certbot-nginx" # community/certbot-nginx: nginx plugin for let’s encrypt client
 packages="$packages nginx" # extra/nginx
 
 # Golang.
