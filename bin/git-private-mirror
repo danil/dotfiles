@@ -1,0 +1,18 @@
+#! /bin/bash
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
+function mir {
+    local name=$1
+    local vendors=$2
+    local branches=$3
+    cd $(eval echo '~danil')/git/$name
+    for vendor in $vendors; do
+        git push --quiet --tags $vendor $branches
+    done
+}
+
+mir "notes.git"                        "github" "master"
+mir "errocketbank.git"                 "github" "master"
+mir "vendor/armor5games/bhgdeploy.git" "github" "master"
+mir "vendor/armor5games/bhgserver.git" "github" "master"
+mir "vendor/armor5games/ropserver.git" "github" "master"

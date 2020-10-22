@@ -1,0 +1,52 @@
+#! /bin/bash
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
+function mir {
+    local name=$1
+    local vendors=$2
+    local branches=$3
+    cd $(eval echo '~git')/$name
+    # <http://stackoverflow.com/questions/1469849/how-to-split-one-string-into-multiple-strings-separated-by-at-least-one-space-in#1469863>,
+    # <http://unix.stackexchange.com/questions/47557/in-a-bash-shell-script-writing-a-for-loop-that-iterates-over-string-values#47560>,
+    # <http://stackoverflow.com/questions/17249665/splitting-a-comma-separated-string-into-multiple-words-so-that-i-can-loop-throug#17249721>.
+    for vendor in $vendors; do
+        git push --quiet --tags $vendor $branches
+    done
+}
+
+# mir "cv.git"                       "gitlab github" "gh-pages"
+# mir "go/client-server-example.git" "github"             "master"
+# mir "go/count-words-server-example.git" "github"        "master"
+# mir "go/ptichka.git"               "gitlab github"      "master"
+mir "debsrc/dwm.git"               "github"        "bionic"
+mir "debsrc/stterm.git"            "github"        "bionic"
+mir "dotfiles-playbooks.git"       "github"        "master"
+mir "dotfiles.git"                 "gitlab github" "h2-gentoo-danil h10-gentoo-danil h17-ubuntu-danil h18-termux-danil h19-ubuntu-danil"
+mir "el/ferm-mode.git"             "gitlab github" "master"
+mir "el/ido-describe-bindings.git" "gitlab github" "master"
+mir "el/ido-occur.git"             "gitlab github" "master"
+mir "el/init.el.git"               "gitlab github" "master trash"
+mir "etc.git"                      "gitlab github" "h2-gentoo h10-gentoo h4-sailfish h19-ubuntu"
+mir "example.git"                  "bitbucket"     "a c b10"
+mir "go/csv_aggregate_example.git" "github"        "master"
+mir "go/logsql.git"                "github"        "master"
+mir "go/merge_two_files_example.git" "github"      "master"
+mir "go/mutex_vs_channels_benchmark.git" "github"  "master"
+# mir "go/plainstatus.git"           "github"        "master"
+mir "go/rsa_signature_example.git" "github"     "master"
+mir "js/homepage.git"              "gitlab github" "master"
+mir "kernels.git"                  "gitlab github" "h10-gentoo"
+mir "keys.git"                     "gitlab github" "master"
+mir "lua/imapfilters.git"          "github"        "master"
+mir "md/rc.git"                    "gitlab github" "master"
+mir "md/rcc.git"                   "github"        "master"
+mir "sh/overlays.git"              "gitlab github" "master net-analyzer/linode-longview sys-apps/mdp unsupported"
+mir "sh/rsa_signature_example.git" "bitbucket"     "master"
+mir "sieves.git"                   "gitlab github" "master"
+mir "suckless/dmenu.git"           "github"       "master"
+mir "suckless/dwm.git"             "github"        "master"
+mir "suckless/slstatus.git"        "github"        "master"
+mir "usr.git"                      "github"        "h10-ubuntu h19-ubuntu"
+mir "utils.git"                    "gitlab github" "master"
+mir "worlds.git"                   "gitlab github" "h2 h10"
+mir "zones.git"                    "gitlab github" "master"
