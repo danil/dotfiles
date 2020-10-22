@@ -58,7 +58,6 @@ packages="$packages which" # core/which
 # Common user space packages.
 # packages="$packages genius" # extra/genius: calculator
 # packages="$packages hping3" # TODO: install from aur # a-la interactive ping https://github.com/antirez/hping
-# packages="$packages uni2ascii" # TODO: install from aur # to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`
 packages="$packages bc" # extra/bc: used by bash prompt, console-based calculator utility
 packages="$packages bind" # extra/bind: provides host utility
 packages="$packages dos2unix" # community/dos2unix: convert text file line endings between CRLF and LF
@@ -73,11 +72,16 @@ packages="$packages ncdu" # community/ncdu: diskspace usage is an baobab and gt5
 packages="$packages pkgfile" # extra/pkgfile: searching files from packages in the official repositories
 packages="$packages progress" # community/progress: progress bar for cp, rm, dd and so on https://github.com/Xfennec/progress
 packages="$packages pwgen" # community/pwgen: password generator
+packages="$packages ripgrep" # community/ripgrep: rg is an ag and ack replacement https://github.com/BurntSushi/ripgrep
 packages="$packages rsync" # extra/rsync
 packages="$packages syncthing" # community/syncthing: dropbox replacement: deb https://apt.syncthing.net/ syncthing release
+packages="$packages the_platinum_searcher-bin" # kutkevich/the_platinum_searcher-bin: pt is an ag and ack replacement https://github.com/monochromegane/the_platinum_searcher
+packages="$packages the_silver_searcher" # community/the_silver_searcher: ag is an ack replacement https://github.com/ggreer/the_silver_searcher
 packages="$packages tig" # community/tig: git interactive cli
 packages="$packages tmux" # community/tmux
 packages="$packages tree" # extra/tree: displays an indented directory tree
+packages="$packages uni2ascii" # kutkevich/uni2ascii: to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`
+packages="$packages wget" # extra/wget
 packages="$packages zstd" # core/zstd: a-la gz/xz compression
 
 # Arch.
