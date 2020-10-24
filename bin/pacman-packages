@@ -58,6 +58,7 @@ packages="$packages which" # core/which
 # Common user space packages.
 # packages="$packages genius" # extra/genius: calculator
 # packages="$packages hping3" # TODO: install from aur # a-la interactive ping https://github.com/antirez/hping
+packages="$packages bash-completion" # extra/bash-completion: tab completion
 packages="$packages bc" # extra/bc: used by bash prompt, console-based calculator utility
 packages="$packages bind" # extra/bind: provides host utility
 packages="$packages dos2unix" # community/dos2unix: convert text file line endings between CRLF and LF
