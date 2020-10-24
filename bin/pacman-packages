@@ -84,6 +84,10 @@ packages="$packages uni2ascii" # kutkevich/uni2ascii: to/from unicode and to/fro
 packages="$packages wget" # extra/wget
 packages="$packages zstd" # core/zstd: a-la gz/xz compression
 
+# Imapfilter.
+packages="$packages imapfilter" # kutkevich/imapfilter: filter my gmail mail
+packages="$packages lua" # extra/lua
+
 # Arch.
 packages="$packages namcap" # extra/namcap: analysis utility that checks binary packages and source PKGBUILDs for common mistakes <https://wiki.archlinux.org/index.php/Namcap>
 
