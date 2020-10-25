@@ -194,6 +194,6 @@ bar {
                 # colorclass       border  backgr. text
                 focused_workspace  $hi     $hi     $fg
                 inactive_workspace $ia     $bg     $tx
-                urgent_workspace   $bg     $ac     $tx
+                urgent_workspace   $bg     $ac     $ia
         }
 }
