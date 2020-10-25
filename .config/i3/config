@@ -15,21 +15,17 @@
 set $mod Mod4
 
 # Colors
-# Black
 set $bg #000000
-# White
 set $fg #ffffff
-# OrangeRed1
-set $hi #ff4500
-set $ac #efef8f
-#ffff00 yellow1
-
-# set $tx #??????
-# set $ia #??????
+set $hi #ff0000
+set $ac #00ff00
+set $tx #888888
+set $ia #333333
 # set $be #??????
-# set $yw #??????
-# set $gn #??????
-# set $rd #??????
+set $yw #daa520
+set $gn #00ff00
+# OrangeRed1
+set $rd #ff0000
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -196,8 +192,8 @@ bar {
                 statusline $fg
 
                 # colorclass       border  backgr. text
-                focused_workspace  $hi     $bg     $fg
-                inactive_workspace #333333 $bg     #888888
-                urgent_workspace   $ac $bg         #888888
+                focused_workspace  $hi     $hi     $fg
+                inactive_workspace $ia     $bg     $tx
+                urgent_workspace   $bg     $ac     $tx
         }
 }
