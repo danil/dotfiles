@@ -1,6 +1,7 @@
 <configuration version="32">
     <folder id="5cfzi-lnjpr" label="Notes" path="/home/danil/Notes" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
+        <device id="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6" introducedBy=""></device>
         <device id="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK" introducedBy=""></device>
         <device id="YSILUWZ-HUBI6QS-SXYT7AS-W6WKKHS-RXRSK3O-B65PL65-XYXPOBA-LHTYEAP" introducedBy=""></device>
         <device id="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW" introducedBy=""></device>
@@ -32,6 +33,8 @@
     </folder>
     <folder id="at7a3-rnepr" label="Books" path="/home/danil/Books" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
+        <device id="CRP2GG7-HRM6BEL-44DOJQZ-USO4R6V-QJYJNVL-BL4GKCP-LPR7DR7-53D3MQD" introducedBy="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6"></device>
+        <device id="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6" introducedBy=""></device>
         <device id="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK" introducedBy=""></device>
         <device id="YSILUWZ-HUBI6QS-SXYT7AS-W6WKKHS-RXRSK3O-B65PL65-XYXPOBA-LHTYEAP" introducedBy=""></device>
         <device id="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW" introducedBy=""></device>
@@ -63,6 +66,7 @@
     </folder>
     <folder id="krbr4-es5n4" label="Podcasts" path="/home/danil/Podcasts" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
+        <device id="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6" introducedBy=""></device>
         <device id="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK" introducedBy=""></device>
         <device id="YSILUWZ-HUBI6QS-SXYT7AS-W6WKKHS-RXRSK3O-B65PL65-XYXPOBA-LHTYEAP" introducedBy=""></device>
         <device id="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW" introducedBy=""></device>
@@ -94,6 +98,8 @@
     </folder>
     <folder id="xi2ew-z6l3e" label="Sync" path="/home/danil/Sync" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
+        <device id="CRP2GG7-HRM6BEL-44DOJQZ-USO4R6V-QJYJNVL-BL4GKCP-LPR7DR7-53D3MQD" introducedBy="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6"></device>
+        <device id="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6" introducedBy=""></device>
         <device id="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK" introducedBy=""></device>
         <device id="YSILUWZ-HUBI6QS-SXYT7AS-W6WKKHS-RXRSK3O-B65PL65-XYXPOBA-LHTYEAP" introducedBy=""></device>
         <device id="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW" introducedBy=""></device>
@@ -123,6 +129,22 @@
         <caseSensitiveFS>false</caseSensitiveFS>
         <junctionsAsDirs>true</junctionsAsDirs>
     </folder>
+    <device id="CRP2GG7-HRM6BEL-44DOJQZ-USO4R6V-QJYJNVL-BL4GKCP-LPR7DR7-53D3MQD" name="h10" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6">
+        <address>dynamic</address>
+        <paused>false</paused>
+        <autoAcceptFolders>false</autoAcceptFolders>
+        <maxSendKbps>0</maxSendKbps>
+        <maxRecvKbps>0</maxRecvKbps>
+        <maxRequestKiB>0</maxRequestKiB>
+    </device>
+    <device id="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6" name="h20" compression="metadata" introducer="true" skipIntroductionRemovals="false" introducedBy="">
+        <address>dynamic</address>
+        <paused>false</paused>
+        <autoAcceptFolders>false</autoAcceptFolders>
+        <maxSendKbps>0</maxSendKbps>
+        <maxRecvKbps>0</maxRecvKbps>
+        <maxRequestKiB>0</maxRequestKiB>
+    </device>
     <device id="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK" name="h2" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
         <address>dynamic</address>
         <paused>false</paused>
@@ -198,5 +220,6 @@
         <stunServer>default</stunServer>
         <databaseTuning>auto</databaseTuning>
         <maxConcurrentIncomingRequestKiB>0</maxConcurrentIncomingRequestKiB>
+        <announceLANAddresses>true</announceLANAddresses>
     </options>
 </configuration>
