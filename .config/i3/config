@@ -19,7 +19,7 @@ set $bg #000000
 set $fg #ffffff
 set $hi #ff0000
 set $ac #00ff00
-set $tx #888888
+set $tx #aaaaaa
 set $ia #333333
 # set $be #??????
 set $yw #daa520
