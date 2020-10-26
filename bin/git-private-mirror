@@ -9,7 +9,7 @@ function mir {
     local branches=$3
     cd $(eval echo '~danil')/git/$name
     for vendor in $vendors; do
-        echo "$(date --utc '+%d/%b/%Y:%H:%M:%S %z') $name $vendor $branches" >>$log 2>&1
+        echo "$(date --utc '+%d/%I/%Y %H:%M:%S') $name $vendor: $branches" >>$log 2>&1
         git push --quiet --tags $vendor $branches >>$log 2>&1
     done
 }

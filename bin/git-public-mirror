@@ -12,7 +12,7 @@ function mir {
     # <http://unix.stackexchange.com/questions/47557/in-a-bash-shell-script-writing-a-for-loop-that-iterates-over-string-values#47560>,
     # <http://stackoverflow.com/questions/17249665/splitting-a-comma-separated-string-into-multiple-words-so-that-i-can-loop-throug#17249721>.
     for vendor in $vendors; do
-        echo "$(date --utc '+%d/%b/%Y:%H:%M:%S %z') $name $vendor $branches" >>$log 2>&1
+        echo "$(date --utc '+%d/%I/%Y %H:%M:%S') $name $vendor: $branches" >>$log 2>&1
         git push --quiet --tags $vendor $branches >>$log 2>&1
     done
 }
