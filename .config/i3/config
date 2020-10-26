@@ -18,13 +18,12 @@ set $mod Mod4
 set $bg #000000
 set $fg #ffffff
 set $hi #ff0000
-set $ac #00ff00
+set $ac #32cd32
 set $tx #aaaaaa
 set $ia #333333
-# set $be #??????
+set $be #48d1cc
 set $yw #daa520
-set $gn #00ff00
-# OrangeRed1
+set $gn #32cd32
 set $rd #ff0000
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -194,6 +193,6 @@ bar {
                 # colorclass       border  backgr. text
                 focused_workspace  $hi     $hi     $fg
                 inactive_workspace $ia     $bg     $tx
-                urgent_workspace   $bg     $ac     $ia
+                urgent_workspace   $bg     $ac     $fg
         }
 }
