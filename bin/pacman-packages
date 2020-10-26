@@ -69,6 +69,7 @@ packages="$packages git" # extra/git
 packages="$packages htop" # extra/htop: extra/htop
 packages="$packages jq" # community/jq: json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>
 packages="$packages lftp" # extra/lftp: ftp client
+packages="$packages logrotate" # core/logrotate
 packages="$packages mlocate" # core/mlocate
 packages="$packages mosh" # community/mosh: ssh replacement
 packages="$packages ncdu" # community/ncdu: diskspace usage is an baobab and gt5 replacement
