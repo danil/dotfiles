@@ -23,6 +23,7 @@ install="$install hping3" # a-la interactive ping https://github.com/antirez/hpi
 install="$install htop"
 install="$install jq" # json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>
 install="$install lm-sensors" # FIXME: is the cpu temperate by ls sensors used by plain status or by slstatus?
+install="$install logrotate"
 install="$install mkusb usb-pack-efi" # create bootable usb <https://help.ubuntu.com/community/mkusb#Quick_start_manual_and_mkusb_PPA>
 install="$install mlocate" # locate/updatedb
 install="$install mosh" # ssh replacement
