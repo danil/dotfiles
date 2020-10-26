@@ -1,7 +1,7 @@
 #! /bin/bash
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-log=/var/log/git-public-mirror.log
+log=/var/log/gitmirror/public.log
 
 function mir {
     local name=$1
