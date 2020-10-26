@@ -15,6 +15,7 @@ install="$install bc" # used by bash prompt, console-based calculator utility
 install="$install curl"
 install="$install dos2unix" # convert text file line endings between CRLF and LF
 install="$install dropbox"
+install="$install exim4-daemon-light" # send mail via /usr/sbin/sendmail and deliver local mail to /var/mail
 install="$install genius" # calculator
 install="$install git"
 install="$install goaccess" # analyze nginx/apache log in real-time
