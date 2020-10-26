@@ -1,18 +1,22 @@
 #! /bin/bash
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
+log=/var/log/git-private-mirror.log
+
 function mir {
     local name=$1
     local vendors=$2
     local branches=$3
     cd $(eval echo '~danil')/git/$name
     for vendor in $vendors; do
-        git push --quiet --tags $vendor $branches
+        echo "$(date --utc '+%d/%b/%Y:%H:%M:%S %z') $name $vendor $branches" >>$log 2>&1
+        git push --quiet --tags $vendor $branches >>$log 2>&1
     done
 }
 
-mir "notes.git"                        "github" "master"
-mir "errocketbank.git"                 "github" "master"
-mir "vendor/armor5games/bhgdeploy.git" "github" "master"
-mir "vendor/armor5games/bhgserver.git" "github" "master"
-mir "vendor/armor5games/ropserver.git" "github" "master"
+mir "errocketbank.git"             "github" "master"
+mir "md/rcc.git"                   "github" "master"
+mir "notes.git"                    "github" "master"
+mir "vendor/armor5games/bhgdeploy" "github" "master"
+mir "vendor/armor5games/bhgserver" "github" "master"
+mir "vendor/armor5games/ropserver" "github" "master"
