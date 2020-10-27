@@ -20,8 +20,10 @@ while [ $# -gt 0 ]; do
     shift
 done
 
-# Inital packages (from linode image).
+# Base packages/Linode image packages
+# <https://www.archlinux.org/packages/?name=base>.
 packages="$packages base" # core/base
+packages="$packages core/iptables" # core/iptables: firewall
 packages="$packages curl" # core/curl
 packages="$packages grub" # core/grub
 packages="$packages haveged" # extra/haveged
