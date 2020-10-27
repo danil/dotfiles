@@ -58,7 +58,7 @@ function ps1_outdated_packages {
 function ps1_unread_mails {
     if [ -s /var/mail/$(whoami) ] ; then
         # <http://serverfault.com/questions/171833/display-number-of-messages-in-linux-mail-queue#289177>
-        let mails_count=$(gnu-mail --file /var/mail/$(whoami) --headers | wc -l)
+        let mails_count=$(gnu-mail --file /var/mail/$(whoami) --headers | grep '^>* *[0-9]' | wc -l)
 
     else
         let mails_count=0
