@@ -57,7 +57,7 @@ packages="$packages patch" # core/patch
 packages="$packages pkgconf" # core/pkgconf
 packages="$packages which" # core/which
 
-# Common user space packages.
+# Common/user space packages.
 # packages="$packages genius" # extra/genius: calculator
 # packages="$packages hping3" # TODO: install from aur # a-la interactive ping https://github.com/antirez/hping
 packages="$packages bash-completion" # extra/bash-completion: tab completion
