@@ -89,6 +89,7 @@ packages="$packages github.com/nsf/gocode@v0.0.0-20190302080247-5bee97b48836" # 
 packages="$packages github.com/rakyll/hey@v0.1.3" # http load generator (a-la ab apach benchmark)
 packages="$packages github.com/rlmcpherson/s3gof3r/gof3r@v0.5.0" # s3 (amazon aws) client
 packages="$packages github.com/rogpeppe/godef@v1.1.2" # used by emacs for jump to the definition of the expression at point
+packages="$packages github.com/securego/gosec/v2/cmd/gosec@v2.5.0" # security linter/checker
 packages="$packages github.com/simeji/jid/cmd/jid@v0.7.6" # interactive jq
 packages="$packages github.com/svent/sift@v0.9.0" # print lines matching a regexp a-la grep or ag
 packages="$packages github.com/tigrawap/goader@v1.4.2" # s3/http/disk benchmark (a-la ab apach benchmark)

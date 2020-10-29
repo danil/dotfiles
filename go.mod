@@ -83,6 +83,7 @@ require (
 	github.com/rlmcpherson/s3gof3r v0.5.0 // indirect
 	github.com/rogpeppe/godef v1.1.2 // indirect
 	github.com/securego/gosec v0.0.0-20200401082031-e946c8c39989 // indirect
+	github.com/securego/gosec/v2 v2.5.0 // indirect
 	github.com/shiena/ansicolor v0.0.0-20151119151921-a422bbe96644 // indirect
 	github.com/shirou/gopsutil v2.20.9+incompatible // indirect
 	github.com/sideshow/apns2 v0.20.0 // indirect
@@ -106,7 +107,7 @@ require (
 	golang.org/dl v0.0.0-20200611200201-72429b14455f // indirect
 	golang.org/x/crypto v0.0.0-20201002170205-7f63de1d35b0 // indirect
 	golang.org/x/sys v0.0.0-20201006155630-ac719f4daadf // indirect
-	golang.org/x/tools v0.0.0-20200918201133-e94ab7288189 // indirect
+	golang.org/x/tools v0.0.0-20201028224754-2c115999a7f0 // indirect
 	golang.org/x/tools/gopls v0.4.1 // indirect
 	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
 	google.golang.org/genproto v0.0.0-20200925023002-c2d885f95484 // indirect
