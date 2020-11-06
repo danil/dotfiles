@@ -82,7 +82,6 @@ packages="$packages pwgen" # community/pwgen: password generator
 packages="$packages ripgrep" # community/ripgrep: rg is an search tool a-la ag and ack replacement https://github.com/BurntSushi/ripgrep
 packages="$packages rsync" # extra/rsync
 packages="$packages syncthing" # community/syncthing: dropbox replacement: deb https://apt.syncthing.net/ syncthing release
-packages="$packages the_platinum_searcher-bin" # kutkevich/the_platinum_searcher-bin: pt is an ag and ack replacement https://github.com/monochromegane/the_platinum_searcher
 packages="$packages the_silver_searcher" # community/the_silver_searcher: ag is an ack replacement https://github.com/ggreer/the_silver_searcher
 packages="$packages tig" # community/tig: git interactive cli
 packages="$packages tmux" # community/tmux
