@@ -25,7 +25,7 @@ while [ $# -gt 0 ]; do
 done
 
 install_command="cargo install"
-uninstall_command="cargo uninstall"
+update_command="cargo install --force"
 
 [[ $jobs -gt 0 ]] && install_command="$install_command --jobs=$jobs"
 
@@ -37,19 +37,18 @@ if [[ $verbose -eq 1 ]] ; then
     echo "update=$update"
 fi
 
-packages="$packages --git=https://github.com/ogham/exa" #ls replacement <https://github.com/ogham/exa>
-packages="$packages --version=2.0.13 racer" #rust code completion <https://github.com/phildawes/racer>, latest racer failed to compile with error: could not compile `rustc-ap-graphviz` <https://github.com/racer-rust/racer/issues/868#issuecomment-459017685>
-packages="$packages cargo-count" #counting lines of code in rust projects <https://github.com/kbknapp/cargo-count>
-packages="$packages ripgrep" #search tool a-la ag (silver searcher) <https://github.com/BurntSushi/ripgrep>
-packages="$packages rustfmt" #rust formating <https://github.com/rust-lang-nursery/rustfmt>
-packages="$packages tokei" #cloc metric (count lines of code) <https://github.com/Aaronepower/tokei>
-packages="$packages xsv" #csv cli (indexing, slicing, analyzing, splitting and joining) <https://github.com/BurntSushi/xsv>
+# packages="$packages racer" # compilation failing all the time <https://github.com/racer-rust/racer/issues/868#issuecomment-459017685>, rust code completion https://github.com/phildawes/racer
+packages="$packages exa" # ls replacement https://github.com/ogham/exa
+packages="$packages fd-find" # find replacement https://github.com/sharkdp/fd
+packages="$packages ripgrep" # search tool a-la ag (silver searcher) <https://github.com/BurntSushi/ripgrep>
+packages="$packages rustfmt" # rust formating <https://github.com/rust-lang-nursery/rustfmt>
+packages="$packages tokei" # cloc metric (count lines of code) <https://github.com/Aaronepower/tokei>
+packages="$packages xsv" # csv cli (indexing, slicing, analyzing, splitting and joining) <https://github.com/BurntSushi/xsv>
 
 for package in $packages; do
-    # TODO: To fix "update". Extract only package name from "package" string.
     if [[ $update -eq 1 ]] ; then
-        $uninstall_command $package
+        $update_command $package || exit 1
+    else
+        $install_command $package
     fi
-
-    $install_command $package
 done
