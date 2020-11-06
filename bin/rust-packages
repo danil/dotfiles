@@ -40,6 +40,7 @@ fi
 # packages="$packages racer" # compilation failing all the time <https://github.com/racer-rust/racer/issues/868#issuecomment-459017685>, rust code completion https://github.com/phildawes/racer
 packages="$packages exa" # ls replacement https://github.com/ogham/exa
 packages="$packages fd-find" # find replacement https://github.com/sharkdp/fd
+packages="$packages procs" # a-la ps replacement https://github.com/dalance/procs
 packages="$packages ripgrep" # search tool a-la ag (silver searcher) <https://github.com/BurntSushi/ripgrep>
 packages="$packages rustfmt" # rust formating <https://github.com/rust-lang-nursery/rustfmt>
 packages="$packages tokei" # cloc metric (count lines of code) <https://github.com/Aaronepower/tokei>
