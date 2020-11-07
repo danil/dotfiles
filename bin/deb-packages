@@ -43,7 +43,7 @@ install="$install uni2ascii" # to/from unicode and to/from percent-encoding conv
 install="$install whois"
 install="$install zstd" # a-la gz/xz compression
 
-# Compil.
+# C/C++ compile/make and so on.
 install="$install automake" # required by tmux/xchainkeys
 install="$install build-essential" # compiler?
 install="$install devscripts" # ???
@@ -71,11 +71,11 @@ install="$install automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev" # com
 # # PostgreSQL
 # install="$install pgcenter" # https://github.com/lesovsky/pgcenter/releases install: dpkg --install path/to/pgcenter.deb
 
-# Golang.
+# Golang programming language.
 # install="$install golang-race-detector-runtime" # FIXME: where is race detector for the go 1.15?
 install="$install golang-1.15-doc golang-1.15-go golang-1.15-src"
 
-# Rust.
+# Rust programming language.
 # install="$install libgtk-3-dev" # required by fontfinder https://github.com/mmstick/fontfinder
 # install="$install libwebkit2gtk-4.0-dev" # required by fontfinder https://github.com/mmstick/fontfinder
 install="$install libxcb-composite0-dev" # required by gitui a-la tig https://github.com/extrawurst/gitui
@@ -83,13 +83,13 @@ install="$install libxcb-composite0-dev" # required by gitui a-la tig https://gi
 # Dart <https://dart.dev/get-dart>.
 install="$install dart"
 
-# Ruby.
+# Ruby programming language.
 # install="$install libssl1.0-dev" # required by ruby 2.3.7 (libssl1.0-dev conflicts with libssl-dev)
 install="$install libreadline-dev" # required by ruby 2.6.3
 install="$install libsqlite3-dev" # required by sqlite3 which required by mailcatcher
 install="$install libssl-dev" # required by ruby 2.6.3 (libssl-dev conflicts with libssl1.0-dev)
 
-# Python.
+# Python programming language.
 # install="$install python-pip" # python 2 pip no longer supported by ubuntu
 install="$install python3-pip"
 
