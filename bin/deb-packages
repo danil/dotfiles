@@ -78,6 +78,7 @@ install="$install golang-1.15-doc golang-1.15-go golang-1.15-src"
 # Rust.
 # install="$install libgtk-3-dev" # required by fontfinder https://github.com/mmstick/fontfinder
 # install="$install libwebkit2gtk-4.0-dev" # required by fontfinder https://github.com/mmstick/fontfinder
+install="$install libxcb-composite0-dev" # required by gitui a-la tig https://github.com/extrawurst/gitui
 
 # Dart <https://dart.dev/get-dart>.
 install="$install dart"
