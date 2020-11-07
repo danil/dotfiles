@@ -44,7 +44,7 @@ packages="$packages sudo" # core/sudo
 packages="$packages sysstat" # community/sysstat
 packages="$packages whois" # extra/whois
 
-# Compile/make and so on.
+# C/C++ compile/make and so on.
 # packages="$packages base-devel" # package group required to build PKGBUILD package from aur (arch user repository)
 packages="$packages autoconf" # core/autoconf
 packages="$packages automake" # core/automake
@@ -107,8 +107,12 @@ packages="$packages nginx" # extra/nginx
 packages="$packages imapfilter" # kutkevich/imapfilter: filter my gmail mail
 packages="$packages lua" # extra/lua
 
-# Golang.
+# Golang programming language.
 packages="$packages go" # community/go
+
+# Rust programming language.
+packages="$packages rust" # extra/rust
+packages="$packages libxcb" # extra/libxcb: required by gitui a-la tig https://github.com/extrawurst/gitui
 
 # Kubernetes/k8s.
 packages="$packages docker" # community/docker

@@ -25,7 +25,7 @@ while [ $# -gt 0 ]; do
 done
 
 install_command="cargo install"
-uninstall_command="cargo uninstall"
+update_command="cargo install --force"
 
 [[ $jobs -gt 0 ]] && install_command="$install_command --jobs=$jobs"
 
@@ -37,19 +37,27 @@ if [[ $verbose -eq 1 ]] ; then
     echo "update=$update"
 fi
 
-packages="$packages --git=https://github.com/ogham/exa" #ls replacement <https://github.com/ogham/exa>
-packages="$packages --version=2.0.13 racer" #rust code completion <https://github.com/phildawes/racer>, latest racer failed to compile with error: could not compile `rustc-ap-graphviz` <https://github.com/racer-rust/racer/issues/868#issuecomment-459017685>
-packages="$packages cargo-count" #counting lines of code in rust projects <https://github.com/kbknapp/cargo-count>
-packages="$packages ripgrep" #search tool a-la ag (silver searcher) <https://github.com/BurntSushi/ripgrep>
-packages="$packages rustfmt" #rust formating <https://github.com/rust-lang-nursery/rustfmt>
-packages="$packages tokei" #cloc metric (count lines of code) <https://github.com/Aaronepower/tokei>
-packages="$packages xsv" #csv cli (indexing, slicing, analyzing, splitting and joining) <https://github.com/BurntSushi/xsv>
+# packages="$packages racer" # compilation failing all the time <https://github.com/racer-rust/racer/issues/868#issuecomment-459017685>, rust code completion https://github.com/phildawes/racer
+packages="$packages bandwhich" # bandwidth utilization tool https://github.com/imsnif/bandwhich
+packages="$packages bat" # print file lines with syntax highlighting, is an cat replacement
+packages="$packages cpc" # cli calculator/units converter https://github.com/probablykasper/cpc
+packages="$packages ddh" # duplicate file finder https://github.com/darakian/ddh
+packages="$packages diskonaut" # terminal disk space navigator https://github.com/imsnif/diskonaut
+packages="$packages du-dust" # show disk space usage, is an du replacement https://github.com/bootandy/dust
+packages="$packages exa" # list files/directories, is an ls replacement https://github.com/ogham/exa
+packages="$packages fd-find" # find replacement https://github.com/sharkdp/fd
+packages="$packages fselect" # find files with sql-like queries https://github.com/jhspetersson/fselect
+packages="$packages gitui" # git tui, is an tig replacement https://github.com/extrawurst/gitui
+packages="$packages procs" # list processes, is an ps replacement https://github.com/dalance/procs
+packages="$packages ripgrep" # search tool, is an ag replacement (silver searcher) <https://github.com/BurntSushi/ripgrep>
+packages="$packages rustfmt" # rust formating <https://github.com/rust-lang-nursery/rustfmt>
+packages="$packages tokei" # cloc metric (count lines of code) <https://github.com/Aaronepower/tokei>
+packages="$packages xsv" # csv cli (indexing, slicing, analyzing, splitting and joining) <https://github.com/BurntSushi/xsv>
 
 for package in $packages; do
-    # TODO: To fix "update". Extract only package name from "package" string.
     if [[ $update -eq 1 ]] ; then
-        $uninstall_command $package
+        $update_command $package || exit 1
+    else
+        $install_command $package
     fi
-
-    $install_command $package
 done
