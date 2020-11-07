@@ -7,6 +7,7 @@ require (
 	github.com/BurntSushi/xgb v0.0.0-20200324125942-20f126ea2843 // indirect
 	github.com/Clever/csvlint v0.2.0 // indirect
 	github.com/Djarvur/go-err113 v0.1.0 // indirect
+	github.com/Microsoft/go-winio v0.4.15 // indirect
 	github.com/astaxie/bat v0.0.2 // indirect
 	github.com/atotto/clipboard v0.1.2 // indirect
 	github.com/aws/aws-sdk-go v1.32.1 // indirect
@@ -21,6 +22,7 @@ require (
 	github.com/danil/plainstatus v0.0.3 // indirect
 	github.com/davecheney/httpstat v1.0.0 // indirect
 	github.com/dbaggerman/cuba v0.3.2 // indirect
+	github.com/fatih/color v1.10.0 // indirect
 	github.com/fd0/machma v0.0.0-20180831184041-8cc009340f18 // indirect
 	github.com/github/hub v2.11.2+incompatible // indirect
 	github.com/go-lintpack/lintpack v0.5.2 // indirect
@@ -44,10 +46,13 @@ require (
 	github.com/ian-kent/go-log v0.0.0-20160113211217-5731446c36ab // indirect
 	github.com/ian-kent/goose v0.0.0-20141221090059-c3541ea826ad // indirect
 	github.com/ian-kent/linkio v0.0.0-20170807205755-97566b872887 // indirect
+	github.com/integrii/flaggy v1.4.4 // indirect
+	github.com/jesseduffield/lazygit v0.23.7 // indirect
 	github.com/jgrahamc/httpdiff v1.0.0 // indirect
 	github.com/jirfag/go-printf-func-name v0.0.0-20200119135958-7558a9eaa5af // indirect
 	github.com/justjanne/powerline-go v1.17.0 // indirect
 	github.com/kballard/go-shellquote v0.0.0-20180428030007-95032a82bc51 // indirect
+	github.com/kevinburke/ssh_config v0.0.0-20201106050909-4977a11b4351 // indirect
 	github.com/kyleconroy/sqlc v1.5.0 // indirect
 	github.com/logrusorgru/aurora v2.0.3+incompatible // indirect
 	github.com/magiconair/properties v1.8.3 // indirect
@@ -88,7 +93,9 @@ require (
 	github.com/shirou/gopsutil v2.20.9+incompatible // indirect
 	github.com/sideshow/apns2 v0.20.0 // indirect
 	github.com/simeji/jid v0.7.6 // indirect
+	github.com/sirupsen/logrus v1.7.0 // indirect
 	github.com/spf13/afero v1.4.0 // indirect
+	github.com/spkg/bom v1.0.0 // indirect
 	github.com/stretchr/objx v0.3.0 // indirect
 	github.com/svent/go-flags v0.0.0-20141123140740-4bcbad344f03 // indirect
 	github.com/svent/go-nbreader v0.0.0-20150201200112-7cef48da76dc // indirect
@@ -104,9 +111,11 @@ require (
 	github.com/wallix/awless-scheduler v0.0.6 // indirect
 	github.com/wallix/triplestore v0.0.0-20180213143850-4099dd913851 // indirect
 	github.com/willf/bitset v1.1.10 // indirect
+	github.com/xanzy/ssh-agent v0.3.0 // indirect
 	golang.org/dl v0.0.0-20200611200201-72429b14455f // indirect
-	golang.org/x/crypto v0.0.0-20201002170205-7f63de1d35b0 // indirect
-	golang.org/x/sys v0.0.0-20201006155630-ac719f4daadf // indirect
+	golang.org/x/crypto v0.0.0-20201016220609-9e8e0b390897 // indirect
+	golang.org/x/net v0.0.0-20201031054903-ff519b6c9102 // indirect
+	golang.org/x/sys v0.0.0-20201106081118-db71ae66460a // indirect
 	golang.org/x/tools v0.0.0-20201028224754-2c115999a7f0 // indirect
 	golang.org/x/tools/gopls v0.4.1 // indirect
 	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect

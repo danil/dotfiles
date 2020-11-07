@@ -77,6 +77,7 @@ packages="$packages github.com/godoctor/godoctor@v0.0.0-20181123222458-69df17f3a
 packages="$packages github.com/gokcehan/lf@v0.0.0-20200611011140-0e3910652af9" # file manager for the cli/command line/terminal a-la mc (midnight commander)
 packages="$packages github.com/golangci/golangci-lint/cmd/golangci-lint@v1.31.0" # used by emacs a-la gometalinter
 packages="$packages github.com/google/wire/cmd/wire@v0.4.0" # compile/static/generate dj (dependency injection)
+packages="$packages github.com/jesseduffield/lazygit@v0.23.7" # git tui a-la tig https://github.com/jesseduffield/lazygit
 packages="$packages github.com/jgrahamc/httpdiff@v1.0.0" # diff http requests <https://github.com/jgrahamc/httpdiff>
 packages="$packages github.com/justjanne/powerline-go@v1.17.0" # a powerline style prompt for shell
 packages="$packages github.com/kr/pretty@v0.2.0" # pretty-printing for go values for the logging/debuging/testing purposes
