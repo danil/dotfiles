@@ -14,7 +14,6 @@
 # packages="$packages github.com/jgautheron/goconst/cmd/goconst"
 # packages="$packages github.com/kisielk/errcheck" # used by emacs flycheck `errcheck -verbose -asserts ./...`
 # packages="$packages github.com/mdempsky/unconvert" # identify unnecessary type conversions (i.e. expressions T(x) where x already has type T) `unconvert -v .`
-# packages="$packages github.com/mibk/dupl"
 # packages="$packages mvdan.cc/interfacer" # suggests interface types (foo.go:10:19: f can be io.Reader)
 # packages="$packages github.com/walle/lll/..."
 # packages="$packages golang.org/x/tools/cmd/gotype"
