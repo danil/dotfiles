@@ -46,6 +46,9 @@ export PATH="$PATH":"$HOME"/.local/usr/local/bin #dwm make install here
 
 [ -f "$HOME"/.netrc/.netrc ] && export NETRC="$HOME"/.netrc/.netrc
 
+# Homebrew
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
 # Debian/Ubuntu
 export DEBFULLNAME="Danil Kutkevich"
 export DEBEMAIL="danil@kutkevich.org"

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Homebrew.
+
+command="brew install"
+
+packages="$packages nnn" # terminal file manager a-la mc/midnight commander https://github.com/jarun/nnn
+
+for package in $packages; do
+    $command $package
+done

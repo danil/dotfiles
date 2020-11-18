@@ -172,6 +172,13 @@ install="$install xxkb" # keyboard/language layout indicator (flag) for tray
 # install="$install xautolock" # used by i3lock
 # install="$install xxkb" # keyboard/language layout indicator (flag) for tray
 
+# Homebrew
+# <https://docs.brew.sh/Homebrew-on-Linux>.
+install="$install build-essential"
+install="$install curl"
+install="$install file"
+install="$install git"
+
 # Xfce4.
 # install="$install xfdashboard" # overview all windows
 # install="$install xfce4"
