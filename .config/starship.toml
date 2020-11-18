@@ -1,3 +1,5 @@
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
 add_newline = false # disable the newline at the start of the prompt
 
 format = """\
