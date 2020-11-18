@@ -56,7 +56,7 @@ format = "[${ram}( ${swap})]($style) "
 [cmd_duration]
 min_time = 10000
 format = "[$duration](bold yellow) "
-show_notifications = true
+show_notifications = true # not working(
 
 [custom.datetime]
 disabled = false
