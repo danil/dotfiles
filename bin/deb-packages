@@ -106,7 +106,6 @@ install="$install curl dirmngr apt-transport-https lsb-release ca-certificates" 
 # install="$install fonts-noto" # awesome serif font ???
 # install="$install xcalib" # returns: "Error - unsupported ramp size 0" (load icc/icm display color profiles (only calibration curves) <https://wiki.archlinux.org/index.php/ICC_Profiles#xcalib>)
 # install="$install xclip" # tmux and xorg clipboard integration <https://github.com/tmux-plugins/tmux-yank#linux-requirements>
-install="$install alacritty" # terminal emulator a-la st/xterm
 install="$install argyll" # load icc/icm display color profiles <https://wiki.archlinux.org/index.php/ICC_Profiles#Argyll_CMS>
 install="$install duplicity" # backuping
 install="$install feh" # view image
@@ -140,9 +139,14 @@ install="$install xcalib" # `xcalib -i -a` invert colors on xorg/xrandr <https:/
 # install="$install dunst" # instead compilling from source into ~/.local/bin # a-la notify-osd
 install="$install libdbus-1-dev libnotify-dev libxrandr-dev libpango1.0-dev libx11-dev libxinerama-dev libxss-dev libglib2.0-dev libgtk-3-dev libxdg-basedir-dev" # compiltime dependencies <https://github.com/dunst-project/dunst/wiki/Dependencies>
 
-# Suckless st terminal.
-# # install="$install stterm" # instead compiling from source into ~/.local/bin # succless st terminal
-install="$install build-essential libx11-dev libxinerama-dev sharutils suckless-tools"
+# Alacritty terminal emulator a-la st/xterm
+# <https://github.com/alacritty/alacritty/blob/master/INSTALL.md#debianubuntu>.
+install="$install cmake"
+install="$install libfontconfig1-dev"
+install="$install libfreetype6-dev"
+install="$install libxcb-xfixes0-dev"
+install="$install pkg-config"
+install="$install python3"
 
 # xtitle used by i3blocks/i3 <https://github.com/baskerville/xtitle>.
 install="$install libxcb-ewmh-dev libxcb-icccm4-dev libxcb-util0-dev" # compiltime dependencies
