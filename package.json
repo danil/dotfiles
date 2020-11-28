@@ -14,6 +14,7 @@
     "author": "Danil Kutkevich",
     "dependencies": {},
     "devDependencies": {
+        "js-yaml": "latest",
         "jsonlint": "latest",
         "markdownlint-cli": "0.19.0"
     },
