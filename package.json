@@ -17,7 +17,9 @@
         "js-yaml": "used/required by emacs flycheck",
         "js-yaml": "latest",
         "jsonlint": "latest",
-        "markdownlint-cli": "0.19.0"
+        "markdownlint-cli": "0.19.0",
+        "typescript": "TypeScript tsc compiler",
+        "typescript": "latest"
     },
     "engines": {
         "node": "latest"
