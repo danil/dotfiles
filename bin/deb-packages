@@ -100,8 +100,28 @@ install="$install python3-pip"
 install="$install nodejs" # nodesource.com's nodejs provides latest version of the npm
 install="$install curl dirmngr apt-transport-https lsb-release ca-certificates" # required by nodesource.com's ppa
 
+# Homebrew
+# <https://docs.brew.sh/Homebrew-on-Linux>.
+install="$install build-essential"
+install="$install curl"
+install="$install file"
+install="$install git"
+
+# Docker
+# <https://docs.docker.com/install/linux/docker-ce/ubuntu>.
+install="$install docker-ce" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
+install="$install golang-docker-credential-helpers" # credential helper stores encrypted passwords in d-bus secret service instead of unencrypted password in plain file <https://docs.docker.com/engine/reference/commandline/login/#credentials-store>
+install="$install apt-transport-https ca-certificates gnupg-agent software-properties-common" # required by docker ppa <https://docs.docker.com/install/linux/docker-ce/ubuntu>
+
+# Mongodb
+install="$install mongodb-org" # latest stable version of the mongodb server
+install="$install gnupg" # required by mongodb <https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu>
+
+# K8s kubernetes.
+install="$install kubectl" # `deb https://apt.kubernetes.io/ kubernetes-xenial main` <https://kubernetes.io/docs/tasks/tools/install-kubectl>
+install="$install gnupg2" # required by kubectl
+
 # X11/xorg/desktop.
-# install="$install brave-browser" # a-la google chrome
 # install="$install font-manager" # list bitmap ??? fonts
 # install="$install fonts-noto" # awesome serif font ???
 # install="$install xcalib" # returns: "Error - unsupported ramp size 0" (load icc/icm display color profiles (only calibration curves) <https://wiki.archlinux.org/index.php/ICC_Profiles#xcalib>)
@@ -176,12 +196,11 @@ install="$install xxkb" # keyboard/language layout indicator (flag) for tray
 # install="$install xautolock" # used by i3lock
 # install="$install xxkb" # keyboard/language layout indicator (flag) for tray
 
-# Homebrew
-# <https://docs.brew.sh/Homebrew-on-Linux>.
-install="$install build-essential"
+# Brave browser a-la google chrome <https://github.com/brave>.
+install="$install apt-transport-https"
+install="$install brave-browser" # a-la google chrome
 install="$install curl"
-install="$install file"
-install="$install git"
+install="$install gnupg"
 
 # Xfce4.
 # install="$install xfdashboard" # overview all windows
@@ -203,20 +222,6 @@ remove="$remove evince" # pdf viewer not remembers last page(
 # install="$install gnome-shell-extension-impatience" # speed up the gnome-shell animation speed
 install="$install atril" # pdf viewer remembers last page https://github.com/mate-desktop/atril
 install="$install gnome-tweak-tool" # provides gnome-tweaks command (in addition to gnome-control-center)
-
-# Docker
-# <https://docs.docker.com/install/linux/docker-ce/ubuntu>.
-install="$install docker-ce" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
-install="$install golang-docker-credential-helpers" # credential helper stores encrypted passwords in d-bus secret service instead of unencrypted password in plain file <https://docs.docker.com/engine/reference/commandline/login/#credentials-store>
-install="$install apt-transport-https ca-certificates gnupg-agent software-properties-common" # required by docker ppa <https://docs.docker.com/install/linux/docker-ce/ubuntu>
-
-# Mongodb
-install="$install mongodb-org" # latest stable version of the mongodb server
-install="$install gnupg" # required by mongodb <https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu>
-
-# K8s kubernetes.
-install="$install kubectl" # `deb https://apt.kubernetes.io/ kubernetes-xenial main` <https://kubernetes.io/docs/tasks/tools/install-kubectl>
-install="$install gnupg2" # required by kubectl
 
 # Employer Rocketbank.
 # install="$install glide" # german does not use glide # go/german `add-apt-repository ppa:masterminds/glide` golang glide vendor package management <https://github.com/Masterminds/glide>
