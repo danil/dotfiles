@@ -46,6 +46,11 @@ export PATH="$PATH":"$HOME"/.local/usr/local/bin #dwm make install here
 
 [ -f "$HOME"/.netrc/.netrc ] && export NETRC="$HOME"/.netrc/.netrc
 
+# Basher is a bash/shell/functions package manager
+# <https://github.com/basherpm/basher>.
+export PATH="$HOME/.basher/bin:$PATH"
+eval "$(basher init - bash)"
+
 # Homebrew
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
