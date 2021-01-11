@@ -84,6 +84,7 @@ packages="$packages github.com/kyleconroy/sqlc/cmd/sqlc@v1.6.0" # generate type 
 packages="$packages github.com/mailhog/MailHog@v1.0.0" # smtp mail consumer a-la ruby mailcatcher: `MailHog`
 packages="$packages github.com/mattes/migrate/cli@v3.0.1" # database migrations cli
 packages="$packages github.com/monochromegane/the_platinum_searcher/cmd/pt@v2.2.0" # ag and ack replacement <https://github.com/monochromegane/the_platinum_searcher>
+packages="$packages github.com/nochso/tocenize/cmd/tocenize@v0.4.0" # generate markdown toc/table of content
 packages="$packages github.com/nojima/httpie-go/cmd/ht@v0.6.0" # colorizing curl
 packages="$packages github.com/nsf/gocode@v0.0.0-20190302080247-5bee97b48836" # used by emacs auto complete
 packages="$packages github.com/rakyll/hey@v0.1.3" # http load generator (a-la ab apach benchmark)
