@@ -56,6 +56,11 @@ install="$install emacs27-el" # find/navigate elisp function source code <https:
 install="$install emacs27-nox"
 install="$install shellcheck" # used by emacs flycheck
 
+# # Basher is a bash/shell/functions package manager
+# # <https://github.com/basherpm/basher>.
+# install="$install bash"
+# install="$install coreutils"
+
 # Homebrew <https://docs.brew.sh/Homebrew-on-Linux>.
 install="$install build-essential"
 install="$install curl"
