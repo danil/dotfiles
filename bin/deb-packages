@@ -56,8 +56,7 @@ install="$install emacs27-el" # find/navigate elisp function source code <https:
 install="$install emacs27-nox"
 install="$install shellcheck" # used by emacs flycheck
 
-# Homebrew
-# <https://docs.brew.sh/Homebrew-on-Linux>.
+# Homebrew <https://docs.brew.sh/Homebrew-on-Linux>.
 install="$install build-essential"
 install="$install curl"
 install="$install file"
