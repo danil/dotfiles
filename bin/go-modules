@@ -74,13 +74,13 @@ packages="$packages github.com/github/hub@v2.11.2" # github helper <https://gith
 packages="$packages github.com/go-swagger/go-swagger/cmd/swagger@v0.23.0" # swagger cli validator `swagger validate http://example.org/path/to/swagger.json`
 packages="$packages github.com/godoctor/godoctor@v0.0.0-20181123222458-69df17f3a6f6" # used by emacs for variables reanming
 packages="$packages github.com/gokcehan/lf@v0.0.0-20200611011140-0e3910652af9" # file manager for the cli/command line/terminal a-la mc (midnight commander)
-packages="$packages github.com/golangci/golangci-lint/cmd/golangci-lint@v1.31.0" # used by emacs a-la gometalinter
+packages="$packages github.com/golangci/golangci-lint/cmd/golangci-lint@v1.35.0" # used by emacs a-la gometalinter
 packages="$packages github.com/google/wire/cmd/wire@v0.4.0" # compile/static/generate dj (dependency injection)
 packages="$packages github.com/jesseduffield/lazygit@v0.23.7" # git tui a-la tig https://github.com/jesseduffield/lazygit
 packages="$packages github.com/jgrahamc/httpdiff@v1.0.0" # diff http requests <https://github.com/jgrahamc/httpdiff>
 packages="$packages github.com/justjanne/powerline-go@v1.17.0" # a powerline style prompt for shell
-packages="$packages github.com/kr/pretty@v0.2.0" # pretty-printing for go values for the logging/debuging/testing purposes
-packages="$packages github.com/kyleconroy/sqlc/cmd/sqlc@v1.5.0" # generate type safe go from sql
+packages="$packages github.com/kr/pretty@v0.2.1" # pretty-printing for go values for the logging/debuging/testing purposes
+packages="$packages github.com/kyleconroy/sqlc/cmd/sqlc@v1.6.0" # generate type safe go from sql
 packages="$packages github.com/mailhog/MailHog@v1.0.0" # smtp mail consumer a-la ruby mailcatcher: `MailHog`
 packages="$packages github.com/mattes/migrate/cli@v3.0.1" # database migrations cli
 packages="$packages github.com/monochromegane/the_platinum_searcher/cmd/pt@v2.2.0" # ag and ack replacement <https://github.com/monochromegane/the_platinum_searcher>
@@ -95,10 +95,10 @@ packages="$packages github.com/svent/sift@v0.9.0" # print lines matching a regex
 packages="$packages github.com/tigrawap/goader@v1.4.2" # s3/http/disk benchmark (a-la ab apach benchmark)
 packages="$packages github.com/wallix/awless@v0.1.11" # aws client
 packages="$packages golang.org/dl/gotip@v0.0.0-20200611200201-72429b14455f" # compiles and runs the go command from the development tree <https://godoc.org/golang.org/dl/gotip>
-packages="$packages golang.org/x/tools/cmd/goimports@v0.0.0-20200612220849-54c614fe050c" # used by emacs as `gofmt` command replacement for adding/removing golang import lines
-packages="$packages golang.org/x/tools/cmd/gorename@v0.0.0-20200612220849-54c614fe050c"
-packages="$packages golang.org/x/tools/cmd/guru@v0.0.0-20200612220849-54c614fe050c" # used by emacs
-packages="$packages golang.org/x/tools/gopls@v0.4.1" # golang lsp (language server protocol) or GO111MODULE=on go get golang.org/x/tools/gopls@latest
+packages="$packages golang.org/x/tools/cmd/goimports@v0.0.0-20210108195828-e2f9c7f1fc8e" # used by emacs as `gofmt` command replacement for adding/removing golang import lines
+packages="$packages golang.org/x/tools/cmd/gorename@v0.0.0-20210108195828-e2f9c7f1fc8e"
+packages="$packages golang.org/x/tools/cmd/guru@v0.0.0-20210108195828-e2f9c7f1fc8e" # used by emacs
+packages="$packages golang.org/x/tools/gopls@v0.6.2" # golang lsp (language server protocol) or GO111MODULE=on go get golang.org/x/tools/gopls@latest
 
 # protobuf/protoc/grpc
 packages="$packages google.golang.org/grpc@v1.32.0" # the grpc explicit version fixes error: undefined grpc.SupportPackageIsVersion7 <https://stackoverflow.com/questions/63662787/undefined-grpc-supportpackageisversion7-grpc-serviceregistrar#comment112579010_63664342>
