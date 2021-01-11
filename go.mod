@@ -55,6 +55,7 @@ require (
 	github.com/monochromegane/go-home v0.0.0-20151024104835-25d9dda59392 // indirect
 	github.com/monochromegane/terminal v0.0.0-20161222050454-9bc47e2707d9 // indirect
 	github.com/monochromegane/the_platinum_searcher v2.2.0+incompatible // indirect
+	github.com/nochso/tocenize v0.4.0 // indirect
 	github.com/nojima/httpie-go v0.6.0 // indirect
 	github.com/nsf/gocode v0.0.0-20190302080247-5bee97b48836 // indirect
 	github.com/ogier/pflag v0.0.1 // indirect
@@ -73,6 +74,7 @@ require (
 	github.com/wallix/triplestore v0.0.0-20180213143850-4099dd913851 // indirect
 	github.com/willf/bitset v1.1.11 // indirect
 	golang.org/dl v0.0.0-20200611200201-72429b14455f // indirect
+	golang.org/x/sys v0.0.0-20210110051926-789bb1bd4061 // indirect
 	golang.org/x/tools v0.0.0-20210108195828-e2f9c7f1fc8e // indirect
 	golang.org/x/tools/gopls v0.6.2 // indirect
 	google.golang.org/grpc/cmd/protoc-gen-go-grpc v1.0.1 // indirect

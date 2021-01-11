@@ -859,6 +859,10 @@ github.com/nishanths/predeclared v0.2.1 h1:1TXtjmy4f3YCFjTxRd8zcFHOmoUir+gp0ESzj
 github.com/nishanths/predeclared v0.2.1/go.mod h1:HvkGJcA3naj4lOwnFXFDkFxVtSqQMB9sbB1usJ+xjQE=
 github.com/nkovacs/streamquote v0.0.0-20170412213628-49af9bddb229/go.mod h1:0aYXnNPJ8l7uZxf45rWW1a/uME32OF0rhiYGNQ2oF2E=
 github.com/nkovacs/streamquote v1.0.0/go.mod h1:BN+NaZ2CmdKqUuTUXUEm9j95B2TRbpOWpxbJYzzgUsc=
+github.com/nochso/go-strip-markdown v0.0.0-20180618213238-ece973ad696a h1:tfTN5b7T2oUuRhvSyFtNvNxrRGN8OWmxBpqX5aOsqGw=
+github.com/nochso/go-strip-markdown v0.0.0-20180618213238-ece973ad696a/go.mod h1:taMyvtzwhJLsRR9k/fudNqLcJB/TFhrUlNsMzHWjVzg=
+github.com/nochso/tocenize v0.4.0 h1:oLjZIiGMvhU2PjpdJKUJVVYMdgRLMPwJFYl5X9+ObF0=
+github.com/nochso/tocenize v0.4.0/go.mod h1:r1mAdrvokDeFaZYASVr0Oxbh4v+jgt3BIrQnt2FRD6A=
 github.com/nojima/httpie-go v0.6.0 h1:U11U0SLlnrWqxE2YXwLcbPahBQYULvE7OMBb+S7B1oA=
 github.com/nojima/httpie-go v0.6.0/go.mod h1:/40dNnybrw0lcVaFfUzbmlMS8pUxSIdr4Q58tyah3f4=
 github.com/nsf/gocode v0.0.0-20190302080247-5bee97b48836 h1:oc3CL18CoGhyOQJ7HDa9gJAde33bwI8Vi28zLdIzJVc=
@@ -1332,6 +1336,8 @@ golang.org/x/sys v0.0.0-20200930185726-fdedc70b468f/go.mod h1:h1NjWce9XRLGQEsW7w
 golang.org/x/sys v0.0.0-20201005172224-997123666555/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20201009025420-dfb3f7c4e634 h1:bNEHhJCnrwMKNMmOx3yAynp5vs5/gRy+XWFtZFu7NBM=
 golang.org/x/sys v0.0.0-20201009025420-dfb3f7c4e634/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
+golang.org/x/sys v0.0.0-20210110051926-789bb1bd4061 h1:DQmQoKxQWtyybCtX/3dIuDBcAhFszqq8YiNeS6sNu1c=
+golang.org/x/sys v0.0.0-20210110051926-789bb1bd4061/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/text v0.0.0-20160726164857-2910a502d2bf/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
 golang.org/x/text v0.3.0/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
 golang.org/x/text v0.3.1-0.20180807135948-17ff2d5776d2/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
