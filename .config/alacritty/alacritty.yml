@@ -131,10 +131,12 @@ key_bindings:
   - { key: F,        mods: Command,       chars: "\x02/"                       }  # search (upwards) (see tmux.conf)
 
 # FIXME: cursor color wtf?
-custom_cursor_colors: true
+custom_cursor_colors: On
 cursor:
-  text: '#ff0000'
-  cursor: '#ff0000'
+  style:
+    blinking: Always
+    text: '#ff0000'
+    cursor: '#ff0000'
 vi_mode_cursor:
   text: '#ff0000'
   cursor: '#ff0000'
