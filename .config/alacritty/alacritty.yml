@@ -16,7 +16,14 @@ font:
   # Point size of the font
   size: 14.0
 
+cursor:
+  style:
+    blinking: Always
+
 colors:
+  cursor:
+    cursor: '#ff0000'
+
   # Default colors
   primary:
     # black
@@ -129,14 +136,3 @@ key_bindings:
   - { key: RBracket, mods: Command,       chars: "\x02o"                       }  # select next pane
   - { key: LBracket, mods: Command,       chars: "\x02;"                       }  # select last (previously used) pane
   - { key: F,        mods: Command,       chars: "\x02/"                       }  # search (upwards) (see tmux.conf)
-
-# FIXME: cursor color wtf?
-custom_cursor_colors: On
-cursor:
-  style:
-    blinking: Always
-    text: '#ff0000'
-    cursor: '#ff0000'
-vi_mode_cursor:
-  text: '#ff0000'
-  cursor: '#ff0000'
