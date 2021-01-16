@@ -87,6 +87,7 @@ packages="$packages tig" # community/tig: git interactive cli
 packages="$packages tmux" # community/tmux
 packages="$packages tree" # extra/tree: displays an indented directory tree
 packages="$packages uni2ascii" # kutkevich/uni2ascii: to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`
+packages="$packages unzip" # extra/unzip
 packages="$packages wget" # extra/wget
 packages="$packages zstd" # core/zstd: a-la gz/xz compression
 
@@ -94,8 +95,9 @@ packages="$packages zstd" # core/zstd: a-la gz/xz compression
 packages="$packages fail2ban" # community/fail2ban
 packages="$packages pure-ftpd" # kutkevich/pure-ftpd: because vsftpd is annoying
 
-# Arch.
+# Arch/Pacman.
 packages="$packages namcap" # extra/namcap: analysis utility that checks binary packages and source PKGBUILDs for common mistakes <https://wiki.archlinux.org/index.php/Namcap>
+packages="$packages pacman-contrib" # community/pacman-contrib: cleaning the package cache https://wiki.archlinux.org/index.php/Pacman#Cleaning_the_package_cache
 
 # Nginx.
 packages="$packages apache" # provides htpasswd utility is an nginx/apach basic authentication password generator
