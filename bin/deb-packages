@@ -82,13 +82,12 @@ install_hook="$install_hook systemctl disable docker"
 # install="$install silversearcher-ag" # installing from source into ~/.local/bin
 install="$install automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev" # compiltime dependencies
 
-# C/C++ compile/make and so on.
+# C/C++ compile/make common dependencies.
 install="$install automake" # required by tmux/xchainkeys
 install="$install build-essential" # compiler?
 install="$install devscripts" # ???
-install="$install libx11-dev" # ???
-install="$install libxft-dev" # ???
 install="$install make" # required by all)
+install="$install valgrind" # find memory leaks https://www.valgrind.org/docs/manual/quick-start.html
 
 # # PostgreSQL
 # install="$install pgcenter" # https://github.com/lesovsky/pgcenter/releases install: dpkg --install path/to/pgcenter.deb
@@ -163,6 +162,10 @@ install="$install ubuntu-restricted-extras" # playing video in browser instead o
 install="$install uswsusp" # systemctl hibernate
 install="$install xsel" # copy selection in termina to the xorg clipboard (used by emacs and urxvt) <https://wiki.archlinux.org/index.php/rxvt-unicode#Automatic_Script_Management>
 install="$install xterm" # backup/fallback terminal additional to the st/stterm/alacritty
+
+# C/C++ compile/make X11 dependencies.
+install="$install libx11-dev" # ???
+install="$install libxft-dev" # ???
 
 # Invert colors on x11/xorg/xrandr
 # <https://superuser.com/questions/208746/invert-colors-on-x-or-xfce4#1494872#209083>.
@@ -239,6 +242,27 @@ remove="$remove evince" # pdf viewer not remembers last page(
 install="$install atril" # pdf viewer remembers last page https://github.com/mate-desktop/atril
 install="$install gnome-tweak-tool" # provides gnome-tweaks command (in addition to gnome-control-center)
 
+# Zoom dependencies
+install="$install libegl1-mesa"
+install="$install libglib2.0-0"
+install="$install libgstreamer-plugins-base1.0-0"
+install="$install libxcb-shape0"
+install="$install libxcb-shm0"
+install="$install libxcb-xfixes0"
+install="$install libxcb-randr0"
+install="$install libxcb-image0"
+install="$install libfontconfig1"
+install="$install libgl1-mesa-glx"
+install="$install libxi6"
+install="$install libsm6"
+install="$install libxrender1"
+install="$install libpulse0"
+install="$install libxcomposite1"
+install="$install libxslt1.1"
+install="$install libsqlite3-0"
+install="$install libxcb-keysyms1"
+install="$install libxcb-xtest0"
+
 # # never used Skippy-XD is an full-screen task-switcher for X11
 # # <https://github.com/richardgv/skippy-xd>
 # install="$install libimlib2-dev"
@@ -271,10 +295,14 @@ install="$install postgresql-9.6"  # felix `deb http://apt.postgresql.org/pub/re
 install="$install redis" # felix
 install="$install vpnc" # cisco vpn client
 install="$install yarn" # (NOTE: before add ppa!) js package manager required by rails asset pipeline precompilation (before install add ppa <https://yarnpkg.com/lang/en/docs/install/#debian-stable>)
-install_hook="$install_hook systemctl disable docker"
-install_hook="$install_hook systemctl disable postgresql"
-install_hook="$install_hook systemctl disable redis-server"
+# install_hook="$install_hook systemctl disable docker"
+# install_hook="$install_hook systemctl disable postgresql"
+# install_hook="$install_hook systemctl disable redis-server"
 
 $remove_command  $remove  || exit 1
+
 $install_command $install || exit 1
-$install_hook
+
+# for hook in $install_hook; do
+#     echo $hook
+# done
