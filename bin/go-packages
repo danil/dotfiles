@@ -83,6 +83,7 @@ packages="$packages github.com/kr/pretty@v0.2.1" # pretty-printing for go values
 packages="$packages github.com/kyleconroy/sqlc/cmd/sqlc@v1.6.0" # generate type safe go from sql
 packages="$packages github.com/mailhog/MailHog@v1.0.0" # smtp mail consumer a-la ruby mailcatcher: `MailHog`
 packages="$packages github.com/mattes/migrate/cli@v3.0.1" # database migrations cli
+packages="$packages github.com/mikefarah/yq/v3@v3.0.0-20201018214059-6afc2e918934" # YAML command-line processor like jq for JSON
 packages="$packages github.com/monochromegane/the_platinum_searcher/cmd/pt@v2.2.0" # ag and ack replacement <https://github.com/monochromegane/the_platinum_searcher>
 packages="$packages github.com/nochso/tocenize/cmd/tocenize@v0.4.0" # generate markdown toc/table of content
 packages="$packages github.com/nojima/httpie-go/cmd/ht@v0.6.0" # colorizing curl
@@ -100,6 +101,8 @@ packages="$packages golang.org/x/tools/cmd/goimports@v0.0.0-20210108195828-e2f9c
 packages="$packages golang.org/x/tools/cmd/gorename@v0.0.0-20210108195828-e2f9c7f1fc8e"
 packages="$packages golang.org/x/tools/cmd/guru@v0.0.0-20210108195828-e2f9c7f1fc8e" # used by emacs
 packages="$packages golang.org/x/tools/gopls@v0.6.2" # golang lsp (language server protocol) or GO111MODULE=on go get golang.org/x/tools/gopls@latest
+
+GO111MODULE=on go get -v -u @latest
 
 # protobuf/protoc/grpc
 packages="$packages google.golang.org/grpc@v1.32.0" # the grpc explicit version fixes error: undefined grpc.SupportPackageIsVersion7 <https://stackoverflow.com/questions/63662787/undefined-grpc-supportpackageisversion7-grpc-serviceregistrar#comment112579010_63664342>

@@ -20,6 +20,7 @@ require (
 	github.com/fd0/machma v0.0.0-20180831184041-8cc009340f18 // indirect
 	github.com/github/hub v2.11.2+incompatible // indirect
 	github.com/go-swagger/go-swagger v0.23.0 // indirect
+	github.com/goccy/go-yaml v1.8.4 // indirect
 	github.com/godoctor/godoctor v0.0.0-20181123222458-69df17f3a6f6 // indirect
 	github.com/gokcehan/lf v0.0.0-20200611011140-0e3910652af9 // indirect
 	github.com/golangci/golangci-lint v1.35.0 // indirect
@@ -48,6 +49,7 @@ require (
 	github.com/mailhog/storage v1.0.1 // indirect
 	github.com/mattes/migrate v3.0.1+incompatible // indirect
 	github.com/mgutz/ansi v0.0.0-20200706080929-d51e80ef957d // indirect
+	github.com/mikefarah/yq/v3 v3.0.0-20201018214059-6afc2e918934 // indirect
 	github.com/minio/blake2b-simd v0.0.0-20160723061019-3f5f724cb5b1 // indirect
 	github.com/mitchellh/ioprogress v0.0.0-20180201004757-6a23b12fa88e // indirect
 	github.com/monochromegane/conflag v0.0.0-20151130130520-6d68c9aa4183 // indirect
@@ -74,10 +76,11 @@ require (
 	github.com/wallix/triplestore v0.0.0-20180213143850-4099dd913851 // indirect
 	github.com/willf/bitset v1.1.11 // indirect
 	golang.org/dl v0.0.0-20200611200201-72429b14455f // indirect
-	golang.org/x/sys v0.0.0-20210110051926-789bb1bd4061 // indirect
+	golang.org/x/sys v0.0.0-20210119212857-b64e53b001e4 // indirect
 	golang.org/x/tools v0.0.0-20210108195828-e2f9c7f1fc8e // indirect
 	golang.org/x/tools/gopls v0.6.2 // indirect
 	google.golang.org/grpc/cmd/protoc-gen-go-grpc v1.0.1 // indirect
 	gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22 // indirect
 	gopkg.in/src-d/go-git.v4 v4.13.1 // indirect
+	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
 )
