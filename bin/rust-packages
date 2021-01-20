@@ -40,7 +40,7 @@ fi
 # packages="$packages racer" # compilation failing all the time <https://github.com/racer-rust/racer/issues/868#issuecomment-459017685>, rust code completion https://github.com/phildawes/racer
 packages="$packages --git https://github.com/pkolaczk/fclones" # duplicate file finder https://github.com/pkolaczk/fclones
 packages="$packages --version=1.6.0 deno" # js runtime a-la node.js https://deno.land
-packages="$packages alacritty" # terminal emulator a-la st/xterm https://github.com/alacritty/alacritty
+packages="$packages alacritty" # terminal/console emulator a-la st/xterm https://github.com/alacritty/alacritty
 packages="$packages bandwhich" # bandwidth utilization tool https://github.com/imsnif/bandwhich
 packages="$packages bat" # print file lines with syntax highlighting, is an cat replacement
 packages="$packages cpc" # cli calculator/units converter https://github.com/probablykasper/cpc
