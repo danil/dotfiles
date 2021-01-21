@@ -1,0 +1,4 @@
+#! /bin/bash
+
+# ln --symbolic --force ~/.config/alacritty/alacritty1.yml ~/.config/alacritty/alacritty.yml
+/home/danil/go/bin/yq write --inplace /home/danil/.config/alacritty/alacritty.yml "colors.cursor.cursor" "#00ff00"
