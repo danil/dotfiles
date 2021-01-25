@@ -62,7 +62,6 @@ packages="$packages which" # core/which
 # packages="$packages hping3" # TODO: install from aur # a-la interactive ping https://github.com/antirez/hping
 packages="$packages bash-completion" # extra/bash-completion: tab completion
 packages="$packages bc" # extra/bc: used by bash prompt, console-based calculator utility
-packages="$packages bind" # extra/bind: provides host utility
 packages="$packages dos2unix" # community/dos2unix: convert text file line endings between CRLF and LF
 packages="$packages emacs-nox" # community/emacs-nox
 packages="$packages fdupes" # community/fdupes: find duplicate files
@@ -72,10 +71,10 @@ packages="$packages jq" # community/jq: json console formater (used by emacs cou
 packages="$packages lftp" # extra/lftp: ftp client
 packages="$packages logrotate" # core/logrotate
 packages="$packages mailutils" # community/mailutils: is an gnu mailutils, reads local mail, provides /usr/bin/gnu-mail (a-la /usr/bin/mail)
-packages="$packages opensmtpd" # community/opensmtpd: send mail via /usr/bin/sendmail and deliver local mail to /var/mail a-la exim
 packages="$packages mlocate" # core/mlocate
 packages="$packages mosh" # community/mosh: ssh replacement
 packages="$packages ncdu" # community/ncdu: diskspace usage is an baobab and gt5 replacement
+packages="$packages opensmtpd" # community/opensmtpd: send mail via /usr/bin/sendmail and deliver local mail to /var/mail a-la exim
 packages="$packages pkgfile" # extra/pkgfile: searching files from packages in the official repositories
 packages="$packages progress" # community/progress: progress bar for cp, rm, dd and so on https://github.com/Xfennec/progress
 packages="$packages pwgen" # community/pwgen: password generator
@@ -92,6 +91,7 @@ packages="$packages wget" # extra/wget
 packages="$packages zstd" # core/zstd: a-la gz/xz compression
 
 # Server.
+packages="$packages bind" # extra/bind: dns/host lookup utility
 packages="$packages fail2ban" # community/fail2ban
 packages="$packages pure-ftpd" # kutkevich/pure-ftpd: because vsftpd is annoying
 
