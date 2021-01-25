@@ -93,6 +93,7 @@ packages="$packages zstd" # core/zstd: a-la gz/xz compression
 # Server.
 packages="$packages bind" # extra/bind: dns/host lookup utility
 packages="$packages fail2ban" # community/fail2ban
+packages="$packages knot" # community/knot: dns
 packages="$packages pure-ftpd" # kutkevich/pure-ftpd: because vsftpd is annoying
 
 # Arch/Pacman.
