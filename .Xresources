@@ -45,7 +45,7 @@ Xft.rgba: rgb
 ! ! DPI <https://wiki.archlinux.org/index.php/Font_Configuration#Distorted_fonts>.
 ! Xft*dpi: 120
 
-! <https://wiki.archlinux.org/index.php/X11_Cursors>.
+! https://wiki.archlinux.org/index.php/Cursor_themes#X_resources
 Xcursor.theme: Vanilla-DMZ
 ! Xcursor.size: 48
 
