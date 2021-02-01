@@ -52,6 +52,7 @@ install="$install zstd" # a-la gz/xz compression
 # install="$install emacs-nox"
 install="$install aspell-en" # used by emacs auto complete
 install="$install aspell-ru" # used by emacs auto complete
+install="$install clang" # used by company-clang backend
 install="$install emacs27-el" # find/navigate elisp function source code <https://unix.stackexchange.com/questions/73100/how-to-attach-elisp-function-source-code-in-emacs>
 install="$install emacs27-nox"
 install="$install shellcheck" # used by emacs flycheck
