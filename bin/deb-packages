@@ -28,7 +28,6 @@ install="$install mkusb usb-pack-efi" # create bootable usb <https://help.ubuntu
 install="$install mlocate" # locate/updatedb
 install="$install mosh" # ssh replacement
 install="$install ncdu" # disk space usage is an baobab and gt5 replacement
-install="$install neovim"
 install="$install net-tools" # ifconfig cli
 install="$install opensmtpd" # send mail via /usr/bin/sendmail and deliver local mail to /var/mail a-la exim replacement
 install="$install openssh-server"
@@ -40,6 +39,7 @@ install="$install syncthing" # dropbox replacement: deb https://apt.syncthing.ne
 install="$install tig" # git interactive cli
 install="$install tree" # displays an indented directory tree
 install="$install uni2ascii" # to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`
+install="$install vim" # neovim
 install="$install whois"
 install="$install zstd" # a-la gz/xz compression
 
