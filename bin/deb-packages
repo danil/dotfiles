@@ -99,6 +99,9 @@ install_hook="$install_hook systemctl disable postgresql"
 install="$install mongodb-org" # latest stable version of the mongodb server
 install="$install gnupg" # required by mongodb <https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu>
 
+# Lua programming language.
+install="$install lua5.3"
+
 # Golang programming language.
 # install="$install golang-race-detector-runtime" # FIXME: where is race detector for the go 1.15?
 install="$install golang-1.15-doc golang-1.15-go golang-1.15-src"
