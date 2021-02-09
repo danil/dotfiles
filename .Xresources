@@ -47,7 +47,7 @@ Xft.rgba: rgb
 
 ! https://wiki.archlinux.org/index.php/Cursor_themes#X_resources
 Xcursor.theme: Vanilla-DMZ
-! Xcursor.size: 48
+! Xcursor.size: 16
 
 ! Black (dark) theme.
 *background: #000000
