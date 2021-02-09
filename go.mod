@@ -76,8 +76,9 @@ require (
 	github.com/wallix/triplestore v0.0.0-20180213143850-4099dd913851 // indirect
 	github.com/willf/bitset v1.1.11 // indirect
 	golang.org/dl v0.0.0-20200611200201-72429b14455f // indirect
+	golang.org/x/lint v0.0.0-20201208152925-83fdc39ff7b5 // indirect
 	golang.org/x/sys v0.0.0-20210119212857-b64e53b001e4 // indirect
-	golang.org/x/tools v0.0.0-20210108195828-e2f9c7f1fc8e // indirect
+	golang.org/x/tools v0.1.0 // indirect
 	golang.org/x/tools/gopls v0.6.2 // indirect
 	google.golang.org/grpc/cmd/protoc-gen-go-grpc v1.0.1 // indirect
 	gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22 // indirect
