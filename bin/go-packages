@@ -45,7 +45,7 @@ go install -v golang.org/x/lint/golint@v0.0.0-20201208152925-83fdc39ff7b5 || exi
 go install -v golang.org/x/tools/cmd/goimports@v0.1.0 || exit 1 # used by emacs as `gofmt` command replacement for adding/removing golang import lines
 go install -v golang.org/x/tools/cmd/gorename@v0.1.0 || exit 1
 go install -v golang.org/x/tools/cmd/guru@v0.1.0 || exit 1 # used by emacs
-go install -v golang.org/x/tools/gopls@v0.6.2 || exit 1 # golang lsp (language server protocol) or GO111MODULE=on go get golang.org/x/tools/gopls@latest
+go install -v golang.org/x/tools/gopls@v0.6.6 || exit 1 # golang lsp (language server protocol) or GO111MODULE=on go get golang.org/x/tools/gopls@latest
 
 # protobuf/protoc/grpc
 go get -v google.golang.org/grpc@v1.32.0 || exit 1 # the grpc explicit version fixes error: undefined grpc.SupportPackageIsVersion7 <https://stackoverflow.com/questions/63662787/undefined-grpc-supportpackageisversion7-grpc-serviceregistrar#comment112579010_63664342>
