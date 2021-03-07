@@ -13,7 +13,7 @@ font:
   italic:
     family: PragmataPro
   # Point size of the font
-  size: 16.0
+  size: 15.0
 cursor:
   style:
     blinking: Always
