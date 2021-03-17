@@ -48,11 +48,13 @@ export PATH="$PATH":"$HOME"/.local/usr/local/bin #dwm make install here
 
 # Basher is a bash/shell/functions package manager
 # <https://github.com/basherpm/basher>.
-export PATH="$HOME/.basher/bin:$PATH"
-eval "$(basher init - bash)"
+if hash basher 2>/dev/null; then
+    export PATH="$HOME/.basher/bin:$PATH"
+    eval "$(basher init - bash)"
+fi
 
 # Homebrew
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+[ -f /home/linuxbrew/.linuxbrew/bin/brew ] && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 # Debian/Ubuntu
 export DEBFULLNAME="Danil Kutkevich"
