@@ -150,6 +150,7 @@ install="$install fonts-fantasque-sans" # terminal/code/mono/programming font (g
 install="$install fonts-hack-ttf" # terminal/code/mono/programming font
 install="$install gimp" # a-la photoshop
 install="$install google-chrome-stable"
+install="$install gparted" # format/create partition/disk/usb
 install="$install libnotify-bin" # a-la notify-osd
 install="$install light" # used by xchainkeys and ~/.xprofile
 install="$install lxappearance" # change/switch gtk2/gtk3 themes
