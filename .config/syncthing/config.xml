@@ -1,16 +1,19 @@
 <configuration version="35">
     <folder id="5cfzi-lnjpr" label="Notes" path="/home/danil/Notes" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
-        <device id="D5G5RJ2-VBFF2AU-7JJIFZF-2G6OJD6-IUZA2E7-V4DEUIT-M7ACTKD-2M422QO" introducedBy="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6">
+        <device id="D5G5RJ2-VBFF2AU-7JJIFZF-2G6OJD6-IUZA2E7-V4DEUIT-M7ACTKD-2M422QO" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
-        <device id="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK" introducedBy="">
+        <device id="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK" introducedBy="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW">
             <encryptionPassword></encryptionPassword>
         </device>
-        <device id="YSILUWZ-HUBI6QS-SXYT7AS-W6WKKHS-RXRSK3O-B65PL65-XYXPOBA-LHTYEAP" introducedBy="">
+        <device id="UXFJK7F-PLLNMBT-BCZXTF5-N7VWPC7-W6UJSLA-VWLNBYB-FTVWSC6-XPKINAK" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="YSILUWZ-HUBI6QS-SXYT7AS-W6WKKHS-RXRSK3O-B65PL65-XYXPOBA-LHTYEAP" introducedBy="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW">
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW" introducedBy="">
@@ -18,7 +21,7 @@
         </device>
         <minDiskFree unit="%">1</minDiskFree>
         <versioning>
-            <cleanupIntervalS>3600</cleanupIntervalS>
+            <cleanupIntervalS>0</cleanupIntervalS>
             <fsPath></fsPath>
             <fsType>basic</fsType>
         </versioning>
@@ -42,23 +45,26 @@
         <blockPullOrder>standard</blockPullOrder>
         <copyRangeMethod>standard</copyRangeMethod>
         <caseSensitiveFS>false</caseSensitiveFS>
-        <junctionsAsDirs>true</junctionsAsDirs>
+        <junctionsAsDirs>false</junctionsAsDirs>
     </folder>
     <folder id="at7a3-rnepr" label="Books" path="/home/danil/Books" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
-        <device id="CRP2GG7-HRM6BEL-44DOJQZ-USO4R6V-QJYJNVL-BL4GKCP-LPR7DR7-53D3MQD" introducedBy="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6">
+        <device id="CRP2GG7-HRM6BEL-44DOJQZ-USO4R6V-QJYJNVL-BL4GKCP-LPR7DR7-53D3MQD" introducedBy="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW">
             <encryptionPassword></encryptionPassword>
         </device>
-        <device id="D5G5RJ2-VBFF2AU-7JJIFZF-2G6OJD6-IUZA2E7-V4DEUIT-M7ACTKD-2M422QO" introducedBy="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6">
+        <device id="D5G5RJ2-VBFF2AU-7JJIFZF-2G6OJD6-IUZA2E7-V4DEUIT-M7ACTKD-2M422QO" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
-        <device id="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK" introducedBy="">
+        <device id="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK" introducedBy="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW">
             <encryptionPassword></encryptionPassword>
         </device>
-        <device id="YSILUWZ-HUBI6QS-SXYT7AS-W6WKKHS-RXRSK3O-B65PL65-XYXPOBA-LHTYEAP" introducedBy="">
+        <device id="UXFJK7F-PLLNMBT-BCZXTF5-N7VWPC7-W6UJSLA-VWLNBYB-FTVWSC6-XPKINAK" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="YSILUWZ-HUBI6QS-SXYT7AS-W6WKKHS-RXRSK3O-B65PL65-XYXPOBA-LHTYEAP" introducedBy="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW">
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW" introducedBy="">
@@ -66,7 +72,7 @@
         </device>
         <minDiskFree unit="%">1</minDiskFree>
         <versioning>
-            <cleanupIntervalS>3600</cleanupIntervalS>
+            <cleanupIntervalS>0</cleanupIntervalS>
             <fsPath></fsPath>
             <fsType>basic</fsType>
         </versioning>
@@ -90,11 +96,14 @@
         <blockPullOrder>standard</blockPullOrder>
         <copyRangeMethod>standard</copyRangeMethod>
         <caseSensitiveFS>false</caseSensitiveFS>
-        <junctionsAsDirs>true</junctionsAsDirs>
+        <junctionsAsDirs>false</junctionsAsDirs>
     </folder>
     <folder id="cnkrg-cyga7" label="PicturesArc" path="/home/danil/PicturesArc" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
         <device id="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="UXFJK7F-PLLNMBT-BCZXTF5-N7VWPC7-W6UJSLA-VWLNBYB-FTVWSC6-XPKINAK" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW" introducedBy="">
@@ -133,6 +142,9 @@
         <device id="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
+        <device id="UXFJK7F-PLLNMBT-BCZXTF5-N7VWPC7-W6UJSLA-VWLNBYB-FTVWSC6-XPKINAK" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
         <device id="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
@@ -166,10 +178,13 @@
     </folder>
     <folder id="gbpui-jzvdk" label="Pictures" path="/home/danil/Pictures" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
-        <device id="D5G5RJ2-VBFF2AU-7JJIFZF-2G6OJD6-IUZA2E7-V4DEUIT-M7ACTKD-2M422QO" introducedBy="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6">
+        <device id="D5G5RJ2-VBFF2AU-7JJIFZF-2G6OJD6-IUZA2E7-V4DEUIT-M7ACTKD-2M422QO" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="UXFJK7F-PLLNMBT-BCZXTF5-N7VWPC7-W6UJSLA-VWLNBYB-FTVWSC6-XPKINAK" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW" introducedBy="">
@@ -211,6 +226,9 @@
         <device id="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
+        <device id="UXFJK7F-PLLNMBT-BCZXTF5-N7VWPC7-W6UJSLA-VWLNBYB-FTVWSC6-XPKINAK" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
         <device id="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
@@ -244,16 +262,19 @@
     </folder>
     <folder id="krbr4-es5n4" label="Podcasts" path="/home/danil/Podcasts" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
-        <device id="D5G5RJ2-VBFF2AU-7JJIFZF-2G6OJD6-IUZA2E7-V4DEUIT-M7ACTKD-2M422QO" introducedBy="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6">
+        <device id="D5G5RJ2-VBFF2AU-7JJIFZF-2G6OJD6-IUZA2E7-V4DEUIT-M7ACTKD-2M422QO" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
-        <device id="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK" introducedBy="">
+        <device id="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK" introducedBy="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW">
             <encryptionPassword></encryptionPassword>
         </device>
-        <device id="YSILUWZ-HUBI6QS-SXYT7AS-W6WKKHS-RXRSK3O-B65PL65-XYXPOBA-LHTYEAP" introducedBy="">
+        <device id="UXFJK7F-PLLNMBT-BCZXTF5-N7VWPC7-W6UJSLA-VWLNBYB-FTVWSC6-XPKINAK" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="YSILUWZ-HUBI6QS-SXYT7AS-W6WKKHS-RXRSK3O-B65PL65-XYXPOBA-LHTYEAP" introducedBy="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW">
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW" introducedBy="">
@@ -261,7 +282,7 @@
         </device>
         <minDiskFree unit="%">1</minDiskFree>
         <versioning>
-            <cleanupIntervalS>3600</cleanupIntervalS>
+            <cleanupIntervalS>0</cleanupIntervalS>
             <fsPath></fsPath>
             <fsType>basic</fsType>
         </versioning>
@@ -285,17 +306,20 @@
         <blockPullOrder>standard</blockPullOrder>
         <copyRangeMethod>standard</copyRangeMethod>
         <caseSensitiveFS>false</caseSensitiveFS>
-        <junctionsAsDirs>true</junctionsAsDirs>
+        <junctionsAsDirs>false</junctionsAsDirs>
     </folder>
     <folder id="x6wam-vymeu" label="Fonts" path="/home/danil/Fonts" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
-        <device id="D5G5RJ2-VBFF2AU-7JJIFZF-2G6OJD6-IUZA2E7-V4DEUIT-M7ACTKD-2M422QO" introducedBy="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6">
+        <device id="D5G5RJ2-VBFF2AU-7JJIFZF-2G6OJD6-IUZA2E7-V4DEUIT-M7ACTKD-2M422QO" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
-        <device id="YSILUWZ-HUBI6QS-SXYT7AS-W6WKKHS-RXRSK3O-B65PL65-XYXPOBA-LHTYEAP" introducedBy="">
+        <device id="UXFJK7F-PLLNMBT-BCZXTF5-N7VWPC7-W6UJSLA-VWLNBYB-FTVWSC6-XPKINAK" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="YSILUWZ-HUBI6QS-SXYT7AS-W6WKKHS-RXRSK3O-B65PL65-XYXPOBA-LHTYEAP" introducedBy="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW">
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW" introducedBy="">
@@ -331,19 +355,22 @@
     </folder>
     <folder id="xi2ew-z6l3e" label="Sync" path="/home/danil/Sync" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
-        <device id="CRP2GG7-HRM6BEL-44DOJQZ-USO4R6V-QJYJNVL-BL4GKCP-LPR7DR7-53D3MQD" introducedBy="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6">
+        <device id="CRP2GG7-HRM6BEL-44DOJQZ-USO4R6V-QJYJNVL-BL4GKCP-LPR7DR7-53D3MQD" introducedBy="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW">
             <encryptionPassword></encryptionPassword>
         </device>
-        <device id="D5G5RJ2-VBFF2AU-7JJIFZF-2G6OJD6-IUZA2E7-V4DEUIT-M7ACTKD-2M422QO" introducedBy="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6">
+        <device id="D5G5RJ2-VBFF2AU-7JJIFZF-2G6OJD6-IUZA2E7-V4DEUIT-M7ACTKD-2M422QO" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
-        <device id="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK" introducedBy="">
+        <device id="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK" introducedBy="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW">
             <encryptionPassword></encryptionPassword>
         </device>
-        <device id="YSILUWZ-HUBI6QS-SXYT7AS-W6WKKHS-RXRSK3O-B65PL65-XYXPOBA-LHTYEAP" introducedBy="">
+        <device id="UXFJK7F-PLLNMBT-BCZXTF5-N7VWPC7-W6UJSLA-VWLNBYB-FTVWSC6-XPKINAK" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="YSILUWZ-HUBI6QS-SXYT7AS-W6WKKHS-RXRSK3O-B65PL65-XYXPOBA-LHTYEAP" introducedBy="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW">
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW" introducedBy="">
@@ -351,7 +378,7 @@
         </device>
         <minDiskFree unit="%">1</minDiskFree>
         <versioning>
-            <cleanupIntervalS>3600</cleanupIntervalS>
+            <cleanupIntervalS>0</cleanupIntervalS>
             <fsPath></fsPath>
             <fsType>basic</fsType>
         </versioning>
@@ -375,9 +402,9 @@
         <blockPullOrder>standard</blockPullOrder>
         <copyRangeMethod>standard</copyRangeMethod>
         <caseSensitiveFS>false</caseSensitiveFS>
-        <junctionsAsDirs>true</junctionsAsDirs>
+        <junctionsAsDirs>false</junctionsAsDirs>
     </folder>
-    <device id="CRP2GG7-HRM6BEL-44DOJQZ-USO4R6V-QJYJNVL-BL4GKCP-LPR7DR7-53D3MQD" name="h10" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6">
+    <device id="CRP2GG7-HRM6BEL-44DOJQZ-USO4R6V-QJYJNVL-BL4GKCP-LPR7DR7-53D3MQD" name="h10" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW">
         <address>dynamic</address>
         <paused>false</paused>
         <autoAcceptFolders>false</autoAcceptFolders>
@@ -387,7 +414,7 @@
         <untrusted>false</untrusted>
         <remoteGUIPort>0</remoteGUIPort>
     </device>
-    <device id="D5G5RJ2-VBFF2AU-7JJIFZF-2G6OJD6-IUZA2E7-V4DEUIT-M7ACTKD-2M422QO" name="h21" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6">
+    <device id="D5G5RJ2-VBFF2AU-7JJIFZF-2G6OJD6-IUZA2E7-V4DEUIT-M7ACTKD-2M422QO" name="h21" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
         <address>dynamic</address>
         <paused>false</paused>
         <autoAcceptFolders>false</autoAcceptFolders>
@@ -397,7 +424,7 @@
         <untrusted>false</untrusted>
         <remoteGUIPort>0</remoteGUIPort>
     </device>
-    <device id="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6" name="h20" compression="metadata" introducer="true" skipIntroductionRemovals="false" introducedBy="">
+    <device id="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6" name="h20" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
         <address>dynamic</address>
         <paused>false</paused>
         <autoAcceptFolders>false</autoAcceptFolders>
@@ -407,7 +434,7 @@
         <untrusted>false</untrusted>
         <remoteGUIPort>0</remoteGUIPort>
     </device>
-    <device id="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK" name="h2" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
+    <device id="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK" name="h2" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW">
         <address>dynamic</address>
         <paused>false</paused>
         <autoAcceptFolders>false</autoAcceptFolders>
@@ -417,7 +444,7 @@
         <untrusted>false</untrusted>
         <remoteGUIPort>0</remoteGUIPort>
     </device>
-    <device id="YSILUWZ-HUBI6QS-SXYT7AS-W6WKKHS-RXRSK3O-B65PL65-XYXPOBA-LHTYEAP" name="h18" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
+    <device id="UXFJK7F-PLLNMBT-BCZXTF5-N7VWPC7-W6UJSLA-VWLNBYB-FTVWSC6-XPKINAK" name="h22" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
         <address>dynamic</address>
         <paused>false</paused>
         <autoAcceptFolders>false</autoAcceptFolders>
@@ -427,7 +454,17 @@
         <untrusted>false</untrusted>
         <remoteGUIPort>0</remoteGUIPort>
     </device>
-    <device id="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW" name="h19" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
+    <device id="YSILUWZ-HUBI6QS-SXYT7AS-W6WKKHS-RXRSK3O-B65PL65-XYXPOBA-LHTYEAP" name="h18" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW">
+        <address>dynamic</address>
+        <paused>false</paused>
+        <autoAcceptFolders>false</autoAcceptFolders>
+        <maxSendKbps>0</maxSendKbps>
+        <maxRecvKbps>0</maxRecvKbps>
+        <maxRequestKiB>0</maxRequestKiB>
+        <untrusted>false</untrusted>
+        <remoteGUIPort>0</remoteGUIPort>
+    </device>
+    <device id="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW" name="h19" compression="metadata" introducer="true" skipIntroductionRemovals="false" introducedBy="">
         <address>dynamic</address>
         <paused>false</paused>
         <autoAcceptFolders>false</autoAcceptFolders>
@@ -439,12 +476,14 @@
     </device>
     <gui enabled="true" tls="false" debugging="false">
         <address>127.0.0.1:8384</address>
-        <apikey>Q95KPPDcybKsG5ifTnNtDM9nkyu4rUpR</apikey>
-        <theme>black</theme>
+        <apikey>h2MVFbWJQzqevEKmRpp7NQx3HLgg5ZrT</apikey>
+        <theme>default</theme>
     </gui>
     <ldap></ldap>
     <options>
-        <listenAddress>default</listenAddress>
+        <listenAddress>tcp://0.0.0.0:36571</listenAddress>
+        <listenAddress>dynamic+https://relays.syncthing.net/endpoint</listenAddress>
+        <listenAddress>quic://0.0.0.0:36571</listenAddress>
         <globalAnnounceServer>default</globalAnnounceServer>
         <globalAnnounceEnabled>true</globalAnnounceEnabled>
         <localAnnounceEnabled>true</localAnnounceEnabled>
@@ -462,7 +501,7 @@
         <natTimeoutSeconds>10</natTimeoutSeconds>
         <urAccepted>3</urAccepted>
         <urSeen>3</urSeen>
-        <urUniqueID>yWz9MQVp</urUniqueID>
+        <urUniqueID>g6RnKjL9</urUniqueID>
         <urURL>https://data.syncthing.net/newdata</urURL>
         <urPostInsecurely>false</urPostInsecurely>
         <urInitialDelayS>1800</urInitialDelayS>
@@ -495,7 +534,7 @@
     <defaults>
         <folder id="" label="" path="~" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
             <filesystemType>basic</filesystemType>
-            <device id="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW" introducedBy="">
+            <device id="UXFJK7F-PLLNMBT-BCZXTF5-N7VWPC7-W6UJSLA-VWLNBYB-FTVWSC6-XPKINAK" introducedBy="">
                 <encryptionPassword></encryptionPassword>
             </device>
             <minDiskFree unit="%">1</minDiskFree>
