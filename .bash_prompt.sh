@@ -10,8 +10,9 @@
 # 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
 # Background color codes:
 # 40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
-# <https://wiki.archlinux.org/index.php/Color_Bash_Prompt#List_of_colors_for_prompt_and_Bash>
-# <http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html>.
+# <https://wiki.archlinux.org/index.php/Color_Bash_Prompt#List_of_colors_for_prompt_and_Bash>,
+# <http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html>,
+# <https://en.wikipedia.org/wiki/ANSI_escape_code#Colors>.
 ps1_blue="\[\033[01;34m\]"
 ps1_cyan="\[\033[1;36m\]"
 ps1_green="\[\033[01;32m\]"
