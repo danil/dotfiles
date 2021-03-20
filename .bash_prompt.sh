@@ -12,6 +12,7 @@
 # 40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
 # <https://wiki.archlinux.org/index.php/Color_Bash_Prompt#List_of_colors_for_prompt_and_Bash>,
 # <http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html>,
+# <https://unix.stackexchange.com/questions/124407/what-color-codes-can-i-use-in-my-ps1-prompt#124409>,
 # <https://en.wikipedia.org/wiki/ANSI_escape_code#Colors>.
 ps1_blue="\[\033[01;34m\]"
 ps1_cyan="\[\033[1;36m\]"
