@@ -22,7 +22,7 @@ ps1_white="\[\033[1;37m\]"
 ps1_yellow="\[\033[1;33m\]"
 
 ps1_user="${ps1_green}\u@\h${ps1_plain}"
-ps1_pwd=" ${ps1_cyan}\w${ps1_plain}"
+ps1_pwd=" ${ps1_blue}\w${ps1_plain}"
 function ps1_jobs {
     jobs_count=`jobs | wc -l`
     if [ ${jobs_count} -ne 0 ]; then
@@ -32,7 +32,7 @@ function ps1_jobs {
 function ps1_pwd {
     local my_pwd=$(echo $PWD \
                           | sed --expression="s|^$HOME|~|" --expression='s-\([^/.]\)[^/]*/-\1/-g')
-    echo -n " ${ps1_cyan}${my_pwd}${ps1_plain}"
+    echo -n " ${ps1_blue}${my_pwd}${ps1_plain}"
 }
 function ps1_load {
     # Prompt load average
@@ -188,4 +188,4 @@ PS1+="${ps1_magenta}"'$(__git_ps1 " %s")'
 PS1+="${ps1_white}"
 PS1+=" \D{%d-%b-%Y %H:%M:%S%Z}"
 PS1+="\n"
-PS1+="${ps1_blue}\$${ps1_plain} "
+PS1+="${ps1_cyan}\$${ps1_plain} "
