@@ -8,5 +8,5 @@ separator=false
 separator_block_width=15
 
 [plainstatus]
-command=~/go/bin/plainstatus1 -1
+command=~/bin/statusline1 -1
 interval=1
