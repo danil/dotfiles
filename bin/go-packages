@@ -12,8 +12,8 @@ go install -v github.com/boyter/scc@v2.12.0 || exit 1 # a-la sloc/cloc
 go install -v github.com/cloudflare/cloudflare-go/cmd/flarectl@v0.12.0 || exit 1 # cloudflare cli `CF_API_EMAIL=your.name@example.org CF_API_KEY=your_api_key flarectl zone dns example.org`
 go install -v github.com/cortesi/devd/cmd/devd@v0.0.0-20200427000907-c1a3bfba27d8 || exit 1 # local http/webserver for developers `devd --address=0.0.0.0 --livewatch ./`
 go install -v github.com/dachad/tcpgoon@v0.0.0-20200511183141-945d9f576acb || exit 1 # tcp concurrent connections benchmark
-go install -v github.com/danil/plainstatus/examples/plainstatus1@v0.0.3 || exit 1 # a-la slstatus
-go install -v github.com/danil/plainstatus/examples/plainstatus2@v0.0.3 || exit 1 # a-la slstatus
+go install -v github.com/danil/statusline0example/statusline1h22@v0.0.2 || exit 1 # a-la slstatus
+go install -v github.com/danil/statusline0example/statusline2h22@v0.0.2 || exit 1 # a-la slstatus
 go install -v github.com/davecheney/httpstat@v1.0.0 || exit 1 # http statistics (a-la curl --head)
 go install -v github.com/fd0/machma@v0.0.0-20180831184041-8cc009340f18 || exit 1 # parallel cli task execution with each command progress
 go install -v github.com/github/hub@v2.11.2 || exit 1 # github helper <https://github.com/github/hub>
