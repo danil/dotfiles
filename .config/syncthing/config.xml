@@ -10,6 +10,9 @@
         <device id="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
+        <device id="UXFJK7F-PLLNMBT-BCZXTF5-N7VWPC7-W6UJSLA-VWLNBYB-FTVWSC6-XPKINAK" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
         <device id="YSILUWZ-HUBI6QS-SXYT7AS-W6WKKHS-RXRSK3O-B65PL65-XYXPOBA-LHTYEAP" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
@@ -58,6 +61,9 @@
         <device id="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
+        <device id="UXFJK7F-PLLNMBT-BCZXTF5-N7VWPC7-W6UJSLA-VWLNBYB-FTVWSC6-XPKINAK" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
         <device id="YSILUWZ-HUBI6QS-SXYT7AS-W6WKKHS-RXRSK3O-B65PL65-XYXPOBA-LHTYEAP" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
@@ -97,6 +103,9 @@
         <device id="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
+        <device id="UXFJK7F-PLLNMBT-BCZXTF5-N7VWPC7-W6UJSLA-VWLNBYB-FTVWSC6-XPKINAK" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
         <device id="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
@@ -131,6 +140,9 @@
     <folder id="cwtoa-62y3n" label="DropboxArc" path="/home/danil/DropboxArc" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
         <device id="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="UXFJK7F-PLLNMBT-BCZXTF5-N7VWPC7-W6UJSLA-VWLNBYB-FTVWSC6-XPKINAK" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW" introducedBy="">
@@ -172,6 +184,9 @@
         <device id="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
+        <device id="UXFJK7F-PLLNMBT-BCZXTF5-N7VWPC7-W6UJSLA-VWLNBYB-FTVWSC6-XPKINAK" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
         <device id="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
@@ -209,6 +224,9 @@
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="UXFJK7F-PLLNMBT-BCZXTF5-N7VWPC7-W6UJSLA-VWLNBYB-FTVWSC6-XPKINAK" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="4TBKXIL-SOYAJRP-V6MSUZR-35R2V2P-THAJHAG-XX7DADV-YK5KOFE-VGFJ6QW" introducedBy="">
@@ -253,6 +271,9 @@
         <device id="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
+        <device id="UXFJK7F-PLLNMBT-BCZXTF5-N7VWPC7-W6UJSLA-VWLNBYB-FTVWSC6-XPKINAK" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
         <device id="YSILUWZ-HUBI6QS-SXYT7AS-W6WKKHS-RXRSK3O-B65PL65-XYXPOBA-LHTYEAP" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
@@ -293,6 +314,9 @@
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="GSXAF7X-TVX2AYG-PZX6PCP-YGA6PMJ-QBRNFPT-HXZOKGN-RP3VTEE-NGRXCQ6" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="UXFJK7F-PLLNMBT-BCZXTF5-N7VWPC7-W6UJSLA-VWLNBYB-FTVWSC6-XPKINAK" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="YSILUWZ-HUBI6QS-SXYT7AS-W6WKKHS-RXRSK3O-B65PL65-XYXPOBA-LHTYEAP" introducedBy="">
@@ -341,6 +365,9 @@
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="UXFJK7F-PLLNMBT-BCZXTF5-N7VWPC7-W6UJSLA-VWLNBYB-FTVWSC6-XPKINAK" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="YSILUWZ-HUBI6QS-SXYT7AS-W6WKKHS-RXRSK3O-B65PL65-XYXPOBA-LHTYEAP" introducedBy="">
@@ -408,6 +435,26 @@
         <remoteGUIPort>0</remoteGUIPort>
     </device>
     <device id="P5AXFPC-OJNTT2P-YTQ3BWZ-FCTUCZP-2GPKTOL-DFXS74W-MD2CBFZ-VEZAIQK" name="h2" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
+        <address>dynamic</address>
+        <paused>false</paused>
+        <autoAcceptFolders>false</autoAcceptFolders>
+        <maxSendKbps>0</maxSendKbps>
+        <maxRecvKbps>0</maxRecvKbps>
+        <maxRequestKiB>0</maxRequestKiB>
+        <untrusted>false</untrusted>
+        <remoteGUIPort>0</remoteGUIPort>
+    </device>
+    <device id="UXFJK7F-PLLNMBT-BCZXTF5-N7VWPC7-W6UJSLA-VWLNBYB-FTVWSC6-XPKINAK" name="h22" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
+        <address>dynamic</address>
+        <paused>false</paused>
+        <autoAcceptFolders>false</autoAcceptFolders>
+        <maxSendKbps>0</maxSendKbps>
+        <maxRecvKbps>0</maxRecvKbps>
+        <maxRequestKiB>0</maxRequestKiB>
+        <untrusted>false</untrusted>
+        <remoteGUIPort>0</remoteGUIPort>
+    </device>
+    <device id="YNIMQDG-UJ7BI4U-MXKS3HU-SZXOUER-32VM7MM-FIJTISH-HMH6LIZ-YJQYMQO" name="h22" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
         <address>dynamic</address>
         <paused>false</paused>
         <autoAcceptFolders>false</autoAcceptFolders>
