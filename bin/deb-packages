@@ -178,7 +178,18 @@ install="$install xcalib" # `xcalib -i -a` invert colors on xorg/xrandr <https:/
 # <https://github.com/dunst-project/dunst>
 # install="$install libc6 libcairo2 libgdk-pixbuf2.0-0 libglib2.0-0 libpango-1.0-0 libpangocairo-1.0-0 libx11-6 libxdg-basedir1 libxinerama1 libxrandr2 libxss1" # runtime dependencies
 # install="$install dunst" # instead compilling from source into ~/.local/bin # a-la notify-osd
-install="$install libdbus-1-dev libnotify-dev libxrandr-dev libpango1.0-dev libx11-dev libxinerama-dev libxss-dev libglib2.0-dev libgtk-3-dev libxdg-basedir-dev" # compiltime dependencies <https://github.com/dunst-project/dunst/wiki/Dependencies>
+# Dunst/dunstify compile/run time dependencies <https://github.com/dunst-project/dunst/wiki/Dependencies>.
+install="$install libdbus-1-dev"
+install="$install libdbus-glib-1-dev"
+install="$install libglib2.0-dev"
+install="$install libgtk-3-dev"
+install="$install libnotify-dev"
+install="$install libpango1.0-dev"
+install="$install libx11-dev"
+install="$install libxdg-basedir-dev"
+install="$install libxinerama-dev"
+install="$install libxrandr-dev"
+install="$install libxss-dev"
 
 # Alacritty terminal emulator a-la st/xterm
 # <https://github.com/alacritty/alacritty/blob/master/INSTALL.md#debianubuntu>.
