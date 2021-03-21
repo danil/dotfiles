@@ -26,6 +26,8 @@
 	excludesfile = ~/.gitignore_global
 	editor = emacs
 	pager = `test \"$TERM\" = \"dumb\" && echo cat || echo less --IGNORE-CASE --LONG-PROMPT`
+[url "git@github.com:danil/"]
+	insteadOf = https://github.com/danil/
 [url "git@gitlab.rocketbank.sexy:backend/"]
 	insteadOf = https://gitlab.rocketbank.sexy/backend/
 [url "git@github.com:rrebellion/"]
