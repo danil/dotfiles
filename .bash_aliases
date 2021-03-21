@@ -46,6 +46,11 @@ export PATH="$PATH":"$HOME"/.local/usr/local/bin #dwm make install here
 
 [ -f "$HOME"/.netrc/.netrc ] && export NETRC="$HOME"/.netrc/.netrc
 
+# <https://askubuntu.com/questions/210210/pkg-config-path-environment-variable#210235>.
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH":/usr/lib/pkgconfig
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH":/usr/lib/x86_64-linux-gnu/pkgconfig
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH":/usr/share/pkgconfig
+
 # Basher is a bash/shell/functions package manager
 # <https://github.com/basherpm/basher>.
 if hash basher 2>/dev/null; then
