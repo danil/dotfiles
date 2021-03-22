@@ -101,7 +101,7 @@ install="$install gnupg" # required by mongodb <https://docs.mongodb.com/manual/
 
 # Golang programming language.
 # install="$install golang-race-detector-runtime" # FIXME: where is race detector for the go 1.15?
-install="$install golang-1.16-doc golang-1.16-go golang-1.16-src"
+install="$install golang-1.15-doc golang-1.15-go golang-1.15-src"
 
 # Rust programming language.
 # install="$install libgtk-3-dev" # required by fontfinder https://github.com/mmstick/fontfinder
