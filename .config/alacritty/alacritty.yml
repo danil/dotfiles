@@ -17,6 +17,9 @@ font:
 cursor:
   style:
     blinking: Always
+selection:
+  # When set to `true`, selected text will be copied to the primary clipboard.
+  save_to_clipboard: true
 colors:
   cursor:
     cursor: '#ff0000'
