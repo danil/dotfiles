@@ -3,10 +3,11 @@
 install_command="snap install"
 
 # X11/xorg/desktop.
-install="$install flameshot" # https://github.com/flameshot-org/flameshot
-install="$install telegram-desktop"
+# install="$install flameshot" # https://github.com/flameshot-org/flameshot
+# install="$install telegram-desktop"
+# install="$install tusk" # evernote desktop client (javascript)
 
-install_classic="$install_classic intellij-idea-ultimate"
+# install_classic="$install_classic intellij-idea-ultimate"
 
 # remove="$remove package-to-remove"
 
