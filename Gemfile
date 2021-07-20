@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.7.2'
+ruby '2.7.3'
 
 group :development do
   # gem 'heroku' # installation fail
@@ -26,6 +26,9 @@ group :development do
   gem 'reek' # code smell detector for ruby `reek path/to/source` <https://github.com/troessner/reek>
   gem 'roodi' # find ruby code design issues `roodi path/to/source` <https://github.com/roodi/roodi>
   gem 'rubocop' # code analyzer based on ruby style guide used by emacs flycheck `rubocop path/to/source` <https://github.com/bbatsov/rubocop>
+  gem 'rubocop-performance'
+  gem 'rubocop-rails'
+  gem 'rubocop-rspec'
   gem 'ruby-lint' # used by emacs flycheck
   gem 'rubycritic' # generate ruby code quality report <https://github.com/whitesmith/rubycritic>
   gem 'rufo' # source code formater/beautifier a-la gofmt

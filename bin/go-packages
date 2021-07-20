@@ -20,18 +20,20 @@ go install -v github.com/github/hub@v2.11.2 || exit 1 # github helper <https://g
 go install -v github.com/go-swagger/go-swagger/cmd/swagger@v0.26.1 || exit 1 # swagger cli validator `swagger validate http://example.org/path/to/swagger.json`
 go install -v github.com/godoctor/godoctor@v0.0.0-20181123222458-69df17f3a6f6 || exit 1 # used by emacs for variables reanming
 go install -v github.com/gokcehan/lf@v0.0.0-20200611011140-0e3910652af9 || exit 1 # file manager for the cli/command line/terminal a-la mc (midnight commander)
+go install -v github.com/golang/mock/mockgen@v1.6.0 || exit 1
 go install -v github.com/golangci/golangci-lint/cmd/golangci-lint@v1.37.1 || exit 1 # used by emacs a-la gometalinter
 go install -v github.com/google/wire/cmd/wire@v0.4.0 || exit 1 # compile/static/generate dj (dependency injection)
 go install -v github.com/jgrahamc/httpdiff@v1.0.0 || exit 1 # diff http requests <https://github.com/jgrahamc/httpdiff>
 go install -v github.com/justjanne/powerline-go@v1.17.0 || exit 1 # a powerline style prompt for shell
-go install -v github.com/kyleconroy/sqlc/cmd/sqlc@v1.6.0 || exit 1 # generate type safe go from sql
+go install -v github.com/kyleconroy/sqlc/cmd/sqlc@v1.7.0 || exit 1 # generate structs and sql by db schema (postgresql, mysql, sqlite, oracle, mssql)
 go install -v github.com/mailhog/MailHog@v1.0.0 || exit 1 # smtp mail consumer a-la ruby mailcatcher: `MailHog`
 go install -v github.com/mattes/migrate/cli@v3.0.1 || exit 1 # database migrations cli
-go install -v github.com/mikefarah/yq/v3@v3.0.0-20201018214059-6afc2e918934 || exit 1 # YAML command-line processor like jq for JSON
+go install -v github.com/mikefarah/yq/v4@v4.9.6 || exit 1 # YAML command-line processor like jq for JSON
 go install -v github.com/monochromegane/the_platinum_searcher/cmd/pt@v2.2.0 || exit 1 # ag and ack replacement <https://github.com/monochromegane/the_platinum_searcher>
 go install -v github.com/nochso/tocenize/cmd/tocenize@v0.4.0 || exit 1 # generate markdown toc/table of content
 go install -v github.com/nojima/httpie-go/cmd/ht@v0.6.0 || exit 1 # colorizing curl
 go install -v github.com/nsf/gocode@v0.0.0-20190302080247-5bee97b48836 || exit 1 # used by emacs auto complete
+go install -v github.com/pressly/goose/cmd/goose@v2.7.0 || exit 1 # database migrations cli
 go install -v github.com/rakyll/hey@v0.1.3 || exit 1 # http load generator (a-la ab apach benchmark)
 go install -v github.com/rlmcpherson/s3gof3r/gof3r@v0.5.0 || exit 1 # s3 (amazon aws) client
 go install -v github.com/rogpeppe/godef@v1.1.2 || exit 1 # used by emacs for jump to the definition of the expression at point
@@ -39,13 +41,18 @@ go install -v github.com/securego/gosec/v2/cmd/gosec@v2.6.1 || exit 1 # security
 go install -v github.com/simeji/jid/cmd/jid@v0.7.6 || exit 1 # interactive jq
 go install -v github.com/svent/sift@v0.9.0 || exit 1 # print lines matching a regexp a-la grep or ag
 go install -v github.com/tigrawap/goader@v1.4.2 || exit 1 # s3/http/disk benchmark (a-la ab apach benchmark)
+go install -v github.com/volatiletech/sqlboiler/v4/drivers/sqlboiler-psql@v4.5.0 || exit 1 # generate structs and sql with relations (like active record) by db schema (postgresql, mysql, mssql, sqlite, cockroachdb)
+go install -v github.com/volatiletech/sqlboiler/v4@v4.5.0 || exit 1 # generate structs and sql with relations (like active record) by db schema (postgresql, mysql, mssql, sqlite, cockroachdb)
 go install -v github.com/wallix/awless@v0.1.11 || exit 1 # aws client
+go install -v github.com/xo/xo@v0.0.0-20201215055213-6fe83c5f98b3 || exit 1 # generate structs and sql by db schema (postgresql, mysql, sqlite, oracle, mssql)
 go install -v golang.org/dl/gotip@v0.0.0-20200611200201-72429b14455f || exit 1 # compiles and runs the go command from the development tree <https://godoc.org/golang.org/dl/gotip>
 go install -v golang.org/x/lint/golint@v0.0.0-20201208152925-83fdc39ff7b5 || exit 1 # classical go linter
 go install -v golang.org/x/tools/cmd/goimports@v0.1.0 || exit 1 # used by emacs as `gofmt` command replacement for adding/removing golang import lines
 go install -v golang.org/x/tools/cmd/gorename@v0.1.0 || exit 1
 go install -v golang.org/x/tools/cmd/guru@v0.1.0 || exit 1 # used by emacs
 go install -v golang.org/x/tools/gopls@v0.6.6 || exit 1 # golang lsp (language server protocol) or GO111MODULE=on go get golang.org/x/tools/gopls@latest
+
+go install -v k8s.io/code-generator/cmd/go-to-protobuf@v0.21.1 || exit 1 # generates a protobuf idl from a go struc
 
 # protobuf/protoc/grpc
 go get -v google.golang.org/grpc@v1.32.0 || exit 1 # the grpc explicit version fixes error: undefined grpc.SupportPackageIsVersion7 <https://stackoverflow.com/questions/63662787/undefined-grpc-supportpackageisversion7-grpc-serviceregistrar#comment112579010_63664342>
