@@ -32,8 +32,9 @@ install="$install net-tools" # ifconfig cli
 install="$install opensmtpd" # send mail via /usr/bin/sendmail and deliver local mail to /var/mail a-la exim replacement
 install="$install openssh-server"
 install="$install pigz" # parallel gzip for multi-processor, multi-core
-install="$install postgresql-server-dev-11" # required by pg_activity is an postgresql activity monitoring <https://github.com/julmon/pg_activity>
-install="$install postgresql-server-dev-9.6" # required by pg_activity is an postgresql activity monitoring <https://github.com/julmon/pg_activity>
+install="$install postgresql-server-dev-11" # required by pg_activity is an postgresql activity monitoring <https://github.com/dalibo/pg_activity>
+install="$install postgresql-server-dev-13" # required by pg_activity is an postgresql activity monitoring <https://github.com/dalibo/pg_activity>
+install="$install postgresql-server-dev-9.6" # required by pg_activity is an postgresql activity monitoring <https://github.com/dalibo/pg_activity>
 install="$install pwgen" # password generator
 install="$install syncthing" # dropbox replacement: deb https://apt.syncthing.net/ syncthing release
 install="$install tig" # git interactive cli
@@ -42,6 +43,9 @@ install="$install uni2ascii" # to/from unicode and to/from percent-encoding conv
 install="$install vim" # neovim
 install="$install whois"
 install="$install zstd" # a-la gz/xz compression
+
+# # Ubuntu 20.04 LTE Linxu 5.11 kernel update.
+# install="$install linux-generic-hwe-20.04-edge" # a-la gz/xz compression
 
 # # Tmux install from source instead.
 # install="$install tmux" # operational system wide
@@ -101,7 +105,8 @@ install="$install gnupg" # required by mongodb <https://docs.mongodb.com/manual/
 
 # Golang programming language.
 # install="$install golang-race-detector-runtime" # FIXME: where is race detector for the go 1.15?
-install="$install golang-1.15-doc golang-1.15-go golang-1.15-src"
+install="$install golang-1.16-doc golang-1.16-go golang-1.16-src"
+# install="$install golang-1.15-doc golang-1.15-go golang-1.15-src"
 
 # Rust programming language.
 # install="$install libgtk-3-dev" # required by fontfinder https://github.com/mmstick/fontfinder
@@ -123,9 +128,8 @@ install="$install libssl-dev" # required by ruby 2.6.3 (libssl-dev conflicts wit
 install="$install python3-pip"
 
 # Nodejs/Javascript by nodesource.com's ppa
-# <https://github.com/nodesource/distributions/blob/master/README.md>,
-# <https://computingforgeeks.com/installing-node-js-10-lts-on-ubuntu-18-04-16-04-debian-9>
-install="$install nodejs" # nodesource.com's nodejs provides latest version of the npm
+# https://github.com/nodesource/distributions/blob/master/README.md#installation-instructions>
+install="$install node"
 install="$install curl dirmngr apt-transport-https lsb-release ca-certificates" # required by nodesource.com's ppa
 
 # # Benchmarks a-la `ab`.
@@ -223,6 +227,9 @@ install="$install brave-browser" # a-la google chrome
 install="$install curl"
 install="$install gnupg"
 
+# Vault (hashicorp) <https://vaultproject.io/downloads>.
+install="$install vault" # curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - && sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+
 # Xfce4.
 # install="$install xfdashboard" # overview all windows
 # install="$install xfce4"
@@ -293,8 +300,8 @@ install="$install libpcap-dev" # required by github.com/google/gopacket/pcap (go
 install="$install network-manager-vpnc-gnome" # cisco vpn client plugin for the gnome
 install="$install openconnect" # vpnc/globalprotect compatible, ppa: <https://launchpad.net/~phusen/+archive/ubuntu/openconnect>
 install="$install openvpn" # openvpn client
-install="$install postgresql-11" # `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
-install="$install postgresql-9.6"  # felix `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
+# install="$install postgresql-11" # `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
+# install="$install postgresql-9.6"  # felix `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
 install="$install redis" # felix
 install="$install vpnc" # cisco vpn client
 install="$install yarn" # (NOTE: before add ppa!) js package manager required by rails asset pipeline precompilation (before install add ppa <https://yarnpkg.com/lang/en/docs/install/#debian-stable>)
