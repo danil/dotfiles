@@ -21,6 +21,7 @@ install="$install goaccess" # analyze nginx/apache log in real-time
 install="$install hping3" # a-la interactive ping https://github.com/antirez/hping
 install="$install htop"
 install="$install jq" # json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>
+install="$install linux-generic-hwe-20.04-edge" # linxu/kernel 5.11 for ubuntu 20.04 lte
 install="$install lm-sensors" # FIXME: is the cpu temperate by ls sensors used by plain status or by slstatus?
 install="$install logrotate"
 install="$install mailutils" # is an gnu mailutils, reads local mail, provides /usr/bin/mail
@@ -43,9 +44,6 @@ install="$install uni2ascii" # to/from unicode and to/from percent-encoding conv
 install="$install vim" # neovim
 install="$install whois"
 install="$install zstd" # a-la gz/xz compression
-
-# # Ubuntu 20.04 LTE Linxu 5.11 kernel update.
-# install="$install linux-generic-hwe-20.04-edge" # a-la gz/xz compression
 
 # # Tmux install from source instead.
 # install="$install tmux" # operational system wide
