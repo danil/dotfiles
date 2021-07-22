@@ -14,7 +14,7 @@ install="$install bc" # used by bash prompt, console-based calculator utility
 install="$install bind9-host+M" # automatic/dependency: dns/host lookup utility
 install="$install curl"
 install="$install dos2unix" # convert text file line endings between CRLF and LF
-install="$install dropbox"
+# install="$install dropbox" # FIXME: deb apt signature
 install="$install genius" # calculator
 install="$install git"
 install="$install goaccess" # analyze nginx/apache log in real-time
@@ -105,6 +105,7 @@ install="$install gnupg" # required by mongodb <https://docs.mongodb.com/manual/
 
 # Golang programming language.
 # install="$install golang-race-detector-runtime" # FIXME: where is race detector for the go 1.15?
+install="$install golang"
 install="$install golang-1.16-doc golang-1.16-go golang-1.16-src"
 # install="$install golang-1.15-doc golang-1.15-go golang-1.15-src"
 
@@ -129,7 +130,7 @@ install="$install python3-pip"
 
 # Nodejs/Javascript by nodesource.com's ppa
 # https://github.com/nodesource/distributions/blob/master/README.md#installation-instructions>
-install="$install node"
+install="$install nodejs"
 install="$install curl dirmngr apt-transport-https lsb-release ca-certificates" # required by nodesource.com's ppa
 
 # # Benchmarks a-la `ab`.
@@ -289,25 +290,36 @@ install="$install libxcb-xtest0"
 # install="$install libxfixes-dev"
 # install="$install libxmu-dev"
 
-# Employer Rocketbank.
-# install="$install glide" # german does not use glide # go/german `add-apt-repository ppa:masterminds/glide` golang glide vendor package management <https://github.com/Masterminds/glide>
+# Employer Ozon.
 install="$install apt-transport-https" # required by elasticsearch ppa <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#deb-repo>
-install="$install docker-ce" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
-install="$install elasticsearch" # felix `deb https://artifacts.elastic.co/packages/5.x/apt stable main` elasticsearch 5 <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>
-install="$install golang-go"
-install="$install libmagickwand-dev" # required by rmagick by felix
 install="$install libpcap-dev" # required by github.com/google/gopacket/pcap (go/src/github.com/google/gopacket/pcap/pcap_unix.go:34:10: fatal error: pcap.h: No such file or directory)
 install="$install network-manager-vpnc-gnome" # cisco vpn client plugin for the gnome
 install="$install openconnect" # vpnc/globalprotect compatible, ppa: <https://launchpad.net/~phusen/+archive/ubuntu/openconnect>
 install="$install openvpn" # openvpn client
-# install="$install postgresql-11" # `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
-# install="$install postgresql-9.6"  # felix `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
-install="$install redis" # felix
+install="$install redis"
 install="$install vpnc" # cisco vpn client
-install="$install yarn" # (NOTE: before add ppa!) js package manager required by rails asset pipeline precompilation (before install add ppa <https://yarnpkg.com/lang/en/docs/install/#debian-stable>)
 # install_hook="$install_hook systemctl disable docker"
-# install_hook="$install_hook systemctl disable postgresql"
 # install_hook="$install_hook systemctl disable redis-server"
+
+# # Employer Rocketbank.
+# # install="$install glide" # german does not use glide # go/german `add-apt-repository ppa:masterminds/glide` golang glide vendor package management <https://github.com/Masterminds/glide>
+# install="$install apt-transport-https" # required by elasticsearch ppa <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#deb-repo>
+# install="$install docker-ce" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
+# install="$install elasticsearch" # felix `deb https://artifacts.elastic.co/packages/5.x/apt stable main` elasticsearch 5 <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>
+# install="$install golang-go"
+# install="$install libmagickwand-dev" # required by rmagick by felix
+# install="$install libpcap-dev" # required by github.com/google/gopacket/pcap (go/src/github.com/google/gopacket/pcap/pcap_unix.go:34:10: fatal error: pcap.h: No such file or directory)
+# install="$install network-manager-vpnc-gnome" # cisco vpn client plugin for the gnome
+# install="$install openconnect" # vpnc/globalprotect compatible, ppa: <https://launchpad.net/~phusen/+archive/ubuntu/openconnect>
+# install="$install openvpn" # openvpn client
+# # install="$install postgresql-11" # `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
+# # install="$install postgresql-9.6"  # felix `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
+# install="$install redis" # felix
+# install="$install vpnc" # cisco vpn client
+# install="$install yarn" # (NOTE: before add ppa!) js package manager required by rails asset pipeline precompilation (before install add ppa <https://yarnpkg.com/lang/en/docs/install/#debian-stable>)
+# # install_hook="$install_hook systemctl disable docker"
+# # install_hook="$install_hook systemctl disable postgresql"
+# # install_hook="$install_hook systemctl disable redis-server"
 
 $remove_command  $remove  || exit 1
 

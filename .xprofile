@@ -24,6 +24,10 @@ fi
 
 export LANG="en_US.UTF-8"
 
+# # determine output: xrandr | grep "connected primary"
+# # ugly font with scale 0.5x0.5
+# xrandr --output eDP-1 --scale 0.5x0.5
+
 xset b off #turn off bell
 xset dpms 420 #suspend monitor after 7 minutes <https://wiki.archlinux.org/index.php/i3#Screensaver_and_power_management>
 ~/bin/my-keyboard-auto-repeat-rate.sh
