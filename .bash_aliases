@@ -111,7 +111,8 @@ export COMPOSER_PREFIX="$HOME/vendor"
 # export LUA_CPATH="$HOME"'/.lenv/current/luarocks/lib/?.so;;'
 
 # Rust (rust toolchain installer https://rustup.rs).
-export PATH="$HOME/.cargo/bin:$PATH" #be sure to add `/home/danil/.cargo/bin` to your PATH to be able to run the installed binaries
+# Adding `"$HOME"/.cargo/bin` to your PATH to be able to run the installed binaries
+# [ -f "$HOME"/.cargo/env ] && source "$HOME"/.cargo/env
 
 # Dart <https://dart.dev/get-dart>.
 export PATH="$PATH:/usr/lib/dart/bin"
