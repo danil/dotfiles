@@ -1,0 +1,4 @@
+# # Employer Ozon.
+# GONOPROXY=none
+# GOPRIVATE=*.ozon.ru
+# GOPROXY=https://athens.s.o3.ru,https://proxy.golang.org,direct
