@@ -188,6 +188,7 @@ install="$install cmake"
 install="$install libfontconfig1-dev"
 install="$install libfreetype6-dev"
 install="$install libxcb-xfixes0-dev"
+install="$install libxkbcommon-dev"
 install="$install pkg-config"
 install="$install python3"
 
