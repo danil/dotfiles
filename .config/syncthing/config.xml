@@ -1,7 +1,7 @@
 <configuration version="35">
     <folder id="default" label="Default Folder" path="/home/danil/Sync" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
-        <device id="DGRBVYB-RKM6HNZ-IBZVFEX-UTPAX3K-4PQZLAX-AAPXSCF-YHAWYVG-434V7QT" introducedBy="">
+        <device id="ZRHSJYD-ZD4THGF-Z6M7KUU-5P7U4ZJ-UKBXPSI-OESYO6V-ZABCSHW-Q2TINAI" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
         <minDiskFree unit="%">1</minDiskFree>
@@ -32,7 +32,7 @@
         <caseSensitiveFS>false</caseSensitiveFS>
         <junctionsAsDirs>false</junctionsAsDirs>
     </folder>
-    <device id="DGRBVYB-RKM6HNZ-IBZVFEX-UTPAX3K-4PQZLAX-AAPXSCF-YHAWYVG-434V7QT" name="h23" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
+    <device id="ZRHSJYD-ZD4THGF-Z6M7KUU-5P7U4ZJ-UKBXPSI-OESYO6V-ZABCSHW-Q2TINAI" name="h23" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
         <address>dynamic</address>
         <paused>false</paused>
         <autoAcceptFolders>false</autoAcceptFolders>
@@ -44,7 +44,7 @@
     </device>
     <gui enabled="true" tls="false" debugging="false">
         <address>127.0.0.1:8384</address>
-        <apikey>NjNdvQHYoVoHcH4CqrMyDHgRASqdT6Lv</apikey>
+        <apikey>rbgSh235kP3jKbWqLVoHj2pqsLEadPue</apikey>
         <theme>black</theme>
     </gui>
     <ldap></ldap>
@@ -101,7 +101,7 @@
     <defaults>
         <folder id="" label="" path="~" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
             <filesystemType>basic</filesystemType>
-            <device id="DGRBVYB-RKM6HNZ-IBZVFEX-UTPAX3K-4PQZLAX-AAPXSCF-YHAWYVG-434V7QT" introducedBy="">
+            <device id="ZRHSJYD-ZD4THGF-Z6M7KUU-5P7U4ZJ-UKBXPSI-OESYO6V-ZABCSHW-Q2TINAI" introducedBy="">
                 <encryptionPassword></encryptionPassword>
             </device>
             <minDiskFree unit="%">1</minDiskFree>

@@ -24,7 +24,7 @@ install="$install jq" # json console formater (used by emacs counsel-jq) <http:/
 install="$install lm-sensors" # FIXME: is the cpu temperate by ls sensors used by plain status or by slstatus?
 install="$install logrotate"
 install="$install mailutils" # is an gnu mailutils, reads local mail, provides /usr/bin/mail
-install="$install mkusb usb-pack-efi" # create bootable usb/iso <https://help.ubuntu.com/community/mkusb#Quick_start_manual_and_mkusb_PPA>
+# install="$install mkusb usb-pack-efi" # FIXME: ??? # create bootable usb/iso <https://help.ubuntu.com/community/mkusb#Quick_start_manual_and_mkusb_PPA>
 install="$install mlocate" # locate/updatedb
 install="$install mosh" # ssh replacement
 install="$install ncdu" # disk space usage is an baobab and gt5 replacement
@@ -44,9 +44,10 @@ install="$install vim" # neovim
 install="$install whois"
 install="$install zstd" # a-la gz/xz compression
 
-# # Tmux install from source instead.
-# install="$install tmux" # operational system wide
-# install="$install pkg-config libevent-dev libncurses-dev" # compiltime dependencies
+# Tmux (os wide/from source).
+# install="$install tmux" # os wide
+install="$install byacc" # preventing compiltime dependency error: ./etc/ylwrap: line 175: yacc: command not found
+install="$install pkg-config libevent-dev libncurses-dev" # compiltime dependencies
 
 # Emacs.
 # install="$install emacs-el" # find/navigate elisp function source code <https://unix.stackexchange.com/questions/73100/how-to-attach-elisp-function-source-code-in-emacs>
@@ -82,7 +83,7 @@ install_hook="$install_hook systemctl disable docker"
 
 # The silver searcher (ag) <https://github.com/ggreer/the_silver_searcher>
 # install="$install silversearcher-ag" # installing from source into ~/.local/bin
-install="$install automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev" # compiltime dependencies
+install="$install automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev" # compiltime dependencies <https://github.com/ggreer/the_silver_searcher#building-from-source>
 
 # C/C++ compile/make common dependencies.
 install="$install automake" # required by tmux/xchainkeys
@@ -102,7 +103,7 @@ install="$install gnupg" # required by mongodb <https://docs.mongodb.com/manual/
 
 # Golang programming language.
 # install="$install golang-race-detector-runtime" # FIXME: where is race detector for the go 1.15?
-# install="$install golang"
+install="$install golang"
 install="$install golang-1.16-doc golang-1.16-go golang-1.16-src"
 
 # Rust programming language.
@@ -160,9 +161,9 @@ install="$install meld" # gnome diff (gtk)
 install="$install mesa-utils" # provides glxgears util for the 3d compositor testing
 install="$install mousepad" # simple text editor for xfce <https://github.com/codebrainz/mousepad>
 install="$install mpv" # a-la mplayer replacement
-install="$install pk-update-icon " # display notifications about software updates
+# install="$install pk-update-icon " # FIXME: ??? # display notifications about software updates
 install="$install ubuntu-restricted-extras" # playing video in browser instead of download <https://askubuntu.com/questions/1122579/firefox-downloads-the-video-instead-of-playing-it#1122668>, <https://askubuntu.com/questions/56446/how-do-i-install-the-ubuntu-restricted-extras-package#56448>
-install="$install uswsusp" # systemctl hibernate
+# install="$install uswsusp" # FIXME: ??? # systemctl hibernate
 install="$install xsel" # copy selection in termina to the xorg clipboard (used by emacs and urxvt) <https://wiki.archlinux.org/index.php/rxvt-unicode#Automatic_Script_Management>
 install="$install xterm" # backup/fallback terminal additional to the st/stterm/alacritty
 
@@ -288,8 +289,9 @@ install="$install libxcb-xtest0"
 # install="$install libxmu-dev"
 
 # Employer Ozon.
+install="$install openvpn" # openvpn client <https://confluence.ozon.ru/pages/viewpage.action?spaceKey=CORPIT&title=OpenVPN+for+Linux>
 install="$install docker-ce" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
-# install="$install golang"
+install="$install golang"
 install="$install libpcap-dev" # required by github.com/google/gopacket/pcap (go/src/github.com/google/gopacket/pcap/pcap_unix.go:34:10: fatal error: pcap.h: No such file or directory)
 install="$install redis" # felix
 # install_hook="$install_hook systemctl disable docker"
