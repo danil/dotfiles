@@ -192,15 +192,13 @@ install="$install libxkbcommon-dev"
 install="$install pkg-config"
 install="$install python3"
 
-# xtitle used by i3blocks/i3 <https://github.com/baskerville/xtitle>.
-install="$install libxcb-ewmh-dev libxcb-icccm4-dev libxcb-util0-dev" # compiltime dependencies
-
 # i3.
 # install="$install i3blocks"
 # install="$install i3status" # instead using i3block
+install="$install build-essential" # dmenu (suckless) dependency
 install="$install i3-wm"
 install="$install i3lock" # xscreensaver replacement
-install="$install suckless-tools" # installs dmenu and more
+install="$install libxcb-ewmh-dev libxcb-icccm4-dev libxcb-util0-dev" # xtitle (used by i3blocks/i3) compiltime dependencies <https://github.com/baskerville/xtitle>
 install="$install volumeicon-alsa" # sound/volume icon indicator <https://github.com/Maato/volumeicon>
 install="$install xautolock" # used by i3lock
 install="$install xxkb" # keyboard/language layout indicator (flag) for tray
@@ -216,7 +214,6 @@ install="$install xxkb" # keyboard/language layout indicator (flag) for tray
 # install="$install libx11-dev" # suckless dependency
 # install="$install libxinerama-dev" # suckless dependency
 # install="$install sharutils" # suckless dependency
-# install="$install suckless-tools" # installs dmenu and more
 # install="$install xautolock" # used by i3lock
 # install="$install xxkb" # keyboard/language layout indicator (flag) for tray
 
