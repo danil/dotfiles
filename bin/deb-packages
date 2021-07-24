@@ -5,17 +5,16 @@ install_command="aptitude install"
 
 # Common packages.
 # install="$install jp2a" # converts jpg to ascii
+# install="$install linux-generic-hwe-20.04-edge" # linxu/kernel 5.11 for ubuntu 20.04 lteinstall="$install apache2-utils" # provides htpasswd utility is an nginx/apach basic authentication password generator
 # install="$install makepasswd" # password generator
 # install="$install nginx"
 # install="$install protobuf-compiler" # version to old/outdated(
-# install="$install dropbox" # FIXME: deb apt signature wtf?
-install="$install acpidump" # FIXME: S0ix/S4 investigating
-install="$install apache2-utils" # provides htpasswd utility is an nginx/apach basic authentication password generator
 install="$install apt-transport-https" # required by custom ppa
 install="$install bc" # used by bash prompt, console-based calculator utility
 install="$install bind9-host+M" # automatic/dependency: dns/host lookup utility
 install="$install curl"
 install="$install dos2unix" # convert text file line endings between CRLF and LF
+# install="$install dropbox" # FIXME: checksum
 install="$install genius" # calculator
 install="$install git"
 install="$install goaccess" # analyze nginx/apache log in real-time
@@ -25,7 +24,7 @@ install="$install jq" # json console formater (used by emacs counsel-jq) <http:/
 install="$install lm-sensors" # FIXME: is the cpu temperate by ls sensors used by plain status or by slstatus?
 install="$install logrotate"
 install="$install mailutils" # is an gnu mailutils, reads local mail, provides /usr/bin/mail
-install="$install mkusb usb-pack-efi" # create bootable usb <https://help.ubuntu.com/community/mkusb#Quick_start_manual_and_mkusb_PPA>
+install="$install mkusb usb-pack-efi" # create bootable usb/iso <https://help.ubuntu.com/community/mkusb#Quick_start_manual_and_mkusb_PPA>
 install="$install mlocate" # locate/updatedb
 install="$install mosh" # ssh replacement
 install="$install ncdu" # disk space usage is an baobab and gt5 replacement
@@ -45,9 +44,6 @@ install="$install vim" # neovim
 install="$install whois"
 install="$install zstd" # a-la gz/xz compression
 
-# # Ubuntu 20.04 LTE Linxu 5.11 kernel update.
-# install="$install linux-generic-hwe-20.04-edge" # a-la gz/xz compression
-
 # # Tmux install from source instead.
 # install="$install tmux" # operational system wide
 # install="$install pkg-config libevent-dev libncurses-dev" # compiltime dependencies
@@ -58,8 +54,8 @@ install="$install zstd" # a-la gz/xz compression
 install="$install aspell-en" # used by emacs auto complete
 install="$install aspell-ru" # used by emacs auto complete
 install="$install clang" # used by company-clang backend
-install="$install emacs27-el" # find/navigate elisp function source code <https://unix.stackexchange.com/questions/73100/how-to-attach-elisp-function-source-code-in-emacs>
-install="$install emacs27-nox"
+install="$install emacs-el" # find/navigate elisp function source code <https://unix.stackexchange.com/questions/73100/how-to-attach-elisp-function-source-code-in-emacs>
+install="$install emacs-nox"
 install="$install shellcheck" # used by emacs flycheck
 
 # # Basher is a bash/shell/functions package manager
@@ -106,9 +102,8 @@ install="$install gnupg" # required by mongodb <https://docs.mongodb.com/manual/
 
 # Golang programming language.
 # install="$install golang-race-detector-runtime" # FIXME: where is race detector for the go 1.15?
-install="$install golang"
+# install="$install golang"
 install="$install golang-1.16-doc golang-1.16-go golang-1.16-src"
-# install="$install golang-1.15-doc golang-1.15-go golang-1.15-src"
 
 # Rust programming language.
 # install="$install libgtk-3-dev" # required by fontfinder https://github.com/mmstick/fontfinder
@@ -146,14 +141,14 @@ install="$install curl dirmngr apt-transport-https lsb-release ca-certificates" 
 # X11/xorg/desktop.
 # install="$install font-manager" # list bitmap ??? fonts
 # install="$install fonts-noto" # awesome serif font ???
+# install="$install fonts-fantasque-sans" # instead install manually into /usr/local/share/fonts # terminal/code/mono/programming font (gnome-terminal issue https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=960629)
+# install="$install fonts-hack-ttf" # instead install manually into /usr/local/share/fonts # terminal/code/mono/programming font
 # install="$install xcalib" # returns: "Error - unsupported ramp size 0" (load icc/icm display color profiles (only calibration curves) <https://wiki.archlinux.org/index.php/ICC_Profiles#xcalib>)
 # install="$install xclip" # tmux and xorg clipboard integration <https://github.com/tmux-plugins/tmux-yank#linux-requirements>
 install="$install argyll" # load icc/icm display color profiles <https://wiki.archlinux.org/index.php/ICC_Profiles#Argyll_CMS>
 install="$install duplicity" # backuping
 install="$install feh" # command line image viewer
 install="$install firefox" # works normal with graylog's text box (input box), text field (input field)
-install="$install fonts-fantasque-sans" # terminal/code/mono/programming font (gnome-terminal issue https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=960629)
-install="$install fonts-hack-ttf" # terminal/code/mono/programming font
 install="$install gimp" # a-la photoshop
 install="$install google-chrome-stable"
 install="$install gparted" # format/create partition/disk/usb
@@ -192,6 +187,7 @@ install="$install cmake"
 install="$install libfontconfig1-dev"
 install="$install libfreetype6-dev"
 install="$install libxcb-xfixes0-dev"
+install="$install libxkbcommon-dev"
 install="$install pkg-config"
 install="$install python3"
 
@@ -292,22 +288,18 @@ install="$install libxcb-xtest0"
 # install="$install libxmu-dev"
 
 # Employer Ozon.
-install="$install apt-transport-https" # required by elasticsearch ppa <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#deb-repo>
+install="$install docker-ce" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
+# install="$install golang"
 install="$install libpcap-dev" # required by github.com/google/gopacket/pcap (go/src/github.com/google/gopacket/pcap/pcap_unix.go:34:10: fatal error: pcap.h: No such file or directory)
-install="$install network-manager-vpnc-gnome" # cisco vpn client plugin for the gnome
-install="$install openconnect" # vpnc/globalprotect compatible, ppa: <https://launchpad.net/~phusen/+archive/ubuntu/openconnect>
-install="$install openvpn" # openvpn client
-install="$install redis"
-install="$install vpnc" # cisco vpn client
+install="$install redis" # felix
 # install_hook="$install_hook systemctl disable docker"
 # install_hook="$install_hook systemctl disable redis-server"
 
 # # Employer Rocketbank.
 # # install="$install glide" # german does not use glide # go/german `add-apt-repository ppa:masterminds/glide` golang glide vendor package management <https://github.com/Masterminds/glide>
-# install="$install apt-transport-https" # required by elasticsearch ppa <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#deb-repo>
 # install="$install docker-ce" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
-# install="$install elasticsearch" # felix `deb https://artifacts.elastic.co/packages/5.x/apt stable main` elasticsearch 5 <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>
-# install="$install golang-go"
+# install="$install elasticsearch apt-transport-https" # felix `deb https://artifacts.elastic.co/packages/5.x/apt stable main` elasticsearch 5 <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>, # apt-transport-https required by elasticsearch ppa <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#deb-repo>
+# install="$install golang"
 # install="$install libmagickwand-dev" # required by rmagick by felix
 # install="$install libpcap-dev" # required by github.com/google/gopacket/pcap (go/src/github.com/google/gopacket/pcap/pcap_unix.go:34:10: fatal error: pcap.h: No such file or directory)
 # install="$install network-manager-vpnc-gnome" # cisco vpn client plugin for the gnome
@@ -317,7 +309,7 @@ install="$install vpnc" # cisco vpn client
 # # install="$install postgresql-9.6"  # felix `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
 # install="$install redis" # felix
 # install="$install vpnc" # cisco vpn client
-# install="$install yarn" # (NOTE: before add ppa!) js package manager required by rails asset pipeline precompilation (before install add ppa <https://yarnpkg.com/lang/en/docs/install/#debian-stable>)
+# # install="$install yarn" # (NOTE: before add ppa!) js package manager required by rails asset pipeline precompilation (before install add ppa <https://yarnpkg.com/lang/en/docs/install/#debian-stable>)
 # # install_hook="$install_hook systemctl disable docker"
 # # install_hook="$install_hook systemctl disable postgresql"
 # # install_hook="$install_hook systemctl disable redis-server"
