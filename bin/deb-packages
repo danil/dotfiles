@@ -201,7 +201,7 @@ install="$install i3lock" # xscreensaver replacement
 install="$install libxcb-ewmh-dev libxcb-icccm4-dev libxcb-util0-dev" # xtitle (used by i3blocks/i3) compiltime dependencies <https://github.com/baskerville/xtitle>
 install="$install volumeicon-alsa" # sound/volume icon indicator <https://github.com/Maato/volumeicon>
 install="$install xautolock" # used by i3lock
-install="$install xxkb" # keyboard/language layout indicator (flag) for tray
+install="$install libxpm-dev libxt-dev xutils-dev" # xxkb compiltime dependencies, is a keyboard/language layout indicator (flag) for tray, a-la gxkb which destroys xchainkeys
 
 # # Suckless dwm.
 # # install="$install gxkb" # a-la xxkb (destroy xchainkeys)
