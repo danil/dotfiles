@@ -193,7 +193,6 @@ install="$install pkg-config"
 install="$install python3"
 
 # i3.
-# install="$install i3blocks"
 # install="$install i3status" # instead using i3block
 install="$install build-essential" # dmenu (suckless) dependency
 install="$install i3-wm"
