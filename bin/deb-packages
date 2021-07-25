@@ -293,6 +293,7 @@ install="$install libpcap-dev" # required by github.com/google/gopacket/pcap (go
 install="$install redis" # felix
 # install_hook="$install_hook systemctl disable docker"
 # install_hook="$install_hook systemctl disable redis-server"
+install_hook="$install_hook systemctl disable openvpn openvpn@client"
 
 # # Employer Rocketbank.
 # # install="$install glide" # german does not use glide # go/german `add-apt-repository ppa:masterminds/glide` golang glide vendor package management <https://github.com/Masterminds/glide>

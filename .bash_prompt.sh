@@ -106,10 +106,10 @@ function my_ps1_timer_show {
     esac
 
     if command -v play >/dev/null 2>&1 && #how to check if a program exists <http://stackoverflow.com/questions/592620/how-to-check-if-a-program-exists-from-a-bash-script#677212>
-           [ -f $(eval echo ~$(whoami))/local/share/sounds/complete.oga ]; then
+           [ -f $(eval echo ~$(whoami))/.local/share/sounds/complete.oga ]; then
         # <http://en.wikipedia.org/wiki/Nohup#Overcoming_hanging>.
         nohup play -q --no-show-progress \
-              $(eval echo ~$(whoami))/local/share/sounds/complete.oga \
+              $(eval echo ~$(whoami))/.local/share/sounds/complete.oga \
               > /dev/null 2> /dev/null < /dev/null &
     fi
 

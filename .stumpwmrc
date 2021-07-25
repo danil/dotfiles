@@ -18,7 +18,7 @@
 (defparameter MY-DATE-COMMAND (format nil "date '~a' | tr -d [:cntrl:]"
                                       MY-DATE-FORMAT))
 (defparameter MY-LOAD-COMMAND "~/bin/load.sh | tr -d [:cntrl:]")
-(defparameter MY-BACKGROUND-IMAGE "~/local/share/backgrounds/gentoo-znurt-larry-abducted-1440x900.png")
+(defparameter MY-BACKGROUND-IMAGE "~/.local/share/backgrounds/gentoo-znurt-larry-abducted-1440x900.png")
 (defparameter MY-CURSOR-NAME "Vanilla-DMZ")
 (defparameter MY-SHOW-CPU-LOAD "bin/show_cpu_load.sh")
 (defparameter MY-SHOW-BATTERY-STATUS "bin/show_battery_status.sh")
