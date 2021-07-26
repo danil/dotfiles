@@ -6,5 +6,6 @@ Terminal=false
 Type=Application
 Icon=/home/danil/.local/share/tresorit/tresorit.png
 resorit.png
+resorit.png
 X-GNOME-Autostart-Delay=60
 X-GNOME-Autostart-enabled=false
