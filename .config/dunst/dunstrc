@@ -31,7 +31,7 @@
     # screen width minus the width defined in within the geometry option.
     # ~~~~<danil@kutkevich.org>
     # geometry = "300x5-30+20"
-    geometry = "-1200-800+0"
+    geometry = "-1700-1400+0"
 
     # Turn on the progess bar
     progress_bar = true
