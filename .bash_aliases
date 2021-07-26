@@ -42,6 +42,7 @@ export PATH="$HOME"/sbin:"$PATH"
 export PATH="$PATH":"$HOME"/deps/bin #bpkg bash package manager <https://github.com/bpkg/bpkg#installing-packages> run `bash-install-all`
 export PATH="$HOME/.cask/bin:$PATH" #emacs cask <http://cask.github.io>
 export PATH="$PATH":"$HOME"/.local/bin #tmux make install here and pip (python package management system) run `python-install-all`
+export PATH="$PATH":"$HOME"/.local/usr/bin #xxkb make install here
 export PATH="$PATH":"$HOME"/.local/usr/local/bin #dwm make install here
 
 [ -f "$HOME"/.netrc/.netrc ] && export NETRC="$HOME"/.netrc/.netrc
