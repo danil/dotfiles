@@ -42,7 +42,8 @@ Xft.lcdfilter: lcddefault
 ! Sub-pixel rendering <http://wiki.gentoo.org/wiki/Fontconfig#Using_sub-pixel_rendering>,
 ! <https://wiki.archlinux.org/index.php/Font_Configuration#Subpixel_rendering>.
 Xft.rgba: rgb
-! DPI <https://wiki.archlinux.org/index.php/Font_Configuration#Distorted_fonts>,
+! DPI <https://wiki.archlinux.org/title/HiDPI>,
+! <https://wiki.archlinux.org/index.php/Font_Configuration#Distorted_fonts>,
 ! <https://askubuntu.com/questions/197828/how-to-find-and-change-the-screen-dpi#272172>.
 ! `xrandr | grep -w connected` and then divide X and Y resolution by size in CM
 ! and then maybe multiply by coefficient for example:
