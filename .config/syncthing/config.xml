@@ -67,7 +67,7 @@
         <natTimeoutSeconds>10</natTimeoutSeconds>
         <urAccepted>3</urAccepted>
         <urSeen>3</urSeen>
-        <urUniqueID></urUniqueID>
+        <urUniqueID>foqdEzxP</urUniqueID>
         <urURL>https://data.syncthing.net/newdata</urURL>
         <urPostInsecurely>false</urPostInsecurely>
         <urInitialDelayS>1800</urInitialDelayS>
