@@ -7,6 +7,7 @@ install_command="aptitude install"
 # install="$install jp2a" # converts jpg to ascii
 # install="$install linux-generic-hwe-20.04-edge" # linxu/kernel 5.11 for ubuntu 20.04 lteinstall="$install apache2-utils" # provides htpasswd utility is an nginx/apach basic authentication password generator
 # install="$install makepasswd" # password generator
+# install="$install pgcenter" # postgresql command-line tool https://github.com/lesovsky/pgcenter/releases install: dpkg --install path/to/pgcenter.deb
 # install="$install protobuf-compiler" # version to old/outdated(
 install="$install apt-transport-https" # required by custom ppa
 install="$install bc" # used by bash prompt, console-based calculator utility
@@ -29,9 +30,11 @@ install="$install mlocate" # locate/updatedb
 install="$install mosh" # ssh replacement
 install="$install ncdu" # disk space usage is an baobab and gt5 replacement
 install="$install net-tools" # ifconfig cli
+install="$install nginx" install_hook="$install_hook systemctl disable nginx"
 install="$install opensmtpd" # send mail via /usr/bin/sendmail and deliver local mail to /var/mail a-la exim replacement
 install="$install openssh-server"
 install="$install pigz" # parallel gzip for multi-processor, multi-core
+install="$install postgresql-13" install_hook="$install_hook systemctl disable postgresql" # `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
 install="$install postgresql-server-dev-13" # required by pg_activity is an postgresql activity monitoring <https://github.com/dalibo/pg_activity>
 install="$install pwgen" # password generator
 install="$install syncthing" # dropbox replacement: deb https://apt.syncthing.net/ syncthing release
@@ -41,10 +44,6 @@ install="$install uni2ascii" # to/from unicode and to/from percent-encoding conv
 install="$install vim" # neovim
 install="$install whois"
 install="$install zstd" # a-la gz/xz compression
-
-# Server packages.
-install="$install nginx"
-install_hook="$install_hook systemctl disable nginx"
 
 # Tmux (os wide/from source).
 # install="$install tmux" # os wide
@@ -93,11 +92,6 @@ install="$install build-essential" # compiler?
 install="$install devscripts" # ???
 install="$install make" # required by all)
 install="$install valgrind" # find memory leaks https://www.valgrind.org/docs/manual/quick-start.html
-
-# # PostgreSQL
-# install="$install pgcenter" # https://github.com/lesovsky/pgcenter/releases install: dpkg --install path/to/pgcenter.deb
-install="$install postgresql-13" # `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
-install_hook="$install_hook systemctl disable postgresql"
 
 # Mongodb
 install="$install mongodb-org" # latest stable version of the mongodb server
@@ -287,18 +281,15 @@ install="$install libxcb-xtest0"
 # install="$install libxmu-dev"
 
 # Employer Ozon.
-install="$install openvpn" # openvpn client <https://confluence.ozon.ru/pages/viewpage.action?spaceKey=CORPIT&title=OpenVPN+for+Linux>
-install="$install docker-ce" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
+install="$install openvpn" install_hook="$install_hook systemctl disable openvpn openvpn@client" # openvpn client <https://confluence.ozon.ru/pages/viewpage.action?spaceKey=CORPIT&title=OpenVPN+for+Linux>
+install="$install docker-ce" install_hook="$install_hook systemctl disable docker" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
 install="$install golang"
 install="$install libpcap-dev" # required by github.com/google/gopacket/pcap (go/src/github.com/google/gopacket/pcap/pcap_unix.go:34:10: fatal error: pcap.h: No such file or directory)
-install="$install redis" # felix
-# install_hook="$install_hook systemctl disable docker"
-# install_hook="$install_hook systemctl disable redis-server"
-install_hook="$install_hook systemctl disable openvpn openvpn@client"
+install="$install redis" install_hook="$install_hook systemctl disable redis-server"
 
 # # Employer Rocketbank.
 # # install="$install glide" # german does not use glide # go/german `add-apt-repository ppa:masterminds/glide` golang glide vendor package management <https://github.com/Masterminds/glide>
-# install="$install docker-ce" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
+# install="$install docker-ce" install_hook="$install_hook systemctl disable docker" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
 # install="$install elasticsearch apt-transport-https" # felix `deb https://artifacts.elastic.co/packages/5.x/apt stable main` elasticsearch 5 <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>, # apt-transport-https required by elasticsearch ppa <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#deb-repo>
 # install="$install golang"
 # install="$install libmagickwand-dev" # required by rmagick by felix
@@ -306,19 +297,17 @@ install_hook="$install_hook systemctl disable openvpn openvpn@client"
 # install="$install network-manager-vpnc-gnome" # cisco vpn client plugin for the gnome
 # install="$install openconnect" # vpnc/globalprotect compatible, ppa: <https://launchpad.net/~phusen/+archive/ubuntu/openconnect>
 # install="$install openvpn" # openvpn client
-# # install="$install postgresql-11" # `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
-# # install="$install postgresql-9.6"  # felix `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
-# install="$install redis" # felix
+# # install="$install postgresql-11" install_hook="$install_hook systemctl disable postgresql-11" # `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
+# # install="$install postgresql-9.6" install_hook="$install_hook systemctl disable postgresql-9.6"  # felix `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
+# install="$install redis" install_hook="$install_hook systemctl disable redis-server" # felix
 # install="$install vpnc" # cisco vpn client
 # # install="$install yarn" # (NOTE: before add ppa!) js package manager required by rails asset pipeline precompilation (before install add ppa <https://yarnpkg.com/lang/en/docs/install/#debian-stable>)
-# # install_hook="$install_hook systemctl disable docker"
-# # install_hook="$install_hook systemctl disable postgresql"
-# # install_hook="$install_hook systemctl disable redis-server"
 
 $remove_command  $remove  || exit 1
 
 $install_command $install || exit 1
 
+# FIXME: hooks)
 # for hook in $install_hook; do
 #     echo $hook
 # done
