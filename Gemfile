@@ -35,7 +35,7 @@ group :development do
   gem 'sandi_meter' # analysis ruby code `sandi_meter path/to/source` <https://github.com/makaroni4/sandi_meter>
   gem 'scss_lint' # scss checker used by emacs flycheck <https://github.com/brigade/scss-lint>
   gem 'scss_lint_reporter_checkstyle' # used by emacs flycheck
-  # gem 'sqlint' # sql linter <https://github.com/purcell/sqlint>
+  gem 'sqlint' # sql linter <https://github.com/purcell/sqlint>
   gem 't' # create twitter timeline backup <http://blog.jphpsf.com/2012/05/07/backing-up-your-twitter-account-with-t>
   gem 'tailor' # check style of ruby files (indentation and so on) `tailor path/to/source` <https://github.com/turboladen/tailor>
 end
