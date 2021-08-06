@@ -6,6 +6,7 @@ disable_command="systemctl disable"
 # TODO: install ntp
 
 # Common packages.
+# install="$install inxi" # inxi --graphics <https://github.com/smxi/inxi>
 # install="$install jp2a" # converts jpg to ascii
 # install="$install linux-generic-hwe-20.04-edge" # linxu/kernel 5.11 for ubuntu 20.04 lteinstall="$install apache2-utils" # provides htpasswd utility is an nginx/apach basic authentication password generator
 # install="$install makepasswd" # password generator
@@ -22,7 +23,6 @@ install="$install git"
 install="$install goaccess" # analyze nginx/apache log in real-time
 install="$install hping3" # a-la interactive ping https://github.com/antirez/hping
 install="$install htop"
-install="$install inxi" # inxi --graphics
 install="$install jq" # json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>
 install="$install libpci-dev libnl-3-dev libnl-genl-3-dev gettext libgettextpo-dev autopoint gettext libncurses5-dev libncursesw5-dev libtool-bin dh-autoreconf autoconf-archive pkg-config" # powertop diagnose power consumption https://github.com/fenrus75/powertop#build-dependencies
 install="$install lm-sensors" # FIXME: is the cpu temperate by ls sensors used by plain status or by slstatus?
@@ -164,6 +164,7 @@ install="$install mpv" # a-la mplayer replacement
 install="$install ubuntu-restricted-extras" # playing video in browser instead of download <https://askubuntu.com/questions/1122579/firefox-downloads-the-video-instead-of-playing-it#1122668>, <https://askubuntu.com/questions/56446/how-do-i-install-the-ubuntu-restricted-extras-package#56448>
 install="$install xsel" # copy selection in termina to the xorg clipboard (used by emacs and urxvt) <https://wiki.archlinux.org/index.php/rxvt-unicode#Automatic_Script_Management>
 install="$install xterm" # backup/fallback terminal additional to the st/stterm/alacritty
+remove="$remove xserver-xorg-video-intel" # instead using modesetting <https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/1867668>
 
 # C/C++ compile/make X11 dependencies.
 install="$install libx11-dev" # ???

@@ -50,6 +50,10 @@ export PATH="$HOME"/.local/usr/local/sbin:"$PATH" #dwm make installs here
 
 [ -f "$HOME"/.netrc/.netrc ] && export NETRC="$HOME"/.netrc/.netrc
 
+# # <https://wiki.archlinux.org/title/Intel_graphics#DRI3_issues>.
+# export LIBGL_DRI3_DISABLE=1
+# export MESA_LOADER_DRIVER_OVERRIDE=iris
+
 # <https://askubuntu.com/questions/210210/pkg-config-path-environment-variable#210235>.
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH":/usr/lib/pkgconfig
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH":/usr/lib/x86_64-linux-gnu/pkgconfig
