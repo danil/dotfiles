@@ -22,6 +22,7 @@ install="$install git"
 install="$install goaccess" # analyze nginx/apache log in real-time
 install="$install hping3" # a-la interactive ping https://github.com/antirez/hping
 install="$install htop"
+install="$install inxi" # inxi --graphics
 install="$install jq" # json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>
 install="$install libpci-dev libnl-3-dev libnl-genl-3-dev gettext libgettextpo-dev autopoint gettext libncurses5-dev libncursesw5-dev libtool-bin dh-autoreconf autoconf-archive pkg-config" # powertop diagnose power consumption https://github.com/fenrus75/powertop#build-dependencies
 install="$install lm-sensors" # FIXME: is the cpu temperate by ls sensors used by plain status or by slstatus?
