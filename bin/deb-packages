@@ -212,6 +212,7 @@ install="$install libxpm-dev libxt-dev xutils-dev" # xxkb compiltime dependencie
 # install="$install libx11-dev" # suckless dependency
 # install="$install libxinerama-dev" # suckless dependency
 # install="$install sharutils" # suckless dependency
+# install="$install suckless-tools" # provides dmenu, slock and more
 # install="$install xautolock" # used by i3lock
 # install="$install xxkb" # keyboard/language layout indicator (flag) for tray
 
