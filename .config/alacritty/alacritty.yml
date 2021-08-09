@@ -14,11 +14,11 @@ font:
     family: PragmataPro
   # Point size of the font
   size: 15.0
-# cursor:
-#   style:
-#     blinking: Always
-#   # Cursor blinking interval in milliseconds.
-#   blink_interval: 250
+cursor:
+  style:
+    blinking: Always
+  # Cursor blinking interval in milliseconds.
+  blink_interval: 250
 selection:
   # When set to `true`, selected text will be copied to the primary clipboard.
   save_to_clipboard: true
