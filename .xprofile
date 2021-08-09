@@ -24,12 +24,12 @@ fi
 
 export LANG="en_US.UTF-8"
 
-# X11 scale <https://wiki.archlinux.org/title/HiDPI>.
-# # determine output: xrandr | grep "connected primary"
-# xrandr --output eDP-1 --scale 0.5x0.5 # blurry/ugly fonts with scale 0.5x0.5
-# xrandr --output eDP-1 --mode 1920x1080 # blurry/ugly fonts
-# xrandr --output eDP-1 --mode 3840x2160 --rate 59.97 --dpi 248
-xrandr --output eDP-1 --mode 3840x2160 --rate 60.00 # must switch to the correct mode 3840x2160 from the wrong 1024x768, even blurry/ugly fonts
+# # X11 scale <https://wiki.archlinux.org/title/HiDPI>.
+# # # determine output: xrandr | grep "connected primary"
+# # xrandr --output eDP-1 --scale 0.5x0.5 # blurry/ugly fonts with scale 0.5x0.5
+# # xrandr --output eDP-1 --mode 1920x1080 # blurry/ugly fonts
+# # xrandr --output eDP-1 --mode 3840x2160 --rate 59.97 --dpi 248
+# xrandr --output eDP-1 --mode 3840x2160 --rate 60.00 # must switch to the correct mode 3840x2160 from the wrong 1024x768, even blurry/ugly fonts
 
 xset b off #turn off bell
 xset dpms 420 #suspend monitor after 7 minutes <https://wiki.archlinux.org/index.php/i3#Screensaver_and_power_management>
