@@ -164,7 +164,8 @@ install="$install mpv" # a-la mplayer replacement
 install="$install ubuntu-restricted-extras" # playing video in browser instead of download <https://askubuntu.com/questions/1122579/firefox-downloads-the-video-instead-of-playing-it#1122668>, <https://askubuntu.com/questions/56446/how-do-i-install-the-ubuntu-restricted-extras-package#56448>
 install="$install xsel" # copy selection in termina to the xorg clipboard (used by emacs and urxvt) <https://wiki.archlinux.org/index.php/rxvt-unicode#Automatic_Script_Management>
 install="$install xterm" # backup/fallback terminal additional to the st/stterm/alacritty
-remove="$remove xserver-xorg-video-intel" # instead using modesetting <https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/1867668>
+install="$install xserver-xorg-video-intel" # instead of modesetting using intel <https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/1867668>
+# remove="$remove xserver-xorg-video-intel" # instead of intel using modesetting <https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/1867668>
 
 # C/C++ compile/make X11 dependencies.
 install="$install libx11-dev" # ???
