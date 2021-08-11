@@ -50,11 +50,6 @@ export PATH="$HOME"/.local/usr/local/sbin:"$PATH" #dwm make installs here
 
 [ -f "$HOME"/.netrc/.netrc ] && export NETRC="$HOME"/.netrc/.netrc
 
-# X11
-# <https://wiki.archlinux.org/title/Intel_graphics#DRI3_issues>.
-# export MESA_LOADER_DRIVER_OVERRIDE=iris
-# export LIBGL_DRI3_DISABLE=1
-
 # <https://askubuntu.com/questions/210210/pkg-config-path-environment-variable#210235>.
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH":/usr/lib/pkgconfig
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH":/usr/lib/x86_64-linux-gnu/pkgconfig
@@ -136,6 +131,16 @@ export PATH="$PATH:/usr/lib/dart/bin"
 if [ -f "$HOME"/yandex-cloud/path.bash.inc ]; then source "$HOME"/yandex-cloud/path.bash.inc; fi
 # Enables shell command completion for yc (Yandex Cloud).
 if [ -f "$HOME"/yandex-cloud/completion.bash.inc ]; then source "$HOME"/yandex-cloud/completion.bash.inc; fi
+
+# X11
+# <https://wiki.archlinux.org/title/Intel_graphics#DRI3_issues>.
+# export MESA_LOADER_DRIVER_OVERRIDE=iris
+# export LIBGL_DRI3_DISABLE=1
+
+# Qt <https://wiki.archlinux.org/title/HiDPI#Qt_5>.
+# export QT_SCALE_FACTOR=1
+# export QT_SCREEN_SCALE_FACTORS=1
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
 
 # # Prompt powerline-go.
 # function wm_notify_last_command {
