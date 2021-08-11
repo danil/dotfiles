@@ -85,7 +85,7 @@ draw_graph_borders no
 use_xft yes
 # force UTF8? note that UTF8 support required XFT
 override_utf8_locale yes
-xftfont PragmataPro:size=7
+xftfont Monospace:size=7
 # xftfont xft:pixelsize=14:antialias=true:hinting=true:autohint=true
 xftalpha 0.8
 uppercase no

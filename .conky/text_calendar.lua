@@ -43,7 +43,7 @@ function conky_text_calendar()
   local result = '${color}'
   do
     local wday = get_day_of_week(1, month, year)
-    result = result .. '${font PragmataPro:Regular:size=7}'
+    result = result .. '${font Monospace:Regular:size=7}'
     result = result .. 'Mon  Tue  Wed  Thu  Fri  ${color1}Sat  Sun${color}'
     -- result = result .. 'пн вт ср чт пт ${color1}сб вс${color}'
     result = result .. '\n${font Ubuntu Mono:Regular:size=12}'
