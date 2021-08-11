@@ -5,13 +5,13 @@ font:
   # The normal (roman) font face to use.
   # Style can be specified to pick a specific face.
   normal:
-    family: PragmataPro
+    family: Monospace
   # The bold font face
   bold:
-    family: PragmataPro
+    family: Monospace
   # The italic font face
   italic:
-    family: PragmataPro
+    family: Monospace
   # Point size of the font
   size: 15.0
 cursor:
