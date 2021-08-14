@@ -1,9 +1,9 @@
 #! /bin/bash
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-source osd_progress_bar.sh
+source osd_progress_bar
 
-percentage=$(echo_sound_volume.sh)
+percentage=$(sound_volume)
 
 # <https://wiki.archlinux.org/index.php/Desktop_notifications#Usage_in_programming>.
 dunstify --replace=1 --urgency=low \

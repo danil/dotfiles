@@ -1,0 +1,11 @@
+#!/bin/bash
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
+# Disable internal monitor and enable external monitor
+# <https://wiki.archlinux.org/index.php/xrandr#Example_1>.
+
+if (xrandr | grep "HDMI1 connected" >/dev/null 2>&1); then
+    xrandr --output eDP1 --off --output HDMI1 --auto \
+           && "$HOME"/bin/set_keyboard_auto_repeat_rate \
+           && "$HOME"/bin/set_osd_progress_bar_external_hdmi1
+fi

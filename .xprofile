@@ -33,7 +33,9 @@ export LANG="en_US.UTF-8"
 
 xset b off #turn off bell
 xset dpms 420 #suspend monitor after 7 minutes <https://wiki.archlinux.org/index.php/i3#Screensaver_and_power_management>
-~/bin/my-keyboard-auto-repeat-rate.sh
+
+"$HOME"/bin/set_keyboard_auto_repeat_rate
+"$HOME"/bin/set_osd_progress_bar_internal
 
 hash light 2>/dev/null && light -I #restore the previously saved brightness if light installed <https://github.com/haikarainen/light>
 
