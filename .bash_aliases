@@ -7,7 +7,7 @@ export LC_ALL=en_US.UTF-8
 
 # Tab completion
 # <http://wiki.gentoo.org/wiki/Bash#Tab_completion>.
-[[ -f /etc/profile.d/bash-completion.sh ]] && source /etc/profile.d/bash-completion.sh
+[[ -f /etc/profile.d/bash-completion.sh ]] && . /etc/profile.d/bash-completion.sh
 
 # Disable the XOFF (Ctrl-s) keystroke
 # <http://superuser.com/questions/124845/can-you-disable-the-ctrl-s-xoff-keystroke-in-putty#155875>,
@@ -15,9 +15,8 @@ export LC_ALL=en_US.UTF-8
 stty -ixon
 
 export TERMINAL="xterm" #safe fallback/backup terminal
-export EDITOR="vim" #export EDITOR="/usr/bin/emacsclient -t" #safe fallback/backup editor
+
 # export ALTERNATE_EDITOR="/usr/bin/emacs"
-export GIT_EDITOR='emacs'
 # export PAGER="/usr/bin/less --IGNORE-CASE --LONG-PROMPT" #not working(
 export HISTSIZE=50000
 export HISTFILESIZE=50000
@@ -26,6 +25,14 @@ export HISTCONTROL=ignoredups:erasedups
 # export TERM=rxvt-256color
 [ "$TERM" = "xterm" ] && TERM="xterm-256color" #<http://ricochen.wordpress.com/2011/07/23/mac-os-x-lion-terminal-color-remote-access-problem-fix>
 #export GIT_PAGER=""
+
+if hash vim 2>/dev/null; then
+    export EDITOR="vim" #export EDITOR="/usr/bin/emacsclient -t" #safe fallback/backup editor
+fi
+
+if hash emacs 2>/dev/null; then
+    export GIT_EDITOR='emacs'
+fi
 
 # Aliases.
 # <http://askubuntu.com/questions/22037/aliases-not-available-when-using-sudo#22043>.
@@ -79,7 +86,7 @@ export GOPATH="$HOME"/go
 export PATH="$PATH":/usr/lib/go-1.12/bin #ubuntu go 12
 export PATH="$PATH":"$GOPATH"/bin #for convenience, add the workspace's bin subdirectory to your PATH
 # export PATH="$PATH:$(go env GOPATH)/bin"
-# [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm" #gvm (Go version manager) <https://github.com/moovweb/gvm>
+# [[ -s "$HOME/.gvm/scripts/gvm" ]] && . "$HOME/.gvm/scripts/gvm" #gvm (Go version manager) <https://github.com/moovweb/gvm>
 
 # rbenv <https://github.com/sstephenson/rbenv#basic-github-checkout>.
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -88,7 +95,7 @@ if hash rbenv 2>/dev/null; then
 fi
 
 # Travis CI gem.
-[ -f "$HOME"/.travis/travis.sh ] && source "$HOME"/.travis/travis.sh #auto completion
+[ -f "$HOME"/.travis/travis.sh ] && . "$HOME"/.travis/travis.sh #auto completion
 
 # Node.js and npm.
 # WARNING: Do NOT give priority to npm executables!!!
@@ -119,7 +126,7 @@ export COMPOSER_PREFIX="$HOME/vendor"
 # export LUA_CPATH="$HOME"'/.lenv/current/luarocks/lib/?.so;;'
 
 # Rust (rust toolchain installer https://rustup.rs).
-[ -f "$HOME"/.cargo/env ] && source "$HOME"/.cargo/env # adding `"$HOME"/.cargo/bin` to your PATH to be able to run the installed binaries
+[ -f "$HOME"/.cargo/env ] && . "$HOME"/.cargo/env # adding `"$HOME"/.cargo/bin` to your PATH to be able to run the installed binaries
 
 # Dart <https://dart.dev/get-dart>.
 export PATH="$PATH:/usr/lib/dart/bin"
@@ -128,9 +135,9 @@ export PATH="$PATH:/usr/lib/dart/bin"
 # export SBCL_HOME=/usr/lib64/sbcl
 
 # Updates PATH for Yandex Cloud CLI.
-if [ -f "$HOME"/yandex-cloud/path.bash.inc ]; then source "$HOME"/yandex-cloud/path.bash.inc; fi
+if [ -f "$HOME"/yandex-cloud/path.bash.inc ]; then . "$HOME"/yandex-cloud/path.bash.inc; fi
 # Enables shell command completion for yc (Yandex Cloud).
-if [ -f "$HOME"/yandex-cloud/completion.bash.inc ]; then source "$HOME"/yandex-cloud/completion.bash.inc; fi
+if [ -f "$HOME"/yandex-cloud/completion.bash.inc ]; then . "$HOME"/yandex-cloud/completion.bash.inc; fi
 
 # X11
 # <https://wiki.archlinux.org/title/Intel_graphics#DRI3_issues>.
@@ -228,4 +235,4 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=1
 # if [ "$TERM" != "linux" ]; then
 #     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 # fi
-[[ -f "$HOME"/.bash_prompt.sh ]] && source "$HOME"/.bash_prompt.sh
+[[ -f "$HOME"/.bash_prompt.sh ]] && . "$HOME"/.bash_prompt.sh

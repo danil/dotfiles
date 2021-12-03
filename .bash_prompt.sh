@@ -43,7 +43,7 @@ function ps1_load {
     local load_string="$(uptime)"
     local load_string=${load_string/#*average: }
     local load_string=${load_string%%,*}
-    local tmp=$(echo ${load_string}*100 | bc)
+    local tmp=$(echo ${load_string}*100)
     let load100=${tmp%.*}
     if [[ ${load100} -ge 100 ]]; then
         echo -n " load:${load_string}"
