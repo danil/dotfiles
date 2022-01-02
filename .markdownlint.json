@@ -8,6 +8,8 @@
     "MD026": false,
     "MD027": "no-multiple-space-blockquote",
     "MD027": false,
+    "MD031": "MD031/blanks-around-fences: Fenced code blocks should be surrounded by blank lines",
+    "MD031": false,
     "MD032": "blanks-around-lists",
     "MD032": false,
     "MD033": "no-inline-html",

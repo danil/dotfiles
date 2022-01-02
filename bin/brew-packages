@@ -4,7 +4,10 @@
 
 command="brew install"
 
+# packages="$packages grpc" # ?????????? gRPC cli a-la curl https://github.com/grpc/grpc/blob/master/doc/command_line_tool.md
+packages="$packages derailed/k9s/k9s" # k8s/kubernetes cli <https://github.com/derailed/k9s>
 packages="$packages fdupes" # identify or delete duplicate files https://github.com/adrianlopezroche/fdupes (used by emacs package https://github.com/ShuguangSun/find-dupes-dired)
+packages="$packages grpcurl" # gRPC cli a-la curl https://github.com/fullstorydev/grpcurl
 packages="$packages lua" # newer than apt version of the lua programming language https://github.com/lua/lua
 packages="$packages nnn" # terminal file manager a-la mc/midnight commander https://github.com/jarun/nnn
 

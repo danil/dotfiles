@@ -44,6 +44,7 @@ install="$install syncthing" # dropbox replacement: deb https://apt.syncthing.ne
 install="$install tig" # git interactive cli
 install="$install tree" # displays an indented directory tree
 install="$install uni2ascii" # to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`
+install="$install uuid-runtime" # generating uuid <https://github.com/karelzak/util-linux>, <https://serverfault.com/questions/103359/how-to-create-a-uuid-in-bash#103366>
 install="$install vim" # neovim
 install="$install whois"
 install="$install zstd" # a-la gz/xz compression
@@ -286,10 +287,12 @@ install="$install libxcb-xtest0"
 # install="$install libxmu-dev"
 
 # Employer Ozon.
-install="$install openvpn" disable="$disable systemctl disable openvpn openvpn@client" # openvpn client <https://confluence.ozon.ru/pages/viewpage.action?spaceKey=CORPIT&title=OpenVPN+for+Linux>
 install="$install docker-ce" disable="$disable systemctl disable docker" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
 install="$install golang"
 install="$install libpcap-dev" # required by github.com/google/gopacket/pcap (go/src/github.com/google/gopacket/pcap/pcap_unix.go:34:10: fatal error: pcap.h: No such file or directory)
+install="$install libqt5webkit5" # GlobalProtect_UI_deb-5.2.6.0-18.deb VPN dependency
+install="$install libxml2-utils" # provides xmllint
+install="$install openvpn" disable="$disable systemctl disable openvpn openvpn@client" # openvpn client <https://confluence.ozon.ru/pages/viewpage.action?spaceKey=CORPIT&title=OpenVPN+for+Linux>
 install="$install redis" disable="$disable systemctl disable redis-server"
 
 # # Employer Rocketbank.
