@@ -48,9 +48,8 @@ else
 fi
 
 if [ -f "./${file}.tar.gz.asc" ]; then
-    mv -i \
-        "./${file}.tar.gz.asc" \
-        "./${file}$(date --utc +%Y%m%dT%H%M%SZ).tar.gz.asc"
+    mv -i "./${file}.tar.gz.asc" \
+          "./${file}$(date --utc +%Y%m%dT%H%M%SZ).tar.gz.asc"
 fi
 
 find "${find_args[@]}" \
