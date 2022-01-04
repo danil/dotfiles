@@ -302,7 +302,7 @@ install="$install google-chrome-stable"
 # install="$install gnupg"
 
 # Employer Ozon.
-install="$install docker-ce" disable="$disable systemctl disable docker" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
+install="$install docker-ce" disable="docker" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
 install="$install golang"
 install="$install libpcap-dev" # required by github.com/google/gopacket/pcap (go/src/github.com/google/gopacket/pcap/pcap_unix.go:34:10: fatal error: pcap.h: No such file or directory)
 install="$install libqt5webkit5" # GlobalProtect_UI_deb-5.2.6.0-18.deb VPN dependency
