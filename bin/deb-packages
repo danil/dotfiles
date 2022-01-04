@@ -10,14 +10,12 @@ disable_command="systemctl disable"
 # install="$install jp2a" # converts jpg to ascii
 # install="$install linux-generic-hwe-20.04-edge" # linxu/kernel 5.11 for ubuntu 20.04 lteinstall="$install apache2-utils" # provides htpasswd utility is an nginx/apach basic authentication password generator
 # install="$install makepasswd" # password generator
-# install="$install pgcenter" # postgresql command-line tool https://github.com/lesovsky/pgcenter/releases install: dpkg --install path/to/pgcenter.deb
 # install="$install protobuf-compiler" # version to old/outdated(
 install="$install apt-transport-https" # required by custom ppa
 install="$install bc" # used by bash prompt, console-based calculator utility
 install="$install bind9-host+M" # automatic/dependency: dns/host lookup utility
 install="$install curl"
 install="$install dos2unix" # convert text file line endings between CRLF and LF
-install="$install dropbox"
 install="$install genius" # calculator
 install="$install git"
 install="$install goaccess" # analyze nginx/apache log in real-time
@@ -28,7 +26,6 @@ install="$install libpci-dev libnl-3-dev libnl-genl-3-dev gettext libgettextpo-d
 install="$install lm-sensors" # FIXME: is the cpu temperate by ls sensors used by plain status or by slstatus?
 install="$install logrotate"
 install="$install mailutils" # is an gnu mailutils, reads local mail, provides /usr/bin/mail
-install="$install mkusb usb-pack-efi" # create bootable usb/iso <https://help.ubuntu.com/community/mkusb#Quick_start_manual_and_mkusb_PPA>
 install="$install mlocate" # locate/updatedb
 install="$install mosh" # ssh replacement
 install="$install ncdu" # disk space usage is an baobab and gt5 replacement
@@ -37,8 +34,6 @@ install="$install nginx" disable="$disable nginx"
 install="$install opensmtpd" # send mail via /usr/bin/sendmail and deliver local mail to /var/mail a-la exim replacement
 install="$install openssh-server"
 install="$install pigz" # parallel gzip for multi-processor, multi-core
-install="$install postgresql-13" disable="$disable postgresql" # `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
-install="$install postgresql-server-dev-13" # required by pg_activity is an postgresql activity monitoring <https://github.com/dalibo/pg_activity>
 install="$install pwgen" # password generator
 install="$install syncthing" # dropbox replacement: deb https://apt.syncthing.net/ syncthing release
 install="$install tig" # git interactive cli
@@ -78,12 +73,13 @@ install="$install git"
 # K8s kubernetes.
 install="$install kubectl" # `deb https://apt.kubernetes.io/ kubernetes-xenial main` <https://kubernetes.io/docs/tasks/tools/install-kubectl>
 install="$install gnupg2" # required by kubectl
+install="$install apt-transport-https ca-certificates curl"
 
 # Docker
 # <https://docs.docker.com/install/linux/docker-ce/ubuntu>.
-install="$install docker-ce" disable="$disable docker" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
+install="$install docker-ce docker-ce-cli containerd.io" disable="$disable docker" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
 install="$install golang-docker-credential-helpers" # credential helper stores encrypted passwords in d-bus secret service instead of unencrypted password in plain file <https://docs.docker.com/engine/reference/commandline/login/#credentials-store>
-install="$install apt-transport-https ca-certificates gnupg-agent software-properties-common" # required by docker ppa <https://docs.docker.com/install/linux/docker-ce/ubuntu>
+install="$install apt-transport-https ca-certificates curl gnupg gnupg-agent lsb-release software-properties-common" # required by docker ppa <https://docs.docker.com/install/linux/docker-ce/ubuntu>
 
 # The silver searcher (ag) <https://github.com/ggreer/the_silver_searcher>
 # install="$install silversearcher-ag" # installing from source into ~/.local/bin
@@ -96,8 +92,13 @@ install="$install devscripts" # ???
 install="$install make" # required by all)
 install="$install valgrind" # find memory leaks https://www.valgrind.org/docs/manual/quick-start.html
 
-# Mongodb
-install="$install mongodb-org" # latest stable version of the mongodb server
+# PostgreSQL.
+# install="$install pgcenter" # postgresql command-line tool https://github.com/lesovsky/pgcenter/releases install: dpkg --install path/to/pgcenter.deb
+install="$install postgresql-14" disable="$disable postgresql" # `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
+install="$install postgresql-server-dev-14" # required by pg_activity is an postgresql activity monitoring <https://github.com/dalibo/pg_activity>
+
+# Mongodb.
+install="$install mongodb-org" disable="$disable mongod" # latest stable version of the mongodb server
 install="$install gnupg" # required by mongodb <https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu>
 
 # Golang programming language.
@@ -111,7 +112,8 @@ install="$install golang-1.16-doc golang-1.16-go golang-1.16-src"
 install="$install libudev-dev" # required by fclones, is an duplicate file finder https://github.com/pkolaczk/fclones
 install="$install libxcb-composite0-dev" # required by gitui a-la tig https://github.com/extrawurst/gitui
 
-# Dart <https://dart.dev/get-dart>.
+# Dart <https://dart.dev/get-dart#install-using-apt-get>.
+install="$install apt-transport-https"
 install="$install dart"
 
 # Ruby programming language.
@@ -152,7 +154,6 @@ install="$install duplicity" # backuping
 install="$install feh" # command line image viewer
 install="$install firefox" # works normal with graylog's text box (input box), text field (input field)
 install="$install gimp" # a-la photoshop
-install="$install google-chrome-stable"
 install="$install gparted" # format/create partition/disk/usb
 install="$install libnotify-bin" # a-la notify-osd
 install="$install light" # used by xchainkeys and ~/.xprofile
@@ -218,12 +219,6 @@ install="$install libxpm-dev libxt-dev xutils-dev" # xxkb compiltime dependencie
 # install="$install xautolock" # used by i3lock
 # install="$install xxkb" # keyboard/language layout indicator (flag) for tray
 
-# Brave browser a-la google chrome <https://github.com/brave>.
-install="$install apt-transport-https"
-install="$install brave-browser" # a-la google chrome
-install="$install curl"
-install="$install gnupg"
-
 # Vault (hashicorp) <https://vaultproject.io/downloads>.
 install="$install vault" # curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - && sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 
@@ -238,6 +233,12 @@ install="$install thunar-archive-plugin"
 install="$install thunar-dropbox-plugin"
 install="$install thunar-volman"
 
+# mkusb <https://help.ubuntu.com/community/mkusb#Installation>.
+install="$install mkusb usb-pack-efi" # create bootable usb/iso <https://help.ubuntu.com/community/mkusb#Quick_start_manual_and_mkusb_PPA>
+
+# Dropbox.
+install="$install dropbox"
+
 # Gnome.
 # install="$install chrome-gnome-shell" # chrome/gnome extension integration
 # install="$install gnome-shell-extension-appindicator-" remove
@@ -247,7 +248,7 @@ install="$install thunar-volman"
 # install="$install ubuntu-desktop-" # remove
 install="$install atril" # pdf viewer remembers last page https://github.com/mate-desktop/atril
 install="$install evince-" # remove: pdf viewer remembers last page https://github.com/mate-desktop/atril
-install="$install gnome-tweak-tool" # provides gnome-tweaks command (in addition to gnome-control-center)
+install="$install gnome-tweaks" # former gnome-tweak-tool (in addition to gnome-control-center)
 
 # Zoom dependencies
 install="$install libegl1-mesa"
@@ -270,6 +271,10 @@ install="$install libsqlite3-0"
 install="$install libxcb-keysyms1"
 install="$install libxcb-xtest0"
 
+# # Elasticsearch <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>.
+# install="$install elasticsearch" # felix `deb https://artifacts.elastic.co/packages/5.x/apt stable main` elasticsearch 5 <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>, # apt-transport-https required by elasticsearch ppa <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#deb-repo>
+# install="$install apt-transport-https"
+
 # # never used Skippy-XD is an full-screen task-switcher for X11
 # # <https://github.com/richardgv/skippy-xd>
 # install="$install libimlib2-dev"
@@ -285,6 +290,16 @@ install="$install libxcb-xtest0"
 # install="$install libxdamage-dev"
 # install="$install libxfixes-dev"
 # install="$install libxmu-dev"
+
+# Google chrome <https://www.google.com/chrome>.
+install="$install apt-transport-https"
+install="$install google-chrome-stable"
+
+# # never used Brave browser a-la google chrome <https://github.com/brave>.
+# install="$install apt-transport-https"
+# install="$install brave-browser" # a-la google chrome
+# install="$install curl"
+# install="$install gnupg"
 
 # Employer Ozon.
 install="$install docker-ce" disable="$disable systemctl disable docker" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
