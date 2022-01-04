@@ -239,6 +239,9 @@ install="$install mkusb usb-pack-efi" # create bootable usb/iso <https://help.ub
 # Dropbox.
 install="$install dropbox"
 
+# Slack.
+install="$install libappindicator3-1" # slack dependency
+
 # Gnome.
 # install="$install chrome-gnome-shell" # chrome/gnome extension integration
 # install="$install gnome-shell-extension-appindicator-" remove
