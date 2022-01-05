@@ -149,7 +149,9 @@ install="$install curl dirmngr apt-transport-https lsb-release ca-certificates" 
 # install="$install uswsusp" # FIXME: missing? # systemctl hibernate
 # install="$install xcalib" # returns: "Error - unsupported ramp size 0" (load icc/icm display color profiles (only calibration curves) <https://wiki.archlinux.org/index.php/ICC_Profiles#xcalib>)
 # install="$install xclip" # tmux and xorg clipboard integration <https://github.com/tmux-plugins/tmux-yank#linux-requirements>
+# remove="$remove xserver-xorg-video-intel" # instead of intel using modesetting <https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/1867668>
 install="$install argyll" # load icc/icm display color profiles <https://wiki.archlinux.org/index.php/ICC_Profiles#Argyll_CMS>
+install="$install blueman" # full featured bluetooth manager gui <https://wiki.archlinux.org/title/Blueman>, <https://wiki.archlinux.org/title/Bluetooth>
 install="$install duplicity" # backuping
 install="$install feh" # command line image viewer
 install="$install firefox" # works normal with graylog's text box (input box), text field (input field)
@@ -165,9 +167,8 @@ install="$install mousepad" # simple text editor for xfce <https://github.com/co
 install="$install mpv" # a-la mplayer replacement
 install="$install ubuntu-restricted-extras" # playing video in browser instead of download <https://askubuntu.com/questions/1122579/firefox-downloads-the-video-instead-of-playing-it#1122668>, <https://askubuntu.com/questions/56446/how-do-i-install-the-ubuntu-restricted-extras-package#56448>
 install="$install xsel" # copy selection in termina to the xorg clipboard (used by emacs and urxvt) <https://wiki.archlinux.org/index.php/rxvt-unicode#Automatic_Script_Management>
-install="$install xterm" # backup/fallback terminal additional to the st/stterm/alacritty
 install="$install xserver-xorg-video-intel" # instead of modesetting using intel <https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/1867668>
-# remove="$remove xserver-xorg-video-intel" # instead of intel using modesetting <https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/1867668>
+install="$install xterm" # backup/fallback terminal additional to the st/stterm/alacritty
 
 # C/C++ compile/make X11 dependencies.
 install="$install libx11-dev" # ???
