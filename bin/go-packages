@@ -23,11 +23,12 @@ go install -v github.com/go-swagger/go-swagger/cmd/swagger@v0.26.1 || exit 1 # s
 go install -v github.com/gokcehan/lf@v0.0.0-20200611011140-0e3910652af9 || exit 1 # file manager for the cli/command line/terminal a-la mc (midnight commander)
 go install -v github.com/golang/mock/mockgen@v1.6.0 || exit 1
 go install -v github.com/golangci/golangci-lint/cmd/golangci-lint@v1.42.1 || exit 1 # used by emacs a-la gometalinter
+go install -v github.com/danil/sqlc/cmd/sqlc@v1.11.0 || exit 1 # generate structs and sql by db schema (postgresql, mysql, sqlite, oracle, mssql)
+go install -v github.com/evilsocket/uroboros/cmd/uro@v0.0.0-20211114174251-ddd92f308a42 || exit 1 # single processes monitor tui/readline
 go install -v github.com/google/wire/cmd/wire@v0.4.0 || exit 1 # compile/static/generate dj (dependency injection)
+go install -v github.com/goregrep/goregrep/cmd/goregrep@v0.1.3 || exit 1 # generate structs and sql by db schema (postgresql, mysql, sqlite, oracle, mssql)
 go install -v github.com/jgrahamc/httpdiff@v1.0.0 || exit 1 # diff http requests <https://github.com/jgrahamc/httpdiff>
 go install -v github.com/justjanne/powerline-go@v1.17.0 || exit 1 # a powerline style prompt for shell
-go install -v github.com/goregrep/goregrep/cmd/goregrep@v0.1.3 || exit 1 # generate structs and sql by db schema (postgresql, mysql, sqlite, oracle, mssql)
-go install -v github.com/danil/sqlc/cmd/sqlc@v1.11.0 || exit 1 # generate structs and sql by db schema (postgresql, mysql, sqlite, oracle, mssql)
 go install -v github.com/mailhog/MailHog@v1.0.0 || exit 1 # smtp mail consumer a-la ruby mailcatcher: `MailHog`
 go install -v github.com/mattes/migrate/cli@v3.0.1 || exit 1 # database migrations cli
 go install -v github.com/mikefarah/yq/v4@v4.9.6 || exit 1 # YAML command-line processor like jq for JSON
