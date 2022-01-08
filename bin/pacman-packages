@@ -36,12 +36,12 @@ packages="$packages man-db" # core/man-db
 packages="$packages man-pages" # core/man-pages
 packages="$packages mtr" # extra/mtr
 packages="$packages nano" # core/nano
-packages="$packages neovim" # community/neovim
 packages="$packages net-tools" # core/net-tools
 packages="$packages openssh" # core/openssh
 packages="$packages pigz" # community/pigz: parallel gzip for multi-processor, multi-core
 packages="$packages sudo" # core/sudo
 packages="$packages sysstat" # community/sysstat
+packages="$packages vim" # extra/vim
 packages="$packages whois" # extra/whois
 
 # C/C++ compile/make and so on.
