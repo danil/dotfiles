@@ -236,7 +236,7 @@ install="$install thunar-dropbox-plugin"
 install="$install thunar-volman"
 
 # mkusb <https://help.ubuntu.com/community/mkusb#Installation>.
-install="$install mkusb usb-pack-efi" # create bootable usb/iso <https://help.ubuntu.com/community/mkusb#Quick_start_manual_and_mkusb_PPA>
+install="$install mkusb usb-pack-efi" # create bootable/live usb/iso <https://help.ubuntu.com/community/mkusb#Quick_start_manual_and_mkusb_PPA>
 
 # Dropbox.
 install="$install dropbox"
