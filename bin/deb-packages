@@ -240,6 +240,7 @@ install="$install mkusb usb-pack-efi" # create bootable/live usb/iso <https://he
 
 # Dropbox.
 install="$install dropbox"
+remove="$remove nautilus-dropbox" # conflicts with dropbox deb file
 
 # Slack.
 install="$install libappindicator3-1" # slack dependency
