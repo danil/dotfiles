@@ -42,6 +42,7 @@ packages="$packages alacritty" # terminal/console emulator a-la st/xterm https:/
 packages="$packages bandwhich" # bandwidth utilization tool https://github.com/imsnif/bandwhich
 packages="$packages bat" # print file lines with syntax highlighting, is an cat replacement
 packages="$packages cpc" # cli calculator/units converter https://github.com/probablykasper/cpc
+packages="$packages czkawka_cli" # find duplicates, empty folders
 packages="$packages ddh" # duplicate file finder https://github.com/darakian/ddh
 packages="$packages deno --locked" # js runtime a-la node.js https://deno.land
 packages="$packages diskonaut" # terminal disk space navigator https://github.com/imsnif/diskonaut
