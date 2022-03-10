@@ -29,14 +29,20 @@ fi
 find_args=(
     ./
     -maxdepth 1
-    \( -type d -or -type f -or -type l \)
-    -not \(
-        -name "*.tar*"
+    \(
+        -type d
+        -or -type f
+        -or -type l
+    \) -not \(
+        -empty
+        -or -size 0
+        -or -name "*.tar*"
         -or -name "*.asc"
         -or -name "*.enc"
         -or -name "S.*"
         -or -name ".git*"
         -or -path ./
+        -or -path "*/.gnupg/.debris/tmp/*"
     \)
 )
 
