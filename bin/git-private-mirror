@@ -14,9 +14,10 @@ function mir {
     done
 }
 
-mir "errocketbank.git"             "github" "master"
+mir "instapaper.git"               "github" "master"
+mir "md/errocketbank.git"          "github" "master"
+mir "md/notes.git"                 "github" "master"
 mir "md/rcc.git"                   "github" "master"
-mir "notes.git"                    "github" "master"
 mir "vendor/armor5games/bhgdeploy" "github" "master"
 mir "vendor/armor5games/bhgserver" "github" "master"
 mir "vendor/armor5games/ropserver" "github" "master"
