@@ -38,7 +38,6 @@ fi
 # <http://askubuntu.com/questions/22037/aliases-not-available-when-using-sudo#22043>.
 alias sudo='sudo '
 alias ls='ls --color'
-alias ll='ls -l --all --human-readable'
 # alias less=$PAGER
 alias ag='ag --width=5000'
 
