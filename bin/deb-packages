@@ -53,11 +53,13 @@ install="$install pkg-config libevent-dev libncurses-dev" # compiltime dependenc
 # Emacs.
 # install="$install emacs-el" # find/navigate elisp function source code <https://unix.stackexchange.com/questions/73100/how-to-attach-elisp-function-source-code-in-emacs>
 # install="$install emacs-nox"
+# install="$install libgif-dev" # compiltime dependency X11 <https://www.emacswiki.org/emacs/BuildingEmacs#h5o-4>
 install="$install aspell-en" # used by emacs auto complete
 install="$install aspell-ru" # used by emacs auto complete
 install="$install clang" # used by company-clang backend
 install="$install emacs-el" # find/navigate elisp function source code <https://unix.stackexchange.com/questions/73100/how-to-attach-elisp-function-source-code-in-emacs>
 install="$install emacs-nox"
+install="$install libgnutls28-dev" # compiltime dependency <https://stackoverflow.com/questions/52722096/build-emacs-and-gnutls-not-found#60430406>
 install="$install shellcheck" # used by emacs flycheck
 
 # # Basher is a bash/shell/functions package manager
@@ -98,9 +100,9 @@ install="$install valgrind" # find memory leaks https://www.valgrind.org/docs/ma
 install="$install postgresql-14" disable="$disable postgresql" # `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
 install="$install postgresql-server-dev-14" # required by pg_activity is an postgresql activity monitoring <https://github.com/dalibo/pg_activity>
 
-# Mongodb.
-install="$install mongodb-org" disable="$disable mongod" # latest stable version of the mongodb server
-install="$install gnupg" # required by mongodb <https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu>
+# # Mongodb.
+# install="$install mongodb-org" disable="$disable mongod" # latest stable version of the mongodb server
+# install="$install gnupg" # required by mongodb <https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu>
 
 # Golang programming language.
 # install="$install golang-race-detector-runtime" # FIXME: where is race detector for the go 1.15?
