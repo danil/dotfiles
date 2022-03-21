@@ -40,8 +40,6 @@ alias sudo='sudo '
 alias ls='ls --color'
 alias ll='ls -l --all --human-readable'
 # alias less=$PAGER
-alias e='emacs --no-window-system'
-alias ec='emacsclient --tty'
 alias ag='ag --width=5000'
 
 export PATH="$HOME"/.cask/bin:"$PATH" #emacs cask <http://cask.github.io>
