@@ -62,4 +62,17 @@ find "${find_args[@]}" \
     | tar --create --gzip --dereference --exclude-vcs --to-stdout --files-from - \
     > "./${file}.tar.gz"
 
-gpg --symmetric --armor "./${file}.tar.gz" || exit 1
+# gpg --symmetric --armor "./${file}.tar.gz" || exit 1
+
+read -sp "Enter passphrase: " passphrase
+echo
+read -sp "Re-enter passphrase: " passphrase2
+
+if [[ "$passphrase" != "$passphrase2" ]] ; then
+    echo "passphrase does not match"
+    exit 1
+else
+    echo
+fi
+
+echo "${passphrase}" | gpg --symmetric --armor --batch --no-tty --yes --passphrase-fd 0 "./${file}.tar.gz" || exit 1
