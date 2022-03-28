@@ -29,20 +29,14 @@ fi
 find_args=(
     ./
     -maxdepth 1
-    \(
-        -type d
-        -or -type f
-        -or -type l
-    \) -not \(
-        -empty
-        -or -size 0
-        -or -name "*.tar*"
+    \( -type d -or -type f -or -type l \)
+    ! -path ./
+    ! \(
+        -name "*.tar*"
         -or -name "*.asc"
         -or -name "*.enc"
         -or -name "S.*"
         -or -name ".git*"
-        -or -path ./
-        -or -path "*/.gnupg/.debris/tmp/*"
     \)
 )
 
@@ -54,12 +48,13 @@ else
 fi
 
 if [ -f "./${file}.tar.gz.asc" ]; then
-    mv -i "./${file}.tar.gz.asc" \
-          "./${file}$(date --utc +%Y%m%dT%H%M%SZ).tar.gz.asc"
+    mv -i \
+        "./${file}.tar.gz.asc" \
+        "./${file}$(date --utc +%Y%m%dT%H%M%SZ).tar.gz.asc"
 fi
 
 find "${find_args[@]}" \
-    | tar --create --gzip --dereference --exclude-vcs --to-stdout --files-from - \
+    | tar --create --gzip --to-stdout --files-from - \
     > "./${file}.tar.gz"
 
 gpg --symmetric --armor "./${file}.tar.gz" || exit 1

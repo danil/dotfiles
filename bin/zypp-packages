@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# Common packages.
+install_package="$install_package bc" # used by bash prompt, console-based calculator utility
+install_package="$install_package git"
+install_package="$install_package htop"
+install_package="$install_package mosh" # ssh replacement
+install_package="$install_package ncdu" # community/ncdu: diskspace usage is an baobab and gt5 replacement
+install_package="$install_package sudo" # super user do
+install_package="$install_package tig" # git interactive cli
+install_package="$install_package tmux" # a-la gnu screen
+
+# Serveroid packages.
+install_package="$install_package flops-mon-agent"
+install_package="$install_package flops-release"
+
+# C/C++ compile/make and so on.
+install_pattern="$install_pattern devel_C_C++" # make and so on
+
+# Emacs.
+install_package="$install_package libgnutls-devel" # compiltime dependency
+
+if [ ! -z "$install_pattern" -a "$install_pattern" != " " ]; then
+    zypper install --type pattern --no-recommends $install_pattern || exit 1
+fi
+
+if [ ! -z "$install_package" -a "$install_package" != " " ]; then
+    zypper install --no-recommends $install_package || exit 1
+fi

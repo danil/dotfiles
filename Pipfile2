@@ -1,10 +1,10 @@
-# # Ansible prior to version 2 (uses python 2).
-# ansible>=2.8.1
-# # Ansible amazon aws dependency.
-# boto
-# # Ansible docker dependency.
-# docker
+# Ansible prior to version 2 (uses python 2).
+ansible>=2.8.1
+# Ansible amazon aws dependency.
+boto
+# Ansible docker dependency.
+docker
 
-# # Wrapper for the cloudflare client api v4:
-# # `CF_API_EMAIL=your.name@example.org CF_API_KEY=your_api_key cli4 /zones`
-# cloudflare
+# Wrapper for the cloudflare client api v4:
+# `CF_API_EMAIL=your.name@example.org CF_API_KEY=your_api_key cli4 /zones`
+cloudflare

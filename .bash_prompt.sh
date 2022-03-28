@@ -10,10 +10,8 @@
 # 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
 # Background color codes:
 # 40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
-# <https://wiki.archlinux.org/index.php/Color_Bash_Prompt#List_of_colors_for_prompt_and_Bash>,
-# <http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html>,
-# <https://unix.stackexchange.com/questions/124407/what-color-codes-can-i-use-in-my-ps1-prompt#124409>,
-# <https://en.wikipedia.org/wiki/ANSI_escape_code#Colors>.
+# <https://wiki.archlinux.org/index.php/Color_Bash_Prompt#List_of_colors_for_prompt_and_Bash>
+# <http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html>.
 ps1_blue="\[\033[01;34m\]"
 ps1_cyan="\[\033[1;36m\]"
 ps1_green="\[\033[01;32m\]"
@@ -43,7 +41,7 @@ function ps1_load {
     local load_string="$(uptime)"
     local load_string=${load_string/#*average: }
     local load_string=${load_string%%,*}
-    local tmp=$(echo ${load_string}*100)
+    local tmp=$(echo ${load_string}*100 | bc)
     let load100=${tmp%.*}
     if [[ ${load100} -ge 100 ]]; then
         echo -n " load:${load_string}"
@@ -60,9 +58,7 @@ function ps1_outdated_packages {
 function ps1_unread_mails {
     if [ -s /var/mail/$(whoami) ] ; then
         # <http://serverfault.com/questions/171833/display-number-of-messages-in-linux-mail-queue#289177>
-        let mails_count=$(mail --file /var/mail/$(whoami) --headers \
-                                 | sed '/^>* *[0-9]/d' \
-                                 | wc -l)
+        let mails_count=$(gnu-mail --file /var/mail/$(whoami) --headers | grep '^>* *[0-9]' | wc -l)
 
     else
         let mails_count=0
@@ -106,10 +102,10 @@ function my_ps1_timer_show {
     esac
 
     if command -v play >/dev/null 2>&1 && #how to check if a program exists <http://stackoverflow.com/questions/592620/how-to-check-if-a-program-exists-from-a-bash-script#677212>
-           [ -f $(eval echo ~$(whoami))/.local/share/sounds/complete.oga ]; then
+           [ -f $(eval echo ~$(whoami))/local/share/sounds/complete.oga ]; then
         # <http://en.wikipedia.org/wiki/Nohup#Overcoming_hanging>.
         nohup play -q --no-show-progress \
-              $(eval echo ~$(whoami))/.local/share/sounds/complete.oga \
+              $(eval echo ~$(whoami))/local/share/sounds/complete.oga \
               > /dev/null 2> /dev/null < /dev/null &
     fi
 
