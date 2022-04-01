@@ -19,7 +19,8 @@ install_pattern="$install_pattern devel_C_C++" # make and so on
 
 # Tmux (os wide/from source).
 # install_package="$install_package tmux" # a-la gnu screen, os wide installation
-install_package="$install_package libevent-devel" # compiltime dependencies
+install_package="$install_package libevent-devel" # tmux compiltime dependencies
+install_package="$install_package utempter-devel" # tmux can use the utempter library to update utmp(5)
 
 # Emacs.
 install_package="$install_package libgnutls-devel" # compiltime dependency
