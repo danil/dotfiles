@@ -75,6 +75,7 @@ fi
 
 # Homebrew
 [ -f /home/linuxbrew/.linuxbrew/bin/brew ] && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+export PATH=/home/linuxbrew/.linuxbrew/bin:"$PATH"
 
 # Debian/Ubuntu
 export DEBFULLNAME="Danil Kutkevich"
