@@ -10,6 +10,6 @@ packages="$packages awscli" # s3 command line client
 packages="$packages fdupes" # identify or delete duplicate files https://github.com/adrianlopezroche/fdupes (used by emacs package https://github.com/ShuguangSun/find-dupes-dired)
 packages="$packages k9s" # derailed/k9s/k9s:, k8s/kubernetes cli <https://github.com/derailed/k9s>
 
-if [ ! -z "$packages" -a "$packages" != " " ]; then
+if [ ! -z "$packages" ] && [ "$packages" != " " ]; then
     brew install $packages || exit 1
 fi
