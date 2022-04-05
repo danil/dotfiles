@@ -25,10 +25,10 @@ install_package="$install_package utempter-devel" # tmux can use the utempter li
 # Emacs.
 install_package="$install_package libgnutls-devel" # compiltime dependency
 
-if [ ! -z "$install_pattern" -a "$install_pattern" != " " ]; then
+if [ ! -z "$install_pattern" ] && [ "$install_pattern" != " " ]; then
     zypper install --type pattern --no-recommends $install_pattern || exit 1
 fi
 
-if [ ! -z "$install_package" -a "$install_package" != " " ]; then
+if [ ! -z "$install_package" ] && [ "$install_package" != " " ]; then
     zypper install --no-recommends $install_package || exit 1
 fi
