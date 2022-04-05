@@ -52,6 +52,9 @@ export PATH="$HOME"/.local/usr/sbin:"$PATH" #powertop make installs here
 export PATH="$HOME"/.local/usr/local/bin:"$PATH" #dwm make installs here
 export PATH="$HOME"/.local/usr/local/sbin:"$PATH" #dwm make installs here
 
+export MANPATH="$HOME"/.local/usr/share/man:"$MANPATH"
+export MANPATH="$HOME"/.local/usr/local/share/man:"$MANPATH"
+
 [ -f "$HOME"/.netrc/.netrc ] && export NETRC="$HOME"/.netrc/.netrc
 
 # <https://askubuntu.com/questions/210210/pkg-config-path-environment-variable#210235>.
