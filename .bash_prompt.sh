@@ -1,4 +1,4 @@
-# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+#!/bin/bash
 
 # Bash prompt.
 # Colors
@@ -23,8 +23,18 @@ ps1_red="\[\033[1;31m\]"
 ps1_white="\[\033[1;37m\]"
 ps1_yellow="\[\033[1;33m\]"
 
-ps1_user="${ps1_green}\u@\h${ps1_plain}"
+[[ "$EUID" -eq 0 ]] && ps1_user_color="${ps1_red}" || ps1_user_color="${ps1_green}"
+ps1_user="${ps1_user_color}\u@\h${ps1_plain}"
+
 ps1_pwd=" ${ps1_blue}\w${ps1_plain}"
+
+[[ "$EUID" -eq 0 ]] && ps1_timestamp_color="${ps1_red}" || ps1_timestamp_color="${ps1_white}"
+ps1_timestamp="${ps1_timestamp_color} \D{%d-%b-%Y %H:%M:%S%Z}"
+
+[[ "$EUID" -eq 0 ]] && ps1_prompt_color="${ps1_red}" || ps1_prompt_color="${ps1_cyan}"
+[[ "$EUID" -eq 0 ]] && ps1_prompt_char="#" || ps1_prompt_char="\$"
+ps1_prompt="${ps1_prompt_color}${ps1_prompt_char}${ps1_plain}"
+
 function ps1_jobs {
     jobs_count=`jobs | wc -l`
     if [ ${jobs_count} -ne 0 ]; then
@@ -187,7 +197,6 @@ PS1+='${ps1_load}'
 PS1+='${ps1_jobs}'
 PS1+="${ps1_pwd}"
 PS1+="${ps1_magenta}"'$(__git_ps1 " %s")'
-PS1+="${ps1_white}"
-PS1+=" \D{%d-%b-%Y %H:%M:%S%Z}"
+PS1+="${ps1_timestamp}"
 PS1+="\n"
-PS1+="${ps1_cyan}\$${ps1_plain} "
+PS1+="${ps1_prompt} "
