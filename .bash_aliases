@@ -69,7 +69,7 @@ export BC_ENV_ARGS=/home/danil/.bc
 # Basher is a bash/shell/functions package manager
 # <https://github.com/basherpm/basher>.
 if hash basher 2>/dev/null; then
-    export PATH="$HOME/.basher/bin:$PATH"
+    export PATH="$HOME"/.basher/bin:"$PATH"
     eval "$(basher init - bash)"
 fi
 
@@ -83,13 +83,12 @@ export DEBEMAIL="danil@kutkevich.org"
 # Go <http://golang.org/doc/code.html#GOPATH>.
 # Run `go-install-all`.
 export GOPATH="$HOME"/go
-export PATH="$PATH":/usr/lib/go-1.12/bin #ubuntu go 12
-export PATH="$PATH":"$GOPATH"/bin #for convenience, add the workspace's bin subdirectory to your PATH
-# export PATH="$PATH:$(go env GOPATH)/bin"
+export PATH="$GOPATH"/bin:"$PATH" #for convenience, add the workspace's bin subdirectory to your PATH
+# export PATH="$(go env GOPATH)/bin":"$PATH"
 # [[ -s "$HOME/.gvm/scripts/gvm" ]] && . "$HOME/.gvm/scripts/gvm" #gvm (Go version manager) <https://github.com/moovweb/gvm>
 
 # rbenv <https://github.com/sstephenson/rbenv#basic-github-checkout>.
-export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME"/.rbenv/bin:"$PATH"
 if hash rbenv 2>/dev/null; then
     eval "$(rbenv init -)"
 fi
@@ -99,7 +98,7 @@ fi
 
 # Node.js and npm.
 # WARNING: Do NOT give priority to npm executables!!!
-export PATH="$PATH:$HOME/node_modules/.bin"
+export PATH="$HOME"/node_modules/.bin:"$PATH"
 
 # n (Node.js version manager).
 # Added by n-install (see http://git.io/n-install-repo).
@@ -129,7 +128,7 @@ export COMPOSER_PREFIX="$HOME/vendor"
 [ -f "$HOME"/.cargo/env ] && . "$HOME"/.cargo/env # adding `"$HOME"/.cargo/bin` to your PATH to be able to run the installed binaries
 
 # Dart <https://dart.dev/get-dart>.
-export PATH="$PATH:/usr/lib/dart/bin"
+export PATH=/usr/lib/dart/bin:"$PATH"
 
 # # Steel Bank Common Lisp.
 # export SBCL_HOME=/usr/lib64/sbcl
