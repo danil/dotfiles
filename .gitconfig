@@ -9,6 +9,9 @@
 	email = danil@kutkevich.org
 	name = Danil Kutkevich
 
+[safe]
+	directory = /
+
 # [color]
 #     diff = always
 #     ui = true
