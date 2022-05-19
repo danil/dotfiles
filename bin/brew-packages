@@ -10,6 +10,7 @@ packages="$packages fdupes" # identify or delete duplicate files https://github.
 packages="$packages grpcurl" # gRPC cli a-la curl https://github.com/fullstorydev/grpcurl
 packages="$packages lua" # newer than apt version of the lua programming language https://github.com/lua/lua
 packages="$packages nnn" # terminal file manager a-la mc/midnight commander https://github.com/jarun/nnn
+packages="$packages protobuf" # protoc
 
 for package in $packages; do
     $command $package
