@@ -73,6 +73,7 @@ install="$install build-essential"
 install="$install curl"
 install="$install file"
 install="$install git"
+install="$install procps" # /proc file system utilities
 
 # K8s kubernetes.
 install="$install kubectl" # `deb https://apt.kubernetes.io/ kubernetes-xenial main` <https://kubernetes.io/docs/tasks/tools/install-kubectl>
