@@ -57,6 +57,7 @@ go install -v golang.org/x/tools/gopls@v0.6.6 || exit 1 # golang lsp (language s
 
 go install -v k8s.io/code-generator/cmd/go-to-protobuf@v0.21.1 || exit 1 # generates a protobuf idl from a go struc
 go install -v github.com/gojuno/minimock/v3/cmd/minimock@v3.0.10 || exit 1
+go install -v github.com/mbrt/gmailctl/cmd/gmailctl@v0.10.2
 
 # protobuf/protoc/grpc
 go get -v google.golang.org/grpc@v1.32.0 || exit 1 # the grpc explicit version fixes error: undefined grpc.SupportPackageIsVersion7 <https://stackoverflow.com/questions/63662787/undefined-grpc-supportpackageisversion7-grpc-serviceregistrar#comment112579010_63664342>
