@@ -11,6 +11,7 @@
 
 [safe]
 	directory = /
+	directory = /etc
 
 # [color]
 #     diff = always
