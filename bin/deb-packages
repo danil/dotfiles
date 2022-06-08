@@ -108,8 +108,9 @@ install="$install postgresql-server-dev-14" # required by pg_activity is an post
 
 # Golang programming language.
 # install="$install golang-race-detector-runtime" # FIXME: where is race detector for the go 1.15?
-install="$install golang"
-install="$install golang-1.17-doc golang-1.17-go golang-1.17-src"
+# Installing instead go from homebrew `brew install go && brew upgrade go`
+# install="$install golang"
+# install="$install golang-1.17-doc golang-1.17-go golang-1.17-src"
 
 # Rust programming language.
 # install="$install libgtk-3-dev" # required by fontfinder https://github.com/mmstick/fontfinder
