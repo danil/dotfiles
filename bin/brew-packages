@@ -11,7 +11,7 @@ packages="$packages fdupes" # identify or delete duplicate files https://github.
 packages="$packages k9s" # derailed/k9s/k9s:, k8s/kubernetes cli <https://github.com/derailed/k9s>
 
 # Golang programming language.
-packages="$packages go"
+packages="$packages go@1.17"
 packages="$packages gcc@5" # <https://stackoverflow.com/questions/59227456/go-1-13-gcc-5-not-in-path#62795608>
 
 if [ ! -z "$packages" ] && [ "$packages" != " " ]; then
