@@ -85,6 +85,7 @@ export DEBEMAIL="danil@kutkevich.org"
 # Run `go-install-all`.
 export GOPATH="$HOME"/go
 export PATH="$GOPATH"/bin:"$PATH" #for convenience, add the workspace's bin subdirectory to your PATH
+export PATH="/home/linuxbrew/.linuxbrew/opt/go@1.17/bin:$PATH" #go 1.17 from homebrew
 # export PATH="$(go env GOPATH)/bin":"$PATH"
 # [[ -s "$HOME/.gvm/scripts/gvm" ]] && . "$HOME/.gvm/scripts/gvm" #gvm (Go version manager) <https://github.com/moovweb/gvm>
 
