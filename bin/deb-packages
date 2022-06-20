@@ -45,6 +45,7 @@ install="$install uuid-runtime" # generating uuid <https://github.com/karelzak/u
 install="$install vim" # neovim
 install="$install whois"
 install="$install zstd" # a-la gz/xz compression
+install="$install convmv" # a-la iconv character encoding conversion util
 
 # Tmux (os wide/from source).
 # install="$install tmux" # os wide
