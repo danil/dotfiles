@@ -6,46 +6,47 @@ disable_command="systemctl disable"
 # TODO: install ntp
 
 # Common packages.
+# install="$install convmv" # instead util-linux install from homebrew # a-la iconv character encoding conversion util
+# install="$install dos2unix" # instead install from homebrew # convert text file line endings between CRLF and LF
+# install="$install git" # instead install from homebrew instead
+# install="$install goaccess" # instead install from homebrew # analyze nginx/apache log in real-time
+# install="$install hping3" # instead hping install from homebrew # a-la interactive ping https://github.com/antirez/hping
+# install="$install htop" # instead install from homebrew # a-la top
 # install="$install inxi" # inxi --graphics <https://github.com/smxi/inxi>
 # install="$install jp2a" # converts jpg to ascii
+# install="$install jq" # instead install from homebrew # json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>
+# install="$install lftp" # instead install from homebrew # ftp client
 # install="$install linux-generic-hwe-20.04-edge" # linxu/kernel 5.11 for ubuntu 20.04 lteinstall="$install apache2-utils" # provides htpasswd utility is an nginx/apach basic authentication password generator
+# install="$install mailutils" # instead install from homebrew # is an gnu mailutils, reads local mail, provides /usr/bin/mail
 # install="$install makepasswd" # password generator
+# install="$install mosh" # instead install from homebrew # ssh replacement
+# install="$install ncdu" # instead install from homebrew # disk space usage is an baobab and gt5 replacement
+# install="$install pigz" # instead install from homebrew # parallel gzip for multi-processor, multi-core
 # install="$install protobuf-compiler" # version to old/outdated(
+# install="$install pwgen" # instead install from homebrew # password generator
+# install="$install syncthing" # instead install from homebrew # dropbox replacement: deb https://apt.syncthing.net/ syncthing release
+# install="$install tig" # instead install from homebrew # git interactive cli
+# install="$install tree" # instead install from homebrew # displays an indented directory tree
+# install="$install uni2ascii" # instead install from homebrew # to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`
+# install="$install uuid-runtime" # instead util-linux install from homebrew # generating uuid <https://github.com/util-linux/util-linux>, <https://serverfault.com/questions/103359/how-to-create-a-uuid-in-bash#103366>
+# install="$install vim" # instead util-linux install from homebrew # vim is awesome, neovim is sucks
+# install="$install whois" # instead util-linux install from homebrew
+
 install="$install apt-transport-https" # required by custom ppa
 install="$install bc" # used by bash prompt, console-based calculator utility
 install="$install bind9-host+M" # automatic/dependency: dns/host lookup utility
 install="$install curl"
-install="$install dos2unix" # convert text file line endings between CRLF and LF
 install="$install genius" # calculator
-install="$install git"
-install="$install goaccess" # analyze nginx/apache log in real-time
-install="$install hping3" # a-la interactive ping https://github.com/antirez/hping
-install="$install htop"
-install="$install jq" # json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>
-install="$install lftp" # ftp client
 install="$install libpci-dev libnl-3-dev libnl-genl-3-dev gettext libgettextpo-dev autopoint gettext libncurses5-dev libncursesw5-dev libtool-bin dh-autoreconf autoconf-archive pkg-config" # powertop diagnose power consumption https://github.com/fenrus75/powertop#build-dependencies
 install="$install lm-sensors" # FIXME: is the cpu temperate by ls sensors used by plain status or by slstatus?
 install="$install logrotate"
 install="$install lynx" # html to plain text `curl https://your.tld/ | lynx --stdin --dump`
-install="$install mailutils" # is an gnu mailutils, reads local mail, provides /usr/bin/mail
 install="$install mlocate" # locate/updatedb
-install="$install mosh" # ssh replacement
-install="$install ncdu" # disk space usage is an baobab and gt5 replacement
 install="$install net-tools" # ifconfig cli
 install="$install nginx" disable="$disable nginx"
 install="$install opensmtpd" # send mail via /usr/bin/sendmail and deliver local mail to /var/mail a-la exim replacement
 install="$install openssh-server"
-install="$install pigz" # parallel gzip for multi-processor, multi-core
-install="$install pwgen" # password generator
-install="$install syncthing" # dropbox replacement: deb https://apt.syncthing.net/ syncthing release
-install="$install tig" # git interactive cli
-install="$install tree" # displays an indented directory tree
-install="$install uni2ascii" # to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`
-install="$install uuid-runtime" # generating uuid <https://github.com/karelzak/util-linux>, <https://serverfault.com/questions/103359/how-to-create-a-uuid-in-bash#103366>
-install="$install vim" # neovim
-install="$install whois"
 install="$install zstd" # a-la gz/xz compression
-install="$install convmv" # a-la iconv character encoding conversion util
 
 # Tmux (os wide/from source).
 # install="$install tmux" # os wide

@@ -2,18 +2,40 @@
 
 # Homebrew.
 
-# packages="$packages grpc" # ?????????? gRPC cli a-la curl https://github.com/grpc/grpc/blob/master/doc/command_line_tool.md
-# packages="$packages grpcurl" # gRPC cli a-la curl https://github.com/fullstorydev/grpcurl
-# packages="$packages lua" # newer than apt version of the lua programming language https://github.com/lua/lua
-# packages="$packages nnn" # terminal file manager a-la mc/midnight commander https://github.com/jarun/nnn
-packages="$packages awscli" # s3 command line client
-packages="$packages fdupes" # identify or delete duplicate files https://github.com/adrianlopezroche/fdupes (used by emacs package https://github.com/ShuguangSun/find-dupes-dired)
-packages="$packages k9s" # derailed/k9s/k9s:, k8s/kubernetes cli <https://github.com/derailed/k9s>
+# install="$install grpc" # ?????????? gRPC cli a-la curl https://github.com/grpc/grpc/blob/master/doc/command_line_tool.md
+# install="$install lua" # newer than apt version of the lua programming language https://github.com/lua/lua
+# install="$install nnn" # terminal file manager a-la mc/midnight commander https://github.com/jarun/nnn
+# install="$install zstd" # a-la gz/xz compression
+install="$install awscli" # s3 command line client
+install="$install fdupes" # identify or delete duplicate files https://github.com/adrianlopezroche/fdupes (used by emacs package https://github.com/ShuguangSun/find-dupes-dired)
+install="$install grpcurl" # gRPC cli a-la curl https://github.com/fullstorydev/grpcurl
+install="$install k9s" # derailed/k9s/k9s:, k8s/kubernetes cli <https://github.com/derailed/k9s>
+install="$install dos2unix" # convert text file line endings between CRLF and LF
+install="$install goaccess" # analyze nginx/apache log in real-time
+install="$install hping" # hping3 a-la interactive ping https://github.com/antirez/hping
+install="$install htop" # a-la top
+
+install="$install tig" # git interactive cli
+install="$install git"
+install="$install jq" # json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>
+install="$install lftp" # ftp client
+install="$install mosh" # ssh replacement
+install="$install ncdu" # disk space usage is an baobab and gt5 replacement
+install="$install mailutils" # is an gnu mailutils, reads local mail, provides /usr/bin/mail
+install="$install pigz" # parallel gzip for multi-processor, multi-core
+install="$install pwgen" # password generator
+install="$install syncthing" # dropbox replacement: deb https://apt.syncthing.net/ syncthing release
+install="$install tree" # displays an indented directory tree
+install="$install uni2ascii" # to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`
+install="$install util-linux" # provides uni2ascii: to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`
+install="$install vim" # vim is awesome, neovim is sucks
+install="$install whois"
+install="$install convmv" # a-la iconv character encoding conversion util
 
 # Golang programming language.
-packages="$packages go@1.17"
-packages="$packages gcc@5" # <https://stackoverflow.com/questions/59227456/go-1-13-gcc-5-not-in-path#62795608>
+install="$install go@1.17"
+install="$install gcc@5" # <https://stackoverflow.com/questions/59227456/go-1-13-gcc-5-not-in-path#62795608>
 
-if [ ! -z "$packages" ] && [ "$packages" != " " ]; then
-    brew install $packages || exit 1
+if [ ! -z "$install" ] && [ "$install" != " " ]; then
+    brew install $install || exit 1
 fi
