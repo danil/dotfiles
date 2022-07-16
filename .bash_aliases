@@ -89,11 +89,12 @@ export PATH="/home/linuxbrew/.linuxbrew/opt/go@1.17/bin:$PATH" #go 1.17 from hom
 # export PATH="$(go env GOPATH)/bin":"$PATH"
 # [[ -s "$HOME/.gvm/scripts/gvm" ]] && . "$HOME/.gvm/scripts/gvm" #gvm (Go version manager) <https://github.com/moovweb/gvm>
 
-# rbenv <https://github.com/sstephenson/rbenv#basic-github-checkout>.
-export PATH="$HOME"/.rbenv/bin:"$PATH"
-if hash rbenv 2>/dev/null; then
-    eval "$(rbenv init -)"
-fi
+# Instead install ruby from homebrew.
+# # rbenv ruby version manager <https://github.com/sstephenson/rbenv#basic-github-checkout>.
+# export PATH="$HOME"/.rbenv/bin:"$PATH"
+# if hash rbenv 2>/dev/null; then
+#     eval "$(rbenv init -)"
+# fi
 
 # Travis CI gem.
 [ -f "$HOME"/.travis/travis.sh ] && . "$HOME"/.travis/travis.sh #auto completion

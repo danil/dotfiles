@@ -17,6 +17,7 @@ install="$install hping" # hping3 a-la interactive ping https://github.com/antir
 install="$install htop" # a-la top
 install="$install jq" # json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>
 install="$install k9s" # derailed/k9s/k9s:, k8s/kubernetes cli <https://github.com/derailed/k9s>
+install="$install kubernetes-cli" # provides k8s kubectl
 install="$install lftp" # ftp client
 install="$install mailutils" # is an gnu mailutils, reads local mail, provides /usr/bin/mail
 install="$install mosh" # ssh replacement
@@ -25,6 +26,7 @@ install="$install pigz" # parallel gzip for multi-processor, multi-core
 install="$install pwgen" # password generator
 install="$install syncthing" # dropbox replacement: deb https://apt.syncthing.net/ syncthing release
 install="$install tig" # git interactive cli
+install="$install tmux" # a-la gnu screen
 install="$install tree" # displays an indented directory tree
 install="$install uni2ascii" # to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`
 install="$install util-linux" # provides uni2ascii: to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`
@@ -34,6 +36,29 @@ install="$install whois"
 # Golang programming language.
 install="$install go@1.17"
 install="$install gcc@5" # <https://stackoverflow.com/questions/59227456/go-1-13-gcc-5-not-in-path#62795608>
+
+# Rust programming language.
+install="$install rust"
+
+# Dart programming language.
+install="$install dart-sdk"
+
+# Node.js programming language.
+install="$install node"
+
+# Ruby programming language.
+install="$install ruby"
+
+# X11/xorg/desktop.
+install="$install duplicity" # backuping
+install="$install feh" # command line image viewer
+install="$install mpv" # a-la mplayer replacement
+
+# Employer Ozon.
+install="$install go@1.17"
+install="$install libxml2" # provides xmllint
+install="$install redis"
+install="$install vault"
 
 if [ ! -z "$install" ] && [ "$install" != " " ]; then
     brew install $install || exit 1
