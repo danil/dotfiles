@@ -4,18 +4,25 @@
 install_package="$install_package flops-mon-agent"
 install_package="$install_package flops-release"
 
-# Common packages.
+# Common/user space packages.
+# install_package="$install_package rpmconf" # Tool to handle rpmnew and rpmsave files
 install_package="$install_package bc" # used by bash prompt, console-based calculator utility
 install_package="$install_package git"
 install_package="$install_package htop"
+install_package="$install_package jq" # json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>
+install_package="$install_package lftp" # ftp client
 install_package="$install_package man"
+install_package="$install_package mlocate" # finding files by name
 install_package="$install_package mosh" # ssh replacement
 install_package="$install_package ncdu" # community/ncdu: diskspace usage is an baobab and gt5 replacement
 install_package="$install_package sudo" # super user do
 install_package="$install_package tig" # git interactive cli
+install_package="$install_package zstd" # a-la gz/xz compression
 
-# C/C++ compile/make and so on.
-install_pattern="$install_pattern devel_C_C++" # make and so on
+# install_package="$install_package opensmtpd" # send mail via /usr/bin/sendmail and deliver local mail to /var/mail a-la exim
+
+# C/C++ gcc/compiler/make and so on.
+install_pattern="$install_pattern devel_C_C++" # c/c++ gcc/compiler/make and so on
 
 # Tmux (os wide/from source).
 # install_package="$install_package tmux" # a-la gnu screen, os wide installation
@@ -24,6 +31,33 @@ install_package="$install_package utempter-devel" # tmux can use the utempter li
 
 # Emacs.
 install_package="$install_package libgnutls-devel" # compiltime dependency
+
+# Homebrew <https://docs.brew.sh/Homebrew-on-Linux>.
+install_pattern="$install_pattern devel_C_C++" # c/c++ gcc/compiler/make and so on
+install_package="$install_package curl"
+install_package="$install_package file"
+install_package="$install_package git"
+install_package="$install_package procps" # ps utilities for /proc
+
+# The Silver Searcher/ag
+install_package="$install_package pcre-devel" # compiltime dependency
+install_package="$install_package xz-devel" # lzma.h compiltime dependency
+
+# Server.
+install_package="$install_package bind" # lookup utility
+install_package="$install_package fail2ban"
+install_package="$install_package knot" # dns
+install_package="$install_package pure-ftpd" # because vsftpd is annoying
+install_package="$install_package mosh" # mobile shell a-la ssh
+
+# Nginx.
+install_package="$install_package apache2-utils" # provides htpasswd utility is an nginx/apach basic authentication password generator
+install_package="$install_package goaccess" # analyze nginx/apache log in real-time
+install_package="$install_package nginx"
+install_package="$install_package python3-certbot-nginx" # nginx plugin for let’s encrypt client
+
+# Golang programming language.
+install_package="$install_package go1.18"
 
 if [ ! -z "$install_pattern" ] && [ "$install_pattern" != " " ]; then
     zypper install --type pattern --no-recommends $install_pattern || exit 1
