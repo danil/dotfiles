@@ -37,28 +37,28 @@ if [[ $verbose -eq 1 ]] ; then
     echo "update=$update"
 fi
 
-# packages="$packages racer" # compilation failing all the time <https://github.com/racer-rust/racer/issues/868#issuecomment-459017685>, rust code completion https://github.com/phildawes/racer
-packages="$packages alacritty" # terminal/console emulator a-la st/xterm https://github.com/alacritty/alacritty
-packages="$packages bandwhich" # bandwidth utilization tool https://github.com/imsnif/bandwhich
-packages="$packages bat" # print file lines with syntax highlighting, is an cat replacement
-packages="$packages cpc" # cli calculator/units converter https://github.com/probablykasper/cpc
-packages="$packages czkawka_cli" # find duplicates, empty folders
-packages="$packages ddh" # duplicate file finder https://github.com/darakian/ddh
-packages="$packages deno --locked" # js runtime a-la node.js https://deno.land
-packages="$packages diskonaut" # terminal disk space navigator https://github.com/imsnif/diskonaut
-packages="$packages du-dust" # show disk space usage, is an du replacement https://github.com/bootandy/dust
-packages="$packages exa" # list files/directories, is an ls replacement https://github.com/ogham/exa
-packages="$packages fclones" # duplicate file finder https://github.com/pkolaczk/fclones
-packages="$packages fd-find" # find replacement https://github.com/sharkdp/fd
-packages="$packages fselect" # find files with sql-like queries https://github.com/jhspetersson/fselect
-packages="$packages gitui" # git tui, is an tig replacement https://github.com/extrawurst/gitui
-packages="$packages procs" # list processes, is an ps replacement https://github.com/dalance/procs
-packages="$packages ripgrep" # search tool, is an ag replacement (silver searcher) <https://github.com/BurntSushi/ripgrep>
-packages="$packages rustfmt" # rust formating <https://github.com/rust-lang-nursery/rustfmt>
-packages="$packages tokei" # cloc metric (count lines of code) <https://github.com/Aaronepower/tokei>
-packages="$packages xsv" # csv cli (indexing, slicing, analyzing, splitting and joining) <https://github.com/BurntSushi/xsv>
+# install="$install racer" # compilation failing all the time <https://github.com/racer-rust/racer/issues/868#issuecomment-459017685>, rust code completion https://github.com/phildawes/racer
+install="$install alacritty" # terminal/console emulator a-la st/xterm https://github.com/alacritty/alacritty
+install="$install bandwhich" # bandwidth utilization tool https://github.com/imsnif/bandwhich
+install="$install bat" # print file lines with syntax highlighting, is an cat replacement
+install="$install cpc" # cli calculator/units converter https://github.com/probablykasper/cpc
+install="$install czkawka_cli" # find duplicates, empty folders
+install="$install ddh" # duplicate file finder https://github.com/darakian/ddh
+install="$install deno --locked" # js runtime a-la node.js https://deno.land
+install="$install diskonaut" # terminal disk space navigator https://github.com/imsnif/diskonaut
+install="$install du-dust" # show disk space usage, is an du replacement https://github.com/bootandy/dust
+install="$install exa" # list files/directories, is an ls replacement https://github.com/ogham/exa
+install="$install fclones" # duplicate file finder https://github.com/pkolaczk/fclones
+install="$install fd-find" # find replacement https://github.com/sharkdp/fd
+install="$install fselect" # find files with sql-like queries https://github.com/jhspetersson/fselect
+install="$install gitui" # git tui, is an tig replacement https://github.com/extrawurst/gitui
+install="$install procs" # list processes, is an ps replacement https://github.com/dalance/procs
+install="$install ripgrep" # search tool, is an ag replacement (silver searcher) <https://github.com/BurntSushi/ripgrep>
+install="$install rustfmt" # rust formating <https://github.com/rust-lang-nursery/rustfmt>
+install="$install tokei" # cloc metric (count lines of code) <https://github.com/Aaronepower/tokei>
+install="$install xsv" # csv cli (indexing, slicing, analyzing, splitting and joining) <https://github.com/BurntSushi/xsv>
 
-for package in $packages; do
+for package in $install; do
     if [[ $update -eq 1 ]] ; then
         $update_command $package || exit 1
     else
