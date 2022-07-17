@@ -38,6 +38,7 @@ install="$install go@1.17"
 install="$install gcc@5" # <https://stackoverflow.com/questions/59227456/go-1-13-gcc-5-not-in-path#62795608>
 
 # Rust programming language.
+# install="$install rustup-init" # what that?
 install="$install rust"
 
 # Dart programming language.
