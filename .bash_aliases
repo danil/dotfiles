@@ -129,6 +129,7 @@ export COMPOSER_PREFIX="$HOME/vendor"
 
 # Rust (rust toolchain installer https://rustup.rs).
 [ -f "$HOME"/.cargo/env ] && . "$HOME"/.cargo/env # adding `"$HOME"/.cargo/bin` to your PATH to be able to run the installed binaries
+export PATH="$HOME"/.cargo/bin:"$PATH"
 
 # Dart <https://dart.dev/get-dart>.
 export PATH=/usr/lib/dart/bin:"$PATH"
