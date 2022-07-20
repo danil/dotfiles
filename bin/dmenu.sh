@@ -5,14 +5,20 @@
 # prompt="$USER@`hostname`"
 # dmenu -p $prompt
 
-command="/home/danil/.local/usr/local/bin/dmenu"
-
-number_of_lines=${number_of_lines:-1}
+command=${command:-1}
+lines=${lines:-1}
+history=${history:-1}
 
 while [ $# -gt 0 ]; do
     case "$1" in
+        --command=*)
+            command="${1#*=}"
+            ;;
         --lines=*)
-            let number_of_lines="${1#*=}"
+            let lines="${1#*=}"
+            ;;
+        --history=*)
+            history="${1#*=}"
             ;;
         *)
             printf "***************************\n"
@@ -23,17 +29,17 @@ while [ $# -gt 0 ]; do
     shift
 done
 
-[[ $number_of_lines -gt 1 ]] && command="$command -l $number_of_lines"
+[[ $lines -gt 1 ]] && command="$command -l $lines"
 
 # <http://tools.suckless.org/dmenu/scripts/dmenu_run_with_command_history>
 
 cachedir=${XDG_CACHE_HOME:-"$HOME/.cache"}
 if [ -d "$cachedir" ]; then
   cache=$cachedir/dmenu_run
-  historyfile=$cachedir/dmenu_history
+  historyfile=$cachedir/$history
 else      # if no xdg dir, fall back to dotfiles in ~
   cache=$HOME/.dmenu_cache
-  historyfile=$HOME/.dmenu_history
+  historyfile=$HOME/.$history
 fi
 
 IFS=:
