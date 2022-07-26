@@ -4,5 +4,5 @@
 # Enable internal monitor and disable external monitor
 # <https://wiki.archlinux.org/index.php/xrandr#Example_1>.
 xrandr --output HDMI1 --off --output eDP1 --auto \
-       && "$HOME"/bin/set_keyboard_auto_repeat_rate \
-       && "$HOME"/bin/set_osd_progress_bar_internal
+       && "$HOME"/bin/set-keyboard-auto-repeat-rate \
+       && "$HOME"/bin/set-osd-progress-bar-internal

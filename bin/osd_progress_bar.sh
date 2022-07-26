@@ -15,7 +15,7 @@ function osd_progress_bar {
         bar_size=0
     fi
 
-    if [[ ${percentage} -gt 0 && ${bar_size} -eq 0 ]]; then
+    if (( $(echo "$percentage > 0" | bc -l) && $(echo "$bar_size == 0" | bc -l) )); then
         bar_size=1
     fi
 

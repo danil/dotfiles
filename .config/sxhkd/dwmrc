@@ -6,10 +6,10 @@ control + t ; t
 
 control + t : v : {j,k,m,u}
     { \
-        audio-lower-volume.sh && osd_sound_volume, \
-        audio-raise-volume.sh && osd_sound_volume, \
-        amixer sset Master mute && osd_sound_volume, \
-        amixer sset Master unmute && osd_sound_volume
+        audio-lower-volume && osd-sound-volume, \
+        audio-raise-volume && osd-sound-volume, \
+        amixer sset Master mute && osd-sound-volume, \
+        amixer sset Master unmute && osd-sound-volume
     }
 
 # dwm tags.

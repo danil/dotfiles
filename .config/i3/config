@@ -202,3 +202,5 @@ bar {
                 urgent_workspace   $bg     $ac     $fg
         }
 }
+
+exec --no-startup-id ~/.xstart_i3

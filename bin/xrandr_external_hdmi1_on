@@ -6,6 +6,6 @@
 
 if (xrandr | grep "HDMI1 connected" >/dev/null 2>&1); then
     xrandr --output eDP1 --off --output HDMI1 --auto \
-           && "$HOME"/bin/set_keyboard_auto_repeat_rate \
-           && "$HOME"/bin/set_osd_progress_bar_external_hdmi1
+           && "$HOME"/bin/set-keyboard-auto-repeat-rate \
+           && "$HOME"/bin/set-osd-progress-bar-external-hdmi1
 fi

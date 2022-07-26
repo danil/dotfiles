@@ -2,6 +2,7 @@
 
 # Homebrew.
 
+# install="$install bc" # used by bash prompt, console-based calculator utility
 # install="$install grpc" # ?????????? gRPC cli a-la curl https://github.com/grpc/grpc/blob/master/doc/command_line_tool.md
 # install="$install lua" # newer than apt version of the lua programming language https://github.com/lua/lua
 # install="$install nnn" # terminal file manager a-la mc/midnight commander https://github.com/jarun/nnn
@@ -24,7 +25,10 @@ install="$install mosh" # ssh replacement
 install="$install ncdu" # disk space usage is an baobab and gt5 replacement
 install="$install pigz" # parallel gzip for multi-processor, multi-core
 install="$install pwgen" # password generator
+install="$install ripgrep" # rg a-la ag <https://github.com/BurntSushi/ripgrep>
 install="$install syncthing" # dropbox replacement: deb https://apt.syncthing.net/ syncthing release
+install="$install the_platinum_searcher" # pt a-la ag <https://github.com/monochromegane/the_platinum_searcher>
+install="$install the_silver_searcher" # ag <https://github.com/ggreer/the_silver_searcher>
 install="$install tig" # git interactive cli
 install="$install tmux" # a-la gnu screen
 install="$install tree" # displays an indented directory tree
@@ -34,8 +38,10 @@ install="$install vim" # vim is awesome, neovim is sucks
 install="$install whois"
 
 # Golang programming language.
-install="$install go@1.17"
 install="$install gcc@5" # <https://stackoverflow.com/questions/59227456/go-1-13-gcc-5-not-in-path#62795608>
+install="$install go@1.17"
+install="$install golangci-lint" # used by emacs a-la gometalinter
+install="$install scc" # a-la sloc/cloc
 
 # Rust programming language.
 # install="$install rustup-init" # what that?
@@ -54,6 +60,9 @@ install="$install ruby"
 install="$install duplicity" # backuping
 install="$install feh" # command line image viewer
 install="$install mpv" # a-la mplayer replacement
+install="$install xdotool" # ???
+install="$install xsel" # copy selection in termina to the xorg clipboard (used by emacs and urxvt) <https://wiki.archlinux.org/index.php/rxvt-unicode#Automatic_Script_Management>
+install="$install xsel" # copy selection in termina to the xorg clipboard (used by emacs and urxvt) <https://wiki.archlinux.org/index.php/rxvt-unicode#Automatic_Script_Management>
 
 # Employer Ozon.
 install="$install go@1.17"

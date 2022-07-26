@@ -1,5 +1,5 @@
 Config { commands = [ Run StdinReader
-                    , Run Com "/home/danil/bin/sound_volume" [] "alsa_volume" 10
+                    , Run Com "/home/danil/bin/print-sound-volume" [] "alsa_volume" 10
                     ]
        , sepChar = "@"
        , alignSep = "}{"
