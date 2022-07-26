@@ -1,7 +1,7 @@
-# # Employer Ozon.
+# # Ozon er.
 # GONOPROXY=none
 # GOPRIVATE=*.ozon.ru
 # GOPROXY=https://athens.s.o3.ru,https://proxy.golang.org,direct
 
-# # Employer Rocketbank.
+# # Rocketbank er.
 # GOPRIVATE=gitlab.rocketbank.sexy
