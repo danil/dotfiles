@@ -3,6 +3,9 @@
 # `xprofile` is similar in syntax and in concept to `xinitrc`
 # <https://wiki.archlinux.org/index.php/xprofile>.
 
+# Debug: `setxkbmap -print -verbose 10`.
+setxkbmap -model pc105 -layout us,ru -option grp:shifts_toggle
+
 # Merge in defaults and keymaps.
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap

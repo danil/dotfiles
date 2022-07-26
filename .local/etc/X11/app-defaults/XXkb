@@ -1,4 +1,4 @@
-XXkb.image.path: /usr/share/xxkb
+XXkb.image.path: /home/danil/.local/usr/share/xxkb
 
 XXkb.group.base: 1
 XXkb.group.alt: 2
