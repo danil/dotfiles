@@ -10,6 +10,7 @@
 install="$install awscli" # s3 command line client
 install="$install convmv" # a-la iconv character encoding conversion util
 install="$install dos2unix" # convert text file line endings between CRLF and LF
+install="$install fd" # find replacement https://github.com/sharkdp/fd
 install="$install fdupes" # identify or delete duplicate files https://github.com/adrianlopezroche/fdupes (used by emacs package https://github.com/ShuguangSun/find-dupes-dired)
 install="$install git"
 install="$install goaccess" # analyze nginx/apache log in real-time
@@ -36,6 +37,10 @@ install="$install uni2ascii" # to/from unicode and to/from percent-encoding conv
 install="$install util-linux" # provides uni2ascii: to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`
 install="$install vim" # vim is awesome, neovim is sucks
 install="$install whois"
+
+# emacs.
+# install="$install emacs"
+install="$install shellcheck" # used by emacs flycheck
 
 # Golang programming language.
 install="$install gcc@5" # <https://stackoverflow.com/questions/59227456/go-1-13-gcc-5-not-in-path#62795608>
