@@ -50,8 +50,11 @@
 [url "git@gitlab.ozon.ru:/payfacade/libs/auth"]
 	insteadOf = https://gitlab.ozon.ru/payfacade/libs/auth/auth
 
-# [includeIf "gitdir:~/src/vendor/rocketbank/"]
-#   path = ~/.gitconfig-rocketbank
+[includeIf "gitdir:~/**vendor/ozn/"]
+  path = ~/.gitconfig-ozn
 
-# [includeIf "gitdir:~/src/vendor/armor5games/"]
-#   path = ~/.gitconfig-armor5games
+# [includeIf "gitdir:~/**vendor/rkt/"]
+#   path = ~/.gitconfig-rkt
+
+# [includeIf "gitdir:~/**vendor/a5g/"]
+#   path = ~/.gitconfig-a5g
