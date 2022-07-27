@@ -50,6 +50,8 @@
 [url "git@gitlab.ozon.ru:/payfacade/libs/auth"]
 	insteadOf = https://gitlab.ozon.ru/payfacade/libs/auth/auth
 
+# <https://git-scm.com/docs/git-config#Documentation/git-config.txt-codegitdircode>.
+
 [includeIf "gitdir:~/**vendor/ozn/"]
   path = ~/.gitconfig-ozn
 
