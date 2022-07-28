@@ -6,7 +6,6 @@
 # install="$install grpc" # ?????????? gRPC cli a-la curl https://github.com/grpc/grpc/blob/master/doc/command_line_tool.md
 # install="$install lua" # newer than apt version of the lua programming language https://github.com/lua/lua
 # install="$install nnn" # terminal file manager a-la mc/midnight commander https://github.com/jarun/nnn
-# install="$install zstd" # a-la gz/xz compression
 install="$install awscli" # s3 command line client
 install="$install convmv" # a-la iconv character encoding conversion util
 install="$install dos2unix" # convert text file line endings between CRLF and LF
@@ -37,6 +36,11 @@ install="$install uni2ascii" # to/from unicode and to/from percent-encoding conv
 install="$install util-linux" # provides uni2ascii: to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`
 install="$install vim" # vim is awesome, neovim is sucks
 install="$install whois"
+
+# Data compression algorithms.
+install="$install lz4" # a-la gz/xz compression, required by gnupg, ffmpeg and mpv
+install="$install snappy" # a-la gz/xz compression, required by ffmpeg and mpv
+install="$install zstd" # a-la gz/xz compression, required by gcc, curl, git, gnupg, rust, node, ffmpeg, mpv and feh
 
 # emacs.
 # install="$install emacs"
