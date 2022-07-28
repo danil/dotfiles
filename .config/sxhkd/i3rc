@@ -7,17 +7,17 @@ control + t ; t
 
 # Clear notifications.
 control + t ; g
-    /usr/bin/dunstctl close-all
+    dunstctl close-all
 
 # Terminal emulator.
 control + t ; c
     alacritty
 
 control + t ; shift + 1
-    dmenu.sh --command="/home/danil/.local/usr/local/bin/dmenu" --lines=27 --history="dmenu_history"
+    ~/bin/dmenu --command="/home/danil/.local/usr/local/bin/dmenu" --lines=27 --history="dmenu_history"
 
 control + t ; u ; shift + 1
-    /home/danil/bin/i3-dmenu-desktop.sh
+    i3-desktop
 
 # Invert colors on xorg/xrandr.
 control + t ; i
@@ -25,13 +25,13 @@ control + t ; i
 
 # Lock.
 control + t ; l
-    ~/bin/my_lock_ubuntu_i3.sh
+    i3-lock
 control + t ; u ; l
-    ~/bin/my_lock_ubuntu_i3.sh && ~/bin/sleep-ubuntu-i3
+    i3-lock && i3-sleep
 
 # Dim screen backlight or sleep/suspend.
 control + t ; s
-    ~/bin/sleep-ubuntu-i3
+    i3-sleep
 control + t ; u ; s
     sleep 0.1 && xset dpms force off
 
@@ -54,7 +54,7 @@ control + t ; v : {j,k,m,u}
 XF86AudioLowerVolume
     audio-lower-volume && osd-sound-volume
 XF86AudioMute
-    audio-mute.sh && osd-sound-volume
+    audio-mute && osd-sound-volume
 XF86AudioRaiseVolume
     audio-raise-volume && osd-sound-volume
 

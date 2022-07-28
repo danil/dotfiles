@@ -4,4 +4,3 @@
 # xset dpms force off && slock
 i3lock --ignore-empty-password --color=000000 || exit 1
 xset dpms force off || exit 1
-exit 0
