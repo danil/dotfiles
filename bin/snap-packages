@@ -8,6 +8,7 @@ install_command="snap install"
 # install="$install tusk" # evernote desktop client (javascript)
 # install_classic="$install_classic intellij-idea-ultimate"
 install_classic="$install_classic mattermost-desktop"
+install="$install_classic slack"
 
 # remove="$remove package-to-remove"
 
