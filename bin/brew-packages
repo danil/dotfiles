@@ -37,6 +37,10 @@ install="$install util-linux" # provides uni2ascii: to/from unicode and to/from 
 install="$install vim" # vim is awesome, neovim is sucks
 install="$install whois"
 
+# Terminal emulators.
+addrepo="$addrepo wez/wezterm-linuxbrew"
+install="$install wezterm"
+
 # Data compression algorithms.
 install="$install lz4" # a-la gz/xz compression, required by gnupg, ffmpeg and mpv
 install="$install snappy" # a-la gz/xz compression, required by ffmpeg and mpv
@@ -78,6 +82,12 @@ install="$install go@1.17"
 install="$install libxml2" # provides xmllint
 install="$install redis"
 install="$install vault"
+
+if [ ! -z "$addrepo" ] && [ "$addrepo" != " " ]; then
+    for repo in "$addrepo"; do
+        brew tap "$repo" || exit 1
+    done
+fi
 
 if [ ! -z "$install" ] && [ "$install" != " " ]; then
     brew install $install || exit 1
