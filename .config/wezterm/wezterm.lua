@@ -19,6 +19,13 @@ return {
   cursor_blink_ease_in = "Constant",
   cursor_blink_rate = 150,
 
+  window_padding = {
+    left = 0,
+    right = 0,
+    top = 0,
+    bottom = 0,
+  },
+
   window_frame = {
     -- The overall background color of the tab bar when
     -- the window is focused
@@ -27,7 +34,6 @@ return {
     -- the window is not focused
     inactive_titlebar_bg = '#000000',
   },
-
 
   colors = {
     -- The default text color
