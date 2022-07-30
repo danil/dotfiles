@@ -1,8 +1,12 @@
+-- <https://github.com/wez/wezterm>.
 local wezterm = require 'wezterm'
 
 return {
   enable_wayland = false,
   disable_default_key_bindings = true,
+
+  -- <https://wezfurlong.org/wezterm/config/lua/config/adjust_window_size_when_changing_font_size.html>.
+  adjust_window_size_when_changing_font_size = false,
 
   font = wezterm.font {
     family = 'PragmataPro Liga',
@@ -23,6 +27,7 @@ return {
     -- the window is not focused
     inactive_titlebar_bg = '#000000',
   },
+
 
   colors = {
     -- The default text color
@@ -59,9 +64,10 @@ return {
   },
 
   keys = {
-    { key = '-', mods = 'CMD', action = wezterm.action.DecreaseFontSize },
+    { key = '-', mods = 'CMD', action = wezterm.action.Multiple { wezterm.action.DecreaseFontSize, wezterm.action.ReloadConfiguration } },
     { key = '=', mods = 'CMD', action = wezterm.action.IncreaseFontSize },
-    { key = '0', mods = 'CMD', action = wezterm.action.ResetFontAndWindowSize },
+    { key = '0', mods = 'CMD', action = wezterm.action.ResetFontSize },
     { key = 'f', mods = 'CMD', action = wezterm.action.ToggleFullScreen },
+    { key = 'x', mods = 'CMD', action = wezterm.action.ReloadConfiguration },
    },
 }
