@@ -42,14 +42,14 @@ return {
     cursor_fg = '#ffffff',
 
     ansi = {
-     '#000000',
-     '#cd0000',
-     '#00cd00',
-     '#cdcd00',
-     '#2222ee',
-     '#cd00cd',
-     '#00cdcd',
-     '#e5e5e5',
+      '#000000',
+      '#cd0000',
+      '#00cd00',
+      '#cdcd00',
+      '#2222ee',
+      '#cd00cd',
+      '#00cdcd',
+      '#e5e5e5',
     },
     brights = {
       '#7f7f7f',
@@ -68,6 +68,5 @@ return {
     { key = '=', mods = 'CMD', action = wezterm.action.IncreaseFontSize },
     { key = '0', mods = 'CMD', action = wezterm.action.ResetFontSize },
     { key = 'f', mods = 'CMD', action = wezterm.action.ToggleFullScreen },
-    { key = 'x', mods = 'CMD', action = wezterm.action.ReloadConfiguration },
    },
 }
