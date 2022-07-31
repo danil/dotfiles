@@ -3,18 +3,19 @@
 # Homebrew.
 
 # install="$install bc" # used by bash prompt, console-based calculator utility
+# install="$install goaccess" # analyze nginx/apache log in real-time
 # install="$install grpc" # ?????????? gRPC cli a-la curl https://github.com/grpc/grpc/blob/master/doc/command_line_tool.md
+# install="$install hping" # hping3 a-la interactive ping https://github.com/antirez/hping
 # install="$install lua" # newer than apt version of the lua programming language https://github.com/lua/lua
 # install="$install nnn" # terminal file manager a-la mc/midnight commander https://github.com/jarun/nnn
+# install="$install pigz" # parallel gzip for multi-processor, multi-core
 install="$install awscli" # s3 command line client
 install="$install convmv" # a-la iconv character encoding conversion util
 install="$install dos2unix" # convert text file line endings between CRLF and LF
 install="$install fd" # find replacement https://github.com/sharkdp/fd
 install="$install fdupes" # identify or delete duplicate files https://github.com/adrianlopezroche/fdupes (used by emacs package https://github.com/ShuguangSun/find-dupes-dired)
 install="$install git"
-install="$install goaccess" # analyze nginx/apache log in real-time
 install="$install grpcurl" # gRPC cli a-la curl https://github.com/fullstorydev/grpcurl
-install="$install hping" # hping3 a-la interactive ping https://github.com/antirez/hping
 install="$install htop" # a-la top
 install="$install jq" # json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>
 install="$install k9s" # derailed/k9s/k9s:, k8s/kubernetes cli <https://github.com/derailed/k9s>
@@ -23,7 +24,6 @@ install="$install lftp" # ftp client
 install="$install mailutils" # is an gnu mailutils, reads local mail, provides /usr/bin/mail
 install="$install mosh" # ssh replacement
 install="$install ncdu" # disk space usage is an baobab and gt5 replacement
-install="$install pigz" # parallel gzip for multi-processor, multi-core
 install="$install pwgen" # password generator
 install="$install ripgrep" # rg a-la ag <https://github.com/BurntSushi/ripgrep>
 install="$install syncthing" # dropbox replacement: deb https://apt.syncthing.net/ syncthing release
@@ -60,21 +60,16 @@ install="$install scc" # a-la sloc/cloc
 # install="$install rustup-init" # what that?
 install="$install rust"
 
-# Dart programming language.
-install="$install dart-sdk"
-
-# Node.js programming language.
-install="$install node"
-
-# Ruby programming language.
-install="$install ruby"
+# Programming languages.
+install="$install dart-sdk" # dart programming language
+install="$install node" # node.js programming language
+install="$install ruby" # ruby programming language
 
 # X11/xorg/desktop.
-install="$install duplicity" # backuping
+# install="$install duplicity" # backuping
 install="$install feh" # command line image viewer
 install="$install mpv" # a-la mplayer replacement
 install="$install xdotool" # ???
-install="$install xsel" # copy selection in termina to the xorg clipboard (used by emacs and urxvt) <https://wiki.archlinux.org/index.php/rxvt-unicode#Automatic_Script_Management>
 install="$install xsel" # copy selection in termina to the xorg clipboard (used by emacs and urxvt) <https://wiki.archlinux.org/index.php/rxvt-unicode#Automatic_Script_Management>
 
 # Employer Ozon.
