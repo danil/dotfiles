@@ -9,7 +9,6 @@
 # install="$install lua" # newer than apt version of the lua programming language https://github.com/lua/lua
 # install="$install nnn" # terminal file manager a-la mc/midnight commander https://github.com/jarun/nnn
 # install="$install pigz" # parallel gzip for multi-processor, multi-core
-install="$install awscli" # s3 command line client
 install="$install convmv" # a-la iconv character encoding conversion util
 install="$install dos2unix" # convert text file line endings between CRLF and LF
 install="$install fd" # find replacement https://github.com/sharkdp/fd
@@ -36,6 +35,7 @@ install="$install uni2ascii" # to/from unicode and to/from percent-encoding conv
 install="$install util-linux" # provides uni2ascii: to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`
 install="$install vim" # vim is awesome, neovim is sucks
 install="$install whois"
+install="$install awscli" # `aws --version` # s3 command line client # default amazon aws ec2 client <https://github.com/aws/aws-cli>.
 
 # Terminal emulators.
 addrepo="$addrepo wez/wezterm-linuxbrew"
@@ -49,6 +49,11 @@ install="$install zstd" # a-la gz/xz compression, required by gcc, curl, git, gn
 # emacs.
 # install="$install emacs"
 install="$install shellcheck" # used by emacs flycheck
+
+# # Docker.
+# install="$install docker"
+# install="$install docker-compose"
+# install="$install docker-machine" # provides docker daemon
 
 # Golang programming language.
 install="$install gcc@5" # <https://stackoverflow.com/questions/59227456/go-1-13-gcc-5-not-in-path#62795608>
@@ -64,6 +69,13 @@ install="$install rust"
 install="$install dart-sdk" # dart programming language
 install="$install node" # node.js programming language
 install="$install ruby" # ruby programming language
+
+# Python programming language <https://docs.brew.sh/Homebrew-and-Python>.
+install="$install ansible"
+install="$install flake8" # python linter
+install="$install proselint" # used/required by emacs flycheck
+install="$install pylint" # used/required by emacs flycheck
+install="$install python3" # provides pip (pip3)
 
 # X11/xorg/desktop.
 # install="$install duplicity" # backuping

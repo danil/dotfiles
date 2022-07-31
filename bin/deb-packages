@@ -7,6 +7,7 @@ disable_command="systemctl disable"
 
 # Common packages.
 # install="$install convmv" # instead install util-linux from homebrew # a-la iconv character encoding conversion util
+# install="$install curl" # instead install from homebrew
 # install="$install dos2unix" # instead install from homebrew # convert text file line endings between CRLF and LF
 # install="$install git" # instead install from homebrew instead
 # install="$install goaccess" # instead install from homebrew # analyze nginx/apache log in real-time
@@ -21,6 +22,7 @@ disable_command="systemctl disable"
 # install="$install makepasswd" # password generator
 # install="$install mosh" # instead install from homebrew # ssh replacement
 # install="$install ncdu" # instead install from homebrew # disk space usage is an baobab and gt5 replacement
+# install="$install nginx" disable="$disable nginx" # instead install from homebrew
 # install="$install pigz" # instead install from homebrew # parallel gzip for multi-processor, multi-core
 # install="$install protobuf-compiler" # version to old/outdated(
 # install="$install pwgen" # instead install from homebrew # password generator
@@ -34,7 +36,6 @@ disable_command="systemctl disable"
 install="$install apt-transport-https" # required by custom ppa
 install="$install bc" # used by bash prompt, console-based calculator utility
 install="$install bind9-host+M" # automatic/dependency: dns/host lookup utility
-install="$install curl"
 install="$install genius" # calculator
 install="$install libpci-dev libnl-3-dev libnl-genl-3-dev gettext libgettextpo-dev autopoint gettext libncurses5-dev libncursesw5-dev libtool-bin dh-autoreconf autoconf-archive pkg-config" # powertop diagnose power consumption https://github.com/fenrus75/powertop#build-dependencies
 install="$install lm-sensors" # FIXME: is the cpu temperate by ls sensors used by plain status or by slstatus?
@@ -42,16 +43,15 @@ install="$install logrotate"
 install="$install lynx" # html to plain text `curl https://your.tld/ | lynx --stdin --dump`
 install="$install mlocate" # locate/updatedb
 install="$install net-tools" # ifconfig cli
-install="$install nginx" disable="$disable nginx"
 install="$install opensmtpd" # send mail via /usr/bin/sendmail and deliver local mail to /var/mail a-la exim replacement
 install="$install openssh-server"
 install="$install zstd" # a-la gz/xz compression
 
 # Homebrew <https://docs.brew.sh/Homebrew-on-Linux>.
+# install="$install git" # instead install from homebrew
 install="$install build-essential"
 install="$install curl"
 install="$install file"
-install="$install git"
 install="$install procps" # /proc file system utilities
 
 # Instead install tmux from homebrew.
@@ -81,11 +81,11 @@ install="$install libgnutls28-dev" # compiltime dependency <https://stackoverflo
 # install="$install gnupg2" # required by kubectl
 # install="$install apt-transport-https ca-certificates curl"
 
-# Docker
-# <https://docs.docker.com/install/linux/docker-ce/ubuntu>.
-install="$install docker-ce docker-ce-cli containerd.io" disable="$disable docker" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
-install="$install golang-docker-credential-helpers" # credential helper stores encrypted passwords in d-bus secret service instead of unencrypted password in plain file <https://docs.docker.com/engine/reference/commandline/login/#credentials-store>
-install="$install apt-transport-https ca-certificates curl gnupg gnupg-agent lsb-release software-properties-common" # required by docker ppa <https://docs.docker.com/install/linux/docker-ce/ubuntu>
+# # Docker
+# # <https://docs.docker.com/install/linux/docker-ce/ubuntu>.
+# install="$install docker-ce docker-ce-cli containerd.io" disable="$disable docker" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
+# install="$install golang-docker-credential-helpers" # credential helper stores encrypted passwords in d-bus secret service instead of unencrypted password in plain file <https://docs.docker.com/engine/reference/commandline/login/#credentials-store>
+# install="$install apt-transport-https ca-certificates curl gnupg gnupg-agent lsb-release software-properties-common" # required by docker ppa <https://docs.docker.com/install/linux/docker-ce/ubuntu>
 
 # Instead install from homebrew.
 # The silver searcher (ag) <https://github.com/ggreer/the_silver_searcher>
@@ -133,9 +133,10 @@ install="$install postgresql-server-dev-14" # required by pg_activity is an post
 # install="$install libsqlite3-dev" # required by sqlite3 which required by mailcatcher
 # install="$install libssl-dev" # required by ruby 2.6.3 (libssl-dev conflicts with libssl1.0-dev)
 
+# Instead install python from homebrew.
 # Python programming language.
 # install="$install python-pip" # python 2 pip no longer supported by ubuntu
-install="$install python3-pip"
+# install="$install python3-pip" # instead install from homebrew
 
 # Instead install node from homebrew.
 # # Nodejs/Javascript by nodesource.com's ppa
@@ -154,23 +155,24 @@ install="$install python3-pip"
 
 # X11/xorg/desktop.
 # install="$install duplicity" # instead install from homebrew # backuping
+# install="$install feh" # instead install from homebrew # command line image viewer
 # install="$install font-manager" # list bitmap ??? fonts
 # install="$install fonts-fantasque-sans" # instead install manually into /usr/local/share/fonts # terminal/code/mono/programming font (gnome-terminal issue https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=960629)
 # install="$install fonts-hack-ttf" # instead install manually into /usr/local/share/fonts # terminal/code/mono/programming font
 # install="$install fonts-noto" # awesome serif font ???
+# install="$install libappindicator3-1" # slack dependency # libayatana-appindicator3-1 : Conflicts: libappindicator3-1 but 12.10.1+20.10.20200706.1-0ubuntu1 is to be installed
+# install="$install mpv" # instead install from homebrew # a-la mplayer replacement
 # install="$install pk-update-icon" # FIXME: missing? # display notifications about software updates
 # install="$install uswsusp" # FIXME: missing? # systemctl hibernate
 # install="$install xcalib" # returns: "Error - unsupported ramp size 0" (load icc/icm display color profiles (only calibration curves) <https://wiki.archlinux.org/index.php/ICC_Profiles#xcalib>)
 # install="$install xclip" # tmux and xorg clipboard integration <https://github.com/tmux-plugins/tmux-yank#linux-requirements>
+# install="$install xsel" # instead install from homebrew # copy selection in termina to the xorg clipboard (used by emacs and urxvt) <https://wiki.archlinux.org/index.php/rxvt-unicode#Automatic_Script_Management>
 # remove="$remove xserver-xorg-video-intel" # instead of intel using modesetting <https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/1867668>
-# install="$install feh" # instead install from homebrew # command line image viewer
-# install="$install mpv" # instead install from homebrew # a-la mplayer replacement
 install="$install argyll" # load icc/icm display color profiles <https://wiki.archlinux.org/index.php/ICC_Profiles#Argyll_CMS>
 install="$install blueman" # full featured bluetooth manager gui <https://wiki.archlinux.org/title/Blueman>, <https://wiki.archlinux.org/title/Bluetooth>
 install="$install firefox" # works normal with graylog's text box (input box), text field (input field)
 install="$install gimp" # a-la photoshop
 install="$install gparted" # format/create partition/disk/usb
-install="$install libappindicator3-1" # slack dependency
 install="$install libfuse2" # pcloud dependency
 install="$install libnotify-bin" # a-la notify-osd
 install="$install light" # used by xchainkeys and ~/.xprofile
@@ -180,9 +182,10 @@ install="$install meld" # gnome diff (gtk)
 install="$install mesa-utils" # provides glxgears util for the 3d compositor testing
 install="$install mousepad" # simple text editor for xfce <https://github.com/codebrainz/mousepad>
 install="$install ubuntu-restricted-extras" # playing video in browser instead of download <https://askubuntu.com/questions/1122579/firefox-downloads-the-video-instead-of-playing-it#1122668>, <https://askubuntu.com/questions/56446/how-do-i-install-the-ubuntu-restricted-extras-package#56448>
-install="$install xsel" # copy selection in termina to the xorg clipboard (used by emacs and urxvt) <https://wiki.archlinux.org/index.php/rxvt-unicode#Automatic_Script_Management>
 install="$install xserver-xorg-video-intel" # instead of modesetting using intel <https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/1867668>
 install="$install xterm" # backup/fallback terminal additional to the st/stterm/alacritty
+remove="$remove remmina"
+remove="$remove transmission-gtk"
 
 # C/C++ compile/make X11 dependencies.
 install="$install libx11-dev" # ???
@@ -201,13 +204,13 @@ install="$install libdbus-1-dev libnotify-dev libxrandr-dev libpango1.0-dev libx
 
 # Alacritty terminal emulator a-la st/xterm
 # <https://github.com/alacritty/alacritty/blob/master/INSTALL.md#debianubuntu>.
+# install="$install python3" # instead install from homebrew
 install="$install cmake"
 install="$install libfontconfig1-dev"
 install="$install libfreetype6-dev"
 install="$install libxcb-xfixes0-dev"
 install="$install libxkbcommon-dev"
 install="$install pkg-config"
-install="$install python3"
 
 # xchainkeys <https://github.com/hbekel/xchainkeys>.
 install="$install light" # xchainkeys runtime dependency
@@ -252,23 +255,22 @@ install="$install volumeicon-alsa"
 # install="$install vault" # curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - && sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 
 # Xfce4.
-# install="$install xfdashboard" # overview all windows
+# install="$install thunar-dropbox-plugin"
+# install="$install thunar-megasync" # not using
 # install="$install xfce4"
 # install="$install xfce4-notifyd" # notifications daemon (used by dwm)
-# install="$install thunar-megasync" # not using
+# install="$install xfdashboard" # overview all windows
 install="$install ristretto" # command line image viewer
 install="$install thunar" # file manager
 install="$install thunar-archive-plugin"
-install="$install thunar-dropbox-plugin"
 install="$install thunar-volman"
 
 # mkusb <https://help.ubuntu.com/community/mkusb#Installation>.
 install="$install mkusb usb-pack-efi" # create bootable/live usb/iso <https://help.ubuntu.com/community/mkusb#Quick_start_manual_and_mkusb_PPA>
 
-# Dropbox.
-install="$install dropbox"
-remove="$remove nautilus-dropbox" # conflicts with dropbox deb file
-
+# # Dropbox.
+# install="$install dropbox"
+# remove="$remove nautilus-dropbox" # conflicts with dropbox deb file
 
 # Gnome.
 # install="$install chrome-gnome-shell" # chrome/gnome extension integration
@@ -333,17 +335,17 @@ install="$install google-chrome-stable"
 # install="$install gnupg"
 
 # Employer Ozon.
+# install="$install docker-ce" disable="docker" # instead install from homebrew # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
 # install="$install golang" # instead install go@1.17 from homebrew
 # install="$install libxml2-utils" # instead install libxml2 from homebrew # provides xmllint
+# install="$install openvpn" disable="$disable systemctl disable openvpn openvpn@client" # NOTE: if your need openvpn instead install from homebrew # openvpn client <https://confluence.ozon.ru/pages/viewpage.action?spaceKey=CORPIT&title=OpenVPN+for+Linux>
 # install="$install redis" disable="$disable systemctl disable redis-server" # instead install from homebrew
-install="$install docker-ce" disable="docker" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
 install="$install libpcap-dev" # required by github.com/google/gopacket/pcap (go/src/github.com/google/gopacket/pcap/pcap_unix.go:34:10: fatal error: pcap.h: No such file or directory)
 install="$install libqt5webkit5" # GlobalProtect_UI_deb-5.2.6.0-18.deb VPN dependency
-install="$install openvpn" disable="$disable systemctl disable openvpn openvpn@client" # openvpn client <https://confluence.ozon.ru/pages/viewpage.action?spaceKey=CORPIT&title=OpenVPN+for+Linux>
 
 # # Employer Rocketbank.
 # # install="$install glide" # german does not use glide # go/german `add-apt-repository ppa:masterminds/glide` golang glide vendor package management <https://github.com/Masterminds/glide>
-# install="$install docker-ce" disable="$disable systemctl disable docker" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
+# install="$install docker-ce" disable="$disable systemctl disable docker" # instead install from homebrew # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
 # install="$install elasticsearch apt-transport-https" # felix `deb https://artifacts.elastic.co/packages/5.x/apt stable main` elasticsearch 5 <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>, # apt-transport-https required by elasticsearch ppa <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#deb-repo>
 # install="$install golang"
 # install="$install libmagickwand-dev" # required by rmagick by felix
