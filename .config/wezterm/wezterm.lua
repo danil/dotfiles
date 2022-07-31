@@ -8,6 +8,8 @@ return {
   hide_tab_bar_if_only_one_tab = true,
   adjust_window_size_when_changing_font_size = false, -- <https://wezfurlong.org/wezterm/config/lua/config/adjust_window_size_when_changing_font_size.html>.
   enable_scroll_bar = false,
+  -- send_composed_key_when_left_alt_is_pressed = true, -- <https://github.com/wez/wezterm/issues/1542>.
+  -- send_composed_key_when_right_alt_is_pressed = true, -- <https://github.com/wez/wezterm/issues/1542>.
 
   font = wezterm.font_with_fallback {
     'PragmataPro Mono Liga',
@@ -72,8 +74,8 @@ return {
 
   -- Default key bindings <https://wezfurlong.org/wezterm/config/default-keys.html>.
   keys = {
-    { key = 'Insert', mods = 'CTRL', action = wezterm.action.CopyTo 'PrimarySelection' },
-    { key = 'Insert', mods = 'SHIFT', action = wezterm.action.PasteFrom 'PrimarySelection' },
+    { key = 'Insert', mods = 'CTRL', action = wezterm.action.CopyTo 'Clipboard' },
+    { key = 'Insert', mods = 'SHIFT', action = wezterm.action.PasteFrom 'Clipboard' },
     { key = '-', mods = 'CTRL', action = wezterm.action.DecreaseFontSize },
     { key = '=', mods = 'CTRL', action = wezterm.action.IncreaseFontSize },
     { key = '0', mods = 'CTRL', action = wezterm.action.ResetFontSize },
