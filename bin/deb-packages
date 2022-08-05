@@ -99,10 +99,11 @@ install="$install devscripts" # ???
 install="$install make" # required by all)
 install="$install valgrind" # find memory leaks https://www.valgrind.org/docs/manual/quick-start.html
 
+# Instead install PostgreSQL from homebrew.
 # PostgreSQL.
 # install="$install pgcenter" # postgresql command-line tool https://github.com/lesovsky/pgcenter/releases install: dpkg --install path/to/pgcenter.deb
-install="$install postgresql-14" disable="$disable postgresql" # `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
-install="$install postgresql-server-dev-14" # required by pg_activity is an postgresql activity monitoring <https://github.com/dalibo/pg_activity>
+# install="$install postgresql-14" disable="$disable postgresql" # `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
+# install="$install postgresql-server-dev-14" # required by pg_activity is an postgresql activity monitoring <https://github.com/dalibo/pg_activity>
 
 # # Mongodb.
 # install="$install mongodb-org" disable="$disable mongod" # latest stable version of the mongodb server

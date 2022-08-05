@@ -3,7 +3,7 @@
 # Homebrew.
 
 # install="$install bc" # used by bash prompt, console-based calculator utility
-# install="$install goaccess" # analyze nginx/apache log in real-time
+# install="$install goaccess" # analyze apache/nginx log in real-time
 # install="$install grpc" # ?????????? gRPC cli a-la curl https://github.com/grpc/grpc/blob/master/doc/command_line_tool.md
 # install="$install hping" # hping3 a-la interactive ping https://github.com/antirez/hping
 # install="$install lua" # newer than apt version of the lua programming language https://github.com/lua/lua
@@ -76,6 +76,16 @@ install="$install flake8" # python linter
 install="$install proselint" # used/required by emacs flycheck
 install="$install pylint" # used/required by emacs flycheck
 install="$install python3" # provides pip (pip3)
+
+# Nginx.
+# install="$install nginx" # web/http server
+
+# PostgreSQL.
+install="$install postgresql" # rdbms <https://wiki.postgresql.org/wiki/Homebrew>
+
+# MySQL.
+# install="$install mysql" # rdbms
+# install="$install vitess" # clustering system for horizontal scaling
 
 # X11/xorg/desktop.
 # install="$install duplicity" # backuping

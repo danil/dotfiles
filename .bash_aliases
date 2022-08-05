@@ -89,6 +89,20 @@ export PATH="/home/linuxbrew/.linuxbrew/opt/go@1.17/bin:$PATH" #go 1.17 from hom
 # export PATH="$(go env GOPATH)/bin":"$PATH"
 # [[ -s "$HOME/.gvm/scripts/gvm" ]] && . "$HOME/.gvm/scripts/gvm" #gvm (Go version manager) <https://github.com/moovweb/gvm>
 
+# Ruby gem homebrew.
+
+# Rubygem executables directory path based on "`brew --prefix ruby`/bin".
+if hash /usr/local/bin/brew 2>/dev/null; then
+    export PATH="$(brew --prefix ruby)"/bin:$PATH
+fi
+
+# Rubygem executables directory path based on "`gem environment gemdir`/bin".
+if hash /usr/local/bin/gem 2>/dev/null; then
+    export PATH="$(gem environment gemdir)"/bin:$PATH
+fi
+
+export PATH=/usr/local/lib/ruby/gems/3.0.0/bin:$PATH
+
 # Instead install ruby from homebrew.
 # # rbenv ruby version manager <https://github.com/sstephenson/rbenv#basic-github-checkout>.
 # export PATH="$HOME"/.rbenv/bin:"$PATH"
