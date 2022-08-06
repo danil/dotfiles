@@ -6,8 +6,19 @@ export LC_TYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 # Tab completion
-# <http://wiki.gentoo.org/wiki/Bash#Tab_completion>.
-[[ -f /etc/profile.d/bash-completion.sh ]] && . /etc/profile.d/bash-completion.sh
+# <https://wiki.archlinux.org/title/bash#Common_programs_and_options>.
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+  elif [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
 
 # Disable the XOFF (Ctrl-s) keystroke
 # <http://superuser.com/questions/124845/can-you-disable-the-ctrl-s-xoff-keystroke-in-putty#155875>,

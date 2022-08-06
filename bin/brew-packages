@@ -9,6 +9,7 @@
 # install="$install lua" # newer than apt version of the lua programming language https://github.com/lua/lua
 # install="$install nnn" # terminal file manager a-la mc/midnight commander https://github.com/jarun/nnn
 # install="$install pigz" # parallel gzip for multi-processor, multi-core
+install="$install bash-completion"
 install="$install convmv" # a-la iconv character encoding conversion util
 install="$install dos2unix" # convert text file line endings between CRLF and LF
 install="$install fd" # find replacement https://github.com/sharkdp/fd
