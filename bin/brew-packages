@@ -16,6 +16,7 @@ install="$install dos2unix" # convert text file line endings between CRLF and LF
 install="$install fd" # find replacement https://github.com/sharkdp/fd
 install="$install fdupes" # identify or delete duplicate files https://github.com/adrianlopezroche/fdupes (used by emacs package https://github.com/ShuguangSun/find-dupes-dired)
 install="$install git"
+install="$install gmailctl" # gmail filters generation
 install="$install grpcurl" # gRPC cli a-la curl https://github.com/fullstorydev/grpcurl
 install="$install htop" # a-la top
 install="$install jq" # json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>
