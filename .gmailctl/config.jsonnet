@@ -1,5 +1,27 @@
 // Import the standard library
 local lib = import 'gmailctl.libsonnet';
+
+// Local variables help reuse config fragments.
+local toMe = {
+  or: [
+    { to: "danil@kutkevich.org" },
+    { to: "danil2@kutkevich.org" },
+    { to: "danilkutkevich@gmail.com" },
+  ],
+};
+
+local notToMe = { not: toMe };
+
+local fromMe = {
+  or: [
+    { from: "danil@kutkevich.org" },
+    { from: "danil2@kutkevich.org" },
+    { from: "danilkutkevich@gmail.com" },
+  ],
+};
+
+local notFromMe = { not: fromMe };
+
 {
   version: "v1alpha3",
   author: {
@@ -10,84 +32,107 @@ local lib = import 'gmailctl.libsonnet';
   // GMail interface to add and remove labels, you can safely remove
   // this section of the config.
   labels: [
-    { name: "ErA5gComBh1" },
-    { name: "Ror2ruList2" },
-    { name: "_new" },
-    { name: "Roman" },
-    { name: "Twitter2" },
-    { name: "ErArmor5gamesNew" },
-    { name: "Ror2ruList2New" },
-    { name: "GolangRuListNew" },
-    { name: "GolangRuList2New" },
-    { name: "Ror2ruListNew" },
-    { name: "TwitterOld" },
-    { name: "HrFredVacancy" },
-    { name: "ErQiwi" },
-    { name: "ErOzon" },
-    { name: "HrVacancy" },
-    { name: "HrGolangVacancy" },
-    { name: "_xInboxBackupNew" },
-    { name: "_xxArchiveBackupNew" },
-    { name: "_xSentBackupNew" },
-    { name: "Fail2Ban" },
-    { name: "Redfox" },
-    { name: "Luadns" },
-    { name: "JollaCommunity" },
-    { name: "RustRussianList" },
-    { name: "DanilMed" },
-    { name: "LeraMed" },
-    { name: "FsfLists" },
-    { name: "SoftwaremaniacsOrgFeed" },
-    { name: "LuaFeeds" },
-    { name: "_trash" },
-    { name: "ErJohnru" },
-    { name: "HrRubyVacancy" },
     { name: "Bike" },
-    { name: "Schedule" },
-    { name: "ErRocketbank" },
-    { name: "Lists" },
-    { name: "ErProhq" },
-    { name: "ScyllaDBList" },
-    { name: "PostgreSqlList" },
-    { name: "VimList" },
+    { name: "DanilMed" },
+    { name: "DisqusFeeds" },
+    { name: "ErA5gComAh9" },
+    { name: "ErA5gComBh1" },
+    { name: "ErArmor5games" },
+    { name: "ErArmor5gamesNew" },
+    { name: "ErBrokerhub" },
+    { name: "ErJohnru" },
     { name: "ErMiiix" },
     { name: "ErMolinos" },
-    { name: "ErXena" },
-    { name: "HondaCRV2012" },
-    { name: "Registr" },
-    { name: "Receipt" },
-    { name: "RedisList" },
+    { name: "ErOzon" },
+    { name: "ErProhq" },
+    { name: "ErQiwi" },
+    { name: "ErRocketbank" },
     { name: "ErWaveaccess" },
-    { name: "YoutubeFeeds" },
-    { name: "DisqusFeeds" },
-    { name: "Jamendo" },
-    { name: "Offline" },
-    { name: "RustyCrateRuList" },
+    { name: "ErXena" },
+    { name: "EximLists" },
+    { name: "Fail2Ban" },
+    { name: "FsfLists" },
     { name: "GentooCommunity" },
+    { name: "GentooUsers" },
+    { name: "GolangRuList" },
+    { name: "GolangRuList2New" },
+    { name: "GolangRuListNew" },
+    { name: "HondaCRV2012" },
+    { name: "HrFredVacancy" },
+    { name: "HrGolangVacancy" },
+    { name: "HrJsVacancy" },
+    { name: "HrRubyVacancy" },
+    { name: "HrVacancy" },
+    { name: "Jamendo" },
+    { name: "JollaCommunity" },
     { name: "KutOrgH10" },
     { name: "KutOrgH2" },
-    { name: "ErA5gComAh9" },
-    { name: "ErArmor5games" },
-    { name: "EximLists" },
-    { name: "GentooUsers" },
-    { name: "ErBrokerhub" },
-    { name: "GolangRuList" },
-    { name: "HrJsVacancy" },
+    { name: "LeraMed" },
+    { name: "Lists" },
+    { name: "LuaFeeds" },
+    { name: "Luadns" },
+    { name: "Mailspring" },
+    { name: "Mailspring/Snoozed" },
+    { name: "Offline" },
+    { name: "PostgreSqlList" },
+    { name: "Receipt" },
+    { name: "Redfox" },
+    { name: "RedisList" },
+    { name: "Registr" },
+    { name: "Roman" },
     { name: "Ror2ruList" },
-    { name: "SucklessDevList" }
+    { name: "Ror2ruList2" },
+    { name: "Ror2ruList2New" },
+    { name: "Ror2ruListNew" },
+    { name: "RustRussianList" },
+    { name: "RustyCrateRuList" },
+    { name: "Schedule" },
+    { name: "ScyllaDBList" },
+    { name: "SoftwaremaniacsOrgFeed" },
+    { name: "SucklessDevList" },
+    { name: "Twitter2" },
+    { name: "TwitterOld" },
+    { name: "VimList" },
+    { name: "YoutubeFeeds" },
+    { name: "_new" },
+    { name: "_trash" },
+    { name: "_xInboxBackupNew" },
+    { name: "_xSentBackupNew" },
+    { name: "_xxArchiveBackupNew" },
   ],
   rules: [
     {
       filter: {
-        from: "-(danil@kutkevich.org OR danil2@kutkevich.org)",
-        isEscaped: true
+        or: [
+          { to: "vim_dev@googlegroups.com" },
+          { to: "vim@noreply.github.com" },
+          { from: "vim_dev@googlegroups.com" },
+          { replyto: "vim_dev@googlegroups.com" },
+          { list: "vim_dev@googlegroups.com" },
+          { list: "vim.vim.github.com" },
+        ],
       },
       actions: {
         archive: true,
-        labels: [
-          "_new"
-        ]
+        labels: [ "VimList" ]
       }
-    }
+    }, {
+      filter: {
+        list: "scylladb-dev.googlegroups.com",
+      },
+      actions: {
+        archive: true,
+        labels: [ "ScyllaDBList" ]
+      }
+    },
+    // {
+    //   filter: {
+    //     and: [ notToMe ],
+    //   },
+    //   actions: {
+    //     archive: true,
+    //     labels: [ "_new" ]
+    //   }
+    // }
   ]
 }
