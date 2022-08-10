@@ -92,6 +92,7 @@ local notFromMe = { not: fromMe };
     { name: "SucklessDevList" },
     { name: "Twitter2" },
     { name: "TwitterOld" },
+    { name: "VcRu" },
     { name: "VimList" },
     { name: "YoutubeFeeds" },
     { name: "_new" },
@@ -123,6 +124,12 @@ local notFromMe = { not: fromMe };
       actions: {
         archive: true,
         labels: [ "ScyllaDBList" ]
+      }
+    }, {
+      filter: { from: "noreply@vc.ru" },
+      actions: {
+        archive: true,
+        labels: [ "VcRu" ]
       }
     },
     // {
