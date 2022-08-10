@@ -115,7 +115,7 @@ local notFromMe = { not: fromMe };
       },
       actions: {
         archive: true,
-        labels: [ "VimList" ]
+        labels: [ "VimList" ],
       }
     }, {
       filter: {
@@ -123,14 +123,25 @@ local notFromMe = { not: fromMe };
       },
       actions: {
         archive: true,
-        labels: [ "ScyllaDBList" ]
+        labels: [ "ScyllaDBList" ],
       }
     }, {
       filter: { from: "noreply@vc.ru" },
       actions: {
         archive: true,
-        labels: [ "VcRu" ]
-      }
+        labels: [ "VcRu" ],
+      },
+    }, {
+      filter: {
+        and: [
+          { from: "usercommunication@tutu.ru" },
+          { subject: "Туту.ру: чек" },
+        ]
+      },
+      actions: {
+        archive: true,
+        labels: [ "Receipt" ],
+      },
     },
     // {
     //   filter: {
