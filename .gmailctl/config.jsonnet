@@ -113,24 +113,16 @@ local notFromMe = { not: fromMe };
           { list: "vim.vim.github.com" },
         ],
       },
-      actions: {
-        archive: true,
-        labels: [ "VimList" ],
-      }
+      actions: { labels: [ "VimList" ], archive: true, },
     }, {
-      filter: {
-        list: "scylladb-dev.googlegroups.com",
-      },
-      actions: {
-        archive: true,
-        labels: [ "ScyllaDBList" ],
-      }
+      filter:  { list: "redis-db.googlegroups.com" },
+      actions: { labels: [ "RedisList" ], archive: true, },
     }, {
-      filter: { from: "noreply@vc.ru" },
-      actions: {
-        archive: true,
-        labels: [ "VcRu" ],
-      },
+      filter:  { list: "scylladb-dev.googlegroups.com", },
+      actions: { labels: [ "ScyllaDBList" ], archive: true, },
+    }, {
+      filter:  { from: "noreply@vc.ru" },
+      actions: { labels: [ "VcRu" ], archive: true, },
     }, {
       filter: {
         and: [
@@ -138,10 +130,7 @@ local notFromMe = { not: fromMe };
           { subject: "Туту.ру: чек" },
         ]
       },
-      actions: {
-        archive: true,
-        labels: [ "Receipt" ],
-      },
+      actions: { labels: [ "Receipt" ], archive: true, },
     },
     // {
     //   filter: {
