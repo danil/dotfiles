@@ -186,6 +186,7 @@ install="$install ubuntu-restricted-extras" # playing video in browser instead o
 install="$install xserver-xorg-video-intel" # instead of modesetting using intel <https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/1867668>
 install="$install xterm" # backup/fallback terminal additional to the st/stterm/alacritty
 remove="$remove remmina"
+remove="$remove thunderbird thunderbird-gnome-support thunderbird-locale-en thunderbird-locale-en-gb thunderbird-locale-en-us thunderbird-locale-ru" # instead install mailspring from snap # GUI mail client written in C/C++
 remove="$remove transmission-gtk"
 
 # C/C++ compile/make X11 dependencies.
