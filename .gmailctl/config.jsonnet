@@ -118,7 +118,12 @@ local notFromMe = { not: fromMe };
       filter:  { list: "redis-db.googlegroups.com" },
       actions: { labels: [ "RedisList" ], archive: true, },
     }, {
-      filter:  { list: "scylladb-dev.googlegroups.com", },
+      filter:  {
+        or: [
+          { list: "scylladb-dev.googlegroups.com" },
+          { list: "scylladb-users.googlegroups.com" },
+        ],
+      },
       actions: { labels: [ "ScyllaDBList" ], archive: true, },
     }, {
       filter:  { from: "noreply@vc.ru" },
