@@ -137,14 +137,5 @@ local notFromMe = { not: fromMe };
       },
       actions: { labels: [ "Receipt" ], archive: true, },
     },
-    // {
-    //   filter: {
-    //     and: [ notToMe ],
-    //   },
-    //   actions: {
-    //     archive: true,
-    //     labels: [ "_new" ]
-    //   }
-    // }
   ]
 }
