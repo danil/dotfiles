@@ -185,6 +185,7 @@ install="$install mousepad" # simple text editor for xfce <https://github.com/co
 install="$install ubuntu-restricted-extras" # playing video in browser instead of download <https://askubuntu.com/questions/1122579/firefox-downloads-the-video-instead-of-playing-it#1122668>, <https://askubuntu.com/questions/56446/how-do-i-install-the-ubuntu-restricted-extras-package#56448>
 install="$install xserver-xorg-video-intel" # instead of modesetting using intel <https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/1867668>
 install="$install xterm" # backup/fallback terminal additional to the st/stterm/alacritty
+remove="$remove gnome-mahjongg"
 remove="$remove remmina"
 remove="$remove thunderbird thunderbird-gnome-support thunderbird-locale-en thunderbird-locale-en-gb thunderbird-locale-en-us thunderbird-locale-ru" # instead install mailspring from snap # GUI mail client written in C/C++
 remove="$remove transmission-gtk"
