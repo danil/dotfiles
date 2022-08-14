@@ -92,6 +92,14 @@ local notFromMe = { not: fromMe };
   rules: [
     {
       filter: {
+        and: [
+          { from: "noreply@github.com" },
+          { subject: "GitHub Explore" },
+        ],
+      },
+      actions: { labels: [ "FedGithub" ], archive: true, },
+    }, {
+      filter: {
         or: [
           { to: "vim_dev@googlegroups.com" },
           { to: "vim@noreply.github.com" },
