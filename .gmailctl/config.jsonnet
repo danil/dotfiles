@@ -44,6 +44,7 @@ local notFromMe = { not: fromMe };
     { name: "ErWac" },
     { name: "ErXen" },
     { name: "FedDisqus" },
+    { name: "FedGithub" },
     { name: "FedJamendo" },
     { name: "FedLua" },
     { name: "FedLuadns" },
