@@ -43,6 +43,7 @@ local notFromMe = { not: fromMe };
     { name: "ErRkt" },
     { name: "ErWac" },
     { name: "ErXen" },
+    { name: "FedCloudflare" },
     { name: "FedDisqus" },
     { name: "FedGithub" },
     { name: "FedJamendo" },
@@ -124,6 +125,9 @@ local notFromMe = { not: fromMe };
     }, {
       filter:  { from: "noreply@vc.ru" },
       actions: { labels: [ "FedVcRu" ], archive: true, },
+    }, {
+      filter: { from: "newsletter@cloudflare.com" },
+      actions: { labels: [ "FedCloudflare" ], archive: true, },
     }, {
       filter: {
         and: [
