@@ -43,9 +43,12 @@ local notFromMe = { not: fromMe };
     { name: "ErRkt" },
     { name: "ErWac" },
     { name: "ErXen" },
+    { name: "Fed" },
     { name: "FedCloudflare" },
     { name: "FedDisqus" },
     { name: "FedGithub" },
+    { name: "FedGoogle" },
+    { name: "FedHabr" },
     { name: "FedJamendo" },
     { name: "FedLua" },
     { name: "FedLuadns" },
@@ -123,11 +126,37 @@ local notFromMe = { not: fromMe };
       },
       actions: { labels: [ "LstScyllaDb" ], archive: true, },
     }, {
+      filter: {
+        and: [
+          { from: "noreply@habr.com" },
+          { or: [
+            { subject: "Мы знаем" },
+            { subject: "Самое важное" },
+            { subject: "Самое интересное" },
+          ], },
+        ],
+      },
+      actions: { labels: [ "FedHabr" ], archive: true, },
+    }, {
       filter:  { from: "noreply@vc.ru" },
       actions: { labels: [ "FedVcRu" ], archive: true, },
     }, {
       filter: { from: "newsletter@cloudflare.com" },
       actions: { labels: [ "FedCloudflare" ], archive: true, },
+    }, {
+      filter:  {
+        or: [
+          { from: "noreply-maps-timeline@google.com" },
+        ],
+      },
+      actions: { labels: [ "FedGoogle" ], archive: true, },
+    }, {
+      filter:  {
+        or: [
+          { from: "noreply@ip2location.com" },
+        ],
+      },
+      actions: { labels: [ "Fed" ], archive: true, },
     }, {
       filter: {
         and: [
