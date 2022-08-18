@@ -11,7 +11,7 @@ export LC_ALL=en_US.UTF-8
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if ! shopt -oq posix; then
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  if [ -x "$(command -v brew)" ] && [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
   elif [ -f /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion
@@ -37,11 +37,11 @@ export HISTCONTROL=ignoredups:erasedups
 [ "$TERM" = "xterm" ] && TERM="xterm-256color" #<http://ricochen.wordpress.com/2011/07/23/mac-os-x-lion-terminal-color-remote-access-problem-fix>
 #export GIT_PAGER=""
 
-if hash vim 2>/dev/null; then
+if [ -x "$(command -v vim)" ]; then
     export EDITOR="vim" #export EDITOR="/usr/bin/emacsclient -t" #safe fallback/backup editor
 fi
 
-if hash emacs 2>/dev/null; then
+if [ -x "$(command -v emacs)" ]; then
     export GIT_EDITOR='emacs'
 fi
 
@@ -79,7 +79,7 @@ export BC_ENV_ARGS=/home/danil/.bc
 
 # Basher is a bash/shell/functions package manager
 # <https://github.com/basherpm/basher>.
-if hash basher 2>/dev/null; then
+if [ -x "$(command -v basher)" ]; then
     export PATH="$HOME"/.basher/bin:"$PATH"
     eval "$(basher init - bash)"
 fi
@@ -103,12 +103,12 @@ export PATH="/home/linuxbrew/.linuxbrew/opt/go@1.17/bin:$PATH" #go 1.17 from hom
 # Ruby gem homebrew.
 
 # Rubygem executables directory path based on "`brew --prefix ruby`/bin".
-if hash /usr/local/bin/brew 2>/dev/null; then
+if [ -x "$(command -v brew)" ]; then
     export PATH="$(brew --prefix ruby)"/bin:$PATH
 fi
 
 # Rubygem executables directory path based on "`gem environment gemdir`/bin".
-if hash /usr/local/bin/gem 2>/dev/null; then
+if [ -x "$(command -v gem)" ]; then
     export PATH="$(gem environment gemdir)"/bin:$PATH
 fi
 
@@ -117,7 +117,7 @@ export PATH=/usr/local/lib/ruby/gems/3.0.0/bin:$PATH
 # Instead install ruby from homebrew.
 # # rbenv ruby version manager <https://github.com/sstephenson/rbenv#basic-github-checkout>.
 # export PATH="$HOME"/.rbenv/bin:"$PATH"
-# if hash rbenv 2>/dev/null; then
+# if [ -x "$(command -v rbenv)" ]; then
 #     eval "$(rbenv init -)"
 # fi
 
