@@ -25,7 +25,7 @@ fi
 # <https://wiki.archlinux.org/index.php/Readline#History>.
 stty -ixon
 
-export TERMINAL="xterm" #safe fallback/backup terminal
+export TERMINAL="xterm-256color" # "xterm" #safe fallback/backup terminal
 
 # export ALTERNATE_EDITOR="/usr/bin/emacs"
 # export PAGER="/usr/bin/less --IGNORE-CASE --LONG-PROMPT" #not working(
