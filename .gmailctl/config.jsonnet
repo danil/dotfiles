@@ -47,6 +47,7 @@ local notFromMe = { not: fromMe };
     { name: "FedCloudflare" },
     { name: "FedDisqus" },
     { name: "FedGithub" },
+    { name: "FedGolang" },
     { name: "FedGoogle" },
     { name: "FedHabr" },
     { name: "FedJamendo" },
