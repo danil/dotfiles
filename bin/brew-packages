@@ -50,6 +50,7 @@ install="$install zstd" # a-la gz/xz compression, required by gcc, curl, git, gn
 
 # emacs.
 # install="$install emacs"
+install="$install markdownlint-cli" # used/required used by emacs flycheck
 install="$install shellcheck" # used by emacs flycheck
 
 # # Docker.

@@ -19,7 +19,6 @@
     "devDependencies": {
         "js-yaml": "latest",
         "jsonlint": "latest",
-        "markdownlint-cli": "0.28.1",
         "typescript": "latest"
     },
     "engines": {
