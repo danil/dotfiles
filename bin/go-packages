@@ -60,7 +60,7 @@ go install -v github.com/rogpeppe/godef@v1.1.2 || exit 1 # used by emacs for jum
 # go install -v google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.0.1 || exit 1 # the v1.20 protoc-gen-go does not support generating grpc service definitions. grpc service generation supported by the protoc-gen-go-grpc plugin provided by the go grpc project <https://github.com/protocolbuffers/protobuf-go/releases/tag/v1.20.0#v1.20-grpc-support>
 # go install -v github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway@v1.15.0 || exit 1
 
-# Employer Ozon.
+# Er ozn.
 # GOPRIVATE=gitlab.ozon.ru go install -v gitlab.ozon.ru/ob/kraken/cmd/krakenmaster@latest
 # GOPRIVATE=gitlab.ozon.ru go install -v gitlab.ozon.ru/ob/kraken/cmd/krakenreplica@latest
 # GOPRIVATE=gitlab.ozon.ru go install -v gitlab.ozon.ru/platform/scratch/cmd/scratch@latest

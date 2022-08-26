@@ -337,7 +337,7 @@ install="$install google-chrome-stable"
 # install="$install curl"
 # install="$install gnupg"
 
-# Employer Ozon.
+# Er ozn.
 # install="$install docker-ce" disable="docker" # instead install from homebrew # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
 # install="$install golang" # instead install go@1.17 from homebrew
 # install="$install libxml2-utils" # instead install libxml2 from homebrew # provides xmllint
@@ -346,7 +346,7 @@ install="$install google-chrome-stable"
 install="$install libpcap-dev" # required by github.com/google/gopacket/pcap (go/src/github.com/google/gopacket/pcap/pcap_unix.go:34:10: fatal error: pcap.h: No such file or directory)
 install="$install libqt5webkit5" # GlobalProtect_UI_deb-5.2.6.0-18.deb VPN dependency
 
-# # Employer Rocketbank.
+# # Er rkt.
 # # install="$install glide" # german does not use glide # go/german `add-apt-repository ppa:masterminds/glide` golang glide vendor package management <https://github.com/Masterminds/glide>
 # install="$install docker-ce" disable="$disable systemctl disable docker" # instead install from homebrew # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
 # install="$install elasticsearch apt-transport-https" # felix `deb https://artifacts.elastic.co/packages/5.x/apt stable main` elasticsearch 5 <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>, # apt-transport-https required by elasticsearch ppa <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#deb-repo>

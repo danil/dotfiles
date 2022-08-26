@@ -96,7 +96,7 @@ install="$install mpv" # a-la mplayer replacement
 install="$install xdotool" # ???
 install="$install xsel" # copy selection in termina to the xorg clipboard (used by emacs and urxvt) <https://wiki.archlinux.org/index.php/rxvt-unicode#Automatic_Script_Management>
 
-# Employer Ozon.
+# Er ozn.
 install="$install go@1.17"
 install="$install libxml2" # provides xmllint
 install="$install redis"
