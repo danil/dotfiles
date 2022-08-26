@@ -98,6 +98,7 @@ install="$install xsel" # copy selection in termina to the xorg clipboard (used 
 
 # Er ozn.
 install="$install go@1.17"
+install="$install clickhouse-cpp"
 install="$install libxml2" # provides xmllint
 install="$install redis"
 install="$install vault"
