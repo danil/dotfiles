@@ -8,16 +8,16 @@
 # go install -v github.com/cloudflare/cloudflare-go/cmd/flarectl@v0.12.0 || exit 1 # cloudflare cli `CF_API_EMAIL=your.name@example.org CF_API_KEY=your_api_key flarectl zone dns example.org`
 # go install -v github.com/cortesi/devd/cmd/devd@v0.0.0-20200427000907-c1a3bfba27d8 || exit 1 # local http/webserver for developers `devd --address=0.0.0.0 --livewatch ./`
 # go install -v github.com/dachad/tcpgoon@v0.0.0-20200511183141-945d9f576acb || exit 1 # tcp concurrent connections benchmark
-# go install -v github.com/dotenvgen/dotenvgen/cmd/dotenvgen@v0.0.3 || exit 1 # go code by dotenv generator
+# go install -v github.com/danil/sqlc/cmd/sqlc@v1.13.0 || exit 1 # generate structs and sql by db schema (postgresql, mysql, sqlite, oracle, mssql)
 # go install -v github.com/davecheney/httpstat@v1.0.0 || exit 1 # http statistics (a-la curl --head)
+# go install -v github.com/dotenvgen/dotenvgen/cmd/dotenvgen@v0.0.3 || exit 1 # go code by dotenv generator
+# go install -v github.com/evilsocket/uroboros/cmd/uro@v0.0.0-20211114174251-ddd92f308a42 || exit 1 # single processes monitor tui/readline
 # go install -v github.com/fd0/machma@v0.0.0-20180831184041-8cc009340f18 || exit 1 # parallel cli task execution with each command progress
 # go install -v github.com/github/hub@v2.11.2 || exit 1 # github helper <https://github.com/github/hub>
 # go install -v github.com/go-swagger/go-swagger/cmd/swagger@v0.26.1 || exit 1 # swagger cli validator `swagger validate http://example.org/path/to/swagger.json`
 # go install -v github.com/godoctor/godoctor@v0.0.0-20181123222458-69df17f3a6f6 || exit 1 # build error # used by emacs for variables reanming
 # go install -v github.com/gokcehan/lf@v0.0.0-20200611011140-0e3910652af9 || exit 1 # file manager for the cli/command line/terminal a-la mc (midnight commander)
 # go install -v github.com/golang/mock/mockgen@v1.6.0 || exit 1
-# go install -v github.com/danil/sqlc/cmd/sqlc@v1.13.0 || exit 1 # generate structs and sql by db schema (postgresql, mysql, sqlite, oracle, mssql)
-# go install -v github.com/evilsocket/uroboros/cmd/uro@v0.0.0-20211114174251-ddd92f308a42 || exit 1 # single processes monitor tui/readline
 # go install -v github.com/google/wire/cmd/wire@v0.4.0 || exit 1 # compile/static/generate dj (dependency injection)
 # go install -v github.com/goregrep/goregrep/cmd/goregrep@v0.1.3 || exit 1 # generate structs and sql by db schema (postgresql, mysql, sqlite, oracle, mssql)
 # go install -v github.com/jgrahamc/httpdiff@v1.0.0 || exit 1 # diff http requests <https://github.com/jgrahamc/httpdiff>
@@ -42,12 +42,13 @@
 # go install -v github.com/xo/xo@v0.0.0-20201215055213-6fe83c5f98b3 || exit 1 # generate structs and sql by db schema (postgresql, mysql, sqlite, oracle, mssql)
 # go install -v golang.org/dl/gotip@v0.0.0-20200611200201-72429b14455f || exit 1 # compiles and runs the go command from the development tree <https://godoc.org/golang.org/dl/gotip>
 # go install -v golang.org/x/lint/golint@v0.0.0-20201208152925-83fdc39ff7b5 || exit 1 # classical go linter
+# go install -v golang.org/x/tools/cmd/goimports@v0.1.11 || exit 1 # used by emacs as `gofmt` command replacement for adding/removing go import lines
 # go install -v golang.org/x/tools/cmd/gorename@v0.1.0 || exit 1
 # go install -v golang.org/x/tools/cmd/guru@v0.1.0 || exit 1 # used by emacs
-# go install -v golang.org/x/tools/gopls@v0.6.6 || exit 1 # golang lsp (language server protocol) or GO111MODULE=on go get golang.org/x/tools/gopls@latest
+# go install -v golang.org/x/tools/gopls@v0.6.6 || exit 1 # go lsp (language server protocol) or GO111MODULE=on go get golang.org/x/tools/gopls@latest
+go install -v github.com/daixiang0/gci@v0.7.0  || exit 1 # used by emacs as `gofmt` command replacement instead of `goimports` for adding/removing go import lines
 go install -v github.com/danil/statusline0example/statusline1h28@v0.0.6 || exit 1 # checksum error # a-la slstatus
 go install -v github.com/danil/statusline0example/statusline2h28@v0.0.6 || exit 1 # checksum error # a-la slstatus
-go install -v golang.org/x/tools/cmd/goimports@v0.1.11 || exit 1 # used by emacs as `gofmt` command replacement for adding/removing golang import lines
 go install -v github.com/rogpeppe/godef@v1.1.2 || exit 1 # used by emacs for jump to the definition of the expression at point
 
 # go install -v k8s.io/code-generator/cmd/go-to-protobuf@v0.21.1 || exit 1 # generates a protobuf idl from a go struc
