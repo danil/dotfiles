@@ -5,29 +5,30 @@ install="$install flops-mon-agent"
 install="$install flops-release"
 
 # Common/user space packages.
+# install="$install git" # instead install from homebrew
+# install="$install htop" # instead install from homebrew # a-la top
+# install="$install jq" # instead install from homebrew # json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>
+# install="$install lftp" # instead install from homebrew # ftp client
+# install="$install mosh" # instead install from homebrew # ssh replacement
+# install="$install ncdu" # instead install from homebrew # community/ncdu: diskspace usage is an baobab and gt5 replacement
 # install="$install rpmconf" # Tool to handle rpmnew and rpmsave files
+# install="$install tig" # instead install from homebrew # git interactive cli
+# install="$install zstd" # instead install from homebrew # a-la gz/xz compression
 install="$install bc" # used by bash prompt, console-based calculator utility
-install="$install git"
-install="$install htop"
-install="$install jq" # json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>
-install="$install lftp" # ftp client
 install="$install man"
 install="$install mlocate" # finding files by name
-install="$install mosh" # ssh replacement
-install="$install ncdu" # community/ncdu: diskspace usage is an baobab and gt5 replacement
 install="$install sudo" # super user do
-install="$install tig" # git interactive cli
-install="$install zstd" # a-la gz/xz compression
 
 # install="$install opensmtpd" # send mail via /usr/bin/sendmail and deliver local mail to /var/mail a-la exim
 
 # C/C++ gcc/compiler/make and so on.
 install_pattern="$install_pattern devel_C_C++" # c/c++ gcc/compiler/make and so on
 
-# Tmux (os wide/from source).
-# install="$install tmux" # a-la gnu screen, os wide installation
-install="$install libevent-devel" # tmux compiltime dependencies
-install="$install utempter-devel" # tmux can use the utempter library to update utmp(5)
+# Instead install tmux from homebrew.
+# # Tmux (os wide/from source).
+# # install="$install tmux" # a-la gnu screen, os wide installation
+# install="$install libevent-devel" # tmux compiltime dependencies
+# install="$install utempter-devel" # tmux can use the utempter library to update utmp(5)
 
 # Emacs.
 install="$install libgnutls-devel" # compiltime dependency
@@ -39,25 +40,26 @@ install="$install file"
 install="$install git"
 install="$install procps" # ps utilities for /proc
 
-# The Silver Searcher/ag
-install="$install pcre-devel" # compiltime dependency
-install="$install xz-devel" # lzma.h compiltime dependency
+# Instead install from homebrew.
+# # The silver searcher (ag) <https://github.com/ggreer/the_silver_searcher>.
+# install="$install pcre-devel" # compiltime dependency
+# install="$install xz-devel" # lzma.h compiltime dependency
 
 # Server.
+# install="$install mosh" # instead install from homebrew # mobile shell a-la ssh
+# install="$install pure-ftpd" # instead install from homebrew # because vsftpd is annoying
 install="$install bind" # lookup utility
 install="$install fail2ban"
 install="$install knot" # dns
-install="$install pure-ftpd" # because vsftpd is annoying
-install="$install mosh" # mobile shell a-la ssh
 
 # Nginx.
-install="$install apache2-utils" # provides htpasswd utility is an nginx/apach basic authentication password generator
-install="$install goaccess" # analyze nginx/apache log in real-time
-install="$install nginx"
+# install="$install apache2-utils" # instead install httpd from homebrew # provides htpasswd utility is an nginx/apach basic authentication password generator
+# install="$install goaccess" # analyze nginx/apache log in real-time # FIXME: Install from homebrew.~~~~<danil@kutevich.org>
+# install="$install nginx" # instead install from homebrew # web/http server
 install="$install python3-certbot-nginx" # nginx plugin for let’s encrypt client
 
-# Golang programming language.
-install="$install go1.18"
+# # Golang programming language.
+# install="$install go1.18" # instead install from homebrew
 
 if [ ! -z "$install_pattern" ] && [ "$install_pattern" != " " ]; then
     zypper install --type pattern --no-recommends $install_pattern || exit 1
