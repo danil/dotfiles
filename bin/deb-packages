@@ -6,6 +6,7 @@ disable_command="systemctl disable"
 # TODO: install ntp
 
 # Common packages.
+# install="$install apache2-utils" # instead install httpd from homebrew # provides htpasswd utility is an nginx/apach basic authentication password generator
 # install="$install convmv" # instead install util-linux from homebrew # a-la iconv character encoding conversion util
 # install="$install curl" # instead install from homebrew
 # install="$install dos2unix" # instead install from homebrew # convert text file line endings between CRLF and LF
@@ -17,7 +18,7 @@ disable_command="systemctl disable"
 # install="$install jp2a" # converts jpg to ascii
 # install="$install jq" # instead install from homebrew # json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>
 # install="$install lftp" # instead install from homebrew # ftp client
-# install="$install linux-generic-hwe-20.04-edge" # linxu/kernel 5.11 for ubuntu 20.04 lteinstall="$install apache2-utils" # provides htpasswd utility is an nginx/apach basic authentication password generator
+# install="$install linux-generic-hwe-20.04-edge" # linxu/kernel 5.11 for ubuntu 20.04
 # install="$install mailutils" # instead install from homebrew # is an gnu mailutils, reads local mail, provides /usr/bin/mail
 # install="$install makepasswd" # password generator
 # install="$install mosh" # instead install from homebrew # ssh replacement
@@ -88,7 +89,7 @@ install="$install libgnutls28-dev" # compiltime dependency <https://stackoverflo
 # install="$install apt-transport-https ca-certificates curl gnupg gnupg-agent lsb-release software-properties-common" # required by docker ppa <https://docs.docker.com/install/linux/docker-ce/ubuntu>
 
 # Instead install from homebrew.
-# The silver searcher (ag) <https://github.com/ggreer/the_silver_searcher>
+# The silver searcher (ag) <https://github.com/ggreer/the_silver_searcher>.
 # install="$install silversearcher-ag" # installing from source into ~/.local/bin
 # install="$install automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev" # compiltime dependencies <https://github.com/ggreer/the_silver_searcher#building-from-source>
 
