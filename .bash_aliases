@@ -84,7 +84,7 @@ if [ -x "$(command -v basher)" ]; then
     eval "$(basher init - bash)"
 fi
 
-# Homebrew
+# Homebrew <https://brew.sh>.
 [ -f /home/linuxbrew/.linuxbrew/bin/brew ] && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 export PATH=/home/linuxbrew/.linuxbrew/bin:"$PATH"
 
