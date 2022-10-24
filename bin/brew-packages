@@ -59,8 +59,8 @@ install="$install shellcheck" # used by emacs flycheck
 # install="$install docker-machine" # provides docker daemon
 
 # Golang programming language.
+install="$install go"
 install="$install gcc@5" # <https://stackoverflow.com/questions/59227456/go-1-13-gcc-5-not-in-path#62795608>
-install="$install go@1.18"
 install="$install golangci-lint" # used by emacs a-la gometalinter
 install="$install scc" # a-la sloc/cloc
 
@@ -99,7 +99,7 @@ install="$install xdotool" # ???
 install="$install xsel" # copy selection in termina to the xorg clipboard (used by emacs and urxvt) <https://wiki.archlinux.org/index.php/rxvt-unicode#Automatic_Script_Management>
 
 # Er ozn.
-install="$install go@1.17"
+install="$install go@1.19"
 install="$install libxml2" # provides xmllint
 install="$install redis"
 install="$install vault"
