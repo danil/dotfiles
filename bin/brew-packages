@@ -20,6 +20,7 @@ install="$install gmailctl" # gmail filters generation
 install="$install grpcurl" # gRPC cli a-la curl https://github.com/fullstorydev/grpcurl
 install="$install htop" # a-la top
 install="$install jq" # json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>
+install="$install jsonnet" # https://github.com/google/jsonnet
 install="$install k9s" # derailed/k9s/k9s:, k8s/kubernetes cli <https://github.com/derailed/k9s>
 install="$install kubernetes-cli" # provides k8s kubectl
 install="$install lftp" # ftp client
