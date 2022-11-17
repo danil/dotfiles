@@ -41,6 +41,7 @@ set wildmode=list:longest
 call plug#begin('~/.vim/plugged')
 
   Plug 'dense-analysis/ale'
+  Plug 'jlanzarotta/bufexplorer'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
 
