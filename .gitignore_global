@@ -3,6 +3,7 @@
 *.a
 *.cache
 *.elc
+*.swo
 *.swp
 *.test
 *~
