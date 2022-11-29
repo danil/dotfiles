@@ -18,19 +18,15 @@ install="$install fdupes" # identify or delete duplicate files https://github.co
 install="$install fish" # fish shell
 install="$install git"
 install="$install gmailctl" # gmail filters generation
-install="$install grpcurl" # gRPC cli a-la curl https://github.com/fullstorydev/grpcurl
 install="$install htop" # a-la top
 install="$install jq" # json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>
 install="$install jsonnet" # https://github.com/google/jsonnet
 install="$install k9s" # derailed/k9s/k9s:, k8s/kubernetes cli <https://github.com/derailed/k9s>
 install="$install kubernetes-cli" # provides k8s kubectl
-install="$install lftp" # ftp client
 install="$install mailutils" # is an gnu mailutils, reads local mail, provides /usr/bin/mail
-install="$install mosh" # ssh replacement
 install="$install ncdu" # disk space usage is an baobab and gt5 replacement
 install="$install pwgen" # password generator
 install="$install ripgrep" # rg a-la ag <https://github.com/BurntSushi/ripgrep>
-install="$install syncthing" # dropbox replacement: deb https://apt.syncthing.net/ syncthing release
 install="$install the_platinum_searcher" # pt a-la ag <https://github.com/monochromegane/the_platinum_searcher>
 install="$install the_silver_searcher" # ag <https://github.com/ggreer/the_silver_searcher>
 install="$install tig" # git interactive cli
@@ -40,6 +36,12 @@ install="$install uni2ascii" # to/from unicode and to/from percent-encoding conv
 install="$install util-linux" # provides uni2ascii: to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`
 install="$install vim" # vim is awesome, neovim is sucks
 install="$install whois"
+
+# Network.
+install="$install grpcurl" # gRPC cli a-la curl https://github.com/fullstorydev/grpcurl
+install="$install lftp" # ftp client
+install="$install mosh" # ssh replacement
+install="$install syncthing" # dropbox replacement: deb https://apt.syncthing.net/ syncthing release
 
 # Terminal emulators.
 addrepo="$addrepo wez/wezterm-linuxbrew"
