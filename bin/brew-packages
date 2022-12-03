@@ -38,7 +38,7 @@ install="$install vim" # vim is awesome, neovim is sucks
 install="$install whois"
 
 # Network.
-install="$install freerdp" # remote desktop protocol for win https://github.com/freerdp/freerdp
+install="$install freerdp" # xfreerdp is a remote desktop protocol for win https://github.com/freerdp/freerdp
 install="$install grpcurl" # gRPC cli a-la curl https://github.com/fullstorydev/grpcurl
 install="$install lftp" # ftp client
 install="$install mosh" # ssh replacement
