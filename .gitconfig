@@ -35,28 +35,19 @@
 [url "git@github.com:danil/"]
 	insteadOf = https://github.com/danil/
 
-[url "git@github.com:danil/rktgorm.git"]
-	insteadOf = https://github.com/danil/rktgorm
-
-[url "git@gitlab.com:brokerhub/"]
-	insteadOf = https://gitlab.com/brokerhub/
-
-[includeIf "gitdir:~/src/vendor/ozon/"]
-  path = ~/.gitconfig-ozon
-
-[url "git@gitlab.ozon.ru:"]
-	insteadOf = https://gitlab.ozon.ru/
-
-[url "git@gitlab.ozon.ru:/payfacade/libs/auth"]
-	insteadOf = https://gitlab.ozon.ru/payfacade/libs/auth/auth
-
 # <https://git-scm.com/docs/git-config#Documentation/git-config.txt-codegitdircode>.
 
+[include]
+  path = ~/.gitconfig.ozn
+
 [includeIf "gitdir:~/**vendor/ozn/"]
-  path = ~/.gitconfig-ozn
+  path = ~/.gitconfig.ozn.local
 
-# [includeIf "gitdir:~/**vendor/rkt/"]
-#   path = ~/.gitconfig-rkt
+# [include]
+#   path = ~/.gitconfig.bro
 
-# [includeIf "gitdir:~/**vendor/a5g/"]
-#   path = ~/.gitconfig-a5g
+# [include]
+#   path = ~/.gitconfig.rkt
+
+# [include]
+#   path = ~/.gitconfig.a5g
