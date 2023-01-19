@@ -82,7 +82,7 @@ GEM
       descendants_tracker (~> 0.0.1)
     colorator (1.1.0)
     colorize (0.8.1)
-    concurrent-ruby (1.1.9)
+    concurrent-ruby (1.1.10)
     crass (1.0.6)
     daemons (1.4.0)
     descendants_tracker (0.0.4)
@@ -114,7 +114,7 @@ GEM
     gem-ripper-tags (1.0.6)
       ripper-tags (>= 0.1.2)
     geokit (1.13.1)
-    globalid (0.5.2)
+    globalid (1.0.1)
       activesupport (>= 5.0)
     google-protobuf (3.17.3)
     grpc-tools (1.38.0)
@@ -136,7 +136,7 @@ GEM
     http_parser.rb (0.6.0)
     htty (1.5.7)
       mime-types (~> 1)
-    i18n (1.8.10)
+    i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
     jekyll (4.2.0)
@@ -200,7 +200,7 @@ GEM
     mime-types (1.25.1)
     mini_mime (1.1.0)
     mini_portile2 (2.6.1)
-    minitest (5.14.4)
+    minitest (5.17.0)
     mixlib-cli (2.1.8)
     mixlib-config (3.0.9)
       tomlrb
@@ -416,7 +416,7 @@ GEM
       multipart-post (~> 2.0)
       naught (~> 1.0)
       simple_oauth (~> 0.3.0)
-    tzinfo (2.0.4)
+    tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
     unf (0.1.4)
       unf_ext
@@ -430,7 +430,7 @@ GEM
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
-    zeitwerk (2.4.2)
+    zeitwerk (2.6.6)
 
 PLATFORMS
   ruby
