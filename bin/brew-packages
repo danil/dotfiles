@@ -96,6 +96,11 @@ install="$install postgresql" # rdbms <https://wiki.postgresql.org/wiki/Homebrew
 # install="$install mysql" # rdbms
 # install="$install vitess" # clustering system for horizontal scaling
 
+# # Manticore Search is a
+# # High performance low resource consumption database for search written in C++.
+# install="$install manticoresoftware/manticore/manticoresearch"
+# install="$install manticoresoftware/manticore/manticore-extra"
+
 # X11/xorg/desktop.
 # install="$install duplicity" # backuping
 install="$install feh" # command line image viewer
