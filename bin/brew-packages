@@ -54,7 +54,9 @@ install="$install zstd" # a-la gz/xz compression, required by gcc, curl, git, gn
 
 # Vim.
 install="$install vim" # vim is awesome, neovim is sucks
-install="$install fzf" # fuzzy finder
+install="$install fzf" # fuzzy finder https://github.com/junegunn/fzf
+install="$install fzy" # fuzzy finder https://github.com/jhawthorn/fzy
+install="$install sk" # fuzzy finder https://github.com/lotabout/skim
 
 # Emacs.
 # install="$install emacs"
