@@ -1,5 +1,6 @@
 #!/bin/sh
 
+install="$install org.flameshot.Flameshot"
 install="$install org.gimp.GIMP"
 
 if [ ! -z "$install" ] && [ "$install" != " " ]; then
