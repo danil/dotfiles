@@ -163,6 +163,7 @@ install="$install valgrind" # find memory leaks https://www.valgrind.org/docs/ma
 # install="$install fonts-fantasque-sans" # instead install manually into /usr/local/share/fonts # terminal/code/mono/programming font (gnome-terminal issue https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=960629)
 # install="$install fonts-hack-ttf" # instead install manually into /usr/local/share/fonts # terminal/code/mono/programming font
 # install="$install fonts-noto" # awesome serif font ???
+# install="$install gimp" # instead install from flatpak # a-la photoshop
 # install="$install libappindicator3-1" # slack dependency # libayatana-appindicator3-1 : Conflicts: libappindicator3-1 but 12.10.1+20.10.20200706.1-0ubuntu1 is to be installed
 # install="$install mpv" # instead install from homebrew # a-la mplayer replacement
 # install="$install pk-update-icon" # FIXME: missing? # display notifications about software updates
@@ -174,7 +175,6 @@ install="$install valgrind" # find memory leaks https://www.valgrind.org/docs/ma
 install="$install argyll" # load icc/icm display color profiles <https://wiki.archlinux.org/index.php/ICC_Profiles#Argyll_CMS>
 install="$install blueman" # full featured bluetooth manager gui <https://wiki.archlinux.org/title/Blueman>, <https://wiki.archlinux.org/title/Bluetooth>
 install="$install firefox" # works normal with graylog's text box (input box), text field (input field)
-install="$install gimp" # a-la photoshop
 install="$install gparted" # format/create partition/disk/usb
 install="$install libfuse2" # pcloud dependency
 install="$install libnotify-bin" # a-la notify-osd
