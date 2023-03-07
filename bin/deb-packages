@@ -37,6 +37,7 @@ disable_command="systemctl disable"
 install="$install apt-transport-https" # required by custom ppa
 install="$install bc" # used by bash prompt, console-based calculator utility
 install="$install bind9-host" # automatic/dependency: dns/host lookup utility
+install="$install flatpak" # PMS
 install="$install genius" # calculator
 install="$install libpci-dev libnl-3-dev libnl-genl-3-dev gettext libgettextpo-dev autopoint gettext libncurses5-dev libncursesw5-dev libtool-bin dh-autoreconf autoconf-archive pkg-config" # powertop diagnose power consumption https://github.com/fenrus75/powertop#build-dependencies
 install="$install lm-sensors" # FIXME: is the cpu temperate by ls sensors used by plain status or by slstatus?
