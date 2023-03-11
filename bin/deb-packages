@@ -159,7 +159,7 @@ install="$install valgrind" # find memory leaks https://www.valgrind.org/docs/ma
 # X11/xorg/desktop.
 # install="$install duplicity" # instead install from homebrew # backuping
 # install="$install feh" # instead install from homebrew # command line image viewer
-# install="$install firefox" # instead install from flatpak # works normal with graylog's text box (input box), text field (input field)
+# install="$install firefox" # instead install from snap # works normal with graylog's text box (input box), text field (input field)
 # install="$install font-manager" # list bitmap ??? fonts
 # install="$install fonts-fantasque-sans" # instead install manually into /usr/local/share/fonts # terminal/code/mono/programming font (gnome-terminal issue https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=960629)
 # install="$install fonts-hack-ttf" # instead install manually into /usr/local/share/fonts # terminal/code/mono/programming font
