@@ -25,6 +25,7 @@ install="$install k9s" # derailed/k9s/k9s:, k8s/kubernetes cli <https://github.c
 install="$install kubernetes-cli" # provides k8s kubectl
 install="$install mailutils" # is an gnu mailutils, reads local mail, provides /usr/bin/mail
 install="$install ncdu" # disk space usage is an baobab and gt5 replacement
+install="$install ninja" # a-la make build automation system
 install="$install pwgen" # password generator
 install="$install ripgrep" # rg a-la ag <https://github.com/BurntSushi/ripgrep>
 install="$install the_platinum_searcher" # pt a-la ag <https://github.com/monochromegane/the_platinum_searcher>
