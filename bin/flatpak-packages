@@ -3,7 +3,7 @@
 install="$install org.flameshot.Flameshot" # screen shot util https://github.com/flameshot-org/flameshot
 install="$install org.gimp.GIMP"
 # install="$install com.google.Chrome"
-install="$install org.mozilla.firefox"
+# install="$install org.mozilla.firefox"
 
 if [ ! -z "$install" ] && [ "$install" != " " ]; then
     flatpak install --verbose flathub $install || exit 1
