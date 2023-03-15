@@ -6,12 +6,12 @@
 # install="$install goaccess" # analyze apache/nginx log in real-time
 # install="$install grpc" # ?????????? gRPC cli a-la curl https://github.com/grpc/grpc/blob/master/doc/command_line_tool.md
 # install="$install hping" # hping3 a-la interactive ping https://github.com/antirez/hping
-# install="$install lua" # newer than apt version of the lua programming language https://github.com/lua/lua
 # install="$install nnn" # terminal file manager a-la mc/midnight commander https://github.com/jarun/nnn
 # install="$install pigz" # parallel gzip for multi-processor, multi-core
 install="$install awscli" # `aws --version` # s3 command line client # default amazon aws ec2 client <https://github.com/aws/aws-cli>.
 install="$install bash-completion"
 install="$install convmv" # a-la iconv character encoding conversion util
+install="$install csvkit" # conver csv to json `csvjson path/to/file.csv`
 install="$install dos2unix" # convert text file line endings between CRLF and LF
 install="$install fd" # find replacement https://github.com/sharkdp/fd
 install="$install fdupes" # identify or delete duplicate files https://github.com/adrianlopezroche/fdupes (used by emacs package https://github.com/ShuguangSun/find-dupes-dired)
@@ -23,6 +23,7 @@ install="$install jq" # json console formater (used by emacs counsel-jq) <http:/
 install="$install jsonnet" # https://github.com/google/jsonnet
 install="$install k9s" # derailed/k9s/k9s:, k8s/kubernetes cli <https://github.com/derailed/k9s>
 install="$install kubernetes-cli" # provides k8s kubectl
+install="$install lua" # newer than apt version # the lua programming language https://github.com/lua/lua
 install="$install mailutils" # is an gnu mailutils, reads local mail, provides /usr/bin/mail
 install="$install ncdu" # disk space usage is an baobab and gt5 replacement
 install="$install ninja" # a-la make build automation system
@@ -64,6 +65,7 @@ install="$install sk" # fuzzy finder https://github.com/lotabout/skim
 # install="$install emacs"
 install="$install markdownlint-cli" # used/required used by emacs flycheck
 install="$install shellcheck" # used by emacs flycheck
+install="$install sql-lint" # used by emacs flycheck
 
 # # Docker.
 # install="$install docker"
