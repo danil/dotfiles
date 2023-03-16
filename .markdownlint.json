@@ -27,5 +27,7 @@
     "MD041": false,
     "MD046": "code-block-style",
     "MD046": "{\"style\":\"consistent\"}",
-    "MD046": false
+    "MD046": false,
+    "MD050": "strong-style",
+    "MD050": false
 }
