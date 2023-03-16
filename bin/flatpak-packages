@@ -2,6 +2,7 @@
 
 install="$install org.flameshot.Flameshot" # screen shot util https://github.com/flameshot-org/flameshot
 install="$install org.gimp.GIMP" # https://github.com/gnome/gimp
+install="$install us.zoom.Zoom" # video chat
 # install="$install com.google.Chrome"
 # install="$install org.mozilla.firefox"
 
