@@ -332,9 +332,9 @@ install="$install libxcb-xtest0"
 # install="$install libxfixes-dev"
 # install="$install libxmu-dev"
 
-# Google chrome <https://www.google.com/chrome>.
-install="$install apt-transport-https"
-install="$install google-chrome-stable"
+# # Google chrome <https://www.google.com/chrome>.
+# install="$install apt-transport-https"
+# install="$install google-chrome-stable" # instead install from flatpak
 
 # # never used Brave browser a-la google chrome <https://github.com/brave>.
 # install="$install apt-transport-https"
