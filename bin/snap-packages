@@ -3,11 +3,11 @@
 install_command="snap install"
 
 # X11/xorg/desktop.
+# install="$install firefox" # instead install from flatpak
 # install="$install flameshot" # https://github.com/flameshot-org/flameshot
 # install="$install tusk" # evernote desktop client (javascript)
 # install_classic="$install_classic intellij-idea-ultimate"
 install_classic="$install_classic mattermost-desktop"
-install="$install firefox"
 install="$install mailspring" # GUI mail client written in C/C++
 install="$install slack"
 install="$install telegram-desktop"
