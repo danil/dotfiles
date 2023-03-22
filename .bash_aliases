@@ -73,6 +73,8 @@ export PKG_CONFIG_PATH="$PKG_CONFIG_PATH":/usr/lib/pkgconfig
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH":/usr/lib/x86_64-linux-gnu/pkgconfig
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH":/usr/share/pkgconfig
 
+export CHROME_PATH="${CHROME_PATH:-/home/danil/bin/chrome}"
+
 # bc calculator
 # <https://askubuntu.com/questions/621017/how-to-set-default-scale-for-bc-calculator#939407>.
 export BC_ENV_ARGS=/home/danil/.bc
