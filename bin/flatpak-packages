@@ -2,6 +2,7 @@
 
 install="$install com.github.tchx84.Flatseal" # Is a GUI permissions manager which offers simple point-and-click permissions operations.
 install="$install com.google.Chrome" # browser
+install="$install com.mattermost.Desktop" # group chat inspired by slack
 install="$install com.skype.Client" # video chat
 install="$install org.flameshot.Flameshot" # screen shot util https://github.com/flameshot-org/flameshot
 install="$install org.gimp.GIMP" # https://github.com/gnome/gimp
