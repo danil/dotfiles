@@ -281,13 +281,13 @@ install="$install mkusb usb-pack-efi" # create bootable/live usb/iso <https://he
 # remove="$remove nautilus-dropbox" # conflicts with dropbox deb file
 
 # Gnome.
+# install="$install atril" # instead install from snap # pdf viewer (remembers last page) for mate de (desktop environment) https://github.com/mate-desktop/atril
 # install="$install chrome-gnome-shell" # chrome/gnome extension integration
 # install="$install gnome-shell-extension-appindicator-" remove
 # install="$install gnome-shell-extension-impatience" # speed up the gnome-shell animation speed
 # install="$install gnome-shell-extension-move-clock" # move clock extension for GNOME shell
 # install="$install gnome-shell-extension-ubuntu-dock-" # remove
 # install="$install ubuntu-desktop-" # remove
-install="$install atril" # pdf viewer remembers last page https://github.com/mate-desktop/atril
 install="$install evince-" # remove: pdf viewer remembers last page https://github.com/mate-desktop/atril
 install="$install gnome-tweaks" # former gnome-tweak-tool (in addition to gnome-control-center)
 
