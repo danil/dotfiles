@@ -103,7 +103,7 @@ install="$install postgresql" # rdbms <https://wiki.postgresql.org/wiki/Homebrew
 
 # MySQL.
 # install="$install mysql" # rdbms
-# install="$install vitess" # clustering system for horizontal scaling
+install="$install vitess" # horizontal scaled clustering <https://vitess.io/docs/contributing/build-on-macos>, <https://github.com/vitessio/vitess>, <https://en.wikipedia.org/wiki/Shard_(database_architecture)>
 
 # # Manticore Search is a
 # # High performance low resource consumption database for search written in C++.
