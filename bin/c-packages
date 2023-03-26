@@ -1,6 +1,8 @@
-#!/bin/bash
+#!/bin/sh
 
-packages="$packages clibs/clib-uninstall" #unistall bpkg package
-packages="$packages clibs/clib-validate" #validate a package.json
+install="$install clibs/clib-uninstall" # unistall bpkg package
+install="$install clibs/clib-validate" # validate a package.json
 
-PREFIX=$HOME clib install $packages
+if [ ! -z "$install" ] && [ "$install" != " " ]; then
+    PREFIX=$HOME clib install "$install" # https://github.com/clibs/clib
+fi
