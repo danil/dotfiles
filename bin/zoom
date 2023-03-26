@@ -1,3 +1,5 @@
 #!/bin/sh
 
-flatpak run us.zoom.Zoom "$@"
+. bin.sh
+
+QT_SCALE_FACTOR=2 "$LOCALBINDIR"/zoom "$@"

@@ -1,3 +1,5 @@
 #!/bin/sh
 
-flatpak run org.mozilla.firefox "$@"
+. bin.sh
+
+"$LOCALBINDIR"/firefox "$@"

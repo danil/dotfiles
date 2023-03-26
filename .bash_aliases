@@ -52,16 +52,16 @@ alias ls='ls --color'
 # alias less=$PAGER
 alias ag='ag --width=5000'
 
-export PATH="$HOME"/.cask/bin:"$PATH" #emacs cask <http://cask.github.io>
-export PATH="$HOME"/deps/bin:"$PATH" #bpkg bash package manager <https://github.com/bpkg/bpkg#installing-packages> run `bash-install-all`
-export PATH="$HOME"/bin:"$PATH" #clib c package manager installs here <https://github.com/clibs/clib> run `c-install-all`
-export PATH="$HOME"/sbin:"$PATH"
 export PATH="$HOME"/.local/bin:"$PATH" #tmux make installs here and pip (python package management system) run `python-install-all`
 export PATH="$HOME"/.local/sbin:"$PATH"
 export PATH="$HOME"/.local/usr/bin:"$PATH" #xxkb make installs here
 export PATH="$HOME"/.local/usr/sbin:"$PATH" #powertop make installs here
 export PATH="$HOME"/.local/usr/local/bin:"$PATH" #dwm make installs here
 export PATH="$HOME"/.local/usr/local/sbin:"$PATH" #dwm make installs here
+export PATH="$HOME"/sbin:"$PATH"
+export PATH="$HOME"/bin:"$PATH" #clib c package manager installs here <https://github.com/clibs/clib> run `c-install-all`
+export PATH="$HOME"/deps/bin:"$PATH" #bpkg bash package manager <https://github.com/bpkg/bpkg#installing-packages> run `bash-install-all`
+export PATH="$HOME"/.cask/bin:"$PATH" #emacs cask <http://cask.github.io>
 
 export MANPATH="$HOME"/.local/usr/share/man:"$MANPATH"
 export MANPATH="$HOME"/.local/usr/local/share/man:"$MANPATH"

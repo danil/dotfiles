@@ -1,13 +1,13 @@
 #!/bin/sh
 
+# install="$install com.google.Chrome" # instead install from appimage # browser
+# install="$install com.mattermost.Desktop" # instead install from appimage # group chat inspired by slack
+# install="$install com.skype.Client" # instead install from appimage # video chat
+# install="$install org.flameshot.Flameshot" # instead install from appimage # screen shot util https://github.com/flameshot-org/flameshot
+# install="$install org.gimp.GIMP" # instead install from appimage # raster graphics editor <https://github.com/gnome/gimp>
+# install="$install org.mozilla.firefox" # instead install from appimage # browser
+# install="$install us.zoom.Zoom" # instead install from appimage # video chat
 install="$install com.github.tchx84.Flatseal" # Is a GUI permissions manager which offers simple point-and-click permissions operations.
-install="$install com.google.Chrome" # browser
-install="$install com.mattermost.Desktop" # group chat inspired by slack
-install="$install com.skype.Client" # video chat
-install="$install org.flameshot.Flameshot" # screen shot util https://github.com/flameshot-org/flameshot
-install="$install org.gimp.GIMP" # https://github.com/gnome/gimp
-install="$install org.mozilla.firefox" # browser
-install="$install us.zoom.Zoom" # video chat
 
 if [ ! -z "$install" ] && [ "$install" != " " ]; then
     flatpak install --verbose flathub $install || exit 1

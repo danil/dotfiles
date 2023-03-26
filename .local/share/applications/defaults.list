@@ -2,7 +2,7 @@
 # <https://wiki.archlinux.org/index.php/Xdg-open>,
 # <https://bugs.launchpad.net/ubuntu/+source/gvfs/+bug/739790>.
 [Default Applications]
-text/html=com.google.Chrome.desktop
+text/html=chrome.desktop
 application/x-trash=nautilus.desktop
 x-scheme-handler/trash=nautilus.desktop
 application/pdf=evince.desktop

@@ -1,3 +1,5 @@
 #!/bin/sh
 
-flatpak run com.google.Chrome --force-dark-mode --password-store=gnome "$@"
+. bin.sh
+
+"$LOCALBINDIR"/google-chrome --force-dark-mode --password-store=gnome "$@"
