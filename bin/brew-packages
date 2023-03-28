@@ -10,6 +10,7 @@
 # install="$install pigz" # parallel gzip for multi-processor, multi-core
 install="$install awscli" # `aws --version` # s3 command line client # default amazon aws ec2 client <https://github.com/aws/aws-cli>.
 install="$install bash-completion"
+install="$install btop" # a-la htop
 install="$install convmv" # a-la iconv character encoding conversion util
 install="$install csvkit" # conver csv to json `csvjson path/to/file.csv` <https://github.com/wireservice/csvkit/blob/master/docs/scripts/csvjson.rst>
 install="$install dos2unix" # convert text file line endings between CRLF and LF
