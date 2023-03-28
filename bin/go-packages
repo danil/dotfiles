@@ -50,6 +50,7 @@ go install -v github.com/daixiang0/gci@v0.7.0  || exit 1 # used by emacs as `gof
 go install -v github.com/danil/statusline0example/statusline1h28@v0.0.6 || exit 1 # checksum error # a-la slstatus
 go install -v github.com/danil/statusline0example/statusline2h28@v0.0.6 || exit 1 # checksum error # a-la slstatus
 go install -v github.com/rogpeppe/godef@v1.1.2 || exit 1 # used by emacs for jump to the definition of the expression at point
+go install -v golang.org/x/tools/cmd/gotype@v0.7.0 # syntactic and semantic analysis similar to the go compiler <https://pkg.go.dev/gopkg.in/dnephin/gometalinter.v1#section-readme>, <https://pkg.go.dev/golang.org/x/tools/cmd/gotype?utm_source=godoc>
 
 # go install -v k8s.io/code-generator/cmd/go-to-protobuf@v0.21.1 || exit 1 # generates a protobuf idl from a go struc
 # go install -v github.com/gojuno/minimock/v3/cmd/minimock@v3.0.10 || exit 1
