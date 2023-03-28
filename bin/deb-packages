@@ -291,26 +291,26 @@ install="$install mkusb usb-pack-efi" # create bootable/live usb/iso <https://he
 install="$install evince-" # remove: pdf viewer remembers last page https://github.com/mate-desktop/atril
 install="$install gnome-tweaks" # former gnome-tweak-tool (in addition to gnome-control-center)
 
-# Zoom dependencies. Instead installed by the appimage.
-install="$install libegl1-mesa"
-install="$install libglib2.0-0"
-install="$install libgstreamer-plugins-base1.0-0"
-install="$install libxcb-shape0"
-install="$install libxcb-shm0"
-install="$install libxcb-xfixes0"
-install="$install libxcb-randr0"
-install="$install libxcb-image0"
-install="$install libfontconfig1"
-install="$install libgl1-mesa-glx"
-install="$install libxi6"
-install="$install libsm6"
-install="$install libxrender1"
-install="$install libpulse0"
-install="$install libxcomposite1"
-install="$install libxslt1.1"
-install="$install libsqlite3-0"
-install="$install libxcb-keysyms1"
-install="$install libxcb-xtest0"
+# Zoom instead installed by the appimage. # Zoom dependencies.
+# install="$install libegl1-mesa"
+# install="$install libglib2.0-0"
+# install="$install libgstreamer-plugins-base1.0-0"
+# install="$install libxcb-shape0"
+# install="$install libxcb-shm0"
+# install="$install libxcb-xfixes0"
+# install="$install libxcb-randr0"
+# install="$install libxcb-image0"
+# install="$install libfontconfig1"
+# install="$install libgl1-mesa-glx"
+# install="$install libxi6"
+# install="$install libsm6"
+# install="$install libxrender1"
+# install="$install libpulse0"
+# install="$install libxcomposite1"
+# install="$install libxslt1.1"
+# install="$install libsqlite3-0"
+# install="$install libxcb-keysyms1"
+# install="$install libxcb-xtest0"
 
 # # Elasticsearch <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>.
 # install="$install elasticsearch" # felix `deb https://artifacts.elastic.co/packages/5.x/apt stable main` elasticsearch 5 <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>, # apt-transport-https required by elasticsearch ppa <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#deb-repo>
