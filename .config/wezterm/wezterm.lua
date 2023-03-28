@@ -28,7 +28,7 @@ return {
 
   default_cursor_style = 'BlinkingBlock',
   cursor_blink_ease_in = "Constant",
-  cursor_blink_rate = 150,
+  cursor_blink_rate = 400,
 
   window_padding = {
     left = 0,
