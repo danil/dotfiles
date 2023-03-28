@@ -1,6 +1,6 @@
 module github.com/danil/dotfiles
 
-go 1.16
+go 1.19
 
 require (
 	bou.ke/monkey v1.0.2 // indirect
@@ -28,4 +28,5 @@ require (
 	gitlab.ozon.ru/platform/scratch/cmd/scratch v1.10.17 // indirect
 	gitlab.ozon.ru/platform/tracer v0.1.0 // indirect
 	gitlab.ozon.ru/platform/version-go v1.0.2 // indirect
+	golang.org/x/sys v0.0.0-20220715151400-c0bba94af5f8 // indirect
 )
