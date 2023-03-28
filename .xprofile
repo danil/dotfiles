@@ -27,6 +27,9 @@ fi
 
 export LANG="en_US.UTF-8"
 
+# DPI scale <https://wiki.archlinux.org/title/HiDPI>.
+export QT_SCALE_FACTOR=2
+
 # # X11 scale <https://wiki.archlinux.org/title/HiDPI>.
 # # # determine output: xrandr | grep "connected primary"
 # # xrandr --output eDP-1 --scale 0.5x0.5 # blurry/ugly fonts with scale 0.5x0.5
