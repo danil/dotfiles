@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # install="$install am" # annoying root requirement # appimage application manager <https://github.com/ivan-hc/am-application-manager> that <https://github.com/ivan-hc/appman> is based on
+# install="$install wezterm" # GPU-accelerated cross-platform terminal and multiplexer written in Rust `brew tap wez/wezterm-linuxbrew && brew install wezterm` <https://github.com/wez/wezterm>.
 install="$install firefox" # browser
 install="$install flameshot" # screen shot util https://github.com/flameshot-org/flameshot
 install="$install gimp" # raster graphics editor <https://github.com/gnome/gimp>
