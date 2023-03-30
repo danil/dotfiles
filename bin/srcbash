@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Bash package manager <https://github.com/bpkg/bpkg>.
+
 # packages="$packages sstephenson/bats" #bash automated testing system <https://github.com/sstephenson/bats>
 packages="$packages bpkg/sha1dir" #get the sha1 of a directory
 packages="$packages rauchg/spot" #file search utility <https://github.com/rauchg/spot>
