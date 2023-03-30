@@ -5,7 +5,7 @@
 
 command="basher install"
 
-# packages="$packages ???"
+packages="$packages dylanaraps/neofetch"
 
 for package in $packages; do
     $command $package
