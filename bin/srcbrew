@@ -102,9 +102,13 @@ install="$install httpd" # provides htpasswd utility is an nginx/apach basic aut
 # PostgreSQL.
 install="$install postgresql" # rdbms <https://wiki.postgresql.org/wiki/Homebrew>
 
-# MySQL.
+# MySQL Vitess.
 # install="$install mysql" # rdbms
 install="$install vitess" # horizontal scaled clustering <https://vitess.io/docs/contributing/build-on-macos>, <https://github.com/vitessio/vitess>, <https://en.wikipedia.org/wiki/Shard_(database_architecture)>
+
+# MongoDB.
+addrepo="$addrepo mongodb/brew"
+install="$install mongodb-community"
 
 # # Manticore Search is a
 # # High performance low resource consumption database for search written in C++.
