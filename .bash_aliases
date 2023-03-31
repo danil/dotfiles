@@ -1,4 +1,4 @@
-# This file is part of Danil Kutkevich <danil@kutkevich.ru> home.
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
