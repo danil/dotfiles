@@ -81,8 +81,8 @@ export BC_ENV_ARGS=/home/danil/.bc
 
 # Basher is a bash/shell/functions package manager
 # <https://github.com/basherpm/basher>.
+export PATH="$HOME"/.basher/bin:"$PATH"
 if [ -x "$(command -v basher)" ]; then
-    export PATH="$HOME"/.basher/bin:"$PATH"
     eval "$(basher init - bash)"
 fi
 
