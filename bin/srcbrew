@@ -18,13 +18,9 @@ install="$install fd" # find replacement https://github.com/sharkdp/fd
 install="$install fdupes" # identify or delete duplicate files https://github.com/adrianlopezroche/fdupes (used by emacs package https://github.com/ShuguangSun/find-dupes-dired)
 install="$install fish" # fish shell
 install="$install git"
-install="$install gmailctl" # gmail filters generation
 install="$install htop" # a-la top
 install="$install jq" # json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>
 install="$install jsonnet" # https://github.com/google/jsonnet
-install="$install k9s" # derailed/k9s/k9s:, k8s/kubernetes cli <https://github.com/derailed/k9s>
-install="$install kubernetes-cli" # provides k8s kubectl
-install="$install lua" # newer than apt version # the lua programming language https://github.com/lua/lua
 install="$install mailutils" # is an gnu mailutils, reads local mail, provides /usr/bin/mail
 install="$install ncdu" # disk space usage is an baobab and gt5 replacement
 install="$install ninja" # a-la make build automation system
@@ -36,26 +32,27 @@ install="$install tig" # git interactive cli
 install="$install tree" # displays an indented directory tree
 install="$install uni2ascii" # to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`
 install="$install util-linux" # provides uni2ascii: to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`
-install="$install whois"
 
-# Network.
-install="$install awscli" # `aws --version` # s3 command line client # default amazon aws ec2 client <https://github.com/aws/aws-cli>.
-install="$install freerdp" # xfreerdp is a remote desktop protocol for win https://github.com/freerdp/freerdp
-install="$install grpcurl" # gRPC cli a-la curl https://github.com/fullstorydev/grpcurl
-install="$install lftp" # ftp client
-install="$install mosh" # ssh replacement
-install="$install syncthing" # dropbox replacement: deb https://apt.syncthing.net/ syncthing release
-install="$install wget" # a-la curl
+# Data compression algorithms.
+install="$install lz4" # a-la gz/xz compression, required by gnupg, ffmpeg and mpv
+install="$install snappy" # a-la gz/xz compression, required by ffmpeg and mpv
+install="$install zstd" # a-la gz/xz compression, required by gcc, curl, git, gnupg, rust, node, ffmpeg, mpv and feh
 
 # Terminal emulator/multiplexer.
 addrepo="$addrepo wez/wezterm-linuxbrew"
 install="$install tmux" # a-la gnu screen
 install="$install wezterm"
 
-# Data compression algorithms.
-install="$install lz4" # a-la gz/xz compression, required by gnupg, ffmpeg and mpv
-install="$install snappy" # a-la gz/xz compression, required by ffmpeg and mpv
-install="$install zstd" # a-la gz/xz compression, required by gcc, curl, git, gnupg, rust, node, ffmpeg, mpv and feh
+# Network.
+install="$install awscli" # `aws --version` # s3 command line client # default amazon aws ec2 client <https://github.com/aws/aws-cli>.
+install="$install freerdp" # xfreerdp is a remote desktop protocol for win https://github.com/freerdp/freerdp
+install="$install gmailctl" # gmail filters generation
+install="$install grpcurl" # gRPC cli a-la curl https://github.com/fullstorydev/grpcurl
+install="$install lftp" # ftp client
+install="$install mosh" # ssh replacement
+install="$install syncthing" # dropbox replacement: deb https://apt.syncthing.net/ syncthing release
+install="$install wget" # a-la curl
+install="$install whois"
 
 # Vim.
 install="$install vim" # vim is awesome, neovim is sucks
@@ -75,6 +72,9 @@ install="$install sql-lint" # used by emacs flycheck
 # install="$install docker-compose"
 # install="$install docker-machine" # provides docker daemon
 
+# Programming languages.
+install="$install lua" # newer than apt version # the lua programming language https://github.com/lua/lua
+
 # Golang programming language.
 install="$install go"
 install="$install gcc@5" # <https://stackoverflow.com/questions/59227456/go-1-13-gcc-5-not-in-path#62795608>
@@ -91,7 +91,6 @@ install="$install node" # node.js programming language
 install="$install ruby" # ruby programming language
 
 # Python programming language <https://docs.brew.sh/Homebrew-and-Python>.
-install="$install ansible"
 install="$install flake8" # python linter
 install="$install proselint" # used/required by emacs flycheck
 install="$install pylint" # used/required by emacs flycheck
@@ -119,6 +118,11 @@ install="$install mongodb-community"
 # # High performance low resource consumption database for search written in C++.
 # install="$install manticoresoftware/manticore/manticoresearch"
 # install="$install manticoresoftware/manticore/manticore-extra"
+
+# DevOps.
+install="$install kubernetes-cli" # provides k8s kubectl
+install="$install k9s" # derailed/k9s/k9s:, k8s/kubernetes cli <https://github.com/derailed/k9s>
+install="$install ansible"
 
 # X11/xorg/desktop.
 # install="$install duplicity" # backuping
