@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# This file is part of Danil Kutkevich <danil@kutkevich.ru> home.
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 # Homebrew <https://brew.sh>.
 
 # install="$install bc" # used by bash prompt, console-based calculator utility
