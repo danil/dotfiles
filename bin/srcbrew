@@ -1,6 +1,7 @@
 #!/bin/sh
 
-# Homebrew.
+# This file is part of Danil Kutkevich <danil@kutkevich.ru> home.
+# Homebrew <https://brew.sh>.
 
 # install="$install bc" # used by bash prompt, console-based calculator utility
 # install="$install goaccess" # analyze apache/nginx log in real-time
