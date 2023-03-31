@@ -33,7 +33,6 @@ install="$install ripgrep" # rg a-la ag <https://github.com/BurntSushi/ripgrep>
 install="$install the_platinum_searcher" # pt a-la ag <https://github.com/monochromegane/the_platinum_searcher>
 install="$install the_silver_searcher" # ag <https://github.com/ggreer/the_silver_searcher>
 install="$install tig" # git interactive cli
-install="$install tmux" # a-la gnu screen
 install="$install tree" # displays an indented directory tree
 install="$install uni2ascii" # to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`
 install="$install util-linux" # provides uni2ascii: to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`
@@ -48,8 +47,9 @@ install="$install mosh" # ssh replacement
 install="$install syncthing" # dropbox replacement: deb https://apt.syncthing.net/ syncthing release
 install="$install wget" # a-la curl
 
-# Terminal emulators.
+# Terminal emulator/multiplexer.
 addrepo="$addrepo wez/wezterm-linuxbrew"
+install="$install tmux" # a-la gnu screen
 install="$install wezterm"
 
 # Data compression algorithms.
