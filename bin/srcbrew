@@ -126,7 +126,7 @@ install="$install mongodb-community"
 # DevOps.
 install="$install kubernetes-cli" # provides k8s kubectl
 install="$install k9s" # derailed/k9s/k9s:, k8s/kubernetes cli <https://github.com/derailed/k9s>
-install="$install ansible"
+install="$install ansible" # <https://github.com/ansible/ansible>
 
 # X11/xorg/desktop.
 # install="$install duplicity" # backuping
