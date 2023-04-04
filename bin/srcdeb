@@ -238,6 +238,9 @@ install="$install libxcb-ewmh-dev libxcb-icccm4-dev libxcb-util0-dev" # xtitle (
 install="$install xautolock" # used by i3lock
 install="$install libxpm-dev libxt-dev xutils-dev" # xxkb compiltime dependencies, is a keyboard/language layout indicator (flag) for tray <https://github.com/scientistnik/xxkb>, a-la gxkb which destroys xchainkeys
 
+# # bspwm.
+# install="$install bspwm" # a-la i3
+
 # volumeicon.
 # install="$install intltool autogen" # volumeicon-alsa compile time dependencies
 # install="$install libasound2-dev libglib2.0-dev libgtk-3-dev" # volumeicon-alsa compile time dependencies
