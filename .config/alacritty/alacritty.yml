@@ -1,5 +1,7 @@
 # <https://github.com/tmcdonell/config-alacritty/blob/master/alacritty.yml>.
 
+# Tmux configuration contains `truecolor` support by `set -g terminal-overrides ",xterm-256color:RGB"`
+# and then adding support of the `xterm`.
 env:
   TERM: xterm-256color
 
