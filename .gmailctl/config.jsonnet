@@ -5,8 +5,11 @@ local lib = import 'gmailctl.libsonnet';
 local toMe = {
   or: [
     { to: "danil@kutkevich.org" },
+    { to: "danil@kutkevich.ru" },
     { to: "danil2@kutkevich.org" },
     { to: "danilkutkevich@gmail.com" },
+    { to: "danilkutkevich@mail.ru" },
+    { to: "danilkutkevich@yandex.ru" },
   ],
 };
 
@@ -15,8 +18,11 @@ local notToMe = { not: toMe };
 local fromMe = {
   or: [
     { from: "danil@kutkevich.org" },
+    { from: "danil@kutkevich.ru" },
     { from: "danil2@kutkevich.org" },
     { from: "danilkutkevich@gmail.com" },
+    { from: "danilkutkevich@mail.ru" },
+    { from: "danilkutkevich@yandex.ru" },
   ],
 };
 
@@ -77,6 +83,7 @@ local notFromMe = { not: fromMe };
     { name: "LstRustyCrateRu" },
     { name: "LstScyllaDb" },
     { name: "LstSucklessDev" },
+    { name: "LstTmux" },
     { name: "LstVim" },
     { name: "Mailspring" },
     { name: "Mailspring/Snoozed" },
@@ -103,6 +110,16 @@ local notFromMe = { not: fromMe };
         ],
       },
       actions: { labels: [ "FedGithub" ], archive: true, },
+    }, {
+      filter: {
+        or: [
+          { to: "tmux-users@googlegroups.com" },
+          { from: "tmux-users@googlegroups.com" },
+          { list: "tmux-users@googlegroups.com" },
+          { list: "tmux-users.googlegroups.com" },
+        ],
+      },
+      actions: { labels: [ "LstTmux" ], archive: true, },
     }, {
       filter: {
         or: [
