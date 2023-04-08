@@ -82,7 +82,7 @@ local notFromMe = { not: fromMe };
     { name: "LstRustRussian" },
     { name: "LstRustyCrateRu" },
     { name: "LstScyllaDb" },
-    { name: "LstSucklessDev" },
+    { name: "LstSuckless" },
     { name: "LstTmux" },
     { name: "LstVim" },
     { name: "Mailspring" },
@@ -132,6 +132,14 @@ local notFromMe = { not: fromMe };
         ],
       },
       actions: { labels: [ "LstVim" ], archive: true, },
+    }, {
+      filter: {
+        or: [
+          { to: "dev@suckless.org" },
+          { list: "dev.suckless.org" },
+        ],
+      },
+      actions: { labels: [ "LstSuckless" ], archive: true, },
     }, {
       filter:  { list: "redis-db.googlegroups.com" },
       actions: { labels: [ "LstRedis" ], archive: true, },
