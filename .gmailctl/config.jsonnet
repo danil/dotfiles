@@ -154,6 +154,14 @@ local notFromMe = { not: fromMe };
       actions: { labels: [ "LstGolang" ], archive: true, },
       filter: {
         or: [
+          { from: "golang-nuts@googlegroups.com" },
+          { list: "golang-nuts@googlegroups.com" },
+        ],
+      },
+    }, {
+      actions: { labels: [ "LstGolang" ], archive: true, },
+      filter: {
+        or: [
           { from: "golang-dev@googlegroups.com" },
           { to: "golang-dev@googlegroups.com" },
           { list: "golang-dev.googlegroups.com" },
