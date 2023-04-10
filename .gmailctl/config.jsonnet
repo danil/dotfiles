@@ -74,6 +74,8 @@ local notFromMe = { not: fromMe };
     { name: "Lst" },
     { name: "LstExim" },
     { name: "LstFsf" },
+    { name: "LstGolang" },
+    { name: "LstGolangDev" },
     { name: "LstGolangRu" },
     { name: "LstGolangRuNew" },
     { name: "LstGolangRuNew2" },
@@ -96,10 +98,11 @@ local notFromMe = { not: fromMe };
     { name: "Receipt" },
     { name: "Registr" },
     { name: "Schedule" },
-    { name: "_new" },
-    { name: "_xInboxBackupNew" },
-    { name: "_xSentBackupNew" },
-    { name: "_xxArchiveBackupNew" },
+    { name: "xARC" },
+    { name: "xARC/_new" },
+    { name: "xARC/_xInboxBackupNew" },
+    { name: "xARC/_xSentBackupNew" },
+    { name: "xARC/_xxArchiveBackupNew" },
   ],
   rules: [
     {
@@ -140,6 +143,14 @@ local notFromMe = { not: fromMe };
         ],
       },
       actions: { labels: [ "LstSuckless" ], archive: true, },
+    }, {
+      filter: {
+        or: [
+          { to: "go@noreply.github.com" },
+          { list: "go.golang.github.com" },
+        ],
+      },
+      actions: { labels: [ "LstGolang" ], archive: true, },
     }, {
       filter:  { list: "redis-db.googlegroups.com" },
       actions: { labels: [ "LstRedis" ], archive: true, },
