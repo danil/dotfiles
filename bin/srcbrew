@@ -5,7 +5,7 @@
 
 # install="$install bc" # used by bash prompt, console-based calculator utility
 # install="$install goaccess" # analyze apache/nginx log in real-time
-# install="$install grpc" # ?????????? gRPC cli a-la curl https://github.com/grpc/grpc/blob/master/doc/command_line_tool.md
+# install="$install grpc" # ?????????? gRPC client a-la curl https://github.com/grpc/grpc/blob/master/doc/command_line_tool.md
 # install="$install hping" # hping3 a-la interactive ping https://github.com/antirez/hping
 # install="$install nnn" # terminal file manager a-la mc/midnight commander https://github.com/jarun/nnn
 # install="$install pigz" # parallel gzip for multi-processor, multi-core
@@ -45,12 +45,13 @@ install="$install wezterm"
 
 # Network.
 install="$install awscli" # `aws --version` # s3 command line client # default amazon aws ec2 client <https://github.com/aws/aws-cli>.
+install="$install axel" # download client a-la curl/wget
 install="$install freerdp" # xfreerdp is a remote desktop protocol for win https://github.com/freerdp/freerdp
 install="$install gmailctl" # gmail filters generation
-install="$install grpcurl" # gRPC cli a-la curl https://github.com/fullstorydev/grpcurl
+install="$install grpcurl" # gRPC client a-la curl https://github.com/fullstorydev/grpcurl
 install="$install lftp" # ftp client
 install="$install mosh" # ssh replacement
-install="$install syncthing" # dropbox replacement: deb https://apt.syncthing.net/ syncthing release
+install="$install syncthing" # dropbox replacement: deb https://apt.syncthing.net syncthing release
 install="$install wget" # a-la curl
 install="$install whois"
 
@@ -68,7 +69,7 @@ install="$install shellcheck" # used by emacs flycheck
 install="$install sql-lint" # used by emacs flycheck
 
 # Git.
-install="$install tig" # git interactive cli
+install="$install tig" # git interactive client
 install="$install git"
 
 # # Docker.
@@ -125,7 +126,7 @@ install="$install mongodb-community"
 
 # DevOps.
 install="$install kubernetes-cli" # provides k8s kubectl
-install="$install k9s" # derailed/k9s/k9s:, k8s/kubernetes cli <https://github.com/derailed/k9s>
+install="$install k9s" # derailed/k9s/k9s:, k8s/kubernetes client <https://github.com/derailed/k9s>
 install="$install ansible" # <https://github.com/ansible/ansible>
 
 # X11/xorg/desktop.
