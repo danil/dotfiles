@@ -44,6 +44,7 @@ install="$install tmux" # a-la gnu screen
 install="$install wezterm"
 
 # Network.
+install="$install aria2" # `aria2c https://your.tld/path/to/your.file` download client a-la curl/wget
 install="$install awscli" # `aws --version` # s3 command line client # default amazon aws ec2 client <https://github.com/aws/aws-cli>.
 install="$install axel" # download client a-la curl/wget
 install="$install freerdp" # xfreerdp is a remote desktop protocol for win https://github.com/freerdp/freerdp
