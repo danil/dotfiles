@@ -105,14 +105,15 @@ local notFromMe = { not: fromMe };
   ],
   rules: [
     {
+      actions: { labels: [ "FedGithub" ], archive: true, },
       filter: {
         and: [
           { from: "noreply@github.com" },
           { subject: "GitHub Explore" },
         ],
       },
-      actions: { labels: [ "FedGithub" ], archive: true, },
     }, {
+      actions: { labels: [ "LstTmux" ], archive: true, },
       filter: {
         or: [
           { to: "tmux-users@googlegroups.com" },
@@ -121,8 +122,8 @@ local notFromMe = { not: fromMe };
           { list: "tmux-users.googlegroups.com" },
         ],
       },
-      actions: { labels: [ "LstTmux" ], archive: true, },
     }, {
+      actions: { labels: [ "LstVim" ], archive: true, },
       filter: {
         or: [
           { to: "vim_dev@googlegroups.com" },
@@ -133,24 +134,24 @@ local notFromMe = { not: fromMe };
           { list: "vim.vim.github.com" },
         ],
       },
-      actions: { labels: [ "LstVim" ], archive: true, },
     }, {
+      actions: { labels: [ "LstSuckless" ], archive: true, },
       filter: {
         or: [
           { to: "dev@suckless.org" },
           { list: "dev.suckless.org" },
         ],
       },
-      actions: { labels: [ "LstSuckless" ], archive: true, },
     }, {
+      actions: { labels: [ "LstGolang" ], archive: true, },
       filter: {
         or: [
           { to: "go@noreply.github.com" },
           { list: "go.golang.github.com" },
         ],
       },
-      actions: { labels: [ "LstGolang" ], archive: true, },
     }, {
+      actions: { labels: [ "LstGolang" ], archive: true, },
       filter: {
         or: [
           { from: "golang-dev@googlegroups.com" },
@@ -158,19 +159,19 @@ local notFromMe = { not: fromMe };
           { list: "golang-dev.googlegroups.com" },
         ],
       },
-      actions: { labels: [ "LstGolang" ], archive: true, },
     }, {
-      filter:  { list: "redis-db.googlegroups.com" },
       actions: { labels: [ "LstRedis" ], archive: true, },
+      filter:  { list: "redis-db.googlegroups.com" },
     }, {
+      actions: { labels: [ "LstScyllaDb" ], archive: true, },
       filter:  {
         or: [
           { list: "scylladb-dev.googlegroups.com" },
           { list: "scylladb-users.googlegroups.com" },
         ],
       },
-      actions: { labels: [ "LstScyllaDb" ], archive: true, },
     }, {
+      actions: { labels: [ "FedHabr" ], archive: true, },
       filter: {
         and: [
           { from: "noreply@habr.com" },
@@ -181,35 +182,34 @@ local notFromMe = { not: fromMe };
           ], },
         ],
       },
-      actions: { labels: [ "FedHabr" ], archive: true, },
     }, {
-      filter:  { from: "noreply@vc.ru" },
       actions: { labels: [ "FedVcRu" ], archive: true, },
+      filter:  { from: "noreply@vc.ru" },
     }, {
-      filter: { from: "newsletter@cloudflare.com" },
       actions: { labels: [ "FedCloudflare" ], archive: true, },
+      filter: { from: "newsletter@cloudflare.com" },
     }, {
+      actions: { labels: [ "FedGoogle" ], archive: true, },
       filter:  {
         or: [
           { from: "noreply-maps-timeline@google.com" },
         ],
       },
-      actions: { labels: [ "FedGoogle" ], archive: true, },
     }, {
+      actions: { labels: [ "Fed" ], archive: true, },
       filter:  {
         or: [
           { from: "noreply@ip2location.com" },
         ],
       },
-      actions: { labels: [ "Fed" ], archive: true, },
     }, {
+      actions: { labels: [ "Receipt" ], archive: true, },
       filter: {
         and: [
           { from: "usercommunication@tutu.ru" },
           { subject: "Туту.ру: чек" },
         ]
       },
-      actions: { labels: [ "Receipt" ], archive: true, },
     },
   ]
 }
