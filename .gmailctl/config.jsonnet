@@ -75,7 +75,6 @@ local notFromMe = { not: fromMe };
     { name: "LstExim" },
     { name: "LstFsf" },
     { name: "LstGolang" },
-    { name: "LstGolangDev" },
     { name: "LstGolangRu" },
     { name: "LstGolangRuNew" },
     { name: "LstGolangRuNew2" },
@@ -148,6 +147,15 @@ local notFromMe = { not: fromMe };
         or: [
           { to: "go@noreply.github.com" },
           { list: "go.golang.github.com" },
+        ],
+      },
+      actions: { labels: [ "LstGolang" ], archive: true, },
+    }, {
+      filter: {
+        or: [
+          { from: "golang-dev@googlegroups.com" },
+          { to: "golang-dev@googlegroups.com" },
+          { list: "golang-dev.googlegroups.com" },
         ],
       },
       actions: { labels: [ "LstGolang" ], archive: true, },
