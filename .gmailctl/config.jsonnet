@@ -59,6 +59,7 @@ local notFromMe = { not: fromMe };
     { name: "FedJamendo" },
     { name: "FedLua" },
     { name: "FedLuadns" },
+    { name: "FedMerch" },
     { name: "FedSoftwaremaniacsOrg" },
     { name: "FedTwitter2" },
     { name: "FedTwitterOld" },
@@ -201,6 +202,14 @@ local notFromMe = { not: fromMe };
       filter:  {
         or: [
           { from: "noreply-maps-timeline@google.com" },
+        ],
+      },
+    }, {
+      actions: { labels: [ "FedMerch" ], archive: true, },
+      filter: {
+        and: [
+          { from: "noreply@mail.meshok.net" },
+          { subject: "News for" },
         ],
       },
     }, {
