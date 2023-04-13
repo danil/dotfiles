@@ -2,8 +2,8 @@
 application/vnd.debian.binary-package=snap-store_ubuntu-software-local-file.desktop;
 
 [Default Applications]
-x-scheme-handler/http=google-chrome.desktop
-x-scheme-handler/https=google-chrome.desktop
-x-scheme-handler/about=google-chrome.desktop
-x-scheme-handler/unknown=google-chrome.desktop
-text/html=google-chrome.desktop
+x-scheme-handler/http=yandex-browser.desktop
+x-scheme-handler/https=yandex-browser.desktop
+x-scheme-handler/about=yandex-browser.desktop
+x-scheme-handler/unknown=yandex-browser.desktop
+text/html=yandex-browser.desktop
