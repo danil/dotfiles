@@ -220,6 +220,23 @@ local notFromMe = { not: fromMe };
         ],
       },
     }, {
+      actions: { labels: [ "Receipt" ], },
+      filter: {
+        and: [
+          { from: "echeck@1-ofd.ru" },
+          { subject: "Чек" },
+        ]
+      },
+    }, {
+      actions: { labels: [ "Receipt" ], },
+      filter: {
+        and: [
+          { from: "noreply@chek.pofd.ru" },
+          { subject: "Кассовый чек на" },
+          { subject: "от ООО УМНЫЙ РИТЕЙЛ" },
+        ]
+      },
+    }, {
       actions: { labels: [ "Receipt" ], archive: true, },
       filter: {
         and: [
