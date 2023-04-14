@@ -220,7 +220,7 @@ local notFromMe = { not: fromMe };
         ],
       },
     }, {
-      actions: { labels: [ "Receipt" ], },
+      actions: { labels: [ "Receipt" ] },
       filter: {
         and: [
           { from: "chek.pofd.ru" },
@@ -228,7 +228,7 @@ local notFromMe = { not: fromMe };
         ]
       },
     }, {
-      actions: { labels: [ "Receipt" ], },
+      actions: { labels: [ "Receipt" ] },
       filter: {
         and: [
           { from: "echeck@1-ofd.ru" },
@@ -236,7 +236,7 @@ local notFromMe = { not: fromMe };
         ]
       },
     }, {
-      actions: { labels: [ "Receipt" ], },
+      actions: { labels: [ "Receipt" ] },
       filter: {
         and: [
           { from: "noreply@chek.pofd.ru" },
