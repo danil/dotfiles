@@ -68,6 +68,9 @@ export MANPATH="$HOME"/.local/usr/local/share/man:"$MANPATH"
 
 [ -f "$HOME"/.netrc/.netrc ] && export NETRC="$HOME"/.netrc/.netrc
 
+# Dotenv.
+[[ -f "$HOME"/.env ]] && . "$HOME"/.env
+
 # <https://askubuntu.com/questions/210210/pkg-config-path-environment-variable#210235>.
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH":/usr/lib/pkgconfig
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH":/usr/lib/x86_64-linux-gnu/pkgconfig
