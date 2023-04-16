@@ -223,6 +223,14 @@ local notFromMe = { not: fromMe };
       actions: { labels: [ "Receipt" ] },
       filter: {
         and: [
+          { from: "ofdreceipt@beeline.ru" },
+          { subject: "Кассовый чек" },
+        ]
+      },
+    }, {
+      actions: { labels: [ "Receipt" ] },
+      filter: {
+        and: [
           { from: "chek.pofd.ru" },
           { subject: "Кассовый чек на" },
         ]
