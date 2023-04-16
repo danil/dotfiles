@@ -172,6 +172,14 @@ local notFromMe = { not: fromMe };
       actions: { labels: [ "LstRedis" ], archive: true, },
       filter:  { list: "redis-db.googlegroups.com" },
     }, {
+      actions: { labels: [ "LstPostgreSql" ], archive: true, },
+      filter:  {
+        or: [
+          { to: "pgsql-ru-general@postgresql.org" },
+          { list: "pgsql-ru-general.lists.postgresql.org" },
+        ],
+      },
+    }, {
       actions: { labels: [ "LstScyllaDb" ], archive: true, },
       filter:  {
         or: [
