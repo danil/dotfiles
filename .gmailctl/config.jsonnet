@@ -231,6 +231,14 @@ local notFromMe = { not: fromMe };
       actions: { labels: [ "Receipt" ] },
       filter: {
         and: [
+          { from: "inform@yoomoney.ru" },
+          { subject: "Вы заплатили картой ЮMoney" },
+        ]
+      },
+    }, {
+      actions: { labels: [ "Receipt" ] },
+      filter: {
+        and: [
           { from: "ofdreceipt@beeline.ru" },
           { subject: "Кассовый чек" },
         ]
