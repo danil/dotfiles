@@ -13,6 +13,7 @@ install="$install ack" # a-la ag <https://github.com/beyondgrep/ack3>
 install="$install bash-completion"
 install="$install btop" # a-la htop
 install="$install clib" # package manager for c program language libraries <https://github.com/clibs/clib>
+install="$install colordiff" # colorize diff output <https://github.com/daveewart/colordiff>
 install="$install convmv" # a-la iconv character encoding conversion util
 install="$install csvkit" # conver csv to json `csvjson path/to/file.csv` <https://github.com/wireservice/csvkit/blob/master/docs/scripts/csvjson.rst>
 install="$install dos2unix" # convert text file line endings between CRLF and LF
@@ -32,6 +33,7 @@ install="$install the_silver_searcher" # ag <https://github.com/ggreer/the_silve
 install="$install tree" # displays an indented directory tree
 install="$install uni2ascii" # to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`
 install="$install util-linux" # provides uni2ascii: to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`
+install="$install wdiff" # diff on a word per word basis (a word is anything between whitespace)
 
 # Data compression algorithms.
 install="$install lz4" # a-la gz/xz compression, required by gnupg, ffmpeg and mpv
