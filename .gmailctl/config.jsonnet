@@ -169,6 +169,14 @@ local notFromMe = { not: fromMe };
         ],
       },
     }, {
+      actions: { labels: [ "FedGolang" ], archive: true, },
+      filter: {
+        and: [
+          { from: "digest.go@evrone.net" },
+          { subject: "Go digest" },
+        ],
+      },
+    }, {
       actions: { labels: [ "LstRedis" ], archive: true, },
       filter:  { list: "redis-db.googlegroups.com" },
     }, {
@@ -226,6 +234,14 @@ local notFromMe = { not: fromMe };
         or: [
           { from: "noreply@ip2location.com" },
         ],
+      },
+    }, {
+      actions: { labels: [ "Receipt" ] },
+      filter: {
+        and: [
+          { from: "noreply-cloudpayments@cp.ru" },
+          { subject: "Квитанция от nday.club" },
+        ]
       },
     }, {
       actions: { labels: [ "Receipt" ] },
