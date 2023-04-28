@@ -221,6 +221,14 @@ local notFromMe = { not: fromMe };
         ],
       },
     }, {
+      actions: { labels: [ "ErWac" ], archive: true, },
+      filter: {
+        and: [
+          { from: "hello@health-samurai.io" },
+          { subject: "What’s new in Aidbox?" },
+        ],
+      },
+    }, {
       actions: { labels: [ "FedMerch" ], archive: true, },
       filter: {
         and: [
