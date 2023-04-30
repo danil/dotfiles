@@ -221,6 +221,9 @@ local notFromMe = { not: fromMe };
         ],
       },
     }, {
+      actions: { labels: [ "Lst" ], },
+      filter: { from: "mail@coinkeeper.media" },
+    }, {
       actions: { labels: [ "ErWac" ], archive: true, },
       filter: {
         and: [
