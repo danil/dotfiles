@@ -304,6 +304,20 @@ local notFromMe = { not: fromMe };
         ]
       },
     }, {
+      actions: { labels: [ "Receipt" ] },
+      filter: {
+        and: [
+          { or: [
+            { from: "no-reply@amazonaws.com" },
+            { from: "no-reply-aws@amazon.com" },
+          ] },
+          { or: [
+            { subject: "Amazon Web Services Account Alert" },
+            { subject: "Amazon Web Services Billing Statement Available" },
+          ] },
+        ]
+      },
+    }, {
       actions: { labels: [ "Receipt" ], archive: true, },
       filter: {
         and: [
