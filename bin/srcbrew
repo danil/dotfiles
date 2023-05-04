@@ -41,6 +41,7 @@ install="$install colordiff" # colorize diff output <https://github.com/daveewar
 install="$install convmv" # a-la iconv character encoding conversion util
 install="$install csvkit" # conver csv to json `csvjson path/to/file.csv` <https://github.com/wireservice/csvkit/blob/master/docs/scripts/csvjson.rst>
 install="$install dos2unix" # convert text file line endings between CRLF and LF
+install="$install erd" # disk space usage is an ncdu
 install="$install fd" # find replacement https://github.com/sharkdp/fd
 install="$install fdupes" # identify or delete duplicate files https://github.com/adrianlopezroche/fdupes (used by emacs package https://github.com/ShuguangSun/find-dupes-dired)
 install="$install fish" # fish shell
