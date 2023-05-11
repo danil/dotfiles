@@ -3,30 +3,6 @@
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 # Homebrew <https://brew.sh>.
 
-# aria2
-# bash
-# cask
-# clang-format
-# cloc
-# docker-compose
-# dos2unix
-# fish
-# git-flow
-# git-lfs
-# httpie
-# kafka
-# kubernetes-cli
-# leiningen
-# md5sha1sum
-# p7zip 7-Zip
-# perl
-# pwgen
-# rabbitmq
-# ripgrep
-# shellcheck
-# sqlite
-# the_silver_searcher
-
 # install="$install bc" # used by bash prompt, console-based calculator utility
 # install="$install goaccess" # analyze apache/nginx log in real-time
 # install="$install grpc" # ?????????? gRPC client a-la curl https://github.com/grpc/grpc/blob/master/doc/command_line_tool.md
@@ -44,6 +20,7 @@ install="$install dos2unix" # convert text file line endings between CRLF and LF
 install="$install erdtree" # disk space usage is an ncdu replacement
 install="$install fd" # find replacement https://github.com/sharkdp/fd
 install="$install fdupes" # identify or delete duplicate files https://github.com/adrianlopezroche/fdupes (used by emacs package https://github.com/ShuguangSun/find-dupes-dired)
+install="$install flatbuffers" # a-la protobuf <https://github.com/google/flatbuffers>
 install="$install htop" # a-la top
 install="$install jq" # json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>
 install="$install jsonnet" # https://github.com/google/jsonnet
@@ -123,7 +100,8 @@ install="$install rust"
 
 # Programming languages.
 install="$install dart-sdk" # dart programming language
-install="$install node" # node.js programming language
+install="$install deno" # js programming language <https://github.com/denoland/deno>
+install="$install node" # js programming language <https://github.com/nodejs/node>
 install="$install ruby" # ruby programming language
 
 # Python programming language <https://docs.brew.sh/Homebrew-and-Python>.
