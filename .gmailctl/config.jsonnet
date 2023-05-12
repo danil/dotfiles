@@ -321,6 +321,14 @@ local notFromMe = { not: fromMe };
       actions: { labels: [ "Receipt" ], archive: true, },
       filter: {
         and: [
+          { from: "no-reply@pochtabank.ru" },
+          { subject: "Вознаграждение по программе лояльности Мультибонус!" },
+        ]
+      },
+    }, {
+      actions: { labels: [ "Receipt" ], archive: true, },
+      filter: {
+        and: [
           { from: "usercommunication@tutu.ru" },
           { subject: "Туту.ру: чек" },
         ]
