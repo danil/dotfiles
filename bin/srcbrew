@@ -141,6 +141,7 @@ install="$install ansible" # <https://github.com/ansible/ansible>
 # X11/xorg/desktop.
 # install="$install duplicity" # backuping
 install="$install feh" # command line image viewer
+install="$install ffmpeg" # watch webcam `ffplay -fs /dev/video0`
 install="$install marp-cli" # markdown to presentation (pdf) from command line https://github.com/marp-team/marp
 install="$install mpv" # a-la mplayer replacement
 install="$install xdotool" # ???
