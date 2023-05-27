@@ -281,6 +281,13 @@ local notFromMe = { not: fromMe };
         ]
       },
     }, {
+      actions: { labels: [ "Receipt" ], archive: true },
+      filter: {
+        and: [
+          { from: "robot@konturcheck.ru" }, { subject: "Кассовый чек от" }, { subject: "ВсеИнструменты.ру" },
+        ]
+      },
+    }, {
       actions: { labels: [ "Receipt" ], archive: true, },
       filter: {
         or: [
