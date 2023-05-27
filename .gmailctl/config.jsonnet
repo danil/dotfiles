@@ -138,24 +138,21 @@ local notFromMe = { not: fromMe };
       actions: { labels: [ "LstSuckless" ], archive: true, },
       filter: {
         or: [
-          { to: "dev@suckless.org" },
-          { list: "dev.suckless.org" },
+          { to: "dev@suckless.org" }, { list: "dev.suckless.org" },
         ],
       },
     }, {
       actions: { labels: [ "LstGolang" ], archive: true, },
       filter: {
         or: [
-          { to: "go@noreply.github.com" },
-          { list: "go.golang.github.com" },
+          { to: "go@noreply.github.com" }, { list: "go.golang.github.com" },
         ],
       },
     }, {
       actions: { labels: [ "LstGolang" ], archive: true, },
       filter: {
         or: [
-          { from: "golang-nuts@googlegroups.com" },
-          { list: "golang-nuts@googlegroups.com" },
+          { from: "golang-nuts@googlegroups.com" }, { list: "golang-nuts@googlegroups.com" },
         ],
       },
     }, {
@@ -171,8 +168,7 @@ local notFromMe = { not: fromMe };
       actions: { labels: [ "FedGolang" ], archive: true, },
       filter: {
         and: [
-          { from: "digest.go@evrone.net" },
-          { subject: "Go digest" },
+          { from: "digest.go@evrone.net" }, { subject: "Go digest" },
         ],
       },
     }, {
@@ -222,16 +218,14 @@ local notFromMe = { not: fromMe };
       actions: { labels: [ "ErWac" ], archive: true, },
       filter: {
         and: [
-          { from: "hello@health-samurai.io" },
-          { subject: "What’s new in Aidbox?" },
+          { from: "hello@health-samurai.io" }, { subject: "What’s new in Aidbox?" },
         ],
       },
     }, {
       actions: { labels: [ "FedMerch" ], archive: true, },
       filter: {
         and: [
-          { from: "noreply@mail.meshok.net" },
-          { subject: "News for" },
+          { from: "noreply@mail.meshok.net" }, { subject: "News for" },
         ],
       },
     }, {
@@ -241,57 +235,49 @@ local notFromMe = { not: fromMe };
       actions: { labels: [ "Receipt" ] },
       filter: {
         and: [
-          { from: "noreply-cloudpayments@cp.ru" },
-          { subject: "Квитанция от nday.club" },
+          { from: "noreply-cloudpayments@cp.ru" }, { subject: "Квитанция от nday.club" },
         ]
       },
     }, {
       actions: { labels: [ "Receipt" ] },
       filter: {
         and: [
-          { from: "podpiska@ogon.ru" },
-          { subject: "Электронный чек" },
+          { from: "podpiska@ogon.ru" }, { subject: "Электронный чек" },
         ]
       },
     }, {
       actions: { labels: [ "Receipt" ] },
       filter: {
         and: [
-          { from: "inform@yoomoney.ru" },
-          { subject: "Вы заплатили картой ЮMoney" },
+          { from: "inform@yoomoney.ru" }, { subject: "Вы заплатили картой ЮMoney" },
         ]
       },
     }, {
       actions: { labels: [ "Receipt" ] },
       filter: {
         and: [
-          { from: "ofdreceipt@beeline.ru" },
-          { subject: "Кассовый чек" },
+          { from: "ofdreceipt@beeline.ru" }, { subject: "Кассовый чек" },
         ]
       },
     }, {
       actions: { labels: [ "Receipt" ] },
       filter: {
         and: [
-          { from: "chek.pofd.ru" },
-          { subject: "Кассовый чек на" },
+          { from: "chek.pofd.ru" }, { subject: "Кассовый чек на" },
         ]
       },
     }, {
       actions: { labels: [ "Receipt" ] },
       filter: {
         and: [
-          { from: "echeck@1-ofd.ru" },
-          { subject: "Чек" },
+          { from: "echeck@1-ofd.ru" }, { subject: "Чек" },
         ]
       },
     }, {
       actions: { labels: [ "Receipt" ] },
       filter: {
         and: [
-          { from: "noreply@chek.pofd.ru" },
-          { subject: "Кассовый чек на" },
-          { subject: "от ООО УМНЫЙ РИТЕЙЛ" },
+          { from: "noreply@chek.pofd.ru" }, { subject: "Кассовый чек на" }, { subject: "от ООО УМНЫЙ РИТЕЙЛ" },
         ]
       },
     }, {
@@ -299,13 +285,10 @@ local notFromMe = { not: fromMe };
       filter: {
         or: [
           { and: [
-            { from: "noreply@serveroid.com" },
-            { subject: "Лицевой счёт пополнен" },
+            { from: "noreply@serveroid.com" }, { subject: "Лицевой счёт пополнен" },
           ] },
           { and: [
-            { from: "noreply@ofd.ru" },
-            { subject: "Кассовый чек" },
-            { subject: "Сервероид" },
+            { from: "noreply@ofd.ru" }, { subject: "Кассовый чек" }, { subject: "Сервероид" },
           ] },
         ]
       },
@@ -314,12 +297,10 @@ local notFromMe = { not: fromMe };
       filter: {
         or: [
           { and: [
-            { from: "no-reply@amazonaws.com" },
-            { subject: "Amazon Web Services Account Alert" },
+            { from: "no-reply@amazonaws.com" }, { subject: "Amazon Web Services Account Alert" },
           ] },
           { and: [
-            { from: "no-reply-aws@amazon.com" },
-            { subject: "Amazon Web Services Billing Statement Available" },
+            { from: "no-reply-aws@amazon.com" }, { subject: "Amazon Web Services Billing Statement Available" },
           ] },
         ]
       },
@@ -327,16 +308,14 @@ local notFromMe = { not: fromMe };
       actions: { labels: [ "Receipt" ], archive: true, },
       filter: {
         and: [
-          { from: "no-reply@pochtabank.ru" },
-          { subject: "Вознаграждение по программе лояльности Мультибонус!" },
+          { from: "no-reply@pochtabank.ru" }, { subject: "Вознаграждение по программе лояльности Мультибонус!" },
         ]
       },
     }, {
       actions: { labels: [ "Receipt" ], archive: true, },
       filter: {
         and: [
-          { from: "usercommunication@tutu.ru" },
-          { subject: "Туту.ру: чек" },
+          { from: "usercommunication@tutu.ru" }, { subject: "Туту.ру: чек" },
         ]
       },
     },
