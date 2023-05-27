@@ -109,8 +109,7 @@ local notFromMe = { not: fromMe };
       actions: { labels: [ "FedGithub" ], archive: true, },
       filter: {
         and: [
-          { from: "noreply@github.com" },
-          { subject: "GitHub Explore" },
+          { from: "noreply@github.com" }, { subject: "GitHub Explore" },
         ],
       },
     }, {
@@ -215,11 +214,7 @@ local notFromMe = { not: fromMe };
       filter: { from: "newsletter@cloudflare.com" },
     }, {
       actions: { labels: [ "FedGoogle" ], archive: true, },
-      filter:  {
-        or: [
-          { from: "noreply-maps-timeline@google.com" },
-        ],
-      },
+      filter:  { from: "noreply-maps-timeline@google.com", },
     }, {
       actions: { labels: [ "Lst" ], },
       filter: { from: "mail@coinkeeper.media" },
@@ -241,11 +236,7 @@ local notFromMe = { not: fromMe };
       },
     }, {
       actions: { labels: [ "Fed" ], archive: true, },
-      filter:  {
-        or: [
-          { from: "noreply@ip2location.com" },
-        ],
-      },
+      filter:  { from: "noreply@ip2location.com", },
     }, {
       actions: { labels: [ "Receipt" ] },
       filter: {
@@ -306,13 +297,14 @@ local notFromMe = { not: fromMe };
     }, {
       actions: { labels: [ "Receipt" ], archive: true, },
       filter: {
-        and: [
-          { or: [
+        or: [
+          { and: [
             { from: "noreply@serveroid.com" },
             { subject: "Лицевой счёт пополнен" },
           ] },
-          { or: [
+          { and: [
             { from: "noreply@ofd.ru" },
+            { subject: "Кассовый чек" },
             { subject: "Сервероид" },
           ] },
         ]
@@ -320,13 +312,13 @@ local notFromMe = { not: fromMe };
     }, {
       actions: { labels: [ "Receipt" ] },
       filter: {
-        and: [
-          { or: [
+        or: [
+          { and: [
             { from: "no-reply@amazonaws.com" },
-            { from: "no-reply-aws@amazon.com" },
-          ] },
-          { or: [
             { subject: "Amazon Web Services Account Alert" },
+          ] },
+          { and: [
+            { from: "no-reply-aws@amazon.com" },
             { subject: "Amazon Web Services Billing Statement Available" },
           ] },
         ]
