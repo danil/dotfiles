@@ -235,6 +235,13 @@ local notFromMe = { not: fromMe };
       actions: { labels: [ "Receipt" ] },
       filter: {
         and: [
+          { from: "inform@emails.tinkoff.ru" }, { subject: "Уведомление о новом штрафе ГИБДД" },
+        ]
+      },
+    }, {
+      actions: { labels: [ "Receipt" ] },
+      filter: {
+        and: [
           { from: "noreply-cloudpayments@cp.ru" }, { subject: "Квитанция от nday.club" },
         ]
       },
