@@ -232,6 +232,13 @@ local notFromMe = { not: fromMe };
       actions: { labels: [ "Fed" ], archive: true, },
       filter:  { from: "noreply@ip2location.com", },
     }, {
+      actions: { labels: [ "Registr" ] },
+      filter: {
+        and: [
+          { from: "no-reply@zoom.us" }, { subject: "Code for signing in to Zoom" },
+        ]
+      },
+    }, {
       actions: { labels: [ "Receipt" ] },
       filter: {
         and: [
