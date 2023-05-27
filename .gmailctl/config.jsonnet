@@ -307,8 +307,14 @@ local notFromMe = { not: fromMe };
       actions: { labels: [ "Receipt" ], archive: true, },
       filter: {
         and: [
-          { from: "noreply@serveroid.com" },
-          { subject: "Лицевой счёт пополнен" },
+          { or: [
+            { from: "noreply@serveroid.com" },
+            { subject: "Лицевой счёт пополнен" },
+          ] },
+          { or: [
+            { from: "noreply@ofd.ru" },
+            { subject: "Сервероид" },
+          ] },
         ]
       },
     }, {
