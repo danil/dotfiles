@@ -239,7 +239,7 @@ local notFromMe = { not: fromMe };
         ]
       },
     }, {
-      actions: { labels: [ "Receipt" ] },
+      actions: { labels: [ "Receipt" ], archive: true },
       filter: {
         and: [
           { from: "podpiska@ogon.ru" }, { subject: "Электронный чек" },
@@ -274,7 +274,7 @@ local notFromMe = { not: fromMe };
         ]
       },
     }, {
-      actions: { labels: [ "Receipt" ] },
+      actions: { labels: [ "Receipt" ], archive: true },
       filter: {
         and: [
           { from: "noreply@chek.pofd.ru" }, { subject: "Кассовый чек на" }, { subject: "от ООО УМНЫЙ РИТЕЙЛ" },
