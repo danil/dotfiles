@@ -302,6 +302,18 @@ local notFromMe = { not: fromMe };
         ]
       },
     }, {
+      actions: { labels: [ "Receipt" ], archive: true },
+      filter: {
+        or: [
+          { and: [
+            { from: "subscrib@e.litres.ru" }, { subject: "Чек на сумму" },
+          ] },
+          { and: [
+            { from: "info@payonline.ru" }, { subject: "Подтверждение оплаты от PayOnline" }, { has: "ЛитРес" },
+          ] },
+        ]
+      },
+    }, {
       actions: { labels: [ "Receipt" ], archive: true, },
       filter: {
         or: [
