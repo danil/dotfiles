@@ -239,6 +239,13 @@ local notFromMe = { not: fromMe };
         ]
       },
     }, {
+      actions: { labels: [ "Registr" ] },
+      filter: {
+        and: [
+          { from: "no-reply@beget.ru" }, { subject: "LTD Beget: Проверочный код для входа в панель управления" },
+        ]
+      },
+    }, {
       actions: { labels: [ "Receipt" ] },
       filter: {
         and: [
