@@ -336,11 +336,10 @@ local notFromMe = { not: fromMe };
       actions: { labels: [ "Receipt" ] },
       filter: {
         or: [
+          // { and: [ { from: "no-reply@amazonaws.com" }, { subject: "???" }, ] },
           { and: [
-            { from: "no-reply@amazonaws.com" }, { subject: "Amazon Web Services Account Alert" },
-          ] },
-          { and: [
-            { from: "no-reply-aws@amazon.com" }, { subject: "Amazon Web Services Billing Statement Available" },
+            { from: "no-reply-aws@amazon.com" },
+            { or: [ { subject: "Billing Statement Available" }, { subject: "Payment Method Update Required" }, ] },
           ] },
         ]
       },
