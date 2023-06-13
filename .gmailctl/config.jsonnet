@@ -336,6 +336,15 @@ local notFromMe = { not: fromMe };
       actions: { labels: [ "Receipt" ] },
       filter: {
         or: [
+          { and: [
+            { from: "mailer@sender.ozon.ru" }, { subject: "Заказ принят" },
+          ] },
+        ]
+      },
+    }, {
+      actions: { labels: [ "Receipt" ] },
+      filter: {
+        or: [
           // { and: [ { from: "no-reply@amazonaws.com" }, { subject: "???" }, ] },
           { and: [
             { from: "no-reply-aws@amazon.com" },
