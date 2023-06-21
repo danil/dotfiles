@@ -212,7 +212,7 @@ local notFromMe = { not: fromMe };
       actions: { labels: [ "FedGoogle" ], archive: true, },
       filter:  { from: "noreply-maps-timeline@google.com", },
     }, {
-      actions: { labels: [ "Lst" ], },
+      actions: { labels: [ "Lst" ], archive: true, },
       filter: { from: "mail@coinkeeper.media" },
     }, {
       actions: { labels: [ "ErWac" ], archive: true, },
