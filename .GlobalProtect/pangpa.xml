@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalProtect>
+	<PanMSAgent>
+		<DebugLevel>5</DebugLevel>
+		<PanGPS>5</PanGPS>
+	</PanMSAgent>
+</GlobalProtect>
