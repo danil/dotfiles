@@ -342,17 +342,6 @@ local notFromMe = { not: fromMe };
         ]
       },
     }, {
-      actions: { labels: [ "Receipt" ] },
-      filter: {
-        or: [
-          // { and: [ { from: "no-reply@amazonaws.com" }, { subject: "???" }, ] },
-          { and: [
-            { from: "no-reply-aws@amazon.com" },
-            { or: [ { subject: "Billing Statement Available" }, { subject: "Payment Method Update Required" }, ] },
-          ] },
-        ]
-      },
-    }, {
       actions: { labels: [ "Receipt" ], archive: true, },
       filter: {
         and: [
@@ -364,6 +353,17 @@ local notFromMe = { not: fromMe };
       filter: {
         and: [
           { from: "usercommunication@tutu.ru" }, { subject: "Туту.ру: чек" },
+        ]
+      },
+    }, {
+      actions: { labels: [ "Receipt" ] },
+      filter: {
+        or: [
+          // { and: [ { from: "no-reply@amazonaws.com" }, { subject: "???" }, ] },
+          { and: [
+            { from: "no-reply-aws@amazon.com" },
+            { or: [ { subject: "Billing Statement Available" }, { subject: "Payment Method Update Required" }, ] },
+          ] },
         ]
       },
     },
