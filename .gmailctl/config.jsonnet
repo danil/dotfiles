@@ -349,10 +349,24 @@ local notFromMe = { not: fromMe };
         ]
       },
     }, {
+      actions: { labels: [ "Receipt" ] },
+      filter: {
+        and: [
+          { from: "railway@tutu.ru" }, { subject: "Ж/д билет из" },
+        ]
+      },
+    }, {
       actions: { labels: [ "Receipt" ], archive: true, },
       filter: {
         and: [
           { from: "usercommunication@tutu.ru" }, { subject: "Туту.ру: чек" },
+        ]
+      },
+    }, {
+      actions: { labels: [ "Receipt" ], archive: true, },
+      filter: {
+        and: [
+          { from: "suburbans-selling@travel.yandex.ru" }, { subject: "Ваш билет на электричку по маршруту:" },
         ]
       },
     }, {
