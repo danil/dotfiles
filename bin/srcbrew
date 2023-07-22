@@ -134,9 +134,10 @@ install="$install mongodb-community"
 # install="$install manticoresoftware/manticore/manticore-extra"
 
 # DevOps.
-install="$install kubernetes-cli" # provides k8s kubectl
-install="$install k9s" # derailed/k9s/k9s:, k8s/kubernetes client <https://github.com/derailed/k9s>
 install="$install ansible" # <https://github.com/ansible/ansible>
+install="$install k9s" # derailed/k9s/k9s:, k8s/kubernetes client <https://github.com/derailed/k9s>
+install="$install kubernetes-cli" # provides k8s kubectl
+install="$install netdata" # monitoring <https://github.com/netdata/netdata>
 
 # X11/xorg/desktop.
 # install="$install duplicity" # backuping
