@@ -114,7 +114,8 @@ install="$install proselint" # used/required by emacs flycheck
 install="$install pylint" # used/required by emacs flycheck
 install="$install python3" # provides pip (pip3)
 
-# Nginx.
+# HTTPd server.
+install="$install http-server" # <https://github.com/http-party/http-server>
 install="$install httpd" # provides htpasswd utility is an nginx/apach basic authentication password generator
 install="$install nginx" # web/http server
 
