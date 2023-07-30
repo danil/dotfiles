@@ -266,15 +266,15 @@ install="$install volumeicon-alsa"
 # install="$install vault" # curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - && sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 
 # Xfce4.
-# install="$install thunar-dropbox-plugin"
 # install="$install thunar-megasync" # not using
-# install="$install xfce4"
 # install="$install xfce4-notifyd" # notifications daemon (used by dwm)
-# install="$install xfdashboard" # overview all windows
 install="$install ristretto" # command line image viewer
 install="$install thunar" # file manager
 install="$install thunar-archive-plugin"
+install="$install thunar-dropbox-plugin"
 install="$install thunar-volman"
+install="$install xfce4"
+install="$install xfdashboard" # overview all windows
 
 # mkusb <https://help.ubuntu.com/community/mkusb#Installation>.
 install="$install mkusb usb-pack-efi" # create bootable/live usb/iso <https://help.ubuntu.com/community/mkusb#Quick_start_manual_and_mkusb_PPA>
