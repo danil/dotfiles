@@ -10,12 +10,14 @@
 # install="$install nnn" # terminal file manager a-la mc/midnight commander https://github.com/jarun/nnn
 # install="$install pigz" # parallel gzip for multi-processor, multi-core
 install="$install ack" # a-la ag <https://github.com/beyondgrep/ack3>
+install="$install bash" # Bourne again shell <https://gnu.org/software/bash>
 install="$install bash-completion"
 install="$install btop" # a-la htop
 install="$install clib" # package manager for c program language libraries <https://github.com/clibs/clib>
 install="$install colordiff" # colorize diff output <https://github.com/daveewart/colordiff>
 install="$install convmv" # a-la iconv character encoding conversion util
 install="$install csvkit" # conver csv to json `csvjson path/to/file.csv` <https://github.com/wireservice/csvkit/blob/master/docs/scripts/csvjson.rst>
+install="$install curl" # a-la wget <https://github.com/curl/curl>
 install="$install dos2unix" # convert text file line endings between CRLF and LF
 install="$install erdtree" # disk space usage is an ncdu replacement
 install="$install fd" # find replacement https://github.com/sharkdp/fd
@@ -42,9 +44,9 @@ install="$install snappy" # a-la gz/xz compression, required by ffmpeg and mpv
 install="$install zstd" # a-la gz/xz compression, required by gcc, curl, git, gnupg, rust, node, ffmpeg, mpv and feh
 
 # Terminal emulator/multiplexer.
-addrepo="$addrepo wez/wezterm-linuxbrew"
 install="$install tmux" # a-la gnu screen
-install="$install wezterm"
+addrepo="$addrepo wez/wezterm-linuxbrew"
+install="$install wezterm" # <https://github.com/wez/wezterm>
 
 # Shell.
 install="$install fish" # fish shell a-la bash
@@ -77,13 +79,15 @@ install="$install shellcheck" # used by emacs flycheck
 install="$install sql-lint" # used by emacs flycheck
 
 # Git.
-install="$install tig" # git interactive client
 install="$install git"
+install="$install git-flow" # <https://github.com/nvie/gitflow>
+install="$install git-lfs" # <https://git-lfs.com>
+install="$install tig" # git interactive client
 
-# # Docker.
-# install="$install docker"
-# install="$install docker-compose"
-# install="$install docker-machine" # provides docker daemon
+# Docker.
+install="$install docker" # OS-level virtualization to deliver software in packages called containers <https://github.com/moby/moby>
+install="$install docker-compose" # <https://github.com/docker/compose>
+install="$install docker-machine" # provides docker daemon <https://docs.docker.com/desktop>
 
 # Programming languages.
 install="$install lua" # newer than apt version # the lua programming language https://github.com/lua/lua
@@ -127,6 +131,11 @@ install="$install vitess" # horizontal scaled clustering <https://vitess.io/docs
 # MongoDB.
 addrepo="$addrepo mongodb/brew"
 install="$install mongodb-community"
+
+# Kafka.
+install="$install kafka" # <https://github.com/apache/kafka>
+addrepo="$addrepo redpanda-data/tap"
+install="$install redpanda" # streaming data platform a-la kafka <https://github.com/redpanda-data/redpanda>
 
 # # Manticore Search is a
 # # High performance low resource consumption database for search written in C++.
