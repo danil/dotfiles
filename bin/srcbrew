@@ -115,8 +115,8 @@ install="$install pylint" # used/required by emacs flycheck
 install="$install python3" # provides pip (pip3)
 
 # Nginx.
-# install="$install nginx" # web/http server
 install="$install httpd" # provides htpasswd utility is an nginx/apach basic authentication password generator
+install="$install nginx" # web/http server
 
 # Databases.
 install="$install keydb"
