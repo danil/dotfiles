@@ -107,6 +107,7 @@ install="$install dart-sdk" # dart programming language
 install="$install deno" # js programming language <https://github.com/denoland/deno>
 install="$install node" # js programming language <https://github.com/nodejs/node>
 install="$install ruby" # ruby programming language
+install="$install sbcl" # Steel Bank Common Lisp (SBCL) <https://github.com/sbcl/sbcl>
 
 # Python programming language <https://docs.brew.sh/Homebrew-and-Python>.
 install="$install flake8" # python linter
