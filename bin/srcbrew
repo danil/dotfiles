@@ -89,31 +89,26 @@ install="$install docker" # OS-level virtualization to deliver software in packa
 install="$install docker-compose" # <https://github.com/docker/compose>
 install="$install docker-machine" # provides docker daemon <https://docs.docker.com/desktop>
 
-# Programming languages.
-install="$install lua" # newer than apt version # the lua programming language https://github.com/lua/lua
-
 # Golang programming language.
 install="$install go"
 install="$install gcc@5" # <https://stackoverflow.com/questions/59227456/go-1-13-gcc-5-not-in-path#62795608>
 install="$install golangci-lint" # used by emacs a-la gometalinter
 install="$install scc" # a-la sloc/cloc
 
-# Rust programming language.
-# install="$install rustup-init" # what that?
-install="$install rust"
-
-# Programming languages.
-install="$install dart-sdk" # dart programming language
-install="$install deno" # js programming language <https://github.com/denoland/deno>
-install="$install node" # js programming language <https://github.com/nodejs/node>
-install="$install ruby" # ruby programming language
-install="$install sbcl" # Steel Bank Common Lisp (SBCL) <https://github.com/sbcl/sbcl>
-
 # Python programming language <https://docs.brew.sh/Homebrew-and-Python>.
 install="$install flake8" # python linter
 install="$install proselint" # used/required by emacs flycheck
 install="$install pylint" # used/required by emacs flycheck
 install="$install python3" # provides pip (pip3)
+
+# Programming languages.
+install="$install dart-sdk" # dart programming language
+install="$install deno" # js programming language <https://github.com/denoland/deno>
+install="$install lua" # newer than apt version # the lua programming language https://github.com/lua/lua
+install="$install node" # js programming language <https://github.com/nodejs/node>
+install="$install ruby" # ruby programming language
+install="$install rust" # <https://github.com/rust-lang/rust>
+install="$install sbcl" # Steel Bank Common Lisp (SBCL) <https://github.com/sbcl/sbcl>
 
 # HTTPd server.
 install="$install http-server" # <https://github.com/http-party/http-server>
