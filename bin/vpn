@@ -1,6 +1,6 @@
 #!/bin/sh
 
-USAGE="usage: ${CMD:=${0##*/}} ((-s|--status) | (-c|--connect) | (-r|--reconnect) | --reinstall | (-d|--disconnect))"
+USAGE="usage: ${CMD:=${0##*/}} ((-s|--status) | (-c|--connect) | (-r|--reconnect) | (-d|--disconnect) | --reinstall)"
 
 # Options functions.
 optexit () { printf >&2 "%s %s\n%s\n" "$1" "$2" "$USAGE"; exit 2; }
@@ -16,8 +16,8 @@ while [ "$1" != "$EOL" ]; do
         -s | --status     ) opt_status=true;;
         -c | --connect    ) opt_connect=true;;
         -r | --reconnect  ) opt_reconnect=true;;
-        --reinstall       ) opt_reinstall=true;;
         -d | --disconnect ) opt_disconnect=true;;
+        --reinstall       ) opt_reinstall=true;;
         -h | --help       ) opthelp; exit 0;;
 
         # Process special cases.
