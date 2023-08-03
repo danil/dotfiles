@@ -30,6 +30,7 @@ done; shift
 
 
 if [ "$opt_connect" = true ]; then
+    # globalprotect connect --portal vpn.bank.ozon.ru || exit 1
     globalprotect connect --portal vpn.ecom-bank.ozon.ru || exit 1
 
 elif [ "$opt_reconnect" = true ]; then
@@ -46,8 +47,6 @@ elif [ "$opt_reset" = true ]; then
     sudo git checkout opt/paloaltonetworks/globalprotect/pangps.xml || exit 1
     sudo dpkg --install ~/Downloads/GlobalProtect_deb-6.0.1.1-6.deb || exit 1
     cd -
-    echo "new portal: vpn.bank.ozon.ru"
-    echo "old portal: vpn.ecom-bank.ozon.ru"
 
 elif [ "$opt_disconnect" = true ]; then
     globalprotect disconnect || exit 1
