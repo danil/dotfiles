@@ -17,6 +17,7 @@ while [ $# -gt 0 ]; do
 done
 
 if [[ $upgrade -eq 1 ]]; then
+    echo "Something went wrong." || exit 1
     rm -rf ~/.local/bin ~/.local/lib64 ~/.local/share/doc ~/.local/share/man
 fi
 
