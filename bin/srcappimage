@@ -9,6 +9,7 @@ install="$install gimp" # raster graphics editor <https://github.com/gnome/gimp>
 install="$install google-chrome" # browser
 install="$install mattermost-desktop" #  group chat inspired by slack
 install="$install skype" # video chat
+install="$install telegram" # video chat
 install="$install zoom" # video chat
 
 if [ ! -z "$install" ] && [ "$install" != " " ]; then
