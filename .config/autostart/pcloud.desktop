@@ -6,3 +6,5 @@ Comment=pcloudstartup script
 Exec=/home/danil/bin/pcloud
 StartupNotify=false
 Terminal=false
+Hidden=true
+

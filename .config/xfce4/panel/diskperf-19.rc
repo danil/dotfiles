@@ -1,0 +1,12 @@
+Device=/dev/mapper/vgubuntu-root
+UseLabel=0
+Text=disk
+UpdatePeriod=3000
+Statistics=1
+XferRate=1024
+CombineRWdata=0
+MonitorBarOrder=0
+ReadColor=rgb(0,0,255)
+WriteColor=rgb(255,0,0)
+ReadWriteColor=rgb(0,255,0)
+

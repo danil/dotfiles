@@ -8,3 +8,5 @@ Name=Pidgin Internet Messenger
 StartupNotify=true
 Terminal=false
 Type=Application
+Hidden=true
+

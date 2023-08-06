@@ -6,3 +6,5 @@ Exec=/home/danil/go/bin/syncthing-tray/syncthing-tray -target="http://localhost:
 Terminal=false
 StartupNotify=false
 X-GNOME-Autostart-enabled=false
+Hidden=true
+

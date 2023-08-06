@@ -183,9 +183,12 @@ install="$install libfuse2" # pcloud dependency
 install="$install libnotify-bin" # a-la notify-osd
 install="$install light" # used by xchainkeys and ~/.xprofile
 install="$install lxappearance" # change/switch gtk2/gtk3 themes
+install="$install libimlib2-dev libfontconfig1-dev libfreetype6-dev libx11-dev libxext-dev libxft-dev libxrender-dev zlib1g-dev libxinerama-dev libxcomposite-dev libxdamage-dev libxfixes-dev libxmu-dev" # skippy-xd is an full-screen task-switcher for X11 <https://github.com/richardgv/skippy-xd>
+install="$install sassc libglib2.0-dev-bin" # dependencies of whitesur gtk theme <https://github.com/vinceliuice/whitesur-gtk-theme>, <https://github.com/vinceliuice/whitesur-icon-theme>.
 install="$install maim" # takes screenshots of desktop
 install="$install meld" # gnome diff (gtk)
 install="$install mesa-utils" # provides glxgears util for the 3d compositor testing
+install="$install mkusb usb-pack-efi" # mkusb <https://help.ubuntu.com/community/mkusb#Installation> create bootable/live usb/iso <https://help.ubuntu.com/community/mkusb#Quick_start_manual_and_mkusb_PPA>
 install="$install mousepad" # simple text editor for xfce <https://github.com/codebrainz/mousepad>
 install="$install ubuntu-restricted-extras" # playing video in browser instead of download <https://askubuntu.com/questions/1122579/firefox-downloads-the-video-instead-of-playing-it#1122668>, <https://askubuntu.com/questions/56446/how-do-i-install-the-ubuntu-restricted-extras-package#56448>
 install="$install xserver-xorg-video-intel" # instead of modesetting using intel <https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/1867668>
@@ -268,16 +271,19 @@ install="$install volumeicon-alsa"
 # Xfce4.
 # install="$install thunar-megasync" # not using
 # install="$install xfce4-notifyd" # notifications daemon (used by dwm)
+# install="$install xfdashboard" # instead installing skippy-xd
+# install="$install libxfce4panel-2.0-dev libxfce4ui-2-dev" # compiltime dependency of text plugin <https://github.com/daveriesz/xfce-text-plugin>
 install="$install ristretto" # command line image viewer
 install="$install thunar" # file manager
 install="$install thunar-archive-plugin"
 install="$install thunar-dropbox-plugin"
 install="$install thunar-volman"
 install="$install xfce4"
-install="$install xfdashboard" # overview all windows
-
-# mkusb <https://help.ubuntu.com/community/mkusb#Installation>.
-install="$install mkusb usb-pack-efi" # create bootable/live usb/iso <https://help.ubuntu.com/community/mkusb#Quick_start_manual_and_mkusb_PPA>
+install="$install xfce4-diskperf-plugin" # disk io performance
+install="$install xfce4-power-manager"
+install="$install xfce4-systemload-plugin" # system cpu/mem/net/swap load monitor
+install="$install xfce4-xkb-plugin" # keyboard language switcher
+install="$install xfce4-windowck-plugin" # ????????????????????????????????????????????????????????????????????????????????
 
 # # Dropbox.
 # install="$install dropbox"
@@ -319,22 +325,6 @@ install="$install gnome-tweaks" # former gnome-tweak-tool (in addition to gnome-
 # install="$install elasticsearch" # felix `deb https://artifacts.elastic.co/packages/5.x/apt stable main` elasticsearch 5 <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>, # apt-transport-https required by elasticsearch ppa <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#deb-repo>
 # install="$install apt-transport-https"
 
-# # never used Skippy-XD is an full-screen task-switcher for X11
-# # <https://github.com/richardgv/skippy-xd>
-# install="$install libimlib2-dev"
-# install="$install libfontconfig1-dev"
-# install="$install libfreetype6-dev"
-# install="$install libx11-dev"
-# install="$install libxext-dev"
-# install="$install libxft-dev"
-# install="$install libxrender-dev"
-# install="$install zlib1g-dev"
-# install="$install libxinerama-dev"
-# install="$install libxcomposite-dev"
-# install="$install libxdamage-dev"
-# install="$install libxfixes-dev"
-# install="$install libxmu-dev"
-
 # # Google chrome <https://www.google.com/chrome>.
 # install="$install apt-transport-https"
 # install="$install google-chrome-stable" # instead installed by the appimage
@@ -353,6 +343,7 @@ install="$install gnome-tweaks" # former gnome-tweak-tool (in addition to gnome-
 # install="$install redis" disable="$disable systemctl disable redis-server" # instead installed from the homebrew
 install="$install libpcap-dev" # required by github.com/google/gopacket/pcap (go/src/github.com/google/gopacket/pcap/pcap_unix.go:34:10: fatal error: pcap.h: No such file or directory)
 install="$install libqt5webkit5" # GlobalProtect_UI_deb-5.2.6.0-18.deb VPN dependency
+install="$install libxml2-dev"
 
 # # Er rkt.
 # # install="$install glide" # german does not use glide # go/german `add-apt-repository ppa:masterminds/glide` golang glide vendor package management <https://github.com/Masterminds/glide>

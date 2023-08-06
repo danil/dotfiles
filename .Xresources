@@ -53,8 +53,8 @@ Xft.rgba: rgb
 Xft*dpi: 248
 
 ! https://wiki.archlinux.org/index.php/Cursor_themes#X_resources
-Xcursor.theme: Vanilla-DMZ
-! Xcursor.size: 16
+! Xcursor.theme: Vanilla-DMZ
+! Xcursor.size: 72
 
 ! Black (dark) theme.
 *background: #000000

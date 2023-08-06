@@ -8,3 +8,5 @@ Categories=Utility;GTK;TrayIcon;
 NotShowIn=KDE;GNOME;
 Encoding=UTF-8
 X-GNOME-Autostart-enabled=false
+Hidden=true
+

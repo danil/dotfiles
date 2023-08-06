@@ -6,3 +6,5 @@ Name=unclutter
 Terminal=false
 Type=Application
 X-GNOME-Autostart-enabled=false
+Hidden=true
+
