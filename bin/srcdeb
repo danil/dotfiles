@@ -282,7 +282,7 @@ install="$install xfce4"
 install="$install xfce4-diskperf-plugin" # disk io performance
 install="$install xfce4-power-manager"
 install="$install xfce4-systemload-plugin" # system cpu/mem/net/swap load monitor
-install="$install xfce4-windowck-plugin" # maximized window title on the panel <https://github.com/takinoy/xfce4-windowck-plugin>
+install="$install xfce4-windowck-plugin" # put maximized window title on the panel <https://github.com/takinoy/xfce4-windowck-plugin>
 install="$install xfce4-xkb-plugin" # keyboard language switcher
 
 # # Dropbox.
