@@ -24,6 +24,7 @@
         <value type="int" value="9"/>
         <value type="int" value="14"/>
         <value type="int" value="17"/>
+        <value type="int" value="16"/>
         <value type="int" value="10"/>
         <value type="int" value="15"/>
         <value type="int" value="21"/>
@@ -153,5 +154,8 @@
       <property name="style" type="uint" value="0"/>
     </property>
     <property name="plugin-9" type="string" value="power-manager-plugin"/>
+    <property name="plugin-16" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+    </property>
   </property>
 </channel>
