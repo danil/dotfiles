@@ -5,7 +5,7 @@
     <property name="power-button-action" type="empty"/>
     <property name="brightness-switch" type="int" value="0"/>
     <property name="brightness-switch-restore-on-exit" type="int" value="1"/>
-    <property name="show-tray-icon" type="bool" value="true"/>
+    <property name="show-tray-icon" type="bool" value="false"/>
     <property name="general-notification" type="bool" value="false"/>
     <property name="lid-action-on-battery" type="uint" value="0"/>
     <property name="logind-handle-lid-switch" type="bool" value="false"/>
@@ -15,5 +15,7 @@
     <property name="hibernate-button-action" type="uint" value="3"/>
     <property name="battery-button-action" type="uint" value="3"/>
     <property name="lock-screen-suspend-hibernate" type="bool" value="true"/>
+    <property name="show-presentation-indicator" type="bool" value="false"/>
+    <property name="show-panel-label" type="int" value="0"/>
   </property>
 </channel>
