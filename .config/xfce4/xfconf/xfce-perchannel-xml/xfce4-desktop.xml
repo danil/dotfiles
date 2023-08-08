@@ -108,6 +108,7 @@
     <property name="icon-size" type="uint" value="148"/>
     <property name="file-icons" type="empty">
       <property name="show-filesystem" type="bool" value="false"/>
+      <property name="show-trash" type="bool" value="true"/>
     </property>
     <property name="style" type="int" value="2"/>
     <property name="tooltip-size" type="double" value="148"/>

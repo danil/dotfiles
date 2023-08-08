@@ -1,16 +1,8 @@
 [xfdesktop-version-4.10.3+-rcfile_format]
 4.10.3+=true
 
-[/home/danil/Desktop/xfce-settings-manager.desktop]
-row=2
-col=0
-
-[/home/danil/Desktop/xfce4-web-browser.desktop]
-row=1
-col=0
-
 [Trash]
-row=3
+row=1
 col=0
 
 [/home/danil]

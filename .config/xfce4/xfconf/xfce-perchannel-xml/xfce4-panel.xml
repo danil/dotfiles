@@ -105,20 +105,20 @@
     <property name="plugin-14" type="string" value="actions">
       <property name="button-title" type="uint" value="3"/>
       <property name="appearance" type="uint" value="0"/>
-      <property name="custom-title" type="string" value="xx"/>
+      <property name="custom-title" type="string" value=""/>
       <property name="items" type="array">
-        <value type="string" value="-switch-user"/>
         <value type="string" value="-separator"/>
-        <value type="string" value="-logout"/>
-        <value type="string" value="-logout-dialog"/>
+        <value type="string" value="-switch-user"/>
         <value type="string" value="-separator"/>
         <value type="string" value="-hibernate"/>
         <value type="string" value="-hybrid-sleep"/>
         <value type="string" value="-separator"/>
         <value type="string" value="+lock-screen"/>
-        <value type="string" value="+suspend"/>
-        <value type="string" value="+restart"/>
-        <value type="string" value="+shutdown"/>
+        <value type="string" value="-suspend"/>
+        <value type="string" value="-restart"/>
+        <value type="string" value="-logout-dialog"/>
+        <value type="string" value="-shutdown"/>
+        <value type="string" value="+logout"/>
       </property>
     </property>
     <property name="plugin-7" type="string" value="wckbuttons"/>
