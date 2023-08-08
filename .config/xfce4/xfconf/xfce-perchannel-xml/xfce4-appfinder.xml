@@ -46,4 +46,5 @@
   <property name="icon-view" type="bool" value="true"/>
   <property name="text-beside-icons" type="bool" value="true"/>
   <property name="item-icon-size" type="uint" value="6"/>
+  <property name="sort-by-frecency" type="bool" value="true"/>
 </channel>
