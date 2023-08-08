@@ -19,6 +19,7 @@
         <value type="int" value="18"/>
         <value type="int" value="13"/>
         <value type="int" value="19"/>
+        <value type="int" value="11"/>
         <value type="int" value="6"/>
         <value type="int" value="8"/>
         <value type="int" value="9"/>
@@ -157,6 +158,9 @@
     </property>
     <property name="plugin-9" type="string" value="power-manager-plugin"/>
     <property name="plugin-16" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-11" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
     </property>
   </property>
