@@ -17,20 +17,25 @@
         <value type="int" value="2"/>
         <value type="int" value="7"/>
         <value type="int" value="18"/>
+        <value type="int" value="17"/>
+        <value type="int" value="20"/>
+        <value type="int" value="25"/>
         <value type="int" value="13"/>
         <value type="int" value="19"/>
         <value type="int" value="11"/>
         <value type="int" value="6"/>
         <value type="int" value="8"/>
         <value type="int" value="9"/>
-        <value type="int" value="14"/>
-        <value type="int" value="17"/>
-        <value type="int" value="16"/>
+        <value type="int" value="24"/>
+        <value type="int" value="23"/>
+        <value type="int" value="22"/>
+        <value type="int" value="26"/>
         <value type="int" value="10"/>
         <value type="int" value="15"/>
         <value type="int" value="21"/>
         <value type="int" value="5"/>
         <value type="int" value="12"/>
+        <value type="int" value="14"/>
         <value type="int" value="1"/>
       </property>
       <property name="disable-struts" type="bool" value="false"/>
@@ -102,18 +107,18 @@
       <property name="appearance" type="uint" value="0"/>
       <property name="custom-title" type="string" value="xx"/>
       <property name="items" type="array">
-        <value type="string" value="+lock-screen"/>
         <value type="string" value="-switch-user"/>
-        <value type="string" value="-separator"/>
-        <value type="string" value="-suspend"/>
-        <value type="string" value="-hibernate"/>
-        <value type="string" value="-hybrid-sleep"/>
-        <value type="string" value="-separator"/>
-        <value type="string" value="-shutdown"/>
-        <value type="string" value="-restart"/>
         <value type="string" value="-separator"/>
         <value type="string" value="-logout"/>
         <value type="string" value="-logout-dialog"/>
+        <value type="string" value="-separator"/>
+        <value type="string" value="-hibernate"/>
+        <value type="string" value="-hybrid-sleep"/>
+        <value type="string" value="-separator"/>
+        <value type="string" value="+lock-screen"/>
+        <value type="string" value="+suspend"/>
+        <value type="string" value="+restart"/>
+        <value type="string" value="+shutdown"/>
       </property>
     </property>
     <property name="plugin-7" type="string" value="wckbuttons"/>
@@ -121,7 +126,7 @@
     <property name="plugin-18" type="string" value="wckmenu-plugin"/>
     <property name="plugin-8" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="chromium.instance110468;chromium.instance22028;chromium.instance25855;chromium.instance3067;chromium.instance38339;chromium.instance90392"/>
+      <property name="mpris-players" type="string" value="chromium.instance110468;chromium.instance16492;chromium.instance22028;chromium.instance25855;chromium.instance3067;chromium.instance38339;chromium.instance90392"/>
     </property>
     <property name="plugin-10" type="string" value="xkb">
       <property name="display-name" type="uint" value="0"/>
@@ -157,10 +162,36 @@
       <property name="style" type="uint" value="0"/>
     </property>
     <property name="plugin-9" type="string" value="power-manager-plugin"/>
-    <property name="plugin-16" type="string" value="separator">
+    <property name="plugin-11" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
     </property>
-    <property name="plugin-11" type="string" value="separator">
+    <property name="plugin-20" type="string" value="windowmenu">
+      <property name="style" type="uint" value="0"/>
+      <property name="workspace-actions" type="bool" value="false"/>
+      <property name="workspace-names" type="bool" value="false"/>
+      <property name="urgentcy-notification" type="bool" value="true"/>
+    </property>
+    <property name="plugin-22" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="16915088281.desktop"/>
+      </property>
+      <property name="move-first" type="bool" value="false"/>
+      <property name="arrow-position" type="uint" value="0"/>
+    </property>
+    <property name="plugin-23" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="16915097385.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-24" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="16915104417.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-25" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-26" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
     </property>
   </property>
