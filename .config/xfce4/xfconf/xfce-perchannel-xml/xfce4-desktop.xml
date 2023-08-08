@@ -7,7 +7,7 @@
         <property name="workspace0" type="empty">
           <property name="color-style" type="int" value="0"/>
           <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/home/danil/.local/share/backgrounds/20150529-194-v3.jpg"/>
+          <property name="last-image" type="string" value="/home/danil/.local/share/backgrounds/2018-03-16.19.25.25-v2.jpg"/>
           <property name="backdrop-cycle-enable" type="bool" value="false"/>
         </property>
         <property name="workspace1" type="empty">
@@ -110,5 +110,6 @@
       <property name="show-filesystem" type="bool" value="false"/>
     </property>
     <property name="style" type="int" value="2"/>
+    <property name="tooltip-size" type="double" value="148"/>
   </property>
 </channel>

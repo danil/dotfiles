@@ -2,8 +2,8 @@
 
 <channel name="xsettings" version="1.0">
   <property name="Net" type="empty">
-    <property name="ThemeName" type="string" value="WhiteSur-Dark-solid"/>
-    <property name="IconThemeName" type="string" value="Tango"/>
+    <property name="ThemeName" type="string" value="Greybird-dark"/>
+    <property name="IconThemeName" type="string" value="elementary-xfce-dark"/>
     <property name="DoubleClickTime" type="empty"/>
     <property name="DoubleClickDistance" type="empty"/>
     <property name="DndDragThreshold" type="empty"/>
@@ -42,6 +42,6 @@
     <property name="WindowScalingFactor" type="int" value="1"/>
   </property>
   <property name="Xfce" type="empty">
-    <property name="SyncThemes" type="bool" value="true"/>
+    <property name="SyncThemes" type="bool" value="false"/>
   </property>
 </channel>
