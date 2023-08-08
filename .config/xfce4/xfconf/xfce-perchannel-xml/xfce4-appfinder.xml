@@ -39,8 +39,11 @@
     </property>
   </property>
   <property name="last" type="empty">
-    <property name="window-height" type="int" value="400"/>
-    <property name="window-width" type="int" value="400"/>
+    <property name="window-height" type="int" value="760"/>
+    <property name="window-width" type="int" value="1686"/>
     <property name="pane-position" type="int" value="180"/>
   </property>
+  <property name="icon-view" type="bool" value="true"/>
+  <property name="text-beside-icons" type="bool" value="true"/>
+  <property name="item-icon-size" type="uint" value="6"/>
 </channel>
