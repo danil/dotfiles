@@ -169,6 +169,7 @@ install="$install valgrind" # find memory leaks https://www.valgrind.org/docs/ma
 # install="$install fonts-noto" # awesome serif font ???
 # install="$install gimp" # instead installed from flatpak # a-la photoshop
 # install="$install libappindicator3-1" # slack dependency # libayatana-appindicator3-1 : Conflicts: libappindicator3-1 but 12.10.1+20.10.20200706.1-0ubuntu1 is to be installed
+# install="$install libgdk-pixbuf2.0-dev libglib2.0-dev libxml2-utils" # compiltime dependencies of numix theme
 # install="$install mpv" # instead installed from the homebrew # a-la mplayer replacement
 # install="$install pk-update-icon" # FIXME: missing? # display notifications about software updates
 # install="$install uswsusp" # FIXME: missing? # systemctl hibernate
@@ -230,12 +231,12 @@ install="$install pkg-config"
 
 # xchainkeys <https://github.com/hbekel/xchainkeys>.
 install="$install light" # xchainkeys runtime dependency
-install="$install automake" # xchainkeys compile time dependency
+install="$install automake" # xchainkeys compiltime dependency
 
 # # sxhkd.
 # # install="$install sxhkd" # a-la xchainkeys
 # install="$install libxcb1 libxcb-keysyms1" # sxhkd runtime dependencies
-# install="$install libxcb1 libxcb-keysyms1-dev" # sxhkd compile time dependencies
+# install="$install libxcb1 libxcb-keysyms1-dev" # sxhkd compiltime dependencies
 
 # i3.
 # install="$install i3status" # instead using i3blocks
@@ -250,8 +251,8 @@ install="$install libxpm-dev libxt-dev xutils-dev" # xxkb compiltime dependencie
 # install="$install bspwm" # a-la i3
 
 # volumeicon.
-# install="$install intltool autogen" # volumeicon-alsa compile time dependencies
-# install="$install libasound2-dev libglib2.0-dev libgtk-3-dev" # volumeicon-alsa compile time dependencies
+# install="$install intltool autogen" # volumeicon-alsa compiltime dependencies
+# install="$install libasound2-dev libglib2.0-dev libgtk-3-dev" # volumeicon-alsa compiltime dependencies
 install="$install volumeicon-alsa"
 
 # # Suckless dwm.
