@@ -3,6 +3,24 @@
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 # Homebrew <https://brew.sh>.
 
+################################################################################
+################################################################################
+################################################################################
+# cask
+# clang-format
+# httpie
+# kubernetes-cli
+# leiningen
+# md5sha1sum
+# p7zip 7-Zip
+# perl
+# pwgen
+# rabbitmq
+# ripgrep
+# shellcheck
+# sqlite
+# the_silver_searcher
+
 # install="$install bc" # used by bash prompt, console-based calculator utility
 # install="$install goaccess" # analyze apache/nginx log in real-time
 # install="$install grpc" # ?????????? gRPC client a-la curl https://github.com/grpc/grpc/blob/master/doc/command_line_tool.md
