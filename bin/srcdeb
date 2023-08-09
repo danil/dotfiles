@@ -192,6 +192,7 @@ install="$install mesa-utils" # provides glxgears util for the 3d compositor tes
 install="$install mkusb usb-pack-efi" # mkusb <https://help.ubuntu.com/community/mkusb#Installation> create bootable/live usb/iso <https://help.ubuntu.com/community/mkusb#Quick_start_manual_and_mkusb_PPA>
 install="$install mousepad" # simple text editor for xfce <https://github.com/codebrainz/mousepad>
 install="$install sassc libglib2.0-dev-bin" # dependencies of whitesur gtk theme <https://github.com/vinceliuice/whitesur-gtk-theme>, <https://github.com/vinceliuice/whitesur-icon-theme>.
+install="$install transmission"
 install="$install ubuntu-restricted-extras" # playing video in browser instead of download <https://askubuntu.com/questions/1122579/firefox-downloads-the-video-instead-of-playing-it#1122668>, <https://askubuntu.com/questions/56446/how-do-i-install-the-ubuntu-restricted-extras-package#56448>
 install="$install xscreensaver-data-extra"
 install="$install xscreensaver-gl-extra"
