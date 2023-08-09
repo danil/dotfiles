@@ -2,14 +2,10 @@
 4.10.3+=true
 
 [Trash]
-row=0
+row=1
 col=0
 
 [/home/danil]
-row=2
-col=0
-
-[/]
-row=1
+row=0
 col=0
 

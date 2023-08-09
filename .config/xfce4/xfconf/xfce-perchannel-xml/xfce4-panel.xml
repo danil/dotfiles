@@ -25,6 +25,7 @@
         <value type="int" value="19"/>
         <value type="int" value="11"/>
         <value type="int" value="6"/>
+        <value type="int" value="16"/>
         <value type="int" value="8"/>
         <value type="int" value="9"/>
         <value type="int" value="24"/>
@@ -196,5 +197,6 @@
     <property name="plugin-26" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
     </property>
+    <property name="plugin-16" type="string" value="notification-plugin"/>
   </property>
 </channel>
