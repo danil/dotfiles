@@ -90,8 +90,8 @@ install="$install docker-compose" # <https://github.com/docker/compose>
 install="$install docker-machine" # provides docker daemon <https://docs.docker.com/desktop>
 
 # Golang programming language.
-install="$install go"
-install="$install gcc@5" # <https://stackoverflow.com/questions/59227456/go-1-13-gcc-5-not-in-path#62795608>
+# install="$install go"
+# install="$install gcc@5" # <https://stackoverflow.com/questions/59227456/go-1-13-gcc-5-not-in-path#62795608>
 install="$install golangci-lint" # used by emacs a-la gometalinter
 install="$install scc" # a-la sloc/cloc
 
