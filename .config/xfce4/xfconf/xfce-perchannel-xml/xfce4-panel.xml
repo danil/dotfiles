@@ -74,6 +74,7 @@
         <value type="string" value="ibus panel"/>
       </property>
       <property name="known-items" type="array">
+        <value type="string" value="TelegramDesktop"/>
         <value type="string" value="dropbox-client-2752"/>
         <value type="string" value="dropbox-client-2889"/>
         <value type="string" value="dropbox-client-2823"/>
