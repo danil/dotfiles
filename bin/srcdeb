@@ -48,7 +48,7 @@ install="$install opensmtpd" # send mail via /usr/bin/sendmail and deliver local
 install="$install openssh-server"
 install="$install zstd" # a-la gz/xz compression
 
-# Homebrew <https://docs.brew.sh/Homebrew-on-Linux>.
+# Homebrew <https://docs.brew.sh/Homebrew-on-Linux#requirements>.
 # install="$install git" # instead installed from the homebrew
 install="$install build-essential"
 install="$install curl"
