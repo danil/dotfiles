@@ -13,6 +13,7 @@ fi
 #     /usr/bin/sxhkd -c ~/.config/sxhkd/i3rc &
 # fi
 
+# # X screen color ICC/ICM calibrate/manage.
 # if hash argyll-dispwin 2>/dev/null; then
 #     # <https://wiki.archlinux.org/index.php/ICC_Profiles#Argyll_CMS>.
 #     display_calibrator=argyll-dispwin
