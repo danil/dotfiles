@@ -302,7 +302,7 @@ install="$install ristretto" # command line image viewer
 # install="$install dropbox"
 # remove="$remove nautilus-dropbox" # conflicts with dropbox deb file
 
-# Gnome.
+# Gnome Desktop Environment.
 # install="$install chrome-gnome-shell" # chrome/gnome extension integration
 # install="$install gnome-shell-extension-appindicator-" remove
 # install="$install gnome-shell-extension-impatience" # speed up the gnome-shell animation speed
