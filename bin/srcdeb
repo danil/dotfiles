@@ -272,14 +272,14 @@ install="$install volumeicon-alsa"
 # # Vault (hashicorp) <https://vaultproject.io/downloads>.
 # install="$install vault" # curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - && sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 
-# Xfce4.
+# Xfce4 DE Desktop Environment.
+# install="$install libxfce4panel-2.0-dev libxfce4ui-2-dev" # compiltime dependency of text plugin <https://github.com/daveriesz/xfce-text-plugin>
+# install="$install orage" # xfce date time plugin with calendar
 # install="$install thunar-megasync" # not using
 # install="$install xfce4-notifyd" # notifications daemon (used by dwm)
 # install="$install xfdashboard" # instead installing skippy-xd
-# install="$install libxfce4panel-2.0-dev libxfce4ui-2-dev" # compiltime dependency of text plugin <https://github.com/daveriesz/xfce-text-plugin>
 install="$install elementary-icon-theme"
 install="$install elementary-xfce-icon-theme"
-install="$install ristretto" # command line image viewer
 install="$install thunar" # file manager
 install="$install thunar-archive-plugin"
 install="$install thunar-dropbox-plugin"
@@ -291,19 +291,24 @@ install="$install xfce4-systemload-plugin" # system cpu/mem/net/swap load monito
 install="$install xfce4-windowck-plugin" # put maximized window title on the panel <https://github.com/takinoy/xfce4-windowck-plugin>
 install="$install xfce4-xkb-plugin" # keyboard language switcher
 
+# MATE DE Desktop Environment.
+# install="$install atril" # instead installed from snap # pdf viewer (remembers last page) for mate de (desktop environment) https://github.com/mate-desktop/atril
+install="$install caja" # file manager
+install="$install engrampa" # archiver
+install="$install evince-" # remove: pdf viewer remembers last page https://github.com/mate-desktop/atril
+install="$install ristretto" # command line image viewer
+
 # # Dropbox.
 # install="$install dropbox"
 # remove="$remove nautilus-dropbox" # conflicts with dropbox deb file
 
 # Gnome.
-# install="$install atril" # instead installed from snap # pdf viewer (remembers last page) for mate de (desktop environment) https://github.com/mate-desktop/atril
 # install="$install chrome-gnome-shell" # chrome/gnome extension integration
 # install="$install gnome-shell-extension-appindicator-" remove
 # install="$install gnome-shell-extension-impatience" # speed up the gnome-shell animation speed
 # install="$install gnome-shell-extension-move-clock" # move clock extension for GNOME shell
 # install="$install gnome-shell-extension-ubuntu-dock-" # remove
 # install="$install ubuntu-desktop-" # remove
-install="$install evince-" # remove: pdf viewer remembers last page https://github.com/mate-desktop/atril
 install="$install gnome-tweaks" # former gnome-tweak-tool (in addition to gnome-control-center)
 
 # Zoom instead installed by the appimage. # Zoom dependencies.
