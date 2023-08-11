@@ -17,11 +17,12 @@
 *geometry:        87x43
 *saveLines:       10000
 
-! <http://askubuntu.com/questions/22419/how-do-i-make-urxvt-render-xft-fonts#96779>.
-*font:           xft:Monospace:pixelsize=24:antialias=true:hinting=true:autohint=true:style=regular
-*boldFont:       xft:Monospace:pixelsize=24:antialias=true:hinting=true:autohint=true:style=bold
-*italicFont:     xft:Monospace:pixelsize=24:antialias=true:hinting=true:autohint=true:style=italic
-*boldItalicFont: xft:Monospace:pixelsize=24:antialias=true:hinting=true:autohint=true:style=bold italic
+! ! <http://askubuntu.com/questions/22419/how-do-i-make-urxvt-render-xft-fonts#96779>.
+! ! Error: Font ‘xft:Monospace:pixelsize=24:antialias=true:hinting=true:autohint=true:style=regular’ is not defined
+! *font:           xft:Monospace:pixelsize=24:antialias=true:hinting=true:autohint=true:style=regular
+! *boldFont:       xft:Monospace:pixelsize=24:antialias=true:hinting=true:autohint=true:style=bold
+! *italicFont:     xft:Monospace:pixelsize=24:antialias=true:hinting=true:autohint=true:style=italic
+! *boldItalicFont: xft:Monospace:pixelsize=24:antialias=true:hinting=true:autohint=true:style=bold italic
 
 ! Xft.
 ! `xrdb -query | grep Xft`
