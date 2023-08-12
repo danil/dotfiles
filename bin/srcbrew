@@ -1,7 +1,10 @@
 #!/bin/sh
 
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
-# Homebrew <https://brew.sh>.
+
+brew_ppa_cli="brew tap"
+brew_ppx_cli="brew untap"
+brew_ins_cli="brew install"
 
 ################################################################################
 ################################################################################
@@ -182,14 +185,6 @@ install="$install postgresql" # rdbms <https://wiki.postgresql.org/wiki/Homebrew
 install="$install redis"
 install="$install vault"
 
-for repo in ${delrepo}; do
-    brew untap $repo || exit 1
-done
-
-for repo in ${addrepo}; do
-    brew tap $repo || exit 1
-done
-
-if [ ! -z "$install" ] && [ "$install" != " " ]; then
-    brew install $install || exit 1
-fi
+for repo in ${delrepo}; do $brew_ppx_cli $repo || exit 1; done
+for repo in ${addrepo}; do $brew_ppa_cli $repo || exit 1; done
+[ ! -z "$install" ] && [ "$install" != " " ] && $brew_ins_cli $install || exit 1
