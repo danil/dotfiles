@@ -182,17 +182,13 @@ install="$install postgresql" # rdbms <https://wiki.postgresql.org/wiki/Homebrew
 install="$install redis"
 install="$install vault"
 
-if [ ! -z "$delrepo" ] && [ "$delrepo" != " " ]; then
-    for repo in "$delrepo"; do
-        brew untap $repo || exit 1
-    done
-fi
+for repo in ${delrepo}; do
+    brew untap $repo || exit 1
+done
 
-if [ ! -z "$addrepo" ] && [ "$addrepo" != " " ]; then
-    for repo in "$addrepo"; do
-        brew tap $repo || exit 1
-    done
-fi
+for repo in ${addrepo}; do
+    brew tap $repo || exit 1
+done
 
 if [ ! -z "$install" ] && [ "$install" != " " ]; then
     brew install $install || exit 1
