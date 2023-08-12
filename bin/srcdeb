@@ -2,9 +2,9 @@
 
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-dpkg_ins_cli="aptitude install --without-recommends"
-dpkg_rem_cli="aptitude remove"
-# dpkg_dis_cli="systemctl disable"
+dpkg_ins_cli="sudo aptitude install --without-recommends"
+dpkg_rem_cli="sudo aptitude remove"
+# dpkg_dis_cli="sudo systemctl disable"
 
 # TODO: install ntp
 
@@ -375,6 +375,6 @@ dpkg_ins="$dpkg_ins libxml2-dev"
 # dpkg_ins="$dpkg_ins vpnc" # cisco vpn client
 # # dpkg_ins="$dpkg_ins yarn" # (NOTE: before add ppa!) js package manager required by rails asset pipeline precompilation (before install add ppa <https://yarnpkg.com/lang/en/docs/install/#debian-stable>)
 
-$dpkg_rem_cli "$dpkg_rem" || exit 1
-$dpkg_ins_cli "$dpkg_ins" || exit 1
-# $dpkg_dis_cli "$dpkg_dis" || exit 1
+sh -c "$dpkg_rem_cli $dpkg_rem" || exit 1
+sh -c "$dpkg_ins_cli $dpkg_ins" || exit 1
+# sh -c "$dpkg_dis_cli $dpkg_dis" || exit 1
