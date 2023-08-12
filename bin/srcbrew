@@ -20,6 +20,7 @@
 # sqlite
 # the_silver_searcher
 
+# install="$install bash-completion" # programmable completion # conflicts with util-linux
 # install="$install bc" # used by bash prompt, console-based calculator utility
 # install="$install goaccess" # analyze apache/nginx log in real-time
 # install="$install grpc" # ?????????? gRPC client a-la curl https://github.com/grpc/grpc/blob/master/doc/command_line_tool.md
@@ -28,7 +29,6 @@
 # install="$install pigz" # parallel gzip for multi-processor, multi-core
 install="$install ack" # a-la ag <https://github.com/beyondgrep/ack3>
 install="$install bash" # Bourne again shell <https://gnu.org/software/bash>
-install="$install bash-completion"
 install="$install btop" # a-la htop
 install="$install clib" # package manager for c program language libraries <https://github.com/clibs/clib>
 install="$install colordiff" # colorize diff output <https://github.com/daveewart/colordiff>
@@ -52,7 +52,7 @@ install="$install the_platinum_searcher" # pt a-la ag <https://github.com/monoch
 install="$install the_silver_searcher" # ag <https://github.com/ggreer/the_silver_searcher>
 install="$install tree" # displays an indented directory tree
 install="$install uni2ascii" # to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`
-install="$install util-linux" # provides uni2ascii: to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`
+install="$install util-linux" # provides uni2ascii: to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ` <https://github.com/util-linux/util-linux>
 install="$install wdiff" # diff wordwise/word per word basis (a word is anything between whitespace)
 
 # Data compression algorithms.
