@@ -2,19 +2,28 @@
 
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-USAGE="usage: ${CMD:=${0##*/}} [--deb] [--brew] [--reinstall]"
+USAGE="usage: ${CMD:=${0##*/}} [--deb] [--brew] [--update]"
 
-# APT (deb/dpkg/apt-get/aptitude) <https://en.wikipedia.org/wiki/APT_(software)>.
+# APT (deb/dpkg/apt-get/aptitude)
+# <https://en.wikipedia.org/wiki/APT_(software)>.
 DPKG_ADD_CLI="aptitude install --without-recommends"
 DPKG_REM_CLI="aptitude remove"
 # DPKG_DIS_CLI="systemctl disable"
 
-# Homebrew <https://brew.sh>.
+# Homebrew
+# <https://brew.sh>.
 BREW_ADD_SRC_CLI="brew tap"
 BREW_REM_SRC_CLI="brew untap"
 BREW_ADD_CLI="brew install"
 
-OPT_ALL='true'
+# Rust Cargo
+# <https://github.com/rust-lang/cargo>,
+# <https://doc.rust-lang.org/cargo>.
+RUST_ADD_CLI="cargo install"
+RUST_UPD_CLI="cargo install --force"
+
+OPT_ALL=0
+OPT_JOBS=`grep -c ^processor /proc/cpuinfo` OPT_JOBS=${OPT_JOBS:-1}
 
 # Options functions.
 optexit () { printf >&2 "%s %s\n%s\n" "$1" "$2" "$USAGE"; exit 2; }
@@ -27,10 +36,13 @@ while [ "$1" != "$EOL" ]; do
     opt="$1"; shift
 
     case "$opt" in
-        --deb       ) OPT_DPKG='true'; OPT_ALL='false';;
-        --brew      ) OPT_BREW='true'; OPT_ALL='false';;
-        --reinstall ) OPT_REINSTALL='true';;
-        -h | --help ) opthelp; exit 0;;
+        --deb          ) OPT_DPKG=0; OPT_ALL=-1;;
+        --brew         ) OPT_BREW=0; OPT_ALL=-1;;
+        --rust         ) OPT_RUST=0; OPT_ALL=-1;;
+        --update       ) OPT_UPDATE=0;;
+        --jobs         ) optcheck "$1" "$opt"; OPT_JOBS="$1"; shift;;
+        -v | --verbose ) OPT_VERBOSE=0;;
+        -h | --help    ) opthelp; exit 0;;
 
         # Process special cases.
         --) while [ "$1" != "$EOL" ]; do set -- "$@" "$1"; shift; done;;   # parse remaining as positional
@@ -70,25 +82,27 @@ done; shift
 # DPKG_ADD="$DPKG_ADD linux-generic-hwe-20.04-edge" # linxu/kernel 5.11 for ubuntu 20.04
 # DPKG_ADD="$DPKG_ADD makepasswd" # password generator
 # DPKG_ADD="$DPKG_ADD protobuf-compiler" # version to old/outdated(
+# RUST_ADD="$RUST_ADD czkawka_cli" # find duplicates, empty folders
+# RUST_ADD="$RUST_ADD ddh" # duplicate file finder https://github.com/darakian/ddh
+# RUST_ADD="$RUST_ADD exa" # list files/directories, is an ls replacement https://github.com/ogham/exa
+# RUST_ADD="$RUST_ADD fclones" # duplicate file finder https://github.com/pkolaczk/fclones
+# RUST_ADD="$RUST_ADD fselect" # find files with sql-like queries https://github.com/jhspetersson/fselect
+# RUST_ADD="$RUST_ADD xsv" # csv cli (indexing, slicing, analyzing, splitting and joining) <https://github.com/BurntSushi/xsv>
 BREW_ADD="$BREW_ADD ack" # a-la ag <https://github.com/beyondgrep/ack3>
 BREW_ADD="$BREW_ADD bash" # Bourne again shell <https://gnu.org/software/bash>
-BREW_ADD="$BREW_ADD btop" # a-la htop
 BREW_ADD="$BREW_ADD clib" # package manager for c program language libraries <https://github.com/clibs/clib>
 BREW_ADD="$BREW_ADD colordiff" # colorize diff output <https://github.com/daveewart/colordiff>
 BREW_ADD="$BREW_ADD convmv" # a-la iconv character encoding conversion util # DPKG_ADD="$DPKG_ADD convmv" # a-la iconv character encoding conversion util
 BREW_ADD="$BREW_ADD csvkit" # conver csv to json `csvjson path/to/file.csv` <https://github.com/wireservice/csvkit/blob/master/docs/scripts/csvjson.rst>
 BREW_ADD="$BREW_ADD curl" # a-la wget <https://github.com/curl/curl> # DPKG_ADD="$DPKG_ADD curl" # a-la wget <https://github.com/curl/curl>
 BREW_ADD="$BREW_ADD dos2unix" # convert text file line endings between CRLF and LF # DPKG_ADD="$DPKG_ADD dos2unix" # convert text file line endings between CRLF and LF
-BREW_ADD="$BREW_ADD erdtree" # disk space usage is an ncdu replacement
-BREW_ADD="$BREW_ADD fd" # find replacement https://github.com/sharkdp/fd
+BREW_ADD="$BREW_ADD fd" # RUST_ADD="$RUST_ADD fd-find" # find replacement https://github.com/sharkdp/fd
 BREW_ADD="$BREW_ADD flatbuffers" # a-la protobuf <https://github.com/google/flatbuffers>
-BREW_ADD="$BREW_ADD htop" # DPKG_ADD="$DPKG_ADD htop" # a-la top <https://github.com/htop-dev/htop>
 BREW_ADD="$BREW_ADD jsonnet" # https://github.com/google/jsonnet
 BREW_ADD="$BREW_ADD mailutils" # DPKG_ADD="$DPKG_ADD mailutils" # is an gnu mailutils, reads local mail, provides /usr/bin/mail
-BREW_ADD="$BREW_ADD ncdu" # DPKG_ADD="$DPKG_ADD ncdu" # disk space usage is an baobab and gt5 replacement
 BREW_ADD="$BREW_ADD ninja" # a-la make build automation system
 BREW_ADD="$BREW_ADD pwgen" # DPKG_ADD="$DPKG_ADD pwgen" # password generator
-BREW_ADD="$BREW_ADD ripgrep" # rg a-la ag <https://github.com/BurntSushi/ripgrep>
+BREW_ADD="$BREW_ADD ripgrep" # RUST_ADD="$RUST_ADD ripgrep" # rg is a search tool a-la ag (silver searcher) <https://github.com/burntsushi/ripgrep>
 BREW_ADD="$BREW_ADD the_platinum_searcher" # pt a-la ag <https://github.com/monochromegane/the_platinum_searcher>
 BREW_ADD="$BREW_ADD the_silver_searcher" # DPKG_ADD="$DPKG_ADD silversearcher-ag" # the silver searcher (ag) is a code-searching tool a-la ack <https://github.com/ggreer/the_silver_searcher> # DPKG_ADD="$DPKG_ADD automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev" # compiltime dependency <https://github.com/ggreer/the_silver_searcher#building-from-source>
 BREW_ADD="$BREW_ADD tree" # DPKG_ADD="$DPKG_ADD tree" # displays an indented directory tree
@@ -107,6 +121,7 @@ DPKG_ADD="$DPKG_ADD mlocate" # locate/updatedb
 DPKG_ADD="$DPKG_ADD net-tools" # ifconfig cli
 DPKG_ADD="$DPKG_ADD opensmtpd" # send mail via /usr/bin/sendmail and deliver local mail to /var/mail a-la exim replacement
 DPKG_ADD="$DPKG_ADD openssh-server"
+RUST_ADD="$RUST_ADD cpc" # cli calculator/units converter https://github.com/probablykasper/cpc
 
 # Data compression algorithms.
 BREW_ADD="$BREW_ADD lz4" # a-la gz/xz compression, required by gnupg, ffmpeg and mpv
@@ -128,6 +143,7 @@ BREW_ADD="$BREW_ADD wget" # a-la curl
 BREW_ADD="$BREW_ADD whois"
 
 # Git.
+# RUST_ADD="$RUST_ADD gitui" # git tui, is an tig replacement https://github.com/extrawurst/gitui
 BREW_ADD="$BREW_ADD git" # distributed version/revision control system <https://github.com/git/git> # DPKG_ADD="$DPKG_ADD git"
 BREW_ADD="$BREW_ADD git-flow" # <https://github.com/nvie/gitflow>
 BREW_ADD="$BREW_ADD git-lfs" # <https://git-lfs.com>
@@ -135,6 +151,8 @@ BREW_ADD="$BREW_ADD tig" # DPKG_ADD="$DPKG_ADD tig" # git interactive client
 
 # *nix shell/terminal emulator/multiplexer.
 # BREW_ADD="$BREW_ADD nnn" # terminal file manager a-la mc/midnight commander https://github.com/jarun/nnn
+# RUST_ADD="$RUST_ADD bat" # print file lines with syntax highlighting, is an cat replacement
+# RUST_ADD="$RUST_ADD racer" # compilation failing all the time <https://github.com/racer-rust/racer/issues/868#issuecomment-459017685>, rust code completion https://github.com/phildawes/racer
 BREW_ADD="$BREW_ADD fish" # fish shell a-la bash
 BREW_ADD="$BREW_ADD nushell" # <https://github.com/nushell/nushell>
 BREW_ADD="$BREW_ADD tmux" # terminal multiplexer a-la gnu screen # DPKG_ADD="$DPKG_ADD pkg-config libevent-dev libncurses-dev" # os wide/from source compiltime dependency # DPKG_ADD="$DPKG_ADD byacc" # also byacc: preventing compiltime dependency error: ./etc/ylwrap: line 175: yacc: command not found
@@ -142,6 +160,7 @@ BREW_ADD="$BREW_ADD wezterm" BREW_ADD_SRC="$BREW_ADD_SRC wez/wezterm-linuxbrew" 
 BREW_ADD="$BREW_ADD xsel" # DPKG_ADD="$DPKG_ADD xsel" # copy selection in termina to the xorg clipboard (used by emacs and urxvt) <https://wiki.archlinux.org/index.php/rxvt-unicode#Automatic_Script_Management>
 DPKG_ADD="$DPKG_ADD cmake libfontconfig1-dev libfreetype6-dev libxcb-xfixes0-dev libxkbcommon-dev pkg-config" # alacritty dependency, alacritty is a terminal emulator a-la st/xterm <https://github.com/alacritty/alacritty/blob/master/INSTALL.md#debianubuntu>
 DPKG_ADD="$DPKG_ADD xterm" # backup/fallback terminal additional to the st/stterm/alacritty
+RUST_ADD="$RUST_ADD alacritty" # terminal/console emulator a-la st/xterm https://github.com/alacritty/alacritty
 
 # Vim.
 BREW_ADD="$BREW_ADD fzf" # fuzzy finder https://github.com/junegunn/fzf
@@ -197,18 +216,18 @@ BREW_ADD="$BREW_ADD llvm" # <https://github.com/llvm/llvm-project>
 # DPKG_ADD="$DPKG_ADD golang-1.17-doc golang-1.17-go golang-1.17-src"
 # DPKG_ADD="$DPKG_ADD golang-race-detector-runtime" # FIXME: where is race detector for the go 1.15?
 BREW_ADD="$BREW_ADD golangci-lint" # used by emacs a-la gometalinter
-BREW_ADD="$BREW_ADD scc" # a-la sloc/cloc
 
 # Rust programming language <https://github.com/rust-lang/rust>.
 # DPKG_ADD="$DPKG_ADD libgtk-3-dev" # required by fontfinder https://github.com/mmstick/fontfinder
-# DPKG_ADD="$DPKG_ADD libwebkit2gtk-4.0-dev" # required by fontfinder https://github.com/mmstick/fontfinder
 # DPKG_ADD="$DPKG_ADD libudev-dev" # required by fclones, is an duplicate file finder https://github.com/pkolaczk/fclones
+# DPKG_ADD="$DPKG_ADD libwebkit2gtk-4.0-dev" # required by fontfinder https://github.com/mmstick/fontfinder
 # DPKG_ADD="$DPKG_ADD libxcb-composite0-dev" # required by gitui a-la tig https://github.com/extrawurst/gitui
+# RUST_ADD="$RUST_ADD rustfmt" # rust code pretty formating <https://github.com/rust-lang-nursery/rustfmt>
 BREW_ADD="$BREW_ADD rust"
 
 # JS/JavaScript/Nodejs.
 # DPKG_ADD="$DPKG_ADD curl dirmngr apt-transport-https lsb-release ca-certificates" # required by nodesource.com's ppa
-BREW_ADD="$BREW_ADD deno" # js programming language <https://github.com/denoland/deno>
+BREW_ADD="$BREW_ADD deno" # RUST_ADD="$RUST_ADD deno --locked" # js programming language, runtime a-la node.js <https://deno.land>, <https://github.com/denoland/deno>
 BREW_ADD="$BREW_ADD node" # DPKG_ADD="$DPKG_ADD nodejs" # js programming language <https://github.com/nodejs/node>
 
 # Python programming language
@@ -235,8 +254,10 @@ BREW_ADD="$BREW_ADD ruby"
 BREW_ADD="$BREW_ADD dart-sdk"
 
 # Programming languages.
+# RUST_ADD="$RUST_ADD tokei" # cloc metric (count lines of code) <https://github.com/Aaronepower/tokei>
 BREW_ADD="$BREW_ADD lua" # newer than apt version # the lua programming language https://github.com/lua/lua
 BREW_ADD="$BREW_ADD sbcl" # Steel Bank Common Lisp (SBCL) <https://github.com/sbcl/sbcl>
+BREW_ADD="$BREW_ADD scc" # a-la sloc/cloc
 
 # Web/HTTPd server.
 # DPKG_ADD="$DPKG_ADD goaccess" # instead installed from the homebrew # analyze nginx/apache log in real-time
@@ -289,7 +310,17 @@ BREW_ADD="$BREW_ADD docker" # DPKG_ADD="$DPKG_ADD docker-ce" DPKG_DIS="docker" #
 BREW_ADD="$BREW_ADD docker-compose" # <https://github.com/docker/compose>
 BREW_ADD="$BREW_ADD docker-machine" # provides docker daemon <https://docs.docker.com/desktop>
 
-# # Benchmarks a-la `ab`.
+# DevOps monitoring.
+# RUST_ADD="$RUST_ADD bandwhich" # bandwidth utilization tool https://github.com/imsnif/bandwhich
+# RUST_ADD="$RUST_ADD diskonaut" # terminal disk space navigator https://github.com/imsnif/diskonaut
+# RUST_ADD="$RUST_ADD du-dust" # show disk space usage, is an du replacement https://github.com/bootandy/dust
+# RUST_ADD="$RUST_ADD procs" # list processes, is an ps replacement https://github.com/dalance/procs
+BREW_ADD="$BREW_ADD btop" # a-la htop
+BREW_ADD="$BREW_ADD erdtree" # disk space usage is an ncdu replacement
+BREW_ADD="$BREW_ADD htop" # DPKG_ADD="$DPKG_ADD htop" # a-la top <https://github.com/htop-dev/htop>
+BREW_ADD="$BREW_ADD ncdu" # DPKG_ADD="$DPKG_ADD ncdu" # disk space usage is an baobab and gt5 replacement
+
+# # DevOps Benchmarks a-la `ab`.
 # DPKG_ADD="$DPKG_ADD bonnie++"
 # DPKG_ADD="$DPKG_ADD apache2-utils"
 # DPKG_ADD="$DPKG_ADD dbench"
@@ -500,8 +531,13 @@ DPKG_ADD="$DPKG_ADD libxml2-dev"
 # DPKG_ADD="$DPKG_ADD redis" DPKG_DIS="$DPKG_DIS redis-server" # felix
 # DPKG_ADD="$DPKG_ADD vpnc" # cisco vpn client
 
+if [ "$OPT_VERBOSE" = 0 ] ; then
+    RUST_UPD_CLI="$RUST_UPD_CLI --verbose"
+    RUST_ADD_CLI="$RUST_ADD_CLI --verbose"
+fi
+
 # APT/deb/dpkg/apt-get/aptitude <https://en.wikipedia.org/wiki/APT_(software)>.
-if [ "$OPT_DPKG" = 'true' ] || [ "$OPT_ALL" = 'true' ]; then
+if [ "$OPT_DPKG" = 0 ] || [ "$OPT_ALL" = 0 ]; then
     sudo cat /dev/null || exit 1
     printf "Installing dpkg...\n\n"
     sh -c "sudo $DPKG_REM_CLI $DPKG_REM" || exit 1
@@ -510,9 +546,24 @@ if [ "$OPT_DPKG" = 'true' ] || [ "$OPT_ALL" = 'true' ]; then
 fi
 
 # Homebrew <https://brew.sh>.
-if [ "$OPT_BREW" = 'true' ] || [ "$OPT_ALL" = 'true' ]; then
+if [ "$OPT_BREW" = 0 ] || [ "$OPT_ALL" = 0 ]; then
     printf "Installing homebrew...\n\n"
-    # for repo in ${BREW_REM_SRC}; do sh -c "$BREW_REM_SRC_CLI $repo" || exit 1; done
-    for repo in ${BREW_ADD_SRC}; do sh -c "$BREW_ADD_SRC_CLI $repo" || exit 1; done
+    # for src in ${BREW_REM_SRC}; do sh -c "$BREW_REM_SRC_CLI $src" || exit 1; done
+    for src in ${BREW_ADD_SRC}; do sh -c "$BREW_ADD_SRC_CLI $src" || exit 1; done
     [ -n "$BREW_ADD" ] && [ "$BREW_ADD" != " " ] && sh -c "$BREW_ADD_CLI $BREW_ADD" || exit 1
+    printf "\n"
+fi
+
+# Rust Cargo
+# <https://github.com/rust-lang/cargo>,
+# <https://doc.rust-lang.org/cargo>.
+if [ "$OPT_RUST" = 0 ] || [ "$OPT_ALL" = 0 ]; then
+    if [ "$OPT_UPDATE" = 0 ]; then
+        printf "Updating Rust Cargo...\n\n"
+        for pkg in ${RUST_ADD}; do sh -c "$RUST_UPD_CLI $pkg" || exit 1; done
+    else
+        printf "Installing Rust Cargo...\n\n"
+        for pkg in ${RUST_ADD}; do sh -c "$RUST_ADD_CLI $pkg" || exit 1; done
+    fi
+    printf "\n"
 fi
