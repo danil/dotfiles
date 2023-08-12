@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
 dpkg_ins_cli="aptitude install --without-recommends"
 dpkg_rem_cli="aptitude remove"
 # dpkg_dis_cli="systemctl disable"
