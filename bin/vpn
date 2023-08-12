@@ -13,11 +13,11 @@ while [ "$1" != "$EOL" ]; do
     opt="$1"; shift
 
     case "$opt" in
-        -s | --status     ) opt_status='true';;
-        -c | --connect    ) opt_connect='true';;
-        -r | --reconnect  ) opt_reconnect='true';;
-        -d | --disconnect ) opt_disconnect='true';;
-        --reinstall       ) opt_reinstall='true';;
+        -s | --status     ) OPT_STATUS='true';;
+        -c | --connect    ) OPT_CONNECT='true';;
+        -r | --reconnect  ) OPT_RECONNECT='true';;
+        -d | --disconnect ) OPT_DISCONNECT='true';;
+        --reinstall       ) OPT_REINSTALL='true';;
         -h | --help       ) opthelp; exit 0;;
 
         # Process special cases.
@@ -29,7 +29,7 @@ while [ "$1" != "$EOL" ]; do
     esac
 done; shift
 
-if [ "$opt_reinstall" = 'true' ]; then
+if [ "$OPT_REINSTALL" = 'true' ]; then
     sudo aptitude remove globalprotect || exit 1
     printf '<?xml version="1.0" encoding="UTF-8"?>\n<GlobalProtect>\n\t<PanMSAgent>\n\t\t<DebugLevel>5</DebugLevel>\n\t\t<CDLLog>0</CDLLog>\n\t\t<PanGPS>5</PanGPS>\n\t</PanMSAgent>\n\t<Settings>\n\t\t<ConfFromPortal>7212</ConfFromPortal>\n\t\t<ConfFromPortal3>22635233</ConfFromPortal3>\n\t\t<OverrideMethod>allowed</OverrideMethod>\n\t\t<LastUrl>vpn.bank.ozon.ru</LastUrl>\n\t\t<HipCheckInterval>0</HipCheckInterval>\n\t\t<UserOverrides>0</UserOverrides>\n\t\t<DisallowLocalAccess>false</DisallowLocalAccess>\n\t\t<DisplayWelcome>1</DisplayWelcome>\n\t\t<LocalBioEnabled>0</LocalBioEnabled>\n\t\t<LocalSSLEnabled>0</LocalSSLEnabled>\n\t\t<DisplayTrafficBlockingMsg>1</DisplayTrafficBlockingMsg>\n\t\t<OtherDisableStarted>0</OtherDisableStarted>\n\t\t<agent-user-override-timeout>0</agent-user-override-timeout>\n\t\t<ssl-only-selection>0</ssl-only-selection>\n\t\t<mfa-prompt-suppress-time>0</mfa-prompt-suppress-time>\n\t\t<Configurations2>47</Configurations2>\n\t\t<Configurations3>0</Configurations3>\n\t\t<InitRun>0</InitRun>\n\t\t<Configurations>2</Configurations>\n\t</Settings>\n\t<Settings\\vpn.ecom-bank.ozon.ru>\n\t\t<WasOD>1</WasOD>\n\t</Settings\\vpn.ecom-bank.ozon.ru>\n\t<Settings\\vpn-a.ecom-bank.ozon.ru>\n\t\t<WasOD>1</WasOD>\n\t</Settings\\vpn-a.ecom-bank.ozon.ru>\n\t<Settings\\vpn.bank.ozon.ru>\n\t\t<LatestCP/>\n\t\t<username/>\n\t\t<WasOD>1</WasOD>\n\t</Settings\\vpn.bank.ozon.ru>\n</GlobalProtect>\n' | install -m 644 -D /dev/stdin ~/.GlobalProtect/pangpa.xml || exit 1
     sudo sh -c 'printf '"'"'<?xml version="1.0" encoding="UTF-8"?>\n<GlobalProtect>\n\t<Settings>\n\t\t<default-browser>yes</default-browser>\n\t\t<disable-globalprotect>0</disable-globalprotect>\n\t</Settings>\n\t<PanSetup>\n\t\t<InstallHistory>Fresh Install</InstallHistory>\n\t\t<CurrentVersion>6.0.1-6</CurrentVersion>\n\t\t<PreviousVersion/>\n\t</PanSetup>\n\t<PanGPS>\n\t\t<UserProfileType>0</UserProfileType>\n\t\t<disable-globalprotect>0</disable-globalprotect>\n\t</PanGPS>\n</GlobalProtect>\n'"'"' | install -m 644 -D /dev/stdin /opt/paloaltonetworks/globalprotect/pangps.xml' || exit 1
@@ -38,17 +38,17 @@ if [ "$opt_reinstall" = 'true' ]; then
     sudo update-desktop-database || exit 1
     sudo dpkg --install ~/Downloads/GlobalProtect_deb-6.0.1.1-6.deb || exit 1
 
-elif [ "$opt_disconnect" = 'true' ]; then
+elif [ "$OPT_DISCONNECT" = 'true' ]; then
     globalprotect disconnect || exit 1
 
-elif [ "$opt_reconnect" = 'true' ]; then
+elif [ "$OPT_RECONNECT" = 'true' ]; then
     globalprotect rediscover-network || exit 1
 
-elif [ "$opt_connect" = 'true' ]; then
+elif [ "$OPT_CONNECT" = 'true' ]; then
     # globalprotect connect --portal vpn.bank.ozon.ru || exit 1
     globalprotect connect --portal vpn.ecom-bank.ozon.ru || exit 1
 
-elif [ "$opt_status" != 'true' ]; then
+elif [ "$OPT_STATUS" != 'true' ]; then
     opthelp && exit 0 || exit 1
 fi
 
