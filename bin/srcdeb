@@ -1,377 +1,378 @@
-#!/bin/bash
-remove_command="aptitude remove"
-install_command="aptitude install --without-recommends"
-disable_command="systemctl disable"
+#!/bin/sh
+
+dpkg_ins_cli="aptitude install --without-recommends"
+dpkg_rem_cli="aptitude remove"
+# dpkg_dis_cli="systemctl disable"
 
 # TODO: install ntp
 
 # Common packages.
-# install="$install apache2-utils" # instead installed from the homebrew # provides htpasswd utility is an nginx/apach basic authentication password generator
-# install="$install convmv" # instead installed util-linux from the homebrew # a-la iconv character encoding conversion util
-# install="$install curl" # instead installed from the homebrew
-# install="$install dos2unix" # instead installed from the homebrew # convert text file line endings between CRLF and LF
-# install="$install git" # instead installed from the homebrew instead
-# install="$install goaccess" # instead installed from the homebrew # analyze nginx/apache log in real-time
-# install="$install hping3" # instead installed hping from the homebrew # a-la interactive ping https://github.com/antirez/hping
-# install="$install htop" # instead installed from the homebrew # a-la top
-# install="$install inxi" # inxi --graphics <https://github.com/smxi/inxi>
-# install="$install jp2a" # converts jpg to ascii
-# install="$install jq" # instead installed from the homebrew # json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>
-# install="$install lftp" # instead installed from the homebrew # ftp client
-# install="$install linux-generic-hwe-20.04-edge" # linxu/kernel 5.11 for ubuntu 20.04
-# install="$install mailutils" # instead installed from the homebrew # is an gnu mailutils, reads local mail, provides /usr/bin/mail
-# install="$install makepasswd" # password generator
-# install="$install mosh" # instead installed from the homebrew # ssh replacement
-# install="$install ncdu" # instead installed from the homebrew # disk space usage is an baobab and gt5 replacement
-# install="$install nginx" disable="$disable nginx" # instead installed from the homebrew
-# install="$install pigz" # instead installed from the homebrew # parallel gzip for multi-processor, multi-core
-# install="$install protobuf-compiler" # version to old/outdated(
-# install="$install pwgen" # instead installed from the homebrew # password generator
-# install="$install syncthing" # instead installed from the homebrew # dropbox replacement: deb https://apt.syncthing.net/ syncthing release
-# install="$install tig" # instead installed from the homebrew # git interactive cli
-# install="$install tree" # instead installed from the homebrew # displays an indented directory tree
-# install="$install uni2ascii" # instead installed from the homebrew # to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`
-# install="$install uuid-runtime" # instead util-linux install from the homebrew # generating uuid <https://github.com/util-linux/util-linux>, <https://serverfault.com/questions/103359/how-to-create-a-uuid-in-bash#103366>
-# install="$install vim" # instead util-linux install from the homebrew # vim is awesome, neovim is sucks
-# install="$install whois" # instead util-linux install from the homebrew
-install="$install apt-transport-https" # required by custom ppa
-install="$install bc" # used by bash prompt, console-based calculator utility
-install="$install bind9-host" # automatic/dependency: dns/host lookup utility
-install="$install genius" # calculator
-install="$install libpci-dev libnl-3-dev libnl-genl-3-dev gettext libgettextpo-dev autopoint gettext libncurses5-dev libncursesw5-dev libtool-bin dh-autoreconf autoconf-archive pkg-config" # powertop diagnose power consumption https://github.com/fenrus75/powertop#build-dependencies
-install="$install lm-sensors" # FIXME: is the cpu temperate by ls sensors used by plain status or by slstatus?
-install="$install logrotate"
-install="$install lynx" # html to plain text `curl https://your.tld/ | lynx --stdin --dump`
-install="$install mlocate" # locate/updatedb
-install="$install net-tools" # ifconfig cli
-install="$install opensmtpd" # send mail via /usr/bin/sendmail and deliver local mail to /var/mail a-la exim replacement
-install="$install openssh-server"
-install="$install zstd" # a-la gz/xz compression
+# dpkg_ins="$dpkg_ins apache2-utils" # instead installed from the homebrew # provides htpasswd utility is an nginx/apach basic authentication password generator
+# dpkg_ins="$dpkg_ins convmv" # instead installed util-linux from the homebrew # a-la iconv character encoding conversion util
+# dpkg_ins="$dpkg_ins curl" # instead installed from the homebrew
+# dpkg_ins="$dpkg_ins dos2unix" # instead installed from the homebrew # convert text file line endings between CRLF and LF
+# dpkg_ins="$dpkg_ins git" # instead installed from the homebrew instead
+# dpkg_ins="$dpkg_ins goaccess" # instead installed from the homebrew # analyze nginx/apache log in real-time
+# dpkg_ins="$dpkg_ins hping3" # instead installed hping from the homebrew # a-la interactive ping https://github.com/antirez/hping
+# dpkg_ins="$dpkg_ins htop" # instead installed from the homebrew # a-la top
+# dpkg_ins="$dpkg_ins inxi" # inxi --graphics <https://github.com/smxi/inxi>
+# dpkg_ins="$dpkg_ins jp2a" # converts jpg to ascii
+# dpkg_ins="$dpkg_ins jq" # instead installed from the homebrew # json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>
+# dpkg_ins="$dpkg_ins lftp" # instead installed from the homebrew # ftp client
+# dpkg_ins="$dpkg_ins linux-generic-hwe-20.04-edge" # linxu/kernel 5.11 for ubuntu 20.04
+# dpkg_ins="$dpkg_ins mailutils" # instead installed from the homebrew # is an gnu mailutils, reads local mail, provides /usr/bin/mail
+# dpkg_ins="$dpkg_ins makepasswd" # password generator
+# dpkg_ins="$dpkg_ins mosh" # instead installed from the homebrew # ssh replacement
+# dpkg_ins="$dpkg_ins ncdu" # instead installed from the homebrew # disk space usage is an baobab and gt5 replacement
+# dpkg_ins="$dpkg_ins nginx" dpkg_dis="$dpkg_dis nginx" # instead installed from the homebrew
+# dpkg_ins="$dpkg_ins pigz" # instead installed from the homebrew # parallel gzip for multi-processor, multi-core
+# dpkg_ins="$dpkg_ins protobuf-compiler" # version to old/outdated(
+# dpkg_ins="$dpkg_ins pwgen" # instead installed from the homebrew # password generator
+# dpkg_ins="$dpkg_ins syncthing" # instead installed from the homebrew # dropbox replacement: deb https://apt.syncthing.net/ syncthing release
+# dpkg_ins="$dpkg_ins tig" # instead installed from the homebrew # git interactive cli
+# dpkg_ins="$dpkg_ins tree" # instead installed from the homebrew # displays an indented directory tree
+# dpkg_ins="$dpkg_ins uni2ascii" # instead installed from the homebrew # to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`
+# dpkg_ins="$dpkg_ins uuid-runtime" # instead util-linux install from the homebrew # generating uuid <https://github.com/util-linux/util-linux>, <https://serverfault.com/questions/103359/how-to-create-a-uuid-in-bash#103366>
+# dpkg_ins="$dpkg_ins vim" # instead util-linux install from the homebrew # vim is awesome, neovim is sucks
+# dpkg_ins="$dpkg_ins whois" # instead util-linux install from the homebrew
+dpkg_ins="$dpkg_ins apt-transport-https" # required by custom ppa
+dpkg_ins="$dpkg_ins bc" # used by bash prompt, console-based calculator utility
+dpkg_ins="$dpkg_ins bind9-host" # automatic/dependency: dns/host lookup utility
+dpkg_ins="$dpkg_ins genius" # calculator
+dpkg_ins="$dpkg_ins libpci-dev libnl-3-dev libnl-genl-3-dev gettext libgettextpo-dev autopoint gettext libncurses5-dev libncursesw5-dev libtool-bin dh-autoreconf autoconf-archive pkg-config" # powertop diagnose power consumption https://github.com/fenrus75/powertop#build-dependencies
+dpkg_ins="$dpkg_ins lm-sensors" # FIXME: is the cpu temperate by ls sensors used by plain status or by slstatus?
+dpkg_ins="$dpkg_ins logrotate"
+dpkg_ins="$dpkg_ins lynx" # html to plain text `curl https://your.tld/ | lynx --stdin --dump`
+dpkg_ins="$dpkg_ins mlocate" # locate/updatedb
+dpkg_ins="$dpkg_ins net-tools" # ifconfig cli
+dpkg_ins="$dpkg_ins opensmtpd" # send mail via /usr/bin/sendmail and deliver local mail to /var/mail a-la exim replacement
+dpkg_ins="$dpkg_ins openssh-server"
+dpkg_ins="$dpkg_ins zstd" # a-la gz/xz compression
 
 # Homebrew <https://docs.brew.sh/Homebrew-on-Linux#requirements>.
-# install="$install git" # instead installed from the homebrew
-install="$install build-essential"
-install="$install curl"
-install="$install file"
-install="$install procps" # /proc file system utilities
+# dpkg_ins="$dpkg_ins git" # instead installed from the homebrew
+dpkg_ins="$dpkg_ins build-essential"
+dpkg_ins="$dpkg_ins curl"
+dpkg_ins="$dpkg_ins file"
+dpkg_ins="$dpkg_ins procps" # /proc file system utilities
 
 # Flatpak.
-install="$install flatpak" # PMS
-install="$install gnome-software-plugin-flatpak" # Flatpak support for GNOME software
+dpkg_ins="$dpkg_ins flatpak" # PMS
+dpkg_ins="$dpkg_ins gnome-software-plugin-flatpak" # Flatpak support for GNOME software
 
 # instead installed tmux from the homebrew.
 # # Tmux (os wide/from source).
-# # install="$install tmux" # os wide
-# install="$install byacc" # preventing compiltime dependency error: ./etc/ylwrap: line 175: yacc: command not found
-# install="$install pkg-config libevent-dev libncurses-dev" # compiltime dependencies
+# # dpkg_ins="$dpkg_ins tmux" # os wide
+# dpkg_ins="$dpkg_ins byacc" # preventing compiltime dependency error: ./etc/ylwrap: line 175: yacc: command not found
+# dpkg_ins="$dpkg_ins pkg-config libevent-dev libncurses-dev" # compiltime dependencies
 
 # Emacs.
-# install="$install libgif-dev" # compiltime dependency X11 <https://www.emacswiki.org/emacs/BuildingEmacs#h5o-4>
-# install="$install shellcheck" # instead installed from the homebrew # used by emacs flycheck
-install="$install aspell-en" # used by emacs auto complete
-install="$install aspell-ru" # used by emacs auto complete
-install="$install clang" # used by company-clang backend
-install="$install emacs-el" # find/navigate elisp function source code <https://unix.stackexchange.com/questions/73100/how-to-attach-elisp-function-source-code-in-emacs>
-install="$install emacs-nox" # TODO: maybe instead installed emacs from the homebrew?
-install="$install libgnutls28-dev" # compiltime dependency <https://stackoverflow.com/questions/52722096/build-emacs-and-gnutls-not-found#60430406>
+# dpkg_ins="$dpkg_ins clang" # instead installed from the homebrew # used by company-clang backend # c, c++ and objective-c compiler based on llvm
+# dpkg_ins="$dpkg_ins emacs-nox" # instead compiled from source into ~/.local/usr/local/bin # TODO: maybe instead installed emacs from the homebrew?
+# dpkg_ins="$dpkg_ins libgif-dev" # compiltime dependency X11 <https://www.emacswiki.org/emacs/BuildingEmacs#h5o-4>
+# dpkg_ins="$dpkg_ins shellcheck" # instead installed from the homebrew # used by emacs flycheck
+dpkg_ins="$dpkg_ins aspell-en" # used by emacs auto complete
+dpkg_ins="$dpkg_ins aspell-ru" # used by emacs auto complete
+dpkg_ins="$dpkg_ins emacs-el" # find/navigate elisp function source code <https://unix.stackexchange.com/questions/73100/how-to-attach-elisp-function-source-code-in-emacs>
+dpkg_ins="$dpkg_ins libgnutls28-dev" # compiltime dependency <https://stackoverflow.com/questions/52722096/build-emacs-and-gnutls-not-found#60430406>
 
 # # Basher is a bash/shell/functions package manager
 # # <https://github.com/basherpm/basher>.
-# install="$install bash"
-# install="$install coreutils"
+# dpkg_ins="$dpkg_ins bash"
+# dpkg_ins="$dpkg_ins coreutils"
 
 # instead installed kubernetes-cli from the homebrew.
 # # K8s kubernetes.
-# install="$install kubectl" # `deb https://apt.kubernetes.io/ kubernetes-xenial main` <https://kubernetes.io/docs/tasks/tools/install-kubectl>
-# install="$install gnupg2" # required by kubectl
-# install="$install apt-transport-https ca-certificates curl"
+# dpkg_ins="$dpkg_ins kubectl" # `deb https://apt.kubernetes.io/ kubernetes-xenial main` <https://kubernetes.io/docs/tasks/tools/install-kubectl>
+# dpkg_ins="$dpkg_ins gnupg2" # required by kubectl
+# dpkg_ins="$dpkg_ins apt-transport-https ca-certificates curl"
 
 # # Docker
 # # <https://docs.docker.com/install/linux/docker-ce/ubuntu>.
-# install="$install docker-ce docker-ce-cli containerd.io" disable="$disable docker" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
-# install="$install golang-docker-credential-helpers" # credential helper stores encrypted passwords in d-bus secret service instead of unencrypted password in plain file <https://docs.docker.com/engine/reference/commandline/login/#credentials-store>
-# install="$install apt-transport-https ca-certificates curl gnupg gnupg-agent lsb-release software-properties-common" # required by docker ppa <https://docs.docker.com/install/linux/docker-ce/ubuntu>
+# dpkg_ins="$dpkg_ins docker-ce docker-ce-cli containerd.io" dpkg_dis="$dpkg_dis docker" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
+# dpkg_ins="$dpkg_ins golang-docker-credential-helpers" # credential helper stores encrypted passwords in d-bus secret service instead of unencrypted password in plain file <https://docs.docker.com/engine/reference/commandline/login/#credentials-store>
+# dpkg_ins="$dpkg_ins apt-transport-https ca-certificates curl gnupg gnupg-agent lsb-release software-properties-common" # required by docker ppa <https://docs.docker.com/install/linux/docker-ce/ubuntu>
 
 # instead installed from the homebrew.
 # The silver searcher (ag) <https://github.com/ggreer/the_silver_searcher>.
-# install="$install silversearcher-ag" # installing from source into ~/.local/bin
-# install="$install automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev" # compiltime dependencies <https://github.com/ggreer/the_silver_searcher#building-from-source>
+# dpkg_ins="$dpkg_ins silversearcher-ag" # instead installed from the homebrew
+# dpkg_ins="$dpkg_ins automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev" # compiltime dependencies <https://github.com/ggreer/the_silver_searcher#building-from-source>
 
 # C/C++ compile/make common dependencies.
-install="$install automake" # required by tmux/xchainkeys
-install="$install build-essential" # compiler?
-install="$install devscripts" # ???
-install="$install make" # required by all)
-install="$install valgrind" # find memory leaks https://www.valgrind.org/docs/manual/quick-start.html
+dpkg_ins="$dpkg_ins automake" # required by tmux/xchainkeys
+dpkg_ins="$dpkg_ins build-essential" # compiler?
+dpkg_ins="$dpkg_ins devscripts" # ???
+dpkg_ins="$dpkg_ins make" # required by all)
+dpkg_ins="$dpkg_ins valgrind" # find memory leaks https://www.valgrind.org/docs/manual/quick-start.html
 
 # instead installed PostgreSQL from the homebrew.
 # PostgreSQL.
-# install="$install pgcenter" # postgresql command-line tool https://github.com/lesovsky/pgcenter/releases install: dpkg --install path/to/pgcenter.deb
-# install="$install postgresql-14" disable="$disable postgresql" # `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
-# install="$install postgresql-server-dev-14" # required by pg_activity is an postgresql activity monitoring <https://github.com/dalibo/pg_activity>
+# dpkg_ins="$dpkg_ins pgcenter" # postgresql command-line tool https://github.com/lesovsky/pgcenter/releases install: dpkg --install path/to/pgcenter.deb
+# dpkg_ins="$dpkg_ins postgresql-14" dpkg_dis="$dpkg_dis postgresql" # `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
+# dpkg_ins="$dpkg_ins postgresql-server-dev-14" # required by pg_activity is an postgresql activity monitoring <https://github.com/dalibo/pg_activity>
 
 # # Mongodb.
-# install="$install mongodb-org" disable="$disable mongod" # latest stable version of the mongodb server
-# install="$install gnupg" # required by mongodb <https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu>
+# install="$dpkg_ins mongodb-org" dpkg_dis="$dpkg_dis mongod" # latest stable version of the mongodb server
+# dpkg_ins="$dpkg_ins gnupg" # required by mongodb <https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu>
 
 # Golang programming language.
-# install="$install golang-race-detector-runtime" # FIXME: where is race detector for the go 1.15?
+# dpkg_ins="$dpkg_ins golang-race-detector-runtime" # FIXME: where is race detector for the go 1.15?
 # Installing instead go from the homebrew `brew install go && brew upgrade go`
-# install="$install golang"
-# install="$install golang-1.17-doc golang-1.17-go golang-1.17-src"
+# dpkg_ins="$dpkg_ins golang"
+# dpkg_ins="$dpkg_ins golang-1.17-doc golang-1.17-go golang-1.17-src"
 
 # instead installed rust from the homebrew.
 # # Rust programming language.
-# # install="$install libgtk-3-dev" # required by fontfinder https://github.com/mmstick/fontfinder
-# # install="$install libwebkit2gtk-4.0-dev" # required by fontfinder https://github.com/mmstick/fontfinder
-# install="$install libudev-dev" # required by fclones, is an duplicate file finder https://github.com/pkolaczk/fclones
-# install="$install libxcb-composite0-dev" # required by gitui a-la tig https://github.com/extrawurst/gitui
+# # dpkg_ins="$dpkg_ins libgtk-3-dev" # required by fontfinder https://github.com/mmstick/fontfinder
+# # dpkg_ins="$dpkg_ins libwebkit2gtk-4.0-dev" # required by fontfinder https://github.com/mmstick/fontfinder
+# dpkg_ins="$dpkg_ins libudev-dev" # required by fclones, is an duplicate file finder https://github.com/pkolaczk/fclones
+# dpkg_ins="$dpkg_ins libxcb-composite0-dev" # required by gitui a-la tig https://github.com/extrawurst/gitui
 
 # instead installed dart from the homebrew.
 # # Dart <https://dart.dev/get-dart#install-using-apt-get>.
-# install="$install apt-transport-https"
-# install="$install dart"
+# dpkg_ins="$dpkg_ins apt-transport-https"
+# dpkg_ins="$dpkg_ins dart"
 
 # instead installed ruby from the homebrew.
 # # Ruby programming language.
-# # install="$install libssl1.0-dev" # required by ruby 2.3.7 (libssl1.0-dev conflicts with libssl-dev)
-# install="$install libreadline-dev" # required by ruby 2.6.3
-# install="$install libsqlite3-dev" # required by sqlite3 which required by mailcatcher
-# install="$install libssl-dev" # required by ruby 2.6.3 (libssl-dev conflicts with libssl1.0-dev)
+# # dpkg_ins="$dpkg_ins libssl1.0-dev" # required by ruby 2.3.7 (libssl1.0-dev conflicts with libssl-dev)
+# dpkg_ins="$dpkg_ins libreadline-dev" # required by ruby 2.6.3
+# dpkg_ins="$dpkg_ins libsqlite3-dev" # required by sqlite3 which required by mailcatcher
+# dpkg_ins="$dpkg_ins libssl-dev" # required by ruby 2.6.3 (libssl-dev conflicts with libssl1.0-dev)
 
 # instead installed python from the homebrew.
 # Python programming language.
-# install="$install python-pip" # python 2 pip no longer supported by ubuntu
-# install="$install python3-pip" # instead installed from the homebrew
+# dpkg_ins="$dpkg_ins python-pip" # python 2 pip no longer supported by ubuntu
+# dpkg_ins="$dpkg_ins python3-pip" # instead installed from the homebrew
 
 # instead installed node from the homebrew.
 # # Nodejs/Javascript by nodesource.com's ppa
 # # https://github.com/nodesource/distributions/blob/master/README.md#installation-instructions>
-# install="$install nodejs"
-# install="$install curl dirmngr apt-transport-https lsb-release ca-certificates" # required by nodesource.com's ppa
+# dpkg_ins="$dpkg_ins nodejs"
+# dpkg_ins="$dpkg_ins curl dirmngr apt-transport-https lsb-release ca-certificates" # required by nodesource.com's ppa
 
 # # Benchmarks a-la `ab`.
-# install="$install bonnie++"
-# install="$install apache2-utils"
-# install="$install dbench"
-# install="$install siege"
-# install="$install sysbench" # cpu and memory benchmarks
-# install="$install tiobench" # TODO: find this package
-# install="$install wrk" # c http benchmark tool <https://github.com/wg/wrk>
+# dpkg_ins="$dpkg_ins bonnie++"
+# dpkg_ins="$dpkg_ins apache2-utils"
+# dpkg_ins="$dpkg_ins dbench"
+# dpkg_ins="$dpkg_ins siege"
+# dpkg_ins="$dpkg_ins sysbench" # cpu and memory benchmarks
+# dpkg_ins="$dpkg_ins tiobench" # TODO: find this package
+# dpkg_ins="$dpkg_ins wrk" # c http benchmark tool <https://github.com/wg/wrk>
 
 # X11/xorg/desktop.
-# install="$install duplicity" # instead installed from the homebrew # backuping
-# install="$install feh" # instead installed from the homebrew # command line image viewer
-# install="$install firefox" # instead installed from snap # works normal with graylog's text box (input box), text field (input field)
-# install="$install font-manager" # list bitmap ??? fonts
-# install="$install fonts-fantasque-sans" # instead installed manually into /usr/local/share/fonts # terminal/code/mono/programming font (gnome-terminal issue https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=960629)
-# install="$install fonts-hack-ttf" # instead installed manually into /usr/local/share/fonts # terminal/code/mono/programming font
-# install="$install fonts-noto" # awesome serif font ???
-# install="$install gimp" # instead installed from flatpak # a-la photoshop
-# install="$install libappindicator3-1" # slack dependency # libayatana-appindicator3-1 : Conflicts: libappindicator3-1 but 12.10.1+20.10.20200706.1-0ubuntu1 is to be installed
-# install="$install libgdk-pixbuf2.0-dev libglib2.0-dev libxml2-utils" # compiltime dependencies of numix theme
-# install="$install mpv" # instead installed from the homebrew # a-la mplayer replacement
-# install="$install pk-update-icon" # FIXME: missing? # display notifications about software updates
-# install="$install uswsusp" # FIXME: missing? # systemctl hibernate
-# install="$install xcalib" # returns: "Error - unsupported ramp size 0" (load icc/icm display color profiles (only calibration curves) <https://wiki.archlinux.org/index.php/ICC_Profiles#xcalib>)
-# install="$install xclip" # tmux and xorg clipboard integration <https://github.com/tmux-plugins/tmux-yank#linux-requirements>
-# install="$install xsel" # instead installed from the homebrew # copy selection in termina to the xorg clipboard (used by emacs and urxvt) <https://wiki.archlinux.org/index.php/rxvt-unicode#Automatic_Script_Management>
-# remove="$remove xserver-xorg-video-intel" # instead of intel using modesetting <https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/1867668>
-install="$install argyll" # load icc/icm display color profiles <https://wiki.archlinux.org/index.php/ICC_Profiles#Argyll_CMS>
-install="$install blueman" # full featured bluetooth manager gui <https://wiki.archlinux.org/title/Blueman>, <https://wiki.archlinux.org/title/Bluetooth>
-install="$install gparted" # format/create partition/disk/usb
-install="$install libfuse2" # pcloud dependency
-install="$install libimlib2-dev libfontconfig1-dev libfreetype6-dev libx11-dev libxext-dev libxft-dev libxrender-dev zlib1g-dev libxinerama-dev libxcomposite-dev libxdamage-dev libxfixes-dev libxmu-dev" # skippy-xd is an full-screen task-switcher for X11 <https://github.com/richardgv/skippy-xd>
-install="$install libnotify-bin" # a-la notify-osd
-install="$install light" # used by xchainkeys or ~/.xprofile or ~/.xstart
-install="$install lxappearance" # change/switch gtk2/gtk3 themes
-install="$install maim" # takes screenshots of desktop
-install="$install meld" # gnome diff (gtk)
-install="$install mesa-utils" # provides glxgears util for the 3d compositor testing
-install="$install mkusb usb-pack-efi" # mkusb <https://help.ubuntu.com/community/mkusb#Installation> create bootable/live usb/iso <https://help.ubuntu.com/community/mkusb#Quick_start_manual_and_mkusb_PPA>
-install="$install sassc libglib2.0-dev-bin" # dependencies of whitesur gtk theme <https://github.com/vinceliuice/whitesur-gtk-theme>, <https://github.com/vinceliuice/whitesur-icon-theme>.
-install="$install transmission"
-install="$install ubuntu-restricted-extras" # playing video in browser instead of download <https://askubuntu.com/questions/1122579/firefox-downloads-the-video-instead-of-playing-it#1122668>, <https://askubuntu.com/questions/56446/how-do-i-install-the-ubuntu-restricted-extras-package#56448>
-install="$install xscreensaver-data-extra"
-install="$install xscreensaver-gl-extra"
-install="$install xserver-xorg-video-intel" # instead of modesetting using intel <https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/1867668>
-install="$install xterm" # backup/fallback terminal additional to the st/stterm/alacritty
-remove="$remove gnome-mahjongg"
-remove="$remove remmina"
-remove="$remove thunderbird thunderbird-gnome-support thunderbird-locale-en thunderbird-locale-en-gb thunderbird-locale-en-us thunderbird-locale-ru" # instead installed mailspring from snap # GUI mail client written in C/C++
-remove="$remove transmission-gtk"
+# dpkg_ins="$dpkg_ins duplicity" # instead installed from the homebrew # backuping
+# dpkg_ins="$dpkg_ins feh" # instead installed from the homebrew # command line image viewer
+# dpkg_ins="$dpkg_ins firefox" # instead installed from snap # works normal with graylog's text box (input box), text field (input field)
+# dpkg_ins="$dpkg_ins font-manager" # list bitmap ??? fonts
+# dpkg_ins="$dpkg_ins fonts-fantasque-sans" # instead installed manually into /usr/local/share/fonts # terminal/code/mono/programming font (gnome-terminal issue https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=960629)
+# dpkg_ins="$dpkg_ins fonts-hack-ttf" # instead installed manually into /usr/local/share/fonts # terminal/code/mono/programming font
+# dpkg_ins="$dpkg_ins fonts-noto" # awesome serif font ???
+# dpkg_ins="$dpkg_ins gimp" # instead installed from flatpak # a-la photoshop
+# dpkg_ins="$dpkg_ins libappindicator3-1" # slack dependency # libayatana-appindicator3-1 : Conflicts: libappindicator3-1 but 12.10.1+20.10.20200706.1-0ubuntu1 is to be installed
+# dpkg_ins="$dpkg_ins libgdk-pixbuf2.0-dev libglib2.0-dev libxml2-utils" # compiltime dependencies of numix theme
+# dpkg_ins="$dpkg_ins mpv" # instead installed from the homebrew # a-la mplayer replacement
+# dpkg_ins="$dpkg_ins pk-update-icon" # FIXME: missing? # display notifications about software updates
+# dpkg_ins="$dpkg_ins uswsusp" # FIXME: missing? # systemctl hibernate
+# dpkg_ins="$dpkg_ins xcalib" # returns: "Error - unsupported ramp size 0" (load icc/icm display color profiles (only calibration curves) <https://wiki.archlinux.org/index.php/ICC_Profiles#xcalib>)
+# dpkg_ins="$dpkg_ins xclip" # tmux and xorg clipboard integration <https://github.com/tmux-plugins/tmux-yank#linux-requirements>
+# dpkg_ins="$dpkg_ins xsel" # instead installed from the homebrew # copy selection in termina to the xorg clipboard (used by emacs and urxvt) <https://wiki.archlinux.org/index.php/rxvt-unicode#Automatic_Script_Management>
+# dpkg_rem="$dpkg_rem xserver-xorg-video-intel" # instead of intel using modesetting <https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/1867668>
+dpkg_ins="$dpkg_ins argyll" # load icc/icm display color profiles <https://wiki.archlinux.org/index.php/ICC_Profiles#Argyll_CMS>
+dpkg_ins="$dpkg_ins blueman" # full featured bluetooth manager gui <https://wiki.archlinux.org/title/Blueman>, <https://wiki.archlinux.org/title/Bluetooth>
+dpkg_ins="$dpkg_ins gparted" # format/create partition/disk/usb
+dpkg_ins="$dpkg_ins libfuse2" # pcloud dependency
+dpkg_ins="$dpkg_ins libimlib2-dev libfontconfig1-dev libfreetype6-dev libx11-dev libxext-dev libxft-dev libxrender-dev zlib1g-dev libxinerama-dev libxcomposite-dev libxdamage-dev libxfixes-dev libxmu-dev" # skippy-xd is an full-screen task-switcher for X11 <https://github.com/richardgv/skippy-xd>
+dpkg_ins="$dpkg_ins libnotify-bin" # a-la notify-osd
+dpkg_ins="$dpkg_ins light" # used by xchainkeys or ~/.xprofile or ~/.xstart
+dpkg_ins="$dpkg_ins lxappearance" # change/switch gtk2/gtk3 themes
+dpkg_ins="$dpkg_ins maim" # takes screenshots of desktop
+dpkg_ins="$dpkg_ins meld" # gnome diff (gtk)
+dpkg_ins="$dpkg_ins mesa-utils" # provides glxgears util for the 3d compositor testing
+dpkg_ins="$dpkg_ins mkusb usb-pack-efi" # mkusb <https://help.ubuntu.com/community/mkusb#Installation> create bootable/live usb/iso <https://help.ubuntu.com/community/mkusb#Quick_start_manual_and_mkusb_PPA>
+dpkg_ins="$dpkg_ins sassc libglib2.0-dev-bin" # dependencies of whitesur gtk theme <https://github.com/vinceliuice/whitesur-gtk-theme>, <https://github.com/vinceliuice/whitesur-icon-theme>.
+dpkg_ins="$dpkg_ins transmission" # torrent client # dpkg_rem="$dpkg_rem transmission-gtk"
+dpkg_ins="$dpkg_ins ubuntu-restricted-extras" # playing video in browser instead of download <https://askubuntu.com/questions/1122579/firefox-downloads-the-video-instead-of-playing-it#1122668>, <https://askubuntu.com/questions/56446/how-do-i-install-the-ubuntu-restricted-extras-package#56448>
+dpkg_ins="$dpkg_ins xscreensaver-data-extra"
+dpkg_ins="$dpkg_ins xscreensaver-gl-extra"
+dpkg_ins="$dpkg_ins xserver-xorg-video-intel" # instead of modesetting using intel <https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/1867668>
+dpkg_ins="$dpkg_ins xterm" # backup/fallback terminal additional to the st/stterm/alacritty
+dpkg_rem="$dpkg_rem gnome-mahjongg"
+dpkg_rem="$dpkg_rem remmina"
+dpkg_rem="$dpkg_rem thunderbird thunderbird-gnome-support thunderbird-locale-en thunderbird-locale-en-gb thunderbird-locale-en-us thunderbird-locale-ru" # instead installed mailspring from snap # GUI mail client written in C/C++
 
 # C/C++ compile/make X11 dependencies.
-install="$install libx11-dev" # ???
-install="$install libxft-dev" # ???
+dpkg_ins="$dpkg_ins libx11-dev" # ???
+dpkg_ins="$dpkg_ins libxft-dev" # ???
 
 # Invert colors on x11/xorg/xrandr
 # <https://superuser.com/questions/208746/invert-colors-on-x-or-xfce4#1494872#209083>.
-install="$install libxcb-randr0-dev"
-install="$install xcalib" # `xcalib -i -a` invert colors on xorg/xrandr <https://superuser.com/questions/208746/invert-colors-on-x-or-xfce4#1494872#209083>
+dpkg_ins="$dpkg_ins libxcb-randr0-dev"
+dpkg_ins="$dpkg_ins xcalib" # `xcalib -i -a` invert colors on xorg/xrandr <https://superuser.com/questions/208746/invert-colors-on-x-or-xfce4#1494872#209083>
 
 # Dunst/dunstify (respects org.freedesktop.Notifications)
 # <https://github.com/dunst-project/dunst>
-# install="$install libc6 libcairo2 libgdk-pixbuf2.0-0 libglib2.0-0 libpango-1.0-0 libpangocairo-1.0-0 libx11-6 libxdg-basedir1 libxinerama1 libxrandr2 libxss1" # runtime dependencies
-# install="$install dunst" # instead compilling from source into ~/.local/bin # a-la notify-osd
-install="$install libdbus-1-dev libnotify-dev libxrandr-dev libpango1.0-dev libx11-dev libxinerama-dev libxss-dev libglib2.0-dev libgtk-3-dev libxdg-basedir-dev" # compiltime dependencies <https://github.com/dunst-project/dunst/wiki/Dependencies>
+# dpkg_ins="$dpkg_ins libc6 libcairo2 libgdk-pixbuf2.0-0 libglib2.0-0 libpango-1.0-0 libpangocairo-1.0-0 libx11-6 libxdg-basedir1 libxinerama1 libxrandr2 libxss1" # runtime dependencies
+# dpkg_ins="$dpkg_ins dunst" # instead compiled from source into ~/.local/usr/local/bin # a-la notify-osd
+dpkg_ins="$dpkg_ins libdbus-1-dev libnotify-dev libxrandr-dev libpango1.0-dev libx11-dev libxinerama-dev libxss-dev libglib2.0-dev libgtk-3-dev libxdg-basedir-dev" # compiltime dependencies <https://github.com/dunst-project/dunst/wiki/Dependencies>
 
 # Alacritty terminal emulator a-la st/xterm
 # <https://github.com/alacritty/alacritty/blob/master/INSTALL.md#debianubuntu>.
-# install="$install python3" # instead installed from the homebrew
-install="$install cmake"
-install="$install libfontconfig1-dev"
-install="$install libfreetype6-dev"
-install="$install libxcb-xfixes0-dev"
-install="$install libxkbcommon-dev"
-install="$install pkg-config"
+# dpkg_ins="$dpkg_ins python3" # instead installed from the homebrew
+dpkg_ins="$dpkg_ins cmake"
+dpkg_ins="$dpkg_ins libfontconfig1-dev"
+dpkg_ins="$dpkg_ins libfreetype6-dev"
+dpkg_ins="$dpkg_ins libxcb-xfixes0-dev"
+dpkg_ins="$dpkg_ins libxkbcommon-dev"
+dpkg_ins="$dpkg_ins pkg-config"
 
 # xchainkeys <https://github.com/hbekel/xchainkeys>.
-install="$install light" # xchainkeys runtime dependency
-install="$install automake" # xchainkeys compiltime dependency
+dpkg_ins="$dpkg_ins light" # xchainkeys runtime dependency
+dpkg_ins="$dpkg_ins automake" # xchainkeys compiltime dependency
 
 # # sxhkd.
-# # install="$install sxhkd" # a-la xchainkeys
-# install="$install libxcb1 libxcb-keysyms1" # sxhkd runtime dependencies
-# install="$install libxcb1 libxcb-keysyms1-dev" # sxhkd compiltime dependencies
+# # dpkg_ins="$dpkg_ins sxhkd" # a-la xchainkeys
+# dpkg_ins="$dpkg_ins libxcb1 libxcb-keysyms1" # sxhkd runtime dependencies
+# dpkg_ins="$dpkg_ins libxcb1 libxcb-keysyms1-dev" # sxhkd compiltime dependencies
 
 # i3.
-# install="$install i3status" # instead using i3blocks
-# install="$install libwnck-3-dev libxklavier-dev libgtk-3-dev dh-autoreconf dh-make devscripts fakeroot" # gxkb compiltime dependencies, is a keyboard/language layout indicator (flag) for tray <https://github.com/zen-tools/gxkb#building-from-source>, a-la xxkbinstall="$install build-essential" # dmenu (suckless) dependency
-install="$install i3-wm"
-install="$install i3lock" # xscreensaver replacement
-install="$install libxcb-ewmh-dev libxcb-icccm4-dev libxcb-util0-dev" # xtitle (used by i3blocks/i3) compiltime dependencies <https://github.com/baskerville/xtitle>
-install="$install xautolock" # used by i3lock
-install="$install libxpm-dev libxt-dev xutils-dev" # xxkb compiltime dependencies, is a keyboard/language layout indicator (flag) for tray <https://github.com/scientistnik/xxkb>, a-la gxkb which destroys xchainkeys
+# dpkg_ins="$dpkg_ins i3status" # instead using i3blocks
+# dpkg_ins="$dpkg_ins libwnck-3-dev libxklavier-dev libgtk-3-dev dh-autoreconf dh-make devscripts fakeroot" # gxkb compiltime dependencies, is a keyboard/language layout indicator (flag) for tray <https://github.com/zen-tools/gxkb#building-from-source>, a-la xxkb
+dpkg_ins="$dpkg_ins build-essential" # dmenu (suckless) dependency
+dpkg_ins="$dpkg_ins i3-wm"
+dpkg_ins="$dpkg_ins i3lock" # xscreensaver replacement
+dpkg_ins="$dpkg_ins libxcb-ewmh-dev libxcb-icccm4-dev libxcb-util0-dev" # xtitle (used by i3blocks/i3) compiltime dependencies <https://github.com/baskerville/xtitle>
+dpkg_ins="$dpkg_ins xautolock" # used by i3lock
+dpkg_ins="$dpkg_ins libxpm-dev libxt-dev xutils-dev" # xxkb compiltime dependencies, is a keyboard/language layout indicator (flag) for tray <https://github.com/scientistnik/xxkb>, a-la gxkb which destroys xchainkeys
 
 # # bspwm.
-# install="$install bspwm" # a-la i3
+# dpkg_ins="$dpkg_ins bspwm" # a-la i3
 
 # volumeicon.
-# install="$install intltool autogen" # volumeicon-alsa compiltime dependencies
-# install="$install libasound2-dev libglib2.0-dev libgtk-3-dev" # volumeicon-alsa compiltime dependencies
-install="$install volumeicon-alsa"
+# dpkg_ins="$dpkg_ins intltool autogen" # volumeicon-alsa compiltime dependencies
+# dpkg_ins="$dpkg_ins libasound2-dev libglib2.0-dev libgtk-3-dev" # volumeicon-alsa compiltime dependencies
+dpkg_ins="$dpkg_ins volumeicon-alsa"
 
 # # Suckless dwm.
-# # install="$install gxkb" # a-la xxkb (destroy xchainkeys)
-# # install="$install rofi" # a-la dmenu for open windows
-# # install="$install xfdashboard" # a-la compiz expose/gnome overview (works only with running xfce session)
-# # install="$install stterm" # instead compiling from source into ~/.local/bin # succless st terminal
-# # install="$install volumeicon-alsa" # instead using i3 (i3status) # sound/volume icon indicator <https://github.com/Maato/volumeicon>
-# install="$install build-essential" # suckless dependency
-# install="$install i3lock" # xscreensaver replacement
-# install="$install libx11-dev" # suckless dependency
-# install="$install libxinerama-dev" # suckless dependency
-# install="$install sharutils" # suckless dependency
-# install="$install suckless-tools" # provides dmenu, slock and more
-# install="$install xautolock" # used by i3lock
-# install="$install xxkb" # keyboard/language layout indicator (flag) for tray
+# # dpkg_ins="$dpkg_ins gxkb" # a-la xxkb (destroy xchainkeys)
+# # dpkg_ins="$dpkg_ins rofi" # a-la dmenu for open windows
+# # dpkg_ins="$dpkg_ins xfdashboard" # a-la compiz expose/gnome overview (works only with running xfce session)
+# # dpkg_ins="$dpkg_ins stterm" # instead compiled from source into ~/.local/usr/local/bin # succless st terminal
+# # dpkg_ins="$dpkg_ins volumeicon-alsa" # instead using i3 (i3status) # sound/volume icon indicator <https://github.com/Maato/volumeicon>
+# dpkg_ins="$dpkg_ins build-essential" # suckless dependency
+# dpkg_ins="$dpkg_ins i3lock" # xscreensaver replacement
+# dpkg_ins="$dpkg_ins libx11-dev" # suckless dependency
+# dpkg_ins="$dpkg_ins libxinerama-dev" # suckless dependency
+# dpkg_ins="$dpkg_ins sharutils" # suckless dependency
+# dpkg_ins="$dpkg_ins suckless-tools" # provides dmenu, slock and more
+# dpkg_ins="$dpkg_ins xautolock" # used by i3lock
+# dpkg_ins="$dpkg_ins xxkb" # keyboard/language layout indicator (flag) for tray
 
 # instead installed vault from the homebrew.
 # # Vault (hashicorp) <https://vaultproject.io/downloads>.
-# install="$install vault" # curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - && sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+# dpkg_ins="$dpkg_ins vault" # curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - && sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 
 # Xfce4 DE Desktop Environment.
-# install="$install libxfce4panel-2.0-dev libxfce4ui-2-dev" # compiltime dependency of text plugin <https://github.com/daveriesz/xfce-text-plugin>
-# install="$install orage" # xfce date time plugin with calendar
-# install="$install thunar-megasync" # not using
-# install="$install xfce4-notifyd" # notifications daemon (used by dwm)
-# install="$install xfdashboard" # instead installing skippy-xd
-install="$install elementary-icon-theme"
-install="$install elementary-xfce-icon-theme"
-install="$install mousepad" # simple text editor for xfce <https://github.com/codebrainz/mousepad>
-install="$install thunar" # file manager
-install="$install thunar-archive-plugin"
-install="$install thunar-dropbox-plugin"
-install="$install thunar-volman"
-install="$install xfce4"
-install="$install xfce4-diskperf-plugin" # disk io performance
-install="$install xfce4-power-manager"
-install="$install xfce4-systemload-plugin" # system cpu/mem/net/swap load monitor
-install="$install xfce4-windowck-plugin" # put maximized window title on the panel <https://github.com/takinoy/xfce4-windowck-plugin>
-install="$install xfce4-xkb-plugin" # keyboard language switcher
+# dpkg_ins="$dpkg_ins libxfce4panel-2.0-dev libxfce4ui-2-dev" # compiltime dependency of text plugin <https://github.com/daveriesz/xfce-text-plugin>
+# dpkg_ins="$dpkg_ins orage" # xfce date time plugin with calendar
+# dpkg_ins="$dpkg_ins thunar-megasync" # not using
+# dpkg_ins="$dpkg_ins xfce4-notifyd" # notifications daemon (used by dwm)
+# dpkg_ins="$dpkg_ins xfdashboard" # instead installing skippy-xd
+dpkg_ins="$dpkg_ins elementary-icon-theme"
+dpkg_ins="$dpkg_ins elementary-xfce-icon-theme"
+dpkg_ins="$dpkg_ins mousepad" # simple text editor for xfce <https://github.com/codebrainz/mousepad>
+dpkg_ins="$dpkg_ins thunar" # file manager
+dpkg_ins="$dpkg_ins thunar-archive-plugin"
+dpkg_ins="$dpkg_ins thunar-dropbox-plugin"
+dpkg_ins="$dpkg_ins thunar-volman"
+dpkg_ins="$dpkg_ins xfce4"
+dpkg_ins="$dpkg_ins xfce4-diskperf-plugin" # disk io performance
+dpkg_ins="$dpkg_ins xfce4-power-manager"
+dpkg_ins="$dpkg_ins xfce4-systemload-plugin" # system cpu/mem/net/swap load monitor
+dpkg_ins="$dpkg_ins xfce4-windowck-plugin" # put maximized window title on the panel <https://github.com/takinoy/xfce4-windowck-plugin>
+dpkg_ins="$dpkg_ins xfce4-xkb-plugin" # keyboard language switcher
 
 # MATE DE Desktop Environment.
-# install="$install atril" # instead installed from snap # pdf viewer (remembers last page) for mate de (desktop environment) https://github.com/mate-desktop/atril
-install="$install caja" # file manager
-install="$install engrampa" # archiver
-install="$install evince-" # remove: pdf viewer remembers last page https://github.com/mate-desktop/atril
-install="$install ristretto" # command line image viewer
+# dpkg_ins="$dpkg_ins atril" # instead installed from snap # pdf viewer (remembers last page) for mate de (desktop environment) https://github.com/mate-desktop/atril
+dpkg_ins="$dpkg_ins caja" # file manager
+dpkg_ins="$dpkg_ins engrampa" # archiver
+dpkg_ins="$dpkg_ins evince-" # remove: pdf viewer remembers last page https://github.com/mate-desktop/atril
+dpkg_ins="$dpkg_ins ristretto" # command line image viewer
 
 # # Dropbox.
-# install="$install dropbox"
-# remove="$remove nautilus-dropbox" # conflicts with dropbox deb file
+# dpkg_ins="$dpkg_ins dropbox"
+# dpkg_rem="$dpkg_rem nautilus-dropbox" # conflicts with dropbox deb file
 
 # Gnome Desktop Environment.
-# install="$install chrome-gnome-shell" # chrome/gnome extension integration
-# install="$install gnome-shell-extension-appindicator-" remove
-# install="$install gnome-shell-extension-impatience" # speed up the gnome-shell animation speed
-# install="$install gnome-shell-extension-move-clock" # move clock extension for GNOME shell
-# install="$install gnome-shell-extension-ubuntu-dock-" # remove
-# install="$install ubuntu-desktop-" # remove
-install="$install gnome-tweaks" # former gnome-tweak-tool (in addition to gnome-control-center)
+# dpkg_ins="$dpkg_ins chrome-gnome-shell" # chrome/gnome extension integration
+# dpkg_ins="$dpkg_ins gnome-shell-extension-appindicator-" remove
+# dpkg_ins="$dpkg_ins gnome-shell-extension-impatience" # speed up the gnome-shell animation speed
+# dpkg_ins="$dpkg_ins gnome-shell-extension-move-clock" # move clock extension for GNOME shell
+# dpkg_ins="$dpkg_ins gnome-shell-extension-ubuntu-dock-" # remove
+# dpkg_ins="$dpkg_ins ubuntu-desktop-" # remove
+dpkg_ins="$dpkg_ins gnome-tweaks" # former gnome-tweak-tool (in addition to gnome-control-center)
 
 # Zoom instead installed by the appimage. # Zoom dependencies.
-# install="$install libegl1-mesa"
-# install="$install libglib2.0-0"
-# install="$install libgstreamer-plugins-base1.0-0"
-# install="$install libxcb-shape0"
-# install="$install libxcb-shm0"
-# install="$install libxcb-xfixes0"
-# install="$install libxcb-randr0"
-# install="$install libxcb-image0"
-# install="$install libfontconfig1"
-# install="$install libgl1-mesa-glx"
-# install="$install libxi6"
-# install="$install libsm6"
-# install="$install libxrender1"
-# install="$install libpulse0"
-# install="$install libxcomposite1"
-# install="$install libxslt1.1"
-# install="$install libsqlite3-0"
-# install="$install libxcb-keysyms1"
-# install="$install libxcb-xtest0"
+# dpkg_ins="$dpkg_ins libegl1-mesa"
+# dpkg_ins="$dpkg_ins libglib2.0-0"
+# dpkg_ins="$dpkg_ins libgstreamer-plugins-base1.0-0"
+# dpkg_ins="$dpkg_ins libxcb-shape0"
+# dpkg_ins="$dpkg_ins libxcb-shm0"
+# dpkg_ins="$dpkg_ins libxcb-xfixes0"
+# dpkg_ins="$dpkg_ins libxcb-randr0"
+# dpkg_ins="$dpkg_ins libxcb-image0"
+# dpkg_ins="$dpkg_ins libfontconfig1"
+# dpkg_ins="$dpkg_ins libgl1-mesa-glx"
+# dpkg_ins="$dpkg_ins libxi6"
+# dpkg_ins="$dpkg_ins libsm6"
+# dpkg_ins="$dpkg_ins libxrender1"
+# dpkg_ins="$dpkg_ins libpulse0"
+# dpkg_ins="$dpkg_ins libxcomposite1"
+# dpkg_ins="$dpkg_ins libxslt1.1"
+# dpkg_ins="$dpkg_ins libsqlite3-0"
+# dpkg_ins="$dpkg_ins libxcb-keysyms1"
+# dpkg_ins="$dpkg_ins libxcb-xtest0"
 
 # # Elasticsearch <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>.
-# install="$install elasticsearch" # felix `deb https://artifacts.elastic.co/packages/5.x/apt stable main` elasticsearch 5 <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>, # apt-transport-https required by elasticsearch ppa <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#deb-repo>
-# install="$install apt-transport-https"
+# dpkg_ins="$dpkg_ins elasticsearch" # felix `deb https://artifacts.elastic.co/packages/5.x/apt stable main` elasticsearch 5 <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>, # apt-transport-https required by elasticsearch ppa <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#deb-repo>
+# dpkg_ins="$dpkg_ins apt-transport-https"
 
 # # Google chrome <https://www.google.com/chrome>.
-# install="$install apt-transport-https"
-# install="$install google-chrome-stable" # instead installed by the appimage
+# dpkg_ins="$dpkg_ins apt-transport-https"
+# dpkg_ins="$dpkg_ins google-chrome-stable" # instead installed by the appimage
 
 # # never used Brave browser a-la google chrome <https://github.com/brave>.
-# install="$install apt-transport-https"
-# install="$install brave-browser" # a-la google chrome
-# install="$install curl"
-# install="$install gnupg"
+# dpkg_ins="$dpkg_ins apt-transport-https"
+# dpkg_ins="$dpkg_ins brave-browser" # a-la google chrome
+# dpkg_ins="$dpkg_ins curl"
+# dpkg_ins="$dpkg_ins gnupg"
 
 # Er ozn.
-# install="$install docker-ce" disable="docker" # instead installed from the homebrew # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
-# install="$install golang" # instead installed go@1.17 from the homebrew
-# install="$install libxml2-utils" # instead installed libxml2 from the homebrew # provides xmllint
-# install="$install openvpn" disable="$disable systemctl disable openvpn openvpn@client" # NOTE: if your need openvpn instead installed from the homebrew # openvpn client <https://confluence.ozon.ru/pages/viewpage.action?spaceKey=CORPIT&title=OpenVPN+for+Linux>
-# install="$install redis" disable="$disable systemctl disable redis-server" # instead installed from the homebrew
-install="$install libpcap-dev" # required by github.com/google/gopacket/pcap (go/src/github.com/google/gopacket/pcap/pcap_unix.go:34:10: fatal error: pcap.h: No such file or directory)
-install="$install libqt5webkit5" # GlobalProtect_UI_deb-5.2.6.0-18.deb VPN dependency
-install="$install libxml2-dev"
+# dpkg_ins="$dpkg_ins docker-ce" dpkg_dis="docker" # instead installed from the homebrew # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
+# dpkg_ins="$dpkg_ins golang" # instead installed go@1.17 from the homebrew
+# dpkg_ins="$dpkg_ins libxml2-utils" # instead installed libxml2 from the homebrew # provides xmllint
+# dpkg_ins="$dpkg_ins openvpn" dpkg_dis="$dpkg_dis systemctl dpkg_dis openvpn openvpn@client" # NOTE: if your need openvpn instead installed from the homebrew # openvpn client <https://confluence.ozon.ru/pages/viewpage.action?spaceKey=CORPIT&title=OpenVPN+for+Linux>
+# dpkg_ins="$dpkg_ins redis" dpkg_dis="$dpkg_dis redis-server" # instead installed from the homebrew
+dpkg_ins="$dpkg_ins libpcap-dev" # required by github.com/google/gopacket/pcap (go/src/github.com/google/gopacket/pcap/pcap_unix.go:34:10: fatal error: pcap.h: No such file or directory)
+dpkg_ins="$dpkg_ins libqt5webkit5" # GlobalProtect_UI_deb-5.2.6.0-18.deb VPN dependency
+dpkg_ins="$dpkg_ins libxml2-dev"
 
 # # Er rkt.
-# # install="$install glide" # german does not use glide # go/german `add-apt-repository ppa:masterminds/glide` golang glide vendor package management <https://github.com/Masterminds/glide>
-# install="$install docker-ce" disable="$disable systemctl disable docker" # instead installed from the homebrew # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
-# install="$install elasticsearch apt-transport-https" # felix `deb https://artifacts.elastic.co/packages/5.x/apt stable main` elasticsearch 5 <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>, # apt-transport-https required by elasticsearch ppa <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#deb-repo>
-# install="$install golang"
-# install="$install libmagickwand-dev" # required by rmagick by felix
-# install="$install libpcap-dev" # required by github.com/google/gopacket/pcap (go/src/github.com/google/gopacket/pcap/pcap_unix.go:34:10: fatal error: pcap.h: No such file or directory)
-# install="$install network-manager-vpnc-gnome" # cisco vpn client plugin for the gnome
-# install="$install openconnect" # vpnc/globalprotect compatible, ppa: <https://launchpad.net/~phusen/+archive/ubuntu/openconnect>
-# install="$install openvpn" # openvpn client
-# # install="$install postgresql-11" disable="$disable systemctl disable postgresql-11" # `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
-# # install="$install postgresql-9.6" disable="$disable systemctl disable postgresql-9.6"  # felix `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
-# install="$install redis" disable="$disable systemctl disable redis-server" # felix
-# install="$install vpnc" # cisco vpn client
-# # install="$install yarn" # (NOTE: before add ppa!) js package manager required by rails asset pipeline precompilation (before install add ppa <https://yarnpkg.com/lang/en/docs/install/#debian-stable>)
+# # dpkg_ins="$dpkg_ins glide" # german does not use glide # go/german `add-apt-repository ppa:masterminds/glide` golang glide vendor package management <https://github.com/Masterminds/glide>
+# dpkg_ins="$dpkg_ins docker-ce" dpkg_dis="$dpkg_dis docker" # instead installed from the homebrew # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
+# dpkg_ins="$dpkg_ins elasticsearch apt-transport-https" # felix `deb https://artifacts.elastic.co/packages/5.x/apt stable main` elasticsearch 5 <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>, # apt-transport-https required by elasticsearch ppa <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#deb-repo>
+# dpkg_ins="$dpkg_ins golang"
+# dpkg_ins="$dpkg_ins libmagickwand-dev" # required by rmagick by felix
+# dpkg_ins="$dpkg_ins libpcap-dev" # required by github.com/google/gopacket/pcap (go/src/github.com/google/gopacket/pcap/pcap_unix.go:34:10: fatal error: pcap.h: No such file or directory)
+# dpkg_ins="$dpkg_ins network-manager-vpnc-gnome" # cisco vpn client plugin for the gnome
+# dpkg_ins="$dpkg_ins openconnect" # vpnc/globalprotect compatible, ppa: <https://launchpad.net/~phusen/+archive/ubuntu/openconnect>
+# dpkg_ins="$dpkg_ins openvpn" # openvpn client
+# # dpkg_ins="$dpkg_ins postgresql-11" dpkg_dis="$dpkg_dis postgresql-11" # `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
+# # dpkg_ins="$dpkg_ins postgresql-9.6" dpkg_dis="$dpkg_dis postgresql-9.6"  # felix `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
+# dpkg_ins="$dpkg_ins redis" dpkg_dis="$dpkg_dis redis-server" # felix
+# dpkg_ins="$dpkg_ins vpnc" # cisco vpn client
+# # dpkg_ins="$dpkg_ins yarn" # (NOTE: before add ppa!) js package manager required by rails asset pipeline precompilation (before install add ppa <https://yarnpkg.com/lang/en/docs/install/#debian-stable>)
 
-$remove_command  $remove  || exit 1
-$install_command $install || exit 1
-$disable_command $disable || exit 1
+$dpkg_rem_cli "$dpkg_rem" || exit 1
+$dpkg_ins_cli "$dpkg_ins" || exit 1
+# $dpkg_dis_cli "$dpkg_dis" || exit 1
