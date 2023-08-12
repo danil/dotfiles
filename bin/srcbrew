@@ -7,7 +7,6 @@
 ################################################################################
 ################################################################################
 # cask
-# clang-format
 # httpie
 # kubernetes-cli
 # leiningen
@@ -112,6 +111,10 @@ install="$install docker-machine" # provides docker daemon <https://docs.docker.
 # install="$install gcc@5" # <https://stackoverflow.com/questions/59227456/go-1-13-gcc-5-not-in-path#62795608>
 install="$install golangci-lint" # used by emacs a-la gometalinter
 install="$install scc" # a-la sloc/cloc
+
+# Clang compiler front end for the C, C++, Objective-C (depends on LLVM).
+install="$install clang-format" # used by company-clang backend
+install="$install llvm" # <https://github.com/llvm/llvm-project>
 
 # Python programming language <https://docs.brew.sh/Homebrew-and-Python>.
 install="$install flake8" # python linter
