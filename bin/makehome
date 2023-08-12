@@ -2,42 +2,99 @@
 
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-# APT (apt-get/aptitude).
-DPKG_ADD_CLI="sudo aptitude install --without-recommends"
-DPKG_REM_CLI="sudo aptitude remove"
-# DPKG_DIS_CLI="sudo systemctl disable"
+USAGE="usage: ${CMD:=${0##*/}} [--deb] [--brew] [--reinstall]"
+
+# APT (deb/dpkg/apt-get/aptitude) <https://en.wikipedia.org/wiki/APT_(software)>.
+DPKG_ADD_CLI="aptitude install --without-recommends"
+DPKG_REM_CLI="aptitude remove"
+# DPKG_DIS_CLI="systemctl disable"
+
+# Homebrew <https://brew.sh>.
+BREW_ADD_SRC_CLI="brew tap"
+BREW_REM_SRC_CLI="brew untap"
+BREW_ADD_CLI="brew install"
+
+OPT_ALL='true'
+
+# Options functions.
+optexit () { printf >&2 "%s %s\n%s\n" "$1" "$2" "$USAGE"; exit 2; }
+optcheck () { { [ "$1" != "$EOL" ] && [ "$1" != '--' ]; } || optexit "missing argument" "$2"; } # avoid infinite loop
+opthelp () { printf "%s\n" "$USAGE"; }
+
+# Parse command-line options.
+set -- "$@" "${EOL:=$(printf '\1\3\3\7')}"  # end-of-list marker
+while [ "$1" != "$EOL" ]; do
+    opt="$1"; shift
+
+    case "$opt" in
+        --deb       ) OPT_DPKG='true'; OPT_ALL='false';;
+        --brew      ) OPT_BREW='true'; OPT_ALL='false';;
+        --reinstall ) OPT_REINSTALL='true';;
+        -h | --help ) opthelp; exit 0;;
+
+        # Process special cases.
+        --) while [ "$1" != "$EOL" ]; do set -- "$@" "$1"; shift; done;;   # parse remaining as positional
+        --[!=]*=*) set -- "${opt%%=*}" "${opt#*=}" "$@";;                  # "--opt=arg"  ->  "--opt" "arg"
+        -[A-Za-z0-9] | -*[!A-Za-z0-9]*) optexit "unknown option:" "$opt";; # anything invalid like '-*'
+        -?*) other="${opt#-?}"; set -- "${opt%$other}" "-${other}" "$@";;  # "-abc"  ->  "-a" "-bc"
+        *) set -- "$@" "$opt";;                                            # positional, rotate to the end
+    esac
+done; shift
 
 # TODO: install ntp
 
+# TODO: investigate homebrew packages
+# cask
+# httpie
+# kubernetes-cli
+# leiningen
+# md5sha1sum
+# p7zip 7-Zip
+# perl
+# pwgen
+# rabbitmq
+# ripgrep
+# shellcheck
+# sqlite
+# the_silver_searcher
+
 # Common packages.
-# DPKG_ADD="$DPKG_ADD apache2-utils" # instead installed from the homebrew # provides htpasswd utility is an nginx/apach basic authentication password generator
-# DPKG_ADD="$DPKG_ADD convmv" # instead installed util-linux from the homebrew # a-la iconv character encoding conversion util
-# DPKG_ADD="$DPKG_ADD curl" # instead installed from the homebrew
-# DPKG_ADD="$DPKG_ADD dos2unix" # instead installed from the homebrew # convert text file line endings between CRLF and LF
-# DPKG_ADD="$DPKG_ADD git" # instead installed from the homebrew instead
-# DPKG_ADD="$DPKG_ADD goaccess" # instead installed from the homebrew # analyze nginx/apache log in real-time
-# DPKG_ADD="$DPKG_ADD hping3" # instead installed hping from the homebrew # a-la interactive ping https://github.com/antirez/hping
-# DPKG_ADD="$DPKG_ADD htop" # instead installed from the homebrew # a-la top
+# BREW_ADD="$BREW_ADD bash-completion" # programmable completion # conflicts with util-linux
+# BREW_ADD="$BREW_ADD bc" # used by bash prompt, console-based calculator utility
+# BREW_ADD="$BREW_ADD goaccess" # analyze apache/nginx log in real-time
+# BREW_ADD="$BREW_ADD grpc" # ?????????? gRPC client a-la curl https://github.com/grpc/grpc/blob/master/doc/command_line_tool.md
+# BREW_ADD="$BREW_ADD hping" # hping3 a-la interactive ping <https://github.com/antirez/hping> # DPKG_ADD="$DPKG_ADD hping3" # a-la interactive ping https://github.com/antirez/hping
+# BREW_ADD="$BREW_ADD pigz" # DPKG_ADD="$DPKG_ADD pigz" # parallel gzip for multi-processor, multi-core
 # DPKG_ADD="$DPKG_ADD inxi" # inxi --graphics <https://github.com/smxi/inxi>
 # DPKG_ADD="$DPKG_ADD jp2a" # converts jpg to ascii
-# DPKG_ADD="$DPKG_ADD jq" # instead installed from the homebrew # json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>
-# DPKG_ADD="$DPKG_ADD lftp" # instead installed from the homebrew # ftp client
 # DPKG_ADD="$DPKG_ADD linux-generic-hwe-20.04-edge" # linxu/kernel 5.11 for ubuntu 20.04
-# DPKG_ADD="$DPKG_ADD mailutils" # instead installed from the homebrew # is an gnu mailutils, reads local mail, provides /usr/bin/mail
 # DPKG_ADD="$DPKG_ADD makepasswd" # password generator
-# DPKG_ADD="$DPKG_ADD mosh" # instead installed from the homebrew # ssh replacement
-# DPKG_ADD="$DPKG_ADD ncdu" # instead installed from the homebrew # disk space usage is an baobab and gt5 replacement
-# DPKG_ADD="$DPKG_ADD nginx" DPKG_DIS="$DPKG_DIS nginx" # instead installed from the homebrew
-# DPKG_ADD="$DPKG_ADD pigz" # instead installed from the homebrew # parallel gzip for multi-processor, multi-core
 # DPKG_ADD="$DPKG_ADD protobuf-compiler" # version to old/outdated(
-# DPKG_ADD="$DPKG_ADD pwgen" # instead installed from the homebrew # password generator
-# DPKG_ADD="$DPKG_ADD syncthing" # instead installed from the homebrew # dropbox replacement: deb https://apt.syncthing.net/ syncthing release
-# DPKG_ADD="$DPKG_ADD tig" # instead installed from the homebrew # git interactive cli
-# DPKG_ADD="$DPKG_ADD tree" # instead installed from the homebrew # displays an indented directory tree
-# DPKG_ADD="$DPKG_ADD uni2ascii" # instead installed from the homebrew # to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`
-# DPKG_ADD="$DPKG_ADD uuid-runtime" # instead util-linux install from the homebrew # generating uuid <https://github.com/util-linux/util-linux>, <https://serverfault.com/questions/103359/how-to-create-a-uuid-in-bash#103366>
-# DPKG_ADD="$DPKG_ADD vim" # instead util-linux install from the homebrew # vim is awesome, neovim is sucks
-# DPKG_ADD="$DPKG_ADD whois" # instead util-linux install from the homebrew
+BREW_ADD="$BREW_ADD ack" # a-la ag <https://github.com/beyondgrep/ack3>
+BREW_ADD="$BREW_ADD bash" # Bourne again shell <https://gnu.org/software/bash>
+BREW_ADD="$BREW_ADD btop" # a-la htop
+BREW_ADD="$BREW_ADD clib" # package manager for c program language libraries <https://github.com/clibs/clib>
+BREW_ADD="$BREW_ADD colordiff" # colorize diff output <https://github.com/daveewart/colordiff>
+BREW_ADD="$BREW_ADD convmv" # a-la iconv character encoding conversion util # DPKG_ADD="$DPKG_ADD convmv" # a-la iconv character encoding conversion util
+BREW_ADD="$BREW_ADD csvkit" # conver csv to json `csvjson path/to/file.csv` <https://github.com/wireservice/csvkit/blob/master/docs/scripts/csvjson.rst>
+BREW_ADD="$BREW_ADD curl" # a-la wget <https://github.com/curl/curl> # DPKG_ADD="$DPKG_ADD curl" # a-la wget <https://github.com/curl/curl>
+BREW_ADD="$BREW_ADD dos2unix" # convert text file line endings between CRLF and LF # DPKG_ADD="$DPKG_ADD dos2unix" # convert text file line endings between CRLF and LF
+BREW_ADD="$BREW_ADD erdtree" # disk space usage is an ncdu replacement
+BREW_ADD="$BREW_ADD fd" # find replacement https://github.com/sharkdp/fd
+BREW_ADD="$BREW_ADD flatbuffers" # a-la protobuf <https://github.com/google/flatbuffers>
+BREW_ADD="$BREW_ADD htop" # DPKG_ADD="$DPKG_ADD htop" # a-la top <https://github.com/htop-dev/htop>
+BREW_ADD="$BREW_ADD jsonnet" # https://github.com/google/jsonnet
+BREW_ADD="$BREW_ADD mailutils" # DPKG_ADD="$DPKG_ADD mailutils" # is an gnu mailutils, reads local mail, provides /usr/bin/mail
+BREW_ADD="$BREW_ADD ncdu" # DPKG_ADD="$DPKG_ADD ncdu" # disk space usage is an baobab and gt5 replacement
+BREW_ADD="$BREW_ADD ninja" # a-la make build automation system
+BREW_ADD="$BREW_ADD pwgen" # DPKG_ADD="$DPKG_ADD pwgen" # password generator
+BREW_ADD="$BREW_ADD ripgrep" # rg a-la ag <https://github.com/BurntSushi/ripgrep>
+BREW_ADD="$BREW_ADD the_platinum_searcher" # pt a-la ag <https://github.com/monochromegane/the_platinum_searcher>
+BREW_ADD="$BREW_ADD the_silver_searcher" # DPKG_ADD="$DPKG_ADD silversearcher-ag" # the silver searcher (ag) is a code-searching tool a-la ack <https://github.com/ggreer/the_silver_searcher> # DPKG_ADD="$DPKG_ADD automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev" # compiltime dependency <https://github.com/ggreer/the_silver_searcher#building-from-source>
+BREW_ADD="$BREW_ADD tree" # DPKG_ADD="$DPKG_ADD tree" # displays an indented directory tree
+BREW_ADD="$BREW_ADD uni2ascii" # DPKG_ADD="$DPKG_ADD uni2ascii" # to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`
+BREW_ADD="$BREW_ADD util-linux" # DPKG_ADD="$DPKG_ADD uuid-runtime" # DPKG_ADD="$DPKG_ADD whois" # provides uuidgen (uuid generator) also provides uni2ascii (to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`) <https://github.com/util-linux/util-linux> , <https://serverfault.com/questions/103359/how-to-create-a-uuid-in-bash#103366>
+BREW_ADD="$BREW_ADD wdiff" # diff wordwise/word per word basis (a word is anything between whitespace)
 DPKG_ADD="$DPKG_ADD apt-transport-https" # required by custom ppa
 DPKG_ADD="$DPKG_ADD bc" # used by bash prompt, console-based calculator utility
 DPKG_ADD="$DPKG_ADD bind9-host" # automatic/dependency: dns/host lookup utility
@@ -50,7 +107,61 @@ DPKG_ADD="$DPKG_ADD mlocate" # locate/updatedb
 DPKG_ADD="$DPKG_ADD net-tools" # ifconfig cli
 DPKG_ADD="$DPKG_ADD opensmtpd" # send mail via /usr/bin/sendmail and deliver local mail to /var/mail a-la exim replacement
 DPKG_ADD="$DPKG_ADD openssh-server"
+
+# Data compression algorithms.
+BREW_ADD="$BREW_ADD lz4" # a-la gz/xz compression, required by gnupg, ffmpeg and mpv
+BREW_ADD="$BREW_ADD snappy" # a-la gz/xz compression, required by ffmpeg and mpv
+BREW_ADD="$BREW_ADD zstd" # a-la gz/xz compression, required by gcc, curl, git, gnupg, rust, node, ffmpeg, mpv and feh
 DPKG_ADD="$DPKG_ADD zstd" # a-la gz/xz compression
+
+# Network.
+BREW_ADD="$BREW_ADD aria2" # `aria2c https://your.tld/path/to/your.file` download client a-la curl/wget
+BREW_ADD="$BREW_ADD awscli" # `aws --version` # s3 command line client # default amazon aws ec2 client <https://github.com/aws/aws-cli>.
+BREW_ADD="$BREW_ADD axel" # download client a-la curl/wget
+BREW_ADD="$BREW_ADD freerdp" # xfreerdp is a remote desktop protocol for win https://github.com/freerdp/freerdp
+BREW_ADD="$BREW_ADD gmailctl" # gmail filters generation
+BREW_ADD="$BREW_ADD grpcurl" # gRPC client a-la curl https://github.com/fullstorydev/grpcurl
+BREW_ADD="$BREW_ADD lftp" # DPKG_ADD="$DPKG_ADD lftp" # ftp client <https://github.com/lavv17/lftp>
+BREW_ADD="$BREW_ADD mosh" # DPKG_ADD="$DPKG_ADD mosh" # ssh replacement <https://github.com/mobile-shell/mosh>
+BREW_ADD="$BREW_ADD syncthing" # DPKG_ADD="$DPKG_ADD syncthing" # dropbox replacement: deb <https://apt.syncthing.net> syncthing release
+BREW_ADD="$BREW_ADD wget" # a-la curl
+BREW_ADD="$BREW_ADD whois"
+
+# Git.
+BREW_ADD="$BREW_ADD git" # distributed version/revision control system <https://github.com/git/git> # DPKG_ADD="$DPKG_ADD git"
+BREW_ADD="$BREW_ADD git-flow" # <https://github.com/nvie/gitflow>
+BREW_ADD="$BREW_ADD git-lfs" # <https://git-lfs.com>
+BREW_ADD="$BREW_ADD tig" # DPKG_ADD="$DPKG_ADD tig" # git interactive client
+
+# *nix shell/terminal emulator/multiplexer.
+# BREW_ADD="$BREW_ADD nnn" # terminal file manager a-la mc/midnight commander https://github.com/jarun/nnn
+BREW_ADD="$BREW_ADD fish" # fish shell a-la bash
+BREW_ADD="$BREW_ADD nushell" # <https://github.com/nushell/nushell>
+BREW_ADD="$BREW_ADD tmux" # terminal multiplexer a-la gnu screen # DPKG_ADD="$DPKG_ADD pkg-config libevent-dev libncurses-dev" # os wide/from source compiltime dependency # DPKG_ADD="$DPKG_ADD byacc" # also byacc: preventing compiltime dependency error: ./etc/ylwrap: line 175: yacc: command not found
+BREW_ADD="$BREW_ADD wezterm" BREW_ADD_SRC="$BREW_ADD_SRC wez/wezterm-linuxbrew" # gpu-accelerated cross-platform terminal and multiplexer written in rust <https://github.com/wez/wezterm>
+BREW_ADD="$BREW_ADD xsel" # DPKG_ADD="$DPKG_ADD xsel" # copy selection in termina to the xorg clipboard (used by emacs and urxvt) <https://wiki.archlinux.org/index.php/rxvt-unicode#Automatic_Script_Management>
+DPKG_ADD="$DPKG_ADD cmake libfontconfig1-dev libfreetype6-dev libxcb-xfixes0-dev libxkbcommon-dev pkg-config" # alacritty dependency, alacritty is a terminal emulator a-la st/xterm <https://github.com/alacritty/alacritty/blob/master/INSTALL.md#debianubuntu>
+DPKG_ADD="$DPKG_ADD xterm" # backup/fallback terminal additional to the st/stterm/alacritty
+
+# Vim.
+BREW_ADD="$BREW_ADD fzf" # fuzzy finder https://github.com/junegunn/fzf
+BREW_ADD="$BREW_ADD fzy" # fuzzy finder https://github.com/jhawthorn/fzy
+BREW_ADD="$BREW_ADD pick" # fuzzy finder https://github.com/mptre/pick
+BREW_ADD="$BREW_ADD sk" # fuzzy finder https://github.com/lotabout/skim
+BREW_ADD="$BREW_ADD vim" # DPKG_ADD="$DPKG_ADD vim" # vim is awesome a-la emacs, neovim is sucks <https://github.com/vim/vim>
+
+# Emacs <https://github.com/emacs-mirror/emacs>.
+# BREW_ADD="$BREW_ADD emacs" # DPKG_ADD="$DPKG_ADD emacs-nox" # instead compiled from source into ~/.local/usr/local/bin # TODO: maybe use homebrew?
+# DPKG_ADD="$DPKG_ADD libgif-dev" # compiltime dependency X11 <https://www.emacswiki.org/emacs/BuildingEmacs#h5o-4>
+BREW_ADD="$BREW_ADD fdupes" # identify or delete duplicate files https://github.com/adrianlopezroche/fdupes (used by emacs package https://github.com/ShuguangSun/find-dupes-dired)
+BREW_ADD="$BREW_ADD jq" # json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463> # DPKG_ADD="$DPKG_ADD jq" # json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>
+BREW_ADD="$BREW_ADD markdownlint-cli" # used/required used by emacs flycheck
+BREW_ADD="$BREW_ADD shellcheck" # DPKG_ADD="$DPKG_ADD shellcheck" # used by emacs flycheck
+BREW_ADD="$BREW_ADD sql-lint" # used by emacs flycheck
+DPKG_ADD="$DPKG_ADD aspell-en" # used by emacs auto complete
+DPKG_ADD="$DPKG_ADD aspell-ru" # used by emacs auto complete
+DPKG_ADD="$DPKG_ADD emacs-el" # find/navigate elisp function source code <https://unix.stackexchange.com/questions/73100/how-to-attach-elisp-function-source-code-in-emacs>
+DPKG_ADD="$DPKG_ADD libgnutls28-dev" # compiltime dependency <https://stackoverflow.com/questions/52722096/build-emacs-and-gnutls-not-found#60430406>
 
 # Homebrew <https://docs.brew.sh/Homebrew-on-Linux#requirements>.
 # DPKG_ADD="$DPKG_ADD git" # instead installed from the homebrew
@@ -63,43 +174,10 @@ DPKG_ADD="$DPKG_ADD procps" # /proc file system utilities
 DPKG_ADD="$DPKG_ADD flatpak" # PMS
 DPKG_ADD="$DPKG_ADD gnome-software-plugin-flatpak" # Flatpak support for GNOME software
 
-# instead installed tmux from the homebrew.
-# # Tmux (os wide/from source).
-# # DPKG_ADD="$DPKG_ADD tmux" # os wide
-# DPKG_ADD="$DPKG_ADD byacc" # preventing compiltime dependency error: ./etc/ylwrap: line 175: yacc: command not found
-# DPKG_ADD="$DPKG_ADD pkg-config libevent-dev libncurses-dev" # compiltime dependencies
-
-# Emacs.
-# DPKG_ADD="$DPKG_ADD clang" # instead installed from the homebrew # used by company-clang backend # c, c++ and objective-c compiler based on llvm
-# DPKG_ADD="$DPKG_ADD emacs-nox" # instead compiled from source into ~/.local/usr/local/bin # TODO: maybe instead installed emacs from the homebrew?
-# DPKG_ADD="$DPKG_ADD libgif-dev" # compiltime dependency X11 <https://www.emacswiki.org/emacs/BuildingEmacs#h5o-4>
-# DPKG_ADD="$DPKG_ADD shellcheck" # instead installed from the homebrew # used by emacs flycheck
-DPKG_ADD="$DPKG_ADD aspell-en" # used by emacs auto complete
-DPKG_ADD="$DPKG_ADD aspell-ru" # used by emacs auto complete
-DPKG_ADD="$DPKG_ADD emacs-el" # find/navigate elisp function source code <https://unix.stackexchange.com/questions/73100/how-to-attach-elisp-function-source-code-in-emacs>
-DPKG_ADD="$DPKG_ADD libgnutls28-dev" # compiltime dependency <https://stackoverflow.com/questions/52722096/build-emacs-and-gnutls-not-found#60430406>
-
 # # Basher is a bash/shell/functions package manager
 # # <https://github.com/basherpm/basher>.
 # DPKG_ADD="$DPKG_ADD bash"
 # DPKG_ADD="$DPKG_ADD coreutils"
-
-# instead installed kubernetes-cli from the homebrew.
-# # K8s kubernetes.
-# DPKG_ADD="$DPKG_ADD kubectl" # `deb https://apt.kubernetes.io/ kubernetes-xenial main` <https://kubernetes.io/docs/tasks/tools/install-kubectl>
-# DPKG_ADD="$DPKG_ADD gnupg2" # required by kubectl
-# DPKG_ADD="$DPKG_ADD apt-transport-https ca-certificates curl"
-
-# # Docker
-# # <https://docs.docker.com/install/linux/docker-ce/ubuntu>.
-# DPKG_ADD="$DPKG_ADD docker-ce docker-ce-cli containerd.io" DPKG_DIS="$DPKG_DIS docker" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
-# DPKG_ADD="$DPKG_ADD golang-docker-credential-helpers" # credential helper stores encrypted passwords in d-bus secret service instead of unencrypted password in plain file <https://docs.docker.com/engine/reference/commandline/login/#credentials-store>
-# DPKG_ADD="$DPKG_ADD apt-transport-https ca-certificates curl gnupg gnupg-agent lsb-release software-properties-common" # required by docker ppa <https://docs.docker.com/install/linux/docker-ce/ubuntu>
-
-# instead installed from the homebrew.
-# The silver searcher (ag) <https://github.com/ggreer/the_silver_searcher>.
-# DPKG_ADD="$DPKG_ADD silversearcher-ag" # instead installed from the homebrew
-# DPKG_ADD="$DPKG_ADD automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev" # compiltime dependencies <https://github.com/ggreer/the_silver_searcher#building-from-source>
 
 # C/C++ compile/make common dependencies.
 DPKG_ADD="$DPKG_ADD automake" # required by tmux/xchainkeys
@@ -108,52 +186,108 @@ DPKG_ADD="$DPKG_ADD devscripts" # ???
 DPKG_ADD="$DPKG_ADD make" # required by all)
 DPKG_ADD="$DPKG_ADD valgrind" # find memory leaks https://www.valgrind.org/docs/manual/quick-start.html
 
-# instead installed PostgreSQL from the homebrew.
-# PostgreSQL.
-# DPKG_ADD="$DPKG_ADD pgcenter" # postgresql command-line tool https://github.com/lesovsky/pgcenter/releases install: dpkg --install path/to/pgcenter.deb
-# DPKG_ADD="$DPKG_ADD postgresql-14" DPKG_DIS="$DPKG_DIS postgresql" # `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
-# DPKG_ADD="$DPKG_ADD postgresql-server-dev-14" # required by pg_activity is an postgresql activity monitoring <https://github.com/dalibo/pg_activity>
-
-# # Mongodb.
-# install="$DPKG_ADD mongodb-org" DPKG_DIS="$DPKG_DIS mongod" # latest stable version of the mongodb server
-# DPKG_ADD="$DPKG_ADD gnupg" # required by mongodb <https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu>
+# Clang compiler front end for the C, C++, Objective-C (depends on LLVM).
+BREW_ADD="$BREW_ADD clang-format" # DPKG_ADD="$DPKG_ADD clang" # used by emacs (company-clang backend) # c, c++ and objective-c compiler based on llvm <https://github.com/llvm/llvm-project>
+BREW_ADD="$BREW_ADD llvm" # <https://github.com/llvm/llvm-project>
 
 # Golang programming language.
-# DPKG_ADD="$DPKG_ADD golang-race-detector-runtime" # FIXME: where is race detector for the go 1.15?
-# Installing instead go from the homebrew `brew install go && brew upgrade go`
+# BREW_ADD="$BREW_ADD gcc@5" # <https://stackoverflow.com/questions/59227456/go-1-13-gcc-5-not-in-path#62795608>
+# BREW_ADD="$BREW_ADD go"
 # DPKG_ADD="$DPKG_ADD golang"
 # DPKG_ADD="$DPKG_ADD golang-1.17-doc golang-1.17-go golang-1.17-src"
+# DPKG_ADD="$DPKG_ADD golang-race-detector-runtime" # FIXME: where is race detector for the go 1.15?
+BREW_ADD="$BREW_ADD golangci-lint" # used by emacs a-la gometalinter
+BREW_ADD="$BREW_ADD scc" # a-la sloc/cloc
 
-# instead installed rust from the homebrew.
-# # Rust programming language.
-# # DPKG_ADD="$DPKG_ADD libgtk-3-dev" # required by fontfinder https://github.com/mmstick/fontfinder
-# # DPKG_ADD="$DPKG_ADD libwebkit2gtk-4.0-dev" # required by fontfinder https://github.com/mmstick/fontfinder
+# Rust programming language <https://github.com/rust-lang/rust>.
+# DPKG_ADD="$DPKG_ADD libgtk-3-dev" # required by fontfinder https://github.com/mmstick/fontfinder
+# DPKG_ADD="$DPKG_ADD libwebkit2gtk-4.0-dev" # required by fontfinder https://github.com/mmstick/fontfinder
 # DPKG_ADD="$DPKG_ADD libudev-dev" # required by fclones, is an duplicate file finder https://github.com/pkolaczk/fclones
 # DPKG_ADD="$DPKG_ADD libxcb-composite0-dev" # required by gitui a-la tig https://github.com/extrawurst/gitui
+BREW_ADD="$BREW_ADD rust"
 
-# instead installed dart from the homebrew.
-# # Dart <https://dart.dev/get-dart#install-using-apt-get>.
-# DPKG_ADD="$DPKG_ADD apt-transport-https"
-# DPKG_ADD="$DPKG_ADD dart"
+# JS/JavaScript/Nodejs.
+# DPKG_ADD="$DPKG_ADD curl dirmngr apt-transport-https lsb-release ca-certificates" # required by nodesource.com's ppa
+BREW_ADD="$BREW_ADD deno" # js programming language <https://github.com/denoland/deno>
+BREW_ADD="$BREW_ADD node" # DPKG_ADD="$DPKG_ADD nodejs" # js programming language <https://github.com/nodejs/node>
 
-# instead installed ruby from the homebrew.
-# # Ruby programming language.
-# # DPKG_ADD="$DPKG_ADD libssl1.0-dev" # required by ruby 2.3.7 (libssl1.0-dev conflicts with libssl-dev)
+# Python programming language
+# <https://github.com/python/cpython>,
+# <https://docs.brew.sh/Homebrew-and-Python>.
+BREW_ADD="$BREW_ADD flake8" # python linter
+BREW_ADD="$BREW_ADD proselint" # used/required by emacs flycheck
+BREW_ADD="$BREW_ADD pylint" # used/required by emacs flycheck
+BREW_ADD="$BREW_ADD python3" # DPKG_ADD="$DPKG_ADD python3" # provides pip (pip3) # DPKG_ADD="$DPKG_ADD python3-pip" # DPKG_ADD="$DPKG_ADD python-pip" # python 2 pip no longer supported by ubuntu
+
+# Ruby programming language
+# <https://github.com/ruby/ruby>.
+# DPKG_ADD="$DPKG_ADD libssl1.0-dev" # required by ruby 2.3.7 (libssl1.0-dev conflicts with libssl-dev)
 # DPKG_ADD="$DPKG_ADD libreadline-dev" # required by ruby 2.6.3
 # DPKG_ADD="$DPKG_ADD libsqlite3-dev" # required by sqlite3 which required by mailcatcher
 # DPKG_ADD="$DPKG_ADD libssl-dev" # required by ruby 2.6.3 (libssl-dev conflicts with libssl1.0-dev)
+BREW_ADD="$BREW_ADD ruby"
 
-# instead installed python from the homebrew.
-# Python programming language.
-# DPKG_ADD="$DPKG_ADD python-pip" # python 2 pip no longer supported by ubuntu
-# DPKG_ADD="$DPKG_ADD python3" # instead installed from the homebrew
-# DPKG_ADD="$DPKG_ADD python3-pip" # instead installed from the homebrew
+# Dart programming language
+# <https://github.com/dart-lang/sdk>,
+# <https://dart.dev/get-dart#install-using-apt-get>.
+# DPKG_ADD="$DPKG_ADD apt-transport-https"
+# DPKG_ADD="$DPKG_ADD dart"
+BREW_ADD="$BREW_ADD dart-sdk"
 
-# instead installed node from the homebrew.
-# # Nodejs/Javascript by nodesource.com's ppa
-# # https://github.com/nodesource/distributions/blob/master/README.md#installation-instructions>
-# DPKG_ADD="$DPKG_ADD nodejs"
-# DPKG_ADD="$DPKG_ADD curl dirmngr apt-transport-https lsb-release ca-certificates" # required by nodesource.com's ppa
+# Programming languages.
+BREW_ADD="$BREW_ADD lua" # newer than apt version # the lua programming language https://github.com/lua/lua
+BREW_ADD="$BREW_ADD sbcl" # Steel Bank Common Lisp (SBCL) <https://github.com/sbcl/sbcl>
+
+# Web/HTTPd server.
+# DPKG_ADD="$DPKG_ADD goaccess" # instead installed from the homebrew # analyze nginx/apache log in real-time
+BREW_ADD="$BREW_ADD http-server" # <https://github.com/http-party/http-server>
+BREW_ADD="$BREW_ADD httpd" # provides htpasswd utility is an nginx/apache basic authentication password generator # DPKG_ADD="$DPKG_ADD apache2-utils" # provides htpasswd utility is an nginx/apache basic authentication password generator
+BREW_ADD="$BREW_ADD nginx" # web/http server a-la apache # DPKG_ADD="$DPKG_ADD nginx" DPKG_DIS="$DPKG_DIS nginx" # web/http server a-la apache
+
+# PostgreSQL is a RDBMS a-la MySQL
+# <https://github.com/postgres/postgres>,
+# <https://wiki.postgresql.org/wiki/Homebrew>.
+# DPKG_ADD="$DPKG_ADD pgcenter" # postgresql command-line tool https://github.com/lesovsky/pgcenter/releases install: dpkg --install path/to/pgcenter.deb
+# DPKG_ADD="$DPKG_ADD postgresql-14" # DPKG_DIS="$DPKG_DIS postgresql" # `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
+# DPKG_ADD="$DPKG_ADD postgresql-server-dev-14" # required by pg_activity is an postgresql activity monitoring <https://github.com/dalibo/pg_activity>
+BREW_ADD="$BREW_ADD postgresql"
+
+# MySQL Vitess.
+# BREW_ADD="$BREW_ADD mysql" # rdbms
+BREW_ADD="$BREW_ADD vitess" # horizontal scaled clustering <https://vitess.io/docs/contributing/build-on-macos>, <https://github.com/vitessio/vitess>, <https://en.wikipedia.org/wiki/Shard_(database_architecture)>
+
+# MongoDB.
+# DPKG_ADD="$DPKG_ADD gnupg" # required by mongodb <https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu>
+# DPKG_ADD="$DPKG_ADD mongodb-org" DPKG_DIS="$DPKG_DIS mongod" # latest stable version of the mongodb server
+BREW_ADD="$BREW_ADD mongodb-community"
+BREW_ADD_SRC="$BREW_ADD_SRC mongodb/brew"
+
+# Kafka.
+BREW_ADD="$BREW_ADD kafka" # <https://github.com/apache/kafka>
+BREW_ADD_SRC="$BREW_ADD_SRC redpanda-data/tap"
+BREW_ADD="$BREW_ADD redpanda" # streaming data platform a-la kafka <https://github.com/redpanda-data/redpanda>
+
+# # Manticore Search is a
+# # High performance low resource consumption database for search written in C++.
+# BREW_ADD="$BREW_ADD manticoresoftware/manticore/manticoresearch"
+# BREW_ADD="$BREW_ADD manticoresoftware/manticore/manticore-extra"
+
+# # Elasticsearch <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>.
+# DPKG_ADD="$DPKG_ADD elasticsearch" # felix `deb https://artifacts.elastic.co/packages/5.x/apt stable main` elasticsearch 5 <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>, # apt-transport-https required by elasticsearch ppa <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#deb-repo>
+# DPKG_ADD="$DPKG_ADD apt-transport-https"
+
+# Databases.
+BREW_ADD="$BREW_ADD keydb"
+BREW_ADD="$BREW_ADD redis"
+BREW_ADD="$BREW_ADD tarantool"
+
+# Docker OS-level virtualization to deliver software in packages called containers
+# <https://github.com/moby/moby>,
+# <https://docs.docker.com/install/linux/docker-ce/ubuntu>.
+# DPKG_ADD="$DPKG_ADD golang-docker-credential-helpers" # credential helper stores encrypted passwords in d-bus secret service instead of unencrypted password in plain file <https://docs.docker.com/engine/reference/commandline/login/#credentials-store>
+BREW_ADD="$BREW_ADD docker" # DPKG_ADD="$DPKG_ADD docker-ce" DPKG_DIS="docker" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
+BREW_ADD="$BREW_ADD docker-compose" # <https://github.com/docker/compose>
+BREW_ADD="$BREW_ADD docker-machine" # provides docker daemon <https://docs.docker.com/desktop>
 
 # # Benchmarks a-la `ab`.
 # DPKG_ADD="$DPKG_ADD bonnie++"
@@ -164,99 +298,14 @@ DPKG_ADD="$DPKG_ADD valgrind" # find memory leaks https://www.valgrind.org/docs/
 # DPKG_ADD="$DPKG_ADD tiobench" # TODO: find this package
 # DPKG_ADD="$DPKG_ADD wrk" # c http benchmark tool <https://github.com/wg/wrk>
 
-# X11/xorg/desktop.
-# DPKG_ADD="$DPKG_ADD duplicity" # instead installed from the homebrew # backuping
-# DPKG_ADD="$DPKG_ADD feh" # instead installed from the homebrew # command line image viewer
-# DPKG_ADD="$DPKG_ADD firefox" # instead installed from snap # works normal with graylog's text box (input box), text field (input field)
-# DPKG_ADD="$DPKG_ADD font-manager" # list bitmap ??? fonts
-# DPKG_ADD="$DPKG_ADD fonts-fantasque-sans" # instead installed manually into /usr/local/share/fonts # terminal/code/mono/programming font (gnome-terminal issue https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=960629)
-# DPKG_ADD="$DPKG_ADD fonts-hack-ttf" # instead installed manually into /usr/local/share/fonts # terminal/code/mono/programming font
-# DPKG_ADD="$DPKG_ADD fonts-noto" # awesome serif font ???
-# DPKG_ADD="$DPKG_ADD gimp" # instead installed from flatpak # a-la photoshop
-# DPKG_ADD="$DPKG_ADD libappindicator3-1" # slack dependency # libayatana-appindicator3-1 : Conflicts: libappindicator3-1 but 12.10.1+20.10.20200706.1-0ubuntu1 is to be installed
-# DPKG_ADD="$DPKG_ADD libgdk-pixbuf2.0-dev libglib2.0-dev libxml2-utils" # compiltime dependencies of numix theme
-# DPKG_ADD="$DPKG_ADD mpv" # instead installed from the homebrew # a-la mplayer replacement
-# DPKG_ADD="$DPKG_ADD pk-update-icon" # FIXME: missing? # display notifications about software updates
-# DPKG_ADD="$DPKG_ADD uswsusp" # FIXME: missing? # systemctl hibernate
-# DPKG_ADD="$DPKG_ADD xcalib" # returns: "Error - unsupported ramp size 0" (load icc/icm display color profiles (only calibration curves) <https://wiki.archlinux.org/index.php/ICC_Profiles#xcalib>)
-# DPKG_ADD="$DPKG_ADD xclip" # tmux and xorg clipboard integration <https://github.com/tmux-plugins/tmux-yank#linux-requirements>
-# DPKG_ADD="$DPKG_ADD xsel" # instead installed from the homebrew # copy selection in termina to the xorg clipboard (used by emacs and urxvt) <https://wiki.archlinux.org/index.php/rxvt-unicode#Automatic_Script_Management>
-# DPKG_REM="$DPKG_REM xserver-xorg-video-intel" # instead of intel using modesetting <https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/1867668>
-DPKG_ADD="$DPKG_ADD argyll" # load icc/icm display color profiles <https://wiki.archlinux.org/index.php/ICC_Profiles#Argyll_CMS>
-DPKG_ADD="$DPKG_ADD blueman" # full featured bluetooth manager gui <https://wiki.archlinux.org/title/Blueman>, <https://wiki.archlinux.org/title/Bluetooth>
-DPKG_ADD="$DPKG_ADD gparted" # format/create partition/disk/usb
-DPKG_ADD="$DPKG_ADD libfuse2" # pcloud dependency
-DPKG_ADD="$DPKG_ADD libimlib2-dev libfontconfig1-dev libfreetype6-dev libx11-dev libxext-dev libxft-dev libxrender-dev zlib1g-dev libxinerama-dev libxcomposite-dev libxdamage-dev libxfixes-dev libxmu-dev" # skippy-xd is an full-screen task-switcher for X11 <https://github.com/richardgv/skippy-xd>
-DPKG_ADD="$DPKG_ADD libnotify-bin" # a-la notify-osd
-DPKG_ADD="$DPKG_ADD light" # used by xchainkeys or ~/.xprofile or ~/.xstart
-DPKG_ADD="$DPKG_ADD lxappearance" # change/switch gtk2/gtk3 themes
-DPKG_ADD="$DPKG_ADD maim" # takes screenshots of desktop
-DPKG_ADD="$DPKG_ADD meld" # gnome diff (gtk)
-DPKG_ADD="$DPKG_ADD mesa-utils" # provides glxgears util for the 3d compositor testing
-DPKG_ADD="$DPKG_ADD mkusb usb-pack-efi" # mkusb <https://help.ubuntu.com/community/mkusb#Installation> create bootable/live usb/iso <https://help.ubuntu.com/community/mkusb#Quick_start_manual_and_mkusb_PPA>
-DPKG_ADD="$DPKG_ADD sassc libglib2.0-dev-bin" # dependencies of whitesur gtk theme <https://github.com/vinceliuice/whitesur-gtk-theme>, <https://github.com/vinceliuice/whitesur-icon-theme>.
-DPKG_ADD="$DPKG_ADD transmission" # torrent client # DPKG_REM="$DPKG_REM transmission-gtk"
-DPKG_ADD="$DPKG_ADD ubuntu-restricted-extras" # playing video in browser instead of download <https://askubuntu.com/questions/1122579/firefox-downloads-the-video-instead-of-playing-it#1122668>, <https://askubuntu.com/questions/56446/how-do-i-install-the-ubuntu-restricted-extras-package#56448>
-DPKG_ADD="$DPKG_ADD xscreensaver-data-extra"
-DPKG_ADD="$DPKG_ADD xscreensaver-gl-extra"
-DPKG_ADD="$DPKG_ADD xserver-xorg-video-intel" # instead of modesetting using intel <https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/1867668>
-DPKG_ADD="$DPKG_ADD xterm" # backup/fallback terminal additional to the st/stterm/alacritty
-DPKG_REM="$DPKG_REM gnome-mahjongg"
-DPKG_REM="$DPKG_REM remmina"
-DPKG_REM="$DPKG_REM thunderbird thunderbird-gnome-support thunderbird-locale-en thunderbird-locale-en-gb thunderbird-locale-en-us thunderbird-locale-ru" # instead installed mailspring from snap # GUI mail client written in C/C++
+# DevOps.
+BREW_ADD="$BREW_ADD ansible" # <https://github.com/ansible/ansible>
+BREW_ADD="$BREW_ADD k9s" # derailed/k9s/k9s:, k8s/kubernetes client <https://github.com/derailed/k9s>
+BREW_ADD="$BREW_ADD kubernetes-cli" # DPKG_ADD="$DPKG_ADD kubectl" # provides k8s/kubernetes kubectl util `deb https://apt.kubernetes.io kubernetes-xenial main` <https://kubernetes.io/docs/tasks/tools/install-kubectl> # DPKG_ADD="$DPKG_ADD gnupg2" # required by kubectl
+BREW_ADD="$BREW_ADD netdata" # monitoring <https://github.com/netdata/netdata>
+BREW_ADD="$BREW_ADD vault" # DPKG_ADD="$DPKG_ADD vault" # vault util (hashicorp) # curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - && sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main", <https://vaultproject.io/downloads>
 
-# C/C++ compile/make X11 dependencies.
-DPKG_ADD="$DPKG_ADD libx11-dev" # ???
-DPKG_ADD="$DPKG_ADD libxft-dev" # ???
-
-# Invert colors on x11/xorg/xrandr
-# <https://superuser.com/questions/208746/invert-colors-on-x-or-xfce4#1494872#209083>.
-DPKG_ADD="$DPKG_ADD libxcb-randr0-dev"
-DPKG_ADD="$DPKG_ADD xcalib" # `xcalib -i -a` invert colors on xorg/xrandr <https://superuser.com/questions/208746/invert-colors-on-x-or-xfce4#1494872#209083>
-
-# Dunst/dunstify (respects org.freedesktop.Notifications)
-# <https://github.com/dunst-project/dunst>
-# DPKG_ADD="$DPKG_ADD libc6 libcairo2 libgdk-pixbuf2.0-0 libglib2.0-0 libpango-1.0-0 libpangocairo-1.0-0 libx11-6 libxdg-basedir1 libxinerama1 libxrandr2 libxss1" # runtime dependencies
-# DPKG_ADD="$DPKG_ADD dunst" # instead compiled from source into ~/.local/usr/local/bin # a-la notify-osd
-DPKG_ADD="$DPKG_ADD libdbus-1-dev libnotify-dev libxrandr-dev libpango1.0-dev libx11-dev libxinerama-dev libxss-dev libglib2.0-dev libgtk-3-dev libxdg-basedir-dev" # compiltime dependencies <https://github.com/dunst-project/dunst/wiki/Dependencies>
-
-# Alacritty terminal emulator a-la st/xterm
-# <https://github.com/alacritty/alacritty/blob/master/INSTALL.md#debianubuntu>.
-DPKG_ADD="$DPKG_ADD cmake"
-DPKG_ADD="$DPKG_ADD libfontconfig1-dev"
-DPKG_ADD="$DPKG_ADD libfreetype6-dev"
-DPKG_ADD="$DPKG_ADD libxcb-xfixes0-dev"
-DPKG_ADD="$DPKG_ADD libxkbcommon-dev"
-DPKG_ADD="$DPKG_ADD pkg-config"
-
-# xchainkeys <https://github.com/hbekel/xchainkeys>.
-DPKG_ADD="$DPKG_ADD light" # xchainkeys runtime dependency
-DPKG_ADD="$DPKG_ADD automake" # xchainkeys compiltime dependency
-
-# # sxhkd.
-# # DPKG_ADD="$DPKG_ADD sxhkd" # a-la xchainkeys
-# DPKG_ADD="$DPKG_ADD libxcb1 libxcb-keysyms1" # sxhkd runtime dependencies
-# DPKG_ADD="$DPKG_ADD libxcb1 libxcb-keysyms1-dev" # sxhkd compiltime dependencies
-
-# i3.
-# DPKG_ADD="$DPKG_ADD i3status" # instead using i3blocks
-# DPKG_ADD="$DPKG_ADD libwnck-3-dev libxklavier-dev libgtk-3-dev dh-autoreconf dh-make devscripts fakeroot" # gxkb compiltime dependencies, is a keyboard/language layout indicator (flag) for tray <https://github.com/zen-tools/gxkb#building-from-source>, a-la xxkb
-DPKG_ADD="$DPKG_ADD build-essential" # dmenu (suckless) dependency
-DPKG_ADD="$DPKG_ADD i3-wm"
-DPKG_ADD="$DPKG_ADD i3lock" # xscreensaver replacement
-DPKG_ADD="$DPKG_ADD libxcb-ewmh-dev libxcb-icccm4-dev libxcb-util0-dev" # xtitle (used by i3blocks/i3) compiltime dependencies <https://github.com/baskerville/xtitle>
-DPKG_ADD="$DPKG_ADD xautolock" # used by i3lock
-DPKG_ADD="$DPKG_ADD libxpm-dev libxt-dev xutils-dev" # xxkb compiltime dependencies, is a keyboard/language layout indicator (flag) for tray <https://github.com/scientistnik/xxkb>, a-la gxkb which destroys xchainkeys
-
-# # bspwm.
-# DPKG_ADD="$DPKG_ADD bspwm" # a-la i3
-
-# volumeicon.
-# DPKG_ADD="$DPKG_ADD intltool autogen" # volumeicon-alsa compiltime dependencies
-# DPKG_ADD="$DPKG_ADD libasound2-dev libglib2.0-dev libgtk-3-dev" # volumeicon-alsa compiltime dependencies
-DPKG_ADD="$DPKG_ADD volumeicon-alsa"
-
-# # Suckless dwm.
+# # X11 Suckless dwm.
 # # DPKG_ADD="$DPKG_ADD gxkb" # a-la xxkb (destroy xchainkeys)
 # # DPKG_ADD="$DPKG_ADD rofi" # a-la dmenu for open windows
 # # DPKG_ADD="$DPKG_ADD xfdashboard" # a-la compiz expose/gnome overview (works only with running xfce session)
@@ -271,11 +320,45 @@ DPKG_ADD="$DPKG_ADD volumeicon-alsa"
 # DPKG_ADD="$DPKG_ADD xautolock" # used by i3lock
 # DPKG_ADD="$DPKG_ADD xxkb" # keyboard/language layout indicator (flag) for tray
 
-# instead installed vault from the homebrew.
-# # Vault (hashicorp) <https://vaultproject.io/downloads>.
-# DPKG_ADD="$DPKG_ADD vault" # curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - && sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+# X11 i3.
+# DPKG_ADD="$DPKG_ADD i3status" # instead using i3blocks
+# DPKG_ADD="$DPKG_ADD libwnck-3-dev libxklavier-dev libgtk-3-dev dh-autoreconf dh-make devscripts fakeroot" # gxkb compiltime dependency, is a keyboard/language layout indicator (flag) for tray <https://github.com/zen-tools/gxkb#building-from-source>, a-la xxkb
+DPKG_ADD="$DPKG_ADD build-essential" # dmenu (suckless) dependency
+DPKG_ADD="$DPKG_ADD i3-wm"
+DPKG_ADD="$DPKG_ADD i3lock" # xscreensaver replacement
+DPKG_ADD="$DPKG_ADD libxcb-ewmh-dev libxcb-icccm4-dev libxcb-util0-dev" # xtitle (used by i3blocks/i3) compiltime dependency <https://github.com/baskerville/xtitle>
+DPKG_ADD="$DPKG_ADD xautolock" # used by i3lock
+DPKG_ADD="$DPKG_ADD libxpm-dev libxt-dev xutils-dev" # xxkb compiltime dependency, is a keyboard/language layout indicator (flag) for tray <https://github.com/scientistnik/xxkb>, a-la gxkb which destroys xchainkeys
 
-# Xfce4 DE Desktop Environment.
+# # X11 bspwm.
+# DPKG_ADD="$DPKG_ADD bspwm" # a-la i3
+
+# X11 invert colors on x11/xorg/xrandr
+# <https://superuser.com/questions/208746/invert-colors-on-x-or-xfce4#1494872#209083>.
+DPKG_ADD="$DPKG_ADD libxcb-randr0-dev"
+DPKG_ADD="$DPKG_ADD xcalib" # `xcalib -i -a` invert colors on xorg/xrandr <https://superuser.com/questions/208746/invert-colors-on-x-or-xfce4#1494872#209083>
+
+# X11 dunst/dunstify (respects org.freedesktop.Notifications)
+# <https://github.com/dunst-project/dunst>
+# DPKG_ADD="$DPKG_ADD libc6 libcairo2 libgdk-pixbuf2.0-0 libglib2.0-0 libpango-1.0-0 libpangocairo-1.0-0 libx11-6 libxdg-basedir1 libxinerama1 libxrandr2 libxss1" # runtime dependencies
+# DPKG_ADD="$DPKG_ADD dunst" # instead compiled from source into ~/.local/usr/local/bin # a-la notify-osd
+DPKG_ADD="$DPKG_ADD libdbus-1-dev libnotify-dev libxrandr-dev libpango1.0-dev libx11-dev libxinerama-dev libxss-dev libglib2.0-dev libgtk-3-dev libxdg-basedir-dev" # compiltime dependency <https://github.com/dunst-project/dunst/wiki/Dependencies>
+
+# X11 xchainkeys <https://github.com/hbekel/xchainkeys>.
+DPKG_ADD="$DPKG_ADD light" # xchainkeys runtime dependency
+DPKG_ADD="$DPKG_ADD automake" # xchainkeys compiltime dependency
+
+# # X11 sxhkd.
+# # DPKG_ADD="$DPKG_ADD sxhkd" # a-la xchainkeys
+# DPKG_ADD="$DPKG_ADD libxcb1 libxcb-keysyms1" # sxhkd runtime dependencies
+# DPKG_ADD="$DPKG_ADD libxcb1 libxcb-keysyms1-dev" # sxhkd compiltime dependency
+
+# X11 volumeicon.
+# DPKG_ADD="$DPKG_ADD intltool autogen" # volumeicon-alsa compiltime dependency
+# DPKG_ADD="$DPKG_ADD libasound2-dev libglib2.0-dev libgtk-3-dev" # volumeicon-alsa compiltime dependency
+DPKG_ADD="$DPKG_ADD volumeicon-alsa"
+
+# X11 Xfce4 DE Desktop Environment.
 # DPKG_ADD="$DPKG_ADD libxfce4panel-2.0-dev libxfce4ui-2-dev" # compiltime dependency of text plugin <https://github.com/daveriesz/xfce-text-plugin>
 # DPKG_ADD="$DPKG_ADD orage" # xfce date time plugin with calendar
 # DPKG_ADD="$DPKG_ADD thunar-megasync" # not using
@@ -295,18 +378,18 @@ DPKG_ADD="$DPKG_ADD xfce4-systemload-plugin" # system cpu/mem/net/swap load moni
 DPKG_ADD="$DPKG_ADD xfce4-windowck-plugin" # put maximized window title on the panel <https://github.com/takinoy/xfce4-windowck-plugin>
 DPKG_ADD="$DPKG_ADD xfce4-xkb-plugin" # keyboard language switcher
 
-# MATE DE Desktop Environment.
+# X11 MATE DE Desktop Environment.
 # DPKG_ADD="$DPKG_ADD atril" # instead installed from snap # pdf viewer (remembers last page) for mate de (desktop environment) https://github.com/mate-desktop/atril
 DPKG_ADD="$DPKG_ADD caja" # file manager
 DPKG_ADD="$DPKG_ADD engrampa" # archiver
 DPKG_ADD="$DPKG_ADD evince-" # remove: pdf viewer remembers last page https://github.com/mate-desktop/atril
 DPKG_ADD="$DPKG_ADD ristretto" # command line image viewer
 
-# # Dropbox.
+# # X11 dropbox.
 # DPKG_ADD="$DPKG_ADD dropbox"
 # DPKG_REM="$DPKG_REM nautilus-dropbox" # conflicts with dropbox deb file
 
-# Gnome Desktop Environment.
+# X11 Gnome Desktop Environment.
 # DPKG_ADD="$DPKG_ADD chrome-gnome-shell" # chrome/gnome extension integration
 # DPKG_ADD="$DPKG_ADD gnome-shell-extension-appindicator-" remove
 # DPKG_ADD="$DPKG_ADD gnome-shell-extension-impatience" # speed up the gnome-shell animation speed
@@ -315,7 +398,7 @@ DPKG_ADD="$DPKG_ADD ristretto" # command line image viewer
 # DPKG_ADD="$DPKG_ADD ubuntu-desktop-" # remove
 DPKG_ADD="$DPKG_ADD gnome-tweaks" # former gnome-tweak-tool (in addition to gnome-control-center)
 
-# Zoom instead installed by the appimage. # Zoom dependencies.
+# X11 Zoom instead installed by the appimage. # Zoom dependencies.
 # DPKG_ADD="$DPKG_ADD libegl1-mesa"
 # DPKG_ADD="$DPKG_ADD libglib2.0-0"
 # DPKG_ADD="$DPKG_ADD libgstreamer-plugins-base1.0-0"
@@ -336,47 +419,100 @@ DPKG_ADD="$DPKG_ADD gnome-tweaks" # former gnome-tweak-tool (in addition to gnom
 # DPKG_ADD="$DPKG_ADD libxcb-keysyms1"
 # DPKG_ADD="$DPKG_ADD libxcb-xtest0"
 
-# # Elasticsearch <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>.
-# DPKG_ADD="$DPKG_ADD elasticsearch" # felix `deb https://artifacts.elastic.co/packages/5.x/apt stable main` elasticsearch 5 <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>, # apt-transport-https required by elasticsearch ppa <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#deb-repo>
-# DPKG_ADD="$DPKG_ADD apt-transport-https"
-
-# # Google chrome <https://www.google.com/chrome>.
+# # X11 Google chrome <https://www.google.com/chrome>.
 # DPKG_ADD="$DPKG_ADD apt-transport-https"
 # DPKG_ADD="$DPKG_ADD google-chrome-stable" # instead installed by the appimage
 
-# # never used Brave browser a-la google chrome <https://github.com/brave>.
+# # X11 never used Brave browser a-la google chrome <https://github.com/brave>.
 # DPKG_ADD="$DPKG_ADD apt-transport-https"
 # DPKG_ADD="$DPKG_ADD brave-browser" # a-la google chrome
 # DPKG_ADD="$DPKG_ADD curl"
 # DPKG_ADD="$DPKG_ADD gnupg"
 
+# X11/xorg/desktop.
+# BREW_ADD="$BREW_ADD duplicity" # DPKG_ADD="$DPKG_ADD duplicity" # backuping
+# DPKG_ADD="$DPKG_ADD firefox" # instead installed from snap # works normal with graylog's text box (input box), text field (input field)
+# DPKG_ADD="$DPKG_ADD font-manager" # list bitmap ??? fonts
+# DPKG_ADD="$DPKG_ADD fonts-fantasque-sans" # instead installed manually into /usr/local/share/fonts # terminal/code/mono/programming font (gnome-terminal issue https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=960629)
+# DPKG_ADD="$DPKG_ADD fonts-hack-ttf" # instead installed manually into /usr/local/share/fonts # terminal/code/mono/programming font
+# DPKG_ADD="$DPKG_ADD fonts-noto" # awesome serif font ???
+# DPKG_ADD="$DPKG_ADD gimp" # instead installed from flatpak # a-la photoshop
+# DPKG_ADD="$DPKG_ADD libappindicator3-1" # slack dependency # libayatana-appindicator3-1 : Conflicts: libappindicator3-1 but 12.10.1+20.10.20200706.1-0ubuntu1 is to be installed
+# DPKG_ADD="$DPKG_ADD libgdk-pixbuf2.0-dev libglib2.0-dev libxml2-utils" # compiltime dependency of numix theme
+# DPKG_ADD="$DPKG_ADD pk-update-icon" # FIXME: missing? # display notifications about software updates
+# DPKG_ADD="$DPKG_ADD uswsusp" # FIXME: missing? # systemctl hibernate
+# DPKG_ADD="$DPKG_ADD xcalib" # returns: "Error - unsupported ramp size 0" (load icc/icm display color profiles (only calibration curves) <https://wiki.archlinux.org/index.php/ICC_Profiles#xcalib>)
+# DPKG_ADD="$DPKG_ADD xclip" # tmux and xorg clipboard integration <https://github.com/tmux-plugins/tmux-yank#linux-requirements>
+# DPKG_REM="$DPKG_REM xserver-xorg-video-intel" # instead of intel using modesetting <https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/1867668>
+BREW_ADD="$BREW_ADD feh" # DPKG_ADD="$DPKG_ADD feh" # command line image viewer
+BREW_ADD="$BREW_ADD ffmpeg" # watch webcam `ffplay -fs /dev/video0` https://github.com/ffmpeg/ffmpeg
+BREW_ADD="$BREW_ADD marp-cli" # markdown to presentation (pdf) from command line https://github.com/marp-team/marp
+BREW_ADD="$BREW_ADD mpv" # DPKG_ADD="$DPKG_ADD mpv" # a-la mplayer replacement
+BREW_ADD="$BREW_ADD xdotool" # ???
+DPKG_ADD="$DPKG_ADD argyll" # load icc/icm display color profiles <https://wiki.archlinux.org/index.php/ICC_Profiles#Argyll_CMS>
+DPKG_ADD="$DPKG_ADD blueman" # full featured bluetooth manager gui <https://wiki.archlinux.org/title/Blueman>, <https://wiki.archlinux.org/title/Bluetooth>
+DPKG_ADD="$DPKG_ADD gparted" # format/create partition/disk/usb
+DPKG_ADD="$DPKG_ADD libfuse2" # pcloud dependency
+DPKG_ADD="$DPKG_ADD libimlib2-dev libfontconfig1-dev libfreetype6-dev libx11-dev libxext-dev libxft-dev libxrender-dev zlib1g-dev libxinerama-dev libxcomposite-dev libxdamage-dev libxfixes-dev libxmu-dev" # skippy-xd is an full-screen task-switcher for X11 <https://github.com/richardgv/skippy-xd>
+DPKG_ADD="$DPKG_ADD libnotify-bin" # a-la notify-osd
+DPKG_ADD="$DPKG_ADD libx11-dev" # c/c++ compile/make x11 dependencies
+DPKG_ADD="$DPKG_ADD light" # used by xchainkeys or ~/.xprofile or ~/.xstart
+DPKG_ADD="$DPKG_ADD lxappearance" # change/switch gtk2/gtk3 themes
+DPKG_ADD="$DPKG_ADD maim" # takes screenshots of desktop
+DPKG_ADD="$DPKG_ADD meld" # gnome diff (gtk)
+DPKG_ADD="$DPKG_ADD mesa-utils" # provides glxgears util for the 3d compositor testing
+DPKG_ADD="$DPKG_ADD mkusb usb-pack-efi" # mkusb <https://help.ubuntu.com/community/mkusb#Installation> create bootable/live usb/iso <https://help.ubuntu.com/community/mkusb#Quick_start_manual_and_mkusb_PPA>
+DPKG_ADD="$DPKG_ADD sassc libglib2.0-dev-bin" # dependencies of whitesur gtk theme <https://github.com/vinceliuice/whitesur-gtk-theme>, <https://github.com/vinceliuice/whitesur-icon-theme>.
+DPKG_ADD="$DPKG_ADD transmission" # torrent client # DPKG_REM="$DPKG_REM transmission-gtk"
+DPKG_ADD="$DPKG_ADD ubuntu-restricted-extras" # playing video in browser instead of download <https://askubuntu.com/questions/1122579/firefox-downloads-the-video-instead-of-playing-it#1122668>, <https://askubuntu.com/questions/56446/how-do-i-install-the-ubuntu-restricted-extras-package#56448>
+DPKG_ADD="$DPKG_ADD xscreensaver-data-extra"
+DPKG_ADD="$DPKG_ADD xscreensaver-gl-extra"
+DPKG_ADD="$DPKG_ADD xserver-xorg-video-intel" # instead of modesetting using intel <https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/1867668>
+DPKG_REM="$DPKG_REM gnome-mahjongg" # classic eastern tile game for gnome
+DPKG_REM="$DPKG_REM remmina" # gtk+ remote desktop client
+DPKG_REM="$DPKG_REM thunderbird thunderbird-gnome-support thunderbird-locale-en thunderbird-locale-en-gb thunderbird-locale-en-us thunderbird-locale-ru" # instead installed mailspring from snap # GUI mail client written in C/C++
+
 # Er ozn.
-# DPKG_ADD="$DPKG_ADD docker-ce" DPKG_DIS="docker" # instead installed from the homebrew # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
-# DPKG_ADD="$DPKG_ADD golang" # instead installed go@1.17 from the homebrew
-# DPKG_ADD="$DPKG_ADD libxml2-utils" # instead installed libxml2 from the homebrew # provides xmllint
-# DPKG_ADD="$DPKG_ADD openvpn" DPKG_DIS="$DPKG_DIS systemctl DPKG_DIS openvpn openvpn@client" # NOTE: if your need openvpn instead installed from the homebrew # openvpn client <https://confluence.ozon.ru/pages/viewpage.action?spaceKey=CORPIT&title=OpenVPN+for+Linux>
-# DPKG_ADD="$DPKG_ADD redis" DPKG_DIS="$DPKG_DIS redis-server" # instead installed from the homebrew
+# BREW_ADD="$BREW_ADD openvpn" # DPKG_ADD="$DPKG_ADD openvpn" DPKG_DIS="$DPKG_DIS openvpn openvpn@client" # openvpn client <https://confluence.ozon.ru/pages/viewpage.action?spaceKey=CORPIT&title=OpenVPN+for+Linux>
+BREW_ADD="$BREW_ADD go@1.19"
+BREW_ADD="$BREW_ADD libxml2" # provides xmllint
+BREW_ADD="$BREW_ADD postgresql"
+BREW_ADD="$BREW_ADD redis"
+BREW_ADD="$BREW_ADD vault"
 DPKG_ADD="$DPKG_ADD libpcap-dev" # required by github.com/google/gopacket/pcap (go/src/github.com/google/gopacket/pcap/pcap_unix.go:34:10: fatal error: pcap.h: No such file or directory)
 DPKG_ADD="$DPKG_ADD libqt5webkit5" # GlobalProtect_UI_deb-5.2.6.0-18.deb VPN dependency
 DPKG_ADD="$DPKG_ADD libxml2-dev"
 
 # # Er rkt.
 # # DPKG_ADD="$DPKG_ADD glide" # german does not use glide # go/german `add-apt-repository ppa:masterminds/glide` golang glide vendor package management <https://github.com/Masterminds/glide>
-# DPKG_ADD="$DPKG_ADD docker-ce" DPKG_DIS="$DPKG_DIS docker" # instead installed from the homebrew # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
+# # DPKG_ADD="$DPKG_ADD postgresql-11" DPKG_DIS="$DPKG_DIS postgresql-11" # `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
+# # DPKG_ADD="$DPKG_ADD postgresql-9.6" DPKG_DIS="$DPKG_DIS postgresql-9.6"  # felix `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
+# # DPKG_ADD="$DPKG_ADD yarn" # (NOTE: before add ppa!) js package manager required by rails asset pipeline precompilation (before install add ppa <https://yarnpkg.com/lang/en/docs/install/#debian-stable>)
+# BREW_ADD="$BREW_ADD docker docker-machine docker-compose" # DPKG_ADD="$DPKG_ADD docker-ce" DPKG_DIS="$DPKG_DIS docker" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
 # DPKG_ADD="$DPKG_ADD elasticsearch apt-transport-https" # felix `deb https://artifacts.elastic.co/packages/5.x/apt stable main` elasticsearch 5 <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>, # apt-transport-https required by elasticsearch ppa <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#deb-repo>
 # DPKG_ADD="$DPKG_ADD golang"
 # DPKG_ADD="$DPKG_ADD libmagickwand-dev" # required by rmagick by felix
 # DPKG_ADD="$DPKG_ADD libpcap-dev" # required by github.com/google/gopacket/pcap (go/src/github.com/google/gopacket/pcap/pcap_unix.go:34:10: fatal error: pcap.h: No such file or directory)
+# DPKG_ADD="$DPKG_ADD libxml2-utils" # provides xmllint
 # DPKG_ADD="$DPKG_ADD network-manager-vpnc-gnome" # cisco vpn client plugin for the gnome
 # DPKG_ADD="$DPKG_ADD openconnect" # vpnc/globalprotect compatible, ppa: <https://launchpad.net/~phusen/+archive/ubuntu/openconnect>
-# DPKG_ADD="$DPKG_ADD openvpn" # openvpn client
-# # DPKG_ADD="$DPKG_ADD postgresql-11" DPKG_DIS="$DPKG_DIS postgresql-11" # `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
-# # DPKG_ADD="$DPKG_ADD postgresql-9.6" DPKG_DIS="$DPKG_DIS postgresql-9.6"  # felix `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
+# DPKG_ADD="$DPKG_ADD redis" DPKG_DIS="$DPKG_DIS redis-server"
 # DPKG_ADD="$DPKG_ADD redis" DPKG_DIS="$DPKG_DIS redis-server" # felix
 # DPKG_ADD="$DPKG_ADD vpnc" # cisco vpn client
-# # DPKG_ADD="$DPKG_ADD yarn" # (NOTE: before add ppa!) js package manager required by rails asset pipeline precompilation (before install add ppa <https://yarnpkg.com/lang/en/docs/install/#debian-stable>)
 
-# APT (apt-get/aptitude) <https://en.wikipedia.org/wiki/APT_(software)>.
-sh -c "$DPKG_REM_CLI $DPKG_REM" || exit 1
-sh -c "$DPKG_ADD_CLI $DPKG_ADD" || exit 1
-# sh -c "$DPKG_DIS_CLI $DPKG_DIS" || exit 1
+# APT/deb/dpkg/apt-get/aptitude <https://en.wikipedia.org/wiki/APT_(software)>.
+if [ "$OPT_DPKG" = 'true' ] || [ "$OPT_ALL" = 'true' ]; then
+    sudo cat /dev/null || exit 1
+    printf "Installing dpkg...\n\n"
+    sh -c "sudo $DPKG_REM_CLI $DPKG_REM" || exit 1
+    sh -c "sudo $DPKG_ADD_CLI $DPKG_ADD" || exit 1
+    # sh -c "sudo $DPKG_DIS_CLI $DPKG_DIS" || exit 1
+fi
+
+# Homebrew <https://brew.sh>.
+if [ "$OPT_BREW" = 'true' ] || [ "$OPT_ALL" = 'true' ]; then
+    printf "Installing homebrew...\n\n"
+    # for repo in ${BREW_REM_SRC}; do sh -c "$BREW_REM_SRC_CLI $repo" || exit 1; done
+    for repo in ${BREW_ADD_SRC}; do sh -c "$BREW_ADD_SRC_CLI $repo" || exit 1; done
+    [ -n "$BREW_ADD" ] && [ "$BREW_ADD" != " " ] && sh -c "$BREW_ADD_CLI $BREW_ADD" || exit 1
+fi
