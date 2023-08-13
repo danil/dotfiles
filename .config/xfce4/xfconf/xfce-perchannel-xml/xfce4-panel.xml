@@ -150,6 +150,7 @@
       </property>
       <property name="memory" type="empty">
         <property name="label" type="string" value=""/>
+        <property name="enabled" type="bool" value="false"/>
       </property>
       <property name="swap" type="empty">
         <property name="label" type="string" value=""/>
