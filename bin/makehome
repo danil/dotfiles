@@ -463,6 +463,9 @@ APPI_ADD="$APPI_ADD firefox" # FLAT_ADD="$FLAT_ADD org.mozilla.firefox" # SNAP_A
 
 # Fonts.
 # APTO_ADD="$APTO_ADD font-manager" # list bitmap ??? fonts
+FLAT_ADD="$FLAT_ADD com.github.fontmatrix.Fontmatrix" # <https://github.com/fontmatrix/fontmatrix>
+FLAT_ADD="$FLAT_ADD io.github.mmstick.FontFinder" # <https://github.com/mmstick/fontfinder>
+FLAT_ADD="$FLAT_ADD org.gnome.FontManager" # <https://github.com/fontmanager/font-manager>
 
 # X11 Zoom video group chat
 # <https://en.wikipedia.org/wiki/Zoom_(software)>.
