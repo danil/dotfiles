@@ -420,6 +420,7 @@ APTO_ADD="$APTO_ADD thunar-archive-plugin"
 APTO_ADD="$APTO_ADD thunar-dropbox-plugin"
 APTO_ADD="$APTO_ADD thunar-volman"
 APTO_ADD="$APTO_ADD xfce4"
+APTO_ADD="$APTO_ADD xfce4-datetime-plugin" # a-la clock plugin
 APTO_ADD="$APTO_ADD xfce4-diskperf-plugin" # disk io performance
 APTO_ADD="$APTO_ADD xfce4-power-manager"
 APTO_ADD="$APTO_ADD xfce4-systemload-plugin" # system cpu/mem/net/swap load monitor
@@ -460,6 +461,9 @@ APPI_ADD="$APPI_ADD firefox" # FLAT_ADD="$FLAT_ADD org.mozilla.firefox" # SNAP_A
 # APTO_ADD="$APTO_ADD curl"
 # APTO_ADD="$APTO_ADD gnupg"
 
+# Fonts.
+# APTO_ADD="$APTO_ADD font-manager" # list bitmap ??? fonts
+
 # X11 Zoom video group chat
 # <https://en.wikipedia.org/wiki/Zoom_(software)>.
 # APTO_ADD="$APTO_ADD libegl1-mesa libfontconfig1 libgl1-mesa-glx libglib2.0-0 libgstreamer-plugins-base1.0-0 libpulse0 libsm6 libsqlite3-0 libxcb-image0 libxcb-keysyms1 libxcb-randr0 libxcb-shape0 libxcb-shm0 libxcb-xfixes0 libxcb-xtest0 libxcomposite1 libxi6 libxrender1 libxslt1.1" # Zoom dependencies.
@@ -479,7 +483,6 @@ APPI_ADD="$APPI_ADD mattermost-desktop"
 
 # X11/xorg/desktop.
 # BREW_ADD="$BREW_ADD duplicity" # APTO_ADD="$APTO_ADD duplicity" # backuping
-# APTO_ADD="$APTO_ADD font-manager" # list bitmap ??? fonts
 # APTO_ADD="$APTO_ADD fonts-fantasque-sans" # instead installed manually into /usr/local/share/fonts # terminal/code/mono/programming font (gnome-terminal issue https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=960629)
 # APTO_ADD="$APTO_ADD fonts-hack-ttf" # instead installed manually into /usr/local/share/fonts # terminal/code/mono/programming font
 # APTO_ADD="$APTO_ADD fonts-noto" # awesome serif font ???
