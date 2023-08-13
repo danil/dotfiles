@@ -1,0 +1,5 @@
+#!/bin/sh
+
+. temperature
+printf "°"
+. loadaverage

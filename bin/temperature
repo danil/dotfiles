@@ -1,0 +1,4 @@
+#!/bin/sh
+
+RAW=$(cat /sys/devices/platform/coretemp.0/hwmon/hwmon*/temp1_input)
+printf 'scale=2 ; %d / 1000\n' "$RAW" | bc | sed '/\./ s/\.\{0,1\}0\{1,\}$//' | tr -d '\n'
