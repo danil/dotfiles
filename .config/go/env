@@ -1,0 +1,9 @@
+# # Ozn er.
+# GOPROXY=https://goproxy.s.o3.ru,https://proxy.golang.org,direct
+# GOPRIVATE=""
+# GOSUMDB="off"
+# GONOSUMDB="*.ozon.ru"
+# GONOPROXY=""
+
+# # Rkt er.
+# GOPRIVATE=gitlab.rocketbank.sexy

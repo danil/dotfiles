@@ -25,6 +25,10 @@ keysym = F11
 distance = 50
 useNETWMFullscreen = true
 ignoreSkipTaskbar = false
+showAllDesktops = true
+showAllWorkspaces = true
+includeAllScreens = true
+showUnmapped = true
 
 [xinerama]
 showAll = false

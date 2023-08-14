@@ -1,7 +1,7 @@
 XXkb.mainwindow.type: tray
 XXkb.mainwindow.geometry: 48x24+0+0
 XXkb.button.enable: no
-XXkb.image.path: /home/danil/.local/share/xxkb
+XXkb.image.path: /home/danil/.local/usr/share/xxkb
 XXkb.mainwindow.image.1: en48.xpm
 XXkb.mainwindow.image.2: su48.xpm
 XXkb.mainwindow.image.3: en48.xpm

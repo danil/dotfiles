@@ -1,0 +1,3 @@
+ #!/bin/sh
+
+AppMan-x86_64.AppImage "$@"

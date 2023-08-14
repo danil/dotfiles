@@ -9,3 +9,5 @@ Terminal=false
 Type=Application
 X-GNOME-DocPath=stardict/stardict.xml
 X-GNOME-Autostart-enabled=false
+Hidden=true
+

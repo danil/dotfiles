@@ -17,11 +17,12 @@
 *geometry:        87x43
 *saveLines:       10000
 
-! <http://askubuntu.com/questions/22419/how-do-i-make-urxvt-render-xft-fonts#96779>.
-*font:           xft:Monospace:pixelsize=24:antialias=true:hinting=true:autohint=true:style=regular
-*boldFont:       xft:Monospace:pixelsize=24:antialias=true:hinting=true:autohint=true:style=bold
-*italicFont:     xft:Monospace:pixelsize=24:antialias=true:hinting=true:autohint=true:style=italic
-*boldItalicFont: xft:Monospace:pixelsize=24:antialias=true:hinting=true:autohint=true:style=bold italic
+! ! <http://askubuntu.com/questions/22419/how-do-i-make-urxvt-render-xft-fonts#96779>.
+! ! Error: Font ‘xft:Monospace:pixelsize=24:antialias=true:hinting=true:autohint=true:style=regular’ is not defined
+! *font:           xft:Monospace:pixelsize=24:antialias=true:hinting=true:autohint=true:style=regular
+! *boldFont:       xft:Monospace:pixelsize=24:antialias=true:hinting=true:autohint=true:style=bold
+! *italicFont:     xft:Monospace:pixelsize=24:antialias=true:hinting=true:autohint=true:style=italic
+! *boldItalicFont: xft:Monospace:pixelsize=24:antialias=true:hinting=true:autohint=true:style=bold italic
 
 ! Xft.
 ! `xrdb -query | grep Xft`
@@ -42,12 +43,19 @@ Xft.lcdfilter: lcddefault
 ! Sub-pixel rendering <http://wiki.gentoo.org/wiki/Fontconfig#Using_sub-pixel_rendering>,
 ! <https://wiki.archlinux.org/index.php/Font_Configuration#Subpixel_rendering>.
 Xft.rgba: rgb
-! ! DPI <https://wiki.archlinux.org/index.php/Font_Configuration#Distorted_fonts>.
-! Xft*dpi: 120
+! DPI <https://wiki.archlinux.org/title/HiDPI>,
+! <https://wiki.archlinux.org/index.php/Font_Configuration#Distorted_fonts>,
+! <https://askubuntu.com/questions/197828/how-to-find-and-change-the-screen-dpi#272172>.
+! `xrandr | grep -w connected` and then divide X and Y resolution by size in CM
+! and then maybe multiply by coefficient for example:
+! `bc <<< "3840 / 30.9"` equal to 124 or
+! `bc <<< "2160 / 17.4"` equal to 124 and
+! `bc <<< "124 * 2" equal to 248.
+Xft*dpi: 248
 
 ! https://wiki.archlinux.org/index.php/Cursor_themes#X_resources
-Xcursor.theme: Vanilla-DMZ
-! Xcursor.size: 16
+! Xcursor.theme: Vanilla-DMZ
+! Xcursor.size: 72
 
 ! Black (dark) theme.
 *background: #000000

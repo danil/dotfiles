@@ -6,18 +6,28 @@ export LC_TYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 # Tab completion
-# <http://wiki.gentoo.org/wiki/Bash#Tab_completion>.
-[[ -f /etc/profile.d/bash-completion.sh ]] && source /etc/profile.d/bash-completion.sh
+# <https://wiki.archlinux.org/title/bash#Common_programs_and_options>.
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -x "$(command -v brew)" ] && [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+  elif [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
 
 # Disable the XOFF (Ctrl-s) keystroke
 # <http://superuser.com/questions/124845/can-you-disable-the-ctrl-s-xoff-keystroke-in-putty#155875>,
 # <https://wiki.archlinux.org/index.php/Readline#History>.
 stty -ixon
 
-export TERMINAL="xterm" #safe fallback/backup terminal
-export EDITOR="vim" #export EDITOR="/usr/bin/emacsclient -t" #safe fallback/backup editor
+export TERMINAL="xterm-256color" # "xterm" #safe fallback/backup terminal
+
 # export ALTERNATE_EDITOR="/usr/bin/emacs"
-export GIT_EDITOR='emacs'
 # export PAGER="/usr/bin/less --IGNORE-CASE --LONG-PROMPT" #not working(
 export HISTSIZE=50000
 export HISTFILESIZE=50000
@@ -27,39 +37,68 @@ export HISTCONTROL=ignoredups:erasedups
 [ "$TERM" = "xterm" ] && TERM="xterm-256color" #<http://ricochen.wordpress.com/2011/07/23/mac-os-x-lion-terminal-color-remote-access-problem-fix>
 #export GIT_PAGER=""
 
+if [ -x "$(command -v vim)" ]; then
+    export EDITOR="vim" #export EDITOR="/usr/bin/emacsclient -t" #safe fallback/backup editor
+fi
+
+if [ -x "$(command -v emacs)" ]; then
+    export GIT_EDITOR='emacs'
+fi
+
 # Aliases.
 # <http://askubuntu.com/questions/22037/aliases-not-available-when-using-sudo#22043>.
 alias sudo='sudo '
 alias ls='ls --color'
-alias ll='ls -l --all --human-readable'
 # alias less=$PAGER
-alias e='emacs --no-window-system'
-alias ec='emacsclient --tty'
 alias ag='ag --width=5000'
 
-export PATH="$HOME"/bin:"$PATH" #clib is an C package manager <https://github.com/clibs/clib> run `c-install-all`
+export PATH="$HOME"/.local/bin:"$PATH" #tmux make installs here and pip (python package management system) run `python-install-all`
+export PATH="$HOME"/.local/sbin:"$PATH"
+export PATH="$HOME"/.local/usr/bin:"$PATH" #xxkb make installs here
+export PATH="$HOME"/.local/usr/sbin:"$PATH" #powertop make installs here
+export PATH="$HOME"/.local/usr/local/bin:"$PATH" #dwm make installs here
+export PATH="$HOME"/.local/usr/local/sbin:"$PATH" #dwm make installs here
+export PATH="$HOME"/.local/usr/local/usr/bin:"$PATH"
 export PATH="$HOME"/sbin:"$PATH"
-export PATH="$PATH":"$HOME"/deps/bin #bpkg bash package manager <https://github.com/bpkg/bpkg#installing-packages> run `bash-install-all`
-export PATH="$HOME/.cask/bin:$PATH" #emacs cask <http://cask.github.io>
-export PATH="$PATH":"$HOME"/.local/bin #pip (python package management system) run `python-install-all`
-export PATH="$PATH":"$HOME"/.local/usr/local/bin #dwm make install here
+export PATH="$HOME"/bin:"$PATH" #clib c package manager installs here <https://github.com/clibs/clib> run `c-install-all`
+export PATH="$HOME"/deps/bin:"$PATH" #bpkg bash package manager <https://github.com/bpkg/bpkg#installing-packages> run `bash-install-all`
+export PATH="$HOME"/.cask/bin:"$PATH" #emacs cask <http://cask.github.io>
+
+export MANPATH="$HOME"/.local/usr/share/man:"$MANPATH"
+export MANPATH="$HOME"/.local/usr/local/share/man:"$MANPATH"
+
+# User XDG base directory environment variable
+# <https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html>
+# <https://wiki.archlinux.org/title/XDG_Base_Directory#User_directories>.
+export XDG_CONFIG_HOME="$HOME"/.config
+export XDG_DATA_HOME="$HOME"/.local/share
 
 [ -f "$HOME"/.netrc/.netrc ] && export NETRC="$HOME"/.netrc/.netrc
+
+# Dotenv.
+[[ -f "$HOME"/.env ]] && . "$HOME"/.env
 
 # <https://askubuntu.com/questions/210210/pkg-config-path-environment-variable#210235>.
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH":/usr/lib/pkgconfig
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH":/usr/lib/x86_64-linux-gnu/pkgconfig
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH":/usr/share/pkgconfig
 
+export CHROME_PATH="${CHROME_PATH:-/home/danil/bin/chrome}"
+
+# bc calculator
+# <https://askubuntu.com/questions/621017/how-to-set-default-scale-for-bc-calculator#939407>.
+export BC_ENV_ARGS=/home/danil/.bc
+
 # Basher is a bash/shell/functions package manager
 # <https://github.com/basherpm/basher>.
-if hash basher 2>/dev/null; then
-    export PATH="$HOME/.basher/bin:$PATH"
+export PATH="$HOME"/.basher/bin:"$PATH"
+if [ -x "$(command -v basher)" ]; then
     eval "$(basher init - bash)"
 fi
 
-# Homebrew
+# Homebrew <https://brew.sh>.
 [ -f /home/linuxbrew/.linuxbrew/bin/brew ] && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+export PATH=/home/linuxbrew/.linuxbrew/bin:"$PATH"
 
 # Debian/Ubuntu
 export DEBFULLNAME="Danil Kutkevich"
@@ -68,23 +107,38 @@ export DEBEMAIL="danil@kutkevich.org"
 # Go <http://golang.org/doc/code.html#GOPATH>.
 # Run `go-install-all`.
 export GOPATH="$HOME"/go
-export PATH="$PATH":/usr/lib/go-1.12/bin #ubuntu go 12
-export PATH="$PATH":"$GOPATH"/bin #for convenience, add the workspace's bin subdirectory to your PATH
-# export PATH="$PATH:$(go env GOPATH)/bin"
-# [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm" #gvm (Go version manager) <https://github.com/moovweb/gvm>
+export PATH="$GOPATH"/bin:"$PATH" #for convenience, add the workspace's bin subdirectory to your PATH
+export PATH="/home/linuxbrew/.linuxbrew/opt/go@1.18/bin:$PATH" #go 1.18 from homebrew
+# export PATH="$(go env GOPATH)/bin":"$PATH"
+# [[ -s "$HOME/.gvm/scripts/gvm" ]] && . "$HOME/.gvm/scripts/gvm" #gvm (Go version manager) <https://github.com/moovweb/gvm>
 
-# rbenv <https://github.com/sstephenson/rbenv#basic-github-checkout>.
-export PATH="$HOME/.rbenv/bin:$PATH"
-if hash rbenv 2>/dev/null; then
-    eval "$(rbenv init -)"
+# Ruby gem homebrew.
+
+# Rubygem executables directory path based on "`brew --prefix ruby`/bin".
+if [ -x "$(command -v brew)" ]; then
+    export PATH="$(brew --prefix ruby)"/bin:$PATH
 fi
 
+# Rubygem executables directory path based on "`gem environment gemdir`/bin".
+if [ -x "$(command -v gem)" ]; then
+    export PATH="$(gem environment gemdir)"/bin:$PATH
+fi
+
+export PATH=/usr/local/lib/ruby/gems/3.0.0/bin:$PATH
+
+# Instead install ruby from homebrew.
+# # rbenv ruby version manager <https://github.com/sstephenson/rbenv#basic-github-checkout>.
+# export PATH="$HOME"/.rbenv/bin:"$PATH"
+# if [ -x "$(command -v rbenv)" ]; then
+#     eval "$(rbenv init -)"
+# fi
+
 # Travis CI gem.
-[ -f "$HOME"/.travis/travis.sh ] && source "$HOME"/.travis/travis.sh #auto completion
+[ -f "$HOME"/.travis/travis.sh ] && . "$HOME"/.travis/travis.sh #auto completion
 
 # Node.js and npm.
 # WARNING: Do NOT give priority to npm executables!!!
-export PATH="$PATH:$HOME/node_modules/.bin"
+export PATH="$HOME"/node_modules/.bin:"$PATH"
 
 # n (Node.js version manager).
 # Added by n-install (see http://git.io/n-install-repo).
@@ -111,18 +165,29 @@ export COMPOSER_PREFIX="$HOME/vendor"
 # export LUA_CPATH="$HOME"'/.lenv/current/luarocks/lib/?.so;;'
 
 # Rust (rust toolchain installer https://rustup.rs).
-export PATH="$HOME/.cargo/bin:$PATH" #be sure to add `/home/danil/.cargo/bin` to your PATH to be able to run the installed binaries
+[ -f "$HOME"/.cargo/env ] && . "$HOME"/.cargo/env # adding `"$HOME"/.cargo/bin` to your PATH to be able to run the installed binaries
+export PATH="$HOME"/.cargo/bin:"$PATH"
 
 # Dart <https://dart.dev/get-dart>.
-export PATH="$PATH:/usr/lib/dart/bin"
+export PATH=/usr/lib/dart/bin:"$PATH"
 
 # # Steel Bank Common Lisp.
 # export SBCL_HOME=/usr/lib64/sbcl
 
 # Updates PATH for Yandex Cloud CLI.
-if [ -f "$HOME"/yandex-cloud/path.bash.inc ]; then source "$HOME"/yandex-cloud/path.bash.inc; fi
+if [ -f "$HOME"/yandex-cloud/path.bash.inc ]; then . "$HOME"/yandex-cloud/path.bash.inc; fi
 # Enables shell command completion for yc (Yandex Cloud).
-if [ -f "$HOME"/yandex-cloud/completion.bash.inc ]; then source "$HOME"/yandex-cloud/completion.bash.inc; fi
+if [ -f "$HOME"/yandex-cloud/completion.bash.inc ]; then . "$HOME"/yandex-cloud/completion.bash.inc; fi
+
+# X11
+# <https://wiki.archlinux.org/title/Intel_graphics#DRI3_issues>.
+# export MESA_LOADER_DRIVER_OVERRIDE=iris
+# export LIBGL_DRI3_DISABLE=1
+
+# Qt <https://wiki.archlinux.org/title/HiDPI#Qt_5>.
+# export QT_SCALE_FACTOR=1
+# export QT_SCREEN_SCALE_FACTORS=1
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
 
 # # Prompt powerline-go.
 # function wm_notify_last_command {
@@ -210,4 +275,4 @@ if [ -f "$HOME"/yandex-cloud/completion.bash.inc ]; then source "$HOME"/yandex-c
 # if [ "$TERM" != "linux" ]; then
 #     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 # fi
-[[ -f "$HOME"/.bash_prompt.sh ]] && source "$HOME"/.bash_prompt.sh
+[[ -f "$HOME"/.bash_prompt.sh ]] && . "$HOME"/.bash_prompt.sh

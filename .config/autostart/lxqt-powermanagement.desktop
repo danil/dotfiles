@@ -8,3 +8,5 @@ OnlyShowIn=LXQt;LXDE;XFCE;
 StartupNotify=false
 Type=Application
 X-GNOME-Autostart-enabled=false
+Hidden=true
+

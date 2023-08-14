@@ -34,7 +34,7 @@ function fish_prompt --description "Write out the prompt"
   # Set an error string for the prompt, if applicable
   # (ignore kill e. g. 130 script terminated by control-c
   # <http://www.tldp.org/LDP/abs/html/exitcodes.html>).
-  if begin ; test $status -eq 0 ; or test last_status -gt 128 ; end
+  if begin ; test $last_status -eq 0 ; or test $last_status -gt 128 ; end
     set -g __my_status ''
   else
     set -g __my_status ' '(set_color red)'error:'"$last_status"(set_color normal)

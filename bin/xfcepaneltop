@@ -1,0 +1,7 @@
+#!/bin/sh
+
+. randomaccessmemory
+printf " "
+. coretemperature
+printf "°"
+. loadaverage

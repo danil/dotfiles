@@ -3,7 +3,7 @@
 
 export min=${min:-0}
 export max=${min:-10}
-export file=${file:-/home/danil/local/share/sounds/battery.oga}
+export file=${file:-/home/danil/.local/share/sounds/battery.oga}
 
 while [ $# -gt 0 ]; do
     case "$1" in
@@ -14,7 +14,7 @@ while [ $# -gt 0 ]; do
             let max="${1#*=}"
             ;;
         --critical)
-            export file=/home/danil/local/share/sounds/critical.oga
+            export file=/home/danil/.local/share/sounds/critical.oga
             ;;
         *)
             printf "***************************\n"

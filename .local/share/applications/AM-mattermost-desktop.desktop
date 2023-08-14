@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Mattermost
+Exec=mattermost-desktop   %U
+Terminal=false
+Type=Application
+Icon=/home/danil/.local/lib/appman/mattermost-desktop/icons/mattermost-desktop
+StartupWMClass=Mattermost
+X-AppImage-Version=5.4.0
+Comment=Mattermost
+MimeType=x-scheme-handler/mattermost;
+Categories=Network;InstantMessaging;

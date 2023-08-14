@@ -3,13 +3,32 @@
 # Running several applications from ~/.xinitrc
 # <https://wiki.archlinux.org/index.php/ConsoleKit#Running_several_applications_from_.7E.2F.xinitrc>.
 
-feh --bg-center ~/local/share/backgrounds/gentoo-znurt-larry-abducted-1440x900.png
+hash light 2>/dev/null && light -I #restore the previously saved brightness if light installed <https://github.com/haikarainen/light>
 
-# urxvtd --fork --quiet
-# killall i3status ; killall dzen2 ; i3status | ~/src/py/i3-dzen2-bridge/i3-dzen-bridge.py | ~/bin/my_dzen2.sh &
+if hash /usr/bin/dunst 2>/dev/null; then
+    /usr/bin/dunst -config ~/.config/dunst/dunstrc &
+fi
 
-# # Danil.
-# # h11 Latitude e7250.
-# # Disables the touchpad while typing
-# # <https://wiki.archlinux.org/index.php/Touchpad_Synaptics#Using_syndaemon>.
-# syndaemon -d -t -k -i 0.7
+# if hash /usr/bin/sxhkd 2>/dev/null; then
+#     /usr/bin/sxhkd -c ~/.config/sxhkd/i3rc &
+# fi
+
+# # X screen color ICC/ICM calibrate/manage.
+# if hash argyll-dispwin 2>/dev/null; then
+#     # <https://wiki.archlinux.org/index.php/ICC_Profiles#Argyll_CMS>.
+#     display_calibrator=argyll-dispwin
+# elif hash dispwin 2>/dev/null; then
+#     # <https://wiki.archlinux.org/index.php/ICC_Profiles#dispwin>.
+#     display_calibrator=dispwin
+# elif hash xcalib 2>/dev/null; then
+#     # <https://wiki.archlinux.org/index.php/ICC_Profiles#xcalib>.
+#     display_calibrator=xcalib
+# fi
+
+# if [[ `hostname -s` == 'h3' ]]; then
+#     $display_calibrator ~/Dropbox/thinkpad_t400s.icm &
+# elif [[ `hostname -s` == 'h10' ]]; then
+#     $display_calibrator ~/Dropbox/thinkpad_t430.icc &
+# fi
+
+# feh --bg-center ~/.local/share/backgrounds/gentoo-znurt-larry-abducted-1440x900.png

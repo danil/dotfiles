@@ -1,13 +1,13 @@
 # Ansible prior to version 2 (uses python 2).
-ansible>=2.9
-# Ansible amazon aws dependency.
-boto
+# ansible>=2.9 # instead install from homebrew
+
+# boto # instead install from homebrew # ansible amazon aws dependency
 # Ansible docker dependency.
-docker
+# docker # instead install from homebrew
 
 # Default amazon aws ec2 client <https://github.com/aws/aws-cli>.
 # `aws --version`.
-awscli
+# awscli # instead install from homebrew
 
 # Bash scripts checker a-la pep8 (used by Emacs Flycheck)
 # <https://github.com/openstack-dev/bashate>.
@@ -15,60 +15,63 @@ awscli
 # bashate
 
 # Docker compose
-docker-compose
+# docker-compose # instead install from homebrew
 
-# Htop replacement <https://github.com/nicolargo/glances>.
-glances
+# # Htop replacement <https://github.com/nicolargo/glances>.
+# glances
 
 # Python checker used by Emacs Flycheck.
-flake8
+# flake8 # instead install from homebrew
 
-# CLI commands format howto for example: $ howdoi format date bash > DATE=`date +%Y-%m-%d`
-howdoi
+# # CLI commands format howto for example: $ howdoi format date bash > DATE=`date +%Y-%m-%d`
+# howdoi
 
-# Interactive command-line HTTP client with autocomplete
-http-prompt
+# # Interactive command-line HTTP client with autocomplete
+# http-prompt
 
 # # cURL replacement <http://httpie.org>.
 # # ERROR: httpie 2.2.0 has requirement Pygments>=2.5.2, but you'll have pygments 2.3.1 which is incompatible.
 # httpie
 
-# List files affected by command for example `rm -rf /` <https://github.com/p-e-w/maybe>
-maybe
+# # List files affected by command for example `rm -rf /` <https://github.com/p-e-w/maybe>
+# maybe
 
-# Youtube player <https://github.com/np1/mps-youtube>.
-mps-youtube
+# # Youtube player <https://github.com/np1/mps-youtube>.
+# mps-youtube
 
-# Real-time metrics for nginx server <https://github.com/lebinh/ngxtop>.
-ngxtop
+# # Real-time metrics for nginx server <https://github.com/lebinh/ngxtop>.
+# ngxtop
 
-# PostgreSQL activity monitoring <https://github.com/julmon/pg_activity>.
-pg_activity
+# # PostgreSQL activity monitoring <https://github.com/julmon/pg_activity>.
+# pg_activity
 
-# Ping graph <https://github.com/orf/gping>.
-pinggraph
+# # Ping graph <https://github.com/orf/gping>.
+# pinggraph
 
 # Linter for prose
 # <https://github.com/amperser/proselint>, <http://proselint.com>.
-proselint
+# proselint # instead install from homebrew
 
 # Used/required by Emacs Flycheck.
-pylint
+# pylint # instead install from homebrew
 
-# Evaluate python expression like `py 2*2` <https://github.com/Russell91/pythonpy>.
-pythonpy
+# # Evaluate python expression like `py 2*2` <https://github.com/Russell91/pythonpy>.
+# pythonpy
 
-# DB snapshot and restore <https://github.com/fastmonkeys/stellar>.
-stellar
+# # DB snapshot and restore <https://github.com/fastmonkeys/stellar>.
+# stellar
 
-# Corrects previous console command <https://github.com/nvbn/thefuck>.
-thefuck
+# # Corrects previous console command <https://github.com/nvbn/thefuck>.
+# thefuck
 
-# Converts web documents (HTML with CSS, SVG, …) to PDF http://weasyprint.org
-WeasyPrint
+# # Converts web documents (HTML with CSS, SVG, …) to PDF http://weasyprint.org
+# WeasyPrint
 
-# Video downloader (universal) <https://github.com/soimort/you-get>.
-you-get
+# # Video downloader (universal) <https://github.com/soimort/you-get>.
+# you-get
 
-# Youtube downloader <https://github.com/rg3/youtube-dl>.
-youtube-dl
+# # Youtube downloader <https://github.com/rg3/youtube-dl>.
+# youtube-dl
+
+# ozn.
+clickhouse-cli

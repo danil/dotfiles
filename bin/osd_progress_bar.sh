@@ -9,17 +9,16 @@ function osd_progress_bar {
         local bar_max_size=44
     fi
     local bar_max_size=${bar_max_size:-24}
-    local bar_symbol='#'
     local bar_size=$(echo ${bar_max_size}*${percentage}/100 | bc)
 
     if [[ ${percentage} -eq 'MM' ]]; then
         bar_size=0
     fi
 
-    if [[ ${percentage} -gt 0 && ${bar_size} -eq 0 ]]; then
+    if (( $(echo "$percentage > 0" | bc -l) && $(echo "$bar_size == 0" | bc -l) )); then
         bar_size=1
     fi
 
     # <http://stackoverflow.com/questions/5349718/how-can-i-repeat-a-character-in-bash#5349772>.
-    for i in `seq 1 ${bar_size}`; do echo -n ${bar_symbol}; done
+    for i in `seq 1 ${bar_size}`; do echo -n ▓; done # ░ ▉ #
 }

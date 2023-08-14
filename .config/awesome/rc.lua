@@ -42,9 +42,9 @@ do
 end
 -- }}}
 
--- {{{ Variable definitions
--- Themes define colours, icons, font and wallpapers.
-beautiful.init(awful.util.getdir("config") .. "/themes/default/theme.lua")
+-- -- {{{ Variable definitions
+-- -- Themes define colours, icons, font and wallpapers.
+-- beautiful.init(awful.util.getdir("config") .. "/themes/default/theme.lua")
 
 --- Revelation <http://awesome.naquadah.org/wiki/Revelation>.
 revelation.init()

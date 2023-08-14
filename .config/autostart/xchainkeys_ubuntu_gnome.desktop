@@ -5,3 +5,5 @@ Name=xchainkeys
 OnlyShowIn=XFCE;
 Terminal=false
 Type=Application
+Hidden=true
+

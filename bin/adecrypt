@@ -32,10 +32,15 @@ if ! [ -f "./${file}.tar.gz.asc" ]; then
     exit 1
 fi
 
+read -sp "Enter passphrase: " passphrase
+echo
+
 if [[ $stdout -eq 1 ]]; then
-    gpg --decrypt --output - "./${file}.tar.gz.asc" \
-        | tar --extract --gzip --to-stdout --file -
+    echo "${passphrase}" \
+         | gpg --decrypt --batch --no-tty --yes --passphrase-fd 0 --output - "./${file}.tar.gz.asc" \
+         | tar --extract --gzip --to-stdout --file -
 else
-    gpg --decrypt --output "./${file}.tar.gz" "./${file}.tar.gz.asc"
+    echo "${passphrase}" \
+         | gpg --decrypt --batch --no-tty --yes --passphrase-fd 0 --output "./${file}.tar.gz" "./${file}.tar.gz.asc"
     tar --extract --gzip --file "./${file}.tar.gz"
 fi

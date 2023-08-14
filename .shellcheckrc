@@ -1,0 +1,2 @@
+# https://github.com/koalaman/shellcheck/blob/master/shellcheck.1.md#directives
+disable=SC2034

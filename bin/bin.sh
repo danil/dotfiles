@@ -1,0 +1,10 @@
+#!/bin/sh
+
+BASEDIR="/$0"
+BASEDIR="${BASEDIR%/*}"
+BASEDIR="${BASEDIR:-.}"
+BASEDIR="${BASEDIR##/}/"
+BASEDIR=$(cd "$BASEDIR"; pwd)
+
+HOMEBINDIR="$BASEDIR"
+LOCALBINDIR="$BASEDIR"/../.local/bin

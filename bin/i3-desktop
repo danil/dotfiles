@@ -1,0 +1,3 @@
+#! /bin/bash
+
+perl /usr/bin/i3-dmenu-desktop

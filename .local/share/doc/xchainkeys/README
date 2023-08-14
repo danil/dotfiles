@@ -1,0 +1,40 @@
+Installation
+============
+
+GNU autotools are used for building and installing xchainkeys:
+
+    $ ./configure --prefix=/usr
+    $ make
+    $ sudo make install
+
+This README file and an example configuration file will be installed
+to $PREFIX/share/doc/xchainkeys/. A manual page is included.
+
+The standard DESTDIR variable can be used for a staged install.
+
+Description
+===========
+
+xchainkeys is a standalone X11 program to create chained key bindings
+similar to those found in the ratpoison window manager or the screen
+terminal multiplexer.
+
+Invocation
+==========
+
+To autostart xchainkeys on X startup, add the following command to
+your ~/.xinitrc:
+
+   xchainkeys &
+
+Alternatively use your WM/DE's autostart mechanism to start xchainkeys
+as a background process.
+
+Configuration
+=============
+
+Create the file ~/.config/xchainkeys/xchainkeys.conf or copy the
+example config file $PREFIX/share/doc/xchainkeys/example.conf to the
+above location.
+
+See the manual page for further details and examples.

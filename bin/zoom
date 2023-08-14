@@ -1,0 +1,5 @@
+#!/bin/sh
+
+. bin.sh
+
+QT_SCALE_FACTOR=2 "$LOCALBINDIR"/zoom "$@"

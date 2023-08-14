@@ -3,6 +3,9 @@
 # `xprofile` is similar in syntax and in concept to `xinitrc`
 # <https://wiki.archlinux.org/index.php/xprofile>.
 
+# Debug: `setxkbmap -print -verbose 10`.
+setxkbmap -model pc105 -layout us,ru -option grp:shifts_toggle
+
 # Merge in defaults and keymaps.
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
@@ -24,25 +27,18 @@ fi
 
 export LANG="en_US.UTF-8"
 
+# DPI scale <https://wiki.archlinux.org/title/HiDPI>.
+export QT_SCALE_FACTOR=2
+
+# # X11 scale <https://wiki.archlinux.org/title/HiDPI>.
+# # # determine output: xrandr | grep "connected primary"
+# # xrandr --output eDP-1 --scale 0.5x0.5 # blurry/ugly fonts with scale 0.5x0.5
+# # xrandr --output eDP-1 --mode 1920x1080 # blurry/ugly fonts
+# # xrandr --output eDP-1 --mode 3840x2160 --rate 59.97 --dpi 248
+# xrandr --output eDP-1 --mode 3840x2160 --rate 60.00 # must switch to the correct mode 3840x2160 from the wrong 1024x768, even blurry/ugly fonts
+
 xset b off #turn off bell
 xset dpms 420 #suspend monitor after 7 minutes <https://wiki.archlinux.org/index.php/i3#Screensaver_and_power_management>
-~/bin/my-keyboard-auto-repeat-rate.sh
 
-hash light 2>/dev/null && light -I #restore the previously saved brightness if light installed <https://github.com/haikarainen/light>
-
-if hash argyll-dispwin 2>/dev/null; then
-    # <https://wiki.archlinux.org/index.php/ICC_Profiles#Argyll_CMS>.
-    display_calibrator=argyll-dispwin
-elif hash dispwin 2>/dev/null; then
-    # <https://wiki.archlinux.org/index.php/ICC_Profiles#dispwin>.
-    display_calibrator=dispwin
-elif hash xcalib 2>/dev/null; then
-    # <https://wiki.archlinux.org/index.php/ICC_Profiles#xcalib>.
-    display_calibrator=xcalib
-fi
-
-if [[ `hostname -s` == 'h3' ]]; then
-    $display_calibrator ~/Dropbox/thinkpad_t400s.icm &
-elif [[ `hostname -s` == 'h10' ]]; then
-    $display_calibrator ~/Dropbox/thinkpad_t430.icc &
-fi
+"$HOME"/bin/set-keyboard-auto-repeat-rate
+"$HOME"/bin/set-osd-progress-bar-internal

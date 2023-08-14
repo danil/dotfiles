@@ -1,0 +1,6 @@
+#!/bin/sh
+
+RAWT=$(cat /sys/devices/platform/coretemp.0/hwmon/hwmon*/temp1_input)
+FLOT=$(printf 'scale=2 ; %d / 1000\n' "$RAWT" | bc)
+PRET=$(printf '%s' "$FLOT" | sed '/\./ s/\.\{0,1\}0\{1,\}$//')
+printf '%s' "$PRET" | tr -d '\n'

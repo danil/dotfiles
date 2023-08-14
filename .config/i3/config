@@ -30,7 +30,7 @@ set $rd #ff0000
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 16
+font pango:monospace 12
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -39,6 +39,8 @@ font pango:DejaVu Sans Mono 16
 # font, it doesn’t scale on retina/hidpi displays.
 
 # Use Mouse+$mod to drag floating windows to their wanted position
+# ~~~~<danil@kutkevich.org>.
+# floating_modifier Mod1
 floating_modifier $mod
 
 # start a terminal
@@ -179,6 +181,10 @@ hide_edge_borders smart
 # colorclass            border  backgr. text    indicator child_border
 client.focused          #4c7899 #285577 #ffffff #2e9ef4   $hi
 
+floating_minimum_size 96 x 96
+# xdpyinfo | grep -B2 resolution
+floating_maximum_size 2560 x 1440
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 # <https://i3wm.org/docs/userguide.html#i3bar_position#i3bar_position>.
@@ -196,3 +202,5 @@ bar {
                 urgent_workspace   $bg     $ac     $fg
         }
 }
+
+exec --no-startup-id ~/.xstart_i3
