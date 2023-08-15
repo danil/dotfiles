@@ -23,8 +23,8 @@
   <property name="Gtk" type="empty">
     <property name="CanChangeAccels" type="empty"/>
     <property name="ColorPalette" type="empty"/>
-    <property name="FontName" type="string" value="Sans 12"/>
-    <property name="MonospaceFontName" type="string" value="Monospace 12"/>
+    <property name="FontName" type="string" value="Sans 13"/>
+    <property name="MonospaceFontName" type="string" value="Monospace 13"/>
     <property name="IconSizes" type="empty"/>
     <property name="KeyThemeName" type="empty"/>
     <property name="ToolbarStyle" type="empty"/>
@@ -39,7 +39,7 @@
     <property name="TitlebarMiddleClick" type="empty"/>
   </property>
   <property name="Gdk" type="empty">
-    <property name="WindowScalingFactor" type="int" value="1"/>
+    <property name="WindowScalingFactor" type="int" value="2"/>
   </property>
   <property name="Xfce" type="empty">
     <property name="SyncThemes" type="bool" value="false"/>

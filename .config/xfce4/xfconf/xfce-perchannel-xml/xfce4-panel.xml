@@ -10,9 +10,10 @@
       <property name="length" type="uint" value="100"/>
       <property name="position-locked" type="bool" value="true"/>
       <property name="icon-size" type="uint" value="0"/>
-      <property name="size" type="uint" value="58"/>
+      <property name="size" type="uint" value="32"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="1"/>
+        <value type="int" value="29"/>
         <value type="int" value="4"/>
         <value type="int" value="3"/>
         <value type="int" value="2"/>
@@ -52,7 +53,7 @@
       <property name="show-button-title" type="bool" value="false"/>
       <property name="small" type="bool" value="false"/>
       <property name="show-menu-icons" type="bool" value="true"/>
-      <property name="button-icon" type="string" value="org.xfce.panel.applicationsmenu"/>
+      <property name="button-icon" type="string" value="xfce4_xicon3"/>
     </property>
     <property name="plugin-3" type="string" value="separator">
       <property name="expand" type="bool" value="true"/>
@@ -132,7 +133,7 @@
     <property name="plugin-18" type="string" value="wckmenu-plugin"/>
     <property name="plugin-8" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="chromium.instance110468;chromium.instance16492;chromium.instance211057;chromium.instance22028;chromium.instance25855;chromium.instance266272;chromium.instance3067;chromium.instance3238;chromium.instance38339;chromium.instance45052;chromium.instance53752;chromium.instance5790;chromium.instance90392"/>
+      <property name="mpris-players" type="string" value="chromium.instance110468;chromium.instance16492;chromium.instance211057;chromium.instance22028;chromium.instance25855;chromium.instance266272;chromium.instance3067;chromium.instance3238;chromium.instance38339;chromium.instance38921;chromium.instance3961;chromium.instance45052;chromium.instance53752;chromium.instance5790;chromium.instance90392"/>
     </property>
     <property name="plugin-10" type="string" value="xkb">
       <property name="display-name" type="uint" value="0"/>
@@ -147,16 +148,40 @@
       <property name="timeout-seconds" type="uint" value="2"/>
       <property name="cpu" type="empty">
         <property name="label" type="string" value=""/>
+        <property name="color" type="array">
+          <value type="double" value="0.1803921568627451"/>
+          <value type="double" value="0.76078431372549016"/>
+          <value type="double" value="0.49411764705882355"/>
+          <value type="double" value="1"/>
+        </property>
       </property>
       <property name="memory" type="empty">
         <property name="label" type="string" value=""/>
         <property name="enabled" type="bool" value="false"/>
+        <property name="color" type="array">
+          <value type="double" value="0.50588235294117645"/>
+          <value type="double" value="0.23921568627450981"/>
+          <value type="double" value="0.61176470588235299"/>
+          <value type="double" value="1"/>
+        </property>
       </property>
       <property name="swap" type="empty">
         <property name="label" type="string" value=""/>
+        <property name="color" type="array">
+          <value type="double" value="0.75294117647058822"/>
+          <value type="double" value="0.10980392156862745"/>
+          <value type="double" value="0.15686274509803921"/>
+          <value type="double" value="1"/>
+        </property>
       </property>
       <property name="network" type="empty">
         <property name="label" type="string" value=""/>
+        <property name="color" type="array">
+          <value type="double" value="0.96078431372549022"/>
+          <value type="double" value="0.76078431372549016"/>
+          <value type="double" value="0.066666666666666666"/>
+          <value type="double" value="1"/>
+        </property>
       </property>
       <property name="uptime" type="empty">
         <property name="enabled" type="bool" value="false"/>
@@ -204,6 +229,10 @@
     <property name="plugin-16" type="string" value="notification-plugin"/>
     <property name="plugin-27" type="string" value="genmon"/>
     <property name="plugin-28" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-29" type="string" value="separator">
+      <property name="expand" type="bool" value="false"/>
       <property name="style" type="uint" value="0"/>
     </property>
   </property>

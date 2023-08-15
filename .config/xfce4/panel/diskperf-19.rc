@@ -8,5 +8,5 @@ CombineRWdata=1
 MonitorBarOrder=0
 ReadColor=rgb(0,0,255)
 WriteColor=rgb(255,0,0)
-ReadWriteColor=rgb(0,255,0)
+ReadWriteColor=rgb(28,113,216)
 

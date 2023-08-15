@@ -1,15 +1,23 @@
 [xfdesktop-version-4.10.3+-rcfile_format]
 4.10.3+=true
 
+[AF5D-7B9A]
+row=3
+col=0
+
+[b968a460-d936-48b3-bfcb-731e64258c65]
+row=4
+col=0
+
 [Trash]
-row=1
+row=0
 col=0
 
 [/]
-row=2
+row=1
 col=0
 
 [/home/danil]
-row=0
+row=2
 col=0
 

@@ -24,34 +24,34 @@
 ! *italicFont:     xft:Monospace:pixelsize=24:antialias=true:hinting=true:autohint=true:style=italic
 ! *boldItalicFont: xft:Monospace:pixelsize=24:antialias=true:hinting=true:autohint=true:style=bold italic
 
-! Xft.
-! `xrdb -query | grep Xft`
-! <https://wiki.archlinux.org/index.php/Font_Configuration#Applications_without_fontconfig_support>.
-! Antialias <https://wiki.archlinux.org/index.php/Font_Configuration#Anti-aliasing>.
-Xft.antialias: true
-! Autohint <http://wiki.gentoo.org/wiki/Fontconfig#Regarding_autohinter>.
-Xft.autohint: false
-! Hinting <https://wiki.archlinux.org/index.php/Font_Configuration#Byte-Code_Interpreter_.28BCI.29>.
-Xft.hinting: true
-! Hintstyle <https://wiki.archlinux.org/index.php/Font_Configuration#Hintstyle>,
-! <http://wiki.gentoo.org/wiki/Fontconfig#Forcing_hinting>,
-! <https://wiki.archlinux.org/index.php/X_resources#Xft_resources>.
-Xft.hintstyle: hintfull
-! Lcd filter <http://wiki.gentoo.org/wiki/Fontconfig#Using_sub-pixel_rendering>,
-! <https://wiki.archlinux.org/index.php/Font_Configuration#LCD_filter>.
-Xft.lcdfilter: lcddefault
-! Sub-pixel rendering <http://wiki.gentoo.org/wiki/Fontconfig#Using_sub-pixel_rendering>,
-! <https://wiki.archlinux.org/index.php/Font_Configuration#Subpixel_rendering>.
-Xft.rgba: rgb
-! DPI <https://wiki.archlinux.org/title/HiDPI>,
-! <https://wiki.archlinux.org/index.php/Font_Configuration#Distorted_fonts>,
-! <https://askubuntu.com/questions/197828/how-to-find-and-change-the-screen-dpi#272172>.
-! `xrandr | grep -w connected` and then divide X and Y resolution by size in CM
-! and then maybe multiply by coefficient for example:
-! `bc <<< "3840 / 30.9"` equal to 124 or
-! `bc <<< "2160 / 17.4"` equal to 124 and
-! `bc <<< "124 * 2" equal to 248.
-Xft*dpi: 248
+! ! Xft.
+! ! `xrdb -query | grep Xft`
+! ! <https://wiki.archlinux.org/index.php/Font_Configuration#Applications_without_fontconfig_support>.
+! ! Antialias <https://wiki.archlinux.org/index.php/Font_Configuration#Anti-aliasing>.
+! Xft.antialias: true
+! ! Autohint <http://wiki.gentoo.org/wiki/Fontconfig#Regarding_autohinter>.
+! Xft.autohint: false
+! ! Hinting <https://wiki.archlinux.org/index.php/Font_Configuration#Byte-Code_Interpreter_.28BCI.29>.
+! Xft.hinting: true
+! ! Hintstyle <https://wiki.archlinux.org/index.php/Font_Configuration#Hintstyle>,
+! ! <http://wiki.gentoo.org/wiki/Fontconfig#Forcing_hinting>,
+! ! <https://wiki.archlinux.org/index.php/X_resources#Xft_resources>.
+! Xft.hintstyle: hintfull
+! ! Lcd filter <http://wiki.gentoo.org/wiki/Fontconfig#Using_sub-pixel_rendering>,
+! ! <https://wiki.archlinux.org/index.php/Font_Configuration#LCD_filter>.
+! Xft.lcdfilter: lcddefault
+! ! Sub-pixel rendering <http://wiki.gentoo.org/wiki/Fontconfig#Using_sub-pixel_rendering>,
+! ! <https://wiki.archlinux.org/index.php/Font_Configuration#Subpixel_rendering>.
+! Xft.rgba: rgb
+! ! DPI <https://wiki.archlinux.org/title/HiDPI>,
+! ! <https://wiki.archlinux.org/index.php/Font_Configuration#Distorted_fonts>,
+! ! <https://askubuntu.com/questions/197828/how-to-find-and-change-the-screen-dpi#272172>.
+! ! `xrandr | grep -w connected` and then divide X and Y resolution by size in CM
+! ! and then maybe multiply by coefficient for example:
+! ! `bc <<< "3840 / 30.9"` equal to 124 or
+! ! `bc <<< "2160 / 17.4"` equal to 124 and
+! ! `bc <<< "124 * 2" equal to 248.
+! Xft*dpi: 248
 
 ! https://wiki.archlinux.org/index.php/Cursor_themes#X_resources
 ! Xcursor.theme: Vanilla-DMZ
