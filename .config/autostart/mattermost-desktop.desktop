@@ -6,3 +6,5 @@ Comment=mattermost-desktopstartup script
 Exec=/tmp/.mount_matterbCLl2d/mattermost-desktop
 StartupNotify=false
 Terminal=false
+Hidden=true
+

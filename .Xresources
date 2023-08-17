@@ -1,4 +1,5 @@
 ! This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
 ! <https://wiki.archlinux.org/index.php/x_resources>.
 ! `xrdb -load ~/.Xresources`,
 ! `xrdb -remove`,
@@ -24,35 +25,6 @@
 ! *italicFont:     xft:Monospace:pixelsize=24:antialias=true:hinting=true:autohint=true:style=italic
 ! *boldItalicFont: xft:Monospace:pixelsize=24:antialias=true:hinting=true:autohint=true:style=bold italic
 
-! Xft.
-! `xrdb -query | grep Xft`
-! <https://wiki.archlinux.org/index.php/Font_Configuration#Applications_without_fontconfig_support>.
-! Antialias <https://wiki.archlinux.org/index.php/Font_Configuration#Anti-aliasing>.
-Xft.antialias: true
-! Autohint <http://wiki.gentoo.org/wiki/Fontconfig#Regarding_autohinter>.
-Xft.autohint: false
-! Hinting <https://wiki.archlinux.org/index.php/Font_Configuration#Byte-Code_Interpreter_.28BCI.29>.
-Xft.hinting: true
-! Hintstyle <https://wiki.archlinux.org/index.php/Font_Configuration#Hintstyle>,
-! <http://wiki.gentoo.org/wiki/Fontconfig#Forcing_hinting>,
-! <https://wiki.archlinux.org/index.php/X_resources#Xft_resources>.
-Xft.hintstyle: hintfull
-! Lcd filter <http://wiki.gentoo.org/wiki/Fontconfig#Using_sub-pixel_rendering>,
-! <https://wiki.archlinux.org/index.php/Font_Configuration#LCD_filter>.
-Xft.lcdfilter: lcddefault
-! Sub-pixel rendering <http://wiki.gentoo.org/wiki/Fontconfig#Using_sub-pixel_rendering>,
-! <https://wiki.archlinux.org/index.php/Font_Configuration#Subpixel_rendering>.
-Xft.rgba: rgb
-! DPI <https://wiki.archlinux.org/title/HiDPI>,
-! <https://wiki.archlinux.org/index.php/Font_Configuration#Distorted_fonts>,
-! <https://askubuntu.com/questions/197828/how-to-find-and-change-the-screen-dpi#272172>.
-! `xrandr | grep -w connected` and then divide X and Y resolution by size in CM
-! and then maybe multiply by coefficient for example:
-! `bc <<< "3840 / 30.9"` equal to 124 or
-! `bc <<< "2160 / 17.4"` equal to 124 and
-! `bc <<< "124 * 2" equal to 248.
-Xft*dpi: 248
-
 ! https://wiki.archlinux.org/index.php/Cursor_themes#X_resources
 ! Xcursor.theme: Vanilla-DMZ
 ! Xcursor.size: 72
@@ -67,10 +39,12 @@ Xft*dpi: 248
 ! *color12: lightblue
 
 ! Include multiple resource
+! <https://wiki.archlinux.org/title/x_resources#Include_files>,
+! <https://wiki.gentoo.org/wiki/X_resources#Includes>,
 ! <http://www.nongnu.org/emacsdoc-fr/manuel/resources-x.html>,
 ! <http://stackoverflow.com/questions/13405240/is-it-possible-to-change-xresources-interactively>.
-#include ".Xresources.urxvt"
-#include ".Xresources.uxterm"
-#include ".Xresources.emacs"
-#include ".Xresources.xscreensaver"
-#include ".Xresources.rofi"
+#include ".Xresources.d/urxvt"
+#include ".Xresources.d/uxterm"
+#include ".Xresources.d/emacs"
+#include ".Xresources.d/xscreensaver"
+#include ".Xresources.d/rofi"

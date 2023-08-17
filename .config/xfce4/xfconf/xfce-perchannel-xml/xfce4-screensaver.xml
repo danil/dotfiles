@@ -5,6 +5,7 @@
     <property name="mode" type="int" value="2"/>
     <property name="idle-activation" type="empty">
       <property name="delay" type="int" value="3"/>
+      <property name="enabled" type="bool" value="true"/>
     </property>
     <property name="themes" type="empty">
       <property name="list" type="array">
@@ -12,10 +13,15 @@
       </property>
       <property name="cycle-delay" type="int" value="10"/>
     </property>
+    <property name="enabled" type="bool" value="false"/>
   </property>
   <property name="lock" type="empty">
     <property name="saver-activation" type="empty">
       <property name="delay" type="int" value="13"/>
+      <property name="enabled" type="bool" value="true"/>
+    </property>
+    <property name="enabled" type="bool" value="false"/>
+    <property name="status-messages" type="empty">
       <property name="enabled" type="bool" value="true"/>
     </property>
   </property>

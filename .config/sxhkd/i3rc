@@ -46,17 +46,17 @@ control + t ; p ; s
 # <https://wiki.archlinux.org/index.php/Xbindkeys#Xbindkeysrc>.
 control + t ; v : {j,k,m,u}
     { \
-        audio-lower-volume && osd-sound-volume, \
-        audio-raise-volume && osd-sound-volume, \
+        audio-volume-down && osd-sound-volume, \
+        audio-volume-up && osd-sound-volume, \
         amixer sset Master mute && osd-sound-volume, \
         amixer sset Master unmute && osd-sound-volume
     }
 XF86AudioLowerVolume
-    audio-lower-volume && osd-sound-volume
+    audio-volume-down && osd-sound-volume
 XF86AudioMute
     audio-mute && osd-sound-volume
 XF86AudioRaiseVolume
-    audio-raise-volume && osd-sound-volume
+    audio-volume-up && osd-sound-volume
 
 # Screen backlight (xbacklight)
 # <https://wiki.archlinux.org/index.php/backlight#xbacklight>.

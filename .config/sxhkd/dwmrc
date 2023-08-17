@@ -6,8 +6,8 @@ control + t ; t
 
 control + t : v : {j,k,m,u}
     { \
-        audio-lower-volume && osd-sound-volume, \
-        audio-raise-volume && osd-sound-volume, \
+        audio-volume-down && osd-sound-volume, \
+        audio-volume-up && osd-sound-volume, \
         amixer sset Master mute && osd-sound-volume, \
         amixer sset Master unmute && osd-sound-volume
     }
