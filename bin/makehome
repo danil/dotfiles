@@ -199,15 +199,15 @@ APTO_ADD="$APTO_ADD curl"
 APTO_ADD="$APTO_ADD file"
 APTO_ADD="$APTO_ADD procps" # /proc file system utilities
 
+# AppImage
+# <https://github.com/appimage/appimagekit>.
+# APPI_ADD="$APPI_ADD am" # annoying root requirement # appimage application manager <https://github.com/ivan-hc/am-application-manager> that <https://github.com/ivan-hc/appman> is based on
+APTO_ADD="$APTO_ADD libfuse2" # <https://docs.appimage.org/user-guide/troubleshooting/fuse.html>
+
 # Flatpak <https://github.com/flatpak/flatpak>.
 APTO_ADD="$APTO_ADD flatpak" # PMS
 APTO_ADD="$APTO_ADD gnome-software-plugin-flatpak" # Flatpak support for GNOME software
 FLAT_ADD="$FLAT_ADD com.github.tchx84.Flatseal" # Is a GUI permissions manager which offers simple point-and-click permissions operations.
-
-# AppImage
-# <https://github.com/appimage/appimagekit>.
-# APPI_ADD="$APPI_ADD am" # annoying root requirement # appimage application manager <https://github.com/ivan-hc/am-application-manager> that <https://github.com/ivan-hc/appman> is based on
-
 
 # # Basher is a bash/shell/functions package manager
 # # <https://github.com/basherpm/basher>.
@@ -436,10 +436,6 @@ APTO_ADD="$APTO_ADD engrampa" # archiver
 APTO_ADD="$APTO_ADD evince-" # remove: pdf viewer remembers last page https://github.com/mate-desktop/atril
 APTO_ADD="$APTO_ADD ristretto" # command line image viewer
 
-# # X11 dropbox.
-# APTO_ADD="$APTO_ADD dropbox"
-# APTO_REM="$APTO_REM nautilus-dropbox" # conflicts with dropbox deb file
-
 # X11 Gnome Desktop Environment.
 # APTO_ADD="$APTO_ADD chrome-gnome-shell" # chrome/gnome extension integration
 # APTO_ADD="$APTO_ADD gnome-shell-extension-appindicator-" remove
@@ -468,6 +464,15 @@ APPI_ADD="$APPI_ADD firefox" # FLAT_ADD="$FLAT_ADD org.mozilla.firefox" # SNAP_A
 FLAT_ADD="$FLAT_ADD com.github.fontmatrix.Fontmatrix" # <https://github.com/fontmatrix/fontmatrix>
 FLAT_ADD="$FLAT_ADD io.github.mmstick.FontFinder" # <https://github.com/mmstick/fontfinder>
 FLAT_ADD="$FLAT_ADD org.gnome.FontManager" # <https://github.com/fontmanager/font-manager>
+
+# pCloud
+# <https://github.com/pcloud>.
+APTO_ADD="$APTO_ADD libfuse2"
+
+# # X11 Dropbox
+# # <https://github.com/dropbox>.
+# APTO_ADD="$APTO_ADD dropbox"
+# APTO_REM="$APTO_REM nautilus-dropbox" # conflicts with dropbox deb file
 
 # X11 Zoom video group chat
 # <https://en.wikipedia.org/wiki/Zoom_(software)>.
@@ -507,7 +512,6 @@ APPI_ADD="$APPI_ADD popsicle" # create bootable/live usb/iso a-la usb-creator-gt
 APTO_ADD="$APTO_ADD argyll" # load icc/icm display color profiles <https://wiki.archlinux.org/index.php/ICC_Profiles#Argyll_CMS>
 APTO_ADD="$APTO_ADD blueman" # full featured bluetooth manager gui <https://wiki.archlinux.org/title/Blueman>, <https://wiki.archlinux.org/title/Bluetooth>
 APTO_ADD="$APTO_ADD gparted" # format/create partition/disk/usb
-APTO_ADD="$APTO_ADD libfuse2" # pcloud dependency
 APTO_ADD="$APTO_ADD libimlib2-dev libfontconfig1-dev libfreetype6-dev libx11-dev libxext-dev libxft-dev libxrender-dev zlib1g-dev libxinerama-dev libxcomposite-dev libxdamage-dev libxfixes-dev libxmu-dev" # skippy-xd is an full-screen task-switcher for X11 <https://github.com/richardgv/skippy-xd>
 APTO_ADD="$APTO_ADD libnotify-bin" # a-la notify-osd
 APTO_ADD="$APTO_ADD libx11-dev" # c/c++ compile/make x11 dependencies
