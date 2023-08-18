@@ -12,11 +12,13 @@
       </property>
       <property name="cycle-delay" type="int" value="10"/>
     </property>
+    <property name="enabled" type="bool" value="true"/>
   </property>
   <property name="lock" type="empty">
     <property name="saver-activation" type="empty">
       <property name="delay" type="int" value="13"/>
       <property name="enabled" type="bool" value="true"/>
     </property>
+    <property name="enabled" type="bool" value="true"/>
   </property>
 </channel>
