@@ -1,0 +1,6 @@
+Command=/home/danil/bin/xfcepaneltop
+UseLabel=0
+Text=(genmon)
+UpdatePeriod=3000
+Font=Sans 12
+
