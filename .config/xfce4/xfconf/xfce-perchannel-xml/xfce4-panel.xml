@@ -34,9 +34,9 @@
         <value type="int" value="22"/>
         <value type="int" value="26"/>
         <value type="int" value="10"/>
-        <value type="int" value="15"/>
-        <value type="int" value="21"/>
-        <value type="int" value="5"/>
+        <value type="int" value="28"/>
+        <value type="int" value="33"/>
+        <value type="int" value="34"/>
         <value type="int" value="12"/>
         <value type="int" value="14"/>
       </property>
@@ -138,9 +138,6 @@
       <property name="display-type" type="uint" value="0"/>
       <property name="display-tooltip-icon" type="bool" value="true"/>
     </property>
-    <property name="plugin-15" type="string" value="separator">
-      <property name="style" type="uint" value="0"/>
-    </property>
     <property name="plugin-13" type="string" value="systemload">
       <property name="timeout" type="uint" value="1000"/>
       <property name="timeout-seconds" type="uint" value="2"/>
@@ -180,11 +177,7 @@
       </property>
     </property>
     <property name="plugin-19" type="string" value="diskperf"/>
-    <property name="plugin-21" type="string" value="datetime"/>
     <property name="plugin-2" type="string" value="windowck-plugin"/>
-    <property name="plugin-5" type="string" value="separator">
-      <property name="style" type="uint" value="0"/>
-    </property>
     <property name="plugin-9" type="string" value="power-manager-plugin"/>
     <property name="plugin-11" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
@@ -221,5 +214,10 @@
       <property name="style" type="uint" value="0"/>
     </property>
     <property name="plugin-25" type="string" value="genmon"/>
+    <property name="plugin-28" type="string" value="org.xfce.orage.clock-plugin"/>
+    <property name="plugin-33" type="string" value="datetime"/>
+    <property name="plugin-34" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+    </property>
   </property>
 </channel>

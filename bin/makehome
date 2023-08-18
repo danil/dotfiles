@@ -409,13 +409,13 @@ APTO_ADD="$APTO_ADD volumeicon-alsa"
 # X11 Xfce4 DE Desktop Environment.
 # APPI_ADD="$APPI_ADD conky" # removed due to extra configuration # system monitoring <https://github.com/brndnmtthws/conky>
 # APTO_ADD="$APTO_ADD libxfce4panel-2.0-dev libxfce4ui-2-dev" # compiltime dependency of text plugin <https://github.com/daveriesz/xfce-text-plugin>
-# APTO_ADD="$APTO_ADD orage" # xfce date time panel plugin with calendar
 # APTO_ADD="$APTO_ADD thunar-megasync" # not using
 # APTO_ADD="$APTO_ADD xfce4-notifyd" # notifications daemon (used by dwm)
 # APTO_ADD="$APTO_ADD xfdashboard" # instead installing skippy-xd
 APTO_ADD="$APTO_ADD elementary-icon-theme"
 APTO_ADD="$APTO_ADD elementary-xfce-icon-theme"
 APTO_ADD="$APTO_ADD mousepad" # simple text editor for xfce <https://github.com/codebrainz/mousepad>
+APTO_ADD="$APTO_ADD orage" # xfce date time panel plugin with calendar
 APTO_ADD="$APTO_ADD thunar" # file manager
 APTO_ADD="$APTO_ADD thunar-archive-plugin"
 APTO_ADD="$APTO_ADD thunar-dropbox-plugin"
