@@ -425,6 +425,7 @@ APTO_ADD="$APTO_ADD xfce4-datetime-plugin" # a-la clock panel plugin
 APTO_ADD="$APTO_ADD xfce4-diskperf-plugin" # disk io performance panel plugin
 APTO_ADD="$APTO_ADD xfce4-genmon-plugin" # script-based monitoring pluging a-la la/load average and temperature
 APTO_ADD="$APTO_ADD xfce4-power-manager"
+APTO_ADD="$APTO_ADD xfce4-screensaver"
 APTO_ADD="$APTO_ADD xfce4-systemload-plugin" # system cpu/mem/net/swap load monitor
 APTO_ADD="$APTO_ADD xfce4-windowck-plugin" # put maximized window title on the panel <https://github.com/takinoy/xfce4-windowck-plugin>
 APTO_ADD="$APTO_ADD xfce4-xkb-plugin" # keyboard language switcher
