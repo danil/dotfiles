@@ -143,6 +143,12 @@
       <property name="timeout-seconds" type="uint" value="2"/>
       <property name="cpu" type="empty">
         <property name="label" type="string" value=""/>
+        <property name="color" type="array">
+          <value type="double" value="0.1803921568627451"/>
+          <value type="double" value="0.76078431372549016"/>
+          <value type="double" value="0.49411764705882355"/>
+          <value type="double" value="1"/>
+        </property>
       </property>
       <property name="memory" type="empty">
         <property name="label" type="string" value=""/>
