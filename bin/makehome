@@ -503,8 +503,6 @@ APPI_ADD="$APPI_ADD mattermost-desktop"
 # APTO_ADD="$APTO_ADD uswsusp" # FIXME: missing? # systemctl hibernate
 # APTO_ADD="$APTO_ADD xcalib" # returns: "Error - unsupported ramp size 0" (load icc/icm display color profiles (only calibration curves) <https://wiki.archlinux.org/index.php/ICC_Profiles#xcalib>)
 # APTO_ADD="$APTO_ADD xclip" # tmux and xorg clipboard integration <https://github.com/tmux-plugins/tmux-yank#linux-requirements>
-# APTO_ADD="$APTO_ADD xscreensaver-data-extra"
-# APTO_ADD="$APTO_ADD xscreensaver-gl-extra"
 # APTO_REM="$APTO_REM xserver-xorg-video-intel" # instead of intel using modesetting <https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/1867668>
 # BREW_ADD="$BREW_ADD duplicity" # APTO_ADD="$APTO_ADD duplicity" # backuping
 APPI_ADD="$APPI_ADD flameshot" # FLAT_ADD="$FLAT_ADD org.flameshot.Flameshot" # screen shot util <https://github.com/flameshot-org/flameshot>
@@ -525,6 +523,8 @@ APTO_ADD="$APTO_ADD sassc libglib2.0-dev-bin" # dependencies of whitesur gtk the
 APTO_ADD="$APTO_ADD transmission" # torrent client # APTO_REM="$APTO_REM transmission-gtk"
 APTO_ADD="$APTO_ADD ubuntu-restricted-extras" # playing video in browser instead of download <https://askubuntu.com/questions/1122579/firefox-downloads-the-video-instead-of-playing-it#1122668>, <https://askubuntu.com/questions/56446/how-do-i-install-the-ubuntu-restricted-extras-package#56448>
 APTO_ADD="$APTO_ADD usb-creator-gtk" # create bootable/live usb/iso a-la popsicle
+APTO_ADD="$APTO_ADD xscreensaver-data-extra"
+APTO_ADD="$APTO_ADD xscreensaver-gl-extra"
 APTO_ADD="$APTO_ADD xserver-xorg-video-intel" # instead of modesetting using intel <https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/1867668>
 APTO_REM="$APTO_REM gnome-mahjongg" # classic eastern tile game for gnome
 APTO_REM="$APTO_REM remmina" # gtk+ remote desktop client

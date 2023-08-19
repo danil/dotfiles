@@ -8,7 +8,7 @@
     </property>
     <property name="themes" type="empty">
       <property name="list" type="array">
-        <value type="string" value="screensavers-xfce-popsquares"/>
+        <value type="string" value="screensavers-bouboule"/>
       </property>
       <property name="cycle-delay" type="int" value="10"/>
     </property>
