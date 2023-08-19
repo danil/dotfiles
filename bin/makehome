@@ -394,7 +394,7 @@ APTO_ADD="$APTO_ADD libdbus-1-dev libnotify-dev libxrandr-dev libpango1.0-dev li
 # X11 xchainkeys <https://github.com/hbekel/xchainkeys>.
 APTO_ADD="$APTO_ADD automake" # xchainkeys compiltime dependency
 APTO_ADD="$APTO_ADD light" # xchainkeys runtime dependency
-APTO_REM="$APTO_REM wmctrl" # used by xchainkeys
+APTO_ADD="$APTO_ADD wmctrl" # used by xchainkeys
 
 # # X11 sxhkd.
 # # APTO_ADD="$APTO_ADD sxhkd" # a-la xchainkeys
