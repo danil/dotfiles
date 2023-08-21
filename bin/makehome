@@ -2,7 +2,7 @@
 
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-USAGE="usage: ${CMD:=${0##*/}} [--apt] [--brew] [--update]"
+USAGE="usage: ${CMD:=${0##*/}} [--apt] [--brew] [--update] [--etc] [--root] [--home]"
 
 # APT (deb/dpkg/apt-get/aptitude)
 # <https://en.wikipedia.org/wiki/APT_(software)>.
@@ -30,7 +30,7 @@ FLAT_ADD_CLI="flatpak install --verbose flathub"
 RUST_ADD_CLI="cargo install"
 RUST_UPD_CLI="cargo install --force"
 
-OPT_ALL=0
+OPT_ALL=-1
 OPT_JOBS=`grep -c ^processor /proc/cpuinfo` OPT_JOBS=${OPT_JOBS:-1}
 
 # Options functions.
@@ -49,6 +49,9 @@ while [ "$1" != "$EOL" ]; do
         --appimage     ) OPT_APPI=0; OPT_ALL=-1;;
         --flatpak      ) OPT_FLAT=0; OPT_ALL=-1;;
         --rust         ) OPT_RUST=0; OPT_ALL=-1;;
+        --home         ) optcheck "$1" "$opt"; OPT_HOME="$1"; OPT_ALL=-1;;
+        --etc          ) OPT_ETCE=0; OPT_ALL=-1;;
+        --root         ) OPT_ROOT=0; OPT_ALL=-1;;
         --jobs         ) optcheck "$1" "$opt"; OPT_JOBS="$1"; shift;;
         --update       ) OPT_UPDATE=0;;
         -v | --verbose ) OPT_VERBOSE=0;;
@@ -563,6 +566,8 @@ APTO_ADD="$APTO_ADD libxml2-dev"
 # APTO_ADD="$APTO_ADD redis" APTO_DIS="$APTO_DIS redis-server" # felix
 # APTO_ADD="$APTO_ADD vpnc" # cisco vpn client
 
+OPT_DRY=0
+
 if [ "$OPT_VERBOSE" = 0 ] ; then
     RUST_UPD_CLI="$RUST_UPD_CLI --verbose"
     RUST_ADD_CLI="$RUST_ADD_CLI --verbose"
@@ -571,6 +576,7 @@ fi
 # APT/deb/dpkg/apt-get/aptitude
 # <https://en.wikipedia.org/wiki/APT_(software)>.
 if [ "$OPT_DPKG" = 0 ] || [ "$OPT_ALL" = 0 ]; then
+    OPT_DRY=-1
     sudo cat /dev/null || exit 1
     printf "Installing dpkg packages...\n\n"
     sh -c "sudo $APTO_REM_CLI $APTO_REM" || exit 1
@@ -581,6 +587,7 @@ fi
 # Homebrew
 # <https://brew.sh>.
 if [ "$OPT_BREW" = 0 ] || [ "$OPT_ALL" = 0 ]; then
+    OPT_DRY=-1
     printf "Installing homebrew packages...\n\n"
     # for src in ${BREW_REM_SRC}; do sh -c "$BREW_REM_SRC_CLI $src" || exit 1; done
     for src in ${BREW_ADD_SRC}; do sh -c "$BREW_ADD_SRC_CLI $src" || exit 1; done
@@ -591,6 +598,7 @@ fi
 # AppImage
 # <https://github.com/appimage/appimagekit>.
 if [ "$OPT_APPI" = 0 ] || [ "$OPT_ALL" = 0 ]; then
+    OPT_DRY=-1
     printf "Installing AppImage packages...\n\n"
     [ -n "$APPI_ADD" ] && [ "$APPI_ADD" != " " ] && sh -c "$APPI_ADD_CLI $APPI_ADD"
     printf "\n"
@@ -599,6 +607,7 @@ fi
 # Flatpak
 # <https://github.com/flatpak/flatpak>.
 if [ "$OPT_FLAT" = 0 ] || [ "$OPT_ALL" = 0 ]; then
+    OPT_DRY=-1
     printf "Installing Flatpak packages...\n\n"
     [ -n "$FLAT_ADD" ] && [ "$FLAT_ADD" != " " ] && sh -c "$FLAT_ADD_CLI $FLAT_ADD" || exit 1
     printf "\n"
@@ -608,6 +617,7 @@ fi
 # <https://github.com/rust-lang/cargo>,
 # <https://doc.rust-lang.org/cargo>.
 if [ "$OPT_RUST" = 0 ] || [ "$OPT_ALL" = 0 ]; then
+    OPT_DRY=-1
     if [ "$OPT_UPDATE" = 0 ]; then
         printf "Updating Rust Cargo packages...\n\n"
         for pkg in ${RUST_ADD}; do sh -c "$RUST_UPD_CLI $pkg" || exit 1; done
@@ -616,4 +626,85 @@ if [ "$OPT_RUST" = 0 ] || [ "$OPT_ALL" = 0 ]; then
         for pkg in ${RUST_ADD}; do sh -c "$RUST_ADD_CLI $pkg" || exit 1; done
     fi
     printf "\n"
+fi
+
+optcfg () {
+    local dir="$1"
+    local usr="$2"
+    git -C "$dir" rev-parse || exit 1
+    if [ $(sudo git -C "$dir" status --porcelain | wc -l) = 0 ]; then
+        printf "Already configured %s directory.\n" "$dir"
+    else
+        local IFS=$"
+"
+        for line in $(sudo git -C "$dir" status --porcelain); do
+            local mode=$(printf "%s" "$line" | awk '{print $1}')
+            local file=$(printf "%s" "$line" | awk '{print $2}')
+            local desc=""
+            for str in $(sudo git -C "$dir" status "$file" | grep "$file"); do
+                if [ "$desc" != "" ]; then
+                    desc="${desc} "
+                fi
+                desc="$desc"$(printf "%s" "$str" | awk '{print $1}' | sed 's/:$//')
+            done
+            if [ "$mode" = 'D' ]; then
+                str=$(printf "Restore %s %s %s file?" "$mode" "$desc" "$file")
+                while true; do
+                    read -p "$str " yn
+                    case $yn in
+                        [Yy]* ) sudo -u "$usr" git -C "$dir" checkout "$file"; break;;
+                        [Nn]* ) break;;
+                        * ) echo "Please answer yes or no.";;
+                    esac
+                done
+            elif [ "$mode" = 'M' ]; then
+                str=$(printf "Restore %s %s %s file?" "$mode" "$desc" "$file")
+                sudo git -C "$dir" diff "$file"
+                while true; do
+                    read -p "$str " yn
+                    case $yn in
+                        [Yy]* ) sudo -u "$usr" git -C "$dir" checkout "$file"; break;;
+                        [Nn]* ) break;;
+                        * ) echo "Please answer yes or no.";;
+                    esac
+                done
+            else
+                printf "Invalid %s state (%s) of %s file.\n" "$mode" "$desc" "$file"
+            fi
+        done
+    fi
+}
+
+# $HOME user home directory
+# <https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard#Directory_structure>.
+if [ -n "$OPT_HOME" ] && [ "$OPT_HOME" != " " ]; then
+    OPT_DRY=-1
+    sudo cat /dev/null || exit 1
+    printf "Configuring %s directory...\n\n" "$OPT_HOME"
+
+    optcfg "$OPT_HOME" $(basename "$OPT_HOME")
+fi
+
+# /etc of host-specific system-wide configuration
+# <https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard#Directory_structure>.
+if [ "$OPT_ETCE" = 0 ] || [ "$OPT_ALL" = 0 ]; then
+    OPT_DRY=-1
+    sudo cat /dev/null || exit 1
+    printf "Configuring /etc directory...\n\n"
+    optcfg "/etc" "root"
+fi
+
+# / root directory of host-specific system-wide configuration
+# <https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard#Directory_structure>.
+if [ "$OPT_ROOT" = 0 ] || [ "$OPT_ALL" = 0 ]; then
+    OPT_DRY=-1
+    sudo cat /dev/null || exit 1
+    printf "Configuring / root directory...\n\n"
+    optcfg "/" "root"
+fi
+
+# Dry run.
+if [ "$OPT_DRY" = 0 ]; then
+    printf "$USAGE\n"
+    exit 1
 fi
