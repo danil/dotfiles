@@ -127,7 +127,6 @@ APTO_ADD="$APTO_ADD bc" # used by bash prompt, console-based calculator utility
 APTO_ADD="$APTO_ADD bind9-host" # automatic/dependency: dns/host lookup utility
 APTO_ADD="$APTO_ADD genius" # calculator
 APTO_ADD="$APTO_ADD libpci-dev libnl-3-dev libnl-genl-3-dev gettext libgettextpo-dev autopoint gettext libncurses5-dev libncursesw5-dev libtool-bin dh-autoreconf autoconf-archive pkg-config" # powertop diagnose power consumption https://github.com/fenrus75/powertop#build-dependencies
-APTO_ADD="$APTO_ADD lm-sensors" # FIXME: is the cpu temperate by ls sensors used by plain status or by slstatus?
 APTO_ADD="$APTO_ADD logrotate"
 APTO_ADD="$APTO_ADD lynx" # html to plain text `curl https://your.tld/ | lynx --stdin --dump`
 APTO_ADD="$APTO_ADD mlocate" # locate/updatedb
@@ -205,6 +204,7 @@ APTO_ADD="$APTO_ADD procps" # /proc file system utilities
 # AppImage
 # <https://github.com/appimage/appimagekit>.
 # APPI_ADD="$APPI_ADD am" # annoying root requirement # appimage application manager <https://github.com/ivan-hc/am-application-manager> that <https://github.com/ivan-hc/appman> is based on
+APPI_ADD="$APPI_ADD zsync2" # partial re-downloader a-la rsync/wget/curl <https://github.com/appimagecommunity/zsync2>
 APTO_ADD="$APTO_ADD libfuse2" # <https://docs.appimage.org/user-guide/troubleshooting/fuse.html>
 
 # Flatpak <https://github.com/flatpak/flatpak>.
@@ -377,8 +377,9 @@ APTO_ADD="$APTO_ADD build-essential" # dmenu (suckless) dependency
 APTO_ADD="$APTO_ADD i3-wm"
 APTO_ADD="$APTO_ADD i3lock" # xscreensaver replacement
 APTO_ADD="$APTO_ADD libxcb-ewmh-dev libxcb-icccm4-dev libxcb-util0-dev" # xtitle (used by i3blocks/i3) compiltime dependency <https://github.com/baskerville/xtitle>
-APTO_ADD="$APTO_ADD xautolock" # used by i3lock
 APTO_ADD="$APTO_ADD libxpm-dev libxt-dev xutils-dev" # xxkb compiltime dependency, is a keyboard/language layout indicator (flag) for tray <https://github.com/scientistnik/xxkb>, a-la gxkb which destroys xchainkeys
+APTO_ADD="$APTO_ADD lm-sensors" # a-la `sensors` # FIXME: is the cpu temperate used by plain status or by slstatus?
+APTO_ADD="$APTO_ADD xautolock" # used by i3lock
 
 # # X11 bspwm.
 # APTO_ADD="$APTO_ADD bspwm" # a-la i3
@@ -417,6 +418,8 @@ APTO_ADD="$APTO_ADD volumeicon-alsa"
 # APTO_ADD="$APTO_ADD xfdashboard" # instead installing skippy-xd
 APTO_ADD="$APTO_ADD elementary-icon-theme"
 APTO_ADD="$APTO_ADD elementary-xfce-icon-theme"
+APTO_ADD="$APTO_ADD gir1.2-xapp-1.0" # xfce4-sensors-plugin runtime dependencies # without gir1.2-xapp-1.0 get `xfce4-sensors` error: Failed to load module "xapp-gtk3-module"
+APTO_ADD="$APTO_ADD lm-sensors" # a-la `sensors` # FIXME: is the cpu temperate used by xfce4-sensors-plugin?
 APTO_ADD="$APTO_ADD mousepad" # simple text editor for xfce <https://github.com/codebrainz/mousepad>
 APTO_ADD="$APTO_ADD orage" # xfce date time panel plugin with calendar
 APTO_ADD="$APTO_ADD thunar" # file manager
@@ -429,12 +432,18 @@ APTO_ADD="$APTO_ADD xfce4-diskperf-plugin" # disk io performance panel plugin
 APTO_ADD="$APTO_ADD xfce4-genmon-plugin" # script-based monitoring pluging a-la la/load average and temperature
 APTO_ADD="$APTO_ADD xfce4-power-manager"
 APTO_ADD="$APTO_ADD xfce4-screensaver"
+APTO_ADD="$APTO_ADD xfce4-sensors-plugin" # cpu temperate for panel plugin?
 APTO_ADD="$APTO_ADD xfce4-systemload-plugin" # system cpu/mem/net/swap load monitor
 APTO_ADD="$APTO_ADD xfce4-windowck-plugin" # put maximized window title on the panel <https://github.com/takinoy/xfce4-windowck-plugin>
 APTO_ADD="$APTO_ADD xfce4-xkb-plugin" # keyboard language switcher
 
 # X11 MATE DE Desktop Environment.
 # APTO_ADD="$APTO_ADD atril" # instead installed from snap # pdf viewer (remembers last page) for mate de (desktop environment) https://github.com/mate-desktop/atril
+# APTO_ADD="$APTO_ADD mate"
+# APTO_ADD="$APTO_ADD mate-notification-daemon"
+# APTO_ADD="$APTO_ADD mate-power-manager"
+# APTO_ADD="$APTO_ADD mate-screensaver"
+# APTO_ADD="$APTO_ADD mate-tweak"
 APTO_ADD="$APTO_ADD caja" # file manager <https://github.com/mate-desktop/caja>
 APTO_ADD="$APTO_ADD engrampa" # archiver
 APTO_ADD="$APTO_ADD evince-" # remove: pdf viewer remembers last page https://github.com/mate-desktop/atril
@@ -682,7 +691,6 @@ if [ -n "$OPT_HOME" ] && [ "$OPT_HOME" != " " ]; then
     sudo cat /dev/null || exit 1
     printf "Configuring %s directory...\n\n" "$OPT_HOME"
 
-    optcfg "$OPT_HOME" $(basename "$OPT_HOME")
 fi
 
 # /etc of host-specific system-wide configuration

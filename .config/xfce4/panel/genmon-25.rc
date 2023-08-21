@@ -2,5 +2,5 @@ Command=/home/danil/bin/xfcepaneltop
 UseLabel=0
 Text=(genmon)
 UpdatePeriod=3000
-Font=Monospace 13
+Font=Monospace 15
 
