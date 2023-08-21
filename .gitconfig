@@ -9,6 +9,12 @@
 	email = danil@kutkevich.org
 	name = Danil Kutkevich
 
+[diff]
+	renameLimit = 16384
+
+[merge]
+	renamelimit = 16384
+
 [safe]
 	directory = /
 	directory = /etc

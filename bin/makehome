@@ -140,6 +140,7 @@ BREW_ADD="$BREW_ADD zstd" # a-la gz/xz compression, required by gcc, curl, git, 
 APTO_ADD="$APTO_ADD zstd" # a-la gz/xz compression
 
 # Network.
+APPI_ADD="$APPI_ADD zsync2" # partial re-downloader a-la rsync/wget/curl <https://github.com/appimagecommunity/zsync2>
 BREW_ADD="$BREW_ADD aria2" # `aria2c https://your.tld/path/to/your.file` download client a-la curl/wget
 BREW_ADD="$BREW_ADD awscli" # `aws --version` # s3 command line client # default amazon aws ec2 client <https://github.com/aws/aws-cli>.
 BREW_ADD="$BREW_ADD axel" # download client a-la curl/wget
@@ -199,15 +200,16 @@ APTO_ADD="$APTO_ADD curl"
 APTO_ADD="$APTO_ADD file"
 APTO_ADD="$APTO_ADD procps" # /proc file system utilities
 
+# AppImage
+# <https://github.com/appimage/appimagekit>.
+# APPI_ADD="$APPI_ADD am" # annoying root requirement # appimage application manager <https://github.com/ivan-hc/am-application-manager> that <https://github.com/ivan-hc/appman> is based on
+APPI_ADD="$APPI_ADD zsync2" # partial re-downloader a-la rsync/wget/curl <https://github.com/appimagecommunity/zsync2>
+APTO_ADD="$APTO_ADD libfuse2" # <https://docs.appimage.org/user-guide/troubleshooting/fuse.html>
+
 # Flatpak <https://github.com/flatpak/flatpak>.
 APTO_ADD="$APTO_ADD flatpak" # PMS
 APTO_ADD="$APTO_ADD gnome-software-plugin-flatpak" # Flatpak support for GNOME software
 FLAT_ADD="$FLAT_ADD com.github.tchx84.Flatseal" # Is a GUI permissions manager which offers simple point-and-click permissions operations.
-
-# AppImage
-# <https://github.com/appimage/appimagekit>.
-# APPI_ADD="$APPI_ADD am" # annoying root requirement # appimage application manager <https://github.com/ivan-hc/am-application-manager> that <https://github.com/ivan-hc/appman> is based on
-
 
 # # Basher is a bash/shell/functions package manager
 # # <https://github.com/basherpm/basher>.
@@ -287,7 +289,7 @@ BREW_ADD="$BREW_ADD nginx" # web/http server a-la apache # APTO_ADD="$APTO_ADD n
 # APTO_ADD="$APTO_ADD pgcenter" # postgresql command-line tool https://github.com/lesovsky/pgcenter/releases install: dpkg --install path/to/pgcenter.deb
 # APTO_ADD="$APTO_ADD postgresql-14" # APTO_DIS="$APTO_DIS postgresql" # `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
 # APTO_ADD="$APTO_ADD postgresql-server-dev-14" # required by pg_activity is an postgresql activity monitoring <https://github.com/dalibo/pg_activity>
-BREW_ADD="$BREW_ADD postgresql"
+BREW_ADD="$BREW_ADD postgresql@14"
 
 # MySQL Vitess.
 # BREW_ADD="$BREW_ADD mysql" # rdbms
@@ -392,8 +394,9 @@ APTO_ADD="$APTO_ADD xcalib" # `xcalib -i -a` invert colors on xorg/xrandr <https
 APTO_ADD="$APTO_ADD libdbus-1-dev libnotify-dev libxrandr-dev libpango1.0-dev libx11-dev libxinerama-dev libxss-dev libglib2.0-dev libgtk-3-dev libxdg-basedir-dev" # compiltime dependency <https://github.com/dunst-project/dunst/wiki/Dependencies>
 
 # X11 xchainkeys <https://github.com/hbekel/xchainkeys>.
-APTO_ADD="$APTO_ADD light" # xchainkeys runtime dependency
 APTO_ADD="$APTO_ADD automake" # xchainkeys compiltime dependency
+APTO_ADD="$APTO_ADD light" # xchainkeys runtime dependency
+APTO_ADD="$APTO_ADD wmctrl" # used by xchainkeys
 
 # # X11 sxhkd.
 # # APTO_ADD="$APTO_ADD sxhkd" # a-la xchainkeys
@@ -408,35 +411,38 @@ APTO_ADD="$APTO_ADD volumeicon-alsa"
 # X11 Xfce4 DE Desktop Environment.
 # APPI_ADD="$APPI_ADD conky" # removed due to extra configuration # system monitoring <https://github.com/brndnmtthws/conky>
 # APTO_ADD="$APTO_ADD libxfce4panel-2.0-dev libxfce4ui-2-dev" # compiltime dependency of text plugin <https://github.com/daveriesz/xfce-text-plugin>
-# APTO_ADD="$APTO_ADD orage" # xfce date time plugin with calendar
 # APTO_ADD="$APTO_ADD thunar-megasync" # not using
 # APTO_ADD="$APTO_ADD xfce4-notifyd" # notifications daemon (used by dwm)
 # APTO_ADD="$APTO_ADD xfdashboard" # instead installing skippy-xd
 APTO_ADD="$APTO_ADD elementary-icon-theme"
 APTO_ADD="$APTO_ADD elementary-xfce-icon-theme"
 APTO_ADD="$APTO_ADD mousepad" # simple text editor for xfce <https://github.com/codebrainz/mousepad>
+APTO_ADD="$APTO_ADD orage" # xfce date time panel plugin with calendar
 APTO_ADD="$APTO_ADD thunar" # file manager
 APTO_ADD="$APTO_ADD thunar-archive-plugin"
 APTO_ADD="$APTO_ADD thunar-dropbox-plugin"
 APTO_ADD="$APTO_ADD thunar-volman"
 APTO_ADD="$APTO_ADD xfce4"
-APTO_ADD="$APTO_ADD xfce4-datetime-plugin" # a-la clock plugin
-APTO_ADD="$APTO_ADD xfce4-diskperf-plugin" # disk io performance
+APTO_ADD="$APTO_ADD xfce4-datetime-plugin" # a-la clock panel plugin
+APTO_ADD="$APTO_ADD xfce4-diskperf-plugin" # disk io performance panel plugin
+APTO_ADD="$APTO_ADD xfce4-genmon-plugin" # script-based monitoring pluging a-la la/load average and temperature
 APTO_ADD="$APTO_ADD xfce4-power-manager"
+APTO_ADD="$APTO_ADD xfce4-screensaver"
 APTO_ADD="$APTO_ADD xfce4-systemload-plugin" # system cpu/mem/net/swap load monitor
 APTO_ADD="$APTO_ADD xfce4-windowck-plugin" # put maximized window title on the panel <https://github.com/takinoy/xfce4-windowck-plugin>
 APTO_ADD="$APTO_ADD xfce4-xkb-plugin" # keyboard language switcher
 
 # X11 MATE DE Desktop Environment.
 # APTO_ADD="$APTO_ADD atril" # instead installed from snap # pdf viewer (remembers last page) for mate de (desktop environment) https://github.com/mate-desktop/atril
+# APTO_ADD="$APTO_ADD mate"
+# APTO_ADD="$APTO_ADD mate-notification-daemon"
+# APTO_ADD="$APTO_ADD mate-power-manager"
+# APTO_ADD="$APTO_ADD mate-screensaver"
+# APTO_ADD="$APTO_ADD mate-tweak"
 APTO_ADD="$APTO_ADD caja" # file manager <https://github.com/mate-desktop/caja>
 APTO_ADD="$APTO_ADD engrampa" # archiver
 APTO_ADD="$APTO_ADD evince-" # remove: pdf viewer remembers last page https://github.com/mate-desktop/atril
 APTO_ADD="$APTO_ADD ristretto" # command line image viewer
-
-# # X11 dropbox.
-# APTO_ADD="$APTO_ADD dropbox"
-# APTO_REM="$APTO_REM nautilus-dropbox" # conflicts with dropbox deb file
 
 # X11 Gnome Desktop Environment.
 # APTO_ADD="$APTO_ADD chrome-gnome-shell" # chrome/gnome extension integration
@@ -467,6 +473,15 @@ FLAT_ADD="$FLAT_ADD com.github.fontmatrix.Fontmatrix" # <https://github.com/font
 FLAT_ADD="$FLAT_ADD io.github.mmstick.FontFinder" # <https://github.com/mmstick/fontfinder>
 FLAT_ADD="$FLAT_ADD org.gnome.FontManager" # <https://github.com/fontmanager/font-manager>
 
+# pCloud
+# <https://github.com/pcloud>.
+APTO_ADD="$APTO_ADD libfuse2"
+
+# # X11 Dropbox
+# # <https://github.com/dropbox>.
+# APTO_ADD="$APTO_ADD dropbox"
+# APTO_REM="$APTO_REM nautilus-dropbox" # conflicts with dropbox deb file
+
 # X11 Zoom video group chat
 # <https://en.wikipedia.org/wiki/Zoom_(software)>.
 # APTO_ADD="$APTO_ADD libegl1-mesa libfontconfig1 libgl1-mesa-glx libglib2.0-0 libgstreamer-plugins-base1.0-0 libpulse0 libsm6 libsqlite3-0 libxcb-image0 libxcb-keysyms1 libxcb-randr0 libxcb-shape0 libxcb-shm0 libxcb-xfixes0 libxcb-xtest0 libxcomposite1 libxi6 libxrender1 libxslt1.1" # Zoom dependencies.
@@ -485,23 +500,26 @@ APPI_ADD="$APPI_ADD telegram"
 APPI_ADD="$APPI_ADD mattermost-desktop"
 
 # X11/xorg/desktop.
-# BREW_ADD="$BREW_ADD duplicity" # APTO_ADD="$APTO_ADD duplicity" # backuping
 # APTO_ADD="$APTO_ADD fonts-fantasque-sans" # instead installed manually into /usr/local/share/fonts # terminal/code/mono/programming font (gnome-terminal issue https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=960629)
 # APTO_ADD="$APTO_ADD fonts-hack-ttf" # instead installed manually into /usr/local/share/fonts # terminal/code/mono/programming font
 # APTO_ADD="$APTO_ADD fonts-noto" # awesome serif font ???
 # APTO_ADD="$APTO_ADD libappindicator3-1" # slack dependency # libayatana-appindicator3-1 : Conflicts: libappindicator3-1 but 12.10.1+20.10.20200706.1-0ubuntu1 is to be installed
 # APTO_ADD="$APTO_ADD libgdk-pixbuf2.0-dev libglib2.0-dev libxml2-utils" # compiltime dependency of numix theme
+# APTO_ADD="$APTO_ADD mkusb usb-pack-efi" # use instead usb-creator-gtk # mkusb <https://help.ubuntu.com/community/mkusb#Installation> create bootable/live usb/iso <https://help.ubuntu.com/community/mkusb#Quick_start_manual_and_mkusb_PPA>
 # APTO_ADD="$APTO_ADD pk-update-icon" # FIXME: missing? # display notifications about software updates
 # APTO_ADD="$APTO_ADD uswsusp" # FIXME: missing? # systemctl hibernate
 # APTO_ADD="$APTO_ADD xcalib" # returns: "Error - unsupported ramp size 0" (load icc/icm display color profiles (only calibration curves) <https://wiki.archlinux.org/index.php/ICC_Profiles#xcalib>)
 # APTO_ADD="$APTO_ADD xclip" # tmux and xorg clipboard integration <https://github.com/tmux-plugins/tmux-yank#linux-requirements>
+# APTO_ADD="$APTO_ADD xscreensaver-data-extra"
+# APTO_ADD="$APTO_ADD xscreensaver-gl-extra"
 # APTO_REM="$APTO_REM xserver-xorg-video-intel" # instead of intel using modesetting <https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/1867668>
+# BREW_ADD="$BREW_ADD duplicity" # APTO_ADD="$APTO_ADD duplicity" # backuping
 APPI_ADD="$APPI_ADD flameshot" # FLAT_ADD="$FLAT_ADD org.flameshot.Flameshot" # screen shot util <https://github.com/flameshot-org/flameshot>
 APPI_ADD="$APPI_ADD gimp" # FLAT_ADD="$FLAT_ADD org.gimp.GIMP" # APTO_ADD="$APTO_ADD gimp" # raster graphics editor a-la photoshop <https://github.com/gnome/gimp>
+APPI_ADD="$APPI_ADD popsicle" # create bootable/live usb/iso a-la usb-creator-gtk
 APTO_ADD="$APTO_ADD argyll" # load icc/icm display color profiles <https://wiki.archlinux.org/index.php/ICC_Profiles#Argyll_CMS>
 APTO_ADD="$APTO_ADD blueman" # full featured bluetooth manager gui <https://wiki.archlinux.org/title/Blueman>, <https://wiki.archlinux.org/title/Bluetooth>
 APTO_ADD="$APTO_ADD gparted" # format/create partition/disk/usb
-APTO_ADD="$APTO_ADD libfuse2" # pcloud dependency
 APTO_ADD="$APTO_ADD libimlib2-dev libfontconfig1-dev libfreetype6-dev libx11-dev libxext-dev libxft-dev libxrender-dev zlib1g-dev libxinerama-dev libxcomposite-dev libxdamage-dev libxfixes-dev libxmu-dev" # skippy-xd is an full-screen task-switcher for X11 <https://github.com/richardgv/skippy-xd>
 APTO_ADD="$APTO_ADD libnotify-bin" # a-la notify-osd
 APTO_ADD="$APTO_ADD libx11-dev" # c/c++ compile/make x11 dependencies
@@ -510,12 +528,10 @@ APTO_ADD="$APTO_ADD lxappearance" # change/switch gtk2/gtk3 themes
 APTO_ADD="$APTO_ADD maim" # takes screenshots of desktop
 APTO_ADD="$APTO_ADD meld" # gnome diff (gtk)
 APTO_ADD="$APTO_ADD mesa-utils" # provides glxgears util for the 3d compositor testing
-APTO_ADD="$APTO_ADD mkusb usb-pack-efi" # mkusb <https://help.ubuntu.com/community/mkusb#Installation> create bootable/live usb/iso <https://help.ubuntu.com/community/mkusb#Quick_start_manual_and_mkusb_PPA>
 APTO_ADD="$APTO_ADD sassc libglib2.0-dev-bin" # dependencies of whitesur gtk theme <https://github.com/vinceliuice/whitesur-gtk-theme>, <https://github.com/vinceliuice/whitesur-icon-theme>.
 APTO_ADD="$APTO_ADD transmission" # torrent client # APTO_REM="$APTO_REM transmission-gtk"
 APTO_ADD="$APTO_ADD ubuntu-restricted-extras" # playing video in browser instead of download <https://askubuntu.com/questions/1122579/firefox-downloads-the-video-instead-of-playing-it#1122668>, <https://askubuntu.com/questions/56446/how-do-i-install-the-ubuntu-restricted-extras-package#56448>
-APTO_ADD="$APTO_ADD xscreensaver-data-extra"
-APTO_ADD="$APTO_ADD xscreensaver-gl-extra"
+APTO_ADD="$APTO_ADD usb-creator-gtk" # create bootable/live usb/iso a-la popsicle
 APTO_ADD="$APTO_ADD xserver-xorg-video-intel" # instead of modesetting using intel <https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/1867668>
 APTO_REM="$APTO_REM gnome-mahjongg" # classic eastern tile game for gnome
 APTO_REM="$APTO_REM remmina" # gtk+ remote desktop client
@@ -530,7 +546,7 @@ BREW_ADD="$BREW_ADD xdotool" # ???
 # BREW_ADD="$BREW_ADD openvpn" # APTO_ADD="$APTO_ADD openvpn" APTO_DIS="$APTO_DIS openvpn openvpn@client" # openvpn client <https://confluence.ozon.ru/pages/viewpage.action?spaceKey=CORPIT&title=OpenVPN+for+Linux>
 BREW_ADD="$BREW_ADD go@1.19"
 BREW_ADD="$BREW_ADD libxml2" # provides xmllint
-BREW_ADD="$BREW_ADD postgresql"
+BREW_ADD="$BREW_ADD postgresql@14"
 BREW_ADD="$BREW_ADD redis"
 BREW_ADD="$BREW_ADD vault"
 APTO_ADD="$APTO_ADD libpcap-dev" # required by github.com/google/gopacket/pcap (go/src/github.com/google/gopacket/pcap/pcap_unix.go:34:10: fatal error: pcap.h: No such file or directory)

@@ -10,9 +10,10 @@
       <property name="length" type="uint" value="100"/>
       <property name="position-locked" type="bool" value="true"/>
       <property name="icon-size" type="uint" value="0"/>
-      <property name="size" type="uint" value="58"/>
+      <property name="size" type="uint" value="32"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="1"/>
+        <value type="int" value="29"/>
         <value type="int" value="4"/>
         <value type="int" value="3"/>
         <value type="int" value="2"/>
@@ -20,9 +21,6 @@
         <value type="int" value="18"/>
         <value type="int" value="17"/>
         <value type="int" value="20"/>
-        <value type="int" value="25"/>
-        <value type="int" value="27"/>
-        <value type="int" value="28"/>
         <value type="int" value="13"/>
         <value type="int" value="19"/>
         <value type="int" value="11"/>
@@ -52,7 +50,7 @@
       <property name="show-button-title" type="bool" value="false"/>
       <property name="small" type="bool" value="false"/>
       <property name="show-menu-icons" type="bool" value="true"/>
-      <property name="button-icon" type="string" value="org.xfce.panel.applicationsmenu"/>
+      <property name="button-icon" type="string" value="xfce4_xicon3"/>
     </property>
     <property name="plugin-3" type="string" value="separator">
       <property name="expand" type="bool" value="true"/>
@@ -132,7 +130,7 @@
     <property name="plugin-18" type="string" value="wckmenu-plugin"/>
     <property name="plugin-8" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="chromium.instance110468;chromium.instance16492;chromium.instance211057;chromium.instance22028;chromium.instance25855;chromium.instance266272;chromium.instance3067;chromium.instance3238;chromium.instance38339;chromium.instance45052;chromium.instance53752;chromium.instance5790;chromium.instance90392"/>
+      <property name="mpris-players" type="string" value="chromium.instance110468;chromium.instance16492;chromium.instance211057;chromium.instance22028;chromium.instance25855;chromium.instance266272;chromium.instance3067;chromium.instance3238;chromium.instance38339;chromium.instance3961;chromium.instance45052;chromium.instance53752;chromium.instance5790;chromium.instance7797;chromium.instance90392"/>
     </property>
     <property name="plugin-10" type="string" value="xkb">
       <property name="display-name" type="uint" value="0"/>
@@ -156,7 +154,7 @@
       </property>
       <property name="memory" type="empty">
         <property name="label" type="string" value=""/>
-        <property name="enabled" type="bool" value="false"/>
+        <property name="enabled" type="bool" value="true"/>
         <property name="color" type="array">
           <value type="double" value="0.50588235294117645"/>
           <value type="double" value="0.23921568627450981"/>
@@ -219,15 +217,12 @@
         <value type="string" value="16915104417.desktop"/>
       </property>
     </property>
-    <property name="plugin-25" type="string" value="separator">
-      <property name="style" type="uint" value="0"/>
-    </property>
     <property name="plugin-26" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
     </property>
     <property name="plugin-16" type="string" value="notification-plugin"/>
-    <property name="plugin-27" type="string" value="genmon"/>
-    <property name="plugin-28" type="string" value="separator">
+    <property name="plugin-29" type="string" value="separator">
+      <property name="expand" type="bool" value="false"/>
       <property name="style" type="uint" value="0"/>
     </property>
   </property>
