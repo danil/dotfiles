@@ -636,6 +636,7 @@ fi
 
 optcfg () {
     local dir="$1"
+    local usr="$2"
     git -C "$dir" rev-parse || exit 1
     if [ $(sudo git -C "$dir" status --porcelain | wc -l) = 0 ]; then
         printf "Already configured %s directory.\n" "$dir"
@@ -657,7 +658,7 @@ optcfg () {
                 while true; do
                     read -p "$str " yn
                     case $yn in
-                        [Yy]* ) sudo git -C "$dir" checkout "$file"; break;;
+                        [Yy]* ) sudo -u "$usr" git -C "$dir" checkout "$file"; break;;
                         [Nn]* ) break;;
                         * ) echo "Please answer yes or no.";;
                     esac
@@ -668,7 +669,7 @@ optcfg () {
                 while true; do
                     read -p "$str " yn
                     case $yn in
-                        [Yy]* ) sudo git -C "$dir" checkout "$file"; break;;
+                        [Yy]* ) sudo -u "$usr" git -C "$dir" checkout "$file"; break;;
                         [Nn]* ) break;;
                         * ) echo "Please answer yes or no.";;
                     esac
@@ -686,7 +687,7 @@ if [ -n "$OPT_HOME" ] && [ "$OPT_HOME" != " " ]; then
     OPT_DRY=-1
     sudo cat /dev/null || exit 1
     printf "Configuring %s directory...\n\n" "$OPT_HOME"
-    optcfg "$OPT_HOME"
+    optcfg "$OPT_HOME" $(basename "$OPT_HOME")
 fi
 
 # /etc of host-specific system-wide configuration
@@ -695,7 +696,7 @@ if [ "$OPT_ETCE" = 0 ] || [ "$OPT_ALL" = 0 ]; then
     OPT_DRY=-1
     sudo cat /dev/null || exit 1
     printf "Configuring /etc directory...\n\n"
-    optcfg "/etc"
+    optcfg "/etc" "root"
 fi
 
 # / root directory of host-specific system-wide configuration
@@ -704,7 +705,7 @@ if [ "$OPT_ROOT" = 0 ] || [ "$OPT_ALL" = 0 ]; then
     OPT_DRY=-1
     sudo cat /dev/null || exit 1
     printf "Configuring / root directory...\n\n"
-    optcfg "/"
+    optcfg "/" "root"
 fi
 
 # Dry run.
