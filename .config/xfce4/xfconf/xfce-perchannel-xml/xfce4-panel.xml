@@ -137,6 +137,7 @@
       <property name="display-name" type="uint" value="0"/>
       <property name="display-type" type="uint" value="0"/>
       <property name="display-tooltip-icon" type="bool" value="true"/>
+      <property name="show-notifications" type="bool" value="false"/>
     </property>
     <property name="plugin-13" type="string" value="systemload">
       <property name="timeout" type="uint" value="1000"/>
