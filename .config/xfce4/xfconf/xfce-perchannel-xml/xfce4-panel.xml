@@ -133,7 +133,7 @@
     <property name="plugin-18" type="string" value="wckmenu-plugin"/>
     <property name="plugin-8" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="chromium.instance110468;chromium.instance16492;chromium.instance211057;chromium.instance22028;chromium.instance25855;chromium.instance266272;chromium.instance3067;chromium.instance3238;chromium.instance38339;chromium.instance38921;chromium.instance3961;chromium.instance45052;chromium.instance4768;chromium.instance53752;chromium.instance5790;chromium.instance90392"/>
+      <property name="mpris-players" type="string" value="chromium.instance110468;chromium.instance16492;chromium.instance211057;chromium.instance22028;chromium.instance25855;chromium.instance266272;chromium.instance3067;chromium.instance3238;chromium.instance38339;chromium.instance38921;chromium.instance3961;chromium.instance3983;chromium.instance45052;chromium.instance4768;chromium.instance53752;chromium.instance5790;chromium.instance90392"/>
     </property>
     <property name="plugin-10" type="string" value="xkb">
       <property name="display-name" type="uint" value="0"/>
