@@ -2,7 +2,7 @@
 
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-USAGE="usage: ${CMD:=${0##*/}} [--apt] [--brew] [--update] [--etc] [--root] [--home]"
+USAGE="usage: ${CMD:=${0##*/}} [--apt] [--homebrew] [--update] [--etc] [--root] [--home]"
 
 # APT (deb/dpkg/apt-get/aptitude)
 # <https://en.wikipedia.org/wiki/APT_(software)>.
@@ -45,7 +45,7 @@ while [ "$1" != "$EOL" ]; do
 
     case "$opt" in
         --apt          ) OPT_DPKG=0; OPT_ALL=-1;;
-        --brew         ) OPT_BREW=0; OPT_ALL=-1;;
+        --homebrew     ) OPT_BREW=0; OPT_ALL=-1;;
         --appimage     ) OPT_APPI=0; OPT_ALL=-1;;
         --flatpak      ) OPT_FLAT=0; OPT_ALL=-1;;
         --rust         ) OPT_RUST=0; OPT_ALL=-1;;
