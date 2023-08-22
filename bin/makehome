@@ -690,7 +690,6 @@ if [ -n "$OPT_HOME" ] && [ "$OPT_HOME" != " " ]; then
     OPT_DRY=-1
     sudo cat /dev/null || exit 1
     printf "Configuring %s directory...\n\n" "$OPT_HOME"
-
 fi
 
 # /etc of host-specific system-wide configuration
