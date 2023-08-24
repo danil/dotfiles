@@ -3,6 +3,7 @@ application/vnd.debian.binary-package=snap-store_ubuntu-software-local-file.desk
 x-scheme-handler/tg=org.telegram.desktop._288e7f609a7d599e01eab790c46dc4fc.desktop;
 x-scheme-handler/http=xfce4-web-browser.desktop;
 x-scheme-handler/https=xfce4-web-browser.desktop;
+application/x-compressed-tar=engrampa.desktop;
 
 [Default Applications]
 x-scheme-handler/http=yandex-browser.desktop
@@ -11,4 +12,4 @@ x-scheme-handler/about=yandex-browser.desktop
 x-scheme-handler/unknown=yandex-browser.desktop
 text/html=yandex-browser.desktop
 x-scheme-handler/tg=org.telegram.desktop._288e7f609a7d599e01eab790c46dc4fc.desktop
-
+application/x-compressed-tar=engrampa.desktop

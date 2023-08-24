@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
 function osd_progress_bar {

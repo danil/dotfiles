@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 # Pront current viewport number
 # <http://superuser.com/questions/264281/wmctrl-says-i-have-one-workspace-when-i-actually-have-four#answer-264502>.
 dimensions=$(xdpyinfo | awk '$1=="dimensions:"{print $2}')

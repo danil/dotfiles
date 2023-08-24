@@ -44,7 +44,7 @@ while [ "$1" != "$EOL" ]; do
     opt="$1"; shift
 
     case "$opt" in
-        --apt          ) OPT_DPKG=0; OPT_ALL=-1;;
+        --apt          ) OPT_APTO=0; OPT_ALL=-1;;
         --brew         ) OPT_BREW=0; OPT_ALL=-1;;
         --appimage     ) OPT_APPI=0; OPT_ALL=-1;;
         --flatpak      ) OPT_FLAT=0; OPT_ALL=-1;;
@@ -434,6 +434,7 @@ APTO_ADD="$APTO_ADD xfce4-power-manager"
 APTO_ADD="$APTO_ADD xfce4-screensaver"
 APTO_ADD="$APTO_ADD xfce4-sensors-plugin" # cpu temperate for panel plugin?
 APTO_ADD="$APTO_ADD xfce4-systemload-plugin" # system cpu/mem/net/swap load monitor
+APTO_ADD="$APTO_ADD xfce4-taskmanager"
 APTO_ADD="$APTO_ADD xfce4-windowck-plugin" # put maximized window title on the panel <https://github.com/takinoy/xfce4-windowck-plugin>
 APTO_ADD="$APTO_ADD xfce4-xkb-plugin" # keyboard language switcher
 
@@ -464,7 +465,22 @@ APPI_ADD="$APPI_ADD google-chrome" # FLAT_ADD="$FLAT_ADD com.google.Chrome" # AP
 
 # X11 Firefox browser
 # <https://mozilla.org/firefox>.
-APPI_ADD="$APPI_ADD firefox" # FLAT_ADD="$FLAT_ADD org.mozilla.firefox" # SNAP_ADD="$SNAP_ADD firefox" # APTO_ADD="$APTO_ADD firefox"
+# APTO_ADD="$APTO_ADD firefox"
+# FLAT_ADD="$FLAT_ADD org.mozilla.firefox"
+# SNAP_ADD="$SNAP_ADD firefox"
+APPI_ADD="$APPI_ADD firefox"
+APTO_REM="$APTO_REM firefox"
+
+# X11 Mailspring is a GUI mail client written in C/C++
+# <https://github.com/foundry376/mailspring>.
+# SNAP_ADD="$SNAP_ADD mailspring"
+APTO_REM="$APTO_REM thunderbird"
+APTO_REM="$APTO_REM thunderbird-gnome-support"
+APTO_REM="$APTO_REM thunderbird-locale-en"
+APTO_REM="$APTO_REM thunderbird-locale-en-gb"
+APTO_REM="$APTO_REM thunderbird-locale-en-us"
+APTO_REM="$APTO_REM thunderbird-locale-ru"
+APTO_REM="$APTO_REM thunderbird-locale-zh-hant"
 
 # # X11 never used Brave browser a-la google chrome <https://github.com/brave>.
 # APTO_ADD="$APTO_ADD apt-transport-https"
@@ -531,6 +547,7 @@ APTO_ADD="$APTO_ADD lxappearance" # change/switch gtk2/gtk3 themes
 APTO_ADD="$APTO_ADD maim" # takes screenshots of desktop
 APTO_ADD="$APTO_ADD meld" # gnome diff (gtk)
 APTO_ADD="$APTO_ADD mesa-utils" # provides glxgears util for the 3d compositor testing
+APTO_ADD="$APTO_ADD qt5ct" # setting up qt dark theme by `QT_QPA_PLATFORMTHEME=qt5ct` environment variable
 APTO_ADD="$APTO_ADD sassc libglib2.0-dev-bin" # dependencies of whitesur gtk theme <https://github.com/vinceliuice/whitesur-gtk-theme>, <https://github.com/vinceliuice/whitesur-icon-theme>.
 APTO_ADD="$APTO_ADD transmission" # torrent client # APTO_REM="$APTO_REM transmission-gtk"
 APTO_ADD="$APTO_ADD ubuntu-restricted-extras" # playing video in browser instead of download <https://askubuntu.com/questions/1122579/firefox-downloads-the-video-instead-of-playing-it#1122668>, <https://askubuntu.com/questions/56446/how-do-i-install-the-ubuntu-restricted-extras-package#56448>
@@ -540,7 +557,6 @@ APTO_ADD="$APTO_ADD xscreensaver-gl-extra"
 APTO_ADD="$APTO_ADD xserver-xorg-video-intel" # instead of modesetting using intel <https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/1867668>
 APTO_REM="$APTO_REM gnome-mahjongg" # classic eastern tile game for gnome
 APTO_REM="$APTO_REM remmina" # gtk+ remote desktop client
-APTO_REM="$APTO_REM thunderbird thunderbird-gnome-support thunderbird-locale-en thunderbird-locale-en-gb thunderbird-locale-en-us thunderbird-locale-ru" # instead installed mailspring from snap # GUI mail client written in C/C++
 BREW_ADD="$BREW_ADD feh" # APTO_ADD="$APTO_ADD feh" # command line image viewer
 BREW_ADD="$BREW_ADD ffmpeg" # watch webcam `ffplay -fs /dev/video0` https://github.com/ffmpeg/ffmpeg
 BREW_ADD="$BREW_ADD marp-cli" # markdown to presentation (pdf) from command line https://github.com/marp-team/marp
@@ -582,12 +598,12 @@ if [ "$OPT_VERBOSE" = 0 ] ; then
     RUST_ADD_CLI="$RUST_ADD_CLI --verbose"
 fi
 
-# APT/deb/dpkg/apt-get/aptitude
+# Advanced package tool (APT/deb/dpkg/apt-get/aptitude)
 # <https://en.wikipedia.org/wiki/APT_(software)>.
-if [ "$OPT_DPKG" = 0 ] || [ "$OPT_ALL" = 0 ]; then
+if [ "$OPT_APTO" = 0 ] || [ "$OPT_ALL" = 0 ]; then
     OPT_DRY=-1
     sudo cat /dev/null || exit 1
-    printf "Installing dpkg packages...\n\n"
+    printf "Installing APT packages...\n\n"
     sh -c "sudo $APTO_REM_CLI $APTO_REM" || exit 1
     sh -c "sudo $APTO_ADD_CLI $APTO_ADD" || exit 1
     # sh -c "sudo $APTO_DIS_CLI $APTO_DIS" || exit 1

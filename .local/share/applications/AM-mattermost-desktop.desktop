@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Mattermost
-Exec=mattermost-desktop   %U
+Exec=/home/danil/.local/bin/mattermost-desktop   %U
 Terminal=false
 Type=Application
 Icon=/home/danil/.local/lib/appman/mattermost-desktop/icons/mattermost-desktop

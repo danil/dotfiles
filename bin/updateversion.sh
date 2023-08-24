@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
 oldversion="$(git describe --abbrev=0 --tags 2>/dev/null)"

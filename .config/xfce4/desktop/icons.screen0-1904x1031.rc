@@ -1,12 +1,20 @@
 [xfdesktop-version-4.10.3+-rcfile_format]
 4.10.3+=true
 
-[b968a460-d936-48b3-bfcb-731e64258c65]
-row=4
+[/home/danil/Desktop/xfce4-terminal-emulator.desktop]
+row=5
 col=0
 
-[AF5D-7B9A]
+[/home/danil/Desktop/xfce-settings-manager.desktop]
 row=3
+col=0
+
+[/home/danil/Desktop/xfce4-web-browser.desktop]
+row=6
+col=0
+
+[/home/danil/Desktop/xfce4-appfinder.desktop]
+row=4
 col=0
 
 [Trash]

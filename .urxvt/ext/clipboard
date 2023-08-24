@@ -1,4 +1,4 @@
-#! /usr/bin/perl
+#!/usr/bin/perl
 
 sub on_sel_grab {
     my $query = quotemeta $_[0]->selection;

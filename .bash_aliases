@@ -184,6 +184,12 @@ if [ -f "$HOME"/yandex-cloud/completion.bash.inc ]; then . "$HOME"/yandex-cloud/
 # export MESA_LOADER_DRIVER_OVERRIDE=iris
 # export LIBGL_DRI3_DISABLE=1
 
+# Qt
+# <https://wiki.archlinux.org/title/qt>,
+# <https://wiki.archlinux.org/title/Uniform_look_for_Qt_and_GTK_applications>.
+# QT_STYLE_OVERRIDE
+export QT_QPA_PLATFORMTHEME=qt5ct
+
 # Qt <https://wiki.archlinux.org/title/HiDPI#Qt_5>.
 # export QT_SCALE_FACTOR=1
 # export QT_SCREEN_SCALE_FACTORS=1

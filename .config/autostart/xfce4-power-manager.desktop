@@ -8,4 +8,5 @@ StartupNotify=false
 Terminal=false
 Type=Application
 X-GNOME-Autostart-enabled=false
-Hidden=true
+Hidden=false
+

@@ -105,14 +105,15 @@ Comment[vi]=Truy cập Internet
 Comment[zh_CN]=访问互联网
 Comment[zh_HK]=連線到網際網路
 Comment[zh_TW]=連線到網際網路
-Exec=/home/danil/.local/bin/google-chrome
+Exec=/home/danil/.local/bin/google-chrome %U
 StartupNotify=true
 Terminal=false
-Icon=/home/danil/.local/lib/appman/google-chrome/product_logo_256.png
+Icon=/home/danil/.local/lib/appman/google-chrome/icons/google-chrome
 Type=Application
 Categories=Network;WebBrowser;
 MimeType=application/pdf;application/rdf+xml;application/rss+xml;application/xhtml+xml;application/xhtml_xml;application/xml;image/gif;image/jpeg;image/png;image/webp;text/html;text/xml;x-scheme-handler/http;x-scheme-handler/https;
 Actions=new-window;new-private-window;
+
 [Desktop Action new-window]
 Name=New Window
 Name[am]=አዲስ መስኮት
@@ -165,11 +166,12 @@ Name[uk]=Нове вікно
 Name[vi]=Cửa sổ Mới
 Name[zh_CN]=新建窗口
 Name[zh_TW]=開新視窗
-Exec=/opt/bin/google-chrome
+Exec=/home/danil/.local/bin/google-chrome
+
 [Desktop Action new-private-window]
 Name=New Incognito Window
 Name[ar]=نافذة جديدة للتصفح المتخفي
-Name[bg]=Нов прозорец „инкогнито
+Name[bg]=Нов прозорец „инкогнито“
 Name[bn]=নতুন ছদ্মবেশী উইন্ডো
 Name[ca]=Finestra d'incògnit nova
 Name[cs]=Nové anonymní okno
