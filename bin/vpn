@@ -45,8 +45,8 @@ elif [ "$OPT_RECONNECT" = 'true' ]; then
     globalprotect rediscover-network || exit 1
 
 elif [ "$OPT_CONNECT" = 'true' ]; then
-    # globalprotect connect --portal vpn.bank.ozon.ru || exit 1
-    globalprotect connect --portal vpn.ecom-bank.ozon.ru || exit 1
+    globalprotect connect --portal vpn.bank.ozon.ru || exit 1
+    # globalprotect connect --portal vpn.ecom-bank.ozon.ru || exit 1
 
 elif [ "$OPT_STATUS" != 'true' ]; then
     opthelp && exit 0 || exit 1
