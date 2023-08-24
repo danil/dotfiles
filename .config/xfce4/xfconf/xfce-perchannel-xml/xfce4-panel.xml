@@ -69,6 +69,7 @@
         <value type="string" value="ibus panel"/>
       </property>
       <property name="known-items" type="array">
+        <value type="string" value="chrome_status_icon_1"/>
         <value type="string" value="pcloud1"/>
         <value type="string" value="blueman"/>
         <value type="string" value="software-update-available"/>
