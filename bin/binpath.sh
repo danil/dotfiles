@@ -8,3 +8,4 @@ BASEDIR=$(cd "$BASEDIR"; pwd)
 
 HOMEBINDIR="$BASEDIR"
 LOCALBINDIR="$BASEDIR"/../.local/bin
+APPIMAGEDIR="$BASEDIR"/../Applications

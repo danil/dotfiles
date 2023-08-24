@@ -1,6 +1,5 @@
 #!/bin/sh
 
-. bin.sh
+. binpath.sh
 
-# zsync2-x86_64.AppImage "$@"
-zsync2
+"$APPIMAGEDIR"/zsync2-x86_64.AppImage "$@"

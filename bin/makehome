@@ -18,7 +18,7 @@ BREW_ADD_CLI="brew install"
 
 # AppImage
 # <https://github.com/appimage/appimagekit>.
-APPI_ADD_CLI="appman -i"
+APPM_ADD_CLI="appman -i"
 
 # Flatpak
 # <https://github.com/flatpak/flatpak>.
@@ -46,7 +46,7 @@ while [ "$1" != "$EOL" ]; do
     case "$opt" in
         --apt          ) OPT_APTO=0; OPT_ALL=-1;;
         --brew         ) OPT_BREW=0; OPT_ALL=-1;;
-        --appimage     ) OPT_APPI=0; OPT_ALL=-1;;
+        --appimage     ) OPT_APPM=0; OPT_ALL=-1;;
         --flatpak      ) OPT_FLAT=0; OPT_ALL=-1;;
         --rust         ) OPT_RUST=0; OPT_ALL=-1;;
         --home         ) optcheck "$1" "$opt"; OPT_HOME="$1"; OPT_ALL=-1;;
@@ -170,7 +170,7 @@ APTO_ADD="$APTO_ADD xterm" # backup/fallback terminal additional to the st/stter
 BREW_ADD="$BREW_ADD fish" # fish shell a-la bash
 BREW_ADD="$BREW_ADD nushell" # <https://github.com/nushell/nushell>
 BREW_ADD="$BREW_ADD tmux" # terminal multiplexer a-la gnu screen # APTO_ADD="$APTO_ADD pkg-config libevent-dev libncurses-dev" # os wide/from source compiltime dependency # APTO_ADD="$APTO_ADD byacc" # also byacc: preventing compiltime dependency error: ./etc/ylwrap: line 175: yacc: command not found
-BREW_ADD="$BREW_ADD wezterm" BREW_ADD_SRC="$BREW_ADD_SRC wez/wezterm-linuxbrew" # APPI_ADD="$APPI_ADD wezterm" # gpu-accelerated cross-platform terminal and multiplexer written in rust <https://github.com/wez/wezterm>
+BREW_ADD="$BREW_ADD wezterm" BREW_ADD_SRC="$BREW_ADD_SRC wez/wezterm-linuxbrew" # APPM_ADD="$APPM_ADD wezterm" # gpu-accelerated cross-platform terminal and multiplexer written in rust <https://github.com/wez/wezterm>
 BREW_ADD="$BREW_ADD xsel" # APTO_ADD="$APTO_ADD xsel" # copy selection in termina to the xorg clipboard (used by emacs and urxvt) <https://wiki.archlinux.org/index.php/rxvt-unicode#Automatic_Script_Management>
 RUST_ADD="$RUST_ADD alacritty" # terminal/console emulator a-la st/xterm https://github.com/alacritty/alacritty
 
@@ -203,8 +203,8 @@ APTO_ADD="$APTO_ADD procps" # /proc file system utilities
 
 # AppImage
 # <https://github.com/appimage/appimagekit>.
-# APPI_ADD="$APPI_ADD am" # annoying root requirement # appimage application manager <https://github.com/ivan-hc/am-application-manager> that <https://github.com/ivan-hc/appman> is based on
-APPI_ADD="$APPI_ADD zsync2" # partial re-downloader a-la rsync/wget/curl <https://github.com/appimagecommunity/zsync2>
+# APPM_ADD="$APPM_ADD am" # annoying root requirement # appimage application manager <https://github.com/ivan-hc/am-application-manager> that <https://github.com/ivan-hc/appman> is based on
+APPM_ADD="$APPM_ADD zsync2" # partial re-downloader a-la rsync/wget/curl <https://github.com/appimagecommunity/zsync2>
 APTO_ADD="$APTO_ADD libfuse2" # <https://docs.appimage.org/user-guide/troubleshooting/fuse.html>
 
 # Flatpak <https://github.com/flatpak/flatpak>.
@@ -411,7 +411,7 @@ APTO_ADD="$APTO_ADD wmctrl" # used by xchainkeys
 APTO_ADD="$APTO_ADD volumeicon-alsa"
 
 # X11 Xfce4 DE Desktop Environment.
-# APPI_ADD="$APPI_ADD conky" # removed due to extra configuration # system monitoring <https://github.com/brndnmtthws/conky>
+# APPM_ADD="$APPM_ADD conky" # removed due to extra configuration # system monitoring <https://github.com/brndnmtthws/conky>
 # APTO_ADD="$APTO_ADD libxfce4panel-2.0-dev libxfce4ui-2-dev" # compiltime dependency of text plugin <https://github.com/daveriesz/xfce-text-plugin>
 # APTO_ADD="$APTO_ADD thunar-megasync" # not using
 # APTO_ADD="$APTO_ADD xfce4-notifyd" # notifications daemon (used by dwm)
@@ -461,14 +461,14 @@ APTO_ADD="$APTO_ADD gnome-tweaks" # former gnome-tweak-tool (in addition to gnom
 
 # X11 Google chrome browser
 # <https://google.com/chrome>.
-APPI_ADD="$APPI_ADD google-chrome" # FLAT_ADD="$FLAT_ADD com.google.Chrome" # APTO_ADD="$APTO_ADD google-chrome-stable" APTO_ADD="$APTO_ADD apt-transport-https"
+APPM_ADD="$APPM_ADD google-chrome" # FLAT_ADD="$FLAT_ADD com.google.Chrome" # APTO_ADD="$APTO_ADD google-chrome-stable" APTO_ADD="$APTO_ADD apt-transport-https"
 
 # X11 Firefox browser
 # <https://mozilla.org/firefox>.
 # APTO_ADD="$APTO_ADD firefox"
 # FLAT_ADD="$FLAT_ADD org.mozilla.firefox"
 # SNAP_ADD="$SNAP_ADD firefox"
-APPI_ADD="$APPI_ADD firefox"
+APPM_ADD="$APPM_ADD firefox"
 APTO_REM="$APTO_REM firefox"
 
 # X11 Mailspring is a GUI mail client written in C/C++
@@ -496,6 +496,7 @@ FLAT_ADD="$FLAT_ADD org.gnome.FontManager" # <https://github.com/fontmanager/fon
 
 # pCloud
 # <https://github.com/pcloud>.
+# APPL_ADD="$APPL_ADD ~/Applications/pcloud-x86_64_3a9066375d1af32211a2fa8a5ed4793b.AppImage"
 APTO_ADD="$APTO_ADD libfuse2"
 
 # # X11 Dropbox
@@ -507,18 +508,18 @@ APTO_ADD="$APTO_ADD libfuse2"
 # <https://en.wikipedia.org/wiki/Zoom_(software)>.
 # APTO_ADD="$APTO_ADD libegl1-mesa libfontconfig1 libgl1-mesa-glx libglib2.0-0 libgstreamer-plugins-base1.0-0 libpulse0 libsm6 libsqlite3-0 libxcb-image0 libxcb-keysyms1 libxcb-randr0 libxcb-shape0 libxcb-shm0 libxcb-xfixes0 libxcb-xtest0 libxcomposite1 libxi6 libxrender1 libxslt1.1" # Zoom dependencies.
 # FLAT_ADD="$FLAT_ADD us.zoom.Zoom"
-APPI_ADD="$APPI_ADD zoom"
+APPM_ADD="$APPM_ADD zoom"
 
 # X11 Skype video group chat.
 # FLAT_ADD="$FLAT_ADD com.skype.Client"
-APPI_ADD="$APPI_ADD skype"
+APPM_ADD="$APPM_ADD skype"
 
 # X11 Telegram text group chat.
-APPI_ADD="$APPI_ADD telegram"
+APPM_ADD="$APPM_ADD telegram"
 
 # X11 mattermost text group chat a-la slack.
 # FLAT_ADD="$FLAT_ADD com.mattermost.Desktop"
-APPI_ADD="$APPI_ADD mattermost-desktop"
+APPM_ADD="$APPM_ADD mattermost-desktop"
 
 # X11/xorg/desktop.
 # APTO_ADD="$APTO_ADD fonts-fantasque-sans" # instead installed manually into /usr/local/share/fonts # terminal/code/mono/programming font (gnome-terminal issue https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=960629)
@@ -533,9 +534,9 @@ APPI_ADD="$APPI_ADD mattermost-desktop"
 # APTO_ADD="$APTO_ADD xclip" # tmux and xorg clipboard integration <https://github.com/tmux-plugins/tmux-yank#linux-requirements>
 # APTO_REM="$APTO_REM xserver-xorg-video-intel" # instead of intel using modesetting <https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/1867668>
 # BREW_ADD="$BREW_ADD duplicity" # APTO_ADD="$APTO_ADD duplicity" # backuping
-APPI_ADD="$APPI_ADD flameshot" # FLAT_ADD="$FLAT_ADD org.flameshot.Flameshot" # screen shot util <https://github.com/flameshot-org/flameshot>
-APPI_ADD="$APPI_ADD gimp" # FLAT_ADD="$FLAT_ADD org.gimp.GIMP" # APTO_ADD="$APTO_ADD gimp" # raster graphics editor a-la photoshop <https://github.com/gnome/gimp>
-APPI_ADD="$APPI_ADD popsicle" # create bootable/live usb/iso a-la usb-creator-gtk
+APPM_ADD="$APPM_ADD flameshot" # FLAT_ADD="$FLAT_ADD org.flameshot.Flameshot" # screen shot util <https://github.com/flameshot-org/flameshot>
+APPM_ADD="$APPM_ADD gimp" # FLAT_ADD="$FLAT_ADD org.gimp.GIMP" # APTO_ADD="$APTO_ADD gimp" # raster graphics editor a-la photoshop <https://github.com/gnome/gimp>
+APPM_ADD="$APPM_ADD popsicle" # create bootable/live usb/iso a-la usb-creator-gtk
 APTO_ADD="$APTO_ADD argyll" # load icc/icm display color profiles <https://wiki.archlinux.org/index.php/ICC_Profiles#Argyll_CMS>
 APTO_ADD="$APTO_ADD blueman" # full featured bluetooth manager gui <https://wiki.archlinux.org/title/Blueman>, <https://wiki.archlinux.org/title/Bluetooth>
 APTO_ADD="$APTO_ADD gparted" # format/create partition/disk/usb
@@ -620,12 +621,23 @@ if [ "$OPT_BREW" = 0 ] || [ "$OPT_ALL" = 0 ]; then
     printf "\n"
 fi
 
-# AppImage
+# # AppImageLauncher install AppImages
+# # <https://github.com/theassassin/appimagelauncher>,
+# # <https://github.com/appimage/appimagekit>.
+# if [ "$OPT_APPL" = 0 ] || [ "$OPT_ALL" = 0 ]; then
+#     OPT_DRY=-1
+#     printf "Installing AppImageLauncher AppImage packages...\n\n"
+#     [ -n "$APPL_ADD" ] && [ "$APPL_ADD" != " " ] && sh -c "$APPL_ADD_CLI $APPL_ADD"
+#     printf "\n"
+# fi
+
+# AppMan install AppImages
+# <https://github.com/ivan-hc/appman>,
 # <https://github.com/appimage/appimagekit>.
-if [ "$OPT_APPI" = 0 ] || [ "$OPT_ALL" = 0 ]; then
+if [ "$OPT_APPM" = 0 ] || [ "$OPT_ALL" = 0 ]; then
     OPT_DRY=-1
-    printf "Installing AppImage packages...\n\n"
-    [ -n "$APPI_ADD" ] && [ "$APPI_ADD" != " " ] && sh -c "$APPI_ADD_CLI $APPI_ADD"
+    printf "Installing AppMan AppImage packages...\n\n"
+    [ -n "$APPM_ADD" ] && [ "$APPM_ADD" != " " ] && sh -c "$APPM_ADD_CLI $APPM_ADD"
     printf "\n"
 fi
 

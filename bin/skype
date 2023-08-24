@@ -1,5 +1,5 @@
 #!/bin/sh
 
-. bin.sh
+. binpath.sh
 
 "$LOCALBINDIR"/skypeforlinux "$@"
