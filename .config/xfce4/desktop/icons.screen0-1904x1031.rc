@@ -2,7 +2,7 @@
 4.10.3+=true
 
 [/home/danil/Desktop/xfce4-terminal-emulator.desktop]
-row=5
+row=6
 col=0
 
 [/home/danil/Desktop/xfce-settings-manager.desktop]
@@ -10,7 +10,7 @@ row=3
 col=0
 
 [/home/danil/Desktop/xfce4-web-browser.desktop]
-row=6
+row=5
 col=0
 
 [/home/danil/Desktop/xfce4-appfinder.desktop]
