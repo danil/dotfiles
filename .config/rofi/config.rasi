@@ -121,7 +121,7 @@ listview {
     border: 0px 3px 3px 3px;
     background-color: var(background);
     dynamic: false;
-    lines: 19;
+    lines: 20;
 }
 element {
     padding: 3px;
