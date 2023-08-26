@@ -86,11 +86,11 @@ mainbox {
     children: [ inputbar, message, listview ];
 }
 message {
-    border-color: @foreground;
-    border:  0px 2px 2px 2px;
+    border-color: @yellow;
+    border:  0px 3px 0px 3px;
 //    border-radius: 10px;
     padding: 5;
-    background-color: @tcyan;
+    background-color: @lightblack;
 }
 message {
     color: @black;

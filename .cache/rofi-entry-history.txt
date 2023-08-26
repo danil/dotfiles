@@ -1,4 +1,3 @@
-hell
 gim
 yan
 thu
@@ -17,3 +16,4 @@ gimp
 gimp
 vpn
 q
+yand
