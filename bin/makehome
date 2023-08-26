@@ -357,7 +357,6 @@ BREW_INS="$BREW_INS vault" # APTO_INS="$APTO_INS vault" # vault util (hashicorp)
 
 # # X11 Suckless dwm.
 # # APTO_INS="$APTO_INS gxkb" # a-la xxkb (destroy xchainkeys)
-# # APTO_INS="$APTO_INS rofi" # a-la dmenu for open windows
 # # APTO_INS="$APTO_INS xfdashboard" # a-la compiz expose/gnome overview (works only with running xfce session)
 # # APTO_INS="$APTO_INS stterm" # instead compiled from source into ~/.local/usr/local/bin # succless st terminal
 # # APTO_INS="$APTO_INS volumeicon-alsa" # instead using i3 (i3status) # sound/volume icon indicator <https://github.com/Maato/volumeicon>
@@ -373,7 +372,6 @@ BREW_INS="$BREW_INS vault" # APTO_INS="$APTO_INS vault" # vault util (hashicorp)
 # X11 i3.
 # APTO_INS="$APTO_INS i3status" # instead using i3blocks
 # APTO_INS="$APTO_INS libwnck-3-dev libxklavier-dev libgtk-3-dev dh-autoreconf dh-make devscripts fakeroot" # gxkb compiltime dependency, is a keyboard/language layout indicator (flag) for tray <https://github.com/zen-tools/gxkb#building-from-source>, a-la xxkb
-APTO_INS="$APTO_INS build-essential" # dmenu (suckless) dependency
 APTO_INS="$APTO_INS i3-wm"
 APTO_INS="$APTO_INS i3lock" # xscreensaver replacement
 APTO_INS="$APTO_INS libxcb-ewmh-dev libxcb-icccm4-dev libxcb-util0-dev" # xtitle (used by i3blocks/i3) compiltime dependency <https://github.com/baskerville/xtitle>
@@ -458,6 +456,16 @@ APTO_INS="$APTO_INS ristretto" # command line image viewer
 # APTO_INS="$APTO_INS gnome-shell-extension-ubuntu-dock-" # remove
 # APTO_INS="$APTO_INS ubuntu-desktop-" # remove
 APTO_INS="$APTO_INS gnome-tweaks" # former gnome-tweak-tool (in addition to gnome-control-center)
+
+# X11 dmenu
+# application launcher a-la rofi
+# <https://tools.suckless.org/dmenu>.
+APTO_INS="$APTO_INS build-essential" # dmenu (suckless) dependency
+
+# X11 Rofi
+# application launcher (a-la dmenu) also window switcher
+# <https://github.com/davatorium/rofi>.
+# # APTO_INS="$APTO_INS rofi" # a-la dmenu for open windows
 
 # X11 Google chrome browser
 # <https://google.com/chrome>.
