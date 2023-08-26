@@ -1,0 +1,201 @@
+// This file is part of Danil <danil@kutkevich.org> home.
+// Copyright: Danil Kutkevich, Dave Davenport.
+
+// Rofi.
+// application launcher (a-la dmenu) also window switcher
+// <https://github.com/davatorium/rofi>.
+
+// @theme "inline theme below"
+
+configuration {
+    font: "Sans 24";
+    show-icons: true;
+    cycle: false;
+    disable-history: false;
+}
+entry {
+    placeholder: false;
+    cursor:       text;
+    cursor-width: 16px ;
+    // cursor-color: @lightgreen;
+}
+* {
+    background: Black;
+    background-color: Black;
+    normal-background: var(background);
+    selected-urgent-background: rgba ( 255, 0, 0, 100 % );
+
+    foreground: #e5e5e5;
+    backlight: #ccffeedd;
+    background-color: transparent;
+    dark: #1c1c1c;
+    // Black
+    black:       #3d352a;
+    lightblack:  #554444;
+    tlightblack: #554444;
+    //
+    // Red
+    red:         #cd5c5c;
+    lightred:    #ff0000;
+    //
+    // Green
+    green:       #008F11;
+    lightgreen:  #00FF41;
+    //
+    // Yellow
+    yellow:      #ffa75d;
+    lightyellow: #ffff00;
+    //
+    // Blue
+    blue:      #6495ed;
+    lightblue: #87ceeb;
+    //
+    // Magenta
+    magenta:      #deb887;
+    lightmagenta: #996600;
+    //
+    // Cyan
+    cyan:      #b0c4de;
+    tcyan:      #ccb0c4de;
+    lightcyan: #b0c4de;
+    //
+    // White
+    white:      #bbaa99;
+    lightwhite: #ddccbb;
+    //
+    // Bold, Italic, Underline
+    highlight: underline bold #ffffff;
+
+    transparent: rgba(0, 0, 0, 0%);
+}
+window {
+    location: center;
+    anchor:   center;
+    // transparency: "real";
+    padding: 10px;
+    border:  0px;
+    border-radius: 10px;
+    color: @magenta;
+    background-color: @transparent;
+    spacing: 0;
+    children:  [mainbox];
+    orientation: horizontal;
+}
+mainbox {
+    spacing: 0;
+    children: [ inputbar, message, listview ];
+}
+message {
+    border-color: @foreground;
+    border:  0px 2px 2px 2px;
+//    border-radius: 10px;
+    padding: 5;
+    background-color: @tcyan;
+}
+message {
+    color: @black;
+}
+inputbar {
+    children:   [ "entry","num-filtered-rows","textbox-num-sep","num-rows","case-indicator" ];
+    color: @lightgreen;
+    padding: 11px;
+    background-color: var(background);
+    border: 3px 3px 0px 3px;
+    border-radius:  15px 15px 0px 0px;
+    border-color: @yellow;
+}
+entry,prompt,case-indicator {
+    text-font: inherit;
+    text-color:inherit;
+}
+prompt {
+    margin: 0px 0.3em 0em 0em ;
+}
+entry {
+    margin: 0em 0em 0em 1em ;
+}
+listview {
+    padding: 8px;
+    border-radius: 0px 0px 15px 15px;
+    border-color: @yellow;
+    border: 0px 3px 3px 3px;
+    background-color: var(background);
+    dynamic: false;
+    lines: 19;
+}
+element {
+    padding: 3px;
+    vertical-align: 0.5;
+//    border: 2px;
+    border-radius: 4px;
+    background-color: transparent;
+    color: @foreground;
+    font:inherit;
+}
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+}
+element selected.normal {
+    background-color: @blue;
+}
+element normal active {
+    foreground: @lightblue;
+}
+element normal urgent {
+    foreground: @lightred;
+}
+element alternate normal {
+    background-color: var(background);
+}
+element alternate active {
+    foreground: @lightblue;
+}
+element alternate urgent {
+    foreground: @lightred;
+}
+element selected active {
+    background-color: @lightblue;
+    foreground: @dark;
+}
+element selected urgent {
+    background-color: @lightred;
+    foreground: @dark;
+}
+element normal normal {
+}
+vertb {
+    expand: false;
+    children: [ dummy0, mode-switcher, dummy1  ];
+}
+dummy0,  dummy1 {
+    expand: true;
+}
+mode-switcher {
+    expand: false;
+    orientation: vertical;
+    spacing: 0px;
+    border: 0px 0px 0px 0px;
+}
+button {
+    padding: 6px;
+    border: 2px 0px 2px 2px;
+    border-radius: 4px 0px 0px 4px;
+    background-color: @tlightblack;
+    border-color: @foreground;
+    color: @foreground;
+    horizontal-align: 0.5;
+}
+button selected normal {
+    color: @dark;
+    border: 2px 0px 2px 2px;
+    background-color: @backlight;
+    border-color: @foreground;
+}
+error-message {
+    expand: true;
+    background-color: red;
+    border-color: darkred;
+    border: 2px;
+    padding: 1em;
+}

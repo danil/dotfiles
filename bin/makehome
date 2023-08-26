@@ -460,12 +460,30 @@ APTO_INS="$APTO_INS gnome-tweaks" # former gnome-tweak-tool (in addition to gnom
 # X11 dmenu
 # application launcher a-la rofi
 # <https://tools.suckless.org/dmenu>.
-APTO_INS="$APTO_INS build-essential" # dmenu (suckless) dependency
+APTO_INS="$APTO_INS build-essential"
 
 # X11 Rofi
 # application launcher (a-la dmenu) also window switcher
 # <https://github.com/davatorium/rofi>.
 # # APTO_INS="$APTO_INS rofi" # a-la dmenu for open windows
+APTO_INS="$APTO_INS build-essential automake bison check flex pkg-config" # compiltime dependency
+APTO_INS="$APTO_INS libcairo-dev"
+APTO_INS="$APTO_INS libgdk-pixbuf2.0-dev"
+APTO_INS="$APTO_INS libglib2.0-dev"
+APTO_INS="$APTO_INS libpango1.0-dev"
+APTO_INS="$APTO_INS libpangocairo-1.0-0"
+APTO_INS="$APTO_INS libstartup-notification0-dev"
+APTO_INS="$APTO_INS libxcb-cursor-dev"
+APTO_INS="$APTO_INS libxcb-ewmh-dev"
+APTO_INS="$APTO_INS libxcb-icccm4-dev"
+APTO_INS="$APTO_INS libxcb-imdkit-dev"
+APTO_INS="$APTO_INS libxcb-randr0-dev"
+APTO_INS="$APTO_INS libxcb-util0-dev"
+APTO_INS="$APTO_INS libxcb-xinerama0-dev"
+APTO_INS="$APTO_INS libxcb-xkb-dev"
+APTO_INS="$APTO_INS libxcb1-dev"
+APTO_INS="$APTO_INS libxkbcommon-dev"
+APTO_INS="$APTO_INS libxkbcommon-x11-dev"
 
 # X11 Google chrome browser
 # <https://google.com/chrome>.
