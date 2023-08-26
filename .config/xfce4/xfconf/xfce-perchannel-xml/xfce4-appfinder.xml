@@ -43,5 +43,7 @@
       <property name="save" type="bool" value="false"/>
     </property>
   </property>
-  <property name="remember-category" type="bool" value="true"/>
+  <property name="remember-category" type="bool" value="false"/>
+  <property name="sort-by-frecency" type="bool" value="true"/>
+  <property name="item-icon-size" type="uint" value="3"/>
 </channel>
