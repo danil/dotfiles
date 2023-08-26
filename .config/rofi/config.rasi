@@ -96,7 +96,7 @@ message {
     color: @black;
 }
 inputbar {
-    children:   [ "entry","num-filtered-rows","textbox-num-sep","num-rows","case-indicator" ];
+    children:   [ "prompt","entry","num-filtered-rows","textbox-num-sep","num-rows","case-indicator" ];
     color: @lightgreen;
     padding: 11px;
     background-color: var(background);
@@ -110,9 +110,6 @@ entry,prompt,case-indicator {
 }
 prompt {
     margin: 0px 0.3em 0em 0em ;
-}
-entry {
-    margin: 0em 0em 0em 1em ;
 }
 listview {
     padding: 8px;
