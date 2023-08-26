@@ -547,6 +547,13 @@ APPM_INS="$APPM_INS telegram"
 # FLAT_INS="$FLAT_INS com.mattermost.Desktop"
 APPM_INS="$APPM_INS mattermost-desktop"
 
+# X11 GIMP
+# raster graphics editor a-la photoshop
+# <https://github.com/gnome/gimp>.
+# APTO_INS="$APTO_INS gimp"
+# FLAT_INS="$FLAT_INS org.gimp.GIMP"
+APPM_INS="$APPM_INS gimp"
+
 # X11/xorg/desktop.
 # APTO_INS="$APTO_INS fonts-fantasque-sans" # instead installed manually into /usr/local/share/fonts # terminal/code/mono/programming font (gnome-terminal issue https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=960629)
 # APTO_INS="$APTO_INS fonts-hack-ttf" # instead installed manually into /usr/local/share/fonts # terminal/code/mono/programming font
@@ -561,7 +568,6 @@ APPM_INS="$APPM_INS mattermost-desktop"
 # APTO_UNI="$APTO_UNI xserver-xorg-video-intel" # instead of intel using modesetting <https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/1867668>
 # BREW_INS="$BREW_INS duplicity" # APTO_INS="$APTO_INS duplicity" # backuping
 APPM_INS="$APPM_INS flameshot" # FLAT_INS="$FLAT_INS org.flameshot.Flameshot" # screen shot util <https://github.com/flameshot-org/flameshot>
-APPM_INS="$APPM_INS gimp" # FLAT_INS="$FLAT_INS org.gimp.GIMP" # APTO_INS="$APTO_INS gimp" # raster graphics editor a-la photoshop <https://github.com/gnome/gimp>
 APPM_INS="$APPM_INS popsicle" # create bootable/live usb/iso a-la usb-creator-gtk
 APTO_INS="$APTO_INS argyll" # load icc/icm display color profiles <https://wiki.archlinux.org/index.php/ICC_Profiles#Argyll_CMS>
 APTO_INS="$APTO_INS blueman" # full featured bluetooth manager gui <https://wiki.archlinux.org/title/Blueman>, <https://wiki.archlinux.org/title/Bluetooth>
