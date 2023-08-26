@@ -4,6 +4,7 @@
   <property name="applications" type="empty">
     <property name="known_applications" type="array">
       <value type="string" value="ibus"/>
+      <value type="string" value="Mattermost"/>
       <value type="string" value="notify-send"/>
       <value type="string" value="org.freedesktop.network-manager-applet"/>
       <value type="string" value="org.xfce.Thunar"/>
