@@ -470,6 +470,7 @@ APTO_INS="$APTO_INS build-essential automake bison check flex pkg-config" # comp
 APTO_INS="$APTO_INS libcairo-dev"
 APTO_INS="$APTO_INS libgdk-pixbuf2.0-dev"
 APTO_INS="$APTO_INS libglib2.0-dev"
+APTO_INS="$APTO_INS libgtop2-dev" # compiltime dependency of Rofi-top plugin <https://github.com/davatorium/rofi-top>
 APTO_INS="$APTO_INS libpango1.0-dev"
 APTO_INS="$APTO_INS libpangocairo-1.0-0"
 APTO_INS="$APTO_INS libstartup-notification0-dev"

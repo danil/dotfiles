@@ -8,7 +8,7 @@
 // @theme "inline theme below"
 
 configuration {
-    font: "Sans 24";
+    font: "Sans 22";
     show-icons: true;
     cycle: false;
     disable-history: false;
@@ -118,7 +118,7 @@ listview {
     border: 0px 3px 3px 3px;
     background-color: var(background);
     dynamic: false;
-    lines: 20;
+    lines: 21;
 }
 element {
     padding: 3px;
