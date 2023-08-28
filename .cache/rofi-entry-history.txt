@@ -1,13 +1,4 @@
 gim
-yan
-thu
-gimp
-/home/danil/bin/gimp
-gim
-gim
-gimp
-gimp
-gim
 gim
 gimp
 gimp
@@ -17,3 +8,12 @@ gimp
 vpn
 q
 yand
+pclo
+thu
+pclo
+i
+pclo
+pclo
+pclo
+thu
+pclo
