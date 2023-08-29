@@ -1,13 +1,14 @@
-3675 ffplay -fs /dev/video0
+3680 ffplay -fs /dev/video0
 3159 yandex
 2889 mattermost
 2334 chrome
 2311 firefox
+1701 flameshot
 1645 atril-mate
 1635 zoom
 1631 flatseal
 1624 mailspring
-1302 telegram
+1303 telegram
 123 pcloud
 20 gimp
 12 nautilus

@@ -110,6 +110,7 @@ BREW_INS="$BREW_INS csvkit" # conver csv to json `csvjson path/to/file.csv` <htt
 BREW_INS="$BREW_INS curl" # a-la wget <https://github.com/curl/curl> # APTO_INS="$APTO_INS curl" # a-la wget <https://github.com/curl/curl>
 BREW_INS="$BREW_INS dos2unix" # convert text file line endings between CRLF and LF # APTO_INS="$APTO_INS dos2unix" # convert text file line endings between CRLF and LF
 BREW_INS="$BREW_INS fd" # RUST_INS="$RUST_INS fd-find" # find replacement https://github.com/sharkdp/fd
+BREW_INS="$BREW_INS figlet" # figlet/taag ascii art <https://github.com/patorjk/figlet-cli>, <https://patorjk.com/software/taag>
 BREW_INS="$BREW_INS flatbuffers" # a-la protobuf <https://github.com/google/flatbuffers>
 BREW_INS="$BREW_INS jsonnet" # https://github.com/google/jsonnet
 BREW_INS="$BREW_INS mailutils" # APTO_INS="$APTO_INS mailutils" # is an gnu mailutils, reads local mail, provides /usr/bin/mail
@@ -430,6 +431,7 @@ APTO_INS="$APTO_INS xfce4-diskperf-plugin" # disk io performance panel plugin
 APTO_INS="$APTO_INS xfce4-genmon-plugin" # script-based monitoring pluging a-la la/load average and temperature
 APTO_INS="$APTO_INS xfce4-power-manager"
 APTO_INS="$APTO_INS xfce4-screensaver"
+APTO_INS="$APTO_INS xfce4-screenshooter"
 APTO_INS="$APTO_INS xfce4-sensors-plugin" # cpu temperate for panel plugin?
 APTO_INS="$APTO_INS xfce4-systemload-plugin" # system cpu/mem/net/swap load monitor
 APTO_INS="$APTO_INS xfce4-taskmanager"
