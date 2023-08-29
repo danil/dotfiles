@@ -1,0 +1,13 @@
+app=/home/danil/.local/lib/appman/firefox/firefox
+custom_action_command=none
+last_user=
+last_extension=png
+screenshot_dir=file:/home/danil/Pictures/Screenshots
+enable_imgur_upload=true
+show_in_folder=true
+action=1
+delay=10
+region=1
+show_mouse=1
+show_border=1
+

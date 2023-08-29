@@ -32,8 +32,9 @@
         <value type="int" value="9"/>
         <value type="int" value="31"/>
         <value type="int" value="24"/>
-        <value type="int" value="25"/>
+        <value type="int" value="13"/>
         <value type="int" value="27"/>
+        <value type="int" value="25"/>
         <value type="int" value="26"/>
         <value type="int" value="30"/>
         <value type="int" value="2"/>
@@ -69,6 +70,8 @@
         <value type="string" value="ibus panel"/>
       </property>
       <property name="known-items" type="array">
+        <value type="string" value="flameshot"/>
+        <value type="string" value="TelegramDesktop"/>
         <value type="string" value="chrome_status_icon_1"/>
         <value type="string" value="pcloud1"/>
         <value type="string" value="blueman"/>
@@ -183,6 +186,11 @@
     </property>
     <property name="plugin-31" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-13" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="16933077742.desktop"/>
+      </property>
     </property>
   </property>
 </channel>

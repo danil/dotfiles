@@ -4,6 +4,7 @@ x-scheme-handler/tg=org.telegram.desktop._288e7f609a7d599e01eab790c46dc4fc.deskt
 x-scheme-handler/http=xfce4-web-browser.desktop;
 x-scheme-handler/https=xfce4-web-browser.desktop;
 application/x-compressed-tar=engrampa.desktop;
+image/png=appimagekit_b22d342ddbf1f3708474762389cc76a3-GNU_Image_Manipulation_Program.desktop;
 
 [Default Applications]
 x-scheme-handler/http=yandex-browser.desktop
