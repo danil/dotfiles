@@ -118,9 +118,7 @@ element-text {
     text-color:       inherit;
 }
 element selected.normal {
-    border-color: @green;
-    border: 3px;
-    background-color: Black;
+    background-color: @blue;
 }
 element normal active {
     foreground: @lightblue;
@@ -178,6 +176,6 @@ button {
 }
 button selected.normal {
     border-radius: 4px;
-    border-color: @foreground-dark;
+    border-color: @green;
     border: 3px;
 }
