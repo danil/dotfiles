@@ -84,24 +84,36 @@ done; shift
 # the_silver_searcher
 
 # Common packages.
+# APTO_INS="$APTO_INS inxi" # inxi --graphics <https://github.com/smxi/inxi>
+# APTO_INS="$APTO_INS jp2a" # converts jpg to ascii
+# APTO_INS="$APTO_INS linux-generic-hwe-20.04-edge" # linxu/kernel 5.11 for ubuntu 20.04
+# APTO_INS="$APTO_INS makepasswd" # password generator
+# APTO_INS="$APTO_INS protobuf-compiler" # version to old/outdated(
 # BREW_INS="$BREW_INS bash-completion" # programmable completion # conflicts with util-linux
 # BREW_INS="$BREW_INS bc" # used by bash prompt, console-based calculator utility
 # BREW_INS="$BREW_INS goaccess" # analyze apache/nginx log in real-time
 # BREW_INS="$BREW_INS grpc" # ?????????? gRPC client a-la curl https://github.com/grpc/grpc/blob/master/doc/command_line_tool.md
 # BREW_INS="$BREW_INS hping" # hping3 a-la interactive ping <https://github.com/antirez/hping> # APTO_INS="$APTO_INS hping3" # a-la interactive ping https://github.com/antirez/hping
 # BREW_INS="$BREW_INS pigz" # APTO_INS="$APTO_INS pigz" # parallel gzip for multi-processor, multi-core
-# APTO_INS="$APTO_INS inxi" # inxi --graphics <https://github.com/smxi/inxi>
-# APTO_INS="$APTO_INS jp2a" # converts jpg to ascii
-# APTO_INS="$APTO_INS linux-generic-hwe-20.04-edge" # linxu/kernel 5.11 for ubuntu 20.04
-# APTO_INS="$APTO_INS makepasswd" # password generator
-# APTO_INS="$APTO_INS protobuf-compiler" # version to old/outdated(
 # RUST_INS="$RUST_INS czkawka_cli" # find duplicates, empty folders
 # RUST_INS="$RUST_INS ddh" # duplicate file finder https://github.com/darakian/ddh
 # RUST_INS="$RUST_INS exa" # list files/directories, is an ls replacement https://github.com/ogham/exa
 # RUST_INS="$RUST_INS fclones" # duplicate file finder https://github.com/pkolaczk/fclones
 # RUST_INS="$RUST_INS fselect" # find files with sql-like queries https://github.com/jhspetersson/fselect
 # RUST_INS="$RUST_INS xsv" # csv cli (indexing, slicing, analyzing, splitting and joining) <https://github.com/BurntSushi/xsv>
+APTO_INS="$APTO_INS apt-transport-https" # required by custom ppa
+APTO_INS="$APTO_INS bc" # used by bash prompt, console-based calculator utility
+APTO_INS="$APTO_INS bind9-host" # automatic/dependency: dns/host lookup utility
+APTO_INS="$APTO_INS genius" # calculator
+APTO_INS="$APTO_INS libpci-dev libnl-3-dev libnl-genl-3-dev gettext libgettextpo-dev autopoint gettext libncurses5-dev libncursesw5-dev libtool-bin dh-autoreconf autoconf-archive pkg-config" # powertop diagnose power consumption https://github.com/fenrus75/powertop#build-dependencies
+APTO_INS="$APTO_INS logrotate"
+APTO_INS="$APTO_INS lynx" # html to plain text `curl https://your.tld/ | lynx --stdin --dump`
+APTO_INS="$APTO_INS mlocate" # locate/updatedb
+APTO_INS="$APTO_INS net-tools" # ifconfig cli
+APTO_INS="$APTO_INS opensmtpd" # send mail via /usr/bin/sendmail and deliver local mail to /var/mail a-la exim replacement
+APTO_INS="$APTO_INS openssh-server"
 BREW_INS="$BREW_INS ack" # a-la ag <https://github.com/beyondgrep/ack3>
+BREW_INS="$BREW_INS awk" # text processing scripting language <https://en.wikipedia.org/wiki/AWK>
 BREW_INS="$BREW_INS bash" # Bourne again shell <https://gnu.org/software/bash>
 BREW_INS="$BREW_INS clib" # package manager for c program language libraries <https://github.com/clibs/clib>
 BREW_INS="$BREW_INS colordiff" # colorize diff output <https://github.com/daveewart/colordiff>
@@ -121,26 +133,15 @@ BREW_INS="$BREW_INS the_platinum_searcher" # pt a-la ag <https://github.com/mono
 BREW_INS="$BREW_INS the_silver_searcher" # APTO_INS="$APTO_INS silversearcher-ag" # the silver searcher (ag) is a code-searching tool a-la ack <https://github.com/ggreer/the_silver_searcher> # APTO_INS="$APTO_INS automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev" # compiltime dependency <https://github.com/ggreer/the_silver_searcher#building-from-source>
 BREW_INS="$BREW_INS tree" # APTO_INS="$APTO_INS tree" # displays an indented directory tree
 BREW_INS="$BREW_INS uni2ascii" # APTO_INS="$APTO_INS uni2ascii" # to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`
-BREW_INS="$BREW_INS util-linux" # APTO_INS="$APTO_INS uuid-runtime" # APTO_INS="$APTO_INS whois" # provides uuidgen (uuid generator) also provides uni2ascii (to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`) <https://github.com/util-linux/util-linux> , <https://serverfault.com/questions/103359/how-to-create-a-uuid-in-bash#103366>
+BREW_INS="$BREW_INS util-linux" # APTO_INS="$APTO_INS uuid-runtime" # APTO_INS="$APTO_INS whois" # provides whois, uuidgen (uuid generator), column command and also provides uni2ascii (to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`) <https://github.com/util-linux/util-linux> , <https://serverfault.com/questions/103359/how-to-create-a-uuid-in-bash#103366>
 BREW_INS="$BREW_INS wdiff" # diff wordwise/word per word basis (a word is anything between whitespace)
-APTO_INS="$APTO_INS apt-transport-https" # required by custom ppa
-APTO_INS="$APTO_INS bc" # used by bash prompt, console-based calculator utility
-APTO_INS="$APTO_INS bind9-host" # automatic/dependency: dns/host lookup utility
-APTO_INS="$APTO_INS genius" # calculator
-APTO_INS="$APTO_INS libpci-dev libnl-3-dev libnl-genl-3-dev gettext libgettextpo-dev autopoint gettext libncurses5-dev libncursesw5-dev libtool-bin dh-autoreconf autoconf-archive pkg-config" # powertop diagnose power consumption https://github.com/fenrus75/powertop#build-dependencies
-APTO_INS="$APTO_INS logrotate"
-APTO_INS="$APTO_INS lynx" # html to plain text `curl https://your.tld/ | lynx --stdin --dump`
-APTO_INS="$APTO_INS mlocate" # locate/updatedb
-APTO_INS="$APTO_INS net-tools" # ifconfig cli
-APTO_INS="$APTO_INS opensmtpd" # send mail via /usr/bin/sendmail and deliver local mail to /var/mail a-la exim replacement
-APTO_INS="$APTO_INS openssh-server"
 RUST_INS="$RUST_INS cpc" # cli calculator/units converter https://github.com/probablykasper/cpc
 
 # Data compression algorithms.
+APTO_INS="$APTO_INS zstd" # a-la gz/xz compression
 BREW_INS="$BREW_INS lz4" # a-la gz/xz compression, required by gnupg, ffmpeg and mpv
 BREW_INS="$BREW_INS snappy" # a-la gz/xz compression, required by ffmpeg and mpv
 BREW_INS="$BREW_INS zstd" # a-la gz/xz compression, required by gcc, curl, git, gnupg, rust, node, ffmpeg, mpv and feh
-APTO_INS="$APTO_INS zstd" # a-la gz/xz compression
 
 # Network.
 BREW_INS="$BREW_INS aria2" # `aria2c https://your.tld/path/to/your.file` download client a-la curl/wget
@@ -183,17 +184,17 @@ BREW_INS="$BREW_INS sk" # fuzzy finder https://github.com/lotabout/skim
 BREW_INS="$BREW_INS vim" # APTO_INS="$APTO_INS vim" # vim is awesome a-la emacs, neovim is sucks <https://github.com/vim/vim>
 
 # Emacs <https://github.com/emacs-mirror/emacs>.
-# BREW_INS="$BREW_INS emacs" # APTO_INS="$APTO_INS emacs-nox" # instead compiled from source into ~/.local/usr/local/bin # TODO: maybe use homebrew?
 # APTO_INS="$APTO_INS libgif-dev" # compiltime dependency X11 <https://www.emacswiki.org/emacs/BuildingEmacs#h5o-4>
-BREW_INS="$BREW_INS fdupes" # identify or delete duplicate files https://github.com/adrianlopezroche/fdupes (used by emacs package https://github.com/ShuguangSun/find-dupes-dired)
-BREW_INS="$BREW_INS jq" # json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463> # APTO_INS="$APTO_INS jq" # json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>
-BREW_INS="$BREW_INS markdownlint-cli" # used/required used by emacs flycheck
-BREW_INS="$BREW_INS shellcheck" # APTO_INS="$APTO_INS shellcheck" # used by emacs flycheck
-BREW_INS="$BREW_INS sql-lint" # used by emacs flycheck
+# BREW_INS="$BREW_INS emacs" # APTO_INS="$APTO_INS emacs-nox" # instead compiled from source into ~/.local/usr/local/bin # TODO: maybe use homebrew?
 APTO_INS="$APTO_INS aspell-en" # used by emacs auto complete
 APTO_INS="$APTO_INS aspell-ru" # used by emacs auto complete
 APTO_INS="$APTO_INS emacs-el" # find/navigate elisp function source code <https://unix.stackexchange.com/questions/73100/how-to-attach-elisp-function-source-code-in-emacs>
 APTO_INS="$APTO_INS libgnutls28-dev" # compiltime dependency <https://stackoverflow.com/questions/52722096/build-emacs-and-gnutls-not-found#60430406>
+BREW_INS="$BREW_INS fdupes" # identify or delete duplicate files https://github.com/adrianlopezroche/fdupes (used by emacs package https://github.com/ShuguangSun/find-dupes-dired)
+BREW_INS="$BREW_INS jq" # json console formater (used by emacs counsel-jq) <https://github.com/jqlang/jq>, <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463> # APTO_INS="$APTO_INS jq" # json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>
+BREW_INS="$BREW_INS markdownlint-cli" # used/required used by emacs flycheck
+BREW_INS="$BREW_INS shellcheck" # APTO_INS="$APTO_INS shellcheck" # used by emacs flycheck
+BREW_INS="$BREW_INS sql-lint" # used by emacs flycheck
 
 # Homebrew <https://docs.brew.sh/Homebrew-on-Linux#requirements>.
 # APTO_INS="$APTO_INS git" # instead installed from the homebrew
@@ -230,11 +231,11 @@ BREW_INS="$BREW_INS clang-format" # APTO_INS="$APTO_INS clang" # used by emacs (
 BREW_INS="$BREW_INS llvm" # <https://github.com/llvm/llvm-project>
 
 # Golang programming language.
-# BREW_INS="$BREW_INS gcc@5" # <https://stackoverflow.com/questions/59227456/go-1-13-gcc-5-not-in-path#62795608>
-# BREW_INS="$BREW_INS go"
 # APTO_INS="$APTO_INS golang"
 # APTO_INS="$APTO_INS golang-1.17-doc golang-1.17-go golang-1.17-src"
 # APTO_INS="$APTO_INS golang-race-detector-runtime" # FIXME: where is race detector for the go 1.15?
+# BREW_INS="$BREW_INS gcc@5" # <https://stackoverflow.com/questions/59227456/go-1-13-gcc-5-not-in-path#62795608>
+# BREW_INS="$BREW_INS go"
 BREW_INS="$BREW_INS golangci-lint" # used by emacs a-la gometalinter
 
 # Rust programming language <https://github.com/rust-lang/rust>.
@@ -260,10 +261,10 @@ BREW_INS="$BREW_INS python3" # APTO_INS="$APTO_INS python3" # provides pip (pip3
 
 # Ruby programming language
 # <https://github.com/ruby/ruby>.
-# APTO_INS="$APTO_INS libssl1.0-dev" # required by ruby 2.3.7 (libssl1.0-dev conflicts with libssl-dev)
 # APTO_INS="$APTO_INS libreadline-dev" # required by ruby 2.6.3
 # APTO_INS="$APTO_INS libsqlite3-dev" # required by sqlite3 which required by mailcatcher
 # APTO_INS="$APTO_INS libssl-dev" # required by ruby 2.6.3 (libssl-dev conflicts with libssl1.0-dev)
+# APTO_INS="$APTO_INS libssl1.0-dev" # required by ruby 2.3.7 (libssl1.0-dev conflicts with libssl-dev)
 BREW_INS="$BREW_INS ruby"
 
 # Dart programming language
@@ -300,22 +301,20 @@ BREW_INS="$BREW_INS vitess" # horizontal scaled clustering <https://vitess.io/do
 # MongoDB.
 # APTO_INS="$APTO_INS gnupg" # required by mongodb <https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu>
 # APTO_INS="$APTO_INS mongodb-org" APTO_DIS="$APTO_DIS mongod" # latest stable version of the mongodb server
-BREW_INS="$BREW_INS mongodb-community"
-BREW_INS_SRC="$BREW_INS_SRC mongodb/brew"
+BREW_INS="$BREW_INS mongodb-community" BREW_INS_SRC="$BREW_INS_SRC mongodb/brew"
 
 # Kafka.
 BREW_INS="$BREW_INS kafka" # <https://github.com/apache/kafka>
-BREW_INS_SRC="$BREW_INS_SRC redpanda-data/tap"
-BREW_INS="$BREW_INS redpanda" # streaming data platform a-la kafka <https://github.com/redpanda-data/redpanda>
+BREW_INS="$BREW_INS redpanda" BREW_INS_SRC="$BREW_INS_SRC redpanda-data/tap" # streaming data platform a-la kafka <https://github.com/redpanda-data/redpanda>
 
 # # Manticore Search is a
 # # High performance low resource consumption database for search written in C++.
-# BREW_INS="$BREW_INS manticoresoftware/manticore/manticoresearch"
 # BREW_INS="$BREW_INS manticoresoftware/manticore/manticore-extra"
+# BREW_INS="$BREW_INS manticoresoftware/manticore/manticoresearch"
 
 # # Elasticsearch <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>.
-# APTO_INS="$APTO_INS elasticsearch" # felix `deb https://artifacts.elastic.co/packages/5.x/apt stable main` elasticsearch 5 <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>, # apt-transport-https required by elasticsearch ppa <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#deb-repo>
 # APTO_INS="$APTO_INS apt-transport-https"
+# APTO_INS="$APTO_INS elasticsearch" # felix `deb https://artifacts.elastic.co/packages/5.x/apt stable main` elasticsearch 5 <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>, # apt-transport-https required by elasticsearch ppa <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#deb-repo>
 
 # Databases.
 BREW_INS="$BREW_INS keydb"
@@ -341,8 +340,8 @@ BREW_INS="$BREW_INS htop" # APTO_INS="$APTO_INS htop" # a-la top <https://github
 BREW_INS="$BREW_INS ncdu" # APTO_INS="$APTO_INS ncdu" # disk space usage is an baobab and gt5 replacement
 
 # # DevOps Benchmarks a-la `ab`.
-# APTO_INS="$APTO_INS bonnie++"
 # APTO_INS="$APTO_INS apache2-utils"
+# APTO_INS="$APTO_INS bonnie++"
 # APTO_INS="$APTO_INS dbench"
 # APTO_INS="$APTO_INS siege"
 # APTO_INS="$APTO_INS sysbench" # cpu and memory benchmarks
@@ -358,9 +357,9 @@ BREW_INS="$BREW_INS vault" # APTO_INS="$APTO_INS vault" # vault util (hashicorp)
 
 # # X11 Suckless dwm.
 # # APTO_INS="$APTO_INS gxkb" # a-la xxkb (destroy xchainkeys)
-# # APTO_INS="$APTO_INS xfdashboard" # a-la compiz expose/gnome overview (works only with running xfce session)
 # # APTO_INS="$APTO_INS stterm" # instead compiled from source into ~/.local/usr/local/bin # succless st terminal
 # # APTO_INS="$APTO_INS volumeicon-alsa" # instead using i3 (i3status) # sound/volume icon indicator <https://github.com/Maato/volumeicon>
+# # APTO_INS="$APTO_INS xfdashboard" # a-la compiz expose/gnome overview (works only with running xfce session)
 # APTO_INS="$APTO_INS build-essential" # suckless dependency
 # APTO_INS="$APTO_INS i3lock" # xscreensaver replacement
 # APTO_INS="$APTO_INS libx11-dev" # suckless dependency
@@ -390,8 +389,8 @@ APTO_INS="$APTO_INS xcalib" # `xcalib -i -a` invert colors on xorg/xrandr <https
 
 # X11 dunst/dunstify (respects org.freedesktop.Notifications)
 # <https://github.com/dunst-project/dunst>
-# APTO_INS="$APTO_INS libc6 libcairo2 libgdk-pixbuf2.0-0 libglib2.0-0 libpango-1.0-0 libpangocairo-1.0-0 libx11-6 libxdg-basedir1 libxinerama1 libxrandr2 libxss1" # runtime dependencies
 # APTO_INS="$APTO_INS dunst" # instead compiled from source into ~/.local/usr/local/bin # a-la notify-osd
+# APTO_INS="$APTO_INS libc6 libcairo2 libgdk-pixbuf2.0-0 libglib2.0-0 libpango-1.0-0 libpangocairo-1.0-0 libx11-6 libxdg-basedir1 libxinerama1 libxrandr2 libxss1" # runtime dependencies
 APTO_INS="$APTO_INS libdbus-1-dev libnotify-dev libxrandr-dev libpango1.0-dev libx11-dev libxinerama-dev libxss-dev libglib2.0-dev libgtk-3-dev libxdg-basedir-dev" # compiltime dependency <https://github.com/dunst-project/dunst/wiki/Dependencies>
 
 # X11 xchainkeys <https://github.com/hbekel/xchainkeys>.
@@ -603,21 +602,20 @@ BREW_INS="$BREW_INS xdotool" # ???
 
 # Er ozn.
 # BREW_INS="$BREW_INS openvpn" # APTO_INS="$APTO_INS openvpn" APTO_DIS="$APTO_DIS openvpn openvpn@client" # openvpn client <https://confluence.ozon.ru/pages/viewpage.action?spaceKey=CORPIT&title=OpenVPN+for+Linux>
+APTO_INS="$APTO_INS libpcap-dev" # required by github.com/google/gopacket/pcap (go/src/github.com/google/gopacket/pcap/pcap_unix.go:34:10: fatal error: pcap.h: No such file or directory)
+APTO_INS="$APTO_INS libqt5webkit5" # GlobalProtect_UI_deb-5.2.6.0-18.deb VPN dependency
+APTO_INS="$APTO_INS libxml2-dev"
 BREW_INS="$BREW_INS go@1.19"
 BREW_INS="$BREW_INS libxml2" # provides xmllint
 BREW_INS="$BREW_INS postgresql@14"
 BREW_INS="$BREW_INS redis"
 BREW_INS="$BREW_INS vault"
-APTO_INS="$APTO_INS libpcap-dev" # required by github.com/google/gopacket/pcap (go/src/github.com/google/gopacket/pcap/pcap_unix.go:34:10: fatal error: pcap.h: No such file or directory)
-APTO_INS="$APTO_INS libqt5webkit5" # GlobalProtect_UI_deb-5.2.6.0-18.deb VPN dependency
-APTO_INS="$APTO_INS libxml2-dev"
 
 # # Er rkt.
 # # APTO_INS="$APTO_INS glide" # german does not use glide # go/german `add-apt-repository ppa:masterminds/glide` golang glide vendor package management <https://github.com/Masterminds/glide>
 # # APTO_INS="$APTO_INS postgresql-11" APTO_DIS="$APTO_DIS postgresql-11" # `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
 # # APTO_INS="$APTO_INS postgresql-9.6" APTO_DIS="$APTO_DIS postgresql-9.6"  # felix `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
 # # APTO_INS="$APTO_INS yarn" # (NOTE: before add ppa!) js package manager required by rails asset pipeline precompilation (before install add ppa <https://yarnpkg.com/lang/en/docs/install/#debian-stable>)
-# BREW_INS="$BREW_INS docker docker-machine docker-compose" # APTO_INS="$APTO_INS docker-ce" APTO_DIS="$APTO_DIS docker" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
 # APTO_INS="$APTO_INS elasticsearch apt-transport-https" # felix `deb https://artifacts.elastic.co/packages/5.x/apt stable main` elasticsearch 5 <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>, # apt-transport-https required by elasticsearch ppa <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#deb-repo>
 # APTO_INS="$APTO_INS golang"
 # APTO_INS="$APTO_INS libmagickwand-dev" # required by rmagick by felix
@@ -628,6 +626,7 @@ APTO_INS="$APTO_INS libxml2-dev"
 # APTO_INS="$APTO_INS redis" APTO_DIS="$APTO_DIS redis-server"
 # APTO_INS="$APTO_INS redis" APTO_DIS="$APTO_DIS redis-server" # felix
 # APTO_INS="$APTO_INS vpnc" # cisco vpn client
+# BREW_INS="$BREW_INS docker docker-machine docker-compose" # APTO_INS="$APTO_INS docker-ce" APTO_DIS="$APTO_DIS docker" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
 
 OPT_DRY=0
 
