@@ -1,4 +1,4 @@
-3683 ffplay -fs /dev/video0
+3687 ffplay -fs /dev/video0
 3159 yandex
 2889 mattermost
 2334 chrome
@@ -10,7 +10,7 @@
 1624 mailspring
 1303 telegram
 123 pcloud
-20 gimp
+21 gimp
 12 nautilus
 12 thunar
 5 wezterm

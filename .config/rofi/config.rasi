@@ -20,33 +20,33 @@ configuration {
     normal-background: var(background);
     selected-urgent-background: rgba ( 255, 0, 0, 100 % );
 
-    foreground: @lightwhite;
+    foreground: @brightwhite;
     background-color: transparent;
-    foreground-dark: @white;
-                           // ╔╗ ╦  ╔═╗╔═╗╦╔═
-    black:        #3d352a; // ╠╩╗║  ╠═╣║  ╠╩╗
-    lightblack:   #554444; // ╚═╝╩═╝╩ ╩╚═╝╩ ╩
-                           // ╦═╗╔═╗╔╦╗
-    red:          #cd5c5c; // ╠╦╝║╣  ║║
-    lightred:     #ff0000; // ╩╚═╚═╝═╩╝
-                           // ╔═╗╦═╗╔═╗╔═╗╔╗╔
-    green:        #008F11; // ║ ╦╠╦╝║╣ ║╣ ║║║
-    lightgreen:   #00FF41; // ╚═╝╩╚═╚═╝╚═╝╝╚╝
-                           // ╦ ╦╔═╗╦  ╦  ╔═╗╦ ╦
-    yellow:       #ffa75d; // ╚╦╝║╣ ║  ║  ║ ║║║║
-    lightyellow:  #ffff00; //  ╩ ╚═╝╩═╝╩═╝╚═╝╚╩╝
-                           // ╔╗ ╦  ╦ ╦╔═╗
-    blue:         #6495ed; // ╠╩╗║  ║ ║║╣
-    lightblue:    #87ceeb; // ╚═╝╩═╝╚═╝╚═╝
-                           // ╔╦╗╔═╗╔═╗╔═╗╔╗╔╔╦╗╔═╗
-    magenta:      #deb887; // ║║║╠═╣║ ╦║╣ ║║║ ║ ╠═╣
-    lightmagenta: #996600; // ╩ ╩╩ ╩╚═╝╚═╝╝╚╝ ╩ ╩ ╩
-                           // ╔═╗╦ ╦╔═╗╔╗╔
-    cyan:         #b0c4de; // ║  ╚╦╝╠═╣║║║
-    lightcyan:    #b0c4de; // ╚═╝ ╩ ╩ ╩╝╚╝
-                           // ╦ ╦╦ ╦╦╔╦╗╔═╗
-    white:        #808080; // ║║║╠═╣║ ║ ║╣
-    lightwhite:   #e5e5e5; // ╚╩╝╩ ╩╩ ╩ ╚═╝
+    foreground-dark: @dimwhite;
+                            // ╔╗ ╦  ╔═╗╔═╗╦╔═
+    dimblack:      #3d352a; // ╠╩╗║  ╠═╣║  ╠╩╗
+    brightblack:   #554444; // ╚═╝╩═╝╩ ╩╚═╝╩ ╩
+                            // ╦═╗╔═╗╔╦╗
+    dimred:        #cd5c5c; // ╠╦╝║╣  ║║
+    brightred:     #ff0000; // ╩╚═╚═╝═╩╝
+                            // ╔═╗╦═╗╔═╗╔═╗╔╗╔
+    dimgreen:      #008F11; // ║ ╦╠╦╝║╣ ║╣ ║║║
+    brightgreen:   #00FF41; // ╚═╝╩╚═╚═╝╚═╝╝╚╝
+                            // ╦ ╦╔═╗╦  ╦  ╔═╗╦ ╦
+    dimyellow:     #ffa75d; // ╚╦╝║╣ ║  ║  ║ ║║║║
+    brightyellow:  #ffff00; //  ╩ ╚═╝╩═╝╩═╝╚═╝╚╩╝
+                            // ╔╗ ╦  ╦ ╦╔═╗
+    dimblue:       #87ceeb; // ╠╩╗║  ║ ║║╣
+    brightblue:    #2222ee; // ╚═╝╩═╝╚═╝╚═╝
+                            // ╔╦╗╔═╗╔═╗╔═╗╔╗╔╔╦╗╔═╗
+    dimmagenta:    #deb887; // ║║║╠═╣║ ╦║╣ ║║║ ║ ╠═╣
+    brightmagenta: #996600; // ╩ ╩╩ ╩╚═╝╚═╝╝╚╝ ╩ ╩ ╩
+                            // ╔═╗╦ ╦╔═╗╔╗╔
+    dimcyan:       #b0c4de; // ║  ╚╦╝╠═╣║║║
+    brightcyan:    #b0c4de; // ╚═╝ ╩ ╩ ╩╝╚╝
+                            // ╦ ╦╦ ╦╦╔╦╗╔═╗
+    dimwhite:      #808080; // ║║║╠═╣║ ║ ║╣
+    brightwhite:   #e5e5e5; // ╚╩╝╩ ╩╩ ╩ ╚═╝
 
     transparent: rgba(0, 0, 0, 0%);
 }
@@ -57,7 +57,7 @@ window {
     padding: 10px;
     border:  0px;
     border-radius: 10px;
-    color: @magenta;
+    color: @dimmagenta;
     background-color: @transparent;
     spacing: 0;
     children:  [mainbox];
@@ -68,22 +68,22 @@ mainbox {
     children: [ inputbar, message, listview, wrapper-mode-switcher ];
 }
 message {
-    border-color: @yellow;
+    border-color: @dimyellow;
     border:  0px 3px 0px 3px;
     padding: 5;
-    background-color: @lightblack;
+    background-color: @brightblack;
 }
 message {
-    color: @black;
+    color: @dimblack;
 }
 inputbar {
     children:   [ "entry","num-filtered-rows","textbox-num-sep","num-rows","case-indicator" ];
-    color: @lightgreen;
+    color: @brightgreen;
     padding: 11px;
     background-color: var(background);
     border: 3px 3px 0px 3px;
     border-radius:  15px 15px 0px 0px;
-    border-color: @yellow;
+    border-color: @dimyellow;
 }
 entry,prompt,case-indicator {
     text-font:  inherit;
@@ -94,12 +94,12 @@ entry {
     placeholder: false;
     cursor:       text;
     cursor-width: 16px ;
-    // cursor-color: @lightgreen;
+    // cursor-color: @brightgreen;
 }
 listview {
     padding: 8px;
     border-radius: 0px 0px 0px 0px;
-    border-color: @yellow;
+    border-color: @dimyellow;
     border: 0px 3px 0px 3px;
     background-color: var(background);
     dynamic: false;
@@ -118,29 +118,29 @@ element-text {
     text-color:       inherit;
 }
 element selected.normal {
-    background-color: @blue;
+    background-color: @brightblue;
 }
 element normal active {
-    foreground: @lightblue;
+    foreground: @brightblue;
 }
 element normal urgent {
-    foreground: @lightred;
+    foreground: @brightred;
 }
 element alternate normal {
     background-color: var(background);
 }
 element alternate active {
-    foreground: @lightblue;
+    foreground: @dimblue;
 }
 element alternate urgent {
-    foreground: @lightred;
+    foreground: @brightred;
 }
 element selected active {
-    background-color: @lightblue;
+    background-color: @dimblue;
     foreground: @foreground-dark;
 }
 element selected urgent {
-    background-color: @lightred;
+    background-color: @brightred;
     foreground: @foreground-dark;
 }
 element normal normal {
@@ -163,7 +163,7 @@ mode-switcher {
     spacing: 0px;
     expand: true;
     border:        0px 3px 3px 3px;
-    border-color:  @yellow;
+    border-color:  @dimyellow;
     border-radius: 0 0 10px 10px;
     background-color: @background;
 }
@@ -176,6 +176,6 @@ button {
 }
 button selected.normal {
     border-radius: 4px;
-    border-color: @green;
+    border-color: @dimgreen;
     border: 3px;
 }
