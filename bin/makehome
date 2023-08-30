@@ -468,8 +468,10 @@ APTO_INS="$APTO_INS build-essential"
 # application launcher (a-la dmenu) also window switcher
 # <https://github.com/davatorium/rofi>.
 # # APTO_INS="$APTO_INS rofi" # a-la dmenu for open windows
-APTO_INS="$APTO_INS build-essential automake bison check flex pkg-config" # compiltime dependency
+APTO_INS="$APTO_INS build-essential autoconf automake bison check flex libtool libtool-bin pkg-config" # compiltime dependency
 APTO_INS="$APTO_INS libcairo-dev"
+APTO_INS="$APTO_INS libcairo-dev"
+APTO_INS="$APTO_INS libcairo2-dev"
 APTO_INS="$APTO_INS libgdk-pixbuf2.0-dev"
 APTO_INS="$APTO_INS libglib2.0-dev"
 APTO_INS="$APTO_INS libgtop2-dev" # compiltime dependency of Rofi-top plugin <https://github.com/davatorium/rofi-top>
