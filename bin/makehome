@@ -33,10 +33,12 @@ RUST_UPD_CLI="cargo install --force"
 OPT_ALL=-1
 OPT_JOBS=`grep -c ^processor /proc/cpuinfo` OPT_JOBS=${OPT_JOBS:-1}
 
-# Options functions.
-optexit () { printf >&2 "%s %s\n%s\n" "$1" "$2" "$USAGE"; exit 2; }
+makeexit () { printf >&2 "%s\n" "$(printf "$1")"; exit $2; }
+
+# Shell script options functions.
 optcheck () { { [ "$1" != "$EOL" ] && [ "$1" != '--' ]; } || optexit "missing argument" "$2"; } # avoid infinite loop
 opthelp () { printf "%s\n" "$USAGE"; }
+optexit () { makeexit "$1 $2\n$USAGE" 2; }
 
 # Parse command-line options.
 set -- "$@" "${EOL:=$(printf '\1\3\3\7')}"  # end-of-list marker
@@ -176,55 +178,13 @@ BREW_INS="$BREW_INS wezterm" BREW_INS_SRC="$BREW_INS_SRC wez/wezterm-linuxbrew" 
 BREW_INS="$BREW_INS xsel" # APTO_INS="$APTO_INS xsel" # copy selection in termina to the xorg clipboard (used by emacs and urxvt) <https://wiki.archlinux.org/index.php/rxvt-unicode#Automatic_Script_Management>
 RUST_INS="$RUST_INS alacritty" # terminal/console emulator a-la st/xterm https://github.com/alacritty/alacritty
 
-# Vim.
-BREW_INS="$BREW_INS fzf" # fuzzy finder https://github.com/junegunn/fzf
-BREW_INS="$BREW_INS fzy" # fuzzy finder https://github.com/jhawthorn/fzy
-BREW_INS="$BREW_INS pick" # fuzzy finder https://github.com/mptre/pick
-BREW_INS="$BREW_INS sk" # fuzzy finder https://github.com/lotabout/skim
-BREW_INS="$BREW_INS vim" # APTO_INS="$APTO_INS vim" # vim is awesome a-la emacs, neovim is sucks <https://github.com/vim/vim>
-
-# Emacs <https://github.com/emacs-mirror/emacs>.
-# APTO_INS="$APTO_INS libgif-dev" # compiltime dependency X11 <https://www.emacswiki.org/emacs/BuildingEmacs#h5o-4>
-# BREW_INS="$BREW_INS emacs" # APTO_INS="$APTO_INS emacs-nox" # instead compiled from source into ~/.local/usr/local/bin # TODO: maybe use homebrew?
-APTO_INS="$APTO_INS aspell-en" # used by emacs auto complete
-APTO_INS="$APTO_INS aspell-ru" # used by emacs auto complete
-APTO_INS="$APTO_INS emacs-el" # find/navigate elisp function source code <https://unix.stackexchange.com/questions/73100/how-to-attach-elisp-function-source-code-in-emacs>
-APTO_INS="$APTO_INS libgnutls28-dev" # compiltime dependency <https://stackoverflow.com/questions/52722096/build-emacs-and-gnutls-not-found#60430406>
-BREW_INS="$BREW_INS fdupes" # identify or delete duplicate files https://github.com/adrianlopezroche/fdupes (used by emacs package https://github.com/ShuguangSun/find-dupes-dired)
-BREW_INS="$BREW_INS jq" # json console formater (used by emacs counsel-jq) <https://github.com/jqlang/jq>, <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463> # APTO_INS="$APTO_INS jq" # json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>
-BREW_INS="$BREW_INS markdownlint-cli" # used/required used by emacs flycheck
-BREW_INS="$BREW_INS shellcheck" # APTO_INS="$APTO_INS shellcheck" # used by emacs flycheck
-BREW_INS="$BREW_INS sql-lint" # used by emacs flycheck
-
-# Homebrew <https://docs.brew.sh/Homebrew-on-Linux#requirements>.
-# APTO_INS="$APTO_INS git" # instead installed from the homebrew
-APTO_INS="$APTO_INS build-essential"
-APTO_INS="$APTO_INS curl"
-APTO_INS="$APTO_INS file"
-APTO_INS="$APTO_INS procps" # /proc file system utilities
-
-# AppImage
-# <https://github.com/appimage/appimagekit>.
-# APPM_INS="$APPM_INS am" # annoying root requirement # appimage application manager <https://github.com/ivan-hc/am-application-manager> that <https://github.com/ivan-hc/appman> is based on
-APPM_INS="$APPM_INS zsync2" # partial re-downloader a-la rsync/wget/curl <https://github.com/appimagecommunity/zsync2>
-APTO_INS="$APTO_INS libfuse2" # <https://docs.appimage.org/user-guide/troubleshooting/fuse.html>
-
-# Flatpak <https://github.com/flatpak/flatpak>.
-APTO_INS="$APTO_INS flatpak" # PMS
-APTO_INS="$APTO_INS gnome-software-plugin-flatpak" # Flatpak support for GNOME software
-FLAT_INS="$FLAT_INS com.github.tchx84.Flatseal" # Is a GUI permissions manager which offers simple point-and-click permissions operations.
-
-# # Basher is a bash/shell/functions package manager
-# # <https://github.com/basherpm/basher>.
-# APTO_INS="$APTO_INS bash"
-# APTO_INS="$APTO_INS coreutils"
-
 # C/C++ compile/make common dependencies.
 APTO_INS="$APTO_INS automake" # required by tmux/xchainkeys
 APTO_INS="$APTO_INS build-essential" # compiler?
 APTO_INS="$APTO_INS devscripts" # ???
 APTO_INS="$APTO_INS make" # required by all)
 APTO_INS="$APTO_INS valgrind" # find memory leaks https://www.valgrind.org/docs/manual/quick-start.html
+BREW_INS="$BREW_INS gcc"
 
 # Clang compiler front end for the C, C++, Objective-C (depends on LLVM).
 BREW_INS="$BREW_INS clang-format" # APTO_INS="$APTO_INS clang" # used by emacs (company-clang backend) # c, c++ and objective-c compiler based on llvm <https://github.com/llvm/llvm-project>
@@ -265,6 +225,7 @@ BREW_INS="$BREW_INS python3" # APTO_INS="$APTO_INS python3" # provides pip (pip3
 # APTO_INS="$APTO_INS libsqlite3-dev" # required by sqlite3 which required by mailcatcher
 # APTO_INS="$APTO_INS libssl-dev" # required by ruby 2.6.3 (libssl-dev conflicts with libssl1.0-dev)
 # APTO_INS="$APTO_INS libssl1.0-dev" # required by ruby 2.3.7 (libssl1.0-dev conflicts with libssl-dev)
+BREW_INS="$BREW_INS gcc@11" # compiltime dependency of some gem
 BREW_INS="$BREW_INS ruby"
 
 # Dart programming language
@@ -279,6 +240,50 @@ BREW_INS="$BREW_INS dart-sdk"
 BREW_INS="$BREW_INS lua" # newer than apt version # the lua programming language https://github.com/lua/lua
 BREW_INS="$BREW_INS sbcl" # Steel Bank Common Lisp (SBCL) <https://github.com/sbcl/sbcl>
 BREW_INS="$BREW_INS scc" # a-la sloc/cloc
+
+# Vim.
+BREW_INS="$BREW_INS fzf" # fuzzy finder https://github.com/junegunn/fzf
+BREW_INS="$BREW_INS fzy" # fuzzy finder https://github.com/jhawthorn/fzy
+BREW_INS="$BREW_INS pick" # fuzzy finder https://github.com/mptre/pick
+BREW_INS="$BREW_INS sk" # fuzzy finder https://github.com/lotabout/skim
+BREW_INS="$BREW_INS vim" # APTO_INS="$APTO_INS vim" # vim is awesome a-la emacs, neovim is sucks <https://github.com/vim/vim>
+
+# Emacs <https://github.com/emacs-mirror/emacs>.
+# APTO_INS="$APTO_INS libgif-dev" # compiltime dependency X11 <https://www.emacswiki.org/emacs/BuildingEmacs#h5o-4>
+# BREW_INS="$BREW_INS emacs" # APTO_INS="$APTO_INS emacs-nox" # instead compiled from source into ~/.local/usr/local/bin # TODO: maybe use homebrew?
+APTO_INS="$APTO_INS aspell-en" # used by emacs auto complete
+APTO_INS="$APTO_INS aspell-ru" # used by emacs auto complete
+APTO_INS="$APTO_INS emacs-el" # find/navigate elisp function source code <https://unix.stackexchange.com/questions/73100/how-to-attach-elisp-function-source-code-in-emacs>
+APTO_INS="$APTO_INS libgnutls28-dev" # compiltime dependency <https://stackoverflow.com/questions/52722096/build-emacs-and-gnutls-not-found#60430406>
+BREW_INS="$BREW_INS fdupes" # identify or delete duplicate files https://github.com/adrianlopezroche/fdupes (used by emacs package https://github.com/ShuguangSun/find-dupes-dired)
+BREW_INS="$BREW_INS jq" # json console formater (used by emacs counsel-jq) <https://github.com/jqlang/jq>, <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463> # APTO_INS="$APTO_INS jq" # json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>
+BREW_INS="$BREW_INS jsonlint" # used by emacs flycheck <https://github.com/zaach/jsonlint>
+BREW_INS="$BREW_INS markdownlint-cli" # used/required used by emacs flycheck
+BREW_INS="$BREW_INS shellcheck" # APTO_INS="$APTO_INS shellcheck" # used by emacs flycheck
+BREW_INS="$BREW_INS sql-lint" # used by emacs flycheck
+
+# Homebrew <https://docs.brew.sh/Homebrew-on-Linux#requirements>.
+# APTO_INS="$APTO_INS git" # instead installed from the homebrew
+APTO_INS="$APTO_INS build-essential"
+APTO_INS="$APTO_INS curl"
+APTO_INS="$APTO_INS file"
+APTO_INS="$APTO_INS procps" # /proc file system utilities
+
+# AppImage
+# <https://github.com/appimage/appimagekit>.
+# APPM_INS="$APPM_INS am" # annoying root requirement # appimage application manager <https://github.com/ivan-hc/am-application-manager> that <https://github.com/ivan-hc/appman> is based on
+APPM_INS="$APPM_INS zsync2" # partial re-downloader a-la rsync/wget/curl <https://github.com/appimagecommunity/zsync2>
+APTO_INS="$APTO_INS libfuse2" # <https://docs.appimage.org/user-guide/troubleshooting/fuse.html>
+
+# Flatpak <https://github.com/flatpak/flatpak>.
+APTO_INS="$APTO_INS flatpak" # PMS
+APTO_INS="$APTO_INS gnome-software-plugin-flatpak" # Flatpak support for GNOME software
+FLAT_INS="$FLAT_INS com.github.tchx84.Flatseal" # Is a GUI permissions manager which offers simple point-and-click permissions operations.
+
+# # Basher is a bash/shell/functions package manager
+# # <https://github.com/basherpm/basher>.
+# APTO_INS="$APTO_INS bash"
+# APTO_INS="$APTO_INS coreutils"
 
 # Web/HTTPd server.
 # APTO_INS="$APTO_INS goaccess" # instead installed from the homebrew # analyze nginx/apache log in real-time
@@ -627,6 +632,19 @@ BREW_INS="$BREW_INS vault"
 # APTO_INS="$APTO_INS redis" APTO_DIS="$APTO_DIS redis-server" # felix
 # APTO_INS="$APTO_INS vpnc" # cisco vpn client
 # BREW_INS="$BREW_INS docker docker-machine docker-compose" # APTO_INS="$APTO_INS docker-ce" APTO_DIS="$APTO_DIS docker" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
+
+makelock() {
+    lock_file=$1
+    lock_fd=$2
+    # flock manages locks from shell scripts.
+    if ! [ -x "$(command -v flock)" ]; then
+        makeexit "missing flock command\ninstall flock: brew install flock" 1
+    fi
+    eval "exec $lock_fd>$lock_file"
+    flock -n $lock_fd || makeexit "locked makehome" 1
+}
+
+makelock "/tmp/makehome.lock" 9
 
 OPT_DRY=0
 
