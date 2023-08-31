@@ -3,7 +3,8 @@
 
 // Rofi.
 // application launcher (a-la dmenu) also window switcher
-// <https://github.com/davatorium/rofi>.
+// <https://github.com/davatorium/rofi>,
+// <https://wiki.archlinux.org/title/rofi>.
 
 // @theme "inline theme below"
 
@@ -28,16 +29,16 @@ configuration {
     brightblack:   #554444; // ╚═╝╩═╝╩ ╩╚═╝╩ ╩
                             // ╦═╗╔═╗╔╦╗
     dimred:        #cd5c5c; // ╠╦╝║╣  ║║
-    brightred:     #ff0000; // ╩╚═╚═╝═╩╝
+    brightred:     #cd0000; // ╩╚═╚═╝═╩╝
                             // ╔═╗╦═╗╔═╗╔═╗╔╗╔
-    dimgreen:      #008F11; // ║ ╦╠╦╝║╣ ║╣ ║║║
-    brightgreen:   #00FF41; // ╚═╝╩╚═╚═╝╚═╝╝╚╝
+    dimgreen:      #6b8e23; // ║ ╦╠╦╝║╣ ║╣ ║║║
+    brightgreen:   #00cd00; // ╚═╝╩╚═╚═╝╚═╝╝╚╝
                             // ╦ ╦╔═╗╦  ╦  ╔═╗╦ ╦
-    dimyellow:     #ffa75d; // ╚╦╝║╣ ║  ║  ║ ║║║║
-    brightyellow:  #ffff00; //  ╩ ╚═╝╩═╝╩═╝╚═╝╚╩╝
-                            // ╔╗ ╦  ╦ ╦╔═╗
-    dimblue:       #87ceeb; // ╠╩╗║  ║ ║║╣
-    brightblue:    #2222ee; // ╚═╝╩═╝╚═╝╚═╝
+    dimyellow:     #bf5e00; // ╚╦╝║╣ ║  ║  ║ ║║║║
+    brightyellow:  #eab700; //  ╩ ╚═╝╩═╝╩═╝╚═╝╚╩╝
+    dimblue:       #222286; // ╔╗ ╦  ╦ ╦╔═╗
+    brightblue:    #2222ee; // ╠╩╗║  ║ ║║╣
+    lightblue:     #3084e6; // ╚═╝╩═╝╚═╝╚═╝
                             // ╔╦╗╔═╗╔═╗╔═╗╔╗╔╔╦╗╔═╗
     dimmagenta:    #deb887; // ║║║╠═╣║ ╦║╣ ║║║ ║ ╠═╣
     brightmagenta: #996600; // ╩ ╩╩ ╩╚═╝╚═╝╝╚╝ ╩ ╩ ╩
@@ -49,6 +50,7 @@ configuration {
     brightwhite:   #e5e5e5; // ╚╩╝╩ ╩╩ ╩ ╚═╝
 
     transparent: rgba(0, 0, 0, 0%);
+    outerborder: @dimyellow;
 }
 window {
     location: center;
@@ -57,7 +59,6 @@ window {
     padding: 10px;
     border:  0px;
     border-radius: 10px;
-    color: @dimmagenta;
     background-color: @transparent;
     spacing: 0;
     children:  [mainbox];
@@ -65,16 +66,27 @@ window {
 }
 mainbox {
     spacing: 0;
-    children: [ inputbar, message, listview, wrapper-mode-switcher ];
+    children: [ inputbar, wrapper-message, listview, wrapper-mode-switcher ];
 }
-message {
-    border-color: @dimyellow;
+wrapper-message {
+    background-color: @background;
+    // text-color: @foreground-dark;
+    background-color: @background;
+    border-color: @outerborder;
     border:  0px 3px 0px 3px;
-    padding: 5;
-    background-color: @brightblack;
+    orientation: horizontal;
+    expand:      false;
+    spacing:     0;
+    children: [ message ];
 }
 message {
-    color: @dimblack;
+    background-color: @lightblue;
+    expand: true;
+    margin: 10;
+    padding: 11;
+    border-color: @brightyellow;
+    border:  3px 3px 3px 3px;
+    border-radius: 4px;
 }
 inputbar {
     children:   [ "entry","num-filtered-rows","textbox-num-sep","num-rows","case-indicator" ];
@@ -83,7 +95,7 @@ inputbar {
     background-color: var(background);
     border: 3px 3px 0px 3px;
     border-radius:  15px 15px 0px 0px;
-    border-color: @dimyellow;
+    border-color: @outerborder;
 }
 entry,prompt,case-indicator {
     text-font:  inherit;
@@ -99,11 +111,11 @@ entry {
 listview {
     padding: 8px;
     border-radius: 0px 0px 0px 0px;
-    border-color: @dimyellow;
+    border-color: @outerborder;
     border: 0px 3px 0px 3px;
     background-color: var(background);
     dynamic: false;
-    lines: 19;
+    lines: 18;
 }
 element {
     padding: 3px;
@@ -160,22 +172,23 @@ wrapper-mode-switcher {
 }
 mode-switcher {
     padding: 11px;
-    spacing: 0px;
+    spacing: 0;
     expand: true;
     border:        0px 3px 3px 3px;
-    border-color:  @dimyellow;
+    border-color:  @outerborder;
     border-radius: 0 0 10px 10px;
     background-color: @background;
 }
 button, button selected.normal {
     background-color: inherit;
-    padding:      2px;
+    padding: 2px;
+    border: 3px;
 }
 button {
+    border-color: transparent;
     text-color: @foreground-dark;
 }
 button selected.normal {
-    border-radius: 4px;
     border-color: @dimgreen;
-    border: 3px;
+    border-radius: 4px;
 }
