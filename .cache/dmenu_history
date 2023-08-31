@@ -1,16 +1,16 @@
 3674	ffplay -fs /dev/video0
 3160	yandex
-2890	mattermost
 2335	chrome
 2311	firefox
-1646	atril-mate
 1636	zoom
+1635	telegram
 1632	flatseal
 1625	mailspring
-1303	telegram
 118	pcloud
 15	gimp
+13	atril-mate
 12	nautilus
+11	mattermost
 6	wezterm
 5	ristretto
 5	thunar
