@@ -10,6 +10,7 @@
 
 configuration {
     // terminal: "alacritty";
+    combi-modes: "run,drun,window,keys,recursivebrowser";
     font: "Monospace 24";
     show-icons: true;
     cycle: false;
