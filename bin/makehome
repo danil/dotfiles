@@ -2,26 +2,30 @@
 
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-USAGE="usage: ${CMD:=${0##*/}} [--apt] [--brew] [--appimage] [--flatpak] [--rust] [--update] [--etc] [--root] [--home]"
+USAGE="usage: ${CMD:=${0##*/}} [--apt] [--homebrew] [--appimage] [--flatpak] [--rust] [--python2] [--python3] [--update] [--etc] [--root] [--home]"
 
 # APT (deb/dpkg/apt-get/aptitude)
 # <https://en.wikipedia.org/wiki/APT_(software)>.
-APTO_INS_CLI="aptitude install --without-recommends"
-APTO_UNI_CLI="aptitude remove"
+APTO_INS_CLI="sudo aptitude install --without-recommends"
+APTO_UNI_CLI="sudo aptitude remove"
 # APTO_DIS_CLI="systemctl disable"
 
 # Homebrew
 # <https://brew.sh>.
 BREW_INS_SRC_CLI="brew tap"
 BREW_UNI_SRC_CLI="brew untap"
-BREW_INS_CLI="brew install"
+BREW_INS_CLI="HOMEBREW_NO_AUTO_UPDATE=1 brew install"
+BREW_UPD_CLI="brew install"
 
 # AppImage
 # <https://github.com/appimage/appimagekit>.
 APPM_INS_CLI="appman -i"
+APPM_UPD_CLI="appman -u"
 
 # Flatpak
 # <https://github.com/flatpak/flatpak>.
+FLAT_INS_SRC_CLI="flatpak remote-add --if-not-exists"
+FLAT_UNI_SRC_CLI="flatpak remote-delete"
 FLAT_INS_CLI="flatpak install --verbose flathub"
 
 # Rust Cargo
@@ -30,15 +34,25 @@ FLAT_INS_CLI="flatpak install --verbose flathub"
 RUST_INS_CLI="cargo install"
 RUST_UPD_CLI="cargo install --force"
 
+# Python2 pip
+# <https://github.com/pypa/pip>.
+PIP2_INS_CLI="pip2 install --user"
+PIP2_UPD_CLI="pip2 install --user --upgrade"
+
+# Python3 pip
+# <https://github.com/pypa/pip>.
+PIP3_INS_CLI="pip3 install --user"
+PIP3_UPD_CLI="pip3 install --user --upgrade"
+
 OPT_ALL=-1
 OPT_JOBS=`grep -c ^processor /proc/cpuinfo` OPT_JOBS=${OPT_JOBS:-1}
 
-makeexit () { printf >&2 "%s\n" "$(printf "$1")"; exit $2; }
+errexit () { printf >&2 "%s\n" "$(printf "$1")"; exit $2; }
 
 # Shell script options functions.
-optcheck () { { [ "$1" != "$EOL" ] && [ "$1" != '--' ]; } || optexit "missing argument" "$2"; } # avoid infinite loop
+opttest () { { [ "$1" != "$EOL" ] && [ "$1" != '--' ]; } || optexit "missing argument" "$2"; } # avoid infinite loop
 opthelp () { printf "%s\n" "$USAGE"; }
-optexit () { makeexit "$1 $2\n$USAGE" 2; }
+optexit () { errexit "$1 $2\n$USAGE" 2; }
 
 # Parse command-line options.
 set -- "$@" "${EOL:=$(printf '\1\3\3\7')}"  # end-of-list marker
@@ -47,14 +61,16 @@ while [ "$1" != "$EOL" ]; do
 
     case "$opt" in
         --apt          ) OPT_APTO=0; OPT_ALL=-1;;
-        --brew         ) OPT_BREW=0; OPT_ALL=-1;;
-        --appimage     ) OPT_APPM=0; OPT_ALL=-1;;
+        --homebrew     ) OPT_BREW=0; OPT_ALL=-1;;
+        --appimage     ) OPT_APPL=0; OPT_APPM=0; OPT_ALL=-1;;
         --flatpak      ) OPT_FLAT=0; OPT_ALL=-1;;
         --rust         ) OPT_RUST=0; OPT_ALL=-1;;
-        --home         ) optcheck "$1" "$opt"; OPT_HOME="$1"; OPT_ALL=-1;;
+        --python2      ) OPT_PIP2=0; OPT_ALL=-1;;
+        --python3      ) OPT_PIP3=0; OPT_ALL=-1;;
+        --home         ) opttest "$1" "$opt"; OPT_HOME="$1"; OPT_ALL=-1;;
         --etc          ) OPT_ETCE=0; OPT_ALL=-1;;
         --root         ) OPT_ROOT=0; OPT_ALL=-1;;
-        --jobs         ) optcheck "$1" "$opt"; OPT_JOBS="$1"; shift;;
+        --jobs         ) opttest "$1" "$opt"; OPT_JOBS="$1"; shift;;
         --update       ) OPT_UPDATE=0;;
         -v | --verbose ) OPT_VERBOSE=0;;
         -h | --help    ) opthelp; exit 0;;
@@ -81,7 +97,6 @@ done; shift
 # pwgen
 # rabbitmq
 # ripgrep
-# shellcheck
 # sqlite
 # the_silver_searcher
 
@@ -93,10 +108,13 @@ done; shift
 # APTO_INS="$APTO_INS protobuf-compiler" # version to old/outdated(
 # BREW_INS="$BREW_INS bash-completion" # programmable completion # conflicts with util-linux
 # BREW_INS="$BREW_INS bc" # used by bash prompt, console-based calculator utility
-# BREW_INS="$BREW_INS goaccess" # analyze apache/nginx log in real-time
 # BREW_INS="$BREW_INS grpc" # ?????????? gRPC client a-la curl https://github.com/grpc/grpc/blob/master/doc/command_line_tool.md
 # BREW_INS="$BREW_INS hping" # hping3 a-la interactive ping <https://github.com/antirez/hping> # APTO_INS="$APTO_INS hping3" # a-la interactive ping https://github.com/antirez/hping
 # BREW_INS="$BREW_INS pigz" # APTO_INS="$APTO_INS pigz" # parallel gzip for multi-processor, multi-core
+# PIP3_INS="$PIP3_INS howdoi" # cli commands format howto for example: $ howdoi format date bash > DATE=`date +%Y-%m-%d`
+# PIP3_INS="$PIP3_INS maybe" # list files affected by command for example `rm -rf /` <https://github.com/p-e-w/maybe>
+# PIP3_INS="$PIP3_INS pythonpy" # evaluate python expression like `py 2*2` <https://github.com/russell91/pythonpy>
+# PIP3_INS="$PIP3_INS thefuck" # corrects previous console command <https://github.com/nvbn/thefuck>
 # RUST_INS="$RUST_INS czkawka_cli" # find duplicates, empty folders
 # RUST_INS="$RUST_INS ddh" # duplicate file finder https://github.com/darakian/ddh
 # RUST_INS="$RUST_INS exa" # list files/directories, is an ls replacement https://github.com/ogham/exa
@@ -146,8 +164,13 @@ BREW_INS="$BREW_INS snappy" # a-la gz/xz compression, required by ffmpeg and mpv
 BREW_INS="$BREW_INS zstd" # a-la gz/xz compression, required by gcc, curl, git, gnupg, rust, node, ffmpeg, mpv and feh
 
 # Network.
+# PIP3_INS="$PIP3_INS http-prompt" # interactive command-line http client with autocomplete
+# PIP3_INS="$PIP3_INS httpie" # a-la curl <http://httpie.org> # error: httpie 2.2.0 has requirement Pygments>=2.5.2, but you'll have pygments 2.3.1 which is incompatible
+# PIP3_INS="$PIP3_INS mps-youtube" # youtube player <https://github.com/np1/mps-youtube>.
+# PIP3_INS="$PIP3_INS pinggraph" # ping with graph <https://github.com/orf/gping>
+# PIP3_INS="$PIP3_INS you-get" # video downloader (universal) <https://github.com/soimort/you-get>
+# PIP3_INS="$PIP3_INS youtube-dl" # youtube downloader <https://github.com/rg3/youtube-dl>
 BREW_INS="$BREW_INS aria2" # `aria2c https://your.tld/path/to/your.file` download client a-la curl/wget
-BREW_INS="$BREW_INS awscli" # `aws --version` # s3 command line client # default amazon aws ec2 client <https://github.com/aws/aws-cli>.
 BREW_INS="$BREW_INS axel" # download client a-la curl/wget
 BREW_INS="$BREW_INS freerdp" # xfreerdp is a remote desktop protocol for win https://github.com/freerdp/freerdp
 BREW_INS="$BREW_INS gmailctl" # gmail filters generation
@@ -214,7 +237,7 @@ BREW_INS="$BREW_INS node" # APTO_INS="$APTO_INS nodejs" # js programming languag
 # Python programming language
 # <https://github.com/python/cpython>,
 # <https://docs.brew.sh/Homebrew-and-Python>.
-BREW_INS="$BREW_INS flake8" # python linter
+BREW_INS="$BREW_INS flake8" # PIP3_INS="$PIP3_INS flake8" # python linter/checker used/required by emacs flycheck
 BREW_INS="$BREW_INS proselint" # used/required by emacs flycheck
 BREW_INS="$BREW_INS pylint" # used/required by emacs flycheck
 BREW_INS="$BREW_INS python3" # APTO_INS="$APTO_INS python3" # provides pip (pip3) # APTO_INS="$APTO_INS python3-pip" # APTO_INS="$APTO_INS python-pip" # python 2 pip no longer supported by ubuntu
@@ -251,6 +274,9 @@ BREW_INS="$BREW_INS vim" # APTO_INS="$APTO_INS vim" # vim is awesome a-la emacs,
 # Emacs <https://github.com/emacs-mirror/emacs>.
 # APTO_INS="$APTO_INS libgif-dev" # compiltime dependency X11 <https://www.emacswiki.org/emacs/BuildingEmacs#h5o-4>
 # BREW_INS="$BREW_INS emacs" # APTO_INS="$APTO_INS emacs-nox" # instead compiled from source into ~/.local/usr/local/bin # TODO: maybe use homebrew?
+# PIP3_INS="$PIP3_INS bashate" # instead using shellcheck # bash scripts checker a-la pep8 <https://github.com/openstack/bashate>
+# PIP3_INS="$PIP3_INS proselint" # used by emacs flycheck # linter for prose <https://github.com/amperser/proselint>, <http://proselint.com>
+# PIP3_INS="$PIP3_INS pylint" # used by emacs flycheck
 APTO_INS="$APTO_INS aspell-en" # used by emacs auto complete
 APTO_INS="$APTO_INS aspell-ru" # used by emacs auto complete
 APTO_INS="$APTO_INS emacs-el" # find/navigate elisp function source code <https://unix.stackexchange.com/questions/73100/how-to-attach-elisp-function-source-code-in-emacs>
@@ -259,7 +285,7 @@ BREW_INS="$BREW_INS fdupes" # identify or delete duplicate files https://github.
 BREW_INS="$BREW_INS jq" # json console formater (used by emacs counsel-jq) <https://github.com/jqlang/jq>, <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463> # APTO_INS="$APTO_INS jq" # json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>
 BREW_INS="$BREW_INS jsonlint" # used by emacs flycheck <https://github.com/zaach/jsonlint>
 BREW_INS="$BREW_INS markdownlint-cli" # used/required used by emacs flycheck
-BREW_INS="$BREW_INS shellcheck" # APTO_INS="$APTO_INS shellcheck" # used by emacs flycheck
+BREW_INS="$BREW_INS shellcheck" # APTO_INS="$APTO_INS shellcheck" # used by emacs flycheck <https://github.com/koalaman/shellcheck>
 BREW_INS="$BREW_INS sql-lint" # used by emacs flycheck
 
 # Homebrew <https://docs.brew.sh/Homebrew-on-Linux#requirements>.
@@ -271,8 +297,8 @@ APTO_INS="$APTO_INS procps" # /proc file system utilities
 
 # AppImage
 # <https://github.com/appimage/appimagekit>.
+# APPL_INS="$APPL_INS ~/Applications/zsync2-63-1608115-x86_64_deef1f9a67aa1f4872346d78bc66c2c1.AppImage" # APPM_INS="$APPM_INS zsync2" # partial re-downloader a-la rsync/wget/curl <https://github.com/appimagecommunity/zsync2>
 # APPM_INS="$APPM_INS am" # annoying root requirement # appimage application manager <https://github.com/ivan-hc/am-application-manager> that <https://github.com/ivan-hc/appman> is based on
-APPM_INS="$APPM_INS zsync2" # partial re-downloader a-la rsync/wget/curl <https://github.com/appimagecommunity/zsync2>
 APTO_INS="$APTO_INS libfuse2" # <https://docs.appimage.org/user-guide/troubleshooting/fuse.html>
 
 # Flatpak <https://github.com/flatpak/flatpak>.
@@ -286,7 +312,8 @@ FLAT_INS="$FLAT_INS com.github.tchx84.Flatseal" # Is a GUI permissions manager w
 # APTO_INS="$APTO_INS coreutils"
 
 # Web/HTTPd server.
-# APTO_INS="$APTO_INS goaccess" # instead installed from the homebrew # analyze nginx/apache log in real-time
+# BREW_INS="$BREW_INS goaccess" # APTO_INS="$APTO_INS goaccess" # analyze apache/nginx log in real-time
+# PIP3_INS="$PIP3_INS ngxtop" # real-time metrics for nginx server <https://github.com/lebinh/ngxtop>
 BREW_INS="$BREW_INS http-server" # <https://github.com/http-party/http-server>
 BREW_INS="$BREW_INS httpd" # provides htpasswd utility is an nginx/apache basic authentication password generator # APTO_INS="$APTO_INS apache2-utils" # provides htpasswd utility is an nginx/apache basic authentication password generator
 BREW_INS="$BREW_INS nginx" # web/http server a-la apache # APTO_INS="$APTO_INS nginx" APTO_DIS="$APTO_DIS nginx" # web/http server a-la apache
@@ -297,6 +324,7 @@ BREW_INS="$BREW_INS nginx" # web/http server a-la apache # APTO_INS="$APTO_INS n
 # APTO_INS="$APTO_INS pgcenter" # postgresql command-line tool https://github.com/lesovsky/pgcenter/releases install: dpkg --install path/to/pgcenter.deb
 # APTO_INS="$APTO_INS postgresql-14" # APTO_DIS="$APTO_DIS postgresql" # `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>
 # APTO_INS="$APTO_INS postgresql-server-dev-14" # required by pg_activity is an postgresql activity monitoring <https://github.com/dalibo/pg_activity>
+# PIP3_INS="$PIP3_INS pg_activity" # postgresql activity monitoring <https://github.com/julmon/pg_activity>
 BREW_INS="$BREW_INS postgresql@14"
 
 # MySQL Vitess.
@@ -322,6 +350,7 @@ BREW_INS="$BREW_INS redpanda" BREW_INS_SRC="$BREW_INS_SRC redpanda-data/tap" # s
 # APTO_INS="$APTO_INS elasticsearch" # felix `deb https://artifacts.elastic.co/packages/5.x/apt stable main` elasticsearch 5 <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>, # apt-transport-https required by elasticsearch ppa <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#deb-repo>
 
 # Databases.
+# PIP3_INS="$PIP3_INS stellar" # db (psql, mysql) snapshot and restore <https://github.com/fastmonkeys/stellar>
 BREW_INS="$BREW_INS keydb"
 BREW_INS="$BREW_INS redis"
 BREW_INS="$BREW_INS tarantool"
@@ -330,11 +359,13 @@ BREW_INS="$BREW_INS tarantool"
 # <https://github.com/moby/moby>,
 # <https://docs.docker.com/install/linux/docker-ce/ubuntu>.
 # APTO_INS="$APTO_INS golang-docker-credential-helpers" # credential helper stores encrypted passwords in d-bus secret service instead of unencrypted password in plain file <https://docs.docker.com/engine/reference/commandline/login/#credentials-store>
+# PIP3_INS="$PIP3_INS docker" # PIP2_INS="$PIP2_INS docker" # ansible docker dependency
 BREW_INS="$BREW_INS docker" # APTO_INS="$APTO_INS docker-ce" APTO_DIS="docker" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
-BREW_INS="$BREW_INS docker-compose" # <https://github.com/docker/compose>
+BREW_INS="$BREW_INS docker-compose" # PIP3_INS="$PIP3_INS docker-compose" # <https://github.com/docker/compose>
 BREW_INS="$BREW_INS docker-machine" # provides docker daemon <https://docs.docker.com/desktop>
 
 # DevOps monitoring.
+# PIP3_INS="$PIP3_INS glances" # instead using btop # a-la htop <https://github.com/nicolargo/glances>
 # RUST_INS="$RUST_INS bandwhich" # bandwidth utilization tool https://github.com/imsnif/bandwhich
 # RUST_INS="$RUST_INS diskonaut" # terminal disk space navigator https://github.com/imsnif/diskonaut
 # RUST_INS="$RUST_INS du-dust" # show disk space usage, is an du replacement https://github.com/bootandy/dust
@@ -354,7 +385,10 @@ BREW_INS="$BREW_INS ncdu" # APTO_INS="$APTO_INS ncdu" # disk space usage is an b
 # APTO_INS="$APTO_INS wrk" # c http benchmark tool <https://github.com/wg/wrk>
 
 # DevOps.
-BREW_INS="$BREW_INS ansible" # <https://github.com/ansible/ansible>
+# PIP2_INS="$PIP2_INS cloudflare" # wrapper for the cloudflare client api v4: `CF_API_EMAIL=your.name@example.org CF_API_KEY=your_api_key cli4 /zones`
+# PIP3_INS="$PIP3_INS boto" # PIP2_INS="$PIP2_INS boto" # ansible amazon aws dependency
+BREW_INS="$BREW_INS ansible" # <https://github.com/ansible/ansible> # PIP3_INS="$PIP3_INS ansible>=2.9" # PIP2_INS="$PIP2_INS ansible>=2.8.1" # ansible prior to version 2 (uses python 2)
+BREW_INS="$BREW_INS awscli" # PIP3_INS="$PIP3_INS awscli" # `aws --version` # s3 command line client # default amazon aws ec2 client <https://github.com/aws/aws-cli>.
 BREW_INS="$BREW_INS k9s" # derailed/k9s/k9s:, k8s/kubernetes client <https://github.com/derailed/k9s>
 BREW_INS="$BREW_INS kubernetes-cli" # APTO_INS="$APTO_INS kubectl" # provides k8s/kubernetes kubectl util `deb https://apt.kubernetes.io kubernetes-xenial main` <https://kubernetes.io/docs/tasks/tools/install-kubectl> # APTO_INS="$APTO_INS gnupg2" # required by kubectl
 BREW_INS="$BREW_INS netdata" # monitoring <https://github.com/netdata/netdata>
@@ -559,9 +593,10 @@ APPM_INS="$APPM_INS mattermost-desktop"
 # X11 GIMP
 # raster graphics editor a-la photoshop
 # <https://github.com/gnome/gimp>.
+# APPL_INS="$APPL_INS ~/Applications/GNU_Image_Manipulation_Program-2.10.34-x86_64_6b2e14e02559e95be91cf9c21c1269a4.AppImage"
+# APPM_INS="$APPM_INS gimp"
 # APTO_INS="$APTO_INS gimp"
 # FLAT_INS="$FLAT_INS org.gimp.GIMP"
-APPM_INS="$APPM_INS gimp"
 
 # X11/xorg/desktop.
 # APTO_INS="$APTO_INS fonts-fantasque-sans" # instead installed manually into /usr/local/share/fonts # terminal/code/mono/programming font (gnome-terminal issue https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=960629)
@@ -569,13 +604,14 @@ APPM_INS="$APPM_INS gimp"
 # APTO_INS="$APTO_INS fonts-noto" # awesome serif font ???
 # APTO_INS="$APTO_INS libappindicator3-1" # slack dependency # libayatana-appindicator3-1 : Conflicts: libappindicator3-1 but 12.10.1+20.10.20200706.1-0ubuntu1 is to be installed
 # APTO_INS="$APTO_INS libgdk-pixbuf2.0-dev libglib2.0-dev libxml2-utils" # compiltime dependency of numix theme
-# APTO_INS="$APTO_INS mkusb usb-pack-efi" # use instead usb-creator-gtk # mkusb <https://help.ubuntu.com/community/mkusb#Installation> create bootable/live usb/iso <https://help.ubuntu.com/community/mkusb#Quick_start_manual_and_mkusb_PPA>
+# APTO_INS="$APTO_INS mkusb usb-pack-efi" # instead using usb-creator-gtk # mkusb <https://help.ubuntu.com/community/mkusb#Installation> create bootable/live usb/iso <https://help.ubuntu.com/community/mkusb#Quick_start_manual_and_mkusb_PPA>
 # APTO_INS="$APTO_INS pk-update-icon" # FIXME: missing? # display notifications about software updates
 # APTO_INS="$APTO_INS uswsusp" # FIXME: missing? # systemctl hibernate
 # APTO_INS="$APTO_INS xcalib" # returns: "Error - unsupported ramp size 0" (load icc/icm display color profiles (only calibration curves) <https://wiki.archlinux.org/index.php/ICC_Profiles#xcalib>)
 # APTO_INS="$APTO_INS xclip" # tmux and xorg clipboard integration <https://github.com/tmux-plugins/tmux-yank#linux-requirements>
 # APTO_UNI="$APTO_UNI xserver-xorg-video-intel" # instead of intel using modesetting <https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/1867668>
 # BREW_INS="$BREW_INS duplicity" # APTO_INS="$APTO_INS duplicity" # backuping
+# PIP3_INS="$PIP3_INS WeasyPrint" # converts web documents (html with css, svg) to pdf <http://weasyprint.org>
 APPM_INS="$APPM_INS flameshot" # FLAT_INS="$FLAT_INS org.flameshot.Flameshot" # screen shot util <https://github.com/flameshot-org/flameshot>
 APPM_INS="$APPM_INS popsicle" # create bootable/live usb/iso a-la usb-creator-gtk
 APTO_INS="$APTO_INS argyll" # load icc/icm display color profiles <https://wiki.archlinux.org/index.php/ICC_Profiles#Argyll_CMS>
@@ -607,6 +643,7 @@ BREW_INS="$BREW_INS xdotool" # ???
 
 # Er ozn.
 # BREW_INS="$BREW_INS openvpn" # APTO_INS="$APTO_INS openvpn" APTO_DIS="$APTO_DIS openvpn openvpn@client" # openvpn client <https://confluence.ozon.ru/pages/viewpage.action?spaceKey=CORPIT&title=OpenVPN+for+Linux>
+# PIP3_INS="$PIP3_INS clickhouse-cli"
 APTO_INS="$APTO_INS libpcap-dev" # required by github.com/google/gopacket/pcap (go/src/github.com/google/gopacket/pcap/pcap_unix.go:34:10: fatal error: pcap.h: No such file or directory)
 APTO_INS="$APTO_INS libqt5webkit5" # GlobalProtect_UI_deb-5.2.6.0-18.deb VPN dependency
 APTO_INS="$APTO_INS libxml2-dev"
@@ -634,97 +671,133 @@ BREW_INS="$BREW_INS vault"
 # BREW_INS="$BREW_INS docker docker-machine docker-compose" # APTO_INS="$APTO_INS docker-ce" APTO_DIS="$APTO_DIS docker" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`
 
 makelock() {
-    lock_file=$1
-    lock_fd=$2
-    # flock manages locks from shell scripts.
-    if ! [ -x "$(command -v flock)" ]; then
-        makeexit "missing flock command\ninstall flock: brew install flock" 1
-    fi
+    lock_file="${1}"
+    lock_fd="${2}"
+    [ ! -x "$(command -v flock)" ] && errexit "missing flock command\ninstall flock: brew install flock" 1 # flock command manages locks from shell scripts
     eval "exec $lock_fd>$lock_file"
-    flock -n $lock_fd || makeexit "locked makehome" 1
+    flock -n $lock_fd || errexit "locked makehome" 1
 }
 
 makelock "/tmp/makehome.lock" 9
 
 OPT_DRY=0
 
+OPT_USER="$USER"
+[ -n "$OPT_HOME" ] && [ "$OPT_HOME" != " " ] && OPT_USER="$(basename "$OPT_HOME")"
+
+if [ "$OPT_UPDATE" = 0 ]; then
+    BREW_INS_CLI="$BREW_UPD_CLI"
+    APPM_INS_CLI="$APPM_UPD_CLI"
+    RUST_INS_CLI="$RUST_UPD_CLI"
+    PIP2_INS_CLI="$PIP2_UPD_CLI"
+    PIP3_INS_CLI="$PIP3_UPD_CLI"
+fi
+
 if [ "$OPT_VERBOSE" = 0 ] ; then
-    RUST_UPD_CLI="$RUST_UPD_CLI --verbose"
     RUST_INS_CLI="$RUST_INS_CLI --verbose"
 fi
 
-# Advanced package tool (APT/deb/dpkg/apt-get/aptitude)
-# <https://en.wikipedia.org/wiki/APT_(software)>.
-if [ "$OPT_APTO" = 0 ] || [ "$OPT_ALL" = 0 ]; then
-    OPT_DRY=-1
-    sudo cat /dev/null || exit 1
-    printf "Installing APT packages...\n\n"
-    sh -c "sudo $APTO_UNI_CLI $APTO_UNI" || exit 1
-    sh -c "sudo $APTO_INS_CLI $APTO_INS" || exit 1
-    # sh -c "sudo $APTO_DIS_CLI $APTO_DIS" || exit 1
-fi
+makepkgs() {
+    local pkg_hdr="${1}"
+    local pkg_opt="${2}"
+    local ins_typ="${3}"
+    local ins_cli="${4}"
+    local ins_pkg="${5}"
+    local ins_src_typ="${6}"
+    local ins_src_cli="${7}"
+    local ins_src="${8}"
+    local uni_typ="${9}"
+    local uni_cli="${10}"
+    local uni_pkg="${11}"
 
-# Homebrew
-# <https://brew.sh>.
-if [ "$OPT_BREW" = 0 ] || [ "$OPT_ALL" = 0 ]; then
-    OPT_DRY=-1
-    printf "Installing homebrew packages...\n\n"
-    # for src in ${BREW_UNI_SRC}; do sh -c "$BREW_UNI_SRC_CLI $src" || exit 1; done
-    for src in ${BREW_INS_SRC}; do sh -c "$BREW_INS_SRC_CLI $src" || exit 1; done
-    [ -n "$BREW_INS" ] && [ "$BREW_INS" != " " ] && sh -c "$BREW_INS_CLI $BREW_INS" || exit 1
-    printf "\n"
-fi
+    [ "$pkg_opt" != 0 ] && [ "$OPT_ALL" != 0 ] && return
 
-# # AppImageLauncher install AppImages
-# # <https://github.com/theassassin/appimagelauncher>,
-# # <https://github.com/appimage/appimagekit>.
-# if [ "$OPT_APPL" = 0 ] || [ "$OPT_ALL" = 0 ]; then
-#     OPT_DRY=-1
-#     printf "Installing AppImageLauncher AppImage packages...\n\n"
-#     [ -n "$APPL_INS" ] && [ "$APPL_INS" != " " ] && sh -c "$APPL_INS_CLI $APPL_INS"
-#     printf "\n"
-# fi
+    if [ -n "$uni_typ" ] && [ "$uni_typ" != " " ] && [ -n "$uni_cli" ] && [ "$uni_cli" != " " ] && [ -n "$uni_pkg" ] && [ "$uni_pkg" != " " ]; then
+        OPT_DRY=-1
 
-# AppMan install AppImages
-# <https://github.com/ivan-hc/appman>,
-# <https://github.com/appimage/appimagekit>.
-if [ "$OPT_APPM" = 0 ] || [ "$OPT_ALL" = 0 ]; then
-    OPT_DRY=-1
-    printf "Installing AppMan AppImage packages...\n\n"
-    [ -n "$APPM_INS" ] && [ "$APPM_INS" != " " ] && sh -c "$APPM_INS_CLI $APPM_INS"
-    printf "\n"
-fi
+        if printf "$uni_cli" | grep -q "^[[:space:]]*sudo[[:space:]]"; then
+            sudo cat /dev/null || exit 1
+        fi
 
-# Flatpak
-# <https://github.com/flatpak/flatpak>.
-if [ "$OPT_FLAT" = 0 ] || [ "$OPT_ALL" = 0 ]; then
-    OPT_DRY=-1
-    printf "Installing Flatpak packages...\n\n"
-    [ -n "$FLAT_INS" ] && [ "$FLAT_INS" != " " ] && sh -c "$FLAT_INS_CLI $FLAT_INS" || exit 1
-    printf "\n"
-fi
+        printf "uninstalling %s ...\n\n" "$pkg_hdr"
 
-# Rust Cargo
-# <https://github.com/rust-lang/cargo>,
-# <https://doc.rust-lang.org/cargo>.
-if [ "$OPT_RUST" = 0 ] || [ "$OPT_ALL" = 0 ]; then
-    OPT_DRY=-1
-    if [ "$OPT_UPDATE" = 0 ]; then
-        printf "Updating Rust Cargo packages...\n\n"
-        for pkg in ${RUST_INS}; do sh -c "$RUST_UPD_CLI $pkg" || exit 1; done
-    else
-        printf "Installing Rust Cargo packages...\n\n"
-        for pkg in ${RUST_INS}; do sh -c "$RUST_INS_CLI $pkg" || exit 1; done
+        if [ "$uni_typ" = "loopfastexit:" ]; then for x in ${uni_pkg}; do sh -c "$uni_cli $x" || exit 1; done; fi
+        if [ "$uni_typ" = "loopskipexit:" ]; then for x in ${uni_pkg}; do sh -c "$uni_cli $x"; done; fi
+        if [ "$uni_typ" = "linefastexit:" ]; then sh -c "$uni_cli $uni_pkg" || exit 1; fi
+        if [ "$uni_typ" = "lineskipexit:" ]; then sh -c "$uni_cli $uni_pkg"; fi
+
+        printf "\n"
     fi
-    printf "\n"
-fi
 
-optcfg () {
-    local dir="$1"
-    local usr="$2"
+    if [ -n "$ins_src_typ" ] && [ "$ins_src_typ" != " " ] && [ -n "$ins_src_cli" ] && [ "$ins_src_cli" != " " ] && [ -n "$ins_src" ] && [ "$ins_src" != " " ]; then
+        OPT_DRY=-1
+
+        if printf "$ins_src_cli" | grep -q "^[[:space:]]*sudo[[:space:]]"; then
+            sudo cat /dev/null || exit 1
+        fi
+
+        printf "adding source for %s ...\n\n" "$pkg_hdr"
+
+        if [ "$ins_src_typ" = "loopfastexit:" ]; then for x in ${ins_src}; do sh -c "$ins_src_cli $x" || exit 1; done; fi
+        if [ "$ins_src_typ" = "loopskipexit:" ]; then for x in ${ins_src}; do sh -c "$ins_src_cli $x"; done; fi
+        if [ "$ins_src_typ" = "linefastexit:" ]; then sh -c "$ins_src_cli $ins_src" || exit 1; fi
+        if [ "$ins_src_typ" = "lineskipexit:" ]; then sh -c "$ins_src_cli $ins_src"; fi
+
+        printf "\n"
+    fi
+
+    if [ -n "$ins_typ" ] && [ "$ins_typ" != " " ] && [ -n "$ins_cli" ] && [ "$ins_cli" != " " ]; then
+        OPT_DRY=-1
+
+        if printf "$ins_cli" | grep -q "^[[:space:]]*sudo[[:space:]]"; then
+            sudo cat /dev/null || exit 1
+        fi
+
+        if [ "$OPT_UPDATE" = 0 ]; then
+            printf "updating"
+        else
+            printf "installing"
+        fi
+
+        printf " %s ..." "$pkg_hdr"
+
+        if [ ! -n "$ins_pkg" ] || [ "$ins_pkg" = " " ]; then
+            printf " packages are not provided for"
+            if [ "$OPT_UPDATE" = 0 ]; then
+                printf " update"
+            else
+                printf " installation"
+            fi
+            printf "\n\n"
+            return
+        fi
+
+        printf "\n\n"
+
+        if [ "$ins_typ" = "loopfastexit:" ]; then for x in ${ins_pkg}; do sh -c "$ins_cli $x" || exit 1; done; fi
+        if [ "$ins_typ" = "loopskipexit:" ]; then for x in ${ins_pkg}; do sh -c "$ins_cli $x"; done; fi
+        if [ "$ins_typ" = "linefastexit:" ]; then sh -c "$ins_cli $ins_pkg" || exit 1; fi
+        if [ "$ins_typ" = "lineskipexit:" ]; then sh -c "$ins_cli $ins_pkg"; fi
+
+        printf "\n"
+    fi
+}
+
+# makepkgs "AppImageLauncher AppImage packages" "$OPT_APPL" "loopfastexit:" "$APPL_INS_CLI" "$APPL_INS" # AppImageLauncher install AppImages <https://github.com/theassassin/appimagelauncher>, <https://github.com/appimage/appimagekit>
+makepkgs "APT packages"             "$OPT_APTO" "linefastexit:" "$APTO_INS_CLI" "$APTO_INS" ""              ""                  ""                "linefastexit:" "$APTO_UNI_CLI" "$APTO_UNI" # FIXME: sh -c "sudo $APTO_DIS_CLI $APTO_DIS" || exit 1 # advanced package tool (APT/deb/dpkg/apt-get/aptitude) <https://en.wikipedia.org/wiki/APT_(software)>
+makepkgs "Homebrew packages"        "$OPT_BREW" "linefastexit:" "$BREW_INS_CLI" "$BREW_INS" "loopfastexit:" "$BREW_INS_SRC_CLI" "${BREW_INS_SRC}" ""              ""              ""          # FIXME: for src in ${BREW_UNI_SRC}; do sh -c "$BREW_UNI_SRC_CLI $src" || exit 1; done # homebrew <https://brew.sh>
+makepkgs "AppMan AppImage packages" "$OPT_APPM" "lineskipexit:" "$APPM_INS_CLI" "$APPM_INS" # AppMan install AppImages <https://github.com/ivan-hc/appman>, <https://github.com/appimage/appimagekit>
+makepkgs "Flatpak packages"         "$OPT_FLAT" "linefastexit:" "$FLAT_INS_CLI" "$FLAT_INS" # FIXME: FLAT_INS_SRC_CLI # FIXME: FLAT_UNI_SRC_CLI # Flatpak <https://github.com/flatpak/flatpak>
+makepkgs "Rust Cargo packages"      "$OPT_RUST" "loopfastexit:" "$RUST_INS_CLI" "$RUST_INS" # Rust Cargo <https://github.com/rust-lang/cargo>, <https://doc.rust-lang.org/cargo>
+makepkgs "Python2 pip packages"     "$OPT_PIP2" "linefastexit:" "$PIP2_INS_CLI" "$PIP2_INS" # python2 pip <https://github.com/pypa/pip>
+makepkgs "Python3 pip packages"     "$OPT_PIP3" "linefastexit:" "$PIP3_INS_CLI" "$PIP3_INS" # python3 pip <https://github.com/pypa/pip>
+
+makecfgs () {
+    local dir="${1}"
+    local usr="${2}"
     git -C "$dir" rev-parse || exit 1
     if [ $(sudo git -C "$dir" status --porcelain | wc -l) = 0 ]; then
-        printf "Already configured %s directory.\n" "$dir"
+        printf "already configured %s directory\n" "$dir"
     else
         local IFS=$"
 "
@@ -739,28 +812,28 @@ optcfg () {
                 desc="$desc"$(printf "%s" "$str" | awk '{print $1}' | sed 's/:$//')
             done
             if [ "$mode" = 'D' ]; then
-                str=$(printf "Restore %s %s %s file?" "$mode" "$desc" "$file")
+                str=$(printf "restore %s %s %s file?" "$mode" "$desc" "$file")
                 while true; do
                     read -p "$str " yn
                     case $yn in
                         [Yy]* ) sudo -u "$usr" git -C "$dir" checkout "$file"; break;;
                         [Nn]* ) break;;
-                        * ) echo "Please answer yes or no.";;
+                        * ) printf "please answer yes or no\n";;
                     esac
                 done
             elif [ "$mode" = 'M' ]; then
-                str=$(printf "Restore %s %s %s file?" "$mode" "$desc" "$file")
+                str=$(printf "restore %s %s %s file?" "$mode" "$desc" "$file")
                 sudo git -C "$dir" diff "$file"
                 while true; do
                     read -p "$str " yn
                     case $yn in
                         [Yy]* ) sudo -u "$usr" git -C "$dir" checkout "$file"; break;;
                         [Nn]* ) break;;
-                        * ) echo "Please answer yes or no.";;
+                        * ) printf "please answer yes or no\n";;
                     esac
                 done
             else
-                printf "Invalid %s state (%s) of %s file.\n" "$mode" "$desc" "$file"
+                printf "invalid %s state (%s) of %s file\n" "$mode" "$desc" "$file"
             fi
         done
     fi
@@ -771,26 +844,26 @@ optcfg () {
 if [ -n "$OPT_HOME" ] && [ "$OPT_HOME" != " " ]; then
     OPT_DRY=-1
     sudo cat /dev/null || exit 1
-    printf "Configuring %s directory...\n\n" "$OPT_HOME"
-    optcfg "$OPT_HOME" $(basename "$OPT_HOME")
+    printf "configuring %s directory ...\n\n" "$OPT_HOME"
+    makecfgs "$OPT_HOME" "$OPT_USER"
 fi
 
 # /etc of host-specific system-wide configuration
 # <https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard#Directory_structure>.
-if [ "$OPT_ETCE" = 0 ] || [ "$OPT_ALL" = 0 ]; then
+if [ "$OPT_ETCE" = 0 ]; then
     OPT_DRY=-1
     sudo cat /dev/null || exit 1
-    printf "Configuring /etc directory...\n\n"
-    optcfg "/etc" "root"
+    printf "configuring /etc directory ...\n\n"
+    makecfgs "/etc" "root"
 fi
 
 # / root directory of host-specific system-wide configuration
 # <https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard#Directory_structure>.
-if [ "$OPT_ROOT" = 0 ] || [ "$OPT_ALL" = 0 ]; then
+if [ "$OPT_ROOT" = 0 ]; then
     OPT_DRY=-1
     sudo cat /dev/null || exit 1
-    printf "Configuring / root directory...\n\n"
-    optcfg "/" "root"
+    printf "configuring / root directory ...\n\n"
+    makecfgs "/" "root"
 fi
 
 # Dry run.
