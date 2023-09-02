@@ -45,9 +45,9 @@ PIP3_INS_CLI="pip3 install --user"
 PIP3_UPD_CLI="pip3 install --user --upgrade"
 
 OPT_ALL=-1
-OPT_JOBS=`grep -c ^processor /proc/cpuinfo` OPT_JOBS=${OPT_JOBS:-1}
+OPT_JOBS=$(grep -c ^processor /proc/cpuinfo) OPT_JOBS=${OPT_JOBS:-1}
 
-errexit () { printf >&2 "%s\n" "$(printf "$1")"; exit $2; }
+errexit () { printf >&2 "%s\n" "$(printf "$1")"; exit "$2"; }
 
 # Shell script options functions.
 opttest () { { [ "$1" != "$EOL" ] && [ "$1" != '--' ]; } || optexit "missing argument" "$2"; } # avoid infinite loop
@@ -678,7 +678,7 @@ makelock() {
         errexit "missing flock command\ninstall flock: \`brew install flock\` or \`brew install util-linux\`" 1
     fi
     eval "exec $lock_fd>$lock_file"
-    flock -n $lock_fd || errexit "locked makehome" 1
+    flock -n "$lock_fd" || errexit "locked makehome" 1
 }
 
 makelock "/tmp/makehome.lock" 9
@@ -718,7 +718,7 @@ makepkgs() {
     if [ -n "$uni_typ" ] && [ "$uni_typ" != " " ] && [ -n "$uni_cli" ] && [ "$uni_cli" != " " ] && [ -n "$uni_pkg" ] && [ "$uni_pkg" != " " ]; then
         OPT_DRY=-1
 
-        if printf "$uni_cli" | grep -q "^[[:space:]]*sudo[[:space:]]"; then
+        if printf "%s" "$uni_cli" | grep -q "^[[:space:]]*sudo[[:space:]]"; then
             sudo cat /dev/null || exit 1
         fi
 
@@ -735,7 +735,7 @@ makepkgs() {
     if [ -n "$ins_src_typ" ] && [ "$ins_src_typ" != " " ] && [ -n "$ins_src_cli" ] && [ "$ins_src_cli" != " " ] && [ -n "$ins_src" ] && [ "$ins_src" != " " ]; then
         OPT_DRY=-1
 
-        if printf "$ins_src_cli" | grep -q "^[[:space:]]*sudo[[:space:]]"; then
+        if printf "%s" "$ins_src_cli" | grep -q "^[[:space:]]*sudo[[:space:]]"; then
             sudo cat /dev/null || exit 1
         fi
 
@@ -752,7 +752,7 @@ makepkgs() {
     if [ -n "$ins_typ" ] && [ "$ins_typ" != " " ] && [ -n "$ins_cli" ] && [ "$ins_cli" != " " ]; then
         OPT_DRY=-1
 
-        if printf "$ins_cli" | grep -q "^[[:space:]]*sudo[[:space:]]"; then
+        if printf "%s" "$ins_cli" | grep -q "^[[:space:]]*sudo[[:space:]]"; then
             sudo cat /dev/null || exit 1
         fi
 
@@ -764,7 +764,7 @@ makepkgs() {
 
         printf " %s ..." "$pkg_hdr"
 
-        if [ ! -n "$ins_pkg" ] || [ "$ins_pkg" = " " ]; then
+        if [ -z "$ins_pkg" ] || [ "$ins_pkg" = " " ]; then
             printf " packages are not provided for"
             if [ "$OPT_UPDATE" = 0 ]; then
                 printf " update"
@@ -871,6 +871,6 @@ fi
 
 # Dry run.
 if [ "$OPT_DRY" = 0 ]; then
-    printf "$USAGE\n"
+    printf "%s\n" "$USAGE"
     exit 1
 fi
