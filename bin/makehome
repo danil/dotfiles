@@ -673,7 +673,10 @@ BREW_INS="$BREW_INS vault"
 makelock() {
     lock_file="${1}"
     lock_fd="${2}"
-    [ ! -x "$(command -v flock)" ] && errexit "missing flock command\ninstall flock: brew install flock" 1 # flock command manages locks from shell scripts
+    # flock command manages lock from shell scripts.
+    if [ ! -x "$(command -v flock)" ]; then
+        errexit "missing flock command\ninstall flock: \`brew install flock\` or \`brew install util-linux\`" 1
+    fi
     eval "exec $lock_fd>$lock_file"
     flock -n $lock_fd || errexit "locked makehome" 1
 }
