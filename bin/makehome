@@ -2,7 +2,7 @@
 
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-USAGE="usage: ${CMD:=${0##*/}} [--apt] [--homebrew] [--appimage] [--flatpak] [--rust] [--python2] [--python3] [--update] [--etc] [--root] [--home]"
+USAGE="usage: ${CMD:=${0##*/}} [--apt] [--homebrew] [--appimage] [--flatpak] [--rust] [--python2] [--python3] [--update] [--etc] [--root] [--home=\"\$HOME\"]"
 
 # APT (deb/dpkg/apt-get/aptitude)
 # <https://en.wikipedia.org/wiki/APT_(software)>.
