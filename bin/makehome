@@ -76,11 +76,11 @@ while [ "$1" != "$EOL" ]; do
         -h | --help    ) opthelp; exit 0;;
 
         # Process special cases.
-        --) while [ "$1" != "$EOL" ]; do set -- "$@" "$1"; shift; done;;   # parse remaining as positional
-        --[!=]*=*) set -- "${opt%%=*}" "${opt#*=}" "$@";;                  # "--opt=arg"  ->  "--opt" "arg"
-        -[A-Za-z0-9] | -*[!A-Za-z0-9]*) optexit "unknown option:" "$opt";; # anything invalid like '-*'
-        -?*) other="${opt#-?}"; set -- "${opt%$other}" "-${other}" "$@";;  # "-abc"  ->  "-a" "-bc"
-        *) set -- "$@" "$opt";;                                            # positional, rotate to the end
+        --) while [ "$1" != "$EOL" ]; do set -- "$@" "$1"; shift; done;;    # parse remaining as positional
+        --[!=]*=*) set -- "${opt%%=*}" "${opt#*=}" "$@";;                   # "--opt=arg"  ->  "--opt" "arg"
+        -[A-Za-z0-9] | -*[!A-Za-z0-9]*) optexit "unknown option:" "$opt";;  # anything invalid like '-*'
+        -?*) other="${opt#-?}"; set -- "${opt%"$other"}" "-${other}" "$@";; # "-abc"  ->  "-a" "-bc"
+        *) set -- "$@" "$opt";;                                             # positional, rotate to the end
     esac
 done; shift
 
