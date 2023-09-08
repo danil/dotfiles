@@ -2,4 +2,4 @@
 
 . binpath.sh
 
-QT_SCALE_FACTOR=2 "$LOCALBINDIR"/zoom "$@"
+QT_SCALE_FACTOR=1 "$LOCALBINDIR"/zoom "$@"

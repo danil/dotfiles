@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
+# Tab completion
+# <https://wiki.archlinux.org/title/bash#Common_programs_and_options>.
+# Enable programmable completion features (you don't need to enable this,
+# if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+
+if shopt -oq posix; then
+    printf >&2 "bash configuration shopt: posix\n"
+    return
+fi
+
+# Homebrew
+# <https://github.com/homebrew/brew>.
+if [ -x "$(command -v brew)" ] && [[ ${SHELLOPTS} =~ (vi|emacs) ]]; then
+    homebrew_prefix="$(brew --prefix)"
+    completion="${homebrew_prefix}"/etc/profile.d/bash_completion.sh
+
+    if [ -f "$completion" ]; then
+        source "$completion"
+        return
+    fi
+
+    for completion in "${homebrew_prefix}/etc/bash_completion.d/"*; do
+        if [ -r "${completion}" ]; then
+            source "${completion}"
+        else
+            printf >&2 "unreadable bash completion file %s\n" "$completion"
+        fi
+    done
+
+    return
+fi
+
+if [ -f /usr/share/bash-completion/bash_completion ]; then
+    source /usr/share/bash-completion/bash_completion
+    return
+fi
+
+if [ -f /etc/bash_completion ]; then
+    source /etc/bash_completion
+    return
+fi
+
+printf >&2 "missing bash completion\n"

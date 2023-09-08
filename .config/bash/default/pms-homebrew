@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
+# Homebrew
+# <https://github.com/homebrew/brew>.
+
+[ ! -f /home/linuxbrew/.linuxbrew/bin/brew ] && exit
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+export PATH=/home/linuxbrew/.linuxbrew/bin:"$PATH"

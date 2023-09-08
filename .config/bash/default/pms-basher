@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
+# Basher is a bash/shell/functions package manager
+# <https://github.com/basherpm/basher>.
+export PATH="$HOME"/.basher/bin:"$PATH"
+[ -x "$(command -v basher)" ] && eval "$(basher init - bash)"

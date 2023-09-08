@@ -19,8 +19,6 @@ shopt -s histappend
 # ~~~~<danil@kutkevich.org>.
 # HISTSIZE=1000
 # HISTFILESIZE=2000
-HISTSIZE=50000
-HISTFILESIZE=50000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -118,3 +116,5 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+source "$HOME"/.config/bash/conf

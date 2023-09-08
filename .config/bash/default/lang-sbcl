@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
+# Steel Bank Common Lisp.
+# export SBCL_HOME=/usr/lib64/sbcl

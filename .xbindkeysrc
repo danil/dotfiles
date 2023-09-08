@@ -80,7 +80,7 @@
 
 # # Editor.
 # # Fish shell <https://wiki.archlinux.org/index.php/Fish#Troubleshooting>.
-# "/home/danil/bin/ecx"
+# "/home/danil/bin/emacsclient"
 #   Control + Shift + Mod1 + e
 
 # # Show desktop

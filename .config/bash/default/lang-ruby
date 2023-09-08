@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
+[ -x "$(command -v brew)" ] && export PATH="$(brew --prefix ruby)"/bin:$PATH # homebrew <https://github.com/homebrew/brew> # rubygem executables directory path based on "`brew --prefix ruby`/bin"
+[ -x "$(command -v gem)" ] && export PATH="$(gem environment gemdir)"/bin:$PATH # rubygem executables directory path based on "`gem environment gemdir`/bin"
+
+# rbenv
+# is the Ruby version manager
+# <https://github.com/rbenv/rbenv>.
+# DEPRECATED: Instead installing Ruby from homebrew.
+# export PATH="$HOME"/.rbenv/bin:"$PATH"
+# [ -x "$(command -v rbenv)" ] && eval "$(rbenv init -)"
+
+[ -f "$HOME"/.travis/travis.sh ] && source "$HOME"/.travis/travis.sh # auto completion # travis ci gem

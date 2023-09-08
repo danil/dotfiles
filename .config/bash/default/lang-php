@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
+# PHP Composer.
+export COMPOSER_PREFIX="$HOME/vendor"
+[[ :$PATH: == *":$COMPOSER_PREFIX/bin:"* ]] || PATH+=":$COMPOSER_PREFIX/bin"
