@@ -4,6 +4,8 @@
 
 USAGE="usage: ${CMD:=${0##*/}} --fix"
 
+OPT_DRY=0
+
 # Shell script options functions.
 opttest () { { [ "$1" != "$EOL" ] && [ "$1" != '--' ]; } || optexit "missing argument" "$2"; } # avoid infinite loop
 opthelp () { printf "%s\n" "$USAGE"; }
@@ -15,7 +17,7 @@ while [ "$1" != "$EOL" ]; do
     opt="$1"; shift
 
     case "$opt" in
-        --fix       ) OPT_FIX=0;;
+        --fix       ) OPT_FIX=0; OPT_DRY=-1;;
         -h | --help ) opthelp; exit 0;;
 
         # Process special cases.
@@ -27,13 +29,7 @@ while [ "$1" != "$EOL" ]; do
     esac
 done; shift
 
-if [ -z "$OPT_FIX" ]; then
-    printf "%s\n" "$USAGE"
-    exit 1
-fi
-
 if [ "$OPT_FIX" = 0 ]; then
-    OPT_DRY=-1
     xfce4-power-manager --restart
 fi
 
