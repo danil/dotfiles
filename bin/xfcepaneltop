@@ -1,6 +1,0 @@
-#!/bin/sh
-
-# printf "%s" "$(randomaccessmemory)"
-# printf " "
-# printf "%s°" "$(coretemperature)"
-printf "%s" "$(loadaverage)"
