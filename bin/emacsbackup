@@ -2,7 +2,9 @@
 
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-USAGE="usage: ${CMD:=${0##*/}} --home=\"\$HOME\""
+USAGE="usage: ${CMD:=${0##*/}} --home=\"\$HOME\" [--emacs-d] [--emacs-var] [--emacs-d-cask]"
+
+OPT_ALL=0
 
 # Shell script options functions.
 opttest () { { [ "$1" != "$EOL" ] && [ "$1" != '--' ]; } || optexit "missing argument" "$2"; } # avoid infinite loop
@@ -15,6 +17,9 @@ while [ "$1" != "$EOL" ]; do
     opt="$1"; shift
 
     case "$opt" in
+        --emacs-d      ) OPT_EDOT=0; OPT_ALL=-1;;
+        --emacs-var    ) OPT_EVAR=0; OPT_ALL=-1;;
+        --emacs-d-cask ) OPT_ECAS=0; OPT_ALL=-1;;
         --home         ) opttest "$1" "$opt"; OPT_HOME="$1";;
         -h | --help    ) opthelp; exit 0;;
 
@@ -28,39 +33,38 @@ while [ "$1" != "$EOL" ]; do
 done; shift
 
 if [ -z "$OPT_HOME" ]; then
-    printf "%s\n" "$USAGE"
+    printf >&2 "missing home directory\n"
+    printf >&2 "%s\n" "$USAGE"
     exit 1
 fi
 
 LVL=13
 FILETMPL=$(hostname | tr '[:lower:]' '[:upper:]')BAK$(date --utc +%Y%m%dT%H%M%SZ)
 
-logbak() { printf 'backuping %s ...\n' "$FILE"; }
+arcbak() {
+    local opt="${1}"
+    local src="${2}"
+    local dst="${3}"
+    local arg="${4}"
 
-FILE=cask"$FILETMPL".tar.zst
-logbak
-tar --create --exclude-vcs --file - "$OPT_HOME"/.cask/ \
-    | zstd -$LVL --threads=0 --force --compress --stdout \
-    > "$FILE" \
-    || exit 1
+    [ "$opt" != 0 ] && [ "$OPT_ALL" != 0 ] && return
 
-FILE=emacs.var"$FILETMPL".tar.zst
-logbak
-tar --create --exclude-vcs --file - "$OPT_HOME"/.emacs.var/ \
-    | zstd -$LVL --threads=0 --force --compress --stdout \
-    > "$FILE" \
-    || exit 1
+    printf 'backuping %s ...\n' "$OPT_HOME/$dst";
 
-FILE=emacs.d"$FILETMPL".tar.zst
-logbak
-tar --create --exclude-vcs --exclude=.cask --file - "$OPT_HOME"/.emacs.d/ \
-    | zstd -$LVL --threads=0 --force --compress --stdout \
-    > "$FILE" \
-    || exit 1
+    tar "$arg" --create --exclude-vcs --file - "$OPT_HOME/$src/" \
+        | zstd -$LVL --threads=0 --force --compress --stdout \
+        > "$OPT_HOME/$dst" \
+        || exit 1
 
-FILE=emacs.d.cask"$FILETMPL".tar.zst
-logbak
-tar --create --exclude-vcs --file - "$OPT_HOME"/.emacs.d/.cask/ \
-    | zstd -$LVL --threads=0 --force --compress --stdout \
-    > "$FILE" \
-    || exit 1
+    OPT_DRY=-1
+}
+
+arcbak "$OPT_EDOT" ".emacs.d"       "emacs.d$FILETMPL.tar.zst"      "--exclude=.cask"
+arcbak "$OPT_EVAR" ".emacs.var"     "emacs.var$FILETMPL.tar.zst"
+arcbak "$OPT_ECAS" ".emacs.d/.cask" "emacs.d.cask$FILETMPL.tar.zst"
+
+# Dry run.
+if [ "$OPT_DRY" = 0 ]; then
+    printf "%s\n" "$USAGE"
+    exit 1
+fi
