@@ -282,12 +282,13 @@ BREW_INS="$BREW_INS lua" # newer than apt version # the lua programming language
 BREW_INS="$BREW_INS sbcl" # Steel Bank Common Lisp (SBCL) <https://github.com/sbcl/sbcl>.
 BREW_INS="$BREW_INS scc" # A-la sloc/cloc
 
-# Vim.
-BREW_INS="$BREW_INS fzf" # fuzzy finder https://github.com/junegunn/fzf
-BREW_INS="$BREW_INS fzy" # fuzzy finder https://github.com/jhawthorn/fzy
-BREW_INS="$BREW_INS pick" # fuzzy finder https://github.com/mptre/pick
-BREW_INS="$BREW_INS sk" # fuzzy finder https://github.com/lotabout/skim
-BREW_INS="$BREW_INS vim" # APTO_INS="$APTO_INS vim" # vim is awesome a-la emacs, neovim is sucks <https://github.com/vim/vim>.
+# Vim
+# <https://github.com/vim/vim>.
+BREW_INS="$BREW_INS fzf" # Fuzzy finder <https://github.com/junegunn/fzf>.
+BREW_INS="$BREW_INS fzy" # Fuzzy finder <https://github.com/jhawthorn/fzy>.
+BREW_INS="$BREW_INS pick" # Fuzzy finder <https://github.com/mptre/pick>.
+BREW_INS="$BREW_INS sk" # Fuzzy finder <https://github.com/lotabout/skim>.
+BREW_INS="$BREW_INS vim" # APTO_INS="$APTO_INS vim" # Vim is awesome a-la emacs, Neovim is sucks <https://github.com/vim/vim>.
 
 # Emacs
 # <https://github.com/emacs-mirror/emacs>.
