@@ -105,18 +105,14 @@ done; shift
 # TODO: Install ntp.
 
 # TODO: Investigate homebrew packages.
-# cask
 # httpie
-# kubernetes-cli
 # leiningen
 # md5sha1sum
-# p7zip 7-Zip
+# p7zip
+# 7-Zip
 # perl
-# pwgen
 # rabbitmq
-# ripgrep
 # sqlite
-# the_silver_searcher
 
 # Common packages.
 # APTO_INS="$APTO_INS inxi" # inxi --graphics <https://github.com/smxi/inxi>.
