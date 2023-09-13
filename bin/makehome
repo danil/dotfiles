@@ -224,7 +224,7 @@ APTO_INS="$APTO_INS automake" # required by tmux/xchainkeys
 APTO_INS="$APTO_INS build-essential" # compiler?
 APTO_INS="$APTO_INS devscripts" # ???
 APTO_INS="$APTO_INS make" # required by all)
-APTO_INS="$APTO_INS valgrind" # find memory leaks https://www.valgrind.org/docs/manual/quick-start.html
+APTO_INS="$APTO_INS valgrind" # find memory leaks https://valgrind.org/docs/manual/quick-start.html
 BREW_INS="$BREW_INS gcc"
 
 # Clang compiler front end for the C, C++, Objective-C (depends on LLVM).
@@ -293,7 +293,7 @@ BREW_INS="$BREW_INS vim" # APTO_INS="$APTO_INS vim" # Vim is awesome a-la emacs,
 # Emacs
 # <https://github.com/emacs-mirror/emacs>.
 # Emacs installation by compile source code and run without X11.
-# APTO_INS="$APTO_INS libgif-dev" # Compiltime dependency X11 <https://www.emacswiki.org/emacs/BuildingEmacs#h5o-4>.
+# APTO_INS="$APTO_INS libgif-dev" # Compiltime dependency X11 <https://emacswiki.org/emacs/BuildingEmacs#h5o-4>.
 APTO_INS="$APTO_INS libgnutls28-dev" # Compiltime dependency <https://stackoverflow.com/questions/52722096/build-emacs-and-gnutls-not-found#60430406>.
 #
 # Emacs installation by homebrew and run without X11.
@@ -347,7 +347,7 @@ BREW_INS="$BREW_INS nginx" # web/http server a-la apache # APTO_INS="$APTO_INS n
 # <https://github.com/postgres/postgres>,
 # <https://wiki.postgresql.org/wiki/Homebrew>.
 # APTO_INS="$APTO_INS pgcenter" # postgresql command-line tool https://github.com/lesovsky/pgcenter/releases install: dpkg --install path/to/pgcenter.deb
-# APTO_INS="$APTO_INS postgresql-14" # APTO_DIS="$APTO_DIS postgresql" # `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>.
+# APTO_INS="$APTO_INS postgresql-14" # APTO_DIS="$APTO_DIS postgresql" # `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://postgresql.org/download/linux/ubuntu>.
 # APTO_INS="$APTO_INS postgresql-server-dev-14" # required by pg_activity is an postgresql activity monitoring <https://github.com/dalibo/pg_activity>.
 # PIP3_INS="$PIP3_INS pg_activity" # postgresql activity monitoring <https://github.com/julmon/pg_activity>.
 BREW_INS="$BREW_INS postgresql@14"
@@ -675,10 +675,10 @@ BREW_INS="$BREW_INS vault"
 
 # # Er rkt.
 # # APTO_INS="$APTO_INS glide" # german does not use glide # go/german `add-apt-repository ppa:masterminds/glide` golang glide vendor package management <https://github.com/Masterminds/glide>.
-# # APTO_INS="$APTO_INS postgresql-11" APTO_DIS="$APTO_DIS postgresql-11" # `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>.
-# # APTO_INS="$APTO_INS postgresql-9.6" APTO_DIS="$APTO_DIS postgresql-9.6"  # felix `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://www.postgresql.org/download/linux/ubuntu>.
+# # APTO_INS="$APTO_INS postgresql-11" APTO_DIS="$APTO_DIS postgresql-11" # `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://postgresql.org/download/linux/ubuntu>.
+# # APTO_INS="$APTO_INS postgresql-9.6" APTO_DIS="$APTO_DIS postgresql-9.6"  # felix `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://postgresql.org/download/linux/ubuntu>.
 # # APTO_INS="$APTO_INS yarn" # (NOTE: before add ppa!) js package manager required by rails asset pipeline precompilation (before install add ppa <https://yarnpkg.com/lang/en/docs/install/#debian-stable>).
-# APTO_INS="$APTO_INS elasticsearch apt-transport-https" # felix `deb https://artifacts.elastic.co/packages/5.x/apt stable main` elasticsearch 5 <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>, # apt-transport-https required by elasticsearch ppa <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#deb-repo>.
+# APTO_INS="$APTO_INS elasticsearch apt-transport-https" # felix `deb https://artifacts.elastic.co/packages/5.x/apt stable main` elasticsearch 5 <https://elastic.co/guide/en/elasticsearch/reference/current/deb.html>, # apt-transport-https required by elasticsearch ppa <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#deb-repo>.
 # APTO_INS="$APTO_INS golang"
 # APTO_INS="$APTO_INS libmagickwand-dev" # required by rmagick by felix
 # APTO_INS="$APTO_INS libpcap-dev" # required by github.com/google/gopacket/pcap (go/src/github.com/google/gopacket/pcap/pcap_unix.go:34:10: fatal error: pcap.h: No such file or directory).
