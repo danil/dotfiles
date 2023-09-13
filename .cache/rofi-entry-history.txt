@@ -1,9 +1,3 @@
-yan
-yand
- 
-ya
-gim
-scr
 gim
 yand
 9
@@ -17,3 +11,9 @@ pcl
 pcloud
 pcloud
 pcloud
+pclo
+gim
+pcl
+pcl
+pclo
+zoo
