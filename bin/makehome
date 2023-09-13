@@ -14,13 +14,30 @@ APTO_UNI_CLI="sudo aptitude remove"
 # <https://brew.sh>.
 BREW_INS_SRC_CLI="brew tap"
 BREW_UNI_SRC_CLI="brew untap"
-BREW_INS_CLI="HOMEBREW_NO_AUTO_UPDATE=1 brew install"
+BREW_INS_CLI="export HOMEBREW_NO_AUTO_UPDATE=1 && brew install"
 BREW_UPD_CLI="brew install"
 
 # AppImage
 # <https://github.com/appimage/appimagekit>.
 APPM_INS_CLI="appman -i"
 APPM_UPD_CLI="appman -u"
+
+# AppImage
+# <https://github.com/appimage/appimagekit>.
+APPM_INS_CLI="appman -i"
+APPM_UPD_CLI="appman -u"
+
+# Snap
+# <https://github.com/snapcore/snapd>.
+SNAP_INS_CLI="sudo snap install"
+SNAP_UPD_CLI="sudo snap refresh"
+SNAP_UNI_CLI="sudo snap remove"
+
+# Snap classic
+# <https://github.com/snapcore>.
+SNAC_INS_CLI="sudo snap install --classic"
+SNAC_UPD_CLI="sudo snap refresh"
+SNAC_UNI_CLI="sudo snap remove"
 
 # Flatpak
 # <https://github.com/flatpak/flatpak>.
@@ -63,6 +80,7 @@ while [ "$1" != "$EOL" ]; do
         --apt          ) OPT_APTO=0; OPT_ALL=-1;;
         --homebrew     ) OPT_BREW=0; OPT_ALL=-1;;
         --appimage     ) OPT_APPL=0; OPT_APPM=0; OPT_ALL=-1;;
+        --snap         ) OPT_SNAP=0; OPT_SNAC=0; OPT_ALL=-1;;
         --flatpak      ) OPT_FLAT=0; OPT_ALL=-1;;
         --rust         ) OPT_RUST=0; OPT_ALL=-1;;
         --python2      ) OPT_PIP2=0; OPT_ALL=-1;;
@@ -271,16 +289,22 @@ BREW_INS="$BREW_INS pick" # fuzzy finder https://github.com/mptre/pick
 BREW_INS="$BREW_INS sk" # fuzzy finder https://github.com/lotabout/skim
 BREW_INS="$BREW_INS vim" # APTO_INS="$APTO_INS vim" # vim is awesome a-la emacs, neovim is sucks <https://github.com/vim/vim>
 
-# Emacs <https://github.com/emacs-mirror/emacs>.
+# Emacs
+# <https://github.com/emacs-mirror/emacs>.
+# Emacs installation by compile source code and run without X11.
 # APTO_INS="$APTO_INS libgif-dev" # compiltime dependency X11 <https://www.emacswiki.org/emacs/BuildingEmacs#h5o-4>
-# BREW_INS="$BREW_INS emacs" # APTO_INS="$APTO_INS emacs-nox" # instead compiled from source into ~/.local/usr/local/bin # TODO: maybe use homebrew?
+APTO_INS="$APTO_INS libgnutls28-dev" # compiltime dependency <https://stackoverflow.com/questions/52722096/build-emacs-and-gnutls-not-found#60430406>
+#
+# Emacs installation by homebrew and run without X11.
+BREW_INS="$BREW_INS emacs" # APTO_INS="$APTO_INS emacs-nox" # instead compiled from source into ~/.local/usr/local/bin # TODO: maybe use homebrew?
+#
+# Emacs runtime dependencies.
 # PIP3_INS="$PIP3_INS bashate" # instead using shellcheck # bash scripts checker a-la pep8 <https://github.com/openstack/bashate>
 # PIP3_INS="$PIP3_INS proselint" # used by emacs flycheck # linter for prose <https://github.com/amperser/proselint>, <http://proselint.com>
 # PIP3_INS="$PIP3_INS pylint" # used by emacs flycheck
 APTO_INS="$APTO_INS aspell-en" # used by emacs auto complete
 APTO_INS="$APTO_INS aspell-ru" # used by emacs auto complete
 APTO_INS="$APTO_INS emacs-el" # find/navigate elisp function source code <https://unix.stackexchange.com/questions/73100/how-to-attach-elisp-function-source-code-in-emacs>
-APTO_INS="$APTO_INS libgnutls28-dev" # compiltime dependency <https://stackoverflow.com/questions/52722096/build-emacs-and-gnutls-not-found#60430406>
 BREW_INS="$BREW_INS fdupes" # identify or delete duplicate files https://github.com/adrianlopezroche/fdupes (used by emacs package https://github.com/ShuguangSun/find-dupes-dired)
 BREW_INS="$BREW_INS jq" # json console formater (used by emacs counsel-jq) <https://github.com/jqlang/jq>, <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463> # APTO_INS="$APTO_INS jq" # json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>
 BREW_INS="$BREW_INS jsonlint" # used by emacs flycheck <https://github.com/zaach/jsonlint>
@@ -539,10 +563,10 @@ APPM_INS="$APPM_INS google-chrome" # FLAT_INS="$FLAT_INS com.google.Chrome" # AP
 # SNAP_INS="$SNAP_INS firefox"
 APPM_INS="$APPM_INS firefox"
 APTO_UNI="$APTO_UNI firefox"
+SNAP_UNI="$SNAP_UNI firefox"
 
 # X11 Mailspring is a GUI mail client written in C/C++
 # <https://github.com/foundry376/mailspring>.
-# SNAP_INS="$SNAP_INS mailspring"
 APTO_UNI="$APTO_UNI thunderbird"
 APTO_UNI="$APTO_UNI thunderbird-gnome-support"
 APTO_UNI="$APTO_UNI thunderbird-locale-en"
@@ -550,6 +574,7 @@ APTO_UNI="$APTO_UNI thunderbird-locale-en-gb"
 APTO_UNI="$APTO_UNI thunderbird-locale-en-us"
 APTO_UNI="$APTO_UNI thunderbird-locale-ru"
 APTO_UNI="$APTO_UNI thunderbird-locale-zh-hant"
+SNAP_INS="$SNAP_INS mailspring"
 
 # # X11 never used Brave browser a-la google chrome <https://github.com/brave>.
 # APTO_INS="$APTO_INS apt-transport-https"
@@ -583,12 +608,23 @@ APPM_INS="$APPM_INS zoom"
 # FLAT_INS="$FLAT_INS com.skype.Client"
 APPM_INS="$APPM_INS skype"
 
-# X11 Telegram text group chat.
+# X11 Telegram text group chat
+# <https://github.com/telegramdesktop/tdesktop>.
+# SNAP_INS="$SNAP_INS telegram-desktop"
 APPM_INS="$APPM_INS telegram"
 
-# X11 mattermost text group chat a-la slack.
+# X11 mattermost text group chat a-la slack
+# <https://github.com/mattermost/mattermost>.
 # FLAT_INS="$FLAT_INS com.mattermost.Desktop"
+# SNAC_INS="$SNAC_INS mattermost-desktop"
 APPM_INS="$APPM_INS mattermost-desktop"
+
+# X11 slack text group chat a-la mattermost
+# <https://github.com/slackhq>
+SNAP_INS="$SNAP_INS slack"
+
+# X11 programming language.
+SNAC_INS="$SNAC_INS intellij-idea-ultimate" # java programming language <https://github.com/openjdk/jdk>
 
 # X11 GIMP
 # raster graphics editor a-la photoshop
@@ -612,7 +648,7 @@ APPM_INS="$APPM_INS mattermost-desktop"
 # APTO_UNI="$APTO_UNI xserver-xorg-video-intel" # instead of intel using modesetting <https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/1867668>
 # BREW_INS="$BREW_INS duplicity" # APTO_INS="$APTO_INS duplicity" # backuping
 # PIP3_INS="$PIP3_INS WeasyPrint" # converts web documents (html with css, svg) to pdf <http://weasyprint.org>
-APPM_INS="$APPM_INS flameshot" # FLAT_INS="$FLAT_INS org.flameshot.Flameshot" # screen shot util <https://github.com/flameshot-org/flameshot>
+APPM_INS="$APPM_INS flameshot" # FLAT_INS="$FLAT_INS org.flameshot.Flameshot" # SNAP_INS="$SNAP_INS flameshot" # screen shot util <https://github.com/flameshot-org/flameshot>
 APPM_INS="$APPM_INS popsicle" # create bootable/live usb/iso a-la usb-creator-gtk
 APTO_INS="$APTO_INS argyll" # load icc/icm display color profiles <https://wiki.archlinux.org/index.php/ICC_Profiles#Argyll_CMS>
 APTO_INS="$APTO_INS blueman" # full featured bluetooth manager gui <https://wiki.archlinux.org/title/Blueman>, <https://wiki.archlinux.org/title/Bluetooth>
@@ -640,6 +676,8 @@ BREW_INS="$BREW_INS ffmpeg" # watch webcam `ffplay -fs /dev/video0` https://gith
 BREW_INS="$BREW_INS marp-cli" # markdown to presentation (pdf) from command line https://github.com/marp-team/marp
 BREW_INS="$BREW_INS mpv" # APTO_INS="$APTO_INS mpv" # a-la mplayer replacement
 BREW_INS="$BREW_INS xdotool" # ???
+SNAP_INS="$SNAP_INS atril" # pdf viewer (remembers last page) for mate de (desktop environment) <https://github.com/mate-desktop/atril>
+SNAP_INS="$SNAP_INS tusk" # evernote desktop client written in javascript <https://github.com/klaudiosinani/tusk>
 
 # Er ozn.
 # BREW_INS="$BREW_INS openvpn" # APTO_INS="$APTO_INS openvpn" APTO_DIS="$APTO_DIS openvpn openvpn@client" # openvpn client <https://confluence.ozon.ru/pages/viewpage.action?spaceKey=CORPIT&title=OpenVPN+for+Linux>
@@ -691,6 +729,7 @@ OPT_USER="$USER"
 if [ "$OPT_UPDATE" = 0 ]; then
     BREW_INS_CLI="$BREW_UPD_CLI"
     APPM_INS_CLI="$APPM_UPD_CLI"
+    SNAP_INS_CLI="$SNAP_UPD_CLI"
     RUST_INS_CLI="$RUST_UPD_CLI"
     PIP2_INS_CLI="$PIP2_UPD_CLI"
     PIP3_INS_CLI="$PIP3_UPD_CLI"
@@ -703,15 +742,18 @@ fi
 makepkgs() {
     local pkg_hdr="${1}"
     local pkg_opt="${2}"
+
     local ins_typ="${3}"
     local ins_cli="${4}"
     local ins_pkg="${5}"
-    local ins_src_typ="${6}"
-    local ins_src_cli="${7}"
-    local ins_src="${8}"
-    local uni_typ="${9}"
-    local uni_cli="${10}"
-    local uni_pkg="${11}"
+
+    local uni_typ="${6}"
+    local uni_cli="${7}"
+    local uni_pkg="${8}"
+
+    local ins_src_typ="${9}"
+    local ins_src_cli="${10}"
+    local ins_src="${11}"
 
     [ "$pkg_opt" != 0 ] && [ "$OPT_ALL" != 0 ] && return
 
@@ -765,13 +807,7 @@ makepkgs() {
         printf " %s ..." "$pkg_hdr"
 
         if [ -z "$ins_pkg" ] || [ "$ins_pkg" = " " ]; then
-            printf " packages are not provided for"
-            if [ "$OPT_UPDATE" = 0 ]; then
-                printf " update"
-            else
-                printf " installation"
-            fi
-            printf "\n\n"
+            printf " packages are not provided\n\n"
             return
         fi
 
@@ -787,9 +823,11 @@ makepkgs() {
 }
 
 # makepkgs "AppImageLauncher AppImage packages" "$OPT_APPL" "loopfastexit:" "$APPL_INS_CLI" "$APPL_INS" # AppImageLauncher install AppImages <https://github.com/theassassin/appimagelauncher>, <https://github.com/appimage/appimagekit>
-makepkgs "APT packages"             "$OPT_APTO" "linefastexit:" "$APTO_INS_CLI" "$APTO_INS" ""              ""                  ""                "linefastexit:" "$APTO_UNI_CLI" "$APTO_UNI" # FIXME: sh -c "sudo $APTO_DIS_CLI $APTO_DIS" || exit 1 # advanced package tool (APT/deb/dpkg/apt-get/aptitude) <https://en.wikipedia.org/wiki/APT_(software)>
-makepkgs "Homebrew packages"        "$OPT_BREW" "linefastexit:" "$BREW_INS_CLI" "$BREW_INS" "loopfastexit:" "$BREW_INS_SRC_CLI" "${BREW_INS_SRC}" ""              ""              ""          # FIXME: for src in ${BREW_UNI_SRC}; do sh -c "$BREW_UNI_SRC_CLI $src" || exit 1; done # homebrew <https://brew.sh>
+makepkgs "APT packages"             "$OPT_APTO" "linefastexit:" "$APTO_INS_CLI" "$APTO_INS" "linefastexit:" "$APTO_UNI_CLI" "$APTO_UNI" # FIXME: sh -c "sudo $APTO_DIS_CLI $APTO_DIS" || exit 1 # advanced package tool (APT/deb/dpkg/apt-get/aptitude) <https://en.wikipedia.org/wiki/APT_(software)>
+makepkgs "Homebrew packages"        "$OPT_BREW" "linefastexit:" "$BREW_INS_CLI" "$BREW_INS" ""              ""              ""          "loopfastexit:" "$BREW_INS_SRC_CLI" "${BREW_INS_SRC}" # FIXME: for src in ${BREW_UNI_SRC}; do sh -c "$BREW_UNI_SRC_CLI $src" || exit 1; done # homebrew <https://brew.sh>
 makepkgs "AppMan AppImage packages" "$OPT_APPM" "lineskipexit:" "$APPM_INS_CLI" "$APPM_INS" # AppMan install AppImages <https://github.com/ivan-hc/appman>, <https://github.com/appimage/appimagekit>
+makepkgs "Snap packages"            "$OPT_SNAP" "loopfastexit:" "$SNAP_INS_CLI" "$SNAP_INS" "linefastexit:" "$SNAP_UNI_CLI" "$SNAP_UNI" # Snap <https://github.com/snapcore/snapd>
+makepkgs "Snap classic packages"    "$OPT_SNAC" "loopfastexit:" "$SNAC_INS_CLI" "$SNAC_INS" "linefastexit:" "$SNAC_UNI_CLI" "$SNAC_UNI" # Snap <https://github.com/snapcore/snapd>
 makepkgs "Flatpak packages"         "$OPT_FLAT" "linefastexit:" "$FLAT_INS_CLI" "$FLAT_INS" # FIXME: FLAT_INS_SRC_CLI # FIXME: FLAT_UNI_SRC_CLI # Flatpak <https://github.com/flatpak/flatpak>
 makepkgs "Rust Cargo packages"      "$OPT_RUST" "loopfastexit:" "$RUST_INS_CLI" "$RUST_INS" # Rust Cargo <https://github.com/rust-lang/cargo>, <https://doc.rust-lang.org/cargo>
 makepkgs "Python2 pip packages"     "$OPT_PIP2" "linefastexit:" "$PIP2_INS_CLI" "$PIP2_INS" # python2 pip <https://github.com/pypa/pip>
