@@ -5,7 +5,7 @@
     <property name="mode" type="int" value="2"/>
     <property name="themes" type="empty">
       <property name="list" type="array">
-        <value type="string" value="screensavers-bouboule"/>
+        <value type="string" value="screensavers-anemone"/>
       </property>
     </property>
     <property name="idle-activation" type="empty">
