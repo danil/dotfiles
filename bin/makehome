@@ -623,7 +623,7 @@ APPM_INS="$APPM_INS mattermost-desktop"
 # <https://github.com/slackhq>
 SNAP_INS="$SNAP_INS slack"
 
-# X11 programming language.
+# X11 programming language GUI.
 SNAC_INS="$SNAC_INS intellij-idea-ultimate" # java programming language <https://github.com/openjdk/jdk>
 
 # X11 GIMP
