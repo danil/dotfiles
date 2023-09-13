@@ -292,25 +292,25 @@ BREW_INS="$BREW_INS vim" # APTO_INS="$APTO_INS vim" # vim is awesome a-la emacs,
 # Emacs
 # <https://github.com/emacs-mirror/emacs>.
 # Emacs installation by compile source code and run without X11.
-# APTO_INS="$APTO_INS libgif-dev" # compiltime dependency X11 <https://www.emacswiki.org/emacs/BuildingEmacs#h5o-4>.
-APTO_INS="$APTO_INS libgnutls28-dev" # compiltime dependency <https://stackoverflow.com/questions/52722096/build-emacs-and-gnutls-not-found#60430406>.
+# APTO_INS="$APTO_INS libgif-dev" # Compiltime dependency X11 <https://www.emacswiki.org/emacs/BuildingEmacs#h5o-4>.
+APTO_INS="$APTO_INS libgnutls28-dev" # Compiltime dependency <https://stackoverflow.com/questions/52722096/build-emacs-and-gnutls-not-found#60430406>.
 #
 # Emacs installation by homebrew and run without X11.
-BREW_INS="$BREW_INS emacs" # APTO_INS="$APTO_INS emacs-nox" # instead compiled from source into ~/.local/usr/local/bin # TODO: maybe use homebrew?
+BREW_INS="$BREW_INS emacs" # APTO_INS="$APTO_INS emacs-nox" # Instead compiled from source into `~/.local/usr/local/bin` # TODO: Maybe use homebrew?
 #
 # Emacs runtime dependencies.
-# PIP3_INS="$PIP3_INS bashate" # instead using shellcheck # bash scripts checker a-la pep8 <https://github.com/openstack/bashate>.
-# PIP3_INS="$PIP3_INS proselint" # used by emacs flycheck # linter for prose <https://github.com/amperser/proselint>, <http://proselint.com>.
-# PIP3_INS="$PIP3_INS pylint" # used by emacs flycheck
-APTO_INS="$APTO_INS aspell-en" # used by emacs auto complete.
-APTO_INS="$APTO_INS aspell-ru" # used by emacs auto complete.
-APTO_INS="$APTO_INS emacs-el" # find/navigate elisp function source code <https://unix.stackexchange.com/questions/73100/how-to-attach-elisp-function-source-code-in-emacs>.
-BREW_INS="$BREW_INS fdupes" # identify or delete duplicate files https://github.com/adrianlopezroche/fdupes (used by emacs package https://github.com/ShuguangSun/find-dupes-dired).
-BREW_INS="$BREW_INS jq" # json console formater (used by emacs counsel-jq) <https://github.com/jqlang/jq>, <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463> # APTO_INS="$APTO_INS jq" # json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>.
-BREW_INS="$BREW_INS jsonlint" # used by emacs flycheck <https://github.com/zaach/jsonlint>.
-BREW_INS="$BREW_INS markdownlint-cli" # used/required used by emacs flycheck
-BREW_INS="$BREW_INS shellcheck" # APTO_INS="$APTO_INS shellcheck" # used by emacs flycheck <https://github.com/koalaman/shellcheck>.
-BREW_INS="$BREW_INS sql-lint" # used by emacs flycheck
+# PIP3_INS="$PIP3_INS bashate" # Instead using ShellCheck. # Bash scripts checker a-la pep8 <https://github.com/openstack/bashate>.
+# PIP3_INS="$PIP3_INS proselint" # Used by emacs Flycheck. # Linter for prose <https://github.com/amperser/proselint>, <http://proselint.com>.
+# PIP3_INS="$PIP3_INS pylint" # Used by emacs Flycheck
+APTO_INS="$APTO_INS aspell-en" # Used by emacs auto Complete.
+APTO_INS="$APTO_INS aspell-ru" # Used by emacs auto Complete.
+APTO_INS="$APTO_INS emacs-el" # Find/navigate ELisp function source code <https://unix.stackexchange.com/questions/73100/how-to-attach-elisp-function-source-code-in-emacs>.
+BREW_INS="$BREW_INS fdupes" # Identify or delete duplicate files https://github.com/adrianlopezroche/fdupes (used by emacs package https://github.com/ShuguangSun/find-dupes-dired).
+BREW_INS="$BREW_INS jq" # JSON console formater (used by emacs counsel-jq) <https://github.com/jqlang/jq>, <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463> # APTO_INS="$APTO_INS jq" # json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>.
+BREW_INS="$BREW_INS jsonlint" # Used by Emacs Flycheck <https://github.com/zaach/jsonlint>.
+BREW_INS="$BREW_INS markdownlint-cli" # Used/required used by Emacs Flycheck.
+BREW_INS="$BREW_INS shellcheck" # APTO_INS="$APTO_INS shellcheck" # Used by Emacs Flycheck <https://github.com/koalaman/shellcheck>.
+BREW_INS="$BREW_INS sql-lint" # Used by Emacs Flycheck.
 
 # Homebrew <https://docs.brew.sh/Homebrew-on-Linux#requirements>.
 # APTO_INS="$APTO_INS git" # instead installed from the homebrew
