@@ -292,9 +292,22 @@ BREW_INS="$BREW_INS vim" # APTO_INS="$APTO_INS vim" # Vim is awesome a-la emacs,
 
 # Emacs
 # <https://github.com/emacs-mirror/emacs>.
-# Emacs installation by compile source code and run without X11.
-# APTO_INS="$APTO_INS libgif-dev" # Compiltime dependency X11 <https://emacswiki.org/emacs/BuildingEmacs#h5o-4>.
-APTO_INS="$APTO_INS libgnutls28-dev" # Compiltime dependency <https://stackoverflow.com/questions/52722096/build-emacs-and-gnutls-not-found#60430406>.
+#
+# # Emacs installation by compile source code and run without X11
+# # <https://emacswiki.org/emacs/BuildingEmacs>.
+# # APTO_INS="$APTO_INS libgif-dev" # Compiltime dependency X11 <https://emacswiki.org/emacs/BuildingEmacs#h5o-4>.
+# APTO_INS="$APTO_INS build-essential"
+# APTO_INS="$APTO_INS g++-10"
+# APTO_INS="$APTO_INS gcc-10"
+# APTO_INS="$APTO_INS libgccjit0 libgccjit-10-dev" # Native JIT compilation support <https://emacswiki.org/emacs/GccEmacs>, <https://harryrschwartz.com/2022/12/08/how-i-build-emacs-from-source-on-debian#native-jit-compilation-support>.
+# APTO_INS="$APTO_INS libgnutls28-dev"
+# APTO_INS="$APTO_INS libgnutls28-dev" # Compiltime dependency <https://stackoverflow.com/questions/52722096/build-emacs-and-gnutls-not-found#60430406>.
+# APTO_INS="$APTO_INS libgtk-3-dev"
+# APTO_INS="$APTO_INS libjansson-dev"
+# APTO_INS="$APTO_INS libjansson4"
+# APTO_INS="$APTO_INS libncurses-dev"
+# APTO_INS="$APTO_INS libtree-sitter-dev"
+# APTO_INS="$APTO_INS texinfo"
 #
 # Emacs installation by homebrew and run without X11.
 BREW_INS="$BREW_INS emacs" # APTO_INS="$APTO_INS emacs-nox" # Instead compiled from source into `~/.local/usr/local/bin` # TODO: Maybe use homebrew?
