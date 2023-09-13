@@ -2,7 +2,7 @@
 
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-USAGE="usage: ${CMD:=${0##*/}} [--apt] [--homebrew] [--appimage] [--flatpak] [--rust] [--python2] [--python3] [--update] [--etc] [--root] [--home=\"\$HOME\"]"
+USAGE="usage: ${CMD:=${0##*/}} [--apt] [--homebrew] [--appimage] [--snap] [--flatpak] [--rust] [--python2] [--python3] [--update] [--etc] [--root] [--home=\"\$HOME\"]"
 
 # APT (deb/dpkg/apt-get/aptitude)
 # <https://en.wikipedia.org/wiki/APT_(software)>.
@@ -183,7 +183,7 @@ BREW_INS="$BREW_INS zstd" # a-la gz/xz compression, required by gcc, curl, git, 
 
 # Network.
 # PIP3_INS="$PIP3_INS http-prompt" # interactive command-line http client with autocomplete
-# PIP3_INS="$PIP3_INS httpie" # a-la curl <http://httpie.org> # error: httpie 2.2.0 has requirement Pygments>=2.5.2, but you'll have pygments 2.3.1 which is incompatible
+# PIP3_INS="$PIP3_INS httpie" # a-la curl <http://httpie.org> # FAIL: httpie 2.2.0 has requirement Pygments>=2.5.2, but you'll have pygments 2.3.1 which is incompatible
 # PIP3_INS="$PIP3_INS mps-youtube" # youtube player <https://github.com/np1/mps-youtube>.
 # PIP3_INS="$PIP3_INS pinggraph" # ping with graph <https://github.com/orf/gping>
 # PIP3_INS="$PIP3_INS you-get" # video downloader (universal) <https://github.com/soimort/you-get>
@@ -214,7 +214,7 @@ APTO_INS="$APTO_INS cmake libfontconfig1-dev libfreetype6-dev libxcb-xfixes0-dev
 APTO_INS="$APTO_INS xterm" # backup/fallback terminal additional to the st/stterm/alacritty
 BREW_INS="$BREW_INS fish" # fish shell a-la bash
 BREW_INS="$BREW_INS nushell" # <https://github.com/nushell/nushell>
-BREW_INS="$BREW_INS tmux" # terminal multiplexer a-la gnu screen # APTO_INS="$APTO_INS pkg-config libevent-dev libncurses-dev" # os wide/from source compiltime dependency # APTO_INS="$APTO_INS byacc" # also byacc: preventing compiltime dependency error: ./etc/ylwrap: line 175: yacc: command not found
+BREW_INS="$BREW_INS tmux" # terminal multiplexer a-la gnu screen # APTO_INS="$APTO_INS pkg-config libevent-dev libncurses-dev" # os wide/from source compiltime dependency # APTO_INS="$APTO_INS byacc" # also byacc: preventing compiltime dependency FAIL: ./etc/ylwrap: line 175: yacc: command not found
 BREW_INS="$BREW_INS wezterm" BREW_INS_SRC="$BREW_INS_SRC wez/wezterm-linuxbrew" # APPM_INS="$APPM_INS wezterm" # gpu-accelerated cross-platform terminal and multiplexer written in rust <https://github.com/wez/wezterm>
 BREW_INS="$BREW_INS xsel" # APTO_INS="$APTO_INS xsel" # copy selection in termina to the xorg clipboard (used by emacs and urxvt) <https://wiki.archlinux.org/index.php/rxvt-unicode#Automatic_Script_Management>
 RUST_INS="$RUST_INS alacritty" # terminal/console emulator a-la st/xterm https://github.com/alacritty/alacritty
@@ -479,7 +479,7 @@ APTO_INS="$APTO_INS volumeicon-alsa"
 # APTO_INS="$APTO_INS xfdashboard" # instead installing skippy-xd
 APTO_INS="$APTO_INS elementary-icon-theme"
 APTO_INS="$APTO_INS elementary-xfce-icon-theme"
-APTO_INS="$APTO_INS gir1.2-xapp-1.0" # xfce4-sensors-plugin runtime dependencies # without gir1.2-xapp-1.0 get `xfce4-sensors` error: Failed to load module "xapp-gtk3-module"
+APTO_INS="$APTO_INS gir1.2-xapp-1.0" # xfce4-sensors-plugin runtime dependencies # without gir1.2-xapp-1.0 get `xfce4-sensors` FAIL: Failed to load module "xapp-gtk3-module"
 APTO_INS="$APTO_INS lm-sensors" # a-la `sensors` # FIXME: is the cpu temperate used by xfce4-sensors-plugin?
 APTO_INS="$APTO_INS mousepad" # simple text editor for xfce <https://github.com/codebrainz/mousepad>
 APTO_INS="$APTO_INS orage" # xfce date time panel plugin with calendar
@@ -588,15 +588,9 @@ FLAT_INS="$FLAT_INS com.github.fontmatrix.Fontmatrix" # <https://github.com/font
 FLAT_INS="$FLAT_INS io.github.mmstick.FontFinder" # <https://github.com/mmstick/fontfinder>
 FLAT_INS="$FLAT_INS org.gnome.FontManager" # <https://github.com/fontmanager/font-manager>
 
-# pCloud
-# <https://github.com/pcloud>.
-# APPL_INS="$APPL_INS ~/Applications/pcloud-x86_64_3a9066375d1af32211a2fa8a5ed4793b.AppImage"
-APTO_INS="$APTO_INS libfuse2"
-
-# # X11 Dropbox
-# # <https://github.com/dropbox>.
-# APTO_INS="$APTO_INS dropbox"
-# APTO_UNI="$APTO_UNI nautilus-dropbox" # conflicts with dropbox deb file
+# X11 cloud storage.
+# APTO_INS="$APTO_INS dropbox" # APTO_UNI="$APTO_UNI nautilus-dropbox" # FAIL: conflicts with dropbox deb file # dropbox <https://github.com/dropbox>
+APTO_INS="$APTO_INS libfuse2" # APPL_INS="$APPL_INS ~/Applications/pcloud-x86_64_3a9066375d1af32211a2fa8a5ed4793b.AppImage" # pcloud <https://github.com/pcloud>
 
 # X11 Zoom video group chat
 # <https://en.wikipedia.org/wiki/Zoom_(software)>.
@@ -604,24 +598,11 @@ APTO_INS="$APTO_INS libfuse2"
 # FLAT_INS="$FLAT_INS us.zoom.Zoom"
 APPM_INS="$APPM_INS zoom"
 
-# X11 Skype video group chat.
-# FLAT_INS="$FLAT_INS com.skype.Client"
-APPM_INS="$APPM_INS skype"
-
-# X11 Telegram text group chat
-# <https://github.com/telegramdesktop/tdesktop>.
-# SNAP_INS="$SNAP_INS telegram-desktop"
-APPM_INS="$APPM_INS telegram"
-
-# X11 mattermost text group chat a-la slack
-# <https://github.com/mattermost/mattermost>.
-# FLAT_INS="$FLAT_INS com.mattermost.Desktop"
-# SNAC_INS="$SNAC_INS mattermost-desktop"
-APPM_INS="$APPM_INS mattermost-desktop"
-
-# X11 slack text group chat a-la mattermost
-# <https://github.com/slackhq>
-SNAP_INS="$SNAP_INS slack"
+# X11 text/audio/video group.
+APPM_INS="$APPM_INS mattermost-desktop" # FLAT_INS="$FLAT_INS com.mattermost.Desktop" # SNAC_INS="$SNAC_INS mattermost-desktop" # mattermost chat a-la slack <https://github.com/mattermost/mattermost>
+APPM_INS="$APPM_INS skype" # FLAT_INS="$FLAT_INS com.skype.Client"
+APPM_INS="$APPM_INS telegram" # SNAP_INS="$SNAP_INS telegram-desktop" # telegram <https://github.com/telegramdesktop/tdesktop>
+SNAP_INS="$SNAP_INS slack" # slack chat a-la mattermost <https://github.com/slackhq>
 
 # X11 programming language GUI.
 SNAC_INS="$SNAC_INS intellij-idea-ultimate" # java programming language <https://github.com/openjdk/jdk>
@@ -912,3 +893,5 @@ if [ "$OPT_DRY" = 0 ]; then
     printf "%s\n" "$USAGE"
     exit 1
 fi
+
+printf "make home successfully\n"
