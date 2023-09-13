@@ -314,11 +314,11 @@ BREW_INS="$BREW_INS shellcheck" # APTO_INS="$APTO_INS shellcheck" # Used by Emac
 BREW_INS="$BREW_INS sql-lint" # Used by Emacs Flycheck.
 
 # Homebrew <https://docs.brew.sh/Homebrew-on-Linux#requirements>.
-# APTO_INS="$APTO_INS git" # instead installed from the homebrew
+# APTO_INS="$APTO_INS git" # Instead installed from the Homebrew.
 APTO_INS="$APTO_INS build-essential"
 APTO_INS="$APTO_INS curl"
 APTO_INS="$APTO_INS file"
-APTO_INS="$APTO_INS procps" # /proc file system utilities.
+APTO_INS="$APTO_INS procps" # `/proc` file system utilities.
 
 # AppImage
 # <https://github.com/appimage/appimagekit>.
