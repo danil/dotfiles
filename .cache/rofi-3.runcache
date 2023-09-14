@@ -1,14 +1,15 @@
 3730 ffplay -fs /dev/video0
-3175 yandex
+3176 yandex
 2889 mattermost
 2334 chrome
 2311 firefox
 1701 flameshot
-1645 atril-mate
-1635 zoom
-1631 flatseal
-1624 mailspring
-1303 telegram
+1500 atril-mate
+1400 telegram
+1300 zoom
+1205 discord
+1100 mailspring
+1000 flatseal
 128 pcloud
 23 gimp
 13 thunar
@@ -22,4 +23,3 @@
 0 lxappearance
 0 nemo
 0 opera
-0 skippy-xd-runner

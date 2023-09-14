@@ -1,6 +1,3 @@
-gim
-yand
-9
 shi
 custom
 yand
@@ -17,3 +14,6 @@ pcl
 pcl
 pclo
 zoo
+zoom
+tele
+disco
