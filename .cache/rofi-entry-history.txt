@@ -1,4 +1,3 @@
-shi
 custom
 yand
 yand
@@ -17,3 +16,4 @@ zoo
 zoom
 tele
 disco
+thu
