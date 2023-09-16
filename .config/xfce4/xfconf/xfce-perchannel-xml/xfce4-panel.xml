@@ -83,7 +83,7 @@
     <property name="plugin-8" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
       <property name="show-notifications" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="chromium.instance130737;chromium.instance2036735;chromium.instance2297784;chromium.instance2467070;chromium.instance24724;chromium.instance2603;chromium.instance297236;chromium.instance3353;chromium.instance35803;chromium.instance41116;chromium.instance5700;chromium.instance915263"/>
+      <property name="mpris-players" type="string" value="chromium.instance1091977;chromium.instance1152029;chromium.instance130737;chromium.instance2036735;chromium.instance2297784;chromium.instance2467070;chromium.instance24724;chromium.instance2603;chromium.instance297236;chromium.instance3353;chromium.instance35803;chromium.instance41116;chromium.instance5700;chromium.instance915263"/>
     </property>
     <property name="plugin-9" type="string" value="power-manager-plugin"/>
     <property name="plugin-10" type="string" value="notification-plugin"/>
