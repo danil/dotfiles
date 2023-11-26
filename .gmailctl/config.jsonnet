@@ -38,7 +38,7 @@ local notFromMe = { not: fromMe };
   // GMail interface to add and remove labels, you can safely remove
   // this section of the config.
   labels: [
-    { name: "ErA5g" },
+    { name: "ErA5G" },
     { name: "ErBro" },
     { name: "ErJon" },
     { name: "ErMix" },
@@ -66,7 +66,7 @@ local notFromMe = { not: fromMe };
     { name: "FedVcRu" },
     { name: "FedYoutube" },
     { name: "HrFredVac" },
-    { name: "HrGolangVac" },
+    { name: "HrGoVac" },
     { name: "HrJsVac" },
     { name: "HrRubyVac" },
     { name: "HrVac" },

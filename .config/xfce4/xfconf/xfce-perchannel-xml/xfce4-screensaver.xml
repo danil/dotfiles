@@ -14,7 +14,7 @@
   </property>
   <property name="lock" type="empty">
     <property name="saver-activation" type="empty">
-      <property name="delay" type="int" value="13"/>
+      <property name="delay" type="int" value="17"/>
     </property>
   </property>
 </channel>

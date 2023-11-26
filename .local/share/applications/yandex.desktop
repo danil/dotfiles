@@ -105,17 +105,16 @@ Comment[vi]=Truy cập Internet
 Comment[zh_CN]=访问互联网
 Comment[zh_HK]=連線到網際網路
 Comment[zh_TW]=連線到網際網路
-X-XFCE-Category=WebBrowser
-X-XFCE-Commands=/usr/bin/yandex-browser-stable
-X-XFCE-CommandsWithParameter=/usr/bin/yandex-browser-stable "%s"
-Exec=/usr/bin/yandex-browser-stable %U
+Exec=yandex @@u %U @@
 StartupNotify=true
 Terminal=false
-Icon=yandex-browser
-Type=X-XFCE-Helper
+Icon=yandex
+Type=Application
 Categories=Network;WebBrowser;
 MimeType=application/pdf;application/rdf+xml;application/rss+xml;application/xhtml+xml;application/xhtml_xml;application/xml;image/gif;image/jpeg;image/png;image/webp;text/html;text/xml;x-scheme-handler/http;x-scheme-handler/https;
 Actions=new-window;new-private-window;
+StartupWMClass=yandex-browser
+X-Flatpak=ru.yandex.Browser
 
 [Desktop Action new-window]
 Name=New Window
@@ -169,7 +168,7 @@ Name[uk]=Нове вікно
 Name[vi]=Cửa sổ Mới
 Name[zh_CN]=新建窗口
 Name[zh_TW]=開新視窗
-Exec=/usr/bin/yandex-browser-stable
+Exec=yandex
 
 [Desktop Action new-private-window]
 Name=New Incognito Window
@@ -221,4 +220,4 @@ Name[uk]=Нове вікно в режимі анонімного перегля
 Name[vi]=Cửa sổ ẩn danh mới
 Name[zh_CN]=新建隐身窗口
 Name[zh_TW]=新增無痕式視窗
-Exec=/usr/bin/yandex-browser-stable --incognito
+Exec=yandex --incognito

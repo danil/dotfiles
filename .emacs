@@ -1,1 +1,1 @@
-.emacs.d/init.el
+.config/emacs/init.el

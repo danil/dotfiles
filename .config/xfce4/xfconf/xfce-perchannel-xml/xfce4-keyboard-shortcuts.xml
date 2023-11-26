@@ -54,7 +54,6 @@
       <property name="HomePage" type="string" value="exo-open --launch WebBrowser"/>
       <property name="XF86Display" type="string" value="xfce4-display-settings --minimal"/>
       <property name="override" type="bool" value="true"/>
-      <property name="&lt;Super&gt;s" type="string" value="orca"/>
       <property name="&lt;Super&gt;f" type="string" value="thunar"/>
       <property name="&lt;Super&gt;t" type="string" value="exo-open --launch TerminalEmulator"/>
       <property name="&lt;Super&gt;l" type="string" value="xflock4"/>
@@ -184,8 +183,7 @@
       <property name="&lt;Super&gt;Down" type="string" value="down_workspace_key"/>
       <property name="&lt;Super&gt;Left" type="string" value="left_workspace_key"/>
       <property name="&lt;Super&gt;Right" type="string" value="right_workspace_key"/>
-      <property name="&lt;Super&gt;space" type="string" value="popup_menu_key"/>
-      <property name="&lt;Super&gt;Insert" type="string" value="add_workspace_key"/>
+      <property name="&lt;Super&gt;Insert" type="string" value="popup_menu_key"/>
     </property>
   </property>
   <property name="providers" type="array">

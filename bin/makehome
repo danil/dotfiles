@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
@@ -61,15 +61,13 @@ PIP2_UPD_CLI="pip2 install --user --upgrade"
 PIP3_INS_CLI="pip3 install --user"
 PIP3_UPD_CLI="pip3 install --user --upgrade"
 
-OPT_ALL=-1
+OPT_ALL_PACKAGES=-1
 OPT_JOBS=$(grep -c ^processor /proc/cpuinfo) OPT_JOBS=${OPT_JOBS:-1}
-
-errexit () { printf >&2 "%s\n" "$(printf "$1")"; exit "$2"; }
 
 # Shell script options functions.
 opttest () { { [ "$1" != "$EOL" ] && [ "$1" != '--' ]; } || optexit "missing argument" "$2"; } # Avoid infinite loop.
 opthelp () { printf "%s\n" "$USAGE"; }
-optexit () { errexit "$1 $2\n$USAGE" 2; }
+optexit () { printf >&2 "%s %s\n%s\n" "$1" "$2" "$USAGE"; exit 2; }
 
 # Parse command-line options.
 set -- "$@" "${EOL:=$(printf '\1\3\3\7')}"  # End-of-list marker.
@@ -77,17 +75,17 @@ while [ "$1" != "$EOL" ]; do
     opt="$1"; shift
 
     case "$opt" in
-        --apt          ) OPT_APTO=0; OPT_ALL=-1;;
-        --homebrew     ) OPT_BREW=0; OPT_ALL=-1;;
-        --appimage     ) OPT_APPL=0; OPT_APPM=0; OPT_ALL=-1;;
-        --snap         ) OPT_SNAP=0; OPT_SNAC=0; OPT_ALL=-1;;
-        --flatpak      ) OPT_FLAT=0; OPT_ALL=-1;;
-        --rust         ) OPT_RUST=0; OPT_ALL=-1;;
-        --python2      ) OPT_PIP2=0; OPT_ALL=-1;;
-        --python3      ) OPT_PIP3=0; OPT_ALL=-1;;
-        --home         ) opttest "$1" "$opt"; OPT_HOME="$1"; OPT_ALL=-1;;
-        --etc          ) OPT_ETCE=0; OPT_ALL=-1;;
-        --root         ) OPT_ROOT=0; OPT_ALL=-1;;
+        --apt          ) OPT_APTO=0; OPT_ALL_PACKAGES=-1;;
+        --homebrew     ) OPT_BREW=0; OPT_ALL_PACKAGES=-1;;
+        --appimage     ) OPT_APPL=0; OPT_APPM=0; OPT_ALL_PACKAGES=-1;;
+        --snap         ) OPT_SNAP=0; OPT_SNAC=0; OPT_ALL_PACKAGES=-1;;
+        --flatpak      ) OPT_FLAT=0; OPT_ALL_PACKAGES=-1;;
+        --rust         ) OPT_RUST=0; OPT_ALL_PACKAGES=-1;;
+        --python2      ) OPT_PIP2=0; OPT_ALL_PACKAGES=-1;;
+        --python3      ) OPT_PIP3=0; OPT_ALL_PACKAGES=-1;;
+        --home         ) opttest "$1" "$opt"; OPT_HOME="$1"; OPT_ALL_PACKAGES=-1;;
+        --etc          ) OPT_ETCE=0; OPT_ALL_PACKAGES=-1;;
+        --root         ) OPT_ROOT=0; OPT_ALL_PACKAGES=-1;;
         --jobs         ) opttest "$1" "$opt"; OPT_JOBS="$1"; shift;;
         --update       ) OPT_UPDATE=0;;
         -v | --verbose ) OPT_VERBOSE=0;;
@@ -120,8 +118,6 @@ done; shift
 # APTO_INS="$APTO_INS linux-generic-hwe-20.04-edge" # Linux/kernel 5.11 for Ubuntu 20.04.
 # APTO_INS="$APTO_INS makepasswd" # Password generator.
 # APTO_INS="$APTO_INS protobuf-compiler" # Version is to old/outdated(
-# BREW_INS="$BREW_INS bash-completion" # Programmable completion. # FAIL: Conflicts with util-linux.
-# BREW_INS="$BREW_INS bc" # Used by Bash prompt, console-based calculator utility.
 # BREW_INS="$BREW_INS grpc" # ?????????? gRPC client a-la curl <https://github.com/grpc/grpc/blob/master/doc/command_line_tool.md>.
 # BREW_INS="$BREW_INS hping" # hping3 a-la interactive ping <https://github.com/antirez/hping> # APTO_INS="$APTO_INS hping3" # A-la interactive ping <https://github.com/antirez/hping>.
 # BREW_INS="$BREW_INS pigz" # APTO_INS="$APTO_INS pigz" # Parallel gzip for multi-processor, multi-core.
@@ -136,7 +132,6 @@ done; shift
 # RUST_INS="$RUST_INS fselect" # Find files with SQL-like queries <https://github.com/jhspetersson/fselect>.
 # RUST_INS="$RUST_INS xsv" # CSV cli (indexing, slicing, analyzing, splitting and joining) <https://github.com/BurntSushi/xsv>.
 APTO_INS="$APTO_INS apt-transport-https" # Required by custom ppa.
-APTO_INS="$APTO_INS bc" # Used by bash prompt, console-based calculator utility.
 APTO_INS="$APTO_INS bind9-host" # Automatic/dependency: DNS/host lookup utility.
 APTO_INS="$APTO_INS genius" # Calculator.
 APTO_INS="$APTO_INS libpci-dev libnl-3-dev libnl-genl-3-dev gettext libgettextpo-dev autopoint gettext libncurses5-dev libncursesw5-dev libtool-bin dh-autoreconf autoconf-archive pkg-config" # powertop diagnoses power consumption <https://github.com/fenrus75/powertop#build-dependencies>.
@@ -148,8 +143,6 @@ APTO_INS="$APTO_INS opensmtpd" # Send mail via /usr/bin/sendmail and deliver loc
 APTO_INS="$APTO_INS openssh-server"
 BREW_INS="$BREW_INS ack" # A-la ag <https://github.com/beyondgrep/ack3>.
 BREW_INS="$BREW_INS awk" # Text processing scripting language <https://en.wikipedia.org/wiki/AWK>.
-BREW_INS="$BREW_INS bash" # Bourne again shell <https://gnu.org/software/bash>.
-BREW_INS="$BREW_INS clib" # Package manager for C program language libraries <https://github.com/clibs/clib>.
 BREW_INS="$BREW_INS colordiff" # Colorize diff output <https://github.com/daveewart/colordiff>.
 BREW_INS="$BREW_INS convmv" # A-la iconv character encoding conversion util # APTO_INS="$APTO_INS convmv" # A-la iconv character encoding conversion util.
 BREW_INS="$BREW_INS csvkit" # Conver CSV to JSON `csvjson path/to/file.csv` <https://github.com/wireservice/csvkit/blob/master/docs/scripts/csvjson.rst>.
@@ -165,6 +158,7 @@ BREW_INS="$BREW_INS pwgen" # APTO_INS="$APTO_INS pwgen" # Password generator.
 BREW_INS="$BREW_INS ripgrep" # RUST_INS="$RUST_INS ripgrep" # `rg` is a search tool a-la `ag` (The Silver Searcher) <https://github.com/burntsushi/ripgrep>.
 BREW_INS="$BREW_INS the_platinum_searcher" # `pt` a-la `ag` (The Silver Searcher) <https://github.com/monochromegane/the_platinum_searcher>.
 BREW_INS="$BREW_INS the_silver_searcher" # APTO_INS="$APTO_INS silversearcher-ag" # The Silver Searcher `ag` is a code-searching tool a-la `ack` <https://github.com/ggreer/the_silver_searcher> # APTO_INS="$APTO_INS automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev" # Compiltime dependency <https://github.com/ggreer/the_silver_searcher#building-from-source>.
+BREW_INS="$BREW_INS tldr" # Reader of documentation in format a-la simplified man page <https://github.com/tldr-pages/tldr-c-client>.
 BREW_INS="$BREW_INS tree" # APTO_INS="$APTO_INS tree" # Displays an indented directory tree.
 BREW_INS="$BREW_INS uni2ascii" # APTO_INS="$APTO_INS uni2ascii" # To/from Unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`.
 BREW_INS="$BREW_INS util-linux" # APTO_INS="$APTO_INS uuid-runtime" # APTO_INS="$APTO_INS whois" # Provides `whois`, `uuidgen` (uuid generator), column command and also provides `uni2ascii` (to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`) <https://github.com/util-linux/util-linux> , <https://serverfault.com/questions/103359/how-to-create-a-uuid-in-bash#103366>.
@@ -190,6 +184,7 @@ BREW_INS="$BREW_INS freerdp" # xfreerdp is a remote desktop protocol for win htt
 BREW_INS="$BREW_INS gmailctl" # gmail filters generation.
 BREW_INS="$BREW_INS grpcurl" # gRPC client a-la curl https://github.com/fullstorydev/grpcurl
 BREW_INS="$BREW_INS lftp" # APTO_INS="$APTO_INS lftp" # ftp client <https://github.com/lavv17/lftp>.
+BREW_INS="$BREW_INS libcap" # Provides `setcap` utility (`sudo setcap cap_net_bind_service=ep /home/linuxbrew/.linuxbrew/Cellar/nginx/1.2.3.42/bin/nginx`).
 BREW_INS="$BREW_INS mosh" # APTO_INS="$APTO_INS mosh" # ssh replacement <https://github.com/mobile-shell/mosh>.
 BREW_INS="$BREW_INS syncthing" # APTO_INS="$APTO_INS syncthing" # dropbox replacement: deb <https://apt.syncthing.net> syncthing release.
 BREW_INS="$BREW_INS wget" # A-la curl
@@ -202,21 +197,32 @@ BREW_INS="$BREW_INS git-flow" # <https://github.com/nvie/gitflow>.
 BREW_INS="$BREW_INS git-lfs" # <https://git-lfs.com>.
 BREW_INS="$BREW_INS tig" # APTO_INS="$APTO_INS tig" # git interactive client.
 
-# *nix shell/terminal emulator/multiplexer.
+# Portable/standalone package management system (cross Linux distribution).
+# APTO_INS="$APTO_INS bash coreutils" # Basher runtime dependency. # Basher is a bash/shell/functions package manager <https://github.com/basherpm/basher>.
+APTO_INS="$APTO_INS build-essential curl file git procps" # The `procps` provides `/proc` file system utilities. # Homebrew <https://github.com/Linuxbrew/brew#debian-or-ubuntu>, <https://docs.brew.sh/Homebrew-on-Linux#requirements>.
+BREW_INS="$BREW_INS clib" # Package manager for C program language libraries <https://github.com/clibs/clib>.
+
+# *nix interactive shell & terminal emulator & multiplexer.
+# BREW_INS="$BREW_INS bash-completion" # FAIL: Conflicts with util-linux. # Programmable completion.
 # BREW_INS="$BREW_INS nnn" # terminal file manager a-la mc/midnight commander https://github.com/jarun/nnn
 # RUST_INS="$RUST_INS bat" # print file lines with syntax highlighting, is an cat replacement.
 # RUST_INS="$RUST_INS racer" # compilation failing all the time <https://github.com/racer-rust/racer/issues/868#issuecomment-459017685>, rust code completion https://github.com/phildawes/racer
 APTO_INS="$APTO_INS cmake libfontconfig1-dev libfreetype6-dev libxcb-xfixes0-dev libxkbcommon-dev pkg-config" # alacritty dependency, alacritty is a terminal emulator a-la st/xterm <https://github.com/alacritty/alacritty/blob/master/INSTALL.md#debianubuntu>.
 APTO_INS="$APTO_INS xterm" # backup/fallback terminal additional to the st/stterm/alacritty
-BREW_INS="$BREW_INS fish" # fish shell a-la bash
+BREW_INS="$BREW_INS fish" # Fish shell a-la Bash shell.
 BREW_INS="$BREW_INS nushell" # <https://github.com/nushell/nushell>.
-BREW_INS="$BREW_INS tmux" # terminal multiplexer a-la gnu screen # APTO_INS="$APTO_INS pkg-config libevent-dev libncurses-dev" # os wide/from source compiltime dependency # APTO_INS="$APTO_INS byacc" # also byacc: preventing compiltime dependency FAIL: ./etc/ylwrap: line 175: yacc: command not found
-BREW_INS="$BREW_INS wezterm" BREW_INS_SRC="$BREW_INS_SRC wez/wezterm-linuxbrew" # APPM_INS="$APPM_INS wezterm" # gpu-accelerated cross-platform terminal and multiplexer written in rust <https://github.com/wez/wezterm>.
+BREW_INS="$BREW_INS tmux" # APTO_INS="$APTO_INS automake pkg-config libevent-dev libncurses-dev" # Tmux compiltime dependency # APTO_INS="$APTO_INS byacc" # Also `byacc`: preventing compiltime dependency FAIL: `./etc/ylwrap: line 175: yacc: command not found`. # APTO_INS="$APTO_INS xclip" # tmux and xorg clipboard integration <https://github.com/tmux-plugins/tmux-yank#linux-requirements>. Tmux is a terminal multiplexer a-la GNU Screen.
+BREW_INS="$BREW_INS wezterm" BREW_INS_SRC="$BREW_INS_SRC wez/wezterm-linuxbrew" # APPM_INS="$APPM_INS wezterm" # GPU-accelerated cross-platform terminal and multiplexer written in Rust programing language <https://github.com/wez/wezterm>.
 BREW_INS="$BREW_INS xsel" # APTO_INS="$APTO_INS xsel" # copy selection in termina to the xorg clipboard (used by emacs and urxvt) <https://wiki.archlinux.org/index.php/rxvt-unicode#Automatic_Script_Management>.
-RUST_INS="$RUST_INS alacritty" # terminal/console emulator a-la st/xterm https://github.com/alacritty/alacritty
+RUST_INS="$RUST_INS alacritty" # Terminal/console emulator a-la st/xterm <https://github.com/alacritty/alacritty>.
+
+# Shell script programing language.
+BREW_INS="$BREW_INS bash" APTO_INS="$APTO_INS bash" # Bourne again shell <https://gnu.org/software/bash>.
+BREW_INS="$BREW_INS bc" APTO_INS="$APTO_INS bc" # Used by Bash prompt. # bc is a console-based calculator utility.
+BREW_INS="$BREW_INS dash" APTO_INS="$APTO_INS dash" # Dash (Debian Almquist shell) is POSIX-compliant implementation of `/bin/sh` <https://wiki.archlinux.org/title/Dash>.
 
 # C/C++ compile/make common dependencies.
-APTO_INS="$APTO_INS automake" # required by tmux/xchainkeys
+APTO_INS="$APTO_INS automake" # required by xchainkeys
 APTO_INS="$APTO_INS build-essential" # compiler?
 APTO_INS="$APTO_INS devscripts" # ???
 APTO_INS="$APTO_INS make" # required by all)
@@ -227,13 +233,18 @@ BREW_INS="$BREW_INS gcc"
 BREW_INS="$BREW_INS clang-format" # APTO_INS="$APTO_INS clang" # used by emacs (company-clang backend) # c, c++ and objective-c compiler based on llvm <https://github.com/llvm/llvm-project>.
 BREW_INS="$BREW_INS llvm" # <https://github.com/llvm/llvm-project>.
 
-# Golang programming language.
+# Zig programming language <https://github.com/ziglang/zig>.
+BREW_INS="$BREW_INS zig"
+BREW_INS="$BREW_INS zls" # Zig Language Server implements LSP Language Server Protocol <https://github.com/zigtools/zls>.
+
+# Go programming language <https://github.com/golang/go>.
 # APTO_INS="$APTO_INS golang"
 # APTO_INS="$APTO_INS golang-1.17-doc golang-1.17-go golang-1.17-src"
 # APTO_INS="$APTO_INS golang-race-detector-runtime" # FIXME: where is race detector for the go 1.15?
 # BREW_INS="$BREW_INS gcc@5" # <https://stackoverflow.com/questions/59227456/go-1-13-gcc-5-not-in-path#62795608>.
 # BREW_INS="$BREW_INS go"
 BREW_INS="$BREW_INS golangci-lint" # used by emacs a-la gometalinter
+BREW_INS="$BREW_INS gopls" # Used by Emacs as `goimports`?
 
 # Rust programming language <https://github.com/rust-lang/rust>.
 # APTO_INS="$APTO_INS libgtk-3-dev" # required by fontfinder https://github.com/mmstick/fontfinder
@@ -272,11 +283,19 @@ BREW_INS="$BREW_INS ruby"
 # APTO_INS="$APTO_INS dart"
 BREW_INS="$BREW_INS dart-sdk"
 
-# Programming languages.
-# RUST_INS="$RUST_INS tokei" # cloc metric (count lines of code) <https://github.com/Aaronepower/tokei>.
-BREW_INS="$BREW_INS lua" # newer than apt version # the lua programming language https://github.com/lua/lua
+# # Clojure programming language
+# # <https://github.com/clojure/clojure>.
+# # BREW_INS="$BREW_INS clojure"
+# BREW_INS="$BREW_INS clojure/tools/clojure" # <https://clojure.org/guides/install_clojure>.
+# BREW_INS="$BREW_INS leiningen" # Build tool for Clojure programming language <https://github.com/technomancy/leiningen>.
+
+# Programming language rest.
+BREW_INS="$BREW_INS lua" # Newer than APT version. # Lua programming language <https://github.com/lua/lua>.
 BREW_INS="$BREW_INS sbcl" # Steel Bank Common Lisp (SBCL) <https://github.com/sbcl/sbcl>.
-BREW_INS="$BREW_INS scc" # A-la sloc/cloc
+
+# Programming language util.
+# RUST_INS="$RUST_INS tokei" # cloc metric (count lines of code) <https://github.com/Aaronepower/tokei>.
+BREW_INS="$BREW_INS scc" # A-la sloc/cloc (count lines of code).
 
 # Vim
 # <https://github.com/vim/vim>.
@@ -308,7 +327,7 @@ BREW_INS="$BREW_INS vim" # APTO_INS="$APTO_INS vim" # Vim is awesome a-la emacs,
 # Emacs installation by homebrew and run without X11.
 BREW_INS="$BREW_INS emacs" # APTO_INS="$APTO_INS emacs-nox" # Instead compiled from source into `~/.local/usr/local/bin` # TODO: Maybe use homebrew?
 #
-# Emacs runtime dependencies.
+# Emacs runtime dependency.
 # PIP3_INS="$PIP3_INS bashate" # Instead using ShellCheck. # Bash scripts checker a-la pep8 <https://github.com/openstack/bashate>.
 # PIP3_INS="$PIP3_INS proselint" # Used by emacs Flycheck. # Linter for prose <https://github.com/amperser/proselint>, <http://proselint.com>.
 # PIP3_INS="$PIP3_INS pylint" # Used by emacs Flycheck
@@ -322,13 +341,6 @@ BREW_INS="$BREW_INS markdownlint-cli" # Used/required used by Emacs Flycheck.
 BREW_INS="$BREW_INS shellcheck" # APTO_INS="$APTO_INS shellcheck" # Used by Emacs Flycheck <https://github.com/koalaman/shellcheck>.
 BREW_INS="$BREW_INS sql-lint" # Used by Emacs Flycheck.
 
-# Homebrew <https://docs.brew.sh/Homebrew-on-Linux#requirements>.
-# APTO_INS="$APTO_INS git" # Instead installed from the Homebrew.
-APTO_INS="$APTO_INS build-essential"
-APTO_INS="$APTO_INS curl"
-APTO_INS="$APTO_INS file"
-APTO_INS="$APTO_INS procps" # `/proc` file system utilities.
-
 # AppImage
 # <https://github.com/appimage/appimagekit>.
 # APPL_INS="$APPL_INS ~/Applications/zsync2-63-1608115-x86_64_deef1f9a67aa1f4872346d78bc66c2c1.AppImage" # APPM_INS="$APPM_INS zsync2" # partial re-downloader a-la rsync/wget/curl <https://github.com/appimagecommunity/zsync2>.
@@ -339,11 +351,6 @@ APTO_INS="$APTO_INS libfuse2" # <https://docs.appimage.org/user-guide/troublesho
 APTO_INS="$APTO_INS flatpak" # PMS.
 APTO_INS="$APTO_INS gnome-software-plugin-flatpak" # Flatpak support for GNOME software.
 FLAT_INS="$FLAT_INS com.github.tchx84.Flatseal" # Is a GUI permissions manager which offers simple point-and-click permissions operations.
-
-# # Basher is a bash/shell/functions package manager.
-# # <https://github.com/basherpm/basher>.
-# APTO_INS="$APTO_INS bash"
-# APTO_INS="$APTO_INS coreutils"
 
 # Web/HTTPd server.
 # BREW_INS="$BREW_INS goaccess" # APTO_INS="$APTO_INS goaccess" # analyze apache/nginx log in real-time.
@@ -375,7 +382,7 @@ BREW_INS="$BREW_INS kafka" # <https://github.com/apache/kafka>.
 BREW_INS="$BREW_INS redpanda" BREW_INS_SRC="$BREW_INS_SRC redpanda-data/tap" # streaming data platform a-la kafka <https://github.com/redpanda-data/redpanda>.
 
 # # Manticore Search is a
-# # High performance low resource consumption database for search written in C++.
+# # High performance low resource consumption database for search written in C++ programming language.
 # BREW_INS="$BREW_INS manticoresoftware/manticore/manticore-extra"
 # BREW_INS="$BREW_INS manticoresoftware/manticore/manticoresearch"
 
@@ -463,7 +470,7 @@ APTO_INS="$APTO_INS xcalib" # `xcalib -i -a` invert colors on xorg/xrandr <https
 # X11 dunst/dunstify (respects org.freedesktop.Notifications)
 # <https://github.com/dunst-project/dunst>
 # APTO_INS="$APTO_INS dunst" # instead compiled from source into ~/.local/usr/local/bin # A-la notify-osd
-# APTO_INS="$APTO_INS libc6 libcairo2 libgdk-pixbuf2.0-0 libglib2.0-0 libpango-1.0-0 libpangocairo-1.0-0 libx11-6 libxdg-basedir1 libxinerama1 libxrandr2 libxss1" # runtime dependencies.
+# APTO_INS="$APTO_INS libc6 libcairo2 libgdk-pixbuf2.0-0 libglib2.0-0 libpango-1.0-0 libpangocairo-1.0-0 libx11-6 libxdg-basedir1 libxinerama1 libxrandr2 libxss1" # runtime dependency.
 APTO_INS="$APTO_INS libdbus-1-dev libnotify-dev libxrandr-dev libpango1.0-dev libx11-dev libxinerama-dev libxss-dev libglib2.0-dev libgtk-3-dev libxdg-basedir-dev" # compiltime dependency <https://github.com/dunst-project/dunst/wiki/Dependencies>.
 
 # X11 xchainkeys <https://github.com/hbekel/xchainkeys>.
@@ -473,7 +480,7 @@ APTO_INS="$APTO_INS wmctrl" # used by xchainkeys
 
 # # X11 sxhkd.
 # # APTO_INS="$APTO_INS sxhkd" # A-la xchainkeys
-# APTO_INS="$APTO_INS libxcb1 libxcb-keysyms1" # sxhkd runtime dependencies.
+# APTO_INS="$APTO_INS libxcb1 libxcb-keysyms1" # sxhkd runtime dependency.
 # APTO_INS="$APTO_INS libxcb1 libxcb-keysyms1-dev" # sxhkd compiltime dependency.
 
 # X11 volumeicon.
@@ -489,7 +496,7 @@ APTO_INS="$APTO_INS volumeicon-alsa"
 # APTO_INS="$APTO_INS xfdashboard" # instead installing skippy-xd
 APTO_INS="$APTO_INS elementary-icon-theme"
 APTO_INS="$APTO_INS elementary-xfce-icon-theme"
-APTO_INS="$APTO_INS gir1.2-xapp-1.0" # xfce4-sensors-plugin runtime dependencies # without gir1.2-xapp-1.0 get `xfce4-sensors` FAIL: Failed to load module "xapp-gtk3-module".
+APTO_INS="$APTO_INS gir1.2-xapp-1.0" # `xfce4-sensors-plugin` runtime dependency. # without gir1.2-xapp-1.0 get `xfce4-sensors` FAIL: Failed to load module "xapp-gtk3-module".
 APTO_INS="$APTO_INS lm-sensors" # A-la `sensors` # FIXME: is the cpu temperate used by xfce4-sensors-plugin?
 APTO_INS="$APTO_INS mousepad" # simple text editor for xfce <https://github.com/codebrainz/mousepad>.
 APTO_INS="$APTO_INS orage" # xfce date time panel plugin with calendar.
@@ -562,20 +569,12 @@ APTO_INS="$APTO_INS libxcb1-dev"
 APTO_INS="$APTO_INS libxkbcommon-dev"
 APTO_INS="$APTO_INS libxkbcommon-x11-dev"
 
-# X11 Google chrome browser
-# <https://google.com/chrome>.
-APPM_INS="$APPM_INS google-chrome" # FLAT_INS="$FLAT_INS com.google.Chrome" # APTO_INS="$APTO_INS google-chrome-stable" APTO_INS="$APTO_INS apt-transport-https"
+# X11 web browser.
+APPM_INS="$APPM_INS firefox" APTO_UNI="$APTO_UNI firefox" SNAP_UNI="$SNAP_UNI firefox" # APTO_INS="$APTO_INS firefox" # FLAT_INS="$FLAT_INS org.mozilla.firefox" # SNAP_INS="$SNAP_INS firefox" # X11 Firefox browser <https://mozilla.org/firefox>.
+APPM_INS="$APPM_INS google-chrome" # FLAT_INS="$FLAT_INS com.google.Chrome" # APTO_INS="$APTO_INS google-chrome-stable" APTO_INS="$APTO_INS apt-transport-https" # Google Chrome browser <https://google.com/chrome>.
+FLAT_INS="$FLAT_INS ru.yandex.Browser" # X11 Yandex (Google Chrome based) browser.
 
-# X11 Firefox browser
-# <https://mozilla.org/firefox>.
-# APTO_INS="$APTO_INS firefox"
-# FLAT_INS="$FLAT_INS org.mozilla.firefox"
-# SNAP_INS="$SNAP_INS firefox"
-APPM_INS="$APPM_INS firefox"
-APTO_UNI="$APTO_UNI firefox"
-SNAP_UNI="$SNAP_UNI firefox"
-
-# X11 Mailspring is a GUI mail client written in C/C++
+# X11 Mailspring is a GUI mail client written in C/C++ programming language
 # <https://github.com/foundry376/mailspring>.
 APTO_UNI="$APTO_UNI thunderbird"
 APTO_UNI="$APTO_UNI thunderbird-gnome-support"
@@ -599,20 +598,18 @@ FLAT_INS="$FLAT_INS io.github.mmstick.FontFinder" # <https://github.com/mmstick/
 FLAT_INS="$FLAT_INS org.gnome.FontManager" # <https://github.com/fontmanager/font-manager>.
 
 # X11 cloud storage.
-# APTO_INS="$APTO_INS dropbox" # APTO_UNI="$APTO_UNI nautilus-dropbox" # FAIL: conflicts with dropbox deb file # dropbox <https://github.com/dropbox>.
+# APTO_INS="$APTO_INS dropbox" # APTO_UNI="$APTO_UNI nautilus-dropbox" # FAIL: Conflicts with Dropbox deb file. # Dropbox <https://github.com/dropbox>.
 APTO_INS="$APTO_INS libfuse2" # APPL_INS="$APPL_INS ~/Applications/pcloud-x86_64_3a9066375d1af32211a2fa8a5ed4793b.AppImage" # pcloud <https://github.com/pcloud>.
-
-# X11 Zoom video group chat
-# <https://en.wikipedia.org/wiki/Zoom_(software)>.
-# APTO_INS="$APTO_INS libegl1-mesa libfontconfig1 libgl1-mesa-glx libglib2.0-0 libgstreamer-plugins-base1.0-0 libpulse0 libsm6 libsqlite3-0 libxcb-image0 libxcb-keysyms1 libxcb-randr0 libxcb-shape0 libxcb-shm0 libxcb-xfixes0 libxcb-xtest0 libxcomposite1 libxi6 libxrender1 libxslt1.1" # Zoom dependencies.
-# FLAT_INS="$FLAT_INS us.zoom.Zoom"
-APPM_INS="$APPM_INS zoom"
+APTO_INS="$APTO_INS libmediainfo0v5 libqt5x11extras5 libzen0v5 libmediainfo0v5 libqt5x11extras5 libzen0v5" # MEGA runtime dependency <https://mega.io>. # FLAT_INS="$FLAT_INS nz.mega.MEGAsync" # FAIL: MEGA's Flatpak package crashed after clicking on tray icon. # MEGA is a end-to-end encrypted a cloud file storage <https://github.com/flathub/nz.mega.MEGAsync>, <https://mega.nz>, <https://mega.io/ru/desktop#downloadapps>.
+BREW_INS="$BREW_INS rclone" # Is a command-line program to sync to and from different cloud providers <https://github.com/rclone/rclone>.
 
 # X11 text/audio/video group.
 APPM_INS="$APPM_INS mattermost-desktop" # FLAT_INS="$FLAT_INS com.mattermost.Desktop" # SNAC_INS="$SNAC_INS mattermost-desktop" # mattermost chat a-la slack <https://github.com/mattermost/mattermost>.
 APPM_INS="$APPM_INS skype" # FLAT_INS="$FLAT_INS com.skype.Client"
 APPM_INS="$APPM_INS telegram" # SNAP_INS="$SNAP_INS telegram-desktop" # telegram <https://github.com/telegramdesktop/tdesktop>.
+APPM_INS="$APPM_INS zoom" # FLAT_INS="$FLAT_INS us.zoom.Zoom" # APTO_INS="$APTO_INS libegl1-mesa libfontconfig1 libgl1-mesa-glx libglib2.0-0 libgstreamer-plugins-base1.0-0 libpulse0 libsm6 libsqlite3-0 libxcb-image0 libxcb-keysyms1 libxcb-randr0 libxcb-shape0 libxcb-shm0 libxcb-xfixes0 libxcb-xtest0 libxcomposite1 libxi6 libxrender1 libxslt1.1" # APT dependencies of Zoom. # Zoom video group chat <https://en.wikipedia.org/wiki/Zoom_(software)>.
 SNAP_INS="$SNAP_INS slack" # slack chat a-la mattermost <https://github.com/slackhq>.
+SNAP_INS="$SNAP_INS webinar" # SNAP_CON="$SNAP_CON webinar:camera core:camera" # Web camera setup: `snap connect webinar:camera core:camera`. Video chat and teem/remote work/collaboration platform a-la zoom <http://webinar.ru>.
 
 # X11 programming language GUI.
 SNAC_INS="$SNAC_INS intellij-idea-ultimate" # java programming language <https://github.com/openjdk/jdk>.
@@ -635,10 +632,10 @@ SNAC_INS="$SNAC_INS intellij-idea-ultimate" # java programming language <https:/
 # APTO_INS="$APTO_INS pk-update-icon" # FIXME: missing? # display notifications about software updates.
 # APTO_INS="$APTO_INS uswsusp" # FIXME: missing? # systemctl hibernate
 # APTO_INS="$APTO_INS xcalib" # returns: "Error - unsupported ramp size 0" (load icc/icm display color profiles (only calibration curves) <https://wiki.archlinux.org/index.php/ICC_Profiles#xcalib>).
-# APTO_INS="$APTO_INS xclip" # tmux and xorg clipboard integration <https://github.com/tmux-plugins/tmux-yank#linux-requirements>.
 # APTO_UNI="$APTO_UNI xserver-xorg-video-intel" # instead of intel using modesetting <https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/1867668>.
 # BREW_INS="$BREW_INS duplicity" # APTO_INS="$APTO_INS duplicity" # backuping.
 # PIP3_INS="$PIP3_INS WeasyPrint" # converts web documents (html with css, svg) to pdf <http://weasyprint.org>.
+# SNAP_INS="$SNAP_INS cheese" APTO_UNI="$APTO_UNI cheese" # Cheese is a GNOME webcam application <https://en.wikipedia.org/wiki/Cheese_(software)>.
 APPM_INS="$APPM_INS flameshot" # FLAT_INS="$FLAT_INS org.flameshot.Flameshot" # SNAP_INS="$SNAP_INS flameshot" # screen shot util <https://github.com/flameshot-org/flameshot>.
 APPM_INS="$APPM_INS popsicle" # create bootable/live usb/iso a-la usb-creator-gtk
 APTO_INS="$APTO_INS argyll" # load icc/icm display color profiles <https://wiki.archlinux.org/index.php/ICC_Profiles#Argyll_CMS>.
@@ -647,7 +644,7 @@ APTO_INS="$APTO_INS gparted" # format/create partition/disk/usb
 APTO_INS="$APTO_INS libimlib2-dev libfontconfig1-dev libfreetype6-dev libx11-dev libxext-dev libxft-dev libxrender-dev zlib1g-dev libxinerama-dev libxcomposite-dev libxdamage-dev libxfixes-dev libxmu-dev" # skippy-xd is an full-screen task-switcher for X11 <https://github.com/richardgv/skippy-xd>.
 APTO_INS="$APTO_INS libnotify-bin" # A-la notify-osd
 APTO_INS="$APTO_INS libx11-dev" # c/c++ compile/make x11 dependencies.
-APTO_INS="$APTO_INS light" # used by xchainkeys or ~/.xprofile or ~/.xstart
+APTO_INS="$APTO_INS light" # Used by `~/.xprofile` or `~/.xstart`.
 APTO_INS="$APTO_INS lxappearance" # change/switch gtk2/gtk3 themes.
 APTO_INS="$APTO_INS maim" # takes screenshots of desktop.
 APTO_INS="$APTO_INS meld" # gnome diff (gtk)
@@ -668,7 +665,7 @@ BREW_INS="$BREW_INS marp-cli" # markdown to presentation (pdf) from command line
 BREW_INS="$BREW_INS mpv" # APTO_INS="$APTO_INS mpv" # A-la mplayer replacement.
 BREW_INS="$BREW_INS xdotool" # ???
 SNAP_INS="$SNAP_INS atril" # pdf viewer (remembers last page) for mate de (desktop environment) <https://github.com/mate-desktop/atril>.
-SNAP_INS="$SNAP_INS tusk" # evernote desktop client written in javascript <https://github.com/klaudiosinani/tusk>.
+SNAP_INS="$SNAP_INS tusk" # Evernote desktop client written in JavaScript programming language <https://github.com/klaudiosinani/tusk>.
 
 # Er ozn.
 # BREW_INS="$BREW_INS openvpn" # APTO_INS="$APTO_INS openvpn" APTO_DIS="$APTO_DIS openvpn openvpn@client" # openvpn client <https://confluence.ozon.ru/pages/viewpage.action?spaceKey=CORPIT&title=OpenVPN+for+Linux>.
@@ -698,6 +695,8 @@ BREW_INS="$BREW_INS vault"
 # APTO_INS="$APTO_INS redis" APTO_DIS="$APTO_DIS redis-server" # felix
 # APTO_INS="$APTO_INS vpnc" # cisco vpn client.
 # BREW_INS="$BREW_INS docker docker-machine docker-compose" # APTO_INS="$APTO_INS docker-ce" APTO_DIS="$APTO_DIS docker" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`.
+
+errexit () { printf >&2 "%s\n" "$(printf "$1")"; exit "$2"; }
 
 makelock() {
     lock_file="${1}"
@@ -730,6 +729,8 @@ if [ "$OPT_VERBOSE" = 0 ] ; then
     RUST_INS_CLI="$RUST_INS_CLI --verbose"
 fi
 
+################################################################################
+# . makehome2
 makepkgs() {
     local pkg_hdr="${1}"
     local pkg_opt="${2}"
@@ -746,7 +747,12 @@ makepkgs() {
     local ins_src_cli="${10}"
     local ins_src="${11}"
 
-    [ "$pkg_opt" != 0 ] && [ "$OPT_ALL" != 0 ] && return
+    # ################################################################################
+    # echo "aaa $OPT_DRY"
+    # local exi_cod=2
+    # exi_cod2=2
+
+    [ "$pkg_opt" != 0 ] && [ "$OPT_ALL_PACKAGES" != 0 ] && return
 
     if [ -n "$uni_typ" ] && [ "$uni_typ" != " " ] && [ -n "$uni_cli" ] && [ "$uni_cli" != " " ] && [ -n "$uni_pkg" ] && [ "$uni_pkg" != " " ]; then
         OPT_DRY=-1
@@ -823,6 +829,11 @@ makepkgs "Flatpak packages"         "$OPT_FLAT" "linefastexit:" "$FLAT_INS_CLI" 
 makepkgs "Rust Cargo packages"      "$OPT_RUST" "loopfastexit:" "$RUST_INS_CLI" "$RUST_INS" # Rust Cargo <https://github.com/rust-lang/cargo>, <https://doc.rust-lang.org/cargo>
 makepkgs "Python2 pip packages"     "$OPT_PIP2" "linefastexit:" "$PIP2_INS_CLI" "$PIP2_INS" # python2 pip <https://github.com/pypa/pip>
 makepkgs "Python3 pip packages"     "$OPT_PIP3" "linefastexit:" "$PIP3_INS_CLI" "$PIP3_INS" # python3 pip <https://github.com/pypa/pip>
+
+# ################################################################################
+# # OPT_DRY=-1
+# echo "bbb $exi_cod"
+# echo "ccc $exi_cod2"
 
 makecfgs () {
     local dir="${1}"

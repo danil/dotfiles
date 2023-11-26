@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/usr/bin/env sh
+
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
 RAWM=$(free --human | grep Mem:)
 FRET=$(printf '%s' "$RAWM" | awk '{print $4}' | sed 's/Gi/G/')

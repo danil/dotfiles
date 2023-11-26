@@ -59,9 +59,9 @@ arcbak() {
     OPT_DRY=-1
 }
 
-arcbak "$OPT_EDOT" ".emacs.d"       "emacs.d$FILETMPL.tar.zst"      "--exclude=.cask"
-arcbak "$OPT_EVAR" ".emacs.var"     "emacs.var$FILETMPL.tar.zst"
-arcbak "$OPT_ECAS" ".emacs.d/.cask" "emacs.d.cask$FILETMPL.tar.zst"
+arcbak "$OPT_EDOT" ".config/emacs"       "emacs$FILETMPL.tar.zst" "--exclude=.cask --exclude=var"
+arcbak "$OPT_EVAR" ".config/emacs/var"   "emacs.var$FILETMPL.tar.zst"
+arcbak "$OPT_ECAS" ".config/emacs/.cask" "emacs.d.cask$FILETMPL.tar.zst"
 
 # Dry run.
 if [ "$OPT_DRY" = 0 ]; then

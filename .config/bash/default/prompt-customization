@@ -31,7 +31,7 @@ ps1_user="${ps1_user_color}\u@\h${ps1_plain}"
 ps1_pwd=" ${ps1_blue}\w${ps1_plain}"
 
 [[ "$EUID" -eq 0 ]] && ps1_timestamp_color="${ps1_red}" || ps1_timestamp_color="${ps1_white}"
-ps1_timestamp="${ps1_timestamp_color} \D{%d-%b-%Y %H:%M:%S%Z}"
+ps1_timestamp="${ps1_timestamp_color} \D{D%Y%m%dT%H%M%S%Z}"
 
 [[ "$EUID" -eq 0 ]] && ps1_prompt_color="${ps1_red}" || ps1_prompt_color="${ps1_cyan}"
 [[ "$EUID" -eq 0 ]] && ps1_prompt_char="#" || ps1_prompt_char="\$"

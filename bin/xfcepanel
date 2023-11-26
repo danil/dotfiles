@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
@@ -17,7 +17,8 @@ while [ "$1" != "$EOL" ]; do
     opt="$1"; shift
 
     case "$opt" in
-        --top       ) OPT_TOP=0; OPT_DRY=-1;;
+        --top ) OPT_TOP=0;;
+        --presentation-mode) OPT_PRE=0;;
         -h | --help ) opthelp; exit 0;;
 
         # Process special cases.
@@ -34,6 +35,14 @@ if [ "$OPT_TOP" = 0 ]; then
     # printf " "
     # printf "%s°" "$(coretemperature)"
     printf "%s" "$(loadaverage)"
+    OPT_DRY=-1
+fi
+
+if [ "$OPT_PRE" = 0 ]; then
+    s="$(xfcepresentationmode1)"
+    # [ -n "$s" ] && [ "$OPT_DRY" = -1 ] && printf " "
+    printf "%s" "$s"
+    OPT_DRY=-1
 fi
 
 # Dry run.

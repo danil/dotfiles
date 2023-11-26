@@ -46,8 +46,9 @@
 # go install -v golang.org/x/tools/cmd/gorename@v0.1.0 || exit 1
 # go install -v golang.org/x/tools/cmd/guru@v0.1.0 || exit 1 # used by emacs
 # go install -v golang.org/x/tools/gopls@v0.6.6 || exit 1 # go lsp (language server protocol) or GO111MODULE=on go get golang.org/x/tools/gopls@latest
-go install -v github.com/daixiang0/gci@v0.7.0  || exit 1 # used by emacs as `gofmt` command replacement instead of `goimports` for adding/removing go import lines
-go install -v github.com/danil/statusline0example/statusline1h28@v0.0.6 || exit 1 # checksum error # a-la slstatus
+# go install -v github.com/daixiang0/gci@v0.7.0 || exit 1 # used by emacs as `gofmt` command replacement instead of `goimports` for adding/removing go import lines
+go install -v github.com/mvdan/gofumpt@v0.5.0 || exit 1 # used by emacs as `gofmt` command replacement instead of `goimports` for adding/removing go import lines
+go install -v github.com/danil/statusline0example/statusline1h28@v0.0.6 || exit 1 # used by emacs as `gofmt` command replacement instead of `goimports`/`gci` for adding/removing go import lines
 go install -v github.com/danil/statusline0example/statusline2h28@v0.0.6 || exit 1 # checksum error # a-la slstatus
 go install -v github.com/rogpeppe/godef@v1.1.2 || exit 1 # used by emacs for jump to the definition of the expression at point
 go install -v golang.org/x/tools/cmd/gotype@v0.7.0 # syntactic and semantic analysis similar to the go compiler <https://pkg.go.dev/gopkg.in/dnephin/gometalinter.v1#section-readme>, <https://pkg.go.dev/golang.org/x/tools/cmd/gotype?utm_source=godoc>

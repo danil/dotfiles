@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/usr/bin/env sh
+
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
 RAWT=$(cat /sys/devices/platform/coretemp.0/hwmon/hwmon*/temp1_input)
 FLOT=$(printf 'scale=2 ; %d / 1000\n' "$RAWT" | bc)

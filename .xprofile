@@ -28,7 +28,8 @@ fi
 export LANG="en_US.UTF-8"
 
 # DPI scale <https://wiki.archlinux.org/title/HiDPI>.
-export QT_SCALE_FACTOR=2
+export QT_SCALE_FACTOR=1
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
 
 # # X11 scale <https://wiki.archlinux.org/title/HiDPI>.
 # # # determine output: xrandr | grep "connected primary"
