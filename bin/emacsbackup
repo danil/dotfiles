@@ -43,26 +43,26 @@ FILETMPL=$(hostname | tr '[:lower:]' '[:upper:]')BAK$(date --utc +%Y%m%dT%H%M%SZ
 
 arcbak() {
     local opt="${1}"
-    local src="${2}"
-    local dst="${3}"
-    local arg="${4}"
+    local dir="${2}"
+    local src="${3}"
+    local dst="${4}"
+    local arg="${5}"
 
     [ "$opt" != 0 ] && [ "$OPT_ALL" != 0 ] && return
 
-    printf 'backuping %s ...\n' "$OPT_HOME/$dst";
+    printf 'backuping %s into %s ...\n' "$OPT_HOME/$dir/$src" "$(pwd)/$dst";
 
-    tar "$arg" --create --exclude-vcs --file - "$OPT_HOME/$src/" \
+    tar --directory="$OPT_HOME/$dir" --create --exclude-vcs $arg --file - "$src/" \
         | zstd -$LVL --threads=0 --force --compress --stdout \
-        > "$OPT_HOME/$dst" \
+        > "$dst" \
         || exit 1
 
     OPT_DRY=-1
 }
 
-# TODO: Replace absolute path by relative path.~~~~<danil@kutkevich.org>
-arcbak "$OPT_EDOT" ".config/emacs"       "emacs$FILETMPL.tar.zst" "--exclude=.cask --exclude=var"
-arcbak "$OPT_EVAR" ".config/emacs/var"   "emacs.var$FILETMPL.tar.zst"
-arcbak "$OPT_ECAS" ".config/emacs/.cask" "emacs.d.cask$FILETMPL.tar.zst"
+arcbak "$OPT_EDOT" ".config" "emacs"       "emacs$FILETMPL.tar.zst" "--exclude=emacs/.cask --exclude=emacs/var"
+arcbak "$OPT_EVAR" ".config" "emacs/var"   "emacs.var$FILETMPL.tar.zst"
+arcbak "$OPT_ECAS" ".config" "emacs/.cask" "emacs.d.cask$FILETMPL.tar.zst"
 
 # Dry run.
 if [ "$OPT_DRY" = 0 ]; then
