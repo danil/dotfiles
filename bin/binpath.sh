@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
 BASEDIR="/$0"
 BASEDIR="${BASEDIR%/*}"
 BASEDIR="${BASEDIR:-.}"
