@@ -39,7 +39,7 @@ if [ -z "$OPT_HOME" ]; then
 fi
 
 LVL=13
-FILETMPL=$(hostname | tr '[:lower:]' '[:upper:]')BAK$(date --utc +%Y%m%dT%H%M%SZ)
+FILETMPL=$(hostname | tr '[:lower:]' '[:upper:]')D$(date --utc +%Y%m%dT%H%M%SZ)
 
 arcbak() {
     local opt="${1}"
