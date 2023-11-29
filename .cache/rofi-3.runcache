@@ -1,25 +1,25 @@
-3904 ffplay -fs /dev/video0
-3288 browser
+3914 ffplay -fs /dev/video0
+3307 browser
+3107 rocketchat
 3050 xfce4-settings-manager
-3007 xfcepower --fix
-2888 mattermost
+3009 xfcepower --fix
 2400 yandex
-2339 chrome
+2342 chrome
 2310 firefox
 1700 flameshot
 1499 atril-mate
 1449 telegram
 1299 zoom
 1204 discord
+1170 mattermost
 1153 webinar
 1105 mailspring
 999 flatseal
-145 pcloud
+146 pcloud
 102 mega
-29 gimp
-19 thunar
+30 gimp
+20 thunar
 11 nautilus
 4 wezterm
 3 ristretto
 0 alacritty
-0 google-chrome

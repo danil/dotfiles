@@ -1,8 +1,3 @@
-gim
-tele
-ch
-tele
-tele
 tele
 tele
 tele
@@ -17,3 +12,8 @@ tele
 pclo
 pclo
 pcl
+pcl
+go
+gim
+thu
+rock
