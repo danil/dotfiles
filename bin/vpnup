@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
+nmcli connection up WB passwd-file /root/openvpn/wbr/password
