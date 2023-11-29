@@ -34,7 +34,7 @@
   # Committing only a file's permissions
   # <https://stackoverflow.com/questions/10516201/updating-and-committing-only-a-files-permissions-using-git-version-control#10516406>.
   filemode = true
-	excludesfile = ~/.gitignore_global
+	excludesfile = ~/.gitignore.global
 	editor = emacs
 	pager = `test \"$TERM\" = \"dumb\" && echo cat || echo less --IGNORE-CASE --LONG-PROMPT`
 
