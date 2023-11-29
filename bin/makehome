@@ -359,14 +359,14 @@ BREW_INS="$BREW_INS http-server" # <https://github.com/http-party/http-server>.
 BREW_INS="$BREW_INS httpd" # provides htpasswd utility is an nginx/apache basic authentication password generator # APTO_INS="$APTO_INS apache2-utils" # provides htpasswd utility is an nginx/apache basic authentication password generator.
 BREW_INS="$BREW_INS nginx" # web/http server a-la apache # APTO_INS="$APTO_INS nginx" APTO_DIS="$APTO_DIS nginx" # web/http server a-la apache
 
-# PostgreSQL is a RDBMS a-la MySQL.
-# <https://github.com/postgres/postgres>,
-# <https://wiki.postgresql.org/wiki/Homebrew>.
-# APTO_INS="$APTO_INS pgcenter" # postgresql command-line tool https://github.com/lesovsky/pgcenter/releases install: dpkg --install path/to/pgcenter.deb
-# APTO_INS="$APTO_INS postgresql-14" # APTO_DIS="$APTO_DIS postgresql" # `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://postgresql.org/download/linux/ubuntu>.
-# APTO_INS="$APTO_INS postgresql-server-dev-14" # required by pg_activity is an postgresql activity monitoring <https://github.com/dalibo/pg_activity>.
-# PIP3_INS="$PIP3_INS pg_activity" # postgresql activity monitoring <https://github.com/julmon/pg_activity>.
-BREW_INS="$BREW_INS postgresql@14"
+# # PostgreSQL is a RDBMS a-la MySQL.
+# # <https://github.com/postgres/postgres>,
+# # <https://wiki.postgresql.org/wiki/Homebrew>.
+# # APTO_INS="$APTO_INS pgcenter" # postgresql command-line tool https://github.com/lesovsky/pgcenter/releases install: dpkg --install path/to/pgcenter.deb
+# # APTO_INS="$APTO_INS postgresql-14" # APTO_DIS="$APTO_DIS postgresql" # `deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main` <https://postgresql.org/download/linux/ubuntu>.
+# # APTO_INS="$APTO_INS postgresql-server-dev-14" # required by pg_activity is an postgresql activity monitoring <https://github.com/dalibo/pg_activity>.
+# # PIP3_INS="$PIP3_INS pg_activity" # postgresql activity monitoring <https://github.com/julmon/pg_activity>.
+# BREW_INS="$BREW_INS postgresql@16"
 
 # MySQL Vitess.
 # BREW_INS="$BREW_INS mysql" # rdbms
@@ -667,17 +667,24 @@ BREW_INS="$BREW_INS xdotool" # ???
 SNAP_INS="$SNAP_INS atril" # pdf viewer (remembers last page) for mate de (desktop environment) <https://github.com/mate-desktop/atril>.
 SNAP_INS="$SNAP_INS tusk" # Evernote desktop client written in JavaScript programming language <https://github.com/klaudiosinani/tusk>.
 
-# Er ozn.
-# BREW_INS="$BREW_INS openvpn" # APTO_INS="$APTO_INS openvpn" APTO_DIS="$APTO_DIS openvpn openvpn@client" # openvpn client <https://confluence.ozon.ru/pages/viewpage.action?spaceKey=CORPIT&title=OpenVPN+for+Linux>.
-# PIP3_INS="$PIP3_INS clickhouse-cli"
-APTO_INS="$APTO_INS libpcap-dev" # required by github.com/google/gopacket/pcap (go/src/github.com/google/gopacket/pcap/pcap_unix.go:34:10: fatal error: pcap.h: No such file or directory).
-APTO_INS="$APTO_INS libqt5webkit5" # GlobalProtect_UI_deb-5.2.6.0-18.deb VPN dependency.
-APTO_INS="$APTO_INS libxml2-dev"
-BREW_INS="$BREW_INS go@1.19"
-BREW_INS="$BREW_INS libxml2" # provides xmllint
+# Er wbr.
+# penvpn@client" # openvpn client <https://confluence.ozon.ru/pages/viewpage.action?spaceKey=CORPIT&title=OpenVPN+for+Linux>.
+APTO_INS="$APTO_INS openvpn3 openvpn-systemd-resolved openvpn-dco-dkms network-manager-openvpn-gnome" # OpenVPN 3 client `sudo sh -c 'curl -sSfL https://packages.openvpn.net/packages-repo.gpg > /etc/apt/keyrings/openvpn.asc && echo "deb [signed-by=/etc/apt/keyrings/openvpn.asc] https://packages.openvpn.net/openvpn3/debian lunar main" >> /etc/apt/sources.list.d/openvpn3.list'` <https://community.openvpn.net/openvpn/wiki/OpenVPN3Linux>, <https://github.com/OpenVPN/openvpn3>.
+BREW_INS="$BREW_INS go"
 BREW_INS="$BREW_INS postgresql@14"
-BREW_INS="$BREW_INS redis"
-BREW_INS="$BREW_INS vault"
+SNAP_INS="$SNAP_INS rocketchat-desktop"
+
+# # Er ozn.
+# # BREW_INS="$BREW_INS openvpn" # APTO_INS="$APTO_INS openvpn" APTO_DIS="$APTO_DIS openvpn openvpn@client" # openvpn client <https://confluence.ozon.ru/pages/viewpage.action?spaceKey=CORPIT&title=OpenVPN+for+Linux>.
+# # PIP3_INS="$PIP3_INS clickhouse-cli"
+# APTO_INS="$APTO_INS libpcap-dev" # required by github.com/google/gopacket/pcap (go/src/github.com/google/gopacket/pcap/pcap_unix.go:34:10: fatal error: pcap.h: No such file or directory).
+# APTO_INS="$APTO_INS libqt5webkit5" # GlobalProtect_UI_deb-5.2.6.0-18.deb VPN dependency.
+# APTO_INS="$APTO_INS libxml2-dev"
+# BREW_INS="$BREW_INS go@1.19"
+# BREW_INS="$BREW_INS libxml2" # provides xmllint
+# BREW_INS="$BREW_INS postgresql@14"
+# BREW_INS="$BREW_INS redis"
+# BREW_INS="$BREW_INS vault"
 
 # # Er rkt.
 # # APTO_INS="$APTO_INS glide" # german does not use glide # go/german `add-apt-repository ppa:masterminds/glide` golang glide vendor package management <https://github.com/Masterminds/glide>.
