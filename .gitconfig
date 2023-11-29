@@ -43,11 +43,14 @@
 
 # <https://git-scm.com/docs/git-config#Documentation/git-config.txt-codegitdircode>.
 
-[include]
-  path = ~/.gitconfig.ozn
+[includeIf "gitdir:~/**vendor/wbr/"]
+  path = ~/.gitconfig.wbr.local
 
-[includeIf "gitdir:~/**vendor/ozn/"]
-  path = ~/.gitconfig.ozn.local
+# [include]
+#   path = ~/.gitconfig.ozn
+
+# [includeIf "gitdir:~/**vendor/ozn/"]
+#   path = ~/.gitconfig.ozn.local
 
 # [include]
 #   path = ~/.gitconfig.bro

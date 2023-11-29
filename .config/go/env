@@ -1,4 +1,5 @@
-# Wbr er.
+# # Wbr er.
+# GOPRIVATE=gitlab.wildberries.ru
 
 # # Ozn er.
 # GOPROXY=https://goproxy.s.o3.ru,https://proxy.golang.org,direct
