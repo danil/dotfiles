@@ -14,6 +14,7 @@
       <value type="string" value="org.freedesktop.network-manager-applet"/>
       <value type="string" value="org.gnome.DejaDup"/>
       <value type="string" value="org.xfce.Thunar"/>
+      <value type="string" value="rocketchat-desktop_Rocket.Chat"/>
       <value type="string" value="Xfce volume control"/>
       <value type="string" value="xfce4-power-manager"/>
       <value type="string" value="yandex-browser"/>
