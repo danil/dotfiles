@@ -2,7 +2,7 @@
 
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-USAGE="usage: ${CMD:=${0##*/}} [--apt] [--homebrew] [--appimage] [--snap] [--flatpak] [--rust] [--python2] [--python3] [--update] [--etc] [--root] [--home=\"\$HOME\"]"
+USAGE="usage: ${CMD:=${0##*/}} [--apt] [--homebrew] [--appimage] [--snap] [--flatpak] [--go] [--rust] [--python2] [--python3] [--update] [--etc] [--root] [--home=\"\$HOME\"]"
 
 # APT (deb/dpkg/apt-get/aptitude)
 # <https://en.wikipedia.org/wiki/APT_(software)>.
@@ -45,6 +45,11 @@ FLAT_INS_SRC_CLI="flatpak remote-add --if-not-exists"
 FLAT_UNI_SRC_CLI="flatpak remote-delete"
 FLAT_INS_CLI="flatpak install --verbose flathub"
 
+# Go package
+# <https://go.dev/ref/mod#go-install>.
+GOLN_INS_CLI="go install"
+GOLN_UPD_CLI="go install"
+
 # Rust Cargo
 # <https://github.com/rust-lang/cargo>,
 # <https://doc.rust-lang.org/cargo>.
@@ -80,6 +85,7 @@ while [ "$1" != "$EOL" ]; do
         --appimage     ) OPT_APPL=0; OPT_APPM=0; OPT_ALL_PACKAGES=-1;;
         --snap         ) OPT_SNAP=0; OPT_SNAC=0; OPT_ALL_PACKAGES=-1;;
         --flatpak      ) OPT_FLAT=0; OPT_ALL_PACKAGES=-1;;
+        --go           ) OPT_GOLN=0; OPT_ALL_PACKAGES=-1;;
         --rust         ) OPT_RUST=0; OPT_ALL_PACKAGES=-1;;
         --python2      ) OPT_PIP2=0; OPT_ALL_PACKAGES=-1;;
         --python3      ) OPT_PIP3=0; OPT_ALL_PACKAGES=-1;;
@@ -202,6 +208,14 @@ BREW_INS="$BREW_INS tig" # APTO_INS="$APTO_INS tig" # git interactive client.
 APTO_INS="$APTO_INS build-essential curl file git procps" # The `procps` provides `/proc` file system utilities. # Homebrew <https://github.com/Linuxbrew/brew#debian-or-ubuntu>, <https://docs.brew.sh/Homebrew-on-Linux#requirements>.
 BREW_INS="$BREW_INS clib" # Package manager for C program language libraries <https://github.com/clibs/clib>.
 
+# Tmux is a terminal multiplexer a-la GNU Screen
+# <https://github.com/tmux/tmux>.
+# APTO_INS="$APTO_INS automake pkg-config libevent-dev libncurses-dev" # Tmux compiltime dependency.
+# APTO_INS="$APTO_INS byacc" # Also `byacc`: preventing compiltime dependency FAIL: `./etc/ylwrap: line 175: yacc: command not found`.
+# APTO_INS="$APTO_INS xclip" # tmux and xorg clipboard integration <https://github.com/tmux-plugins/tmux-yank#linux-requirements>.
+BREW_INS="$BREW_INS tmux"
+GOLN_INS="$GOLN_INS github.com/danil/statusline0example/statusline2h28@v0.0.6" # Used as status line `set -g status-right '"#{=48:pane_title}" #($(echo ~danil)/bin/statusline2 -1)'`.
+
 # *nix interactive shell & terminal emulator & multiplexer.
 # BREW_INS="$BREW_INS bash-completion" # FAIL: Conflicts with util-linux. # Programmable completion.
 # BREW_INS="$BREW_INS nnn" # terminal file manager a-la mc/midnight commander https://github.com/jarun/nnn
@@ -211,7 +225,6 @@ APTO_INS="$APTO_INS cmake libfontconfig1-dev libfreetype6-dev libxcb-xfixes0-dev
 APTO_INS="$APTO_INS xterm" # backup/fallback terminal additional to the st/stterm/alacritty
 BREW_INS="$BREW_INS fish" # Fish shell a-la Bash shell.
 BREW_INS="$BREW_INS nushell" # <https://github.com/nushell/nushell>.
-BREW_INS="$BREW_INS tmux" # APTO_INS="$APTO_INS automake pkg-config libevent-dev libncurses-dev" # Tmux compiltime dependency # APTO_INS="$APTO_INS byacc" # Also `byacc`: preventing compiltime dependency FAIL: `./etc/ylwrap: line 175: yacc: command not found`. # APTO_INS="$APTO_INS xclip" # tmux and xorg clipboard integration <https://github.com/tmux-plugins/tmux-yank#linux-requirements>. Tmux is a terminal multiplexer a-la GNU Screen.
 BREW_INS="$BREW_INS wezterm" BREW_INS_SRC="$BREW_INS_SRC wez/wezterm-linuxbrew" # APPM_INS="$APPM_INS wezterm" # GPU-accelerated cross-platform terminal and multiplexer written in Rust programing language <https://github.com/wez/wezterm>.
 BREW_INS="$BREW_INS xsel" # APTO_INS="$APTO_INS xsel" # copy selection in termina to the xorg clipboard (used by emacs and urxvt) <https://wiki.archlinux.org/index.php/rxvt-unicode#Automatic_Script_Management>.
 RUST_INS="$RUST_INS alacritty" # Terminal/console emulator a-la st/xterm <https://github.com/alacritty/alacritty>.
@@ -242,9 +255,13 @@ BREW_INS="$BREW_INS zls" # Zig Language Server implements LSP Language Server Pr
 # APTO_INS="$APTO_INS golang-1.17-doc golang-1.17-go golang-1.17-src"
 # APTO_INS="$APTO_INS golang-race-detector-runtime" # FIXME: where is race detector for the go 1.15?
 # BREW_INS="$BREW_INS gcc@5" # <https://stackoverflow.com/questions/59227456/go-1-13-gcc-5-not-in-path#62795608>.
-# BREW_INS="$BREW_INS go"
+# GOLN_INS="$GOLN_INS github.com/mvdan/gofumpt@v0.5.0" # Used by Emacs as `gofmt` command replacement instead of `goimports` for adding/removing go import lines.
+BREW_INS="$BREW_INS go"
 BREW_INS="$BREW_INS golangci-lint" # used by emacs a-la gometalinter
-BREW_INS="$BREW_INS gopls" # Used by Emacs as `goimports`?
+BREW_INS="$BREW_INS gopls" # FIXME: Used by Emacs as `goimports`?~~~~<danil@kutkevich.org>
+GOLN_INS="$GOLN_INS github.com/rogpeppe/godef@v1.1.2" # Used by Emacs for jump to the definition of the expression at point <https://github.com/rogpeppe/godef>.
+GOLN_INS="$GOLN_INS golang.org/x/tools/cmd/goimports@v0.15.0" # Used by Emacs as `gofmt` command replacement for adding/removing the Go import lines.
+GOLN_INS="$GOLN_INS golang.org/x/tools/cmd/gotype@v0.16.0" # Syntactic and semantic analysis similar to the go compiler <https://pkg.go.dev/gopkg.in/dnephin/gometalinter.v1#section-readme>, <https://pkg.go.dev/golang.org/x/tools/cmd/gotype?utm_source=godoc>.
 
 # Rust programming language <https://github.com/rust-lang/rust>.
 # APTO_INS="$APTO_INS libgtk-3-dev" # required by fontfinder https://github.com/mmstick/fontfinder
@@ -352,6 +369,15 @@ APTO_INS="$APTO_INS flatpak" # PMS.
 APTO_INS="$APTO_INS gnome-software-plugin-flatpak" # Flatpak support for GNOME software.
 FLAT_INS="$FLAT_INS com.github.tchx84.Flatseal" # Is a GUI permissions manager which offers simple point-and-click permissions operations.
 
+# Protocol Buffers, Protobuf, protoc, gRPC
+# <https://github.com/protocolbuffers/protobuf>,
+# <https://grpc.io/docs/protoc-installation>,
+# <https://protobuf.dev>,
+# <https://grpc.io>.
+GOLN_INS="$GOLN_INS github.com/golang/protobuf/protoc-gen-go@v1.5.3" # protoc dependency, required for protobuf Go compilation.
+GOLN_INS="$GOLN_INS github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway@v1.16.0"
+GOLN_INS="$GOLN_INS google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.0.1" # NOTE: The v1.20 protoc-gen-go does not support generating gRPC service definitions. gRPC service generation supported by the protoc-gen-go-grpc plugin provided by the Go gRPC project <https://github.com/protocolbuffers/protobuf-go/releases/tag/v1.20.0#v1.20-grpc-support>.
+
 # Web/HTTPd server.
 # BREW_INS="$BREW_INS goaccess" # APTO_INS="$APTO_INS goaccess" # analyze apache/nginx log in real-time.
 # PIP3_INS="$PIP3_INS ngxtop" # real-time metrics for nginx server <https://github.com/lebinh/ngxtop>.
@@ -453,11 +479,12 @@ BREW_INS="$BREW_INS vault" # APTO_INS="$APTO_INS vault" # vault util (hashicorp)
 # APTO_INS="$APTO_INS i3status" # instead using i3blocks
 # APTO_INS="$APTO_INS libwnck-3-dev libxklavier-dev libgtk-3-dev dh-autoreconf dh-make devscripts fakeroot" # gxkb compiltime dependency, is a keyboard/language layout indicator (flag) for tray <https://github.com/zen-tools/gxkb#building-from-source>, a-la xxkb
 APTO_INS="$APTO_INS i3-wm"
-APTO_INS="$APTO_INS i3lock" # xscreensaver replacement.
+APTO_INS="$APTO_INS i3lock" # XScreenSaver replacement.
 APTO_INS="$APTO_INS libxcb-ewmh-dev libxcb-icccm4-dev libxcb-util0-dev" # xtitle (used by i3blocks/i3) compiltime dependency <https://github.com/baskerville/xtitle>.
-APTO_INS="$APTO_INS libxpm-dev libxt-dev xutils-dev" # xxkb compiltime dependency, is a keyboard/language layout indicator (flag) for tray <https://github.com/scientistnik/xxkb>, a-la gxkb which destroys xchainkeys
-APTO_INS="$APTO_INS lm-sensors" # A-la `sensors` # FIXME: is the cpu temperate used by plain status or by slstatus?
-APTO_INS="$APTO_INS xautolock" # used by i3lock
+APTO_INS="$APTO_INS libxpm-dev libxt-dev xutils-dev" # xxkb compiltime dependency, is a keyboard/language layout indicator (flag) for tray <https://github.com/scientistnik/xxkb>, a-la gxkb which destroys xchainkeys.
+APTO_INS="$APTO_INS lm-sensors" # A-la `sensors` # FIXME: Is the CPU temperate used by plain status or by slstatus?
+APTO_INS="$APTO_INS xautolock" # Used by i3lock.
+GOLN_INS="$GOLN_INS github.com/danil/statusline0example/statusline1h28@v0.0.6" # Used as status line.
 
 # # X11 bspwm.
 # APTO_INS="$APTO_INS bspwm" # A-la i3
@@ -727,6 +754,7 @@ if [ "$OPT_UPDATE" = 0 ]; then
     BREW_INS_CLI="$BREW_UPD_CLI"
     APPM_INS_CLI="$APPM_UPD_CLI"
     SNAP_INS_CLI="$SNAP_UPD_CLI"
+    GOLN_INS_CLI="$GOLN_UPD_CLI"
     RUST_INS_CLI="$RUST_UPD_CLI"
     PIP2_INS_CLI="$PIP2_UPD_CLI"
     PIP3_INS_CLI="$PIP3_UPD_CLI"
@@ -833,6 +861,7 @@ makepkgs "AppMan AppImage packages" "$OPT_APPM" "lineskipexit:" "$APPM_INS_CLI" 
 makepkgs "Snap packages"            "$OPT_SNAP" "loopfastexit:" "$SNAP_INS_CLI" "$SNAP_INS" "linefastexit:" "$SNAP_UNI_CLI" "$SNAP_UNI" # Snap <https://github.com/snapcore/snapd>
 makepkgs "Snap classic packages"    "$OPT_SNAC" "loopfastexit:" "$SNAC_INS_CLI" "$SNAC_INS" "linefastexit:" "$SNAC_UNI_CLI" "$SNAC_UNI" # Snap <https://github.com/snapcore/snapd>
 makepkgs "Flatpak packages"         "$OPT_FLAT" "linefastexit:" "$FLAT_INS_CLI" "$FLAT_INS" # FIXME: FLAT_INS_SRC_CLI # FIXME: FLAT_UNI_SRC_CLI # Flatpak <https://github.com/flatpak/flatpak>
+makepkgs "Go packages"              "$OPT_GOLN" "loopfastexit:" "$GOLN_INS_CLI" "$GOLN_INS" # Go <https://go.dev/ref/mod#go-install>.
 makepkgs "Rust Cargo packages"      "$OPT_RUST" "loopfastexit:" "$RUST_INS_CLI" "$RUST_INS" # Rust Cargo <https://github.com/rust-lang/cargo>, <https://doc.rust-lang.org/cargo>
 makepkgs "Python2 pip packages"     "$OPT_PIP2" "linefastexit:" "$PIP2_INS_CLI" "$PIP2_INS" # python2 pip <https://github.com/pypa/pip>
 makepkgs "Python3 pip packages"     "$OPT_PIP3" "linefastexit:" "$PIP3_INS_CLI" "$PIP3_INS" # python3 pip <https://github.com/pypa/pip>

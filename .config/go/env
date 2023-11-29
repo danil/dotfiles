@@ -1,3 +1,5 @@
+GOPRIVATE=github.com/danil
+
 # # Wbr er.
 # GOPRIVATE=gitlab.wildberries.ru
 
