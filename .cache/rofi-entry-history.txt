@@ -17,3 +17,4 @@ go
 gim
 thu
 rock
+tele
