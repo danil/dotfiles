@@ -1,7 +1,7 @@
-3908 ffplay -fs /dev/video0
-3302 browser
-3204 vpnup
-3194 vpndown
+3909 ffplay -fs /dev/video0
+3313 browser
+3205 vpnup
+3195 vpndown
 3097 rocketchat
 3039 xfce4-settings-manager
 2998 xfcepower --fix
@@ -18,7 +18,7 @@
 1142 webinar
 1094 mailspring
 988 flatseal
-135 pcloud
+136 pcloud
 91 mega
 19 gimp
 9 thunar

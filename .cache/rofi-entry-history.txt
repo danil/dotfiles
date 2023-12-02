@@ -1,6 +1,4 @@
 tele
-tele
-tele
 ma
 tele
 gim
@@ -18,3 +16,4 @@ gim
 thu
 rock
 tele
+pclo
