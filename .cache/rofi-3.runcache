@@ -1,17 +1,17 @@
-3909 ffplay -fs /dev/video0
-3313 browser
-3205 vpnup
-3195 vpndown
+3913 ffplay -fs /dev/video0
+3323 browser
+3207 vpnup
+3196 vpndown
 3097 rocketchat
 3039 xfce4-settings-manager
-2998 xfcepower --fix
+2999 xfcepower --fix
 2394 emacsbackup --home="$HOME"
 2389 yandex
 2331 chrome
 2299 firefox
 1689 flameshot
 1488 atril-mate
-1439 telegram
+1440 telegram
 1288 zoom
 1193 discord
 1159 mattermost
