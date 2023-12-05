@@ -407,6 +407,10 @@ BREW_INS="$BREW_INS mongodb-community" BREW_INS_SRC="$BREW_INS_SRC mongodb/brew"
 BREW_INS="$BREW_INS kafka" # <https://github.com/apache/kafka>.
 BREW_INS="$BREW_INS redpanda" BREW_INS_SRC="$BREW_INS_SRC redpanda-data/tap" # streaming data platform a-la kafka <https://github.com/redpanda-data/redpanda>.
 
+# NATS Messaging.
+BREW_INS="$BREW_INS nats-server" # <https://docs.nats.io/running-a-nats-service/introduction/installation#installing-via-a-package-manager>, <https://github.com/nats-io/nats-server>.
+BREW_INS="$BREW_INS nats-io/nats-tools/nats" BREW_INS_SRC="$BREW_INS_SRC nats-io/nats-tools" # <https://docs.nats.io/using-nats/nats-tools/nats_cli>, <https://github.com/nats-io/natscli>.
+
 # # Manticore Search is a
 # # High performance low resource consumption database for search written in C++ programming language.
 # BREW_INS="$BREW_INS manticoresoftware/manticore/manticore-extra"
