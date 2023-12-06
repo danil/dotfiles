@@ -1,6 +1,6 @@
-3913 ffplay -fs /dev/video0
-3323 browser
-3207 vpnup
+3914 ffplay -fs /dev/video0
+3328 browser
+3208 vpnup
 3196 vpndown
 3097 rocketchat
 3039 xfce4-settings-manager
@@ -11,7 +11,7 @@
 2299 firefox
 1689 flameshot
 1488 atril-mate
-1440 telegram
+1441 telegram
 1288 zoom
 1193 discord
 1159 mattermost
