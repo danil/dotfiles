@@ -1,0 +1,9 @@
+[Unit]
+Description=Homebrew generated unit for nats-streaming-server
+
+[Install]
+WantedBy=default.target
+
+[Service]
+Type=simple
+ExecStart=/home/linuxbrew/.linuxbrew/opt/nats-streaming-server/bin/nats-streaming-server
