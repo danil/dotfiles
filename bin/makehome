@@ -192,6 +192,7 @@ BREW_INS="$BREW_INS grpcurl" # gRPC client a-la curl https://github.com/fullstor
 BREW_INS="$BREW_INS lftp" # APTO_INS="$APTO_INS lftp" # ftp client <https://github.com/lavv17/lftp>.
 BREW_INS="$BREW_INS libcap" # Provides `setcap` utility (`sudo setcap cap_net_bind_service=ep /home/linuxbrew/.linuxbrew/Cellar/nginx/1.2.3.42/bin/nginx`).
 BREW_INS="$BREW_INS mosh" # APTO_INS="$APTO_INS mosh" # ssh replacement <https://github.com/mobile-shell/mosh>.
+BREW_INS="$BREW_INS netcat" # GNU Netcat <https://netcat.sourceforge.net>. # APTO_INS="$APTO_INS netcat-openbsd" # OpenBSD Netcat <https://github.com/openbsd/src/blob/master/usr.bin/nc/netcat.c>.
 BREW_INS="$BREW_INS syncthing" # APTO_INS="$APTO_INS syncthing" # dropbox replacement: deb <https://apt.syncthing.net> syncthing release.
 BREW_INS="$BREW_INS wget" # A-la curl
 BREW_INS="$BREW_INS whois"
