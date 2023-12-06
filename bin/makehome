@@ -407,9 +407,9 @@ BREW_INS="$BREW_INS mongodb-community" BREW_INS_SRC="$BREW_INS_SRC mongodb/brew"
 BREW_INS="$BREW_INS kafka" # <https://github.com/apache/kafka>.
 BREW_INS="$BREW_INS redpanda" BREW_INS_SRC="$BREW_INS_SRC redpanda-data/tap" # streaming data platform a-la kafka <https://github.com/redpanda-data/redpanda>.
 
-# # NATS Messaging.
-# BREW_INS="$BREW_INS nats-server" # <https://docs.nats.io/running-a-nats-service/introduction/installation#installing-via-a-package-manager>, <https://github.com/nats-io/nats-server>.
+# NATS Messaging.
 # BREW_INS="$BREW_INS nats-io/nats-tools/nats" BREW_INS_SRC="$BREW_INS_SRC nats-io/nats-tools" # <https://docs.nats.io/using-nats/nats-tools/nats_cli>, <https://github.com/nats-io/natscli>.
+# BREW_INS="$BREW_INS nats-server" # <https://docs.nats.io/running-a-nats-service/introduction/installation#installing-via-a-package-manager>, <https://github.com/nats-io/nats-server>.
 
 # # Manticore Search is a
 # # High performance low resource consumption database for search written in C++ programming language.
@@ -463,7 +463,7 @@ BREW_INS="$BREW_INS awscli" # PIP3_INS="$PIP3_INS awscli" # `aws --version` # s3
 BREW_INS="$BREW_INS k9s" # derailed/k9s/k9s:, k8s/kubernetes client <https://github.com/derailed/k9s>.
 BREW_INS="$BREW_INS kubernetes-cli" # APTO_INS="$APTO_INS kubectl" # provides k8s/kubernetes kubectl util `deb https://apt.kubernetes.io kubernetes-xenial main` <https://kubernetes.io/docs/tasks/tools/install-kubectl> # APTO_INS="$APTO_INS gnupg2" # required by kubectl
 BREW_INS="$BREW_INS netdata" # monitoring <https://github.com/netdata/netdata>.
-BREW_INS="$BREW_INS vault" # APTO_INS="$APTO_INS vault" # vault util (hashicorp) # curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - && sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main", <https://vaultproject.io/downloads>.
+BREW_INS="$BREW_INS vault" # FIXME: BREW_INS="$BREW_INS hashicorp/tap/vault" BREW_INS_SRC="$BREW_INS_SRC hashicorp/tap" # APTO_INS="$APTO_INS vault" # vault util (hashicorp) # curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - && sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main", <https://vaultproject.io/downloads>.
 
 # # X11 Suckless dwm.
 # # APTO_INS="$APTO_INS gxkb" # A-la xxkb (destroy xchainkeys).
@@ -702,6 +702,7 @@ SNAP_INS="$SNAP_INS tusk" # Evernote desktop client written in JavaScript progra
 # penvpn@client" # openvpn client <https://confluence.ozon.ru/pages/viewpage.action?spaceKey=CORPIT&title=OpenVPN+for+Linux>.
 APTO_INS="$APTO_INS openvpn3 openvpn-systemd-resolved openvpn-dco-dkms network-manager-openvpn-gnome" # OpenVPN 3 client `sudo sh -c 'curl -sSfL https://packages.openvpn.net/packages-repo.gpg > /etc/apt/keyrings/openvpn.asc && echo "deb [signed-by=/etc/apt/keyrings/openvpn.asc] https://packages.openvpn.net/openvpn3/debian lunar main" >> /etc/apt/sources.list.d/openvpn3.list'` <https://community.openvpn.net/openvpn/wiki/OpenVPN3Linux>, <https://github.com/OpenVPN/openvpn3>.
 BREW_INS="$BREW_INS go"
+# BREW_INS="$BREW_INS nats-streaming-server" # DEPRECATED. NATS Streaming is a durable stream based on NATS <https://github.com/nats-io/nats-server>, <https://github.com/nats-io/nats-streaming-server>.
 BREW_INS="$BREW_INS postgresql@14"
 SNAP_INS="$SNAP_INS rocketchat-desktop"
 
