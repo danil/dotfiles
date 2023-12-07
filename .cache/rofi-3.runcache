@@ -1,7 +1,7 @@
-3914 ffplay -fs /dev/video0
-3328 browser
-3208 vpnup
-3196 vpndown
+3928 ffplay -fs /dev/video0
+3337 browser
+3216 vpnup
+3200 vpndown
 3097 rocketchat
 3039 xfce4-settings-manager
 2999 xfcepower --fix
