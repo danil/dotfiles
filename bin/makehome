@@ -114,7 +114,6 @@ done; shift
 # md5sha1sum
 # p7zip
 # 7-Zip
-# perl
 # rabbitmq
 # sqlite
 
@@ -160,6 +159,7 @@ BREW_INS="$BREW_INS flatbuffers" # A-la protobuf <https://github.com/google/flat
 BREW_INS="$BREW_INS jsonnet" # <https://github.com/google/jsonnet>.
 BREW_INS="$BREW_INS mailutils" # APTO_INS="$APTO_INS mailutils" # GNU mailutils, reads local mail, provides `/usr/bin/mail`.
 BREW_INS="$BREW_INS ninja" # A-la make build automation system?
+BREW_INS="$BREW_INS pcre2" # Provides `pcre2grep -r your-regexp .` utility. PCRE2 is a Perl compatible regular expressions library with a new API <https://github.com/pcre2project/pcre2>.
 BREW_INS="$BREW_INS pwgen" # APTO_INS="$APTO_INS pwgen" # Password generator.
 BREW_INS="$BREW_INS ripgrep" # RUST_INS="$RUST_INS ripgrep" # `rg` is a search tool a-la `ag` (The Silver Searcher) <https://github.com/burntsushi/ripgrep>.
 BREW_INS="$BREW_INS the_platinum_searcher" # `pt` a-la `ag` (The Silver Searcher) <https://github.com/monochromegane/the_platinum_searcher>.
@@ -250,6 +250,10 @@ BREW_INS="$BREW_INS llvm" # <https://github.com/llvm/llvm-project>.
 # Zig programming language <https://github.com/ziglang/zig>.
 BREW_INS="$BREW_INS zig"
 BREW_INS="$BREW_INS zls" # Zig Language Server implements LSP Language Server Protocol <https://github.com/zigtools/zls>.
+
+# Perl programming language <https://github.com/perl/perl5>.
+# Perl respects find and replace with PCRE regexp <https://github.com/pcre2project/pcre2>.
+BREW_INS="$BREW_INS perl"
 
 # Go programming language <https://github.com/golang/go>.
 # APTO_INS="$APTO_INS golang"
