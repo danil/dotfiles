@@ -703,7 +703,7 @@ SNAP_INS="$SNAP_INS tusk" # Evernote desktop client written in JavaScript progra
 # penvpn@client" # openvpn client <https://confluence.ozon.ru/pages/viewpage.action?spaceKey=CORPIT&title=OpenVPN+for+Linux>.
 APTO_INS="$APTO_INS openvpn3 openvpn-systemd-resolved openvpn-dco-dkms network-manager-openvpn-gnome" # OpenVPN 3 client `sudo sh -c 'curl -sSfL https://packages.openvpn.net/packages-repo.gpg > /etc/apt/keyrings/openvpn.asc && echo "deb [signed-by=/etc/apt/keyrings/openvpn.asc] https://packages.openvpn.net/openvpn3/debian lunar main" >> /etc/apt/sources.list.d/openvpn3.list'` <https://community.openvpn.net/openvpn/wiki/OpenVPN3Linux>, <https://github.com/OpenVPN/openvpn3>.
 BREW_INS="$BREW_INS go"
-# BREW_INS="$BREW_INS nats-streaming-server" # DEPRECATED. NATS Streaming is a durable stream based on NATS <https://github.com/nats-io/nats-server>, <https://github.com/nats-io/nats-streaming-server>.
+BREW_INS="$BREW_INS nats-streaming-server" # DEPRECATED NATS Streaming is a durable stream based on NATS <https://github.com/nats-io/nats-server>, <https://github.com/nats-io/nats-streaming-server>.
 BREW_INS="$BREW_INS postgresql@14"
 SNAP_INS="$SNAP_INS rocketchat-desktop"
 
