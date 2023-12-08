@@ -709,6 +709,7 @@ APTO_INS="$APTO_INS openvpn3 openvpn-systemd-resolved openvpn-dco-dkms network-m
 BREW_INS="$BREW_INS go"
 BREW_INS="$BREW_INS nats-streaming-server" # DEPRECATED NATS Streaming is a durable stream based on NATS <https://github.com/nats-io/nats-server>, <https://github.com/nats-io/nats-streaming-server>.
 BREW_INS="$BREW_INS postgresql@14"
+BREW_INS="$BREW_INS teleport" # Modern SSH server for teams managing distributed infrastructure <https://github.com/gravitational/teleport>.
 SNAP_INS="$SNAP_INS rocketchat-desktop"
 
 # # Er ozn.
