@@ -50,7 +50,7 @@ arcbak() {
 
     [ "$opt" != 0 ] && [ "$OPT_ALL" != 0 ] && return
 
-    printf 'backuping %s into %s ...\n' "$OPT_HOME/$dir/$src" "$(pwd)/$dst";
+    printf 'Backuping %s into %s ...\n' "$OPT_HOME/$dir/$src" "$(pwd)/$dst";
 
     tar --directory="$OPT_HOME/$dir" --create --exclude-vcs $arg --file - "$src/" \
         | zstd -$LVL --threads=0 --force --compress --stdout \

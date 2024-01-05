@@ -22,11 +22,5 @@ require (
 	github.com/spenczar/tdigest v2.1.0+incompatible // indirect
 	github.com/stretchr/testify v1.7.0 // indirect
 	github.com/utrack/clay/v2 v2.2.6 // indirect
-	gitlab.ozon.ru/overload/dispatcher/pkg/dispatcher-minimal v1.0.0 // indirect
-	gitlab.ozon.ru/platform/mw v0.5.2 // indirect
-	gitlab.ozon.ru/platform/scratch v1.10.17 // indirect
-	gitlab.ozon.ru/platform/scratch/cmd/scratch v1.10.17 // indirect
-	gitlab.ozon.ru/platform/tracer v0.1.0 // indirect
-	gitlab.ozon.ru/platform/version-go v1.0.2 // indirect
 	golang.org/x/sys v0.0.0-20220715151400-c0bba94af5f8 // indirect
 )
