@@ -111,7 +111,6 @@ done; shift
 # TODO: Investigate homebrew packages.
 # httpie
 # leiningen
-# md5sha1sum
 # p7zip
 # 7-Zip
 # rabbitmq
@@ -177,6 +176,10 @@ BREW_INS="$BREW_INS lz4" # A-la gz/xz compression, required by gnupg, ffmpeg and
 BREW_INS="$BREW_INS snappy" # A-la gz/xz compression, required by ffmpeg and mpv
 BREW_INS="$BREW_INS zstd" # A-la gz/xz compression, required by gcc, curl, git, gnupg, rust, node, ffmpeg, mpv and feh
 
+# Hash sum.
+BREW_INS="$BREW_INS coreutils" # Provides `md5sum`/`sha1sum`/`sha256sum` utility <https://github.com/coreutils/coreutils>.
+BREW_INS="$BREW_INS rhash" # Provides `crc32`/`md5`/`sha1`/`sha256` utility <https://github.com/rhash/rhash>.
+
 # Network.
 # PIP3_INS="$PIP3_INS http-prompt" # interactive command-line http client with autocomplete.
 # PIP3_INS="$PIP3_INS httpie" # A-la curl <http://httpie.org> # FAIL: httpie 2.2.0 has requirement Pygments>=2.5.2, but you'll have pygments 2.3.1 which is incompatible.
@@ -189,10 +192,12 @@ BREW_INS="$BREW_INS axel" # download client a-la curl/wget
 BREW_INS="$BREW_INS freerdp" # xfreerdp is a remote desktop protocol for win https://github.com/freerdp/freerdp
 BREW_INS="$BREW_INS gmailctl" # gmail filters generation.
 BREW_INS="$BREW_INS grpcurl" # gRPC client a-la curl https://github.com/fullstorydev/grpcurl
+BREW_INS="$BREW_INS hurl" # HTTP request testing tool with plain text <https://github.com/orange-opensource/hurl>.
 BREW_INS="$BREW_INS lftp" # APTO_INS="$APTO_INS lftp" # ftp client <https://github.com/lavv17/lftp>.
 BREW_INS="$BREW_INS libcap" # Provides `setcap` utility (`sudo setcap cap_net_bind_service=ep /home/linuxbrew/.linuxbrew/Cellar/nginx/1.2.3.42/bin/nginx`).
 BREW_INS="$BREW_INS mosh" # APTO_INS="$APTO_INS mosh" # ssh replacement <https://github.com/mobile-shell/mosh>.
 BREW_INS="$BREW_INS netcat" # GNU Netcat <https://netcat.sourceforge.net>. # APTO_INS="$APTO_INS netcat-openbsd" # OpenBSD Netcat <https://github.com/openbsd/src/blob/master/usr.bin/nc/netcat.c>.
+BREW_INS="$BREW_INS rsync-time-backup" # Time Machine style backup with Rsync <https://github.com/laurent22/rsync-time-backup>.
 BREW_INS="$BREW_INS syncthing" # APTO_INS="$APTO_INS syncthing" # dropbox replacement: deb <https://apt.syncthing.net> syncthing release.
 BREW_INS="$BREW_INS wget" # A-la curl
 BREW_INS="$BREW_INS whois"
@@ -298,26 +303,19 @@ BREW_INS="$BREW_INS python3" # APTO_INS="$APTO_INS python3" # provides pip (pip3
 BREW_INS="$BREW_INS gcc@11" # compiltime dependency of some gem
 BREW_INS="$BREW_INS ruby"
 
-# Dart programming language
-# <https://github.com/dart-lang/sdk>,
-# <https://dart.dev/get-dart#install-using-apt-get>.
-# APTO_INS="$APTO_INS apt-transport-https"
-# APTO_INS="$APTO_INS dart"
-BREW_INS="$BREW_INS dart-sdk"
-
 # # Clojure programming language
 # # <https://github.com/clojure/clojure>.
 # # BREW_INS="$BREW_INS clojure"
 # BREW_INS="$BREW_INS clojure/tools/clojure" # <https://clojure.org/guides/install_clojure>.
 # BREW_INS="$BREW_INS leiningen" # Build tool for Clojure programming language <https://github.com/technomancy/leiningen>.
 
-# Programming language rest.
+# Programming.
+BREW_INS="$BREW_INS dart-sdk" # APTO_INS="$APTO_INS dart" # APTO_INS="$APTO_INS apt-transport-https" # Dart programming language <https://github.com/dart-lang/sdk>, <https://dart.dev/get-dart#install-using-apt-get>.
+BREW_INS="$BREW_INS java" # Java programming language [OpenJDK](https://github.com/openjdk/jdk).
 BREW_INS="$BREW_INS lua" # Newer than APT version. # Lua programming language <https://github.com/lua/lua>.
 BREW_INS="$BREW_INS sbcl" # Steel Bank Common Lisp (SBCL) <https://github.com/sbcl/sbcl>.
-
-# Programming language util.
-# RUST_INS="$RUST_INS tokei" # cloc metric (count lines of code) <https://github.com/Aaronepower/tokei>.
-BREW_INS="$BREW_INS scc" # A-la sloc/cloc (count lines of code).
+BREW_INS="$BREW_INS scc" # A-la sloc/cloc (count lines of code) <https://github.com/boyter/scc>.
+BREW_INS="$BREW_INS tokei" # RUST_INS="$RUST_INS tokei" # A-la sloc/cloc metric (count lines of code) <https://github.com/xampprocky/tokei>.
 
 # Vim
 # <https://github.com/vim/vim>.
@@ -529,7 +527,7 @@ APTO_INS="$APTO_INS volumeicon-alsa"
 # APTO_INS="$APTO_INS libxfce4panel-2.0-dev libxfce4ui-2-dev" # compiltime dependency of text plugin <https://github.com/daveriesz/xfce-text-plugin>.
 # APTO_INS="$APTO_INS thunar-megasync" # not using.
 # APTO_INS="$APTO_INS xfce4-notifyd" # notifications daemon (used by dwm).
-# APTO_INS="$APTO_INS xfdashboard" # instead installing skippy-xd
+# APTO_INS="$APTO_INS xfdashboard" # Instead installed skippy-xd.
 APTO_INS="$APTO_INS elementary-icon-theme"
 APTO_INS="$APTO_INS elementary-xfce-icon-theme"
 APTO_INS="$APTO_INS gir1.2-xapp-1.0" # `xfce4-sensors-plugin` runtime dependency. # without gir1.2-xapp-1.0 get `xfce4-sensors` FAIL: Failed to load module "xapp-gtk3-module".
@@ -636,7 +634,7 @@ FLAT_INS="$FLAT_INS org.gnome.FontManager" # <https://github.com/fontmanager/fon
 # X11 cloud storage.
 # APTO_INS="$APTO_INS dropbox" # APTO_UNI="$APTO_UNI nautilus-dropbox" # FAIL: Conflicts with Dropbox deb file. # Dropbox <https://github.com/dropbox>.
 APTO_INS="$APTO_INS libfuse2" # APPL_INS="$APPL_INS ~/Applications/pcloud-x86_64_3a9066375d1af32211a2fa8a5ed4793b.AppImage" # pcloud <https://github.com/pcloud>.
-APTO_INS="$APTO_INS libmediainfo0v5 libqt5x11extras5 libzen0v5 libmediainfo0v5 libqt5x11extras5 libzen0v5" # MEGA runtime dependency <https://mega.io>. # FLAT_INS="$FLAT_INS nz.mega.MEGAsync" # FAIL: MEGA's Flatpak package crashed after clicking on tray icon. # MEGA is a end-to-end encrypted a cloud file storage <https://github.com/flathub/nz.mega.MEGAsync>, <https://mega.nz>, <https://mega.io/ru/desktop#downloadapps>.
+APTO_INS="$APTO_INS megasync" # <https://help.mega.io/ru/installs-apps/desktop-syncing/linux> # APTO_INS="$APTO_INS libmediainfo0v5 libqt5x11extras5 libzen0v5 libmediainfo0v5 libqt5x11extras5 libzen0v5" # MEGA runtime dependency <https://mega.io>. # FLAT_INS="$FLAT_INS nz.mega.MEGAsync" # FAIL: MEGA's Flatpak package crashed after clicking on tray icon. # <https://github.com/flathub/nz.mega.MEGAsync>, <https://flathub.org/ru/apps/nz.mega.MEGAsync> # MEGA is a end-to-end encrypted a cloud file storage <https://mega.io>, <https://mega.nz>, <https://mega.io/ru/desktop#downloadapps>.
 BREW_INS="$BREW_INS rclone" # Is a command-line program to sync to and from different cloud providers <https://github.com/rclone/rclone>.
 
 # X11 text/audio/video group.
@@ -648,7 +646,7 @@ SNAP_INS="$SNAP_INS slack" # slack chat a-la mattermost <https://github.com/slac
 SNAP_INS="$SNAP_INS webinar" # SNAP_CON="$SNAP_CON webinar:camera core:camera" # Web camera setup: `snap connect webinar:camera core:camera`. Video chat and teem/remote work/collaboration platform a-la zoom <http://webinar.ru>.
 
 # X11 programming language GUI.
-SNAC_INS="$SNAC_INS intellij-idea-ultimate" # java programming language <https://github.com/openjdk/jdk>.
+SNAC_INS="$SNAC_INS intellij-idea-ultimate" # Java programming language <https://github.com/openjdk/jdk>.
 
 # X11 GIMP
 # raster graphics editor a-la photoshop
@@ -703,16 +701,15 @@ BREW_INS="$BREW_INS xdotool" # ???
 SNAP_INS="$SNAP_INS atril" # pdf viewer (remembers last page) for mate de (desktop environment) <https://github.com/mate-desktop/atril>.
 SNAP_INS="$SNAP_INS tusk" # Evernote desktop client written in JavaScript programming language <https://github.com/klaudiosinani/tusk>.
 
-# Er wbr.
-# penvpn@client" # openvpn client <https://confluence.ozon.ru/pages/viewpage.action?spaceKey=CORPIT&title=OpenVPN+for+Linux>.
-APTO_INS="$APTO_INS openvpn3 openvpn-systemd-resolved openvpn-dco-dkms network-manager-openvpn-gnome" # OpenVPN 3 client `sudo sh -c 'curl -sSfL https://packages.openvpn.net/packages-repo.gpg > /etc/apt/keyrings/openvpn.asc && echo "deb [signed-by=/etc/apt/keyrings/openvpn.asc] https://packages.openvpn.net/openvpn3/debian lunar main" >> /etc/apt/sources.list.d/openvpn3.list'` <https://community.openvpn.net/openvpn/wiki/OpenVPN3Linux>, <https://github.com/OpenVPN/openvpn3>.
+# Er Wbr.
+# BREW_INS="$BREW_INS teleport" # Instead installed an old version of tsh using script `curl https://goteleport.com/static/install.sh | bash -s 1.23.31`. Teleport TSH is SSH client for the Teleport, a modern SSH server for teams managing distributed infrastructure <https://github.com/gravitational/teleport>.
+APTO_INS="$APTO_INS openvpn3 openvpn-systemd-resolved openvpn-dco-dkms network-manager-openvpn-gnome" # BREW_INS="$BREW_INS openvpn" # OpenVPN 3 client `sudo sh -c 'curl -sSfL https://packages.openvpn.net/packages-repo.gpg > /etc/apt/keyrings/openvpn.asc && echo "deb [signed-by=/etc/apt/keyrings/openvpn.asc] https://packages.openvpn.net/openvpn3/debian lunar main" >> /etc/apt/sources.list.d/openvpn3.list'` <https://community.openvpn.net/openvpn/wiki/OpenVPN3Linux>, <https://github.com/OpenVPN/openvpn3>.
 BREW_INS="$BREW_INS go"
 BREW_INS="$BREW_INS nats-streaming-server" # DEPRECATED NATS Streaming is a durable stream based on NATS <https://github.com/nats-io/nats-server>, <https://github.com/nats-io/nats-streaming-server>.
 BREW_INS="$BREW_INS postgresql@14"
-BREW_INS="$BREW_INS teleport" # Modern SSH server for teams managing distributed infrastructure <https://github.com/gravitational/teleport>.
 SNAP_INS="$SNAP_INS rocketchat-desktop"
 
-# # Er ozn.
+# # Er Ozn.
 # # BREW_INS="$BREW_INS openvpn" # APTO_INS="$APTO_INS openvpn" APTO_DIS="$APTO_DIS openvpn openvpn@client" # openvpn client <https://confluence.ozon.ru/pages/viewpage.action?spaceKey=CORPIT&title=OpenVPN+for+Linux>.
 # # PIP3_INS="$PIP3_INS clickhouse-cli"
 # APTO_INS="$APTO_INS libpcap-dev" # required by github.com/google/gopacket/pcap (go/src/github.com/google/gopacket/pcap/pcap_unix.go:34:10: fatal error: pcap.h: No such file or directory).

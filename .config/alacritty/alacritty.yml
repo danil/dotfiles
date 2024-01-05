@@ -29,6 +29,9 @@ mouse:
     # <https://github.com/alacritty/alacritty/issues/2618>.
     hide_when_typing: true
 selection:
+  # This string contains all characters that are used as separators for
+  # "semantic words" in Alacritty.
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t·⌑"
   # When set to `true`, selected text will be copied to the primary clipboard.
   save_to_clipboard: false
 colors:
