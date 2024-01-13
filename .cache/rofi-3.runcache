@@ -1,25 +1,25 @@
-4002 ffplay -fs /dev/video0
-3408 browser
-3239 vpnup
-3193 vpndown
-3098 rocketchat
-3026 xfce4-settings-manager
+4030 ffplay -fs /dev/video0
+3433 browser
+3253 vpnup
+3194 vpndown
+3103 rocketchat
+3023 xfce4-settings-manager
 2988 xfcepower --fix
-2381 emacsbackup --home="$HOME"
-2359 mega
-2350 pcloud
-2338 yandex
-2319 chrome
-2288 firefox
-1676 flameshot
-1475 atril-mate
-1429 telegram
-1275 zoom
-1180 discord
-1146 mattermost
-1129 webinar
-1081 mailspring
-975 flatseal
-79 mega
-8 gimp
-0 thunar
+2378 emacsbackup --home="$HOME"
+2356 mega
+2348 pcloud
+2335 yandex
+2316 chrome
+2285 firefox
+1673 flameshot
+1472 atril-mate
+1426 telegram
+1272 zoom
+1177 discord
+1143 mattermost
+1126 webinar
+1078 mailspring
+972 flatseal
+76 mega
+5 gimp
+0 nautilus

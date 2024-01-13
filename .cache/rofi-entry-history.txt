@@ -1,10 +1,4 @@
 fire
-rock
-rock
-rock
-rock
-rock
-fire
 goo
 rock
 rocke
@@ -17,3 +11,9 @@ meg
 pcl
 tele
 pcl
+pcl
+th
+rock
+rock
+thu
+naut
