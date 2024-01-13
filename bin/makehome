@@ -384,6 +384,7 @@ GOLN_INS="$GOLN_INS google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.0.1" # NOTE
 # Web/HTTPd server.
 # BREW_INS="$BREW_INS goaccess" # APTO_INS="$APTO_INS goaccess" # analyze apache/nginx log in real-time.
 # PIP3_INS="$PIP3_INS ngxtop" # real-time metrics for nginx server <https://github.com/lebinh/ngxtop>.
+BREW_INS="$BREW_INS certbot" # Certbot is EFF's tool to obtain certs from Let's Encrypt <https://github.com/certbot/certbot>, <https://github.com/EFForg>.
 BREW_INS="$BREW_INS http-server" # <https://github.com/http-party/http-server>.
 BREW_INS="$BREW_INS httpd" # provides htpasswd utility is an nginx/apache basic authentication password generator # APTO_INS="$APTO_INS apache2-utils" # provides htpasswd utility is an nginx/apache basic authentication password generator.
 BREW_INS="$BREW_INS nginx" # web/http server a-la apache # APTO_INS="$APTO_INS nginx" APTO_DIS="$APTO_DIS nginx" # web/http server a-la apache
