@@ -628,6 +628,9 @@ SNAP_INS="$SNAP_INS mailspring"
 
 # Fonts.
 # APTO_INS="$APTO_INS font-manager" # list bitmap ??? fonts
+# APTO_INS="$APTO_INS fonts-fantasque-sans" # instead installed manually into /usr/local/share/fonts # terminal/code/mono/programming font (gnome-terminal issue https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=960629)
+# APTO_INS="$APTO_INS fonts-hack-ttf" # instead installed manually into /usr/local/share/fonts # terminal/code/mono/programming font.
+# APTO_INS="$APTO_INS fonts-noto" # TODO: Awesome serif font?
 FLAT_INS="$FLAT_INS com.github.fontmatrix.Fontmatrix" # <https://github.com/fontmatrix/fontmatrix>.
 FLAT_INS="$FLAT_INS io.github.mmstick.FontFinder" # <https://github.com/mmstick/fontfinder>.
 FLAT_INS="$FLAT_INS org.gnome.FontManager" # <https://github.com/fontmanager/font-manager>.
@@ -638,7 +641,7 @@ APTO_INS="$APTO_INS libfuse2" # APPL_INS="$APPL_INS ~/Applications/pcloud-x86_64
 APTO_INS="$APTO_INS megasync" # <https://help.mega.io/ru/installs-apps/desktop-syncing/linux> # APTO_INS="$APTO_INS libmediainfo0v5 libqt5x11extras5 libzen0v5 libmediainfo0v5 libqt5x11extras5 libzen0v5" # MEGA runtime dependency <https://mega.io>. # FLAT_INS="$FLAT_INS nz.mega.MEGAsync" # FAIL: MEGA's Flatpak package crashed after clicking on tray icon. # <https://github.com/flathub/nz.mega.MEGAsync>, <https://flathub.org/ru/apps/nz.mega.MEGAsync> # MEGA is a end-to-end encrypted a cloud file storage <https://mega.io>, <https://mega.nz>, <https://mega.io/ru/desktop#downloadapps>.
 BREW_INS="$BREW_INS rclone" # Is a command-line program to sync to and from different cloud providers <https://github.com/rclone/rclone>.
 
-# X11 text/audio/video group.
+# X11 text/audio/video group communication chat.
 APPM_INS="$APPM_INS mattermost-desktop" # FLAT_INS="$FLAT_INS com.mattermost.Desktop" # SNAC_INS="$SNAC_INS mattermost-desktop" # mattermost chat a-la slack <https://github.com/mattermost/mattermost>.
 APPM_INS="$APPM_INS skype" # FLAT_INS="$FLAT_INS com.skype.Client"
 APPM_INS="$APPM_INS telegram" # SNAP_INS="$SNAP_INS telegram-desktop" # telegram <https://github.com/telegramdesktop/tdesktop>.
@@ -648,19 +651,19 @@ SNAP_INS="$SNAP_INS webinar" # SNAP_CON="$SNAP_CON webinar:camera core:camera" #
 
 # X11 programming language GUI.
 SNAC_INS="$SNAC_INS intellij-idea-ultimate" # Java programming language <https://github.com/openjdk/jdk>.
-
-# X11 GIMP
-# raster graphics editor a-la photoshop
+# X11 GIMP raster image graphics editor a-la photoshop
 # <https://github.com/gnome/gimp>.
 # APPL_INS="$APPL_INS ~/Applications/GNU_Image_Manipulation_Program-2.10.34-x86_64_6b2e14e02559e95be91cf9c21c1269a4.AppImage"
 # APPM_INS="$APPM_INS gimp"
 # APTO_INS="$APTO_INS gimp"
 # FLAT_INS="$FLAT_INS org.gimp.GIMP"
 
+# X11 image/picture.
+BREW_INS="$BREW_INS feh" # APTO_INS="$APTO_INS feh" # feh is a command line image viewer <https://github.com/derf/feh>.
+BREW_INS="$BREW_INS feh" # APTO_INS="$APTO_INS imagemagick" # <https://github.com/imagemagick/imagemagick>.
+BREW_INS="$BREW_INS webp" # The WebP is abbreviated WEB Pictures is a raster graphics file of image and picture a-la JPEG, PNG, and GIF file formats and supports both lossy and lossless compression, as well as animation and alpha transparency.
+
 # X11/xorg/desktop.
-# APTO_INS="$APTO_INS fonts-fantasque-sans" # instead installed manually into /usr/local/share/fonts # terminal/code/mono/programming font (gnome-terminal issue https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=960629)
-# APTO_INS="$APTO_INS fonts-hack-ttf" # instead installed manually into /usr/local/share/fonts # terminal/code/mono/programming font.
-# APTO_INS="$APTO_INS fonts-noto" # awesome serif font ???
 # APTO_INS="$APTO_INS libappindicator3-1" # slack dependency # libayatana-appindicator3-1 : Conflicts: libappindicator3-1 but 12.10.1+20.10.20200706.1-0ubuntu1 is to be installed.
 # APTO_INS="$APTO_INS libgdk-pixbuf2.0-dev libglib2.0-dev libxml2-utils" # compiltime dependency of numix theme.
 # APTO_INS="$APTO_INS mkusb usb-pack-efi" # instead using usb-creator-gtk # mkusb <https://help.ubuntu.com/community/mkusb#Installation> create bootable/live usb/iso <https://help.ubuntu.com/community/mkusb#Quick_start_manual_and_mkusb_PPA>.
@@ -694,7 +697,6 @@ APTO_INS="$APTO_INS xscreensaver-gl-extra"
 APTO_INS="$APTO_INS xserver-xorg-video-intel" # instead of modesetting using intel <https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/1867668>.
 APTO_UNI="$APTO_UNI gnome-mahjongg" # classic eastern tile game for gnome
 APTO_UNI="$APTO_UNI remmina" # gtk+ remote desktop client.
-BREW_INS="$BREW_INS feh" # APTO_INS="$APTO_INS feh" # command line image viewer.
 BREW_INS="$BREW_INS ffmpeg" # watch webcam `ffplay -fs /dev/video0` https://github.com/ffmpeg/ffmpeg
 BREW_INS="$BREW_INS marp-cli" # markdown to presentation (pdf) from command line https://github.com/marp-team/marp
 BREW_INS="$BREW_INS mpv" # APTO_INS="$APTO_INS mpv" # A-la mplayer replacement.
