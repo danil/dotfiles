@@ -19,6 +19,7 @@
 	directory = /
 	directory = /etc
 	directory = /root/example
+	directory = /root/.ssh
 
 # [color]
 #     diff = always
