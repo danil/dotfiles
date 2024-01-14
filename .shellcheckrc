@@ -1,8 +1,0 @@
-# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
-
-# https://github.com/koalaman/shellcheck/blob/master/shellcheck.1.md#directives
-disable=SC2034
-
-# Local variable
-# <https://github.com/koalaman/shellcheck/wiki/SC3043>.
-disable=SC3043

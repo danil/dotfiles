@@ -1,5 +1,0 @@
-# <http://rvm.beginrescueend.com/workflow/rvmrc/>.
-# Make Flags, I have 1 cpu's so I might use 2 make threads:
-export rvm_make_flags="-j4"
-export rvm_path="/home/danil/.rvm"
-export rvm_project_rvmrc=0

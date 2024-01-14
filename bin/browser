@@ -1,5 +1,0 @@
-#!/usr/bin/env sh
-
-# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
-
-xdg-open ~/.local/share/applications/xfce4-web-browser.desktop

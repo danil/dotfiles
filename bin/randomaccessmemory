@@ -1,8 +1,0 @@
-#!/usr/bin/env sh
-
-# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
-
-RAWM=$(free --human | grep Mem:)
-FRET=$(printf '%s' "$RAWM" | awk '{print $4}' | sed 's/Gi/G/')
-AVAT=$(printf '%s' "$RAWM" | awk '{print $7}' | sed 's/Gi/G/')
-printf '%s~%s' "$FRET" "$AVAT"

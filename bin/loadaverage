@@ -1,5 +1,0 @@
-#!/usr/bin/env sh
-
-# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
-
-cat /proc/loadavg | cut -d ' ' -f1 | tr -d '\n' | sed -r 's/0*([0-9]*)/\1/'

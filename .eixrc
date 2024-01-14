@@ -1,5 +1,0 @@
-# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
-
-# 50 matches displayed on terminal by default.
-# Set EIX_LIMIT=0 to show all matches.
-EIX_LIMIT=1000

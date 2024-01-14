@@ -1,2 +1,0 @@
-#!/bin/bash
-/home/danil/go/bin/yq write --inplace /home/danil/.config/alacritty/alacritty.yml "colors.cursor.cursor" "#ff0000"

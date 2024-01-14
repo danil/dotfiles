@@ -1,4 +1,0 @@
-#!/bin/bash
-# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
-
-echo -n 42 > /tmp/osd-progress-bar-size

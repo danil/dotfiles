@@ -1,5 +1,0 @@
-#!/bin/sh
-
-. binpath.sh
-
-"$APPIMAGEDIR"/zsync2-x86_64.AppImage "$@"

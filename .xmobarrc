@@ -1,7 +1,0 @@
-Config { commands = [ Run StdinReader
-                    , Run Com "/home/danil/bin/print-audio-volume" [] "alsa_volume" 10
-                    ]
-       , sepChar = "@"
-       , alignSep = "}{"
-       , template = "@StdinReader@ }{ Volume <fc=white>@alsa_volume@%</fc>"
-       }
