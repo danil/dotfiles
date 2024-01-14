@@ -20,6 +20,7 @@ while [ "$1" != "$EOL" ]; do
         --emacs-d      ) OPT_EDOT=0; OPT_ALL=-1;;
         --emacs-var    ) OPT_EVAR=0; OPT_ALL=-1;;
         --emacs-d-cask ) OPT_ECAS=0; OPT_ALL=-1;;
+        --clone        ) OPT_CLONE=0;;
         --home         ) opttest "$1" "$opt"; OPT_HOME="$1";;
         -h | --help    ) opthelp; exit 0;;
 
@@ -60,9 +61,14 @@ arcbak() {
     OPT_DRY=-1
 }
 
-arcbak "$OPT_EDOT" ".config" "emacs"       "emacs$FILETMPL.tar.zst" "--exclude=emacs/.cask --exclude=emacs/var"
-arcbak "$OPT_EVAR" ".config" "emacs/var"   "emacs.var$FILETMPL.tar.zst"
-arcbak "$OPT_ECAS" ".config" "emacs/.cask" "emacs.d.cask$FILETMPL.tar.zst"
+if [ "$OPT_CLONE" = 0 ]; then
+    arcbak "$OPT_EDOT" ".config" "emacs"       "emacsclone$FILETMPL.tar.zst"
+else
+    arcbak "$OPT_EDOT" ".config" "emacs"       "emacs$FILETMPL.tar.zst" "--exclude=emacs/.cask --exclude=emacs/var"
+    arcbak "$OPT_EVAR" ".config" "emacs/var"   "emacs.var$FILETMPL.tar.zst"
+    arcbak "$OPT_ECAS" ".config" "emacs/.cask" "emacs.d.cask$FILETMPL.tar.zst"
+fi
+
 
 # Dry run.
 if [ "$OPT_DRY" = 0 ]; then
