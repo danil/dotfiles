@@ -5,7 +5,10 @@
 # Homebrew
 # <https://github.com/homebrew/brew>.
 
-[ ! -f /home/linuxbrew/.linuxbrew/bin/brew ] && exit
+if [ ! -f /home/linuxbrew/.linuxbrew/bin/brew ]; then
+    printf >&2 "missing Homebrew\n"
+    return
+fi
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 export PATH=/home/linuxbrew/.linuxbrew/sbin:"$PATH"
