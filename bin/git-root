@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
+git rev-list --max-parents=0 HEAD | tail -n 1
