@@ -94,7 +94,7 @@ local notFromMe = { not: fromMe };
     { name: "Offline" },
     { name: "PubBike" },
     { name: "PvtHondaCRV2012" },
-    { name: "PvtRoman" },
+    { name: "PvtRoma" },
     { name: "Receipt" },
     { name: "Registr" },
     { name: "Schedule" },
