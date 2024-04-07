@@ -2,7 +2,7 @@
 
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-USAGE="usage: ${CMD:=${0##*/}} --home=\"\$HOME\" [--emacs-d] [--emacs-var] [--emacs-d-cask]"
+USAGE="usage: ${CMD:=${0##*/}} --home=\"\$HOME\" [--emacs-d] [--emacs-var] [--emacs-d-cask] [--clone]"
 
 OPT_ALL=0
 
