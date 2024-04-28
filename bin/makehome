@@ -156,6 +156,7 @@ BREW_INS="$BREW_INS fd" # RUST_INS="$RUST_INS fd-find" # Find replacement <https
 BREW_INS="$BREW_INS figlet" # figlet/taag ASCII art <https://github.com/patorjk/figlet-cli>, <https://patorjk.com/software/taag>.
 BREW_INS="$BREW_INS flatbuffers" # A-la protobuf <https://github.com/google/flatbuffers>.
 BREW_INS="$BREW_INS jsonnet" # <https://github.com/google/jsonnet>.
+BREW_INS="$BREW_INS lsd" # ls alternative <https://github.com/lsd-rs/lsd>.
 BREW_INS="$BREW_INS mailutils" # APTO_INS="$APTO_INS mailutils" # GNU mailutils, reads local mail, provides `/usr/bin/mail`.
 BREW_INS="$BREW_INS ninja" # A-la make build automation system?
 BREW_INS="$BREW_INS pcre2" # Provides `pcre2grep -r your-regexp .` utility. PCRE2 is a Perl compatible regular expressions library with a new API <https://github.com/pcre2project/pcre2>.
