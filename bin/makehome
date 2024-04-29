@@ -152,11 +152,12 @@ BREW_INS="$BREW_INS convmv" # A-la iconv character encoding conversion util # AP
 BREW_INS="$BREW_INS csvkit" # Conver CSV to JSON `csvjson path/to/file.csv` <https://github.com/wireservice/csvkit/blob/master/docs/scripts/csvjson.rst>.
 BREW_INS="$BREW_INS curl" # APTO_INS="$APTO_INS curl" # curl a-la Wget <https://github.com/curl/curl>.
 BREW_INS="$BREW_INS dos2unix" # APTO_INS="$APTO_INS dos2unix" # Convert text file line endings between CRLF and LF.
+BREW_INS="$BREW_INS eza" # A-la ls alternative <https://github.com/eza-community/eza>.
 BREW_INS="$BREW_INS fd" # RUST_INS="$RUST_INS fd-find" # Find replacement <https://github.com/sharkdp/fd>.
 BREW_INS="$BREW_INS figlet" # figlet/taag ASCII art <https://github.com/patorjk/figlet-cli>, <https://patorjk.com/software/taag>.
 BREW_INS="$BREW_INS flatbuffers" # A-la protobuf <https://github.com/google/flatbuffers>.
 BREW_INS="$BREW_INS jsonnet" # <https://github.com/google/jsonnet>.
-BREW_INS="$BREW_INS lsd" # ls alternative <https://github.com/lsd-rs/lsd>.
+BREW_INS="$BREW_INS lsd" # A-la ls alternative <https://github.com/lsd-rs/lsd>.
 BREW_INS="$BREW_INS mailutils" # APTO_INS="$APTO_INS mailutils" # GNU mailutils, reads local mail, provides `/usr/bin/mail`.
 BREW_INS="$BREW_INS ninja" # A-la make build automation system?
 BREW_INS="$BREW_INS pcre2" # Provides `pcre2grep -r your-regexp .` utility. PCRE2 is a Perl compatible regular expressions library with a new API <https://github.com/pcre2project/pcre2>.
