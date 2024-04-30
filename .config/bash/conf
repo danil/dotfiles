@@ -51,7 +51,7 @@ export MANPATH="$HOME"/.local/usr/local/share/man:"$MANPATH"
 # <http://askubuntu.com/questions/22037/aliases-not-available-when-using-sudo#22043>.
 # alias less=$PAGER
 alias ag='ag --width=5000'
-alias eza='eza --icons=always --color=always'
+alias eza='eza --icons'
 alias ll='lsd' # ll='eza'
 alias ls='ls --color'
 alias sudo='sudo '
