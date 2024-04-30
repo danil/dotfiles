@@ -1,8 +1,8 @@
-4324 ffplay -fs /dev/video0
-3751 browser
-3395 vpnup
-3227 vpndown
-3108 mega
+4359 ffplay -fs /dev/video0
+3782 browser
+3423 vpnup
+3240 vpndown
+3112 mega
 3018 xfce4-settings-manager
 2989 xfcepower --fix
 2373 emacsbackup --home="$HOME"
@@ -21,5 +21,5 @@
 1073 mailspring
 967 flatseal
 71 mega
-2 gimp
+4 gimp
 0 Thunar

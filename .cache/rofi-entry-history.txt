@@ -1,5 +1,3 @@
-team
-roc
 pcl
 vpn
 ro
