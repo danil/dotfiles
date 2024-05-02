@@ -52,6 +52,7 @@ export MANPATH="$HOME"/.local/usr/local/share/man:"$MANPATH"
 # alias less=$PAGER
 alias ag='ag --width=5000'
 alias eza='eza --icons'
+alias gg='ug' # ll='grep'
 alias ll='lsd' # ll='eza'
 alias ls='ls --color'
 alias sudo='sudo '
