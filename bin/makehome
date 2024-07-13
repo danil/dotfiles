@@ -472,6 +472,17 @@ BREW_INS="$BREW_INS kubernetes-cli" # APTO_INS="$APTO_INS kubectl" # provides k8
 BREW_INS="$BREW_INS netdata" # monitoring <https://github.com/netdata/netdata>.
 BREW_INS="$BREW_INS vault" # FIXME: BREW_INS="$BREW_INS hashicorp/tap/vault" BREW_INS_SRC="$BREW_INS_SRC hashicorp/tap" # APTO_INS="$APTO_INS vault" # vault util (hashicorp) # curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - && sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main", <https://vaultproject.io/downloads>.
 
+# Wayland/desktop.
+APTO_INS="$APTO_INS libevdev-dev pkg-config" # evremap's dependency <https://github.com/wez/evremap>.
+
+# Wayland swhkd is a simple hotkey daemon <https://github.com/waycrate/swhkd>.
+# `make setup && make clean && make` <https://github.com/waycrate/swhkd/blob/main/INSTALL.md#compiling>.
+APTO_INS="$APTO_INS libevdev-dev libevdev2" # Evdev kernel module is a swhkd's runtime dependency.
+APTO_INS="$APTO_INS libudev-dev" # Is a swhkd's compile time dependency.
+APTO_INS="$APTO_INS policykit-1 polkitd" # Policy Kit Daemon (polkit) is a swhkd's runtime dependency.
+APTO_INS="$APTO_INS rustup-init" # swhkd's compile time dependency <https://github.com/rust-lang/rustup>.
+APTO_INS="$APTO_INS scdoc" # Man-pages generation is a swhkd's compile time dependency.
+
 # # X11 Suckless dwm.
 # # APTO_INS="$APTO_INS gxkb" # A-la xxkb (destroy xchainkeys).
 # # APTO_INS="$APTO_INS stterm" # instead compiled from source into ~/.local/usr/local/bin # succless st terminal.
