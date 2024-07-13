@@ -145,4 +145,8 @@
     <property name="icon-size" type="uint" value="64"/>
     <property name="tooltip-size" type="double" value="64"/>
   </property>
+  <property name="last" type="empty">
+    <property name="window-width" type="int" value="811"/>
+    <property name="window-height" type="int" value="563"/>
+  </property>
 </channel>

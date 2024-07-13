@@ -17,6 +17,7 @@
       <value type="string" value="org.xfce.Thunar"/>
       <value type="string" value="rocketchat-desktop_Rocket.Chat"/>
       <value type="string" value="Xfce volume control"/>
+      <value type="string" value="Xfce4-notifyd settings"/>
       <value type="string" value="xfce4-power-manager"/>
       <value type="string" value="yandex-browser"/>
     </property>
@@ -26,6 +27,7 @@
   <property name="log-level" type="uint" value="0"/>
   <property name="log-level-apps" type="uint" value="0"/>
   <property name="plugin" type="empty">
-    <property name="hide-on-read" type="bool" value="true"/>
+    <property name="hide-on-read" type="bool" value="false"/>
   </property>
+  <property name="do-not-disturb" type="bool" value="false"/>
 </channel>
