@@ -1,5 +1,5 @@
-4572 ffplay -fs /dev/video0
-3904 browser
+4576 ffplay -fs /dev/video0
+3906 browser
 3554 vpnup
 3268 vpndown
 3175 mega
