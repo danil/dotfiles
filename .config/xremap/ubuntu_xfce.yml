@@ -8,6 +8,9 @@ modmap:
       RightCtrl: RightAlt
       RightAlt:  RightCtrl
 
+  - remap:
+     CapsLock: Esc
+
 keymap:
   - name: Escape.
     remap:
