@@ -5,7 +5,7 @@
 # black
 background = "#000000"
 # gray90
-foreground = "#e5e5e5"
+foreground = "#ffffff"
 
 # Normal colors.
 [colors.normal]

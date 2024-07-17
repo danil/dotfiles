@@ -1,12 +1,11 @@
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
 # Dark theme.
 # Night Owlish Ligh <https://github.com/alacritty/alacritty-theme/blob/master/themes/night_owlish_light.toml>.
 
-# Colors (Night Owlish Light)
-
 [colors.primary]
 background = '#ffffff'
-foreground = '#2a2a2a'
+foreground = '#000000'
 
 [colors.normal]
 black = '#000000'
@@ -26,7 +25,7 @@ yellow = '#dac26b'
 blue = '#5ca7e4'
 magenta = '#697098'
 cyan = '#00c990'
-white = '#989fb1'
+white = '#ffffff'
 
 [colors.cursor]
 cursor = '#403f53'
