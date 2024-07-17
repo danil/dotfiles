@@ -30,12 +30,12 @@ done; shift
 cd ~/.config/alacritty || exit 1
 
 if [ "$OPT_LIGHT" = 0 ]; then
-    lookandfeeltool --apply org.kde.breeze.desktop || exit 1
+    lookandfeeltool --apply org.kde.breeze.desktop || exit 1 # <https://askubuntu.com/questions/1183294/switching-plasma-theme-from-the-command-line#1183309>.
     ln --force alacritty_light.toml alacritty_theme.toml || exit 1
     tmux set -t $(hostname) status-bg brightwhite
     emacsclient --eval "(progn (setq frame-background-mode 'light) (load-file user-init-file))" --quiet -no-wait --suppress-output -a true
 elif [ "$OPT_DARK" = 0 ]; then
-    lookandfeeltool --apply org.kde.breezedark.desktop || exit 1
+    lookandfeeltool --apply org.kde.breezedark.desktop || exit 1 # <https://askubuntu.com/questions/1183294/switching-plasma-theme-from-the-command-line#1183309>.
     ln --force alacritty_dark.toml alacritty_theme.toml || exit 1
     tmux set -t $(hostname) status-bg black
     emacsclient --eval "(progn (setq frame-background-mode 'dark) (load-file user-init-file))" --quiet -no-wait --suppress-output -a true
