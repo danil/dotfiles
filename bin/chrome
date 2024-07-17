@@ -2,4 +2,4 @@
 
 . binpath.sh
 
-"$LOCALBINDIR"/google-chrome --force-dark-mode --password-store=gnome "$@"
+"$NIXBINDIR"/google-chrome-stable --force-dark-mode --password-store=kde "$@"

@@ -95,3 +95,5 @@ select-word-style bash
 bindkey "\el" down-case-word #Oh-my-zsh sets M-l so that it runs the "ls" command. Emacs disagrees, and so my fingers disagree as well <https://github.com/brandon-rhodes/homedir/blob/0cf986776be2335077cf7d86a1f5717084ffc41e/.zshrc#L82>
 bindkey "\Xh" delete-char #replace oh-my-zsh C-h "man" binding by backspace
 bindkey \^U backward-kill-line #<http://stackoverflow.com/questions/3483604/which-short-cut-in-zsh-does-the-same-as-ctrl-u-in-bash#3483679>
+
+if [ -e /home/danil/.nix-profile/etc/profile.d/nix.sh ]; then . /home/danil/.nix-profile/etc/profile.d/nix.sh; fi # Added by Nix installer.

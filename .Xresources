@@ -43,8 +43,8 @@
 ! <https://wiki.gentoo.org/wiki/X_resources#Includes>,
 ! <http://www.nongnu.org/emacsdoc-fr/manuel/resources-x.html>,
 ! <http://stackoverflow.com/questions/13405240/is-it-possible-to-change-xresources-interactively>.
-#include ".Xresources.d/urxvt"
-#include ".Xresources.d/uxterm"
-#include ".Xresources.d/emacs"
-#include ".Xresources.d/xscreensaver"
-#include ".Xresources.d/rofi"
+#include "/home/danil/.Xresources.d/urxvt"
+#include "/home/danil/.Xresources.d/uxterm"
+#include "/home/danil/.Xresources.d/emacs"
+#include "/home/danil/.Xresources.d/xscreensaver"
+#include "/home/danil/.Xresources.d/rofi"
