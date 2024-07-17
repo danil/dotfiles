@@ -40,7 +40,7 @@ keymap:
       C-t:
         remap:
           KEY_I:
-            launch: ["sudo", "-u", "danil", "-i", "/bin/bash", "-c", "xcalib -i -a"]
+            launch: ["sudo", "-u", "danil", "-i", "/bin/bash", "-c", "xcalib -invert -alter"]
 
   - name: Lock or lock and sleep/suspend or dim screen backlight <https://askubuntu.com/questions/1233858/xubuntu-20-04-suspend-waits-30-seconds>.
     remap:

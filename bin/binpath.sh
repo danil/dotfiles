@@ -10,5 +10,6 @@ BASEDIR=$(cd "$BASEDIR"; pwd)
 
 HOMEBINDIR="$BASEDIR"
 LOCALBINDIR="$BASEDIR"/../.local/bin
+CONFIGDIR="$BASEDIR"/../.config
 APPIMAGEDIR="$BASEDIR"/../Applications
 NIXBINDIR="$BASEDIR"/../.nix-profile/bin/google-chrome-stable

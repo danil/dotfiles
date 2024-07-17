@@ -1,6 +1,8 @@
 #!/usr/bin/env sh
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
+. binpath.sh
+
 USAGE="usage: ${CMD:=${0##*/}} --light|--dark"
 
 # Options functions.
@@ -27,20 +29,48 @@ while [ "$1" != "$EOL" ]; do
     esac
 done; shift
 
-cd ~/.config/alacritty || exit 1
-
 if [ "$OPT_LIGHT" = 0 ]; then
     lookandfeeltool --apply org.kde.breeze.desktop || exit 1 # <https://askubuntu.com/questions/1183294/switching-plasma-theme-from-the-command-line#1183309>.
-    ln --force alacritty_light.toml alacritty_theme.toml || exit 1
+    if [ -f "$CONFIGDIR"/alacritty/alacritty_light.toml ]; then
+        cd "$CONFIGDIR"/alacritty || exit 1
+        ln --force --symbolic alacritty_light.toml alacritty_theme.toml || exit 1
+        cd - > /dev/null || exit 1
+    else
+        printf >&2 "missing Alacrity *light* theme\n"
+    fi
     tmux set -t $(hostname) status-bg brightwhite
     emacsclient --eval "(progn (setq frame-background-mode 'light) (load-file user-init-file))" --quiet -no-wait --suppress-output -a true
+    if [ -f "$CONFIGDIR"/rofi/config_light.rasi ]; then
+        cd "$CONFIGDIR"/rofi || exit 1
+        ln --force --symbolic config_light.rasi config.rasi || exit 1
+        cd - > /dev/null || exit 1
+    else
+        printf >&2 "missing Rofi *light* theme\n"
+    fi
 elif [ "$OPT_DARK" = 0 ]; then
     lookandfeeltool --apply org.kde.breezedark.desktop || exit 1 # <https://askubuntu.com/questions/1183294/switching-plasma-theme-from-the-command-line#1183309>.
-    ln --force alacritty_dark.toml alacritty_theme.toml || exit 1
+    if [ -f "$CONFIGDIR"/alacritty/alacritty_dark.toml ]; then
+        cd "$CONFIGDIR"/alacritty || exit 1
+        ln --force --symbolic alacritty_dark.toml alacritty_theme.toml || exit 1
+        cd - > /dev/null || exit 1
+    else
+        printf >&2 "missing Alacrity *dark* theme\n"
+    fi
     tmux set -t $(hostname) status-bg black
     emacsclient --eval "(progn (setq frame-background-mode 'dark) (load-file user-init-file))" --quiet -no-wait --suppress-output -a true
+    if [ -f "$CONFIGDIR"/rofi/config_dark.rasi ]; then
+        cd "$CONFIGDIR"/rofi || exit 1
+        ln --force --symbolic config_dark.rasi config.rasi || exit 1
+        cd - > /dev/null || exit 1
+    else
+        printf >&2 "missing Rofi *dark* theme\n"
+    fi
 else
     opthelp && exit 0 || exit 1
 fi
 
-touch alacritty.toml || exit 1
+if [ -f "$CONFIGDIR"/alacritty/alacritty.toml ]; then
+    touch "$CONFIGDIR"/alacritty/alacritty.toml || exit 1
+else
+    printf >&2 "missing Alacrity config\n"
+fi
