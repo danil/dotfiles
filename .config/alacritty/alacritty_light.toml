@@ -6,10 +6,10 @@
 
 [colors.primary]
 background = '#ffffff'
-foreground = '#403f53'
+foreground = '#2a2a2a'
 
 [colors.normal]
-black = '#011627'
+black = '#000000'
 red = '#d3423e'
 green = '#2aa298'
 yellow = '#daaa01'
