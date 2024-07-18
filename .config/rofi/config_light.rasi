@@ -1,5 +1,5 @@
 // This file is part of Danil <danil@kutkevich.org> home.
-// Copyright: Danil Kutkevich, Dave Davenport.
+// TODO: <https://wiki.archlinux.org/title/rofi>, <https://reddit.com/r/qtools/comments/e5ljj6/rofi_ability_to_importextend_rasi_themesconfigs>, <https://forum.endeavouros.com/t/rofi-config-doesnt-import-all-file/17287>, <https://github.com/denysvitali/rofi-config/blob/master/config.rasi>.
 
 // Rofi.
 // application launcher (a-la dmenu) also window switcher

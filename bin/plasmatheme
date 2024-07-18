@@ -1,8 +1,6 @@
 #!/usr/bin/env sh
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-. /home/danil/bin/binpath.sh
-
 OPTHELP="usage: ${CMD:=${0##*/}} --light|--dark"
 
 opthelp () { printf "%s\n" "$OPTHELP"; }
@@ -29,6 +27,8 @@ optparse () {
 }
 optparse "$1"
 
+. /home/danil/bin/binpath.sh
+
 if [ "$OPT_LIGHT" = 0 ]; then
     lookandfeeltool --apply org.kde.breeze.desktop || exit 1 # <https://askubuntu.com/questions/1183294/switching-plasma-theme-from-the-command-line#1183309>.
     if [ -f "$CONFIGDIR"/alacritty/alacritty_light.toml ]; then
@@ -38,11 +38,19 @@ if [ "$OPT_LIGHT" = 0 ]; then
     else
         printf >&2 "missing Alacrity *light* theme\n"
     fi
-    tmux set -g -t $(hostname) status-bg brightwhite
-    tmux set -g -t $(hostname) status-fg black
-    tmux set -g -t $(hostname) status-left "#[bg=brightred]#S#[bg=default]#(echo $USER)@#(hostname)#[bg=default]#[bg=brightmagenta]Ctl-t#[bg=default]"
-    tmux set-window-option -g -t $(hostname) window-status-current-style bg=brightblue
-    emacsclient --eval "(progn (setq frame-background-mode 'light) (load-file user-init-file))" --quiet -no-wait --suppress-output -a true
+    if [ -f "$BREWBINDIR"/tmux ]; then
+        "$BREWBINDIR"/tmux set -t $(hostname) status-bg brightwhite
+        "$BREWBINDIR"/tmux set -t $(hostname) status-fg black
+        "$BREWBINDIR"/tmux  set -t $(hostname) status-left "#[bg=brightred]#S#[bg=default]#(echo $USER)@#(hostname)#[bg=default]#[bg=brightmagenta]Ctl-t#[bg=default]"
+        "$BREWBINDIR"/tmux  set-window-option -t $(hostname) window-status-current-style bg=brightblue
+    else
+        printf >&2 "missing tmux\n"
+    fi
+    if [ -f "$HOMEBINDIR"/emacsclient ]; then
+        "$HOMEBINDIR"/emacsclient --eval "(progn (setq frame-background-mode 'light) (load-file user-init-file))" --quiet -no-wait --suppress-output -a true
+    else
+        printf >&2 "missing tmux\n"
+    fi
     if [ -f "$CONFIGDIR"/rofi/config_light.rasi ]; then
         cd "$CONFIGDIR"/rofi || exit 1
         ln --force --symbolic config_light.rasi config.rasi || exit 1
@@ -59,11 +67,19 @@ elif [ "$OPT_DARK" = 0 ]; then
     else
         printf >&2 "missing Alacrity *dark* theme\n"
     fi
-    tmux set -g -t $(hostname) status-bg black
-    tmux set -g -t $(hostname) status-fg brightwhite
-    tmux set -g -t $(hostname) status-left "#[bg=red]#S#[bg=default]#(echo $USER)@#(hostname)#[bg=default]#[bg=magenta]Ctl-t#[bg=default]"
-    tmux set-window-option -g -t $(hostname) window-status-current-style bg=brightblue
-    emacsclient --eval "(progn (setq frame-background-mode 'dark) (load-file user-init-file))" --quiet -no-wait --suppress-output -a true
+    if [ -f "$BREWBINDIR"/tmux ]; then
+        "$BREWBINDIR"/tmux  set -t $(hostname) status-bg black
+        "$BREWBINDIR"/tmux  set -t $(hostname) status-fg brightwhite
+        "$BREWBINDIR"/tmux  set -t $(hostname) status-left "#[bg=red]#S#[bg=default]#(echo $USER)@#(hostname)#[bg=default]#[bg=magenta]Ctl-t#[bg=default]"
+        "$BREWBINDIR"/tmux  set-window-option -t $(hostname) window-status-current-style bg=brightblue
+    else
+        printf >&2 "missing tmux\n"
+    fi
+    if [ -f "$HOMEBINDIR"/emacsclient ]; then
+        "$HOMEBINDIR"/emacsclient --eval "(progn (setq frame-background-mode 'dark) (load-file user-init-file))" --quiet -no-wait --suppress-output -a true
+    else
+        printf >&2 "missing tmux\n"
+    fi
     if [ -f "$CONFIGDIR"/rofi/config_dark.rasi ]; then
         cd "$CONFIGDIR"/rofi || exit 1
         ln --force --symbolic config_dark.rasi config.rasi || exit 1
