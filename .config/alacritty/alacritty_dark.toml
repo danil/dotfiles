@@ -9,8 +9,9 @@ foreground = "#ffffff"
 
 # Normal colors.
 [colors.normal]
-# black
 black = "#000000"
+# gray90
+white = "#e5e5e5"
 # blue2
 # "#2222ee" "#5454ee" "#3f69ee"
 blue = "#3f69ee"
@@ -22,25 +23,18 @@ green = "#00cd00"
 magenta = "#cd00cd"
 # red3
 red = "#cd0000"
-# gray90
-white = "#e5e5e5"
 # yellow3
 yellow = "#cdcd00"
 
 # Bright colors.
 [colors.bright]
 black = "#7f7f7f"
+white = "#ffffff"
 blue = "#5c5cff"
-# cyan
 cyan = "#00ffff"
-# green
 green = "#00ff00"
 magenta = "#ff00ff"
-# red
 red = "#ff0000"
-# white
-white = "#ffffff"
-# yellow
 yellow = "#ffff00"
 
 [colors.cursor]
