@@ -32,5 +32,4 @@ cursor = '#403f53'
 text = '#fbfbfb'
 
 [colors.selection]
-background = '#f2f2f2'
-text = '#403f53'
+text = "CellBackground"
