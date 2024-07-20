@@ -1,35 +1,39 @@
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
-
-# Dark theme.
-# Night Owlish Ligh <https://github.com/alacritty/alacritty-theme/blob/master/themes/night_owlish_light.toml>.
+# Light theme.
 
 [colors.primary]
 background = '#ffffff'
 foreground = '#000000'
 
+# Normal colors.
 [colors.normal]
-black = '#000000'
-red = '#d3423e'
-green = '#2aa298'
-yellow = '#daaa01'
-blue = '#4876d6'
-magenta = '#403f53'
-cyan = '#08916a'
-white = '#7a8181'
+black = "#000000"
+# gray90
+white = "#e5e5e5"
+# blue2
+# "#2222ee" "#5454ee" "#3f69ee"
+blue = "#3f69ee"
+# cyan3
+cyan = "#00cdcd"
+# green3
+green = "#00cd00"
+# magenta3
+magenta = "#cd00cd"
+# red3
+red = "#cd0000"
+# yellow3
+yellow = "#cdcd00"
 
+# Bright colors.
 [colors.bright]
-black = '#7a8181'
-red = '#f76e6e'
-green = '#49d0c5'
-yellow = '#dac26b'
-blue = '#5ca7e4'
-magenta = '#697098'
-cyan = '#00c990'
-white = '#ffffff'
-
-[colors.cursor]
-cursor = '#403f53'
-text = '#fbfbfb'
+black = "#7f7f7f"
+white = "#ffffff"
+blue = "#5c5cff"
+cyan = "#00ffff"
+green = "#00ff00"
+magenta = "#ff00ff"
+red = "#ff0000"
+yellow = "#ffff00"
 
 [colors.selection]
 text = "CellBackground"
