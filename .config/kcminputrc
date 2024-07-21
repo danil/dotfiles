@@ -1,0 +1,14 @@
+[Keyboard]
+RepeatDelay=300
+RepeatRate=60
+
+[Libinput][1267][47][Elan Touchpad]
+NaturalScroll=true
+PointerAcceleration=0.800
+
+[Libinput][1267][47][Elan TrackPoint]
+NaturalScroll=true
+
+[Mouse]
+X11LibInputXAccelProfileFlat=true
+XLbInptNaturalScroll=true

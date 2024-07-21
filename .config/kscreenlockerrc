@@ -1,0 +1,6 @@
+[Daemon]
+Timeout=15
+
+[Greeter][Wallpaper][org.kde.image][General]
+Image=/home/danil/.local/share/backgrounds/2018-03-16.19.25.25-v2.jpg
+PreviewImage=/home/danil/.local/share/backgrounds/2018-03-16.19.25.25-v2.jpg
