@@ -27,7 +27,7 @@ keymap:
           KEY_G:
             launch: ["bash", "-c", "dbus-send --session --type=method_call --dest=org.freedesktop.Notifications /org/freedesktop/Notifications org.xfce.Notifyd.Quit"]
           Shift-1:
-            launch: ["sudo", "-u", "danil", "-i", "/bin/bash", "-c", "/home/danil/.local/usr/local/bin/rofi -show combi -modi top -modes [run,drun,window,windowcd,combi,top,keys,filebrowser,recursivebrowser]"]
+            launch: ["sudo", "-u", "danil", "-i", "/bin/bash", "-c", "krunner"]
           KEY_U:
             remap:
               KEY_C:
