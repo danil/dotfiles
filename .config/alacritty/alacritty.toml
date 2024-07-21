@@ -1,5 +1,7 @@
-# Tmux configuration contains `truecolor` support by `set -g terminal-overrides ",xterm-256color:RGB"`
-# and then adding support of the `xterm`.
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+# Alacritty terminal emulator <https://github.com/alacritty/alacritty>,
+# <https://alacritty.org/config-alacritty.html>,
+# <https://wiki.archlinux.org/title/Alacritty>.
 
 # Default color theme.
 import = [
@@ -38,6 +40,17 @@ blinking = "Always"
 # Hiding mouse cursor while typing
 # <https://github.com/alacritty/alacritty/issues/2618>.
 hide_when_typing = true
+
+# [[hints.enabled]]
+# command = "kde-open" # "xdg-open" # On Linux/BSD
+# # command = "open" # On macOS
+# # command = { program = "cmd", args = [ "/c", "start", "" ] } # On Windows
+# hyperlinks = true
+# post_processing = true
+# persist = false
+# mouse.enabled = true
+# binding = { key = "U", mods = "Control|Shift" }
+# regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
 
 [selection]
 # When set to `true`, selected text will be copied to the primary clipboard.
