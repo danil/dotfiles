@@ -43,10 +43,13 @@ theme_kde () {
         return
     fi
 
+    # KDE
+    # <https://userbase.kde.org/System_Settings/Look_And_Feel>,
+    # <https://askubuntu.com/questions/1183294/switching-plasma-theme-from-the-command-line#1183309>.
     if [ "$OPT_LIGHT" = 0 ]; then
-        lookandfeeltool --apply org.kde.breeze.desktop || exit 1 # <https://askubuntu.com/questions/1183294/switching-plasma-theme-from-the-command-line#1183309>.
+        lookandfeeltool --apply org.kde.breeze.desktop || exit 1
     elif [ "$OPT_DARK" = 0 ]; then
-        lookandfeeltool --apply org.kde.breezedark.desktop || exit 1 # <https://askubuntu.com/questions/1183294/switching-plasma-theme-from-the-command-line#1183309>.
+        lookandfeeltool --apply org.kde.breezedark.desktop || exit 1
     fi
 }
 
