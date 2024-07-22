@@ -6,7 +6,7 @@ OPTHELP="usage: ${CMD:=${0##*/}} --up|--down"
 opthelp () { printf "%s\n" "$OPTHELP"; }
 opttest () { { [ "$1" != "$EOL" ] && [ "$1" != '--' ]; } || optfail "missing argument" "$2"; } # Avoid infinite loop.
 optfail () { printf >&2 "%s %s\n%s\n" "$1" "$2" "$OPTHELP"; exit 2; }
-set -- "$@" "${EOL:=$(printf '\1\3\3\7')}"  # End-of-list marker.
+set -- "$@" "${EOL:=$(printf '\1\3\3\7')}" # Parse command-line options. # End-of-list marker.
 while [ "$1" != "$EOL" ]; do
     opt="$1"; shift
 
