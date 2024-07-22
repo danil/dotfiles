@@ -34,7 +34,6 @@ elif [ "$OPT_DOWN" = 0 ]; then
     nmcli connection down WB
 fi
 
-
 # Dry run.
 if [ "$OPT_DRY" = 0 ]; then
     opthelp

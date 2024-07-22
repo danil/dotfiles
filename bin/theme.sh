@@ -33,10 +33,14 @@ done; shift
 [ "$OPT_LIGHT" != 0 ] && [ "$OPT_DARK" != 0 ] && opthelp && exit 1
 [ "$OPT_LIGHT" = 0 ] && [ "$OPT_DARK" = 0 ] && printf >&2 "error: ambiguous theme\n" && opthelp && exit 1
 
+OPT_DRY=0
+
 . /home/danil/bin/binpath.sh
 
 theme_kde () {
     [ "$OPT_KDE" != 0 ] && return
+
+    OPT_DRY=-1
 
     if [ ! -x "$(command -v lookandfeeltool)" ]; then
         printf >&2 "error: missing lookandfeeltool\n"
@@ -55,6 +59,8 @@ theme_kde () {
 
 theme_alacritty () {
     [ "$OPT_ALACRITTY" != 0 ] && return
+
+    OPT_DRY=-1
 
     if [ ! -f "$CONFIGDIR"/alacritty/alacritty_light.toml ] ||
        [ ! -f "$CONFIGDIR"/alacritty/alacritty_dark.toml ] ||
@@ -78,6 +84,8 @@ theme_alacritty () {
 theme_tmux () {
     [ "$OPT_TMUX" != 0 ] && return
 
+    OPT_DRY=-1
+
     if [ ! -x "$(command -v "$BREWBINDIR"/tmux)" ]; then
         printf >&2 "error: missing tmux\n"
         return
@@ -99,6 +107,8 @@ theme_tmux () {
 theme_emacs () {
     [ "$OPT_EMACS" != 0 ] && return
 
+    OPT_DRY=-1
+
     if [ ! -x "$(command -v "$BREWBINDIR"/emacsclient)" ]; then
         printf >&2 "error: missing emacsclient\n"
         return
@@ -113,6 +123,8 @@ theme_emacs () {
 
 theme_rofi () {
     [ "$OPT_ROFI" != 0 ] && return
+
+    OPT_DRY=-1
 
     if [ ! -f "$CONFIGDIR"/rofi/config_light.rasi ] ||
        [ ! -f "$CONFIGDIR"/rofi/config_dark.rasi ]; then
@@ -134,6 +146,8 @@ theme_rofi () {
 
 theme_lsd () {
     [ "$OPT_LSD" != 0 ] && return
+
+    OPT_DRY=-1
 
     if [ ! -f "$CONFIGDIR"/lsd/colors_light.yaml ] ||
        [ ! -f "$CONFIGDIR"/lsd/colors_dark.yaml ]; then
@@ -157,3 +171,10 @@ theme_tmux
 theme_emacs
 theme_rofi
 theme_lsd
+
+# Dry run.
+if [ "$OPT_DRY" = 0 ]; then
+    printf >&2 "error: dry run\n"
+    opthelp
+    exit 1
+fi
