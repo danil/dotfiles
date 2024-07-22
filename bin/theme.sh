@@ -6,29 +6,33 @@ OPTHELP="usage: ${CMD:=${0##*/}} --light|--dark [--kde] [--alacritty] [--tmux] [
 opthelp () { printf "%s\n" "$OPTHELP"; }
 opttest () { { [ "$1" != "$EOL" ] && [ "$1" != '--' ]; } || optfail "missing argument" "$2"; } # Avoid infinite loop.
 optfail () { printf >&2 "%s %s\n%s\n" "$1" "$2" "$OPTHELP"; exit 2; }
-set -- "$@" "${EOL:=$(printf '\1\3\3\7')}" # Parse command-line options. End-of-list marker.
-while [ "$1" != "$EOL" ]; do
-    opt="$1"; shift
+optread () {
+    set -- "$@" "${EOL:=$(printf '\1\3\3\7')}" # End-of-list marker.
+    while [ "$1" != "$EOL" ]; do
+        opt="$1"; shift
 
-    case "$opt" in
-        --light    ) OPT_LIGHT=0;;
-        --dark     ) OPT_DARK=0;;
-        --kde      ) OPT_KDE=0;;
-        --alacritty) OPT_ALACRITTY=0;;
-        --tmux     ) OPT_TMUX=0;;
-        --emacs    ) OPT_EMACS=0;;
-        --rofi     ) OPT_ROFI=0;;
-        --lsd      ) OPT_LSD=0;;
-        -h | --help ) opthelp; exit 0;;
+        case "$opt" in
+            --light     ) OPT_LIGHT=0;;
+            --dark      ) OPT_DARK=0;;
+            --kde       ) OPT_KDE=0;;
+            --alacritty ) OPT_ALACRITTY=0;;
+            --tmux      ) OPT_TMUX=0;;
+            --emacs     ) OPT_EMACS=0;;
+            --rofi      ) OPT_ROFI=0;;
+            --lsd       ) OPT_LSD=0;;
+            -h | --help ) opthelp; exit 0;;
 
-        # Process special cases.
-        --) while [ "$1" != "$EOL" ]; do set -- "$@" "$1"; shift; done;;   # parse remaining as positional
-        --[!=]*=*) set -- "${opt%%=*}" "${opt#*=}" "$@";;                  # "--opt=arg"  ->  "--opt" "arg"
-        -[A-Za-z0-9] | -*[!A-Za-z0-9]*) optfail "unknown option:" "$opt";; # anything invalid like '-*'
-        -?*) other="${opt#-?}"; set -- "${opt%$other}" "-${other}" "$@";;  # "-abc"  ->  "-a" "-bc"
-        *) set -- "$@" "$opt";;                                            # positional, rotate to the end
-    esac
-done; shift
+            # Process special cases.
+            --) while [ "$1" != "$EOL" ]; do set -- "$@" "$1"; shift; done;;   # parse remaining as positional
+            --[!=]*=*) set -- "${opt%%=*}" "${opt#*=}" "$@";;                  # "--opt=arg"  ->  "--opt" "arg"
+            -[A-Za-z0-9] | -*[!A-Za-z0-9]*) optfail "unknown option:" "$opt";; # anything invalid like '-*'
+            -?*) other="${opt#-?}"; set -- "${opt%$other}" "-${other}" "$@";;  # "-abc"  ->  "-a" "-bc"
+            *) set -- "$@" "$opt";;                                            # positional, rotate to the end
+        esac
+    done; shift
+}
+# optexec () {}
+optread "$@"
 
 [ "$OPT_LIGHT" != 0 ] && [ "$OPT_DARK" != 0 ] && opthelp && exit 1
 [ "$OPT_LIGHT" = 0 ] && [ "$OPT_DARK" = 0 ] && printf >&2 "error: ambiguous theme\n" && opthelp && exit 1
