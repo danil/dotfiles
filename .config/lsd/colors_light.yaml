@@ -1,8 +1,8 @@
-user: 230
-group: 187
+user: dark_yellow
+group: dark_grey
 permission:
   read: dark_green
-  write: dark_yellow
+  write: magenta
   exec: dark_red
   exec-sticky: 5
   no-access: 245
