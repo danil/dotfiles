@@ -35,5 +35,8 @@ magenta = "#ff00ff"
 red = "#ff0000"
 yellow = "#ffff00"
 
+[colors.cursor]
+cursor = "#ff0000"
+
 [colors.selection]
 text = "CellBackground"

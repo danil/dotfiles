@@ -39,4 +39,6 @@ yellow = "#ffff00"
 
 [colors.cursor]
 cursor = "#ff0000"
+
+[colors.selection]
 text = "CellBackground"
