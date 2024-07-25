@@ -17,6 +17,7 @@ AutoSuspendIdleTimeoutSec=1800
 LidAction=64
 
 [LowBattery][Display]
+DimDisplayIdleTimeoutSec=30
 DisplayBrightness=10
 
 [LowBattery][SuspendAndShutdown]

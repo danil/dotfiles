@@ -46,7 +46,7 @@ immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][2][Applets][21][Configuration]
-PreloadWeight=60
+PreloadWeight=65
 popupHeight=450
 popupWidth=560
 
@@ -275,7 +275,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][2][Applets][7][Configuration]
-PreloadWeight=85
+PreloadWeight=100
 SystrayContainmentId=8
 
 [Containments][2][General]
@@ -299,7 +299,7 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][42][Applets][45][Configuration][General]
-launchers=applications:org.kde.plasmashell.desktop,preferred://filemanager,applications:org.kde.spectacle.desktop,applications:gimp.desktop,preferred://browser,applications:google-chrome.desktop,applications:megasync.desktop,applications:systemsettings.desktop,applications:Alacritty.desktop
+launchers=applications:org.kde.plasmashell.desktop,preferred://filemanager,applications:org.kde.spectacle.desktop,applications:gimp.desktop,applications:google-chrome.desktop,applications:megasync.desktop,applications:systemsettings.desktop,applications:Alacritty.desktop
 minimizeActiveTaskOnClick=false
 showOnlyCurrentActivity=false
 showOnlyCurrentDesktop=false
@@ -493,6 +493,9 @@ PreloadWeight=100
 immutability=1
 plugin=org.kde.plasma.vault
 
+[Containments][8][Applets][13][Configuration]
+PreloadWeight=55
+
 [Containments][8][Applets][14]
 immutability=1
 plugin=org.kde.plasma.printmanager
@@ -502,7 +505,7 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][8][Applets][15][Configuration]
-PreloadWeight=90
+PreloadWeight=95
 
 [Containments][8][Applets][15][Configuration][General]
 migrated=true
@@ -544,7 +547,7 @@ immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][8][Applets][23][Configuration]
-PreloadWeight=16
+PreloadWeight=0
 
 [Containments][8][Applets][23][Configuration][ConfigDialog]
 DialogHeight=540
@@ -565,7 +568,7 @@ immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][8][Applets][25][Configuration]
-PreloadWeight=95
+PreloadWeight=100
 
 [Containments][8][Applets][26]
 immutability=1
@@ -597,7 +600,6 @@ extraItems=org.kde.plasma.cameraindicator,org.kde.plasma.battery,org.kde.plasma.
 hiddenItems=ibus-ui-gtk3,Discover Notifier_org.kde.DiscoverNotifier
 knownItems=org.kde.plasma.cameraindicator,org.kde.plasma.battery,org.kde.plasma.keyboardlayout,org.kde.plasma.keyboardindicator,org.kde.plasma.notifications,org.kde.plasma.vault,org.kde.plasma.networkmanagement,org.kde.plasma.printmanager,org.kde.plasma.brightness,org.kde.plasma.bluetooth,org.kde.plasma.volume,org.kde.plasma.mediacontroller,org.kde.plasma.devicenotifier,org.kde.kscreen,org.kde.plasma.clipboard,org.kde.plasma.manage-inputmethod,org.kde.kdeconnect
 scaleIconsToFit=true
-shownItems=org.kde.plasma.battery
 
 [ScreenMapping]
 itemsOnDisabledScreens=

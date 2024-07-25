@@ -2,9 +2,9 @@
 count=0
 
 [Session: saved at previous logout]
-clientId1=106833360000172150810400000021420007
+clientId1=106833360000172162289100000021750007
 count=1
 program1=/usr/bin/megasync
-restartCommand1=/usr/bin/megasync,-session,106833360000172150810400000021420007_1721566828_202703
+restartCommand1=/usr/bin/megasync,-session,106833360000172162289100000021750007_1721815233_582121
 restartStyleHint1=0
 userId1=danil
