@@ -1,11 +1,11 @@
 #!/usr/bin/env sh
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-OPTHELP="usage: ${CMD:=${0##*/}} --light|--dark [--kde] [--alacritty] [--tmux] [--emacs] [--rofi] [--lsd]"
+USAGE="usage: ${CMD:=${0##*/}} --light|--dark [--kde] [--alacritty] [--tmux] [--emacs] [--rofi] [--lsd]"
 
-opthelp () { printf "%s\n" "$OPTHELP"; }
+opthelp () { printf "%s\n" "$USAGE"; }
 opttest () { { [ "$1" != "$EOL" ] && [ "$1" != '--' ]; } || optfail "missing argument" "$2"; } # Avoid infinite loop.
-optfail () { printf >&2 "%s %s\n%s\n" "$1" "$2" "$OPTHELP"; exit 2; }
+optfail () { printf >&2 "%s %s\n%s\n" "$1" "$2" "$USAGE"; exit 2; }
 optread () {
     set -- "$@" "${EOL:=$(printf '\1\3\3\7')}" # End-of-list marker.
     while [ "$1" != "$EOL" ]; do

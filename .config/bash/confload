@@ -11,10 +11,11 @@ confload() {
     fi
 
     for cfg in ${dir}/*; do
-        if [ -r "${cfg}" ]; then
-            source "$cfg";
-        else
+        if [ ! -r "${cfg}" ]; then
             printf >&2 "unreadable bash configuration file %s\n" "$cfg"
+            continue
         fi
+
+        source "$cfg";
     done
 }
