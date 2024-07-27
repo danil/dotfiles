@@ -41,16 +41,14 @@ blinking = "Always"
 # <https://github.com/alacritty/alacritty/issues/2618>.
 hide_when_typing = true
 
-# [[hints.enabled]]
-# command = "kde-open" # "xdg-open" # On Linux/BSD
-# # command = "open" # On macOS
-# # command = { program = "cmd", args = [ "/c", "start", "" ] } # On Windows
-# hyperlinks = true
-# post_processing = true
-# persist = false
-# mouse.enabled = true
+[[hints.enabled]]
 # binding = { key = "U", mods = "Control|Shift" }
-# regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
+command = "kde-open" # "xdg-open" # On Linux/BSD. # "open" # On macOS. # { program = "cmd", args = [ "/c", "start", "" ] } # On Windows
+hyperlinks = true
+post_processing = true
+persist = false
+mouse.enabled = true
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
 
 [selection]
 # When set to `true`, selected text will be copied to the primary clipboard.
