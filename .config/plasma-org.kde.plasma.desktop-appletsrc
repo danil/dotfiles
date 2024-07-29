@@ -52,7 +52,10 @@ popupWidth=560
 
 [Containments][2][Applets][21][Configuration][Appearance]
 customDateFormat=ddd d.MM
+dateDisplayFormat=BelowTime
 dateFormat=custom
+fontFamily=Sans Serif
+fontSize=11
 fontWeight=400
 
 [Containments][2][Applets][21][Configuration][ConfigDialog]
@@ -131,8 +134,8 @@ plugin=org.kde.plasma.kickoff
 
 [Containments][2][Applets][3][Configuration]
 PreloadWeight=100
-popupHeight=510
-popupWidth=647
+popupHeight=513
+popupWidth=681
 
 [Containments][2][Applets][3][Configuration][General]
 favoritesPortedToKAstats=true
@@ -299,7 +302,7 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][42][Applets][45][Configuration][General]
-launchers=applications:org.kde.plasmashell.desktop,preferred://filemanager,applications:org.kde.spectacle.desktop,applications:gimp.desktop,applications:google-chrome.desktop,applications:megasync.desktop,applications:systemsettings.desktop,applications:Alacritty.desktop
+launchers=applications:org.kde.plasmashell.desktop,preferred://filemanager,applications:org.kde.gwenview.desktop,applications:gimp.desktop,applications:org.kde.spectacle.desktop,applications:google-chrome.desktop,applications:megasync.desktop,applications:systemsettings.desktop,applications:Alacritty.desktop
 minimizeActiveTaskOnClick=false
 showOnlyCurrentActivity=false
 showOnlyCurrentDesktop=false
@@ -466,8 +469,8 @@ immutability=1
 lastScreen=0
 location=3
 plugin=org.kde.plasma.private.systemtray
-popupHeight=432
-popupWidth=432
+popupHeight=528
+popupWidth=528
 wallpaperplugin=org.kde.image
 
 [Containments][8][Applets][10]
@@ -505,7 +508,7 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][8][Applets][15][Configuration]
-PreloadWeight=95
+PreloadWeight=100
 
 [Containments][8][Applets][15][Configuration][General]
 migrated=true
@@ -529,7 +532,7 @@ immutability=1
 plugin=org.kde.plasma.clipboard
 
 [Containments][8][Applets][18][Configuration]
-PreloadWeight=65
+PreloadWeight=70
 
 [Containments][8][Applets][19]
 immutability=1
@@ -547,7 +550,7 @@ immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][8][Applets][23][Configuration]
-PreloadWeight=0
+PreloadWeight=5
 
 [Containments][8][Applets][23][Configuration][ConfigDialog]
 DialogHeight=540
@@ -597,7 +600,7 @@ DialogWidth=720
 
 [Containments][8][General]
 extraItems=org.kde.plasma.cameraindicator,org.kde.plasma.battery,org.kde.plasma.keyboardlayout,org.kde.plasma.keyboardindicator,org.kde.plasma.notifications,org.kde.plasma.vault,org.kde.plasma.networkmanagement,org.kde.plasma.printmanager,org.kde.plasma.brightness,org.kde.plasma.bluetooth,org.kde.plasma.volume,org.kde.plasma.mediacontroller,org.kde.plasma.devicenotifier,org.kde.kscreen,org.kde.plasma.clipboard,org.kde.plasma.manage-inputmethod,org.kde.kdeconnect
-hiddenItems=ibus-ui-gtk3,Discover Notifier_org.kde.DiscoverNotifier
+hiddenItems=Discover Notifier_org.kde.DiscoverNotifier,ibus-ui-gtk3
 knownItems=org.kde.plasma.cameraindicator,org.kde.plasma.battery,org.kde.plasma.keyboardlayout,org.kde.plasma.keyboardindicator,org.kde.plasma.notifications,org.kde.plasma.vault,org.kde.plasma.networkmanagement,org.kde.plasma.printmanager,org.kde.plasma.brightness,org.kde.plasma.bluetooth,org.kde.plasma.volume,org.kde.plasma.mediacontroller,org.kde.plasma.devicenotifier,org.kde.kscreen,org.kde.plasma.clipboard,org.kde.plasma.manage-inputmethod,org.kde.kdeconnect
 scaleIconsToFit=true
 
