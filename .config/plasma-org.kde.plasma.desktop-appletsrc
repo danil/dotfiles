@@ -4,34 +4,6 @@ RightButton;NoModifier=org.kde.contextmenu
 [ActionPlugins][1]
 RightButton;NoModifier=org.kde.contextmenu
 
-[Containments][1]
-ItemGeometries-1536x864=Applet-69:1472,800,64,64,0;
-ItemGeometriesHorizontal=Applet-69:1472,800,64,64,0;
-activityId=fb4ab9ca-f90f-43d9-a42c-f469aa8eb958
-formfactor=0
-immutability=1
-lastScreen=0
-location=0
-plugin=org.kde.plasma.folder
-wallpaperplugin=org.kde.image
-
-[Containments][1][Applets][69]
-immutability=1
-plugin=org.kde.plasma.trash
-
-[Containments][1][ConfigDialog]
-DialogHeight=540
-DialogWidth=720
-
-[Containments][1][General]
-positions={"1536x864":[]}
-sortMode=-1
-
-[Containments][1][Wallpaper][org.kde.image][General]
-Image=/home/danil/.local/share/backgrounds/2018-03-16.19.25.25-v2.jpg
-PreviewImage=/home/danil/.local/share/backgrounds/2018-03-16.19.25.25-v2.jpg
-SlidePaths=/usr/share/plasma/wallpapers/,/usr/share/wallpapers/
-
 [Containments][2]
 activityId=
 formfactor=2
@@ -134,8 +106,8 @@ plugin=org.kde.plasma.kickoff
 
 [Containments][2][Applets][3][Configuration]
 PreloadWeight=100
-popupHeight=513
-popupWidth=681
+popupHeight=517
+popupWidth=697
 
 [Containments][2][Applets][3][Configuration][General]
 favoritesPortedToKAstats=true
@@ -302,7 +274,7 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][42][Applets][45][Configuration][General]
-launchers=applications:org.kde.plasmashell.desktop,preferred://filemanager,applications:org.kde.gwenview.desktop,applications:gimp.desktop,applications:org.kde.spectacle.desktop,applications:google-chrome.desktop,applications:megasync.desktop,applications:systemsettings.desktop,applications:Alacritty.desktop
+launchers=applications:org.kde.plasmashell.desktop,preferred://filemanager,applications:gimp.desktop,applications:org.kde.krita.desktop,applications:org.kde.gwenview.desktop,applications:org.kde.spectacle.desktop,applications:google-chrome.desktop,applications:org.gnome.Calculator.desktop,applications:systemsettings.desktop,applications:Alacritty.desktop
 minimizeActiveTaskOnClick=false
 showOnlyCurrentActivity=false
 showOnlyCurrentDesktop=false
@@ -462,6 +434,29 @@ PreloadWeight=42
 extraItems=org.kde.plasma.cameraindicator,org.kde.plasma.battery,org.kde.plasma.keyboardlayout,org.kde.plasma.keyboardindicator,org.kde.plasma.notifications,org.kde.plasma.vault,org.kde.plasma.networkmanagement,org.kde.plasma.printmanager,org.kde.plasma.brightness,org.kde.plasma.bluetooth,org.kde.plasma.volume,org.kde.plasma.mediacontroller,org.kde.plasma.devicenotifier,org.kde.kscreen,org.kde.plasma.clipboard,org.kde.plasma.manage-inputmethod,org.kde.kdeconnect
 knownItems=org.kde.plasma.cameraindicator,org.kde.plasma.battery,org.kde.plasma.keyboardlayout,org.kde.plasma.keyboardindicator,org.kde.plasma.notifications,org.kde.plasma.vault,org.kde.plasma.networkmanagement,org.kde.plasma.printmanager,org.kde.plasma.brightness,org.kde.plasma.bluetooth,org.kde.plasma.volume,org.kde.plasma.mediacontroller,org.kde.plasma.devicenotifier,org.kde.kscreen,org.kde.plasma.clipboard,org.kde.plasma.manage-inputmethod,org.kde.kdeconnect
 
+[Containments][76]
+ItemGeometries-1536x864=
+ItemGeometriesHorizontal=
+activityId=fb4ab9ca-f90f-43d9-a42c-f469aa8eb958
+formfactor=0
+immutability=1
+lastScreen=0
+location=0
+plugin=org.kde.desktopcontainment
+wallpaperplugin=org.kde.image
+
+[Containments][76][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
+
+[Containments][76][General]
+positions={"1536x864":[]}
+sortMode=-1
+
+[Containments][76][Wallpaper][org.kde.image][General]
+Image=file:///home/danil/.local/share/backgrounds/2021-07-29.18.50.41-v2.jpg
+SlidePaths=/usr/share/plasma/wallpapers/,/usr/share/wallpapers/
+
 [Containments][8]
 activityId=
 formfactor=2
@@ -585,7 +580,7 @@ immutability=1
 plugin=org.kde.plasma.mediacontroller
 
 [Containments][8][Applets][37][Configuration]
-PreloadWeight=100
+PreloadWeight=92
 
 [Containments][8][Applets][72][Configuration]
 PreloadWeight=42

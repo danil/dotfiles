@@ -11,8 +11,18 @@ Id_9=52168259-38de-4f13-b6c5-be32236bbf8b
 Number=9
 Rows=1
 
+[Effect-hidecursor]
+HideOnTyping=true
+InactivityDuration=1
+
 [Effect-overview]
-BorderActivate=3
+BorderActivate=9
+
+[Plugins]
+desktopchangeosdEnabled=false
+hidecursorEnabled=true
+invertEnabled=true
+minimizeallEnabled=false
 
 [TabBox]
 ActivitiesMode=0
