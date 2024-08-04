@@ -44,6 +44,7 @@ tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"wi
 BorderlessMaximizedWindows=true
 ElectricBorderCooldown=900
 ElectricBorderDelay=100
+Placement=Smart
 
 [Xwayland]
 Scale=1.25

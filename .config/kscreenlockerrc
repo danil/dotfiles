@@ -1,6 +1,7 @@
 [Daemon]
-Timeout=15
+LockGrace=30
+Timeout=20
 
 [Greeter][Wallpaper][org.kde.image][General]
-Image=/home/danil/.local/share/backgrounds/2018-03-16.19.25.25-v2.jpg
-PreviewImage=/home/danil/.local/share/backgrounds/2018-03-16.19.25.25-v2.jpg
+Image=/home/danil/.local/share/backgrounds/2021-07-29.18.50.41-v2.jpg
+PreviewImage=/home/danil/.local/share/backgrounds/2021-07-29.18.50.41-v2.jpg
