@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-USAGE="usage: ${CMD:=${0##*/}} { --light | --dark } [--kde] [--alacritty] [--tmux] [--emacs] [--rofi] [--lsd]"
+USAGE="usage: ${CMD:=${0##*/}} { --light | --dark } [--kde] [--alacritty] [--tmux] [--emacs] [--btop] [--rofi] [--lsd]"
 
 OPT_ALL=0
 
@@ -21,6 +21,7 @@ optflag () {
             --alacritty ) OPT_ALACRITTY=0; OPT_ALL=-1;;
             --tmux      ) OPT_TMUX=0; OPT_ALL=-1;;
             --emacs     ) OPT_EMACS=0; OPT_ALL=-1;;
+            --btop      ) OPT_BTOP=0; OPT_ALL=-1;;
             --rofi      ) OPT_ROFI=0; OPT_ALL=-1;;
             --lsd       ) OPT_LSD=0; OPT_ALL=-1;;
             -h | --help ) opthelp; exit 0;;
@@ -45,6 +46,7 @@ if [ "$OPT_ALL" = 0 ]; then
     OPT_ALACRITTY=0
     OPT_TMUX=0
     OPT_EMACS=0
+    OPT_BTOP=0
 fi
 
 . /home/danil/bin/binpath.sh
@@ -107,7 +109,7 @@ theme_alacritty () {
        [ ! -f "$CONFIGDIR"/alacritty/alacritty_dark.toml ] ||
        [ ! -f "$CONFIGDIR"/alacritty/alacritty.toml ]; then
         printf >&2 "error: missing the Alacrity theme file\n"
-    fi 
+    fi
 
     cd "$CONFIGDIR"/alacritty || exit 1
 
@@ -162,6 +164,32 @@ theme_emacs () {
     fi
 }
 
+theme_btop () {
+    [ "$OPT_BTOP" != 0 ] && return
+
+    OPT_DRY=-1
+
+    if [ ! -x "$(command -v btop)" ]; then
+        printf >&2 "error: missing the btop executable file\n"
+        return
+    fi
+
+    if [ ! -f "$CONFIGDIR"/btop/themes/oledlight.theme ]; then
+        printf >&2 "error: missing the btop theme file\n"
+    fi
+
+    cd "$CONFIGDIR"/btop/themes || exit 1
+
+    if [ "$OPT_LIGHT" = 0 ]; then
+        ln --force --symbolic oledlight.theme oled.theme || exit 1
+    elif [ "$OPT_DARK" = 0 ]; then
+        rm -f oled.theme || exit 1
+    fi
+
+    pkill -USR2 btop
+    cd - > /dev/null || exit 1
+}
+
 theme_rofi () {
     [ "$OPT_ROFI" != 0 ] && return
 
@@ -170,7 +198,7 @@ theme_rofi () {
     if [ ! -f "$CONFIGDIR"/rofi/config_light.rasi ] ||
        [ ! -f "$CONFIGDIR"/rofi/config_dark.rasi ]; then
         printf >&2 "error: missing the Rofi theme file\n"
-    fi 
+    fi
 
     cd "$CONFIGDIR"/rofi || exit 1
 
@@ -193,7 +221,7 @@ theme_lsd () {
     if [ ! -f "$CONFIGDIR"/lsd/colors_light.yaml ] ||
        [ ! -f "$CONFIGDIR"/lsd/colors_dark.yaml ]; then
         printf >&2 "error: missing the lsd theme file\n"
-    fi 
+    fi
 
     cd "$CONFIGDIR"/lsd || exit 1
 
@@ -211,6 +239,7 @@ theme_kde
 theme_alacritty
 theme_tmux
 theme_emacs
+theme_btop
 theme_rofi
 theme_lsd
 
