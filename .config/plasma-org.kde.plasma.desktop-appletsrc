@@ -288,7 +288,7 @@ immutability=1
 plugin=org.kde.plasma.trash
 
 [Containments][42][Applets][70][Configuration]
-PreloadWeight=75
+PreloadWeight=95
 
 [Containments][42][General]
 AppletOrder=70;45;46
@@ -476,6 +476,9 @@ plugin=org.kde.plasma.keyboardlayout
 DialogHeight=540
 DialogWidth=720
 
+[Containments][8][Applets][10][Configuration][General]
+displayStyle=Flag
+
 [Containments][8][Applets][11]
 immutability=1
 plugin=org.kde.plasma.keyboardindicator
@@ -520,7 +523,7 @@ immutability=1
 plugin=org.kde.kscreen
 
 [Containments][8][Applets][17][Configuration]
-PreloadWeight=75
+PreloadWeight=80
 
 [Containments][8][Applets][18]
 immutability=1
@@ -545,7 +548,7 @@ immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][8][Applets][23][Configuration]
-PreloadWeight=0
+PreloadWeight=5
 
 [Containments][8][Applets][23][Configuration][ConfigDialog]
 DialogHeight=540
