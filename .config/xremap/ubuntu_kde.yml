@@ -47,7 +47,7 @@ keymap:
       C-t:
         remap:
           KEY_L:
-            launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && sleep 0.1 && xset dpms force off"]
+            launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && sleep 0.1 && dbus-send --session --type=method_call --dest=org.kde.kglobalaccel  /component/org_kde_powerdevil org.kde.kglobalaccel.Component.invokeShortcut string:'Turn Off Screen'"]
           KEY_U:
             remap:
               KEY_L:
@@ -62,11 +62,11 @@ keymap:
       C-t:
         remap:
           KEY_S:
-            launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && sleep 0.1 && xfce4-screensaver-command --activate"]
+            launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && sleep 0.1 && dbus-send --session --type=method_call --dest=org.kde.kglobalaccel  /component/org_kde_powerdevil org.kde.kglobalaccel.Component.invokeShortcut string:'Turn Off Screen'"]
           KEY_U:
             remap:
               KEY_S:
-                launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && sleep 0.1 && xset dpms force off"]
+                launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && sleep 0.1 && dbus-send --session --type=method_call --dest=org.kde.kglobalaccel  /component/org_kde_powerdevil org.kde.kglobalaccel.Component.invokeShortcut string:'Turn Off Screen'"]
               KEY_U:
                 remap:
                   KEY_S:
