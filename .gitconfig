@@ -8,9 +8,11 @@
 
 [diff]
   renameLimit = 16384
+  colorMoved = default # Syntax-highlighting pager for git and diff output <https://github.com/dandavison/delta>.
 
 [merge]
   renamelimit = 16384
+  conflictstyle = diff3 # Syntax-highlighting pager for git and diff output <https://github.com/dandavison/delta>.
 
 [safe]
   directory = /
@@ -34,7 +36,16 @@
   filemode = true
   excludesfile = ~/.gitignore.global
   editor = emacs
-  pager = `test \"$TERM\" = \"dumb\" && echo cat || echo less --IGNORE-CASE --LONG-PROMPT`
+  # pager = `test \"$TERM\" = \"dumb\" && echo cat || echo less --IGNORE-CASE --LONG-PROMPT`
+  pager = delta # Syntax-highlighting pager for git and diff output <https://github.com/dandavison/delta>.
+
+[interactive]
+    diffFilter = delta --color-only # Syntax-highlighting pager for git and diff output <https://github.com/dandavison/delta>.
+
+[delta]
+    navigate = true # Use n and N to move between diff sections. Syntax-highlighting pager for git and diff output <https://github.com/dandavison/delta>.
+    # dark = true # Delta detects terminal colors automatically; set one of these to disable auto-detection. Syntax-highlighting pager for git and diff output <https://github.com/dandavison/delta>.
+    # light = true # Syntax-highlighting pager for git and diff output <https://github.com/dandavison/delta>.
 
 [url "git@github.com:danil/"]
   insteadOf = https://github.com/danil/
