@@ -2,30 +2,27 @@
 # man git-config
 # <http://stackoverflow.com/questions/267761/what-does-your-gitconfig-contain>.
 
-# [core]
-#     pager = ""
-
 [user]
-	email = danil@kutkevich.org
-	name = Danil Kutkevich
+  email = danil@kutkevich.org
+  name = Danil Kutkevich
 
 [diff]
-	renameLimit = 16384
+  renameLimit = 16384
 
 [merge]
-	renamelimit = 16384
+  renamelimit = 16384
 
 [safe]
-	directory = /
-	directory = /etc
-	directory = /root/example
-	directory = /root/.ssh
+  directory = /
+  directory = /etc
+  directory = /root/example
+  directory = /root/.ssh
 
 # [color]
 #     diff = always
 #     ui = true
 # [diff]
-# 	external = meld
+#   external = meld
 
 # Global .gitignore
 # <https://help.github.com/articles/ignoring-files#global-gitignore>,
@@ -35,12 +32,12 @@
   # Committing only a file's permissions
   # <https://stackoverflow.com/questions/10516201/updating-and-committing-only-a-files-permissions-using-git-version-control#10516406>.
   filemode = true
-	excludesfile = ~/.gitignore.global
-	editor = emacs
-	pager = `test \"$TERM\" = \"dumb\" && echo cat || echo less --IGNORE-CASE --LONG-PROMPT`
+  excludesfile = ~/.gitignore.global
+  editor = emacs
+  pager = `test \"$TERM\" = \"dumb\" && echo cat || echo less --IGNORE-CASE --LONG-PROMPT`
 
 [url "git@github.com:danil/"]
-	insteadOf = https://github.com/danil/
+  insteadOf = https://github.com/danil/
 
 # <https://git-scm.com/docs/git-config#Documentation/git-config.txt-codegitdircode>.
 
