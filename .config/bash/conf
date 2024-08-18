@@ -58,7 +58,7 @@ alias ls='ls --color'
 alias sudo='sudo '
 
 # Funciton aliases.
-ddf() { if test "$TERM" = "dumb"; then df "$@"; else duf "$@" ;fi; }
+# ddf() { if test "$TERM" = "dumb"; then df "$@"; else duf "$@" ;fi; }
 
 [ -f "$HOME"/.env ] && . "$HOME"/.env # dotenv
 
