@@ -50,5 +50,7 @@ Placement=Smart
 Scale=1.25
 
 [org.kde.kdecoration2]
+BorderSize=None
+BorderSizeAuto=false
 ButtonsOnLeft=XIAM
 ButtonsOnRight=H

@@ -236,6 +236,7 @@ immutability=1
 plugin=com.github.antroids.application-title-bar
 
 [Containments][2][Applets][68][Configuration][Appearance]
+widgetButtonsIconsTheme=Breeze
 widgetElements=windowCloseButton,windowMinimizeButton,windowMaximizeButton,windowIcon,windowTitle
 widgetFillWidth=true
 windowTitleFontBold=false
@@ -274,7 +275,7 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][42][Applets][45][Configuration][General]
-launchers=applications:org.kde.plasmashell.desktop,preferred://filemanager,applications:gimp.desktop,applications:org.kde.krita.desktop,applications:org.kde.gwenview.desktop,applications:org.kde.spectacle.desktop,applications:google-chrome.desktop,applications:org.gnome.Calculator.desktop,applications:systemsettings.desktop,applications:Alacritty.desktop
+launchers=applications:org.kde.plasmashell.desktop,applications:org.kde.discover.desktop,preferred://filemanager,applications:gimp.desktop,applications:org.kde.krita.desktop,applications:org.kde.gwenview.desktop,applications:org.kde.spectacle.desktop,applications:megasync.desktop,applications:yandex-browser.desktop,applications:google-chrome.desktop,applications:org.gnome.Calculator.desktop,applications:systemsettings.desktop,applications:Alacritty.desktop
 minimizeActiveTaskOnClick=false
 showOnlyCurrentActivity=false
 showOnlyCurrentDesktop=false
@@ -548,7 +549,7 @@ immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][8][Applets][23][Configuration]
-PreloadWeight=5
+PreloadWeight=0
 
 [Containments][8][Applets][23][Configuration][ConfigDialog]
 DialogHeight=540

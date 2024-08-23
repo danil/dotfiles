@@ -1,6 +1,5 @@
 [AC][Display]
-DimDisplayIdleTimeoutSec=120
-DisplayBrightness=10
+DisplayBrightness=75
 UseProfileSpecificDisplayBrightness=true
 
 [AC][SuspendAndShutdown]
@@ -8,6 +7,7 @@ AutoSuspendAction=0
 LidAction=64
 
 [Battery][Display]
+DimDisplayIdleTimeoutSec=300
 DisplayBrightness=10
 TurnOffDisplayIdleTimeoutSec=600
 UseProfileSpecificDisplayBrightness=true
@@ -18,7 +18,7 @@ LidAction=64
 
 [LowBattery][Display]
 DimDisplayIdleTimeoutSec=30
-DisplayBrightness=10
+DisplayBrightness=5
 
 [LowBattery][SuspendAndShutdown]
 LidAction=64
