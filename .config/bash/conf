@@ -56,6 +56,7 @@ alias ggrep='ug'
 alias lls='lsd' # lls='eza'
 alias ls='ls --color'
 alias sudo='sudo '
+alias sloc='/home/linuxbrew/.linuxbrew/bin/tokei' # '/home/linuxbrew/.linuxbrew/bin/scc'
 
 # Funciton aliases.
 # ddf() { if test "$TERM" = "dumb"; then df "$@"; else duf "$@" ;fi; }
