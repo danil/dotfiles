@@ -24,7 +24,7 @@ return {
     'JetBrains Mono',
     'DejaVu Sans Mono',
   },
-  font_size = 48.0,
+  font_size = 19.0,
 
   default_cursor_style = 'BlinkingBlock',
   cursor_blink_ease_in = "Constant",
