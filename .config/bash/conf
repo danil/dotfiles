@@ -52,11 +52,8 @@ export MANPATH="$HOME"/.local/usr/local/share/man:"$MANPATH"
 # alias eza='eza --icons'
 # alias less=$PAGER
 alias ag='ag --width=5000'
-alias ggrep='ug'
-alias lls='lsd' # lls='eza'
 alias ls='ls --color'
 alias sudo='sudo '
-alias sloc='/home/linuxbrew/.linuxbrew/bin/tokei' # '/home/linuxbrew/.linuxbrew/bin/scc' # <https://github.com/xampprocky/tokei>.
 
 # Funciton aliases.
 # ddf() { if test "$TERM" = "dumb"; then df "$@"; else duf "$@" ;fi; }

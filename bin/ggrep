@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
+/home/linuxbrew/.linuxbrew/bin/ug "$@"
