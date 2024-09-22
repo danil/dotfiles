@@ -54,6 +54,7 @@ export MANPATH="$HOME"/.local/usr/local/share/man:"$MANPATH"
 alias ag='ag --width=5000'
 alias ls='ls --color'
 alias sudo='sudo '
+alias ttop='btop' # ttop='htop'
 
 # Funciton aliases.
 # ddf() { if test "$TERM" = "dumb"; then df "$@"; else duf "$@" ;fi; }
