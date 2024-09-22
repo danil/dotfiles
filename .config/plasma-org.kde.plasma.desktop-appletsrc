@@ -18,7 +18,7 @@ immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][2][Applets][21][Configuration]
-PreloadWeight=65
+PreloadWeight=100
 popupHeight=450
 popupWidth=560
 
@@ -154,6 +154,11 @@ rangeToUnit=202
 [Containments][2][Applets][33]
 immutability=1
 plugin=org.kde.plasma.analogclock
+
+[Containments][2][Applets][33][Configuration]
+PreloadWeight=80
+popupHeight=400
+popupWidth=560
 
 [Containments][2][Applets][33][Configuration][ConfigDialog]
 DialogHeight=540
