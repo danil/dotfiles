@@ -44,6 +44,8 @@
 
 [delta]
     navigate = true # Use n and N to move between diff sections. Syntax-highlighting pager for git and diff output <https://github.com/dandavison/delta>.
+    line-numbers = true # <https://github.com/dandavison/delta?tab=readme-ov-file#line-numbers>.
+    # side-by-side = true # <https://github.com/dandavison/delta?tab=readme-ov-file#side-by-side-view>.
     # dark = true # Delta detects terminal colors automatically; set one of these to disable auto-detection. Syntax-highlighting pager for git and diff output <https://github.com/dandavison/delta>.
     # light = true # Syntax-highlighting pager for git and diff output <https://github.com/dandavison/delta>.
 
