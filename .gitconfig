@@ -52,7 +52,7 @@
 
 # <https://git-scm.com/docs/git-config#Documentation/git-config.txt-codegitdircode>.
 
-[includeIf "gitdir:~/**vendor/wbr/"]
+[includeIf "gitdir:~/src_er_wbr/"]
   path = ~/.gitconfig.wbr.local
 
 # [include]
