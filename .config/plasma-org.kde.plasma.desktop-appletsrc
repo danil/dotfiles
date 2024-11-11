@@ -98,7 +98,7 @@ memory/swap/usedPercent=233,107,61
 [Containments][2][Applets][29][Configuration][Sensors]
 highPrioritySensorIds=["memory/physical/used","memory/swap/used"]
 lowPrioritySensorIds=["memory/physical/total"]
-totalSensors=["memory/physical/usedPercent"]
+totalSensors=[]
 
 [Containments][2][Applets][3]
 immutability=1
@@ -108,6 +108,10 @@ plugin=org.kde.plasma.kickoff
 PreloadWeight=100
 popupHeight=517
 popupWidth=697
+
+[Containments][2][Applets][3][Configuration][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
 
 [Containments][2][Applets][3][Configuration][General]
 favoritesPortedToKAstats=true
@@ -170,12 +174,13 @@ plugin=org.kde.plasma.systemmonitor.cpu
 
 [Containments][2][Applets][34][Configuration]
 CurrentPreset=org.kde.plasma.systemmonitor
-PreloadWeight=55
+PreloadWeight=60
 popupHeight=234
 popupWidth=156
 
 [Containments][2][Applets][34][Configuration][Appearance]
 chartFace=org.kde.ksysguard.piechart
+showTitle=true
 title=Total CPU Use
 
 [Containments][2][Applets][34][Configuration][ConfigDialog]
@@ -188,7 +193,7 @@ cpu/all/usage=85,255,255
 [Containments][2][Applets][34][Configuration][Sensors]
 highPrioritySensorIds=["cpu/all/usage"]
 lowPrioritySensorIds=["cpu/all/cpuCount","cpu/all/coreCount"]
-totalSensors=["cpu/all/usage"]
+totalSensors=[]
 
 [Containments][2][Applets][34][Configuration][org.kde.ksysguard.piechart][General]
 rangeAuto=false
@@ -200,7 +205,7 @@ plugin=org.kde.plasma.systemmonitor
 
 [Containments][2][Applets][36][Configuration]
 CurrentPreset=org.kde.plasma.systemmonitor
-PreloadWeight=75
+PreloadWeight=85
 popupHeight=92
 popupWidth=187
 
@@ -507,6 +512,9 @@ PreloadWeight=55
 immutability=1
 plugin=org.kde.plasma.printmanager
 
+[Containments][8][Applets][14][Configuration]
+PreloadWeight=65
+
 [Containments][8][Applets][15]
 immutability=1
 plugin=org.kde.plasma.volume
@@ -570,6 +578,9 @@ PreloadWeight=0
 [Containments][8][Applets][24][Configuration][General]
 showPercentage=true
 
+[Containments][8][Applets][24][Shortcuts]
+global=
+
 [Containments][8][Applets][25]
 immutability=1
 plugin=org.kde.plasma.networkmanagement
@@ -607,6 +618,7 @@ extraItems=org.kde.plasma.cameraindicator,org.kde.plasma.battery,org.kde.plasma.
 hiddenItems=Discover Notifier_org.kde.DiscoverNotifier,ibus-ui-gtk3
 knownItems=org.kde.plasma.cameraindicator,org.kde.plasma.battery,org.kde.plasma.keyboardlayout,org.kde.plasma.keyboardindicator,org.kde.plasma.notifications,org.kde.plasma.vault,org.kde.plasma.networkmanagement,org.kde.plasma.printmanager,org.kde.plasma.brightness,org.kde.plasma.bluetooth,org.kde.plasma.volume,org.kde.plasma.mediacontroller,org.kde.plasma.devicenotifier,org.kde.kscreen,org.kde.plasma.clipboard,org.kde.plasma.manage-inputmethod,org.kde.kdeconnect
 scaleIconsToFit=true
+shownItems=org.kde.plasma.battery
 
 [ScreenMapping]
 itemsOnDisabledScreens=
