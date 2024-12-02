@@ -114,11 +114,13 @@ keymap:
               KEY_W:
                 launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'ExposeAll'"]
               KEY_E:
-                launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'Expose'"]
-              KEY_C:
-                launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'ExposeClass'"]
-              KEY_D:
-                launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'ExposeClassCurrentdesktop'"]
+                remap:
+                  KEY_E:
+                    launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'Expose'"]
+                  KEY_C:
+                    launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'ExposeClass'"]
+                  KEY_D:
+                    launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'ExposeClassCurrentdesktop'"]
 
   - name: Window manager.
     remap:
