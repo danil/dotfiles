@@ -11,6 +11,12 @@ import = [
 [env]
 TERM = "xterm-256color"
 
+# [window]
+# # Allow terminal applications to change Alacritty's window title
+# # for example `printf "\e]2;Your Title\007"`
+# # <https://github.com/alacritty/alacritty/issues/3588#issuecomment-613189338>.
+# dynamic_title = true
+
 # Font configuration (changes require restart).
 [font]
 # Point size of the font
