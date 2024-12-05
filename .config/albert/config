@@ -16,12 +16,13 @@ enabled=true
 
 [files]
 enabled=true
+paths=@Invalid()
 
 [path]
 enabled=true
 
 [ssh]
-enabled=true
+enabled=false
 
 [system]
 enabled=true
@@ -40,7 +41,7 @@ displayScrollbar=false
 followCursor=true
 hideOnFocusLoss=true
 historySearch=true
-itemCount=5
+itemCount=10
 quitOnClose=false
 showCentered=true
 systemShadow=true
