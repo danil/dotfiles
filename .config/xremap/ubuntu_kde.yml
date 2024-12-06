@@ -34,6 +34,10 @@ keymap:
                 launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && wezterm"]
               Shift-1:
                 launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && albert show"]
+            KEY_U:
+              remap:
+                Shift-1:
+                  launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /kickoff"]
 
   - name: Invert colors on xorg/xrandr.
     remap:
