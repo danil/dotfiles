@@ -1,12 +1,12 @@
 #!/usr/bin/env sh
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-OPTHELP="usage: ${CMD:=${0##*/}} --up|--down"
+USAGE="usage: ${CMD:=${0##*/}} { --up | --down }"
 
-opthelp () { printf "%s\n" "$OPTHELP"; }
+opthelp () { if [ -n "$USAGE" ]; then printf "%s\n" "$USAGE"; else printf "error: optflag help text is not defied, please setup \$USAGE variable \n"; exit 1; fi; }
 opttest () { { [ "$1" != "$EOL" ] && [ "$1" != '--' ]; } || optfail "missing argument" "$2"; } # Avoid infinite loop.
-optfail () { printf >&2 "%s %s\n%s\n" "$1" "$2" "$OPTHELP"; exit 2; }
-optread () {
+optfail () { printf >&2 "%s %s\n%s\n" "$1" "$2" "$USAGE"; exit 2; }
+optflag () {
     set -- "$@" "${EOL:=$(printf '\1\3\3\7')}" # End-of-list marker.
     while [ "$1" != "$EOL" ]; do
         opt="$1"; shift
@@ -17,16 +17,15 @@ optread () {
             -h | --help ) opthelp; exit 0;;
 
             # Process special cases.
-            --) while [ "$1" != "$EOL" ]; do set -- "$@" "$1"; shift; done;;   # parse remaining as positional
+            --) while [ "$1" != "$EOL" ]; do set -- "$@" "$1"; shift; done;;   # Parse remaining as positional.
             --[!=]*=*) set -- "${opt%%=*}" "${opt#*=}" "$@";;                  # "--opt=arg"  ->  "--opt" "arg"
-            -[A-Za-z0-9] | -*[!A-Za-z0-9]*) optfail "unknown option:" "$opt";; # anything invalid like '-*'
+            -[A-Za-z0-9] | -*[!A-Za-z0-9]*) optfail "unknown option:" "$opt";; # Anything invalid like "-*".
             -?*) other="${opt#-?}"; set -- "${opt%$other}" "-${other}" "$@";;  # "-abc"  ->  "-a" "-bc"
-            *) set -- "$@" "$opt";;                                            # positional, rotate to the end
+            *) set -- "$@" "$opt";;                                            # Positional, rotate to the end.
         esac
     done; shift
 }
-# optexec () {}
-optread "$@"
+optflag "$@"
 
 OPT_DRY=0
 
