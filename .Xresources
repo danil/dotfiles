@@ -8,15 +8,23 @@
 ! Cursor disappears with compiz and Xft font <http://bbs.archlinux.org/viewtopic.php?pid=991221>.
 ! *cursorUnderline: true
 *cursorBlink: true
-! Dark theme.
-*cursorColor: #ff0000
+! ! Dark theme.
+! *cursorColor: #ff0000
 ! ! White theme.
 ! *cursorColor:     #aa0000
-*cursorUnderline: false
-! Get width and height of a terminal window: `tput cols` and `tput lines`
-! <http://stackoverflow.com/questions/263890/how-do-i-find-the-width-height-of-a-terminal-window#263900>.
-*geometry:        87x43
-*saveLines:       10000
+! *cursorUnderline: false
+! ! Get width and height of a terminal window: `tput cols` and `tput lines`
+! ! <http://stackoverflow.com/questions/263890/how-do-i-find-the-width-height-of-a-terminal-window#263900>.
+! *geometry:        87x43
+! *saveLines:       10000
+
+! Xft.dpi:       96
+Xft.antialias: true
+Xft.hinting:   true
+Xft.autohint:  false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+Xft.rgba:      rgb
 
 ! ! <http://askubuntu.com/questions/22419/how-do-i-make-urxvt-render-xft-fonts#96779>.
 ! ! Error: Font ‘xft:Monospace:pixelsize=24:antialias=true:hinting=true:autohint=true:style=regular’ is not defined
@@ -29,9 +37,9 @@
 ! Xcursor.theme: Vanilla-DMZ
 ! Xcursor.size: 72
 
-! Black (dark) theme.
-*background: #000000
-*foreground: #eaeaea
+! ! Black (dark) theme.
+! *background: #000000
+! *foreground: #eaeaea
 
 ! ! FIX: dark-blue color on black background hard to read
 ! ! <http://hints.macworld.com/article.php?story=20040708210951539>.
@@ -43,8 +51,8 @@
 ! <https://wiki.gentoo.org/wiki/X_resources#Includes>,
 ! <http://www.nongnu.org/emacsdoc-fr/manuel/resources-x.html>,
 ! <http://stackoverflow.com/questions/13405240/is-it-possible-to-change-xresources-interactively>.
-#include "/home/danil/.Xresources.d/urxvt"
-#include "/home/danil/.Xresources.d/uxterm"
-#include "/home/danil/.Xresources.d/emacs"
-#include "/home/danil/.Xresources.d/xscreensaver"
-#include "/home/danil/.Xresources.d/rofi"
+! #include "/home/danil/.Xresources.d/urxvt"
+! #include "/home/danil/.Xresources.d/uxterm"
+! #include "/home/danil/.Xresources.d/emacs"
+! #include "/home/danil/.Xresources.d/xscreensaver"
+! #include "/home/danil/.Xresources.d/rofi"
