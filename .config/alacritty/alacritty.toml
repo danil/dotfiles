@@ -1,12 +1,3 @@
-# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
-# Alacritty terminal emulator <https://github.com/alacritty/alacritty>,
-# <https://alacritty.org/config-alacritty.html>,
-# <https://wiki.archlinux.org/title/Alacritty>.
-
-# Default color theme.
-import = [
-    "~/.config/alacritty/alacritty_theme.toml"
-]
 
 [env]
 TERM = "xterm-256color"
@@ -398,3 +389,14 @@ mods = "Command"
 chars = "\u0002/"
 key = "F"
 mods = "Command"
+
+[general]
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+# Alacritty terminal emulator <https://github.com/alacritty/alacritty>,
+# <https://alacritty.org/config-alacritty.html>,
+# <https://wiki.archlinux.org/title/Alacritty>.
+
+# Default color theme.
+import = [
+    "~/.config/alacritty/alacritty_theme.toml"
+]
