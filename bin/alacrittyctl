@@ -28,19 +28,14 @@ optflag "$@"
 
 . /home/danil/bin/binpath.sh
 
-if [ -n "$OPT_TITLE" ] && [ "$OPT_TITLE" != " " ]; then
-    OPT_DRY=-1
-fi
-
-
-alacritty_title () {
-    [ "$OPT_TITLE" != 0 ] && return
+ctl_title () {
+    [ -z "$OPT_TITLE" ] && [ "$OPT_TITLE" = " " ] && return
 
     OPT_DRY=-1
     printf "\e]2;%s\007" "$OPT_TITLE"
 }
 
-alacritty_title
+ctl_title
 
 # Dry run.
 if [ "$OPT_DRY" = 0 ]; then
