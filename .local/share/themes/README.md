@@ -1,9 +1,5 @@
 <!-- This file is part of Danil Kutkevich <danil@kutkevich.org> home. -->
 
-# [Theme][]
+* TROUBLESHOOTING Install into `~/.themes` directory instead of `~/.local/share/themes` <sup><sub>[439790743][]</sub></sup>.
 
-[theme]: https://wiki.archlinux.org/title/GTK#Themes
-
-## Install WRKRND
-
-Use `~/.themes` directory instead of `~/.local/share/themes`.
+[439790743]: https://wiki.archlinux.org/title/GTK#Themes
