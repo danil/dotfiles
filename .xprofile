@@ -1,7 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env sh
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 # `xprofile` is similar in syntax and in concept to `xinitrc`
-# <https://wiki.archlinux.org/index.php/xprofile>.
+# <https://wiki.archlinux.org/index.php/xprofile>,
+# <https://wiki.archlinux.org/title/Environment_variables>.
 
 # Debug: `setxkbmap -print -verbose 10`.
 setxkbmap -model pc105 -layout us,ru -option grp:shifts_toggle
@@ -27,9 +28,9 @@ fi
 
 export LANG="en_US.UTF-8"
 
-# DPI scale <https://wiki.archlinux.org/title/HiDPI>.
-export QT_SCALE_FACTOR=1
-export QT_AUTO_SCREEN_SCALE_FACTOR=1
+# # DPI scale <https://wiki.archlinux.org/title/HiDPI>.
+# export QT_SCALE_FACTOR=1
+# export QT_AUTO_SCREEN_SCALE_FACTOR=1
 
 # # X11 scale <https://wiki.archlinux.org/title/HiDPI>.
 # # # determine output: xrandr | grep "connected primary"
@@ -41,5 +42,5 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=1
 xset b off #turn off bell
 xset dpms 420 #suspend monitor after 7 minutes <https://wiki.archlinux.org/index.php/i3#Screensaver_and_power_management>
 
-"$HOME"/bin/set-keyboard-auto-repeat-rate
-"$HOME"/bin/set-osd-progress-bar-internal
+# "$HOME"/bin/set-keyboard-auto-repeat-rate
+# "$HOME"/bin/set-osd-progress-bar-internal

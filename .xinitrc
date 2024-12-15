@@ -1,7 +1,7 @@
 #!/bin/bash
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
-
 # Custom X session <https://wiki.ubuntu.com/CustomXSession>.
+# <https://wiki.archlinux.org/title/Environment_variables>.
 
 # Make sure this is before the 'exec' command or it won't be sourced
 # <https://wiki.archlinux.org/index.php/xprofile#Making_it_compatible_with_xinit>.
