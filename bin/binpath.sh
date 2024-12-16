@@ -1,16 +1,12 @@
-#!/bin/sh
+#!/usr/bin/env sh
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-BASEDIR="/$0"
-BASEDIR="${BASEDIR%/*}"
-BASEDIR="${BASEDIR:-.}"
-BASEDIR="${BASEDIR##/}/"
-BASEDIR=$(cd "$BASEDIR"; pwd)
-
-HOMEBINDIR="$BASEDIR"
-LOCALBINDIR="$BASEDIR"/../.local/bin
-USRLOCALBINDIR="$BASEDIR"/../.local/usr/local/bin
+HOME=/home/danil
+HOMEBINDIR="$HOME"/bin
+LOCALBINDIR="$HOME"/.local/bin
+USRLOCALBINDIR="$HOME"/.local/usr/local/bin
 BREWBINDIR=/home/linuxbrew/.linuxbrew/bin
-CONFIGDIR="$BASEDIR"/../.config
-APPIMAGEDIR="$BASEDIR"/../Applications
-NIXBINDIR="$BASEDIR"/../.nix-profile/bin/google-chrome-stable
+CONFIGDIR="$HOME"/.config
+SHAREDIR="$HOME"/.local/share
+APPIMAGEDIR="$HOME"/Applications
+NIXBINDIR="$HOME"/.nix-profile/bin
