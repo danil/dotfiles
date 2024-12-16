@@ -1,0 +1,402 @@
+
+[env]
+TERM = "xterm-256color"
+
+# [window]
+# # Allow terminal applications to change Alacritty's window title
+# # for example `printf "\e]2;Your Title\007"`
+# # <https://github.com/alacritty/alacritty/issues/3588#issuecomment-613189338>.
+# dynamic_title = true
+
+# Font configuration (changes require restart).
+[font]
+# Point size of the font
+size = 19.0
+
+# The normal (roman) font face to use.
+# Style can be specified to pick a specific face.
+[font.normal]
+family = "Monospace"
+
+# The bold font face
+[font.bold]
+family = "Monospace"
+
+# The italic font face
+[font.italic]
+family = "Monospace"
+
+[cursor]
+# Cursor blinking interval in milliseconds.
+blink_interval = 150
+
+[cursor.style]
+blinking = "Always"
+
+[mouse]
+# Hiding mouse cursor while typing
+# <https://github.com/alacritty/alacritty/issues/2618>.
+hide_when_typing = true
+
+[[hints.enabled]]
+# binding = { key = "U", mods = "Control|Shift" }
+command = "kde-open" # "xdg-open" # On Linux/BSD. # "open" # On macOS. # { program = "cmd", args = [ "/c", "start", "" ] } # On Windows
+hyperlinks = true
+post_processing = true
+persist = false
+mouse.enabled = true
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`·$⌑]+"
+
+[selection]
+# When set to `true`, selected text will be copied to the primary clipboard.
+save_to_clipboard = false
+# This string contains all characters that are used as separators for
+# "semantic words" in Alacritty.
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t·⌑"
+
+# NOTE: The `chars` of `key_bindings` sends a byte sequence to the running application.
+# The `chars` field writes the specified string to the terminal. This makes
+# it possible to pass escape sequences. To find escape codes for bindings
+# like `PageUp` (`"\x1b[5~"`), you can run the command `showkey -a` outside
+# of tmux <https://bestasciitable.com>. Note that applications use terminfo
+# to map escape sequences back to keys. It is therefore required to update
+# the terminfo when changing an escape sequence.
+
+# # vi mode <https://github.com/alacritty/alacritty/blob/master/docs/features.md#vi-mode>.
+# [[keyboard.bindings]]
+# action = "None"
+# key = "Space"
+# mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u0013"
+key = "Space"
+mods = "Super"
+
+# [[keyboard.bindings]]
+# chars = "\eS"
+# key = "Space"
+# mods = "Super|Shift"
+
+# [[keyboard.bindings]]
+# action = "Paste"
+# key = "V"
+# mods = "Command"
+
+# [[keyboard.bindings]]
+# action = "Copy"
+# key = "C"
+# mods = "Command"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "Insert"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "Insert"
+mods = "Control"
+
+# [[keyboard.bindings]]
+# action = "Quit"
+# key = "Q"
+# mods = "Command"
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "N"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "ToggleFullscreen"
+key = "Return"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001BOH"
+key = "Home"
+mode = "AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001B[H"
+key = "Home"
+mode = "~AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001BOF"
+key = "End"
+mode = "AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001B[F"
+key = "End"
+mode = "~AppCursor"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Equals"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Minus"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[5;2~"
+key = "PageUp"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[5;5~"
+key = "PageUp"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[5~"
+key = "PageUp"
+
+[[keyboard.bindings]]
+chars = "\u001B[6;2~"
+key = "PageDown"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[6;5~"
+key = "PageDown"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[6~"
+key = "PageDown"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;2D"
+key = "Left"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;5D"
+key = "Left"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;3D"
+key = "Left"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B[D"
+key = "Left"
+mode = "~AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001BOD"
+key = "Left"
+mode = "AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;2C"
+key = "Right"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;5C"
+key = "Right"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;3C"
+key = "Right"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B[C"
+key = "Right"
+mode = "~AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001BOC"
+key = "Right"
+mode = "AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;2A"
+key = "Up"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;5A"
+key = "Up"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;3A"
+key = "Up"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B[A"
+key = "Up"
+mode = "~AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001BOA"
+key = "Up"
+mode = "AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;2B"
+key = "Down"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;5B"
+key = "Down"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;3B"
+key = "Down"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B[B"
+key = "Down"
+mode = "~AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001BOB"
+key = "Down"
+mode = "AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001B[Z"
+key = "Tab"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001BOP"
+key = "F1"
+
+[[keyboard.bindings]]
+chars = "\u001BOQ"
+key = "F2"
+
+[[keyboard.bindings]]
+chars = "\u001BOR"
+key = "F3"
+
+[[keyboard.bindings]]
+chars = "\u001BOS"
+key = "F4"
+
+[[keyboard.bindings]]
+chars = "\u001B[15~"
+key = "F5"
+
+[[keyboard.bindings]]
+chars = "\u001B[17~"
+key = "F6"
+
+[[keyboard.bindings]]
+chars = "\u001B[18~"
+key = "F7"
+
+[[keyboard.bindings]]
+chars = "\u001B[19~"
+key = "F8"
+
+[[keyboard.bindings]]
+chars = "\u001B[20~"
+key = "F9"
+
+[[keyboard.bindings]]
+chars = "\u001B[21~"
+key = "F10"
+
+[[keyboard.bindings]]
+chars = "\u001B[23~"
+key = "F11"
+
+[[keyboard.bindings]]
+chars = "\u001B[24~"
+key = "F12"
+
+[[keyboard.bindings]]
+chars = "\u007F"
+key = "Back"
+
+[[keyboard.bindings]]
+chars = "\u001B\u007F"
+key = "Back"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B[2~"
+key = "Insert"
+
+[[keyboard.bindings]]
+chars = "\u001B[3~"
+key = "Delete"
+
+# Shortcuts for Tmux. The leader key is Control-b (0x02).
+
+# Close tab (kill).
+[[keyboard.bindings]]
+chars = "\u0002&"
+key = "W"
+mods = "Command"
+
+# New tab.
+[[keyboard.bindings]]
+chars = "\u0002c"
+key = "T"
+mods = "Command"
+
+# Select next tab.
+[[keyboard.bindings]]
+chars = "\u0002n"
+key = "RBracket"
+mods = "Command|Shift"
+
+# Select previous tab.
+[[keyboard.bindings]]
+chars = "\u0002p"
+key = "LBracket"
+mods = "Command|Shift"
+
+# Select next pane.
+[[keyboard.bindings]]
+chars = "\u0002o"
+key = "RBracket"
+mods = "Command"
+
+# Select last (previously used) pane.
+[[keyboard.bindings]]
+chars = "\u0002;"
+key = "LBracket"
+mods = "Command"
+
+# Search (upwards) (see tmux.conf).
+[[keyboard.bindings]]
+chars = "\u0002/"
+key = "F"
+mods = "Command"
+
+[general]
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+# Alacritty terminal emulator <https://github.com/alacritty/alacritty>,
+# <https://alacritty.org/config-alacritty.html>,
+# <https://wiki.archlinux.org/title/Alacritty>.
+
+# Default color theme.
+import = [
+    "~/.config/alacritty/alacritty_theme.toml"
+]

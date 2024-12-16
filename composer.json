@@ -1,0 +1,7 @@
+{
+  "require-dev": {
+    "monolog/monolog": "@stable",
+    "phpmd/phpmd" : "@stable",
+    "squizlabs/php_codesniffer": "@stable"
+  }
+}

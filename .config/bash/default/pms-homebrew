@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
+# Homebrew
+# <https://github.com/homebrew/brew>.
+
+if [ ! -f /home/linuxbrew/.linuxbrew/bin/brew ]; then
+    printf >&2 "missing Homebrew\n"
+    return
+fi
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+export PATH=/home/linuxbrew/.linuxbrew/sbin:"$PATH"
+export PATH=/home/linuxbrew/.linuxbrew/bin:"$PATH"

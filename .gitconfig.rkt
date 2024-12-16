@@ -1,0 +1,20 @@
+# [url "git@gitlab.rocketbank.sexy:backend/"]
+# 	insteadOf = https://gitlab.rocketbank.sexy/backend/
+
+# [url "git@github.com:rrebellion/"]
+# 	insteadOf = https://github.com/rrebellion/
+
+# [url "git@github.com:danil/rktgorm.git"]
+# 	insteadOf = https://github.com/danil/rktgorm
+
+# [url "git@gitlab.rocketbank.sexy/"]
+# 	insteadOf = https://gitlab.rocketbank.sexy/
+
+# [url "git@gitlab.rocketbank.sexy:"]
+# 	insteadOf = https://gitlab.rocketbank.sexy/
+
+# [url "git@gitlab.rocketbank.sexy:pub/"]
+# 	insteadOf = https://gitlab.rocketbank.sexy/pub/
+
+# [url "git@github.com:rrebellion/spacegunmod/"]
+# 	insteadOf = https://gitlab.rocketbank.sexy/backend/random-values/spacegun/

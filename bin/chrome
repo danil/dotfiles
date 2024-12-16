@@ -1,0 +1,5 @@
+#!/bin/sh
+
+. binpath.sh
+
+"$NIXBINDIR"/google-chrome-stable --force-dark-mode --password-store=kde "$@"

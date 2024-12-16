@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalProtect>
+	<PanMSAgent>
+		<DebugLevel>5</DebugLevel>
+		<CDLLog>0</CDLLog>
+		<PanGPS>5</PanGPS>
+	</PanMSAgent>
+	<Settings>
+		<ConfFromPortal>7212</ConfFromPortal>
+		<ConfFromPortal3>22635233</ConfFromPortal3>
+		<OverrideMethod>allowed</OverrideMethod>
+		<LastUrl>vpn.bank.ozon.ru</LastUrl>
+		<HipCheckInterval>0</HipCheckInterval>
+		<UserOverrides>0</UserOverrides>
+		<DisallowLocalAccess>false</DisallowLocalAccess>
+		<DisplayWelcome>1</DisplayWelcome>
+		<LocalBioEnabled>0</LocalBioEnabled>
+		<LocalSSLEnabled>0</LocalSSLEnabled>
+		<DisplayTrafficBlockingMsg>1</DisplayTrafficBlockingMsg>
+		<OtherDisableStarted>0</OtherDisableStarted>
+		<agent-user-override-timeout>0</agent-user-override-timeout>
+		<ssl-only-selection>0</ssl-only-selection>
+		<mfa-prompt-suppress-time>0</mfa-prompt-suppress-time>
+		<Configurations2>47</Configurations2>
+		<Configurations3>0</Configurations3>
+		<InitRun>0</InitRun>
+		<Configurations>2</Configurations>
+	</Settings>
+	<Settings\vpn.ecom-bank.ozon.ru>
+		<WasOD>1</WasOD>
+	</Settings\vpn.ecom-bank.ozon.ru>
+	<Settings\vpn-a.ecom-bank.ozon.ru>
+		<WasOD>1</WasOD>
+	</Settings\vpn-a.ecom-bank.ozon.ru>
+	<Settings\vpn.bank.ozon.ru>
+		<LatestCP/>
+		<username/>
+		<WasOD>1</WasOD>
+	</Settings\vpn.bank.ozon.ru>
+</GlobalProtect>

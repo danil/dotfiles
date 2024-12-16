@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=xchainkeys -f /home/danil/.config/xchainkeys/ubuntu_gnome.conf
+Name=xchainkeys
+OnlyShowIn=XFCE;
+Terminal=false
+Type=Application
+Hidden=true
+

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+. binpath.sh
+
+"$HOMEBINDIR"/appimaged-x86_64.AppImage "$@"

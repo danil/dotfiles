@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
+# Go <http://golang.org/doc/code.html#GOPATH>.
+# Run `go-install-all`.
+export GOPATH="$HOME"/go
+export PATH="$GOPATH"/bin:"$PATH" # for convenience, add the workspace's bin subdirectory to your PATH
+export PATH="/home/linuxbrew/.linuxbrew/opt/go@1.18/bin:$PATH" # go 1.18 from homebrew
+[ -x "$(command -v go)" ] && export PATH="$(go env GOPATH)/bin":"$PATH"
+# [[ -s "$HOME/.gvm/scripts/gvm" ]] && . "$HOME/.gvm/scripts/gvm" # gvm (go version manager) <https://github.com/moovweb/gvm>

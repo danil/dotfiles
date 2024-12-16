@@ -1,0 +1,5 @@
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+# Tokei is an a-la sloc/cloc metric (count lines of code) <https://github.com/xampprocky/tokei#configuration>.
+
+# Sort languages based on the specified column.
+sort = "lines"

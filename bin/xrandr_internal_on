@@ -1,0 +1,8 @@
+#!/bin/bash
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
+# Enable internal monitor and disable external monitor
+# <https://wiki.archlinux.org/index.php/xrandr#Example_1>.
+xrandr --output HDMI1 --off --output eDP1 --auto \
+       && "$HOME"/bin/set-keyboard-auto-repeat-rate \
+       && "$HOME"/bin/set-osd-progress-bar-internal

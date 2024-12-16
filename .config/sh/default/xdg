@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
+# User XDG base directory environment variable [1][XDG] [2][3930375635] [3][3313733254] [4][3993688563].
+# [xdg]: <https://en.wikipedia.org/wiki/Freedesktop.org> "X Desktop Group"
+# [3313733254]: <https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html>
+# [3930375635]: <https://freedesktop.org/wiki/Software/xdg-utils>
+# [3993688563]: <https://wiki.archlinux.org/title/XDG_Base_Directory#User_directories>
+export XDG_RUNTIME_DIR="/run/user/$UID"
+export XDG_CONFIG_HOME="$HOME"/.config
+export XDG_DATA_HOME="$HOME"/.local/share

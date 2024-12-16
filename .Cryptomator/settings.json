@@ -1,0 +1,19 @@
+{
+  "directories": [
+    {
+      "id": "47V4cjrJT30h",
+      "path": "/home/danil/Dropbox/Deft/Cryptomator/c",
+      "mountName": "c",
+      "unlockAfterStartup": false,
+      "revealAfterMount": true,
+      "usesIndividualMountPath": false
+    }
+  ],
+  "askedForUpdateCheck": true,
+  "checkForUpdatesEnabled": true,
+  "port": 42427,
+  "numTrayNotifications": 3,
+  "preferredGvfsScheme": "dav",
+  "debugMode": false,
+  "preferredVolumeImpl": "FUSE"
+}

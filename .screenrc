@@ -1,0 +1,24 @@
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
+# Status line/bar
+startup_message off
+hardstatus alwayslastline
+shelltitle 'bash'
+hardstatus string '%{gk}[%{wk}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= w}%?%+Lw%?%? %{g}][%{d}%l%{g}][ %{= w}%Y/%m/%d %0C:%s%a%{g} ]%{W}'
+
+## UTF-8.
+defutf8 on
+
+## C-t as the command key.
+escape ^Tt
+
+## Do not trash BackSpace, usually DEL.
+bindkey -k kb
+bindkey -d -k kb
+
+## Do not trash Delete, usually ESC [ 3 ~.
+bindkey -k kD
+bindkey -d -k kD
+
+# See /usr/share/terminfo/*/
+term screen-256color
