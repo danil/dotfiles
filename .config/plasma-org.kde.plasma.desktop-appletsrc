@@ -562,7 +562,7 @@ immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][8][Applets][23][Configuration]
-PreloadWeight=0
+PreloadWeight=5
 
 [Containments][8][Applets][23][Configuration][ConfigDialog]
 DialogHeight=540
