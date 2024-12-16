@@ -1,7 +1,0 @@
-#!/bin/bash
-# This file is part of Danil <danil@kutkevich.org> home.
-
-~/.xstart
-
-# <https://wiki.archlinux.org/index.php/Xfce#Virtual_console>.
-exec startxfce4

@@ -1,6 +1,0 @@
-[defaults]
-host = your.tld
-port = 8123
-db = your_db
-user = your_usr
-password = your_pwd

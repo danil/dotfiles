@@ -1,7 +1,0 @@
-#!/usr/bin/env sh
-
-# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
-
-if [ "$(xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/presentation-mode)" = "true" ]; then
-    printf "⚡"
-fi

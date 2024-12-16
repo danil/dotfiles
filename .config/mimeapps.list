@@ -1,26 +1,7 @@
-[Added Associations]
-application/pdf=atril_atril.desktop;
-application/vnd.debian.binary-package=snap-store_ubuntu-software-local-file.desktop;
-application/x-compressed-tar=engrampa.desktop;
-application/zip=engrampa.desktop;
-image/jpeg=org.kde.gwenview.desktop;gimp.desktop;okularApplication_kimgio.desktop;AM-firefox-stable.desktop;firefox-stable-AM.desktop;org.gnome.eog.desktop;chrome.desktop;google-chrome.desktop;yandex-browser.desktop;
-image/png=org.kde.gwenview.desktop;gimp.desktop;chrome.desktop;google-chrome.desktop;firefox-stable-AM.desktop;org.gnome.eog.desktop;yandex-browser.desktop;okularApplication_kimgio.desktop;AM-firefox-stable.desktop;
-x-scheme-handler/http=google-chrome.desktop;yandex-browser.desktop;
-x-scheme-handler/https=google-chrome.desktop;yandex-browser.desktop;
-x-scheme-handler/tg=org.telegram.desktop._288e7f609a7d599e01eab790c46dc4fc.desktop;
-x-scheme-handler/wbnr=webinar_webinar.desktop
-x-scheme-handler/zoommtg=AM-zoom.desktop;
-x-scheme-handler/zoomus=AM-zoom.desktop;
 
 [Default Applications]
-application/x-compressed-tar=engrampa.desktop
-application/zip=engrampa.desktop
-image/jpeg=org.kde.gwenview.desktop;
-image/png=org.kde.gwenview.desktop;
 text/html=google-chrome.desktop
-x-scheme-handler/about=xfce4-web-browser.desktop
-x-scheme-handler/http=google-chrome.desktop;
-x-scheme-handler/https=google-chrome.desktop;
-x-scheme-handler/tg=org.telegram.desktop._288e7f609a7d599e01eab790c46dc4fc.desktop
-x-scheme-handler/unknown=xfce4-web-browser.desktop
-x-scheme-handler/mailto=google-chrome.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
+x-scheme-handler/about=google-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop

@@ -1,5 +1,0 @@
-#!/usr/bin/env sh
-# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
-
-# ugrep provides `ug` utility a-la grep and ag (the silver searcher) rg (the platinum searcher) all in one <https://github.com/genivia/ugrep>.
-/home/linuxbrew/.linuxbrew/bin/ug "$@"

@@ -1,5 +1,0 @@
-#!/bin/sh
-
-. binpath.sh
-
-"$APPIMAGEDIR"/GIMP-x86_64.AppImage "$@"
