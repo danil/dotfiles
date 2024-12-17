@@ -10,7 +10,7 @@ ReadTags		= no
 # Directory in which you store music files, if you specify it, you
 # will be able to quickly go to this directory with the '-m' parameter
 # or the 'm' command.  This can also point to a playlist.
-MusicDir		= "/home/danil/mnt/nas/tmp/share/music"
+MusicDir		= "/home/kutkevich.danil/mnt/nas/tmp/share/music"
 
 # Turn on AutoNext
 AutoNext        = no

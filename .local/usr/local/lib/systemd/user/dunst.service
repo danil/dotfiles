@@ -6,4 +6,4 @@ PartOf=graphical-session.target
 [Service]
 Type=dbus
 BusName=org.freedesktop.Notifications
-ExecStart=/home/danil/.local/usr/local/bin/dunst
+ExecStart=/home/kutkevich.danil/.local/usr/local/bin/dunst

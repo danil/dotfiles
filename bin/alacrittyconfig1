@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-/home/danil/go/bin/yq write --inplace /home/danil/.config/alacritty/alacritty.yml "colors.cursor.cursor" "#00ff00"
+/home/kutkevich.danil/go/bin/yq write --inplace /home/kutkevich.danil/.config/alacritty/alacritty.yml "colors.cursor.cursor" "#00ff00"

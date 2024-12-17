@@ -43,10 +43,10 @@ Comment[pt]=Navegue na Internet
 Comment[pt_BR]=Navegue na Internet
 Comment[sk]=Prehliadanie internetu
 Comment[sv]=Surfa på webben
-Exec=/home/danil/.local/lib/appman/firefox/firefox %u
+Exec=/home/kutkevich.danil/.local/lib/appman/firefox/firefox %u
 Terminal=false
 Type=Application
-Icon=/home/danil/.local/lib/appman/firefox/browser/chrome/icons/default/default128.png
+Icon=/home/kutkevich.danil/.local/lib/appman/firefox/browser/chrome/icons/default/default128.png
 MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/vnd.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;
 StartupNotify=true
 Categories=Network;WebBrowser;
@@ -54,7 +54,7 @@ Keywords=web;browser;internet;
 Actions=new-window;new-private-window;profile-manager-window;
 
 [Desktop Action Private]
-Exec=/home/danil/.local/lib/appman/firefox/firefox --private-window %u
+Exec=/home/kutkevich.danil/.local/lib/appman/firefox/firefox --private-window %u
 Name=Open a New Private Window
 Name[ach]=Dirica manyen me mung
 Name[af]=Nuwe privaatvenster

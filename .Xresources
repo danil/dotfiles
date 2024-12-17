@@ -51,8 +51,8 @@ Xft.rgba:      rgb
 ! <https://wiki.gentoo.org/wiki/X_resources#Includes>,
 ! <http://www.nongnu.org/emacsdoc-fr/manuel/resources-x.html>,
 ! <http://stackoverflow.com/questions/13405240/is-it-possible-to-change-xresources-interactively>.
-! #include "/home/danil/.Xresources.d/urxvt"
-! #include "/home/danil/.Xresources.d/uxterm"
-! #include "/home/danil/.Xresources.d/emacs"
-! #include "/home/danil/.Xresources.d/xscreensaver"
-! #include "/home/danil/.Xresources.d/rofi"
+! #include "/home/kutkevich.danil/.Xresources.d/urxvt"
+! #include "/home/kutkevich.danil/.Xresources.d/uxterm"
+! #include "/home/kutkevich.danil/.Xresources.d/emacs"
+! #include "/home/kutkevich.danil/.Xresources.d/xscreensaver"
+! #include "/home/kutkevich.danil/.Xresources.d/rofi"

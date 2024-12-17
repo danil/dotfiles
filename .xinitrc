@@ -19,9 +19,9 @@ case $session in
     dwm)
         [ -f ~/.dwm/dwmrc ] && source ~/.dwm/dwmrc
         f=/tmp/dwm.fifo && rm -f $f && mkfifo $f
-        # exec ck-launch-session dbus-launch --sh-syntax --exit-with-session /home/danil/.local/usr/local/bin/dwm
-        # exec dbus-launch --exit-with-session /home/danil/.local/usr/local/bin/dwm
-        # exec /home/danil/.local/usr/local/bin/dwm
+        # exec ck-launch-session dbus-launch --sh-syntax --exit-with-session /home/kutkevich.danil/.local/usr/local/bin/dwm
+        # exec dbus-launch --exit-with-session /home/kutkevich.danil/.local/usr/local/bin/dwm
+        # exec /home/kutkevich.danil/.local/usr/local/bin/dwm
         exec ~/.local/usr/local/bin/dwm
         ;;
     stump|stumpwm)

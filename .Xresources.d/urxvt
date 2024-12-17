@@ -23,7 +23,7 @@ URxvt.iconFile: /usr/share/icons/Faenza/apps/scalable/utilities-terminal.svg
 ! You can find them in </usr/lib/urxvt/perl/>.
 ! <http://wiki.archlinux.org/index.php/Rxvt-unicode#Automatic_Script_Management>.
 ! selection,option-popup,selection-popup,readline,clipboard,matcher
-! URxvt.perl-lib: /home/danil/.urxvt/ext/
+! URxvt.perl-lib: /home/kutkevich.danil/.urxvt/ext/
 ! URxvt*perl-ext-common: tabbed
 URxvt*perl-ext-common: default,matcher,searchable-scrollback,clipboard,font-size
 
@@ -39,7 +39,7 @@ URxvt.keysym.C-A-parenright: perl:font-size:reset
 ! Matcher.
 URxvt*matcher.button: 3
 ! URxvt*colorUL: #86a2be
-! URxvt*urlLauncher: /home/danil/bin/epiphany.sh
+! URxvt*urlLauncher: /home/kutkevich.danil/bin/epiphany.sh
 ! URxvt*urlLauncher: chromium
 ! URxvt*urlLauncher: google-chrome
 URxvt*urlLauncher: x-www-browser

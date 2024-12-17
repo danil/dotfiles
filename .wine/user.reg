@@ -639,7 +639,7 @@ WINE REGISTRY Version 2
 [Software\\Wine\\FileOpenAssociations\\.chm] 1358865899
 #time=1cdf8af0d512780
 "AppName"="hh"
-"DesktopFile"="/home/danil/.local/share/applications/wine-extension-chm.desktop"
+"DesktopFile"="/home/kutkevich.danil/.local/share/applications/wine-extension-chm.desktop"
 "DocName"="Compiled HTML Help File"
 "MimeType"="application/vnd.ms-htmlhelp"
 "OpenWithIcon"="A35F_hh.0"
@@ -648,7 +648,7 @@ WINE REGISTRY Version 2
 [Software\\Wine\\FileOpenAssociations\\.gif] 1358865923
 #time=1cdf8af1b9f4380
 "AppName"="Wine Internet Explorer"
-"DesktopFile"="/home/danil/.local/share/applications/wine-extension-gif.desktop"
+"DesktopFile"="/home/kutkevich.danil/.local/share/applications/wine-extension-gif.desktop"
 "DocName"="GIF Image"
 "MimeType"="image/gif"
 "OpenWithIcon"="FB4C_iexplore.0"
@@ -657,7 +657,7 @@ WINE REGISTRY Version 2
 [Software\\Wine\\FileOpenAssociations\\.hlp] 1358865899
 #time=1cdf8af0d512780
 "AppName"="winhlp32"
-"DesktopFile"="/home/danil/.local/share/applications/wine-extension-hlp.desktop"
+"DesktopFile"="/home/kutkevich.danil/.local/share/applications/wine-extension-hlp.desktop"
 "DocName"="Help File"
 "MimeType"="application/x-wine-extension-hlp"
 "OpenWithIcon"="4137_winhlp32.0"
@@ -666,7 +666,7 @@ WINE REGISTRY Version 2
 [Software\\Wine\\FileOpenAssociations\\.htm] 1358865899
 #time=1cdf8af0d512780
 "AppName"="winebrowser"
-"DesktopFile"="/home/danil/.local/share/applications/wine-extension-htm.desktop"
+"DesktopFile"="/home/kutkevich.danil/.local/share/applications/wine-extension-htm.desktop"
 "DocName"="HTML Document"
 "MimeType"="text/html"
 "OpenWithIcon"="7765_winebrowser.0"
@@ -675,7 +675,7 @@ WINE REGISTRY Version 2
 [Software\\Wine\\FileOpenAssociations\\.html] 1287154767
 #time=1cb6c798fd2f180
 "AppName"="winebrowser"
-"DesktopFile"="/home/danil/.local/share/applications/wine-extension-html.desktop"
+"DesktopFile"="/home/kutkevich.danil/.local/share/applications/wine-extension-html.desktop"
 "DocName"="HTML Document"
 "MimeType"="text/html"
 "ProgID"="htmlfile"
@@ -683,7 +683,7 @@ WINE REGISTRY Version 2
 [Software\\Wine\\FileOpenAssociations\\.ini] 1358865899
 #time=1cdf8af0d512780
 "AppName"="notepad"
-"DesktopFile"="/home/danil/.local/share/applications/wine-extension-ini.desktop"
+"DesktopFile"="/home/kutkevich.danil/.local/share/applications/wine-extension-ini.desktop"
 "DocName"="Configuration Settings"
 "MimeType"="application/x-wine-extension-ini"
 "OpenWithIcon"="1E64_notepad.0"
@@ -692,7 +692,7 @@ WINE REGISTRY Version 2
 [Software\\Wine\\FileOpenAssociations\\.jfif] 1358865924
 #time=1cdf8af1c37da00
 "AppName"="Wine Internet Explorer"
-"DesktopFile"="/home/danil/.local/share/applications/wine-extension-jfif.desktop"
+"DesktopFile"="/home/kutkevich.danil/.local/share/applications/wine-extension-jfif.desktop"
 "DocName"="JPEG Image"
 "MimeType"="image/pjpeg"
 "OpenWithIcon"="FB4C_iexplore.0"
@@ -701,7 +701,7 @@ WINE REGISTRY Version 2
 [Software\\Wine\\FileOpenAssociations\\.jpe] 1358865924
 #time=1cdf8af1c37da00
 "AppName"="Wine Internet Explorer"
-"DesktopFile"="/home/danil/.local/share/applications/wine-extension-jpe.desktop"
+"DesktopFile"="/home/kutkevich.danil/.local/share/applications/wine-extension-jpe.desktop"
 "DocName"="JPEG Image"
 "MimeType"="image/jpeg"
 "OpenWithIcon"="FB4C_iexplore.0"
@@ -710,7 +710,7 @@ WINE REGISTRY Version 2
 [Software\\Wine\\FileOpenAssociations\\.jpeg] 1287154767
 #time=1cb6c798fd2f180
 "AppName"="Wine core exe"
-"DesktopFile"="/home/danil/.local/share/applications/wine-extension-jpeg.desktop"
+"DesktopFile"="/home/kutkevich.danil/.local/share/applications/wine-extension-jpeg.desktop"
 "DocName"="JPEG Image"
 "MimeType"="image/jpeg"
 "ProgID"="jpegfile"
@@ -718,7 +718,7 @@ WINE REGISTRY Version 2
 [Software\\Wine\\FileOpenAssociations\\.jpg] 1287154767
 #time=1cb6c798fd2f180
 "AppName"="Wine core exe"
-"DesktopFile"="/home/danil/.local/share/applications/wine-extension-jpg.desktop"
+"DesktopFile"="/home/kutkevich.danil/.local/share/applications/wine-extension-jpg.desktop"
 "DocName"="JPEG Image"
 "MimeType"="image/jpeg"
 "ProgID"="jpegfile"
@@ -726,14 +726,14 @@ WINE REGISTRY Version 2
 [Software\\Wine\\FileOpenAssociations\\.msp] 1358865924
 #time=1cdf8af1c37da00
 "AppName"="A Wine application"
-"DesktopFile"="/home/danil/.local/share/applications/wine-extension-msp.desktop"
+"DesktopFile"="/home/kutkevich.danil/.local/share/applications/wine-extension-msp.desktop"
 "MimeType"="application/x-wine-extension-msp"
 "ProgID"="Msi.Patch"
 
 [Software\\Wine\\FileOpenAssociations\\.png] 1358865924
 #time=1cdf8af1c37da00
 "AppName"="Wine Internet Explorer"
-"DesktopFile"="/home/danil/.local/share/applications/wine-extension-png.desktop"
+"DesktopFile"="/home/kutkevich.danil/.local/share/applications/wine-extension-png.desktop"
 "DocName"="PNG Image"
 "MimeType"="image/png"
 "OpenWithIcon"="FB4C_iexplore.0"
@@ -742,7 +742,7 @@ WINE REGISTRY Version 2
 [Software\\Wine\\FileOpenAssociations\\.rtf] 1358865900
 #time=1cdf8af0de9be00
 "AppName"="wordpad"
-"DesktopFile"="/home/danil/.local/share/applications/wine-extension-rtf.desktop"
+"DesktopFile"="/home/kutkevich.danil/.local/share/applications/wine-extension-rtf.desktop"
 "DocName"="Rich Text Document"
 "MimeType"="application/rtf"
 "OpenWithIcon"="2EF4_wordpad.0"
@@ -751,7 +751,7 @@ WINE REGISTRY Version 2
 [Software\\Wine\\FileOpenAssociations\\.txt] 1358865900
 #time=1cdf8af0de9be00
 "AppName"="notepad"
-"DesktopFile"="/home/danil/.local/share/applications/wine-extension-txt.desktop"
+"DesktopFile"="/home/kutkevich.danil/.local/share/applications/wine-extension-txt.desktop"
 "DocName"="Text Document"
 "MimeType"="text/plain"
 "OpenWithIcon"="1E64_notepad.0"
@@ -760,7 +760,7 @@ WINE REGISTRY Version 2
 [Software\\Wine\\FileOpenAssociations\\.url] 1358865924
 #time=1cdf8af1c37da00
 "AppName"="rundll32"
-"DesktopFile"="/home/danil/.local/share/applications/wine-extension-url.desktop"
+"DesktopFile"="/home/kutkevich.danil/.local/share/applications/wine-extension-url.desktop"
 "MimeType"="application/x-mswinurl"
 "OpenWithIcon"="1CD8_rundll32.0"
 "ProgID"="InternetShortcut"
@@ -768,7 +768,7 @@ WINE REGISTRY Version 2
 [Software\\Wine\\FileOpenAssociations\\.wri] 1358865900
 #time=1cdf8af0de9be00
 "AppName"="wordpad"
-"DesktopFile"="/home/danil/.local/share/applications/wine-extension-wri.desktop"
+"DesktopFile"="/home/kutkevich.danil/.local/share/applications/wine-extension-wri.desktop"
 "MimeType"="application/x-mswrite"
 "OpenWithIcon"="2EF4_wordpad.0"
 "ProgID"="wrifile"
@@ -776,7 +776,7 @@ WINE REGISTRY Version 2
 [Software\\Wine\\FileOpenAssociations\\.xml] 1358865900
 #time=1cdf8af0de9be00
 "AppName"="winebrowser"
-"DesktopFile"="/home/danil/.local/share/applications/wine-extension-xml.desktop"
+"DesktopFile"="/home/kutkevich.danil/.local/share/applications/wine-extension-xml.desktop"
 "DocName"="XML Document"
 "MimeType"="application/xml"
 "OpenWithIcon"="7765_winebrowser.0"

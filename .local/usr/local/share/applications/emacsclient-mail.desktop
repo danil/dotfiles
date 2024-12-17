@@ -13,7 +13,7 @@ Actions=new-window;new-instance;
 
 [Desktop Action new-window]
 Name=New Window
-Exec=/home/danil/.local/usr/local/bin/emacsclient --alternate-editor= --create-frame --eval "(message-mailto \\"%u\\")"
+Exec=/home/kutkevich.danil/.local/usr/local/bin/emacsclient --alternate-editor= --create-frame --eval "(message-mailto \\"%u\\")"
 
 [Desktop Action new-instance]
 Name=New Instance

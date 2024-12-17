@@ -26,7 +26,7 @@ optflag () {
 }
 optflag "$@"
 
-. /home/danil/bin/binpath.sh
+. /home/kutkevich.danil/bin/binpath.sh
 
 ctl_title () {
     [ -z "$OPT_TITLE" ] && [ "$OPT_TITLE" = " " ] && return

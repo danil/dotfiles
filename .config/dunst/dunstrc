@@ -216,7 +216,7 @@
     # dmenu path.
     # ~~~~<danil@kutkevich.org>
     # dmenu = /usr/bin/dmenu -p dunst:
-    dmenu = /home/danil/.local/usr/local/bin/dmenu -p dunst:
+    dmenu = /home/kutkevich.danil/.local/usr/local/bin/dmenu -p dunst:
 
     # Browser for opening urls in context menu.
     browser = /usr/bin/firefox -new-tab

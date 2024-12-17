@@ -8,10 +8,10 @@
 # <https://nix.dev/manual/nix/2.18/installation/installing-binary.html#single-user-installation>.
 
 
-if [ ! -f /home/danil/.nix-profile/etc/profile.d/nix.sh ]; then
+if [ ! -f /home/kutkevich.danil/.nix-profile/etc/profile.d/nix.sh ]; then
     # printf >&2 "missing Nix\n"
     return
 fi
 
-source /home/danil/.nix-profile/etc/profile.d/nix.sh
+source /home/kutkevich.danil/.nix-profile/etc/profile.d/nix.sh
 export NIXPKGS_ALLOW_UNFREE=1

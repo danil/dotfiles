@@ -14,7 +14,7 @@ control + t ; c
     alacritty
 
 control + t ; shift + 1
-    ~/bin/dmenu --command="/home/danil/.local/usr/local/bin/dmenu" --lines=27 --history="dmenu_history"
+    ~/bin/dmenu --command="/home/kutkevich.danil/.local/usr/local/bin/dmenu" --lines=27 --history="dmenu_history"
 
 control + t ; u ; shift + 1
     i3-desktop

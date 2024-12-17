@@ -1,4 +1,4 @@
 [D-BUS Service]
 Name=org.freedesktop.Notifications
-Exec=/home/danil/.local/bin/dunst
+Exec=/home/kutkevich.danil/.local/bin/dunst
 SystemdService=dunst.service

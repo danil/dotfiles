@@ -41,8 +41,8 @@ Name[vi]=Chia sẻ qua Skype
 Name[zh_CN]=Skype − 已注销。
 Name[zh_HK]=使用 Skype 共享
 Name[zh_TW]=使用 Skype 分享
-Exec=/home/danil/.local/bin/skypeforlinux --share-file=%f
-Icon=/home/danil/.local/lib/appman/skype/skypeforlinux.png
+Exec=/home/kutkevich.danil/.local/bin/skypeforlinux --share-file=%f
+Icon=/home/kutkevich.danil/.local/lib/appman/skype/skypeforlinux.png
 Terminal=false
 Type=Application
 Encoding=UTF-8

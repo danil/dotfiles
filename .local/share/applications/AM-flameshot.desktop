@@ -37,8 +37,8 @@ Keywords[nl_NL]=flameshot;schermfoto;screenshot;schermafdruk;vastleggen;schermop
 Keywords[es]=flameshot;screenshot;capture;shutter;captura;
 Keywords[de]=flameshot;screenshot;Bildschirmfoto;Aufnahme;
 Keywords[pt_BR]=flameshot;screenshot;captura de tela;captura;shutter;
-Exec=/home/danil/.local/bin/flameshot
-Icon=/home/danil/.local/lib/appman/flameshot/icons/flameshot
+Exec=/home/kutkevich.danil/.local/bin/flameshot
+Icon=/home/kutkevich.danil/.local/lib/appman/flameshot/icons/flameshot
 Terminal=false
 Type=Application
 Categories=Graphics;
@@ -64,7 +64,7 @@ Name[uk]=Налаштувати
 Name[es]=Configurar
 Name[de]=Einstellungen
 Name[pt_BR]=Configurar
-Exec=/home/danil/.local/bin/flameshot config
+Exec=/home/kutkevich.danil/.local/bin/flameshot config
 
 [Desktop Action Capture]
 Name=Take screenshot
@@ -81,7 +81,7 @@ Name[nl_NL]=Schermfoto maken
 Name[es]=Tomar captura de pantalla
 Name[de]=Bildschirmfoto aufnehmen
 Name[pt_BR]=Capturar tela
-Exec=/home/danil/.local/bin/flameshot gui --delay 500
+Exec=/home/kutkevich.danil/.local/bin/flameshot gui --delay 500
 
 [Desktop Action Launcher]
 Name=Open launcher
@@ -91,4 +91,4 @@ Name[nl_NL]=Starter openen
 Name[sk]=Otvoriť spúšťač
 Name[zh_CN]=打开启动器
 Name[pt_BR]=Abrir lançador
-Exec=/home/danil/.local/bin/flameshot launcher
+Exec=/home/kutkevich.danil/.local/bin/flameshot launcher

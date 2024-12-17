@@ -49,7 +49,7 @@ if [ "$OPT_ALL" = 0 ]; then
     OPT_BTOP=0
 fi
 
-. /home/danil/bin/binpath.sh
+. /home/kutkevich.danil/bin/binpath.sh
 
 theme_wallpaper () {
     [ "$OPT_WAL" != 0 ] && return

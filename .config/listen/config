@@ -79,7 +79,7 @@ num8_frame2 = TPE1
 startup_added = false
 startup_deleted = false
 watcher = false
-location = /home/danil/Music
+location = /home/kutkevich.danil/Music
 
 [song_view]
 filesystem_artist = true
@@ -302,7 +302,7 @@ height = 308
 
 [podcast]
 nb_download = 5
-folder = /home/danil/Podcasts
+folder = /home/kutkevich.danil/Podcasts
 startup = true
 time_refresh = 120
 

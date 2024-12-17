@@ -1,8 +1,8 @@
 [Desktop Entry]
 Name=Skype
 Comment=Skype Internet Telephony
-Exec=/home/danil/.local/bin/skypeforlinux %U
-Icon=/home/danil/.local/lib/appman/skype/skypeforlinux.png
+Exec=/home/kutkevich.danil/.local/bin/skypeforlinux %U
+Icon=/home/kutkevich.danil/.local/lib/appman/skype/skypeforlinux.png
 Terminal=false
 Type=Application
 StartupNotify=true
@@ -55,5 +55,5 @@ Name[uk]=Вийти зі Skype
 Name[vi]=Thoát Skype
 Name[zh_CN]=退出 Skype
 Name[zh_TW]=結束 Skype
-Exec=/home/danil/.local/bin/skypeforlinux --shutdown
+Exec=/home/kutkevich.danil/.local/bin/skypeforlinux --shutdown
 OnlyShowIn=Unity;

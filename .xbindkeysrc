@@ -80,12 +80,12 @@
 
 # # Editor.
 # # Fish shell <https://wiki.archlinux.org/index.php/Fish#Troubleshooting>.
-# "/home/danil/bin/emacsclient"
+# "/home/kutkevich.danil/bin/emacsclient"
 #   Control + Shift + Mod1 + e
 
 # # Show desktop
 # # <http://ubuntuforums.org/showthread.php?t=1615199#td_post_10083165>.
-# "/home/danil/bin/showdesktop.sh"
+# "/home/kutkevich.danil/bin/showdesktop.sh"
 #   Control + Mod1 + d
 
 # # Compiz viewports switch
@@ -201,7 +201,7 @@
 # "killall -SIGUSR1 tint2"
 #   Control + Shift + Mod1 + 2
 
-# "/home/danil/bin/unless_electricsheep.sh"
+# "/home/kutkevich.danil/bin/unless_electricsheep.sh"
 #   Control + Shift + Mod1 + s
 
 # # Listen

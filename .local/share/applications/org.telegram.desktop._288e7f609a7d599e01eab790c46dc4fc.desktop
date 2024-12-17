@@ -1,8 +1,8 @@
 [Desktop Entry]
 Name=Telegram Desktop
 Comment=Official desktop version of Telegram messaging app
-TryExec=/home/danil/.local/lib/appman/telegram/Telegram
-Exec=/home/danil/.local/lib/appman/telegram/Telegram -- %u
+TryExec=/home/kutkevich.danil/.local/lib/appman/telegram/Telegram
+Exec=/home/kutkevich.danil/.local/lib/appman/telegram/Telegram -- %u
 Icon=telegram
 Terminal=false
 StartupWMClass=TelegramDesktop
@@ -17,6 +17,6 @@ X-GNOME-UsesNotifications=true
 X-GNOME-SingleWindow=true
 
 [Desktop Action quit]
-Exec=/home/danil/.local/lib/appman/telegram/Telegram -quit
+Exec=/home/kutkevich.danil/.local/lib/appman/telegram/Telegram -quit
 Name=Quit Telegram
 Icon=application-exit

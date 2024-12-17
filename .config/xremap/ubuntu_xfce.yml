@@ -77,7 +77,7 @@ keymap:
       C-t:
         remap:
           KEY_M:
-            launch: ["sudo", "-u", "danil", "-i", "/bin/bash", "-c", "source /home/danil/.bashrc && find-cursor --color=#ff0000 --size=700 --line-width=10 --distance=70"]
+            launch: ["sudo", "-u", "danil", "-i", "/bin/bash", "-c", "source /home/kutkevich.danil/.bashrc && find-cursor --color=#ff0000 --size=700 --line-width=10 --distance=70"]
 
   - name: Screen shot.
     remap:

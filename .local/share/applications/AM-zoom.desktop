@@ -2,7 +2,7 @@
 Name=Zoom
 Comment=Zoom Video Conference
 Exec=zoom %U
-Icon=/home/danil/.local/lib/appman/zoom/icons/zoom
+Icon=/home/kutkevich.danil/.local/lib/appman/zoom/icons/zoom
 Terminal=false
 Type=Application
 Encoding=UTF-8

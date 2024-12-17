@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-HOME=/home/danil
+HOME=/home/kutkevich.danil
 HOMEBINDIR="$HOME"/bin
 LOCALBINDIR="$HOME"/.local/bin
 USRLOCALBINDIR="$HOME"/.local/usr/local/bin

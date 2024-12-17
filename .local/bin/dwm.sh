@@ -4,4 +4,4 @@
 f=/tmp/dwm.fifo
 rm -f $f
 mkfifo $f
-/home/danil/.local/usr/local/bin/dwm
+/home/kutkevich.danil/.local/usr/local/bin/dwm

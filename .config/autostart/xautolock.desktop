@@ -1,7 +1,7 @@
 [Desktop Entry]
 Comment=lock screen after 10 minutes
 Encoding=UTF-8
-Exec=/home/danil/bin/my_autolock.sh
+Exec=/home/kutkevich.danil/bin/my_autolock.sh
 Name=xautolock
 Terminal=false
 Type=Application

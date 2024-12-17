@@ -1,7 +1,7 @@
 {
   "AutoStart": true,
   "DisableEncryption": false,
-  "DownloadDirectory": "/home/danil/Downloads",
+  "DownloadDirectory": "/home/kutkevich.danil/Downloads",
   "EnableUpload": true,
   "EnableSeeding": false,
   "IncomingPort": 50007

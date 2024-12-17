@@ -1,5 +1,5 @@
 <configuration version="35">
-    <folder id="5cfzi-lnjpr" label="Notes" path="/home/danil/Notes" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+    <folder id="5cfzi-lnjpr" label="Notes" path="/home/kutkevich.danil/Notes" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
         <device id="D5G5RJ2-VBFF2AU-7JJIFZF-2G6OJD6-IUZA2E7-V4DEUIT-M7ACTKD-2M422QO" introducedBy="">
             <encryptionPassword></encryptionPassword>
@@ -50,7 +50,7 @@
         <caseSensitiveFS>false</caseSensitiveFS>
         <junctionsAsDirs>false</junctionsAsDirs>
     </folder>
-    <folder id="aswqt-awlz5" label="Trash" path="/home/danil/Trash" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+    <folder id="aswqt-awlz5" label="Trash" path="/home/kutkevich.danil/Trash" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
         <device id="CRP2GG7-HRM6BEL-44DOJQZ-USO4R6V-QJYJNVL-BL4GKCP-LPR7DR7-53D3MQD" introducedBy="">
             <encryptionPassword></encryptionPassword>
@@ -98,7 +98,7 @@
         <caseSensitiveFS>false</caseSensitiveFS>
         <junctionsAsDirs>false</junctionsAsDirs>
     </folder>
-    <folder id="at7a3-rnepr" label="Books" path="/home/danil/Books" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+    <folder id="at7a3-rnepr" label="Books" path="/home/kutkevich.danil/Books" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
         <device id="CRP2GG7-HRM6BEL-44DOJQZ-USO4R6V-QJYJNVL-BL4GKCP-LPR7DR7-53D3MQD" introducedBy="D5G5RJ2-VBFF2AU-7JJIFZF-2G6OJD6-IUZA2E7-V4DEUIT-M7ACTKD-2M422QO">
             <encryptionPassword></encryptionPassword>
@@ -152,7 +152,7 @@
         <caseSensitiveFS>false</caseSensitiveFS>
         <junctionsAsDirs>false</junctionsAsDirs>
     </folder>
-    <folder id="gbpui-jzvdk" label="Pictures" path="/home/danil/Pictures" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+    <folder id="gbpui-jzvdk" label="Pictures" path="/home/kutkevich.danil/Pictures" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
         <device id="D5G5RJ2-VBFF2AU-7JJIFZF-2G6OJD6-IUZA2E7-V4DEUIT-M7ACTKD-2M422QO" introducedBy="">
             <encryptionPassword></encryptionPassword>
@@ -197,7 +197,7 @@
         <caseSensitiveFS>false</caseSensitiveFS>
         <junctionsAsDirs>false</junctionsAsDirs>
     </folder>
-    <folder id="jsd4s-swqkp" label="Src" path="/home/danil/Src" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+    <folder id="jsd4s-swqkp" label="Src" path="/home/kutkevich.danil/Src" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
         <device id="D5G5RJ2-VBFF2AU-7JJIFZF-2G6OJD6-IUZA2E7-V4DEUIT-M7ACTKD-2M422QO" introducedBy="">
             <encryptionPassword></encryptionPassword>
@@ -245,7 +245,7 @@
         <caseSensitiveFS>false</caseSensitiveFS>
         <junctionsAsDirs>false</junctionsAsDirs>
     </folder>
-    <folder id="krbr4-es5n4" label="Podcasts" path="/home/danil/Podcasts" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+    <folder id="krbr4-es5n4" label="Podcasts" path="/home/kutkevich.danil/Podcasts" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
         <device id="D5G5RJ2-VBFF2AU-7JJIFZF-2G6OJD6-IUZA2E7-V4DEUIT-M7ACTKD-2M422QO" introducedBy="">
             <encryptionPassword></encryptionPassword>
@@ -296,7 +296,7 @@
         <caseSensitiveFS>false</caseSensitiveFS>
         <junctionsAsDirs>false</junctionsAsDirs>
     </folder>
-    <folder id="x6wam-vymeu" label="Fonts" path="/home/danil/Fonts" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+    <folder id="x6wam-vymeu" label="Fonts" path="/home/kutkevich.danil/Fonts" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
         <device id="D5G5RJ2-VBFF2AU-7JJIFZF-2G6OJD6-IUZA2E7-V4DEUIT-M7ACTKD-2M422QO" introducedBy="">
             <encryptionPassword></encryptionPassword>
@@ -344,7 +344,7 @@
         <caseSensitiveFS>false</caseSensitiveFS>
         <junctionsAsDirs>false</junctionsAsDirs>
     </folder>
-    <folder id="xi2ew-z6l3e" label="Sync" path="/home/danil/Sync" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+    <folder id="xi2ew-z6l3e" label="Sync" path="/home/kutkevich.danil/Sync" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
         <device id="CRP2GG7-HRM6BEL-44DOJQZ-USO4R6V-QJYJNVL-BL4GKCP-LPR7DR7-53D3MQD" introducedBy="D5G5RJ2-VBFF2AU-7JJIFZF-2G6OJD6-IUZA2E7-V4DEUIT-M7ACTKD-2M422QO">
             <encryptionPassword></encryptionPassword>

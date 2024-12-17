@@ -3,8 +3,8 @@
 [PARAMETERS]
 Timezone=Europe/Moscow
 Archive limit=0
-Archive file=/home/danil/.local/share/orage/orage_archive.ics
-Orage file=/home/danil/.local/share/orage/orage.ics
+Archive file=/home/kutkevich.danil/.local/share/orage/orage_archive.ics
+Orage file=/home/kutkevich.danil/.local/share/orage/orage.ics
 Sound application=play
 Main window X=787
 Main window Y=408
