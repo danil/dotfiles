@@ -314,6 +314,8 @@ immutability=1
 lastScreen=-1
 location=4
 plugin=org.kde.plasma.private.systemtray
+popupHeight=432
+popupWidth=432
 wallpaperplugin=org.kde.image
 
 [Containments][48][Applets][49]
@@ -373,7 +375,7 @@ immutability=1
 plugin=org.kde.plasma.devicenotifier
 
 [Containments][48][Applets][56][Configuration]
-PreloadWeight=42
+PreloadWeight=72
 
 [Containments][48][Applets][57]
 immutability=1
