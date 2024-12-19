@@ -269,10 +269,10 @@ AppletOrder=3;4;6;68;30;27;29;34;36;7;22;21;33
 
 [Containments][42]
 activityId=
-formfactor=2
+formfactor=3
 immutability=1
 lastScreen=0
-location=4
+location=5
 plugin=org.kde.panel
 wallpaperplugin=org.kde.image
 
@@ -285,7 +285,7 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][42][Applets][45][Configuration][General]
-launchers=applications:org.kde.plasmashell.desktop,applications:org.kde.discover.desktop,preferred://filemanager,applications:gimp.desktop,applications:org.kde.krita.desktop,applications:org.kde.gwenview.desktop,applications:org.kde.spectacle.desktop,applications:megasync.desktop,applications:yandex-browser.desktop,applications:albert.desktop,applications:google-chrome.desktop,applications:org.gnome.Calculator.desktop,applications:systemsettings.desktop,applications:Alacritty.desktop
+launchers=applications:google-chrome.desktop,applications:Alacritty.desktop,applications:yandex-browser.desktop,applications:org.kde.discover.desktop,preferred://filemanager,applications:gimp.desktop,applications:org.kde.krita.desktop,applications:org.kde.gwenview.desktop,applications:org.kde.spectacle.desktop,applications:megasync.desktop,applications:org.gnome.Calculator.desktop,applications:org.kde.plasmashell.desktop,applications:systemsettings.desktop
 minimizeActiveTaskOnClick=false
 showOnlyCurrentActivity=false
 showOnlyCurrentDesktop=false
@@ -375,7 +375,7 @@ immutability=1
 plugin=org.kde.plasma.devicenotifier
 
 [Containments][48][Applets][56][Configuration]
-PreloadWeight=72
+PreloadWeight=87
 
 [Containments][48][Applets][57]
 immutability=1
@@ -477,8 +477,8 @@ immutability=1
 lastScreen=0
 location=3
 plugin=org.kde.plasma.private.systemtray
-popupHeight=528
-popupWidth=528
+popupHeight=653
+popupWidth=691
 wallpaperplugin=org.kde.image
 
 [Containments][8][Applets][10]
