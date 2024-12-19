@@ -1,0 +1,35 @@
+#!/usr/bin/env sh
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
+if [ ! -x "$(command -v id)" ]; then
+    printf >&2 "error: missing id command\n"
+    return 1
+fi
+
+export UID="$(id --user)"
+
+# <https://stackoverflow.com/questions/32981333/how-can-i-find-the-path-to-a-script-being-sourced-in-dash#42815001>.
+BASEDIR="$(lsof -p $$ -Fn0 | tail -1)"
+BASEDIR="${BASEDIR#n}"
+BASEDIR="${BASEDIR%/*}"
+BASEDIR="${BASEDIR:-.}"
+BASEDIR="/${BASEDIR##/}"
+
+. "$BASEDIR"/confload
+confload "$BASEDIR"/conf.d
+
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export LC_TYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+export PATH="$HOME"/.local/bin:"$PATH" # tmux make installs here and pip (python package management system) run `python-install-all`
+export PATH="$HOME"/.local/sbin:"$PATH"
+export PATH="$HOME"/.local/usr/bin:"$PATH" # xxkb make installs here
+export PATH="$HOME"/.local/usr/sbin:"$PATH" # powertop make installs here
+export PATH="$HOME"/.local/usr/local/bin:"$PATH" # dwm make installs here
+export PATH="$HOME"/.local/usr/local/sbin:"$PATH" # dwm make installs here
+export PATH="$HOME"/.local/usr/local/usr/bin:"$PATH"
+export PATH="$HOME"/sbin:"$PATH"
+export PATH="$HOME"/bin:"$PATH" # clib c package manager installs here <https://github.com/clibs/clib> run `c-install-all`
+
