@@ -4,7 +4,7 @@
 
 USAGE="usage: ${CMD:=${0##*/}} --fix"
 
-OPT_DRY=0
+OPTFLAGDRYRUN=0
 
 # Shell script options functions.
 opttest () { { [ "$1" != "$EOL" ] && [ "$1" != '--' ]; } || optexit "missing argument" "$2"; } # avoid infinite loop
@@ -17,7 +17,7 @@ while [ "$1" != "$EOL" ]; do
     opt="$1"; shift
 
     case "$opt" in
-        --fix       ) OPT_FIX=0; OPT_DRY=-1;;
+        --fix       ) OPT_FIX=0; OPTFLAGDRYRUN=-1;;
         -h | --help ) opthelp; exit 0;;
 
         # Process special cases.
@@ -34,7 +34,7 @@ if [ "$OPT_FIX" = 0 ]; then
 fi
 
 # Dry run.
-if [ "$OPT_DRY" = 0 ]; then
+if [ "$OPTFLAGDRYRUN" = 0 ]; then
     printf "%s\n" "$USAGE"
     exit 1
 fi

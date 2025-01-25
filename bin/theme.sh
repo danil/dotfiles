@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-USAGE="usage: ${CMD:=${0##*/}} { --light | --dark } [--kde] [--alacritty] [--tmux] [--emacs] [--btop] [--rofi] [--lsd]"
+USAGE="usage: ${CMD:=${0##*/}} { --light | --dark } [--gnome] [--kde] [--alacritty] [--wezterm] [--tmux] [--emacs] [--btop] [--rofi] [--lsd]"
 
 OPT_ALL=0
 
@@ -17,8 +17,10 @@ optflag () {
             --light     ) OPT_LIGHT=0;;
             --dark      ) OPT_DARK=0;;
             --wallpaper ) OPT_WAL=0; OPT_ALL=-1;;
+            --gnome     ) OPT_GNOME=0; OPT_ALL=-1;;
             --kde       ) OPT_KDE=0; OPT_ALL=-1;;
             --alacritty ) OPT_ALACRITTY=0; OPT_ALL=-1;;
+            --wezterm   ) OPT_WEZTERM=0; OPT_ALL=-1;;
             --tmux      ) OPT_TMUX=0; OPT_ALL=-1;;
             --emacs     ) OPT_EMACS=0; OPT_ALL=-1;;
             --btop      ) OPT_BTOP=0; OPT_ALL=-1;;
@@ -42,8 +44,10 @@ optflag "$@"
 
 if [ "$OPT_ALL" = 0 ]; then
     OPT_WAL=0
+    OPT_GNOME=0
     OPT_KDE=0
     OPT_ALACRITTY=0
+    OPT_WEZTERM=0
     OPT_TMUX=0
     OPT_EMACS=0
     OPT_BTOP=0
@@ -54,12 +58,7 @@ fi
 theme_wallpaper () {
     [ "$OPT_WAL" != 0 ] && return
 
-    OPT_DRY=-1
-
-    if [ ! -x "$(command -v feh)" ]; then
-        printf >&2 "error: missing the feh executable file\n"
-        return
-    fi
+    OPTFLAGDRYRUN=-1
 
     lightbg="$SHAREDIR"/backgrounds/2021-07-29.18.50.41-v2.jpg
     darkbg="$SHAREDIR"/backgrounds/2018-03-16.19.25.25-v2.jpg
@@ -69,21 +68,64 @@ theme_wallpaper () {
         printf >&2 "error: missing the wallpaper file\n"
     fi
 
+    # X11.
+    if [ ! -x "$(command -v feh)" ]; then
+        printf >&2 "error: missing the feh executable file\n"
+    else
+        if [ "$OPT_LIGHT" = 0 ]; then
+            feh --bg-center  "$lightbg"
+        elif [ "$OPT_DARK" = 0 ]; then
+            feh --bg-center "$darkbg"
+        fi
+    fi
+
+    # GNOME.
+    if [ ! -x "$(command -v gsettings)" ]; then
+        printf >&2 "error: missing the gsettings executable file\n"
+    else
+        if [ "$OPT_LIGHT" = 0 ]; then
+            gsettings set org.gnome.desktop.background picture-uri      "file://$lightbg"
+        elif [ "$OPT_DARK" = 0 ]; then
+            gsettings set org.gnome.desktop.background picture-uri-dark "file://$darkbg"
+        fi
+    fi
 
     # KDE
     # <https://userbase.kde.org/System_Settings/Look_And_Feel>,
     # <https://askubuntu.com/questions/1183294/switching-plasma-theme-from-the-command-line#1183309>.
+    if [ ! -x "$(command -v plasma-apply-wallpaperimage)" ]; then
+        printf >&2 "error: missing the plasma-apply-wallpaperimage executable file\n"
+    else
+        if [ "$OPT_LIGHT" = 0 ]; then
+            plasma-apply-wallpaperimage "$lightbg"
+        elif [ "$OPT_DARK" = 0 ]; then
+            plasma-apply-wallpaperimage "$darkbg"
+        fi
+    fi
+}
+
+
+theme_gnome () {
+    [ "$OPT_KDE" != 0 ] && return
+
+    OPTFLAGDRYRUN=-1
+
+    if [ ! -x "$(command -v gsettings)" ]; then
+        printf >&2 "error: missing the gsettings executable file\n"
+        return
+    fi
+
     if [ "$OPT_LIGHT" = 0 ]; then
-        plasma-apply-wallpaperimage "$lightbg"
+        gsettings set org.gnome.desktop.interface color-scheme prefer-light || exit 1
     elif [ "$OPT_DARK" = 0 ]; then
-        plasma-apply-wallpaperimage "$darkbg"
+        gsettings set org.gnome.desktop.interface color-scheme prefer-dark || exit 1
     fi
 }
 
 theme_kde () {
     [ "$OPT_KDE" != 0 ] && return
 
-    OPT_DRY=-1
+    OPTFLAGDRYRUN=-1
 
     if [ ! -x "$(command -v lookandfeeltool)" ]; then
         printf >&2 "error: missing the lookandfeeltool executable file\n"
@@ -103,12 +145,12 @@ theme_kde () {
 theme_alacritty () {
     [ "$OPT_ALACRITTY" != 0 ] && return
 
-    OPT_DRY=-1
+    OPTFLAGDRYRUN=-1
 
     if [ ! -f "$CONFIGDIR"/alacritty/alacritty_light.toml ] ||
        [ ! -f "$CONFIGDIR"/alacritty/alacritty_dark.toml ] ||
        [ ! -f "$CONFIGDIR"/alacritty/alacritty.toml ]; then
-        printf >&2 "error: missing the Alacrity theme file\n"
+        printf >&2 "error: missing the Alacritty theme file\n"
     fi
 
     cd "$CONFIGDIR"/alacritty || exit 1
@@ -124,10 +166,34 @@ theme_alacritty () {
     cd - > /dev/null || exit 1
 }
 
+theme_wezterm () {
+    [ "$OPT_WEZTERM" != 0 ] && return
+
+    OPTFLAGDRYRUN=-1
+
+    if [ ! -f "$CONFIGDIR"/wezterm/wezterm_light.lua ] ||
+       [ ! -f "$CONFIGDIR"/wezterm/wezterm_dark.lua ] ||
+       [ ! -f "$CONFIGDIR"/wezterm/wezterm.lua ]; then
+        printf >&2 "error: missing the Wezterm theme file\n"
+    fi
+
+    cd "$CONFIGDIR"/wezterm || exit 1
+
+    if [ "$OPT_LIGHT" = 0 ]; then
+        ln --force --symbolic wezterm_light.lua wezterm_theme.lua || exit 1
+    elif [ "$OPT_DARK" = 0 ]; then
+        ln --force --symbolic wezterm_dark.lua wezterm_theme.lua || exit 1
+    fi
+
+    touch wezterm.lua || exit 1
+
+    cd - > /dev/null || exit 1
+}
+
 theme_tmux () {
     [ "$OPT_TMUX" != 0 ] && return
 
-    OPT_DRY=-1
+    OPTFLAGDRYRUN=-1
 
     if [ ! -x "$(command -v "$BREWBINDIR"/tmux)" ]; then
         printf >&2 "error: missing the tmux executable file\n"
@@ -150,7 +216,7 @@ theme_tmux () {
 theme_emacs () {
     [ "$OPT_EMACS" != 0 ] && return
 
-    OPT_DRY=-1
+    OPTFLAGDRYRUN=-1
 
     if [ ! -x "$(command -v "$BREWBINDIR"/emacsclient)" ]; then
         printf >&2 "error: missing the emacsclient executable file\n"
@@ -167,7 +233,7 @@ theme_emacs () {
 theme_btop () {
     [ "$OPT_BTOP" != 0 ] && return
 
-    OPT_DRY=-1
+    OPTFLAGDRYRUN=-1
 
     if [ ! -x "$(command -v btop)" ]; then
         printf >&2 "error: missing the btop executable file\n"
@@ -193,7 +259,7 @@ theme_btop () {
 theme_rofi () {
     [ "$OPT_ROFI" != 0 ] && return
 
-    OPT_DRY=-1
+    OPTFLAGDRYRUN=-1
 
     if [ ! -f "$CONFIGDIR"/rofi/config_light.rasi ] ||
        [ ! -f "$CONFIGDIR"/rofi/config_dark.rasi ]; then
@@ -216,7 +282,7 @@ theme_rofi () {
 theme_lsd () {
     [ "$OPT_LSD" != 0 ] && return
 
-    OPT_DRY=-1
+    OPTFLAGDRYRUN=-1
 
     if [ ! -f "$CONFIGDIR"/lsd/colors_light.yaml ] ||
        [ ! -f "$CONFIGDIR"/lsd/colors_dark.yaml ]; then
@@ -235,8 +301,10 @@ theme_lsd () {
 }
 
 theme_wallpaper
+theme_gnome
 theme_kde
 theme_alacritty
+theme_wezterm
 theme_tmux
 theme_emacs
 theme_btop
@@ -244,7 +312,7 @@ theme_rofi
 theme_lsd
 
 # Dry run.
-if [ "$OPT_DRY" = 0 ]; then
+if [ "$OPTFLAGDRYRUN" = 0 ]; then
     printf >&2 "error: theme dry run\n"
     opthelp
     exit 2

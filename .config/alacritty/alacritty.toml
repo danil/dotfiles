@@ -40,7 +40,7 @@ hide_when_typing = true
 
 [[hints.enabled]]
 # binding = { key = "U", mods = "Control|Shift" }
-command = "kde-open" # "xdg-open" # On Linux/BSD. # "open" # On macOS. # { program = "cmd", args = [ "/c", "start", "" ] } # On Windows
+command = "gnome-open" # "xdg-open" # "kde-open" # On Linux/BSD. # "open" # On macOS. # { program = "cmd", args = [ "/c", "start", "" ] } # On Windowsu
 hyperlinks = true
 post_processing = true
 persist = false
@@ -52,7 +52,7 @@ regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:
 save_to_clipboard = false
 # This string contains all characters that are used as separators for
 # "semantic words" in Alacritty.
-semantic_escape_chars = ",│`|:\"' ()[]{}<>\t·⌑"
+semantic_escape_chars = ",│`|:;\"' ()[]{}<>\t·⌑"
 
 # NOTE: The `chars` of `key_bindings` sends a byte sequence to the running application.
 # The `chars` field writes the specified string to the terminal. This makes

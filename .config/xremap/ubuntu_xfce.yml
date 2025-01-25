@@ -23,15 +23,15 @@ keymap:
       C-t:
         remap:
           KEY_C:
-            launch: ["sudo", "-u", "danil", "-i", "/bin/bash", "-c", "alacritty"]
+            launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/bash", "-c", "alacritty"]
           KEY_G:
             launch: ["bash", "-c", "dbus-send --session --type=method_call --dest=org.freedesktop.Notifications /org/freedesktop/Notifications org.xfce.Notifyd.Quit"]
           Shift-1:
-            launch: ["sudo", "-u", "danil", "-i", "/bin/bash", "-c", "rofi -show combi -modi top -modes [run,drun,window,windowcd,combi,top,keys,filebrowser,recursivebrowser]"]
+            launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/bash", "-c", "rofi -show combi -modi top -modes [run,drun,window,windowcd,combi,top,keys,filebrowser,recursivebrowser]"]
           KEY_U:
             remap:
               KEY_C:
-                launch: ["sudo", "-u", "danil", "-i", "/bin/bash", "-c", "wezterm"]
+                launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/bash", "-c", "wezterm"]
               Shift-1:
                 launch: ["xfce4-appfinder"]
 
@@ -40,14 +40,14 @@ keymap:
       C-t:
         remap:
           KEY_I:
-            launch: ["sudo", "-u", "danil", "-i", "/bin/bash", "-c", "xcalib -invert -alter"]
+            launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/bash", "-c", "xcalib -invert -alter"]
 
   - name: Lock or lock and sleep/suspend or dim screen backlight <https://askubuntu.com/questions/1233858/xubuntu-20-04-suspend-waits-30-seconds>.
     remap:
       C-t:
         remap:
           KEY_L:
-            launch: ["sudo", "-u", "danil", "-i", "/bin/bash", "-c", "sleep 0.1 && xset dpms force off"]
+            launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/bash", "-c", "sleep 0.1 && xset dpms force off"]
           KEY_U:
             remap:
               KEY_L:
@@ -62,7 +62,7 @@ keymap:
       C-t:
         remap:
           KEY_S:
-            launch: ["sudo", "-u", "danil", "-i", "/bin/bash", "-c", "sleep 0.1 && xfce4-screensaver-command --activate"]
+            launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/bash", "-c", "sleep 0.1 && xfce4-screensaver-command --activate"]
           KEY_U:
             remap:
               KEY_S:
@@ -77,7 +77,7 @@ keymap:
       C-t:
         remap:
           KEY_M:
-            launch: ["sudo", "-u", "danil", "-i", "/bin/bash", "-c", "source /home/kutkevich.danil/.bashrc && find-cursor --color=#ff0000 --size=700 --line-width=10 --distance=70"]
+            launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/bash", "-c", "source /home/kutkevich.kutkevich.danil/.bashrc && find-cursor --color=#ff0000 --size=700 --line-width=10 --distance=70"]
 
   - name: Screen shot.
     remap:
@@ -97,9 +97,9 @@ keymap:
           KEY_W:
             remap:
               KEY_C:
-                launch: ["sudo", "-u", "danil", "-i", "/bin/bash", "-c", "xdotool windowkill `xdotool getactivewindow`"]
+                launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/bash", "-c", "xdotool windowkill `xdotool getactivewindow`"]
               KEY_M:
-                launch: ["sudo", "-u", "danil", "-i", "/bin/bash", "-c", "wmctrl -ir $(xdotool getactivewindow) -b add,maximized_vert,maximized_horz"]
+                launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/bash", "-c", "wmctrl -ir $(xdotool getactivewindow) -b add,maximized_vert,maximized_horz"]
           KEY_U:
             remap:
               KEY_W:
@@ -111,21 +111,21 @@ keymap:
     remap:
       C-t:
         remap:
-          KEY_D: { launch: ["sudo", "-u", "danil", "-i", "/bin/bash", "-c", "showdesktop"] }
+          KEY_D: { launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/bash", "-c", "showdesktop"] }
 
   - name: XFCE workspace.
     remap:
       C-t:
         remap:
-          KEY_1: { launch: ["sudo", "-u", "danil", "-i", "/bin/bash", "-c", "xdotool set_desktop 0"] }
-          KEY_2: { launch: ["sudo", "-u", "danil", "-i", "/bin/bash", "-c", "xdotool set_desktop 1"] }
-          KEY_3: { launch: ["sudo", "-u", "danil", "-i", "/bin/bash", "-c", "xdotool set_desktop 2"] }
-          KEY_4: { launch: ["sudo", "-u", "danil", "-i", "/bin/bash", "-c", "xdotool set_desktop 3"] }
-          KEY_5: { launch: ["sudo", "-u", "danil", "-i", "/bin/bash", "-c", "xdotool set_desktop 4"] }
-          KEY_6: { launch: ["sudo", "-u", "danil", "-i", "/bin/bash", "-c", "xdotool set_desktop 5"] }
-          KEY_7: { launch: ["sudo", "-u", "danil", "-i", "/bin/bash", "-c", "xdotool set_desktop 6"] }
-          KEY_8: { launch: ["sudo", "-u", "danil", "-i", "/bin/bash", "-c", "xdotool set_desktop 7"] }
-          KEY_9: { launch: ["sudo", "-u", "danil", "-i", "/bin/bash", "-c", "xdotool set_desktop 8"] }
+          KEY_1: { launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/bash", "-c", "xdotool set_desktop 0"] }
+          KEY_2: { launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/bash", "-c", "xdotool set_desktop 1"] }
+          KEY_3: { launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/bash", "-c", "xdotool set_desktop 2"] }
+          KEY_4: { launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/bash", "-c", "xdotool set_desktop 3"] }
+          KEY_5: { launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/bash", "-c", "xdotool set_desktop 4"] }
+          KEY_6: { launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/bash", "-c", "xdotool set_desktop 5"] }
+          KEY_7: { launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/bash", "-c", "xdotool set_desktop 6"] }
+          KEY_8: { launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/bash", "-c", "xdotool set_desktop 7"] }
+          KEY_9: { launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/bash", "-c", "xdotool set_desktop 8"] }
 
   - name: XFCE move window to workspace.
     remap:
@@ -133,12 +133,12 @@ keymap:
         remap:
           KEY_W:
             remap:
-              KEY_1: { launch: ["sudo", "-u", "danil", "-i", "/bin/bash", "-c", "xdotool getactivewindow set_desktop_for_window 0"] }
-              KEY_2: { launch: ["sudo", "-u", "danil", "-i", "/bin/bash", "-c", "xdotool getactivewindow set_desktop_for_window 1"] }
-              KEY_3: { launch: ["sudo", "-u", "danil", "-i", "/bin/bash", "-c", "xdotool getactivewindow set_desktop_for_window 2"] }
-              KEY_4: { launch: ["sudo", "-u", "danil", "-i", "/bin/bash", "-c", "xdotool getactivewindow set_desktop_for_window 3"] }
-              KEY_5: { launch: ["sudo", "-u", "danil", "-i", "/bin/bash", "-c", "xdotool getactivewindow set_desktop_for_window 4"] }
-              KEY_6: { launch: ["sudo", "-u", "danil", "-i", "/bin/bash", "-c", "xdotool getactivewindow set_desktop_for_window 5"] }
-              KEY_7: { launch: ["sudo", "-u", "danil", "-i", "/bin/bash", "-c", "xdotool getactivewindow set_desktop_for_window 6"] }
-              KEY_8: { launch: ["sudo", "-u", "danil", "-i", "/bin/bash", "-c", "xdotool getactivewindow set_desktop_for_window 7"] }
-              KEY_9: { launch: ["sudo", "-u", "danil", "-i", "/bin/bash", "-c", "xdotool getactivewindow set_desktop_for_window 8"] }
+              KEY_1: { launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/bash", "-c", "xdotool getactivewindow set_desktop_for_window 0"] }
+              KEY_2: { launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/bash", "-c", "xdotool getactivewindow set_desktop_for_window 1"] }
+              KEY_3: { launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/bash", "-c", "xdotool getactivewindow set_desktop_for_window 2"] }
+              KEY_4: { launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/bash", "-c", "xdotool getactivewindow set_desktop_for_window 3"] }
+              KEY_5: { launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/bash", "-c", "xdotool getactivewindow set_desktop_for_window 4"] }
+              KEY_6: { launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/bash", "-c", "xdotool getactivewindow set_desktop_for_window 5"] }
+              KEY_7: { launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/bash", "-c", "xdotool getactivewindow set_desktop_for_window 6"] }
+              KEY_8: { launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/bash", "-c", "xdotool getactivewindow set_desktop_for_window 7"] }
+              KEY_9: { launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/bash", "-c", "xdotool getactivewindow set_desktop_for_window 8"] }

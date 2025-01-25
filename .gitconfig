@@ -40,6 +40,9 @@
   # pager = `test \"$TERM\" = \"dumb\" && echo cat || echo less --IGNORE-CASE --LONG-PROMPT`
   pager = delta # Syntax-highlighting pager for git and diff output <https://github.com/dandavison/delta>.
 
+[advice]
+	addIgnoredFile = false
+	
 [interactive]
     diffFilter = delta --color-only # Syntax-highlighting pager for git and diff output <https://github.com/dandavison/delta>.
 

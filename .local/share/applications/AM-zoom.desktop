@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Zoom
 Comment=Zoom Video Conference
-Exec=zoom %U
+Exec=/home/kutkevich.danil/.local/bin/zoom %U
 Icon=/home/kutkevich.danil/.local/lib/appman/zoom/icons/zoom
 Terminal=false
 Type=Application

@@ -1,1 +1,1 @@
-/home/danil/.xinitrc
+/home/kutkevich.danil/.xinitrc
