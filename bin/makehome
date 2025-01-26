@@ -188,6 +188,7 @@ BREW_INS="$BREW_INS perl"
 BREW_INS="$BREW_INS go"
 BREW_INS="$BREW_INS golangci-lint" # Used by Emacs a-la gometalinter <https://github.com/golangci/golangci-lint>.
 BREW_INS="$BREW_INS gopls" # `gopls` implementing LSP Language Server Protocol, used by Emacs `xref-find-definitions` <https://github.com/golang/tools/tree/master/gopls>.
+BREW_INS="$BREW_INS pyroscope" BREW_INS_SRC="$BREW_INS_SRC pyroscope-io/brew"
 GOLN_INS="$GOLN_INS github.com/rogpeppe/godef@v1.1.2" # Used by Emacs for jump to the definition of the expression at point <https://github.com/rogpeppe/godef>.
 GOLN_INS="$GOLN_INS golang.org/x/tools/cmd/goimports@v0.15.0" # Used by Emacs as `gofmt` command replacement for adding/removing the Go import lines.
 GOLN_INS="$GOLN_INS golang.org/x/tools/cmd/gotype@v0.16.0" # Syntactic and semantic analysis similar to the go compiler <https://pkg.go.dev/gopkg.in/dnephin/gometalinter.v1#section-readme>, <https://pkg.go.dev/golang.org/x/tools/cmd/gotype?utm_source=godoc>.
@@ -366,7 +367,7 @@ BREW_INS="$BREW_INS erdtree" # Is a disk space usage a-la `ncdu`.
 BREW_INS="$BREW_INS htop" # APTO_INS="$APTO_INS htop" # A-la `top` <https://github.com/htop-dev/htop>.
 BREW_INS="$BREW_INS ncdu" # APTO_INS="$APTO_INS ncdu" # Disk space usage a-la `baobab` and `gt5` <https://en.wikipedia.org/wiki/Ncdu>.
 
-# # DevOps Benchmarks a-la `ab`.
+# # DevOps Performance Benchmarks utility tools a-la `ab`.
 # APTO_INS="$APTO_INS apache2-utils"
 # APTO_INS="$APTO_INS bonnie++"
 # APTO_INS="$APTO_INS dbench"
@@ -374,6 +375,7 @@ BREW_INS="$BREW_INS ncdu" # APTO_INS="$APTO_INS ncdu" # Disk space usage a-la `b
 # APTO_INS="$APTO_INS sysbench" # cpu and memory benchmarks.
 # APTO_INS="$APTO_INS tiobench" # TODO: find this package.
 # APTO_INS="$APTO_INS wrk" # c http benchmark tool <https://github.com/wg/wrk>.
+BREW_INS="$BREW_INS oha" # oha is a http benchmark tool <https://github.com/hatoo/oha>.
 
 # DevOps.
 # BREW_INS="$BREW_INS vault"# FAIL: Error: vault has been disabled because it will change its license to BUSL on the next release! It was disabled on 2024-09-27. # FIXME: BREW_INS="$BREW_INS hashicorp/tap/vault" BREW_INS_SRC="$BREW_INS_SRC hashicorp/tap" # APTO_INS="$APTO_INS vault" # vault util (hashicorp) # curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - && sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main", <https://vaultproject.io/downloads>.
@@ -383,7 +385,8 @@ BREW_INS="$BREW_INS ansible" # <https://github.com/ansible/ansible> # PIP3_INS="
 BREW_INS="$BREW_INS awscli" # PIP3_INS="$PIP3_INS awscli" # `aws --version` # s3 command line client # default amazon aws ec2 client <https://github.com/aws/aws-cli>.
 BREW_INS="$BREW_INS k9s" # derailed/k9s/k9s:, k8s/kubernetes client <https://github.com/derailed/k9s>.
 BREW_INS="$BREW_INS kubernetes-cli" # APTO_INS="$APTO_INS kubectl" # provides k8s/kubernetes kubectl util `deb https://apt.kubernetes.io kubernetes-xenial main` <https://kubernetes.io/docs/tasks/tools/install-kubectl> # APTO_INS="$APTO_INS gnupg2" # required by kubectl
-BREW_INS="$BREW_INS netdata" # monitoring <https://github.com/netdata/netdata>.
+BREW_INS="$BREW_INS netdata" # Netdata is a metrics monitoring <https://github.com/netdata/netdata>.
+BREW_INS="$BREW_INS prometheus" # Prometheus is a database for the metrics monitoring <https://github.com/prometheus/prometheus>.
 
 # X web browser.
 # HOWTO Download <https://browser.yandex.ru> & on [Ubuntu][] `apt install ~/Downloads/Yandex.deb`. # X11 Yandex (Google Chrome based) browser. # FLAT_INS="$FLAT_INS ru.yandex.Browser"
