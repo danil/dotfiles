@@ -8,5 +8,6 @@ USRLOCALBINDIR="$HOME"/.local/usr/local/bin
 BREWBINDIR=/home/linuxbrew/.linuxbrew/bin
 CONFIGDIR="$HOME"/.config
 SHAREDIR="$HOME"/.local/share
+SNAPDIR="$HOME"/snap
 APPIMAGEDIR="$HOME"/Applications
 NIXBINDIR="$HOME"/.nix-profile/bin

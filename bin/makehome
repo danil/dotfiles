@@ -541,8 +541,8 @@ APTO_INS="$APTO_INS gnome-tweaks" # former gnome-tweak-tool (in addition to gnom
 # APTO_INS="$APTO_INS libxkbcommon-dev"
 # APTO_INS="$APTO_INS libxkbcommon-x11-dev"
 
-# # X Mailspring is a GUI mail client written in C/C++ programming language
-# # <https://github.com/foundry376/mailspring>.
+# X Mailspring is a GUI mail client written in C/C++ programming language
+# <https://github.com/foundry376/mailspring>.
 # APTO_UNI="$APTO_UNI thunderbird"
 # APTO_UNI="$APTO_UNI thunderbird-gnome-support"
 # APTO_UNI="$APTO_UNI thunderbird-locale-en"
@@ -550,7 +550,7 @@ APTO_INS="$APTO_INS gnome-tweaks" # former gnome-tweak-tool (in addition to gnom
 # APTO_UNI="$APTO_UNI thunderbird-locale-en-us"
 # APTO_UNI="$APTO_UNI thunderbird-locale-ru"
 # APTO_UNI="$APTO_UNI thunderbird-locale-zh-hant"
-# SNAP_INS="$SNAP_INS mailspring"
+SNAP_INS="$SNAP_INS mailspring"
 
 # # X Brave browser a-la google chrome <https://github.com/brave>.
 # APTO_INS="$APTO_INS apt-transport-https"
