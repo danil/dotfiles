@@ -287,8 +287,21 @@ DialogWidth=720
 [Containments][2][Applets][88][Configuration][General]
 show_requestLogoutScreen=false
 
+[Containments][2][Applets][91]
+immutability=1
+plugin=org.kde.plasma.lock_logout
+
+[Containments][2][Applets][91][Configuration][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
+
+[Containments][2][Applets][91][Configuration][General]
+show_lockScreen=false
+show_requestLogoutScreen=false
+show_suspendToRam=true
+
 [Containments][2][General]
-AppletOrder=3;68;4;6;30;27;29;34;36;7;22;21;88;33
+AppletOrder=3;68;4;6;30;27;29;34;36;7;22;21;91;88;33
 
 [Containments][42]
 activityId=
@@ -308,7 +321,7 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][42][Applets][45][Configuration][General]
-launchers=applications:Alacritty.desktop,applications:google-chrome.desktop,applications:com.mitchellh.ghostty.desktop,applications:org.wezfurlong.wezterm.desktop,applications:firefox.desktop,applications:yandex-browser.desktop,preferred://filemanager,applications:gimp.desktop,applications:org.kde.krita.desktop,applications:org.kde.gwenview.desktop,applications:org.kde.spectacle.desktop,applications:org.kde.discover.desktop,applications:megasync.desktop,applications:dropbox.desktop,applications:albert.desktop,applications:org.kde.plasmashell.desktop,applications:org.gnome.Calculator.desktop,applications:systemsettings.desktop
+launchers=applications:Alacritty.desktop,applications:google-chrome.desktop,applications:mailspring_mailspring.desktop,applications:com.mitchellh.ghostty.desktop,applications:org.wezfurlong.wezterm.desktop,applications:firefox.desktop,applications:yandex-browser.desktop,preferred://filemanager,applications:gimp.desktop,applications:org.kde.krita.desktop,applications:org.kde.gwenview.desktop,applications:org.kde.spectacle.desktop,applications:org.kde.discover.desktop,applications:megasync.desktop,applications:dropbox.desktop,applications:albert.desktop,applications:org.kde.plasmashell.desktop,applications:org.gnome.Calculator.desktop,applications:systemsettings.desktop
 minimizeActiveTaskOnClick=false
 showOnlyCurrentActivity=false
 showOnlyCurrentDesktop=false
