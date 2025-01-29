@@ -1,2 +1,4 @@
 # <https://github.com/ghostty-org/ghostty/discussions/3663#discussioncomment-11696943>.
 # gtk-titlebar = false
+# gtk-adwaita = false
+# window-decoration = false
