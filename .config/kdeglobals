@@ -133,14 +133,14 @@ ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [General]
-ColorSchemeHash=babca25f3a5cf7ece26a85de212ab43d0a141257
+ColorSchemeHash=f13a5f93a8d2186748a87eaf56ec9fcef24073d5
 XftHintStyle=hintslight
 XftSubPixel=rgb
-fixed=Monospace,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
-font=Sans Serif,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
-menuFont=Sans Serif,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
-smallestReadableFont=Sans Serif,8,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
-toolBarFont=Sans Serif,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+fixed=Monospace,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+font=Sans Serif,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+menuFont=Sans Serif,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+smallestReadableFont=Sans Serif,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+toolBarFont=Sans Serif,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 
 [KDE]
 AnimationDurationFactor=0.08838834764831843
@@ -168,7 +168,7 @@ View Style=Simple
 [WM]
 activeBackground=227,229,231
 activeBlend=227,229,231
-activeFont=Sans Serif,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+activeFont=Sans Serif,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 activeForeground=35,38,41
 inactiveBackground=239,240,241
 inactiveBlend=239,240,241
