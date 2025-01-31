@@ -647,6 +647,7 @@ PACS_INS="$PACS_INS ventoy-bin" # Create bootable/live usb/iso a-la usb-creator-
 SNAP_INS="$SNAP_INS atril" # PDF viewer (remembers last page) for Mate DE (desktop environment) <https://github.com/mate-desktop/atril>.
 
 # Er Wbr.
+# APTO_INS="$APTO_INS evolution-ews" # MS Exchange Mail and Calendar.
 # BREW_INS="$BREW_INS teleport" # NOTE: Instead you should install an old version of tsh using script `curl https://goteleport.com/static/install.sh | bash -s 1.23.31`. Teleport TSH is SSH client for the Teleport, a modern SSH server for teams managing distributed infrastructure <https://github.com/gravitational/teleport>.
 # SNAP_INS="$SNAP_INS rocketchat-desktop"
 # HOWTO OpenVPN 3 client `sudo sh -c 'curl -sSfL https://packages.openvpn.net/packages-repo.gpg > /etc/apt/keyrings/openvpn.asc && echo "deb [signed-by=/etc/apt/keyrings/openvpn.asc] https://packages.openvpn.net/openvpn3/debian YOUR_UBUNTU_DISTRIBUTION_NM main" >> /etc/apt/sources.list.d/openvpn3.list'` <https://community.openvpn.net/openvpn/wiki/OpenVPN3Linux>, <https://github.com/OpenVPN/openvpn3>. # APTO_INS="$APTO_INS openvpn3" # BREW_INS="$BREW_INS openvpn"
