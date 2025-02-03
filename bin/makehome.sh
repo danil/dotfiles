@@ -65,8 +65,6 @@ PIP2_UPD_CLI="pip2 install --user --upgrade"
 PIP3_INS_CLI="pip3 install --user"
 PIP3_UPD_CLI="pip3 install --user --upgrade"
 
-optflagcheck () { { [ "$1" != "$EOL" ] && [ "$1" != '--' ]; } || { printf >&2 "missing argument %s\n" "$2"; return 2; } } # Avoid infinite loop.
-
 # MAKEHOMEUSAGE="usage: ${CMD:=${0##*/}} { --install | --update | --config  } [--apt] [--homebrew] [--appimage] [--pacstall] [--snap] [--flatpak] [--go] [--rust] [--python2] [--python3] [--update] [--etc] [--root] [--home=\"\$HOME\"]"
 MAKEHOMEUSAGE="usage: makehome { --install | --update | --config  } [--apt] [--homebrew] [--appimage] [--pacstall] [--snap] [--flatpak] [--go] [--rust] [--python2] [--python3] [--update] [--etc] [--root] [--home=\"\$HOME\"]"
 
@@ -159,6 +157,8 @@ makehome () {
     [ "$OPTFLAGDRYRUN" = 0 ] && printf >&2 "error: makehome dry run\n%s\n" "$MAKEHOMEUSAGE" && exit 2 # Dry run.
     printf "%s successfully\n" "${CMD:=${0##*/}}"
 }
+
+optflagcheck () { { [ "$1" != "$EOL" ] && [ "$1" != '--' ]; } || { printf >&2 "missing argument %s\n" "$2"; return 2; } } # Avoid infinite loop.
 
 MAKEINSTUSAGE="usage: makeinst --make=0 --description=\"text\" [ --install-command=\"apt install\" --install-packages=\"pkg pkg2\" { --install-fast-exit-line | --install-skip-exit-line | --install-fast-exit-loop | --install-skip-exit-loop } ] [ --install-source-command=\"apt install\" --install-source-packages=\"pkg pkg2\" { --install-source-fast-exit-line | --install-source-skip-exit-line | --install-source-fast-exit-loop | --install-source-skip-exit-loop } ] [ --uninstall-command=\"apt uninstall\" --uninstall-packages=\"pkg pkg2\" { --uninstall-fast-exit-line | --uninstall-skip-exit-line | --uninstall-fast-exit-loop | --uninstall-skip-exit-loop } ]"
 
