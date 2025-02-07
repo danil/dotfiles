@@ -37,14 +37,22 @@
         "seen": [
           "ThreadSearchBar",
           "ActivityListButton",
-          "ModeToggle"
+          "ModeToggle",
+          "ToolbarSnooze"
         ]
       },
       "translation": {
         "disabled": [
-          "ru"
+          "ru",
+          "lb"
         ],
         "automatic": []
+      },
+      "sending": {
+        "sounds": false
+      },
+      "notifications": {
+        "sounds": false
       }
     },
     "credentials": {
