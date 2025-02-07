@@ -186,14 +186,15 @@ BREW_INS="$BREW_INS perl"
 # BREW_INS="$BREW_INS gcc@5" # <https://stackoverflow.com/questions/59227456/go-1-13-gcc-5-not-in-path#62795608>.
 # BREW_INS="$BREW_INS parca" # FAIL: Missing server starting scrip. # Parca is a continuous profiling <https://github.com/parca-dev/parca>.
 # GOLN_INS="$GOLN_INS github.com/mvdan/gofumpt@v0.5.0" # Used by Emacs as `gofmt` command replacement instead of `goimports` for adding/removing go import lines.
+# GOLN_INS="$GOLN_INS github.com/rogpeppe/godef@v1.1.2" # Instead using `gopls` is a `LSP` Language Server Protocol server. # Used by Emacs for jump to the definition of the expression at point <https://github.com/rogpeppe/godef>.
+# GOLN_INS="$GOLN_INS golang.org/x/tools/cmd/goimports@v0.15.0" # Instead using `gopls` is a `LSP` Language Server Protocol server. # Used by Emacs as `gofmt` command replacement for adding/removing the Go import lines.
+# GOLN_INS="$GOLN_INS golang.org/x/tools/cmd/gotype@v0.16.0" # Instead using `gopls` is a `LSP` Language Server Protocol server. # Syntactic and semantic analysis similar to the go compiler <https://pkg.go.dev/gopkg.in/dnephin/gometalinter.v1#section-readme>, <https://pkg.go.dev/golang.org/x/tools/cmd/gotype?utm_source=godoc>.
 BREW_INS="$BREW_INS go"
 BREW_INS="$BREW_INS golangci-lint" # Used by Emacs a-la gometalinter <https://github.com/golangci/golangci-lint>.
 BREW_INS="$BREW_INS gopls" # `gopls` implementing LSP Language Server Protocol, used by Emacs `xref-find-definitions` <https://github.com/golang/tools/tree/master/gopls>.
 BREW_INS="$BREW_INS graphviz" # CGI Graph Visualization Tools <https://gitlab.com/graphviz/graphviz>.
 BREW_INS="$BREW_INS pyroscope" BREW_INS_SRC="$BREW_INS_SRC pyroscope-io/brew" # Grafana Pyroscope is a continuous profiling <https://github.com/grafana/pyroscope>.
-GOLN_INS="$GOLN_INS github.com/rogpeppe/godef@v1.1.2" # Used by Emacs for jump to the definition of the expression at point <https://github.com/rogpeppe/godef>.
-GOLN_INS="$GOLN_INS golang.org/x/tools/cmd/goimports@v0.15.0" # Used by Emacs as `gofmt` command replacement for adding/removing the Go import lines.
-GOLN_INS="$GOLN_INS golang.org/x/tools/cmd/gotype@v0.16.0" # Syntactic and semantic analysis similar to the go compiler <https://pkg.go.dev/gopkg.in/dnephin/gometalinter.v1#section-readme>, <https://pkg.go.dev/golang.org/x/tools/cmd/gotype?utm_source=godoc>.
+GOLN_INS="$GOLN_INS github.com/divan/expvarmon@v0.0.0-20230430154648-8e0b3d2778b3" # Expvarmon is an `expvar` terminal UI <https://github.com/divan/expvarmon>.
 
 # Rust programming language <https://github.com/rust-lang/rust>.
 # APTO_INS="$APTO_INS libgtk-3-dev" # required by fontfinder https://github.com/mmstick/fontfinder
