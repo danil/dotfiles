@@ -136,12 +136,12 @@ BREW_INS="$BREW_INS tmux"
 
 # *nix interactive shell & terminal emulator & multiplexer.
 # BREW_INS="$BREW_INS bash-completion" # FAIL: Conflicts with util-linux. # Programmable completion.
+# BREW_INS="$BREW_INS fish" # Fish shell a-la Bash shell.
 # BREW_INS="$BREW_INS nnn" # terminal file manager a-la mc/midnight commander https://github.com/jarun/nnn
+# BREW_INS="$BREW_INS nushell" # <https://github.com/nushell/nushell>.
 # RUST_INS="$RUST_INS bat" # print file lines with syntax highlighting, is an cat replacement.
 # RUST_INS="$RUST_INS racer" # compilation failing all the time <https://github.com/racer-rust/racer/issues/868#issuecomment-459017685>, rust code completion https://github.com/phildawes/racer
 APTO_INS="$APTO_INS xterm" # backup/fallback terminal additional to the st/stterm/alacritty
-BREW_INS="$BREW_INS fish" # Fish shell a-la Bash shell.
-BREW_INS="$BREW_INS nushell" # <https://github.com/nushell/nushell>.
 BREW_INS="$BREW_INS xsel" # APTO_INS="$APTO_INS xsel" # copy selection in termina to the xorg clipboard (used by emacs and urxvt) <https://wiki.archlinux.org/index.php/rxvt-unicode#Automatic_Script_Management>.
 PACS_INS="$PACS_INS alacritty" # RUST_INS="$RUST_INS alacritty" # APTO_INS="$APTO_INS cmake libfontconfig1-dev libfreetype6-dev libxcb-xfixes0-dev libxkbcommon-dev pkg-config" # Alacritty dependency. # Alacritty Terminal/console emulator a-la st/xterm <https://github.com/alacritty/alacritty>.
 PACS_INS="$PACS_INS wezterm-app" # BREW_INS="$BREW_INS wezterm" BREW_INS_SRC="$BREW_INS_SRC wez/wezterm-linuxbrew" # APTO_INS="$APTO_INS wezterm" # <https://wezfurlong.org/wezterm/install/linux.html#using-the-apt-repo>. # APPM_INS="$APPM_INS wezterm" # GPU-accelerated cross-platform terminal and multiplexer written in Rust programing language <https://github.com/wez/wezterm>.
