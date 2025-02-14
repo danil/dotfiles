@@ -321,7 +321,7 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][42][Applets][45][Configuration][General]
-launchers=applications:Alacritty.desktop,applications:google-chrome.desktop,applications:mailspring_mailspring.desktop,applications:com.mitchellh.ghostty.desktop,applications:org.wezfurlong.wezterm.desktop,applications:firefox.desktop,applications:yandex-browser.desktop,preferred://filemanager,applications:gimp.desktop,applications:org.kde.krita.desktop,applications:org.kde.gwenview.desktop,applications:org.kde.spectacle.desktop,applications:org.kde.discover.desktop,applications:megasync.desktop,applications:dropbox.desktop,applications:albert.desktop,applications:org.kde.plasmashell.desktop,applications:org.gnome.Calculator.desktop,applications:systemsettings.desktop
+launchers=applications:Alacritty.desktop,applications:google-chrome.desktop,applications:mailspring_mailspring.desktop,applications:com.mitchellh.ghostty.desktop,applications:org.wezfurlong.wezterm.desktop,applications:firefox.desktop,preferred://filemanager,applications:gimp.desktop,applications:org.kde.krita.desktop,applications:org.kde.gwenview.desktop,applications:org.kde.spectacle.desktop,applications:org.kde.discover.desktop,applications:megasync.desktop,applications:dropbox.desktop,applications:albert.desktop,applications:org.kde.plasmashell.desktop,applications:org.gnome.Calculator.desktop,applications:systemsettings.desktop
 minimizeActiveTaskOnClick=false
 showOnlyCurrentActivity=false
 showOnlyCurrentDesktop=false
@@ -353,6 +353,9 @@ lastScreen=0
 location=0
 plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
+
+[Containments][77][General]
+positions={"1536x960":[]}
 
 [Containments][77][Wallpaper][org.kde.image][General]
 Image=file:///home/kutkevich.danil/.local/share/backgrounds/2021-07-29.18.50.41-v2.jpg

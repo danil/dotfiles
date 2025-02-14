@@ -133,7 +133,7 @@ ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [General]
-ColorSchemeHash=babca25f3a5cf7ece26a85de212ab43d0a141257
+ColorSchemeHash=0be804dba87e3512aeb4be3d78ed981f59f0f2f4
 XftHintStyle=hintslight
 XftSubPixel=rgb
 fixed=Monospace,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
