@@ -4,7 +4,6 @@
 
 # Common packages.
 # APTO_INS="$APTO_INS inxi" # inxi --graphics <https://github.com/smxi/inxi>.
-# APTO_INS="$APTO_INS jp2a" # Converts JPEG to ASCII.
 # APTO_INS="$APTO_INS linux-generic-hwe-20.04-edge" # Linux/kernel 5.11 for Ubuntu 20.04.
 # APTO_INS="$APTO_INS makepasswd" # Password generator.
 # APTO_INS="$APTO_INS protobuf-compiler" # Version is to old/outdated(
@@ -40,7 +39,6 @@ BREW_INS="$BREW_INS dos2unix" # APTO_INS="$APTO_INS dos2unix" # Convert text fil
 BREW_INS="$BREW_INS duf" # Disk Usage/Free Utility a-la better df <https://github.com/muesli/duf>.
 BREW_INS="$BREW_INS eza" # A-la ls alternative <https://github.com/eza-community/eza>.
 BREW_INS="$BREW_INS fd" # Required by Emacs `fd-dired`. # RUST_INS="$RUST_INS fd-find" # `fd` is a find in filesystem but `find` incompatible <https://github.com/sharkdp/fd>.
-BREW_INS="$BREW_INS figlet" # figlet/taag ASCII art <https://github.com/patorjk/figlet-cli>, <https://patorjk.com/software/taag>.
 BREW_INS="$BREW_INS flatbuffers" # A-la protobuf <https://github.com/google/flatbuffers>.
 BREW_INS="$BREW_INS jsonnet" # <https://github.com/google/jsonnet>.
 BREW_INS="$BREW_INS lsd" # A-la ls alternative <https://github.com/lsd-rs/lsd>.
@@ -54,7 +52,6 @@ BREW_INS="$BREW_INS the_silver_searcher" # APTO_INS="$APTO_INS silversearcher-ag
 BREW_INS="$BREW_INS tldr" # Reader of documentation in format a-la simplified man page <https://github.com/tldr-pages/tldr-c-client>.
 BREW_INS="$BREW_INS tree" # APTO_INS="$APTO_INS tree" # Displays an indented directory tree.
 BREW_INS="$BREW_INS ugrep" # ugrep provides `ug` utility a-la grep and ag (the silver searcher) rg (the platinum searcher) all in one <https://github.com/genivia/ugrep>.
-BREW_INS="$BREW_INS uni2ascii" # APTO_INS="$APTO_INS uni2ascii" # To/from Unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`.
 BREW_INS="$BREW_INS util-linux" # APTO_INS="$APTO_INS uuid-runtime" # APTO_INS="$APTO_INS whois" # Provides `whois`, `uuidgen` (uuid generator), column command and also provides `uni2ascii` (to/from unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`) <https://github.com/util-linux/util-linux> , <https://serverfault.com/questions/103359/how-to-create-a-uuid-in-bash#103366>.
 BREW_INS="$BREW_INS wdiff" # Difference wordwise/word per word basis (a word is anything between whitespace).
 RUST_INS="$RUST_INS cpc" # cli calculator/units converter <https://github.com/probablykasper/cpc>.
@@ -598,6 +595,14 @@ SNAP_INS="$SNAP_INS webinar" # SNAP_CON="$SNAP_CON webinar:camera core:camera" #
 # APPM_INS="$APPM_INS gimp"
 # FLAT_INS="$FLAT_INS org.gimp.GIMP"
 APTO_INS="$APTO_INS gimp"
+
+# Convert to JPEG to ASCII
+# <sup><sub>Converting image/picture to jpeg gif png  to ASCII. <https://en.wikipedia.org/wiki/ASCII> <https://en.wikipedia.org/wiki/ASCII_art></sup></sub>
+# APTO_INS="$APTO_INS jp2a"
+# BREW_INS="$BREW_INS ascii-image-converter" BREW_INS_SRC="$BREW_INS_SRC TheZoraiz/ascii-image-converter" # CONS: Text conversion is not supporting. <https://github.com/TheZoraiz/ascii-image-converter>.
+# BREW_INS="$BREW_INS asciigen" APTO_INS="$APTO_INS libavutil-dev libavformat-dev libavcodec-dev libswscale-dev" # FAIL: Error `Illegal instruction at address 0x11ae96c`.
+# BREW_INS="$BREW_INS figlet" # figlet/taag ASCII art <https://github.com/patorjk/figlet-cli>, <https://patorjk.com/software/taag>, <https://github.com/patorjk/figlet.js>.
+# BREW_INS="$BREW_INS uni2ascii" # APTO_INS="$APTO_INS uni2ascii" # To/from Unicode and to/from percent-encoding converter `echo -ne '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82' | ascii2uni -q -aJ | uni2ascii -q -aJ`.
 
 # X image/picture.
 # APTO_INS="$APTO_INS imagemagick" # <https://github.com/imagemagick/imagemagick>.
