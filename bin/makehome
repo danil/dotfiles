@@ -138,7 +138,7 @@ BREW_INS="$BREW_INS tmux"
 # BREW_INS="$BREW_INS nushell" # <https://github.com/nushell/nushell>.
 # RUST_INS="$RUST_INS bat" # print file lines with syntax highlighting, is an cat replacement.
 # RUST_INS="$RUST_INS racer" # compilation failing all the time <https://github.com/racer-rust/racer/issues/868#issuecomment-459017685>, rust code completion https://github.com/phildawes/racer
-# SNAC_INS="$SNAC_INS ghostty" # FAIL: Has no titlebar and has no window border at all. # Ghostty terminal <https://github.com/ghostty-org/ghostty>.
+# SNAC_INS="$SNAC_INS ghostty" # FAIL: Has no titlebar and has no window border at all <https://reddit.com/r/Ghostty/comments/1iiep2j>. # Ghostty terminal <https://github.com/ghostty-org/ghostty>.
 APTO_INS="$APTO_INS xterm" # backup/fallback terminal additional to the st/stterm/alacritty
 BREW_INS="$BREW_INS xsel" # APTO_INS="$APTO_INS xsel" # copy selection in termina to the xorg clipboard (used by emacs and urxvt) <https://wiki.archlinux.org/index.php/rxvt-unicode#Automatic_Script_Management>.
 PACS_INS="$PACS_INS alacritty" # RUST_INS="$RUST_INS alacritty" # APTO_INS="$APTO_INS cmake libfontconfig1-dev libfreetype6-dev libxcb-xfixes0-dev libxkbcommon-dev pkg-config" # Alacritty dependency. # Alacritty Terminal/console emulator a-la st/xterm <https://github.com/alacritty/alacritty>.
