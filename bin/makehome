@@ -270,7 +270,7 @@ BREW_INS="$BREW_INS vim" # APTO_INS="$APTO_INS vim" # Vim is awesome a-la emacs,
 # APTO_INS="$APTO_INS texinfo"
 #
 # Emacs installation by homebrew and run without X11.
-BREW_INS="$BREW_INS emacs" # APTO_INS="$APTO_INS emacs-nox" # Instead compiling from source into `~/.local/usr/local/bin` # TODO: Maybe use homebrew?
+APTO_INS="$APTO_INS emacs-nox" # BREW_INS="$BREW_INS emacs" # FAIL: Error of Emacs 30.1 provided by Homebrew: Eager macro-expansion failure: (error "Shortdoc f function ‘f-older-p’: bad keyword ‘:noeval’") # Instead compiling from source into `~/.local/usr/local/bin` # TODO: Maybe use homebrew?
 #
 # Emacs runtime dependency.
 # PIP3_INS="$PIP3_INS bashate" # Instead using ShellCheck. # Bash scripts checker a-la pep8 <https://github.com/openstack/bashate>.
