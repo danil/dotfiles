@@ -197,21 +197,21 @@ theme_tmux () {
 
     OPTFLAGDRYRUN=-1
 
-    if [ ! -x "$(command -v "$BREWBINDIR"/tmux)" ]; then
+    if [ ! -x "$(command -v "$HOMEBINDIR"/tmux)" ]; then
         printf >&2 "error: missing the tmux executable file\n"
         return
     fi
 
     if [ "$OPT_LIGHT" = 0 ]; then
-        "$BREWBINDIR"/tmux -S /tmp/tmux-pair set -t $(hostname) status-bg brightwhite
-        "$BREWBINDIR"/tmux -S /tmp/tmux-pair set -t $(hostname) status-fg black
-        "$BREWBINDIR"/tmux -S /tmp/tmux-pair set -t $(hostname) status-left "#[bg=brightred]#S#[bg=default]#(echo $USER)@#(hostname)#[bg=default]#[bg=brightmagenta]Ctl-t#[bg=default]"
-        "$BREWBINDIR"/tmux -S /tmp/tmux-pair set-window-option -t $(hostname) window-status-current-style bg=brightblue
+        "$HOMEBINDIR"/tmux -S /tmp/tmux-pair set -t $(hostname) status-bg brightwhite
+        "$HOMEBINDIR"/tmux -S /tmp/tmux-pair set -t $(hostname) status-fg black
+        "$HOMEBINDIR"/tmux -S /tmp/tmux-pair set -t $(hostname) status-left "#[bg=brightred]#S#[bg=default]#(echo $USER)@#(hostname)#[bg=default]#[bg=brightmagenta]Ctl-t#[bg=default]"
+        "$HOMEBINDIR"/tmux -S /tmp/tmux-pair set-window-option -t $(hostname) window-status-current-style bg=brightblue
     elif [ "$OPT_DARK" = 0 ]; then
-        "$BREWBINDIR"/tmux -S /tmp/tmux-pair set -t $(hostname) status-bg black
-        "$BREWBINDIR"/tmux -S /tmp/tmux-pair set -t $(hostname) status-fg brightwhite
-        "$BREWBINDIR"/tmux -S /tmp/tmux-pair set -t $(hostname) status-left "#[bg=red]#S#[bg=default]#(echo $USER)@#(hostname)#[bg=default]#[bg=magenta]Ctl-t#[bg=default]"
-        "$BREWBINDIR"/tmux -S /tmp/tmux-pair set-window-option -t $(hostname) window-status-current-style bg=brightblue
+        "$HOMEBINDIR"/tmux -S /tmp/tmux-pair set -t $(hostname) status-bg black
+        "$HOMEBINDIR"/tmux -S /tmp/tmux-pair set -t $(hostname) status-fg brightwhite
+        "$HOMEBINDIR"/tmux -S /tmp/tmux-pair set -t $(hostname) status-left "#[bg=red]#S#[bg=default]#(echo $USER)@#(hostname)#[bg=default]#[bg=magenta]Ctl-t#[bg=default]"
+        "$HOMEBINDIR"/tmux -S /tmp/tmux-pair set-window-option -t $(hostname) window-status-current-style bg=brightblue
     fi
 }
 
@@ -220,7 +220,7 @@ theme_emacs () {
 
     OPTFLAGDRYRUN=-1
 
-    if [ ! -x "$(command -v "$BREWBINDIR"/emacsclient)" ]; then
+    if [ ! -x "$(command -v "$HOMEBINDIR"/emacsclient)" ]; then
         printf >&2 "error: missing the emacsclient executable file\n"
         return
     fi
