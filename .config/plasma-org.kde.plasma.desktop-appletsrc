@@ -207,8 +207,8 @@ plugin=org.kde.plasma.systemmonitor
 
 [Containments][2][Applets][36][Configuration]
 CurrentPreset=org.kde.plasma.systemmonitor
-PreloadWeight=90
-popupHeight=92
+PreloadWeight=100
+popupHeight=94
 popupWidth=187
 
 [Containments][2][Applets][36][Configuration][Appearance]
@@ -321,7 +321,7 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][42][Applets][45][Configuration][General]
-launchers=applications:Alacritty.desktop,applications:google-chrome.desktop,applications:mailspring_mailspring.desktop,applications:com.mitchellh.ghostty.desktop,applications:org.wezfurlong.wezterm.desktop,applications:firefox.desktop,preferred://filemanager,applications:gimp.desktop,applications:org.kde.krita.desktop,applications:org.kde.gwenview.desktop,applications:org.kde.spectacle.desktop,applications:org.kde.discover.desktop,applications:megasync.desktop,applications:dropbox.desktop,applications:albert.desktop,applications:org.kde.plasmashell.desktop,applications:org.gnome.Calculator.desktop,applications:systemsettings.desktop
+launchers=applications:Alacritty.desktop,applications:google-chrome.desktop,applications:mailspring_mailspring.desktop,applications:org.wezfurlong.wezterm.desktop,applications:firefox.desktop,applications:gimp.desktop,applications:org.kde.krita.desktop,preferred://filemanager,applications:org.kde.gwenview.desktop,applications:org.kde.spectacle.desktop,applications:org.kde.discover.desktop,applications:megasync.desktop,applications:dropbox.desktop,applications:albert.desktop,applications:org.kde.plasmashell.desktop,applications:org.gnome.Calculator.desktop,applications:systemsettings.desktop
 minimizeActiveTaskOnClick=false
 showOnlyCurrentActivity=false
 showOnlyCurrentDesktop=false
@@ -398,7 +398,7 @@ immutability=1
 plugin=org.kde.plasma.vault
 
 [Containments][8][Applets][13][Configuration]
-PreloadWeight=55
+PreloadWeight=60
 
 [Containments][8][Applets][14]
 immutability=1
@@ -488,7 +488,7 @@ immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][8][Applets][26][Configuration]
-PreloadWeight=67
+PreloadWeight=43
 
 [Containments][8][Applets][37]
 immutability=1

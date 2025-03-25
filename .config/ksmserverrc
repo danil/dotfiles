@@ -2,16 +2,16 @@
 count=0
 
 [Session: saved at previous logout]
-clientId1=1044f4603f4478000173857041100000028450006
-clientId2=1044f4603f4478000173869171900000028450007
-clientId3=1044f4603f4478000173953721500000028450013
+clientId1=1044f4603f4478000174275047500000028660016
+clientId2=1044f4603f4478000174280332800000029030004
+clientId3=1044f4603f4478000174280341300000029030005
 count=3
-program1=/usr/bin/albert
-program2=/home/kutkevich.danil/.dropbox-dist/dropbox-lnx.x86_64-217.4.4417/dropbox
-program3=/usr/bin/megasync
-restartCommand1=/usr/bin/albert,-session,1044f4603f4478000173857041100000028450006_1739538152_875060
-restartCommand2=/home/kutkevich.danil/.dropbox-dist/dropbox-lnx.x86_64-217.4.4417/dropbox,-session,1044f4603f4478000173869171900000028450007_1739538152_875075
-restartCommand3=/usr/bin/megasync,-session,1044f4603f4478000173953721500000028450013_1739538152_875120
+program1=/usr/bin/megasync
+program2=/home/kutkevich.danil/.dropbox-dist/dropbox-lnx.x86_64-220.4.4126/dropbox
+program3=/usr/bin/albert
+restartCommand1=/usr/bin/megasync,-session,1044f4603f4478000174275047500000028660016_1742832933_517719
+restartCommand2=/home/kutkevich.danil/.dropbox-dist/dropbox-lnx.x86_64-220.4.4126/dropbox,-session,1044f4603f4478000174280332800000029030004_1742832933_517806
+restartCommand3=/usr/bin/albert,-session,1044f4603f4478000174280341300000029030005_1742832933_517697
 restartStyleHint1=0
 restartStyleHint2=0
 restartStyleHint3=0
