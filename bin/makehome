@@ -38,6 +38,7 @@ BREW_INS="$BREW_INS csvkit" # Conver CSV to JSON `csvjson path/to/file.csv` <htt
 BREW_INS="$BREW_INS dos2unix" # APTO_INS="$APTO_INS dos2unix" # Convert text file line endings between CRLF and LF.
 BREW_INS="$BREW_INS duf" # Disk Usage/Free Utility a-la better df <https://github.com/muesli/duf>.
 BREW_INS="$BREW_INS eza" # A-la ls alternative <https://github.com/eza-community/eza>.
+BREW_INS="$BREW_INS fastfetch" # Fastfetch is a system information tool. <https://github.com/fastfetch-cli/fastfetch>.
 BREW_INS="$BREW_INS fd" # Required by Emacs `fd-dired`. # RUST_INS="$RUST_INS fd-find" # `fd` is a find in filesystem but `find` incompatible <https://github.com/sharkdp/fd>.
 BREW_INS="$BREW_INS flatbuffers" # A-la protobuf <https://github.com/google/flatbuffers>.
 BREW_INS="$BREW_INS jsonnet" # <https://github.com/google/jsonnet>.
