@@ -4,10 +4,55 @@
 # gtk-titlebar = false
 
 font-family = "Monospace"
+# font-family = "PragmataPro Mono Liga"
 font-size = "19"
 # font-style-bold = Bold
 # font-style-italic = Italic
 # font-style-bold-italic = Bold Italic
-cursor-style = "block"
+# cursor-style = "block"
 cursor-color = "#ff0000"
 cursor-style-blink = ""
+
+# "Physical" key binding fix <https://github.com/ghostty-org/ghostty/discussions/3584#discussioncomment-11685931>.
+# Ctrl+C - Interrupt (Cancel)
+keybind = ctrl+physical:c=text:\x03
+# Ctrl+D - Delete character / EOF
+keybind = ctrl+physical:d=text:\x04
+# Ctrl+W - Delete previous word
+keybind = ctrl+physical:w=text:\x17
+# Ctrl+A - Move cursor to the beginning of the line
+keybind = ctrl+physical:a=text:\x01
+# Ctrl+E - Move cursor to the end of the line
+keybind = ctrl+physical:e=text:\x05
+# Ctrl+Z - Suspend process
+keybind = ctrl+physical:z=text:\x1A
+# Ctrl+L - Clear screen
+keybind = ctrl+physical:l=text:\x0C
+# Ctrl+H - Backspace (delete previous character)
+keybind = ctrl+physical:h=text:\x08
+# Ctrl+G - Abort current command
+keybind = ctrl+physical:g=text:\x07
+# Ctrl+U - Kill (clear) the current line
+keybind = ctrl+physical:u=text:\x15
+# Ctrl+Y - Yank (paste last killed text)
+keybind = ctrl+physical:y=text:\x19
+# Ctrl+F - Move cursor forward one character
+keybind = ctrl+physical:f=text:\x06
+# Ctrl+B - Move cursor backward one character
+keybind = ctrl+physical:b=text:\x02
+# Ctrl+N - Move to the next command in history
+keybind = ctrl+physical:n=text:\x0E
+# Ctrl+P - Move to the previous command in history
+keybind = ctrl+physical:p=text:\x10
+# Ctrl+R - Search history backward
+keybind = ctrl+physical:r=text:\x12
+# Ctrl+S - Search history forward
+keybind = ctrl+physical:s=text:\x13
+# Ctrl+T - Transpose characters
+keybind = ctrl+physical:t=text:\x14
+# Ctrl+K - Kill text from cursor to end of line
+keybind = ctrl+physical:k=text:\x0B
+# Ctrl+Q - Resume terminal output (if paused with Ctrl+S)
+keybind = ctrl+physical:q=text:\x11
+# Ctrl+V - Insert next character literally
+keybind = ctrl+physical:v=text:\x16
