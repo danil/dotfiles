@@ -2,3 +2,12 @@
 # Window decoration [ auto client server false ].
 # window-decoration = auto
 # gtk-titlebar = false
+
+font-family = "Monospace"
+font-size = "19"
+# font-style-bold = Bold
+# font-style-italic = Italic
+# font-style-bold-italic = Bold Italic
+cursor-style = "block"
+cursor-color = "#ff0000"
+cursor-style-blink = ""
