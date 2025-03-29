@@ -1,9 +1,8 @@
 [Activities][LastVirtualDesktop]
-eb70e3e8-3d8b-43c9-af2e-8db10633dfbf=a2fb8fb8-6650-4dac-b3d6-e0994b43ceb9
+eb70e3e8-3d8b-43c9-af2e-8db10633dfbf=4e30d98b-f6ea-427f-a17a-67cc94fb2742
 
 [Desktops]
 Id_1=edc9436b-87d4-443e-ab67-b78c314051b8
-Id_10=af0e9217-cc9d-4357-b86f-6d16af378d77
 Id_2=a2fb8fb8-6650-4dac-b3d6-e0994b43ceb9
 Id_3=4e30d98b-f6ea-427f-a17a-67cc94fb2742
 Id_4=fe7d9d22-9a4a-4b6a-b04c-1bda516f0712
@@ -12,7 +11,7 @@ Id_6=992280d9-52d8-4deb-9be8-ecd3438351ca
 Id_7=e50844ba-4cae-4d3b-abba-f47c2ec0991e
 Id_8=7dd91a25-dd0d-4bf7-9bdd-ff93da3bcf67
 Id_9=52168259-38de-4f13-b6c5-be32236bbf8b
-Number=10
+Number=9
 Rows=1
 
 [Effect-hidecursor]
