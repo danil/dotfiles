@@ -6,12 +6,10 @@
 font-family = "Monospace"
 # font-family = "PragmataPro Mono Liga"
 font-size = "19"
-# font-style-bold = Bold
-# font-style-italic = Italic
-# font-style-bold-italic = Bold Italic
 # cursor-style = "block"
-cursor-color = "#ff0000"
 cursor-style-blink = ""
+
+config-file = ghostty_theme.conf
 
 # "Physical" key binding fix <https://github.com/ghostty-org/ghostty/discussions/3584#discussioncomment-11685931>.
 # Ctrl+C - Interrupt (Cancel)
