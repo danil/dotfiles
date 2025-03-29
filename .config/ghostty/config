@@ -16,6 +16,9 @@ cursor-style-blink = ""
 
 # <https://ghostty.org/docs/features/theme>,
 # <https://ghostty.org/docs/config/reference#theme>.
+# <https://ghostty.org/docs/config/reference#palette>,
+# <https://wiki.gentoo.org/wiki/Ghostty#Custom_themes>,
+# <https://github.com/ghostty-org/ghostty/issues/2685>.
 theme = light:light.conf,dark:dark.conf
 
 # # <https://ghostty.org/docs/config/keybind/reference#toggle_quick_terminal>,
