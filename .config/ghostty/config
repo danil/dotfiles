@@ -18,6 +18,13 @@ cursor-style-blink = ""
 # <https://ghostty.org/docs/config/reference#theme>.
 theme = light:light.conf,dark:dark.conf
 
+# # <https://ghostty.org/docs/config/keybind/reference#toggle_quick_terminal>,
+# # <https://github.com/ghostty-org/ghostty/discussions/3733>.
+# keybind = global:shift+enter=toggle_quick_terminal
+# quick-terminal-position = "top"
+# quick-terminal-screen = "mouse"
+# quick-terminal-animation-duration = 0
+
 # "Physical" key binding fix <https://github.com/ghostty-org/ghostty/discussions/3584#discussioncomment-11685931>.
 # Ctrl+C - Interrupt (Cancel)
 keybind = ctrl+physical:c=text:\x03
