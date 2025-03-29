@@ -1,3 +1,8 @@
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
+# Ghostty Configuration
+# <https://ghostty.org/docs/config#xdg-configuration-path-(all-platforms):>.
+
 # <https://github.com/ghostty-org/ghostty/discussions/3663#discussioncomment-11696943>.
 # Window decoration [ auto client server false ].
 # window-decoration = auto
