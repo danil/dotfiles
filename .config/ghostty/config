@@ -15,6 +15,9 @@
 
 font-family = "Monospace"
 # font-family = "PragmataPro Mono Liga"
+# font-family = "Iosevka SS08"
+# font-family = "Iosevka"
+# font-family = "Fantasque Sans Mono"
 font-size = "19"
 # cursor-style = "block"
 cursor-style-blink = ""
