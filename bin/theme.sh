@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-USAGE="usage: ${CMD:=${0##*/}} { --light | --dark } [--gnome] [--kde] [--alacritty] [--ghostty] [--wezterm] [--tmux] [--emacs] [--btop] [--rofi] [--lsd] [--mailspring]"
+USAGE="usage: ${CMD:=${0##*/}} { --light | --dark } [--gnome] [--kde] [--alacritty] [--wezterm] [--tmux] [--emacs] [--btop] [--rofi] [--lsd] [--mailspring]"
 
 OPT_ALL=0
 
@@ -20,7 +20,6 @@ optflag () {
             --gnome     ) OPT_GNOME=0; OPT_ALL=-1;;
             --kde       ) OPT_KDE=0; OPT_ALL=-1;;
             --alacritty ) OPT_ALACRITTY=0; OPT_ALL=-1;;
-            --ghostty   ) OPT_GHOSTTY=0; OPT_ALL=-1;;
             --wezterm   ) OPT_WEZTERM=0; OPT_ALL=-1;;
             --tmux      ) OPT_TMUX=0; OPT_ALL=-1;;
             --emacs     ) OPT_EMACS=0; OPT_ALL=-1;;
@@ -49,7 +48,6 @@ if [ "$OPT_ALL" = 0 ]; then
     OPT_GNOME=0
     OPT_KDE=0
     OPT_ALACRITTY=0
-    OPT_GHOSTTY=0
     OPT_WEZTERM=0
     OPT_TMUX=0
     OPT_EMACS=0
@@ -166,30 +164,6 @@ theme_alacritty () {
     fi
 
     touch alacritty.toml || exit 1
-
-    cd - > /dev/null || exit 1
-}
-
-theme_ghostty () {
-    [ "$OPT_GHOSTTY" != 0 ] && return
-
-    OPTFLAGDRYRUN=-1
-
-    if [ ! -f "$CONFIGDIR"/ghostty/theme_light.conf ] ||
-       [ ! -f "$CONFIGDIR"/ghostty/theme_dark.conf ] ||
-       [ ! -f "$CONFIGDIR"/ghostty/config ]; then
-        printf >&2 "error: missing the Ghostty theme file\n"
-    fi
-
-    cd "$CONFIGDIR"/ghostty || exit 1
-
-    if [ "$OPT_LIGHT" = 0 ]; then
-        ln --force --symbolic theme_light.conf ghostty_theme.conf || exit 1
-    elif [ "$OPT_DARK" = 0 ]; then
-        ln --force --symbolic theme_dark.conf ghostty_theme.conf || exit 1
-    fi
-
-    touch config || exit 1
 
     cd - > /dev/null || exit 1
 }
@@ -352,7 +326,6 @@ theme_wallpaper
 theme_gnome
 theme_kde
 theme_alacritty
-theme_ghostty
 theme_wezterm
 theme_tmux
 theme_emacs
