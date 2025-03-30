@@ -15,7 +15,10 @@
 
 font-family = "Monospace"
 # font-family = "PragmataPro Mono Liga"
+# Iosevka SS08 is a PragmataPro variant
+# <https://github.com/ghostty-org/ghostty/discussions/4495#discussioncomment-12200250>.
 # font-family = "Iosevka SS08"
+# font-feature = "-dlig"
 # font-family = "Iosevka"
 # font-family = "Fantasque Sans Mono"
 font-size = "19"
