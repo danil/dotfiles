@@ -42,7 +42,7 @@ SNAC_UNI_CLI="sudo snap remove"
 # <https://github.com/flatpak/flatpak>.
 FLAT_INS_SRC_CLI="flatpak remote-add --if-not-exists"
 FLAT_UNI_SRC_CLI="flatpak remote-delete"
-FLAT_INS_CLI="flatpak install --verbose flathub"
+FLAT_INS_CLI="flatpak install flathub"
 
 # Go package
 # <https://go.dev/ref/mod#go-install>.
