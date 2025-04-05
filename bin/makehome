@@ -128,7 +128,7 @@ BREW_INS="$BREW_INS git-delta" # Syntax-highlighting pager for git and diff outp
 # <https://github.com/tmux/tmux>.
 # APTO_INS="$APTO_INS automake pkg-config libevent-dev libncurses-dev" # Tmux compiltime dependency.
 # APTO_INS="$APTO_INS byacc" # Also `byacc`: preventing compiltime dependency FAIL: `./etc/ylwrap: line 175: yacc: command not found`.
-# BREW_INS="$BREW_INS xclip" # APTO_INS="$APTO_INS xclip" # Integration of X11/xorg clipboard/copy/past and tmux and so on <https://github.com/astrand/xclip>, <https://github.com/tmux-plugins/tmux-yank#linux-requirements>.
+# BREW_INS="$BREW_INS xclip" # APTO_INS="$APTO_INS xclip" # Integration of X11/xorg clipboard/copy/past and tmux and so on <https://github.com/astrand/xclip>, <https://github.com/tmux-plugins/tmux-yank#linux-requirements>. CONS: Wayland is not supporting.
 BREW_INS="$BREW_INS tmux"
 # GOLN_INS="$GOLN_INS github.com/danil/statusline0example/statusline2h28@v0.0.6" # ERROR: statusline2h28@v0.0.6: invalid version. # Used as status line `set -g status-right '"#{=48:pane_title}" #($(echo ~danil)/bin/statusline2 -1)'`.
 
@@ -138,7 +138,7 @@ BREW_INS="$BREW_INS tmux"
 # BREW_INS="$BREW_INS fish" # Fish shell a-la Bash shell.
 # BREW_INS="$BREW_INS nnn" # terminal file manager a-la mc/midnight commander https://github.com/jarun/nnn
 # BREW_INS="$BREW_INS nushell" # <https://github.com/nushell/nushell>.
-# BREW_INS="$BREW_INS xclip" # APTO_INS="$APTO_INS xclip" # Integration of X11/xorg clipboard/copy/past and tmux and so on <https://github.com/astrand/xclip>, <https://github.com/tmux-plugins/tmux-yank#linux-requirements>.
+# BREW_INS="$BREW_INS xclip" # APTO_INS="$APTO_INS xclip" # Integration of X11/xorg clipboard/copy/past and tmux and so on <https://github.com/astrand/xclip>, <https://github.com/tmux-plugins/tmux-yank#linux-requirements>. CONS: Wayland is not supporting.
 # RUST_INS="$RUST_INS bat" # print file lines with syntax highlighting, is an cat replacement.
 # RUST_INS="$RUST_INS racer" # compilation failing all the time <https://github.com/racer-rust/racer/issues/868#issuecomment-459017685>, rust code completion https://github.com/phildawes/racer
 APTO_INS="$APTO_INS xterm" # backup/fallback terminal additional to the st/stterm/alacritty
