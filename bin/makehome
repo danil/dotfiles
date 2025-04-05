@@ -133,6 +133,7 @@ BREW_INS="$BREW_INS tmux"
 # GOLN_INS="$GOLN_INS github.com/danil/statusline0example/statusline2h28@v0.0.6" # ERROR: statusline2h28@v0.0.6: invalid version. # Used as status line `set -g status-right '"#{=48:pane_title}" #($(echo ~danil)/bin/statusline2 -1)'`.
 
 # *nix interactive shell & terminal emulator & multiplexer.
+# APTO_INS="$APTO_INS wl-clipboard" # Copy/Past on Wayland `wl-copy`/`wl-paste` a-la `xsel` <https://github.com/bugaevc/wl-clipboard>.
 # BREW_INS="$BREW_INS bash-completion" # FAIL: Conflicts with util-linux. # Programmable completion.
 # BREW_INS="$BREW_INS fish" # Fish shell a-la Bash shell.
 # BREW_INS="$BREW_INS nnn" # terminal file manager a-la mc/midnight commander https://github.com/jarun/nnn
