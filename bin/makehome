@@ -564,13 +564,13 @@ SNAP_INS="$SNAP_INS mailspring"
 # APTO_INS="$APTO_INS gnupg"
 
 # X Fonts.
-# APTO_INS="$APTO_INS font-manager" # list bitmap ??? fonts
-# APTO_INS="$APTO_INS fonts-fantasque-sans" # instead installed manually into /usr/local/share/fonts # terminal/code/mono/programming font (gnome-terminal issue https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=960629)
-# APTO_INS="$APTO_INS fonts-hack-ttf" # instead installed manually into /usr/local/share/fonts # terminal/code/mono/programming font.
-# APTO_INS="$APTO_INS fonts-noto" # TODO: Awesome serif font?
-FLAT_INS="$FLAT_INS com.github.fontmatrix.Fontmatrix" # <https://github.com/fontmatrix/fontmatrix>.
-FLAT_INS="$FLAT_INS io.github.mmstick.FontFinder" # <https://github.com/mmstick/fontfinder>.
-FLAT_INS="$FLAT_INS org.gnome.FontManager" # <https://github.com/fontmanager/font-manager>.
+# # APTO_INS="$APTO_INS font-manager" # list bitmap ??? fonts
+# # APTO_INS="$APTO_INS fonts-fantasque-sans" # instead installed manually into /usr/local/share/fonts # terminal/code/mono/programming font (gnome-terminal issue https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=960629)
+# # APTO_INS="$APTO_INS fonts-hack-ttf" # instead installed manually into /usr/local/share/fonts # terminal/code/mono/programming font.
+# # APTO_INS="$APTO_INS fonts-noto" # TODO: Awesome serif font?
+# FLAT_INS="$FLAT_INS com.github.fontmatrix.Fontmatrix" # <https://github.com/fontmatrix/fontmatrix>.
+# FLAT_INS="$FLAT_INS io.github.mmstick.FontFinder" # <https://github.com/mmstick/fontfinder>.
+# FLAT_INS="$FLAT_INS org.gnome.FontManager" # <https://github.com/fontmanager/font-manager>.
 
 # X pCloud.
 # <https://pcloud.com>,
