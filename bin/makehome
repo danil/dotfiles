@@ -422,7 +422,7 @@ APTO_INS="$APTO_INS xcalib" # `xcalib -i -a` invert colors on xorg/xrandr <https
 ## X11 Suckless dwm.
 # # APTO_INS="$APTO_INS gxkb" # A-la xxkb (destroy xchainkeys).
 # # APTO_INS="$APTO_INS stterm" # instead compiling from source into ~/.local/usr/local/bin # succless st terminal.
-# # APTO_INS="$APTO_INS volumeicon-alsa" # instead using i3 (i3status) # sound/volume icon indicator <https://github.com/Maato/volumeicon>.
+# # APTO_INS="$APTO_INS volumeicon-alsa" # Instead using i3 (i3status). # Audio sound volume icon indicator <https://github.com/Maato/volumeicon>.
 # # APTO_INS="$APTO_INS xfdashboard" # A-la compiz expose/gnome overview (works only with running xfce session).
 # APTO_INS="$APTO_INS build-essential" # suckless dependency.
 # APTO_INS="$APTO_INS i3lock" # xscreensaver replacement.
@@ -458,7 +458,7 @@ APTO_INS="$APTO_INS xcalib" # `xcalib -i -a` invert colors on xorg/xrandr <https
 # APTO_INS="$APTO_INS libxcb1 libxcb-keysyms1" # sxhkd runtime dependency.
 # APTO_INS="$APTO_INS libxcb1 libxcb-keysyms1-dev" # sxhkd compiltime dependency.
 
-# # X11 volumeicon.
+# # X11 volumeicon is an audio sound volum.
 # # APTO_INS="$APTO_INS intltool autogen" # volumeicon-alsa compiltime dependency.
 # # APTO_INS="$APTO_INS libasound2-dev libglib2.0-dev libgtk-3-dev" # volumeicon-alsa compiltime dependency.
 # APTO_INS="$APTO_INS volumeicon-alsa"
