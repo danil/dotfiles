@@ -656,6 +656,7 @@ BREW_INS="$BREW_INS ffmpeg" # Watch webcam `ffplay -fs /dev/video0` <https://git
 BREW_INS="$BREW_INS marp-cli" # Markdown to presentation (PDF) from command line <https://github.com/marp-team/marp>.
 BREW_INS="$BREW_INS mpv" # APTO_INS="$APTO_INS mpv" # A-la mplayer replacement.
 BREW_INS="$BREW_INS xdotool"
+FLAT_INS="$FLAT_INS com.github.hluk.copyq" # Clipboard manager <https://github.com/hluk/copyq>.
 PACS_INS="$PACS_INS ventoy-bin" # Create bootable/live usb/iso a-la usb-creator-gtk <https://ventoy.net>.
 SNAP_INS="$SNAP_INS atril" # PDF viewer (remembers last page) for Mate DE (desktop environment) <https://github.com/mate-desktop/atril>.
 
