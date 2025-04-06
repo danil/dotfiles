@@ -1,51 +1,51 @@
 updateInfoAdded=true
 
 [gtkconfig.upd]
-ctime=1742750291
+ctime=1743882480
 done=gtk_theme,dont_use_gtk_css_for_window_decorations,remove_deprecated_gtk4_option
-mtime=1741700483
+mtime=1743564957
 
 [kwin.upd]
-ctime=1742750292
+ctime=1743882484
 done=remove_deprecated_gtk4_option,kwin-6.0-reset-active-mouse-screen,kwin-6.0-delete-desktop-switching-shortcuts,kwin-6.0-remove-breeze-tabbox-default,kwin-6.1-remove-gridview-expose-shortcuts
-mtime=1741781808
+mtime=1743564998
 
 [migrate-calendar-to-plugin-id.upd]
-ctime=1742750403
+ctime=1743882487
 done=kwin-6.1-remove-gridview-expose-shortcuts,migrate-calendar-plugins
-mtime=1741700612
+mtime=1743565103
 
 [plasma-systemmonitor.upd]
-ctime=1742750465
+ctime=1743882534
 done=memory-column
-mtime=1741700602
+mtime=1743565090
 
 [plasma6.0-remove-dpi-settings.upd]
-ctime=1742750403
+ctime=1743882487
 done=migrate-calendar-plugins,plasma6.0-remove-dpi-settings
-mtime=1741700612
+mtime=1743565104
 
 [plasma6.0-remove-old-shortcuts.upd]
-ctime=1742750403
+ctime=1743882487
 done=plasma6.0-remove-dpi-settings,plasma6.0-remove-old-shortcuts
-mtime=1741700613
+mtime=1743565104
 
 [plasma6.3-update-clipboard-database-2-to-3.upd]
-ctime=1742750403
+ctime=1743882487
 done=plasma6.3-update-clipboard-database-2-to-3
-mtime=1741700612
+mtime=1743565104
 
 [plasmashell-6.0-keep-custom-position-of-panels.upd]
-ctime=1742750403
+ctime=1743882487
 done=plasma6.0-remove-old-shortcuts,plasmashell-6.0-keep-custom-position-of-panels,plasma6.3-update-clipboard-database-2-to-3
-mtime=1741700613
+mtime=1743565104
 
 [plasmashell-6.0-keep-default-floating-setting-for-plasma-5-panels.upd]
-ctime=1742750403
+ctime=1743882487
 done=plasmashell-6.0-keep-custom-position-of-panels,plasmashell-6.0-keep-default-floating-setting-for-plasma-5-panels
-mtime=1741700613
+mtime=1743565104
 
 [spectacle.upd]
-ctime=1742750397
+ctime=1743882483
 done=plasmashell-6.0-keep-default-floating-setting-for-plasma-5-panels,24.02.0-video_format,24.02.0-keep_old_save_location,24.02.0-rename_settings,24.02.0-keep_old_filename_templates,24.05.2-change_placeholder_format
-mtime=1741700722
+mtime=1743565228

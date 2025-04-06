@@ -321,7 +321,7 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][42][Applets][45][Configuration][General]
-launchers=file:///tmp/.mount_remp12924795013614832208/com.mitchellh.ghostty.desktop,applications:google-chrome.desktop,applications:mailspring_mailspring.desktop,applications:Alacritty.desktop,applications:org.wezfurlong.wezterm.desktop,applications:firefox.desktop,applications:gimp.desktop,applications:org.kde.krita.desktop,preferred://filemanager,applications:org.kde.gwenview.desktop,applications:org.kde.spectacle.desktop,applications:org.kde.discover.desktop,applications:megasync.desktop,applications:dropbox.desktop,applications:albert.desktop,applications:org.kde.plasmashell.desktop,applications:org.gnome.Calculator.desktop,applications:systemsettings.desktop
+launchers=file:///tmp/.mount_remp12924795013614832208/com.mitchellh.ghostty.desktop,applications:google-chrome.desktop,applications:mailspring_mailspring.desktop,applications:Alacritty.desktop,applications:org.wezfurlong.wezterm.desktop,applications:firefox.desktop,applications:gimp.desktop,applications:org.kde.krita.desktop,preferred://filemanager,applications:org.kde.gwenview.desktop,applications:org.kde.spectacle.desktop,applications:org.kde.discover.desktop,applications:megasync.desktop,applications:dropbox.desktop,applications:albert.desktop,applications:com.github.hluk.copyq.desktop,applications:org.kde.plasmashell.desktop,applications:org.gnome.Calculator.desktop,applications:systemsettings.desktop
 minimizeActiveTaskOnClick=false
 showOnlyCurrentActivity=false
 showOnlyCurrentDesktop=false
@@ -436,7 +436,7 @@ immutability=1
 plugin=org.kde.plasma.clipboard
 
 [Containments][8][Applets][18][Configuration]
-PreloadWeight=70
+PreloadWeight=100
 
 [Containments][8][Applets][19]
 immutability=1
