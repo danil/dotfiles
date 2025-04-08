@@ -119,8 +119,12 @@ theme_gnome () {
 
     if [ "$OPT_LIGHT" = 0 ]; then
         gsettings set org.gnome.desktop.interface color-scheme prefer-light || exit 1
+        dconf write /org/gnome/desktop/interface/color-scheme "'prefer-light'"
+        dconf write /org/gnome/desktop/interface/gtk-theme "'Breeze'"
     elif [ "$OPT_DARK" = 0 ]; then
         gsettings set org.gnome.desktop.interface color-scheme prefer-dark || exit 1
+        dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
+        dconf write /org/gnome/desktop/interface/gtk-theme "'Breeze-Dark'"
     fi
 }
 
