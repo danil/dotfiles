@@ -1,4 +1,5 @@
 [Desktop Entry]
+Hidden=true
 Categories=Network;FileTransfer;
 Comment=Seafile desktop sync client
 Exec=seafile-applet
@@ -8,4 +9,3 @@ Name=Seafile
 TryExec=seafile-applet
 Type=Application
 X-GNOME-Autostart-enabled=false
-Hidden=true

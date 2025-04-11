@@ -1,4 +1,5 @@
 [Desktop Entry]
+Hidden=false
 Comment=Power management for the Xfce desktop
 Exec=xfce4-power-manager
 Icon=xfpm-ac-adapter
@@ -8,5 +9,3 @@ StartupNotify=false
 Terminal=false
 Type=Application
 X-GNOME-Autostart-enabled=false
-Hidden=false
-

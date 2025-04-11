@@ -1,7 +1,7 @@
 [Desktop Entry]
+Hidden=true
 Comment=A clipboard history manager
 Exec=glipper
 Name=Glipper
 OnlyShowIn=GNOME;Unity;
 Type=Application
-Hidden=true

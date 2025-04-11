@@ -1,4 +1,5 @@
 [Desktop Entry]
+Hidden=true
 Comment=Keyboard layout indicator for tray
 Encoding=UTF-8
 Exec=xxkb
@@ -7,5 +8,3 @@ OnlyShowIn=XFCE;
 Terminal=false
 Type=Application
 X-GNOME-Autostart-enabled=false
-Hidden=true
-

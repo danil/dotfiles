@@ -1,4 +1,5 @@
 [Desktop Entry]
+Hidden=true
 Name=PackageKit Update Applet
 Icon=system-software-update
 Exec=pk-update-icon --interval=21600
@@ -8,5 +9,3 @@ Categories=Utility;GTK;TrayIcon;
 NotShowIn=KDE;GNOME;
 Encoding=UTF-8
 X-GNOME-Autostart-enabled=false
-Hidden=true
-

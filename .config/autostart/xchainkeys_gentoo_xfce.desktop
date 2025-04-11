@@ -1,4 +1,5 @@
 [Desktop Entry]
+Hidden=true
 Encoding=UTF-8
 Exec=xchainkeys -f /home/kutkevich.danil/.config/xchainkeys/gentoo_xfce.conf
 Name=xchainkeys
@@ -6,4 +7,3 @@ OnlyShowIn=XFCE;
 Terminal=false
 Type=Application
 X-GNOME-Autostart-enabled=false
-Hidden=true
