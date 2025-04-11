@@ -162,6 +162,7 @@ APTO_INS="$APTO_INS build-essential" # Compiler?
 APTO_INS="$APTO_INS devscripts" # ???
 APTO_INS="$APTO_INS make" # Required by all)
 APTO_INS="$APTO_INS valgrind" # Find memory leaks <https://valgrind.org/docs/manual/quick-start.html>.
+BREW_INS="$BREW_INS ccls" # ccls implementing LSP Language Server Protocol, used by Emacs <https://github.com/MaskRay/ccls>.
 BREW_INS="$BREW_INS gcc"
 
 # Clang compiler front end for the C, C++, Objective-C (depends on LLVM).
