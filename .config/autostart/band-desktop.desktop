@@ -1,0 +1,9 @@
+[Desktop Entry]
+Hidden=true
+Type=Application
+Version=1.0
+Name=band-desktop
+Comment=band-desktopstartup script
+Exec=/opt/Band/band-desktop
+StartupNotify=false
+Terminal=false
