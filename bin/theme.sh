@@ -108,7 +108,7 @@ theme_wallpaper () {
 
 
 theme_gnome () {
-    [ "$OPT_KDE" != 0 ] && return
+    [ "$OPT_GNOME" != 0 ] && return
 
     OPTFLAGDRYRUN=-1
 
