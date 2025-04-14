@@ -397,7 +397,7 @@ BREW_INS="$BREW_INS prometheus" # Prometheus is a database for the metrics monit
 # FAIL: Freeze while updating. <sup><sub>Hang while updating by `aptitude full-upgrade`.</sub></sup>
 # HOWTO Download <https://browser.yandex.ru> & on [Ubuntu][] `apt install ~/Downloads/Yandex.deb`. # X11 Yandex (Google Chrome based) browser. # FLAT_INS="$FLAT_INS ru.yandex.Browser"
 # HOWTO Download <https://google.com/chrome> & on [Ubuntu][] `apt install ~/Downloads/google-chrome-stable_current_amd64.deb`. # Google Chrome browser <https://google.com/chrome>. # APPM_INS="$APPM_INS google-chrome" # FLAT_INS="$FLAT_INS com.google.Chrome" # APTO_INS="$APTO_INS google-chrome-stable" APTO_INS="$APTO_INS apt-transport-https"
-# PACS_INS="$PACS_INS firefox-bin" APTO_UNI="$APTO_UNI firefox" SNAP_UNI="$SNAP_UNI firefox" # APPM_INS="$APPM_INS firefox" # FAIL: Empty icon. # APTO_INS="$APTO_INS firefox" # FLAT_INS="$FLAT_INS org.mozilla.firefox" # SNAP_INS="$SNAP_INS firefox" # X11 Firefox browser <https://mozilla.org/firefox>.
+PACS_INS="$PACS_INS firefox-bin" APTO_UNI="$APTO_UNI firefox" SNAP_UNI="$SNAP_UNI firefox" # APPM_INS="$APPM_INS firefox" # FAIL: Firefox installed from Snap uses Gnome cursor instead of KDE cursor. # APTO_INS="$APTO_INS firefox" # FLAT_INS="$FLAT_INS org.mozilla.firefox" # SNAP_INS="$SNAP_INS firefox" # X11 Firefox browser <https://mozilla.org/firefox>.
 
 # X Wayland/desktop.
 # APTO_INS="$APTO_INS libevdev-dev pkg-config" # `evremap` dependency <https://github.com/wez/evremap>.
