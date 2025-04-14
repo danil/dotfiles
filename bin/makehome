@@ -139,13 +139,13 @@ BREW_INS="$BREW_INS tmux"
 # BREW_INS="$BREW_INS nnn" # terminal file manager a-la mc/midnight commander https://github.com/jarun/nnn
 # BREW_INS="$BREW_INS nushell" # <https://github.com/nushell/nushell>.
 # BREW_INS="$BREW_INS xclip" # APTO_INS="$APTO_INS xclip" # Integration of X11/xorg clipboard/copy/past and tmux and so on <https://github.com/astrand/xclip>, <https://github.com/tmux-plugins/tmux-yank#linux-requirements>. CONS: Wayland is not supporting.
+# PACS_INS="$PACS_INS wezterm-app" # BREW_INS="$BREW_INS wezterm" BREW_INS_SRC="$BREW_INS_SRC wez/wezterm-linuxbrew" # APTO_INS="$APTO_INS wezterm" # <https://wezfurlong.org/wezterm/install/linux.html#using-the-apt-repo>. # APPM_INS="$APPM_INS wezterm" # GPU-accelerated cross-platform terminal and multiplexer written in Rust programing language <https://github.com/wez/wezterm>.
 # RUST_INS="$RUST_INS bat" # print file lines with syntax highlighting, is an cat replacement.
 # RUST_INS="$RUST_INS racer" # compilation failing all the time <https://github.com/racer-rust/racer/issues/868#issuecomment-459017685>, rust code completion https://github.com/phildawes/racer
 APTO_INS="$APTO_INS xterm" # backup/fallback terminal additional to the st/stterm/alacritty
 BREW_INS="$BREW_INS xsel" # APTO_INS="$APTO_INS xsel" # copy selection in termina to the xorg clipboard (used by emacs and urxvt) <https://wiki.archlinux.org/index.php/rxvt-unicode#Automatic_Script_Management>.
 PACS_INS="$PACS_INS alacritty" # RUST_INS="$RUST_INS alacritty" # APTO_INS="$APTO_INS cmake libfontconfig1-dev libfreetype6-dev libxcb-xfixes0-dev libxkbcommon-dev pkg-config" # Alacritty dependency. # Alacritty Terminal/console emulator a-la st/xterm <https://github.com/alacritty/alacritty>.
 PACS_INS="$PACS_INS ghostty-app" # SNAC_INS="$SNAC_INS ghostty" # FAIL: Has no titlebar and has no window border at all <https://reddit.com/r/Ghostty/comments/1iiep2j>. # Ghostty terminal <https://github.com/ghostty-org/ghostty>.
-PACS_INS="$PACS_INS wezterm-app" # BREW_INS="$BREW_INS wezterm" BREW_INS_SRC="$BREW_INS_SRC wez/wezterm-linuxbrew" # APTO_INS="$APTO_INS wezterm" # <https://wezfurlong.org/wezterm/install/linux.html#using-the-apt-repo>. # APPM_INS="$APPM_INS wezterm" # GPU-accelerated cross-platform terminal and multiplexer written in Rust programing language <https://github.com/wez/wezterm>.
 
 # InfoSec (information security).
 APTO_INS="$APTO_INS libpam-u2f" # YubiKey dependency <https://support.yubico.com/hc/en-us/articles/360016649099-Ubuntu-Linux-Login-Guide-U2F>.
