@@ -380,6 +380,7 @@ BREW_INS="$BREW_INS ncdu" # APTO_INS="$APTO_INS ncdu" # Disk space usage a-la `b
 # APTO_INS="$APTO_INS sysbench" # cpu and memory benchmarks.
 # APTO_INS="$APTO_INS tiobench" # TODO: find this package.
 # APTO_INS="$APTO_INS wrk" # c http benchmark tool <https://github.com/wg/wrk>.
+# ZIGL_INS="$ZIGL_INS github.com/andrewrk/poop" # poop is a CLI command line tool compares the performance of multiple commands <https://github.com/andrewrk/poop>.
 BREW_INS="$BREW_INS oha" # oha is a http benchmark tool <https://github.com/hatoo/oha>.
 
 # DevOps.
