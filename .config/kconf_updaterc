@@ -6,12 +6,12 @@ done=gtk_theme,dont_use_gtk_css_for_window_decorations,remove_deprecated_gtk4_op
 mtime=1743564957
 
 [kwin.upd]
-ctime=1743882484
+ctime=1744996514
 done=remove_deprecated_gtk4_option,kwin-6.0-reset-active-mouse-screen,kwin-6.0-delete-desktop-switching-shortcuts,kwin-6.0-remove-breeze-tabbox-default,kwin-6.1-remove-gridview-expose-shortcuts
 mtime=1743564998
 
 [migrate-calendar-to-plugin-id.upd]
-ctime=1743882487
+ctime=1744996552
 done=kwin-6.1-remove-gridview-expose-shortcuts,migrate-calendar-plugins
 mtime=1743565103
 
@@ -21,27 +21,27 @@ done=memory-column
 mtime=1743565090
 
 [plasma6.0-remove-dpi-settings.upd]
-ctime=1743882487
+ctime=1744996552
 done=migrate-calendar-plugins,plasma6.0-remove-dpi-settings
 mtime=1743565104
 
 [plasma6.0-remove-old-shortcuts.upd]
-ctime=1743882487
+ctime=1744996552
 done=plasma6.0-remove-dpi-settings,plasma6.0-remove-old-shortcuts
 mtime=1743565104
 
 [plasma6.3-update-clipboard-database-2-to-3.upd]
-ctime=1743882487
+ctime=1744996552
 done=plasma6.3-update-clipboard-database-2-to-3
 mtime=1743565104
 
 [plasmashell-6.0-keep-custom-position-of-panels.upd]
-ctime=1743882487
+ctime=1744996552
 done=plasma6.0-remove-old-shortcuts,plasmashell-6.0-keep-custom-position-of-panels,plasma6.3-update-clipboard-database-2-to-3
 mtime=1743565104
 
 [plasmashell-6.0-keep-default-floating-setting-for-plasma-5-panels.upd]
-ctime=1743882487
+ctime=1744996552
 done=plasmashell-6.0-keep-custom-position-of-panels,plasmashell-6.0-keep-default-floating-setting-for-plasma-5-panels
 mtime=1743565104
 
