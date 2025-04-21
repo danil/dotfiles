@@ -310,7 +310,7 @@
         "__cls": "Account"
       }
     ],
-    "accountsVersion": 5,
+    "accountsVersion": 6,
     "containerFolderDefault": ""
   }
 }
