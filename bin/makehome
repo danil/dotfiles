@@ -79,6 +79,7 @@ APTO_INS="$APTO_INS netcat-openbsd" # BREW_INS="$BREW_INS netcat" # FAIL: Brew's
 BREW_INS="$BREW_INS aria2" # Download client a-la curl/wget `aria2c https://your.tld/path/to/your.file`.
 BREW_INS="$BREW_INS axel" # Download client a-la curl/wget.
 BREW_INS="$BREW_INS curl wcurl trurl" # APTO_INS="$APTO_INS curl" # The curl is a-la Wget <https://github.com/curl/curl>, <https://github.com/curl/wcurl>, <https://github.com/curl/trurl>.
+BREW_INS="$BREW_INS curlie" # Is a curl wrapper.
 BREW_INS="$BREW_INS freerdp" # xfreerdp is a remote desktop protocol for win https://github.com/freerdp/freerdp
 BREW_INS="$BREW_INS gmailctl" # gmail filters generation.
 BREW_INS="$BREW_INS grpcurl" # gRPC client a-la curl https://github.com/fullstorydev/grpcurl
