@@ -8,6 +8,7 @@
 # APTO_INS="$APTO_INS makepasswd" # Password generator.
 # APTO_INS="$APTO_INS protobuf-compiler" # Version is to old/outdated(
 # BREW_INS="$BREW_INS coreutils" # Provides `tac` sort utility <https://unix.stackexchange.com/questions/114041/how-can-i-get-the-tac-command-on-os-x#114043>, <https://github.com/coreutils/coreutils>.
+# BREW_INS="$BREW_INS flatbuffers" # A-la protobuf <https://github.com/google/flatbuffers>.
 # BREW_INS="$BREW_INS grpc" # ?????????? gRPC client a-la curl <https://github.com/grpc/grpc/blob/master/doc/command_line_tool.md>.
 # BREW_INS="$BREW_INS hping" # hping3 a-la interactive ping <https://github.com/antirez/hping> # APTO_INS="$APTO_INS hping3" # A-la interactive ping <https://github.com/antirez/hping>.
 # BREW_INS="$BREW_INS pigz" # APTO_INS="$APTO_INS pigz" # Parallel gzip for multi-processor, multi-core.
@@ -40,7 +41,6 @@ BREW_INS="$BREW_INS duf" # Disk Usage/Free Utility a-la better df <https://githu
 BREW_INS="$BREW_INS eza" # A-la ls alternative <https://github.com/eza-community/eza>.
 BREW_INS="$BREW_INS fastfetch" # Fastfetch is a system information tool. <https://github.com/fastfetch-cli/fastfetch>.
 BREW_INS="$BREW_INS fd" # Required by Emacs `fd-dired`. # RUST_INS="$RUST_INS fd-find" # `fd` is a find in filesystem but `find` incompatible <https://github.com/sharkdp/fd>.
-BREW_INS="$BREW_INS flatbuffers" # A-la protobuf <https://github.com/google/flatbuffers>.
 BREW_INS="$BREW_INS jsonnet" # <https://github.com/google/jsonnet>.
 BREW_INS="$BREW_INS lsd" # A-la ls alternative <https://github.com/lsd-rs/lsd>.
 BREW_INS="$BREW_INS mailutils" # APTO_INS="$APTO_INS mailutils" # GNU mailutils, reads local mail, provides `/usr/bin/mail`.
@@ -291,14 +291,14 @@ BREW_INS="$BREW_INS jsonlint" # Used by Emacs Flycheck <https://github.com/zaach
 BREW_INS="$BREW_INS shellcheck" # APTO_INS="$APTO_INS shellcheck" # Used by Emacs Flycheck <https://github.com/koalaman/shellcheck>.
 BREW_INS="$BREW_INS sql-lint" # Used by Emacs Flycheck.
 
-# Protocol Buffers, Protobuf, protoc, gRPC
-# <https://github.com/protocolbuffers/protobuf>,
-# <https://grpc.io/docs/protoc-installation>,
-# <https://protobuf.dev>,
-# <https://grpc.io>.
-GOLN_INS="$GOLN_INS github.com/golang/protobuf/protoc-gen-go@v1.5.3" # protoc dependency, required for protobuf Go compilation.
-GOLN_INS="$GOLN_INS github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway@v1.16.0"
-GOLN_INS="$GOLN_INS google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.0.1" # NOTE: The v1.20 protoc-gen-go does not support generating gRPC service definitions. gRPC service generation supported by the protoc-gen-go-grpc plugin provided by the Go gRPC project <https://github.com/protocolbuffers/protobuf-go/releases/tag/v1.20.0#v1.20-grpc-support>.
+# # Protocol Buffers, Protobuf, protoc, gRPC
+# # <https://github.com/protocolbuffers/protobuf>,
+# # <https://grpc.io/docs/protoc-installation>,
+# # <https://protobuf.dev>,
+# # <https://grpc.io>.
+# GOLN_INS="$GOLN_INS github.com/golang/protobuf/protoc-gen-go@v1.5.3" # protoc dependency, required for protobuf Go compilation.
+# GOLN_INS="$GOLN_INS github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway@v1.16.0"
+# GOLN_INS="$GOLN_INS google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.0.1" # NOTE: The v1.20 protoc-gen-go does not support generating gRPC service definitions. gRPC service generation supported by the protoc-gen-go-grpc plugin provided by the Go gRPC project <https://github.com/protocolbuffers/protobuf-go/releases/tag/v1.20.0#v1.20-grpc-support>.
 
 # Web/HTTPd server.
 # BREW_INS="$BREW_INS goaccess" # APTO_INS="$APTO_INS goaccess" # analyze apache/nginx log in real-time.
