@@ -44,6 +44,11 @@ FLAT_INS_SRC_CLI="flatpak remote-add --if-not-exists"
 FLAT_UNI_SRC_CLI="flatpak remote-delete"
 FLAT_INS_CLI="flatpak install flathub"
 
+# # Zig package
+# # <https://ziglang.org>.
+# ZIGL_INS_CLI="zig build"
+# ZIGL_UPD_CLI="zig build"
+
 # Go package
 # <https://go.dev/ref/mod#go-install>.
 GOLN_INS_CLI="go install"
