@@ -671,14 +671,14 @@ SNAP_INS="$SNAP_INS atril" # PDF viewer (remembers last page) for Mate DE (deskt
 # HOWTO OpenVPN 3 client `sudo sh -c 'curl -sSfL https://packages.openvpn.net/packages-repo.gpg > /etc/apt/keyrings/openvpn.asc && echo "deb [signed-by=/etc/apt/keyrings/openvpn.asc] https://packages.openvpn.net/openvpn3/debian YOUR_UBUNTU_DISTRIBUTION_NM main" >> /etc/apt/sources.list.d/openvpn3.list'` <https://community.openvpn.net/openvpn/wiki/OpenVPN3Linux>, <https://github.com/OpenVPN/openvpn3>. # APTO_INS="$APTO_INS openvpn3" # BREW_INS="$BREW_INS openvpn"
 # HOWTO Band mattermost client install from <https://band.wb.ru/download> `curl -O https://band.wb.ru/download/bin/band-desktop_release_5.9.0-rc.2-1_amd64.deb && apt install band-desktop_release_5.9.0-rc.2-1_amd64.deb` # Mattermost chat a-la Slack <https://github.com/mattermost/mattermost>.
 # # # # # # # * HOWTO Install VER3 from <https://goteleport.com/download> on [Ubuntu][] `curl -v -O -C - -L https://cdn.teleport.dev/teleport_0.1.23_amd64.deb` & `apt install teleport_0.1.23_amd64.deb`.
-
-APTO_INS="$APTO_INS openvpn-systemd-resolved openvpn-dco-dkms" # OpenVPN3 dependency.
-BREW_INS="$BREW_INS go"
 # BREW_INS="$BREW_INS logstash" # Logstash is a logger from the ELK stack, composed of Elasticsearch, Logstash, and Kibana, called Elastic Stack <https://github.com/elastic/logstash>.
+APTO_INS="$APTO_INS openvpn-systemd-resolved openvpn-dco-dkms" # OpenVPN3 dependency.
 BREW_INS="$BREW_INS etcd" # Distributed key-value store <https://github.com/etcd-io/etcd>.
+BREW_INS="$BREW_INS go"
 BREW_INS="$BREW_INS golangci-lint" # Used by Emacs a-la gometalinter <https://github.com/golangci/golangci-lint>. # GOLN_INS="$GOLN_INS github.com/golangci/golangci-lint/cmd/golangci-lint@v1.55.2"
 BREW_INS="$BREW_INS nats-streaming-server" # DEPRECATED NATS Streaming is a durable stream based on NATS <https://github.com/nats-io/nats-server>, <https://github.com/nats-io/nats-streaming-server>.
 BREW_INS="$BREW_INS postgresql@14"
+GOLN_INS="$GOLN_INS github.com/onsi/ginkgo/v2/ginkgo@v2.23.4" # Ginkgo is a Testing Framework for the Go programming language <https://github.com/onsi/ginkgo>. 
 # # PIP3_INS="$PIP3_INS clickhouse-cli"
 # BREW_INS="$BREW_INS kafka" # <https://github.com/apache/kafka>.
 # # # # # # # # # # # # https://docs.altinity.com/altinitycloud/altinity-cloud-connections/clickhouseclient
