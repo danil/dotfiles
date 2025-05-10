@@ -11,7 +11,13 @@
 # <https://ghostty.org/docs/config/reference#link>,
 # <https://github.com/ghostty-org/ghostty/issues/1972#issuecomment-2240048536>,
 # <https://reddit.com/r/Ghostty/comments/1hwh9f9/linkurl_doesnt_work_with_tmux>.
-# link-url = true
+link-url = false
+
+# <https://ghostty.org/docs/config/reference#mouse-hide-while-typing>.
+mouse-hide-while-typing = true
+
+# <https://ghostty.org/docs/config/reference#copy-on-select>.
+# copy-on-select = clipboard
 
 font-family = "Monospace"
 # font-family = "PragmataPro Mono Liga"
@@ -22,8 +28,11 @@ font-family = "Monospace"
 # font-family = "Iosevka"
 # font-family = "Fantasque Sans Mono"
 font-size = "19"
-# cursor-style = "block"
-cursor-style-blink = ""
+
+# <https://ghostty.org/docs/config/reference#cursor-style>.
+cursor-style = "block"
+# # <https://ghostty.org/docs/config/reference#cursor-invert-fg-bg>.
+# cursor-invert-fg-bg = true
 
 # <https://ghostty.org/docs/features/theme>,
 # <https://ghostty.org/docs/config/reference#theme>.
