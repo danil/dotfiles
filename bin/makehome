@@ -70,6 +70,7 @@ BREW_INS="$BREW_INS rhash" # Provides `crc32`/`md5`/`sha1`/`sha256` utility <htt
 
 # Network.
 # BREW_INS="$BREW_INS doggo" # FAIL: doggo NOT respect of `dig` CLI arguments. Is a CLI DNS client a-la like dig <https://github.com/mr-karan/doggo>.
+# BREW_INS="$BREW_INS mtr" # A-la traceroute <https://github.com/traviscross/mtr>.
 # PIP3_INS="$PIP3_INS http-prompt" # interactive command-line http client with autocomplete.
 # PIP3_INS="$PIP3_INS httpie" # A-la curl <http://httpie.org> # FAIL: httpie 2.2.0 has requirement Pygments>=2.5.2, but you'll have pygments 2.3.1 which is incompatible.
 # PIP3_INS="$PIP3_INS mps-youtube" # youtube player <https://github.com/np1/mps-youtube>.
@@ -77,6 +78,7 @@ BREW_INS="$BREW_INS rhash" # Provides `crc32`/`md5`/`sha1`/`sha256` utility <htt
 # PIP3_INS="$PIP3_INS you-get" # video downloader (universal) <https://github.com/soimort/you-get>.
 # PIP3_INS="$PIP3_INS youtube-dl" # youtube downloader <https://github.com/rg3/youtube-dl>.
 APTO_INS="$APTO_INS netcat-openbsd" # BREW_INS="$BREW_INS netcat" # FAIL: Brew's `netcat` does nothing. GNU Netcat <https://netcat.sourceforge.net>. # APTO_INS="$APTO_INS netcat-openbsd" # OpenBSD Netcat <https://github.com/openbsd/src/blob/master/usr.bin/nc/netcat.c>.
+APTO_INS="$APTO_INS traceroute"
 BREW_INS="$BREW_INS aria2" # Download client a-la curl/wget `aria2c https://your.tld/path/to/your.file`.
 BREW_INS="$BREW_INS axel" # Download client a-la curl/wget.
 BREW_INS="$BREW_INS curl wcurl trurl" # APTO_INS="$APTO_INS curl" # The curl is a-la Wget <https://github.com/curl/curl>, <https://github.com/curl/wcurl>, <https://github.com/curl/trurl>.
