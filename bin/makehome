@@ -92,6 +92,7 @@ BREW_INS="$BREW_INS rsync-time-backup" # Time Machine style backup with Rsync <h
 BREW_INS="$BREW_INS syncthing" # APTO_INS="$APTO_INS syncthing" # dropbox replacement: deb <https://apt.syncthing.net> syncthing release.
 BREW_INS="$BREW_INS wget" # A-la curl
 BREW_INS="$BREW_INS whois"
+NPMJ_INS="$NPMJ_INS curlconverter" # Generate HTTP client code by `curl` command `echo "curl https://your.tld" | curlconverter --language c -` <https://github.com/curlconverter/curlconverter>.
 
 # Ubuntu packages.
 APTO_INS="$APTO_INS apt-transport-https" # Required by custom ppa.

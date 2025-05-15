@@ -70,8 +70,13 @@ PIP2_UPD_CLI="pip2 install --user --upgrade"
 PIP3_INS_CLI="pip3 install --user"
 PIP3_UPD_CLI="pip3 install --user --upgrade"
 
+# NPM JavaScript package
+# <https://github.com/npm>.
+NPMJ_INS_CLI="npm install"
+NPMJ_UPD_CLI="npm update"
+
 # MAKEHOMEUSAGE="usage: ${CMD:=${0##*/}} { --install | --update | --config  } [--apt] [--homebrew] [--appimage] [--pacstall] [--snap] [--flatpak] [--go] [--rust] [--python2] [--python3] [--update] [--etc] [--root] [--home=\"\$HOME\"]"
-MAKEHOMEUSAGE="usage: makehome { --install | --update | --config  } [--apt] [--homebrew] [--appimage] [--pacstall] [--snap] [--flatpak] [--go] [--rust] [--python2] [--python3] [--update] [--etc] [--root] [--home=\"\$HOME\"]"
+MAKEHOMEUSAGE="usage: makehome { --install | --update | --config  } [--apt] [--homebrew] [--appimage] [--pacstall] [--snap] [--flatpak] [--go] [--rust] [--python2] [--python3] [--npm] [--update] [--etc] [--root] [--home=\"\$HOME\"]"
 
 makehome () {
     local OPT_ALL_PACKAGES=-1
@@ -97,6 +102,7 @@ makehome () {
             --rust     ) local OPT_RUST=0; OPT_ALL_PACKAGES=-1;;
             --python2  ) local OPT_PIP2=0; OPT_ALL_PACKAGES=-1;;
             --python3  ) local OPT_PIP3=0; OPT_ALL_PACKAGES=-1;;
+            --npm      ) local OPT_NPMJ=0; OPT_ALL_PACKAGES=-1;;
             --home     ) optflagcheck "$1" "$OPTFLAG"; OPTFLAGEXIT=$?; local OPT_HOME="$1"; OPT_ALL_PACKAGES=-1; shift;;
             --etc      ) local OPT_ETCE="/etc"; OPT_ALL_PACKAGES=-1;;
             --root     ) local OPT_ROOT="/"; OPT_ALL_PACKAGES=-1;;
@@ -136,6 +142,7 @@ makehome () {
         RUST_INS_CLI="$RUST_UPD_CLI"
         PIP2_INS_CLI="$PIP2_UPD_CLI"
         PIP3_INS_CLI="$PIP3_UPD_CLI"
+        NPMJ_INS_CLI="$NPMJ_UPD_CLI"
     fi
 
     if [ "$OPT_VERBOSE" = 0 ] ; then
@@ -154,6 +161,7 @@ makehome () {
     makeinst --description="Rust Cargo packages"      --make="$OPT_RUST" --install-command="$RUST_INS_CLI" --install-packages="$RUST_INS" --install-loop-fast-exit # Rust Cargo <https://github.com/rust-lang/cargo>, <https://doc.rust-lang.org/cargo>.
     makeinst --description="Python2 pip packages"     --make="$OPT_PIP2" --install-command="$PIP2_INS_CLI" --install-packages="$PIP2_INS" --install-line-fast-exit # Python2 PIP <https://github.com/pypa/pip>.
     makeinst --description="Python3 pip packages"     --make="$OPT_PIP3" --install-command="$PIP3_INS_CLI" --install-packages="$PIP3_INS" --install-line-fast-exit # Python3 PIP <https://github.com/pypa/pip>.
+    makeinst --description="NPM JavaScript packages"  --make="$OPT_NPMJ" --install-command="$NPMJ_INS_CLI" --install-packages="$NPMJ_INS" --install-line-fast-exit # NPM JavaScript package <https://github.com/npm>.
 
     makeconf "$OPT_HOME" # $HOME user home directory <https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard#Directory_structure>.
     makeconf "$OPT_ETCE" # /etc of host-specific system-wide configuration <https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard#Directory_structure>.
