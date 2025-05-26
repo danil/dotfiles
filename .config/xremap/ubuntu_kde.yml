@@ -31,7 +31,7 @@ keymap:
           KEY_U:
             remap:
               KEY_C:
-                launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/sh", "-c", ". ~/.shrc && wezterm"]
+                launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/sh", "-c", ". ~/.shrc && alacritty"]
               Shift-1:
                 launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/sh", "-c", ". ~/.shrc && albert show"]
             KEY_U:
