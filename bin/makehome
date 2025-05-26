@@ -583,7 +583,7 @@ SNAP_INS="$SNAP_INS mailspring"
 # X pCloud.
 # <https://pcloud.com>,
 # <https://pcloud.com/how-to-install-pcloud-drive-linux.html>.
-# HOWTO Install from <https://pcloud.com/release-notes/linux.html> on [Ubuntu][] to `~/Applications/pcloud`.
+# HOWTO Install from <https://pcloud.com/release-notes/linux.html> on [Ubuntu][] to `~/Applications/pcloud` also `chmod +x`.
 APTO_INS="$APTO_INS libfuse2" # APPL_INS="$APPL_INS ~/Applications/pcloud-x86_64_3a9066375d1af32211a2fa8a5ed4793b.AppImage" # pcloud <https://github.com/pcloud>.
 
 # X cloud storage.
