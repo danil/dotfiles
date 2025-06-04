@@ -164,8 +164,11 @@ BREW_INS="$BREW_INS dash" APTO_INS="$APTO_INS dash" # Dash (Debian Almquist shel
 
 # C/C++ compile/make common dependencies.
 APTO_INS="$APTO_INS automake" # Required by `xchainkeys`.
+APTO_INS="$APTO_INS bison" # ???
 APTO_INS="$APTO_INS build-essential" # Compiler?
 APTO_INS="$APTO_INS devscripts" # ???
+APTO_INS="$APTO_INS flex" # ???
+APTO_INS="$APTO_INS libpam0g-dev" # ???
 APTO_INS="$APTO_INS make" # Required by all)
 APTO_INS="$APTO_INS valgrind" # Find memory leaks <https://valgrind.org/docs/manual/quick-start.html>.
 BREW_INS="$BREW_INS ccls" # ccls implementing LSP Language Server Protocol, used by Emacs <https://github.com/MaskRay/ccls>.
@@ -211,6 +214,7 @@ GOLN_INS="$GOLN_INS github.com/divan/expvarmon@v0.0.0-20230430154648-8e0b3d2778b
 # APTO_INS="$APTO_INS libxcb-composite0-dev" # required by gitui a-la tig https://github.com/extrawurst/gitui
 # RUST_INS="$RUST_INS rustfmt" # rust code pretty formating <https://github.com/rust-lang-nursery/rustfmt>.
 BREW_INS="$BREW_INS rust"
+BREW_INS="$BREW_INS rustup" # The Rust toolchain installer. Formerly known as `rustup-init`. <https://github.com/rust-lang/rustup>.
 
 # JS/JavaScript/Nodejs.
 # APTO_INS="$APTO_INS curl dirmngr apt-transport-https lsb-release ca-certificates" # required by nodesource.com's ppa
@@ -404,19 +408,21 @@ BREW_INS="$BREW_INS prometheus" # Prometheus is a database for the metrics monit
 # FAIL: Freeze while updating. <sup><sub>Hang while updating by `aptitude full-upgrade`.</sub></sup>
 # HOWTO Download <https://browser.yandex.ru> & on [Ubuntu][] `apt install ~/Downloads/Yandex.deb`. # X11 Yandex (Google Chrome based) browser. # FLAT_INS="$FLAT_INS ru.yandex.Browser"
 # HOWTO Download <https://google.com/chrome> & on [Ubuntu][] `apt install ~/Downloads/google-chrome-stable_current_amd64.deb`. # Google Chrome browser <https://google.com/chrome>. # APPM_INS="$APPM_INS google-chrome" # FLAT_INS="$FLAT_INS com.google.Chrome" # APTO_INS="$APTO_INS google-chrome-stable" APTO_INS="$APTO_INS apt-transport-https"
-PACS_INS="$PACS_INS firefox-bin" APTO_UNI="$APTO_UNI firefox" SNAP_UNI="$SNAP_UNI firefox" # APPM_INS="$APPM_INS firefox" # FAIL: Firefox installed from Snap uses Gnome cursor instead of KDE cursor. # APTO_INS="$APTO_INS firefox" # FLAT_INS="$FLAT_INS org.mozilla.firefox" # SNAP_INS="$SNAP_INS firefox" # X11 Firefox browser <https://mozilla.org/firefox>.
+PACS_INS="$PACS_INS firefox-deb" SNAP_UNI="$SNAP_UNI firefox" # APTO_UNI="$APTO_UNI firefox" # APPM_INS="$APPM_INS firefox" # FAIL: Firefox installed from Snap uses Gnome cursor instead of KDE cursor. # APTO_INS="$APTO_INS firefox" # FLAT_INS="$FLAT_INS org.mozilla.firefox" # SNAP_INS="$SNAP_INS firefox" # X11 Firefox browser <https://mozilla.org/firefox>.
 
 # X Wayland/desktop.
 # APTO_INS="$APTO_INS libevdev-dev pkg-config" # `evremap` dependency <https://github.com/wez/evremap>.
+APTO_INS="$APTO_INS brightnessctl" # `brightnessctl` command line control brightness `brightnessctl set 42%+ && brightnessctl set 42%-` <https://github.com/Hummer12007/brightnessctl>.
 APTO_INS="$APTO_INS libwlroots-dev meson ninja-build" # `wl-gammactl` compile time dependency.
 
-# # Wayland swhkd is a simple hotkey daemon <https://github.com/waycrate/swhkd>.
-# # `make setup && make clean && make` <https://github.com/waycrate/swhkd/blob/main/INSTALL.md#compiling>.
-# APTO_INS="$APTO_INS libevdev-dev libevdev2" # Evdev kernel module is a swhkd's runtime dependency.
-# APTO_INS="$APTO_INS libudev-dev" # Is a swhkd's compile time dependency.
-# APTO_INS="$APTO_INS policykit-1 polkitd" # Policy Kit Daemon (polkit) is a swhkd's runtime dependency.
-# APTO_INS="$APTO_INS rustup-init" # swhkd's compile time dependency <https://github.com/rust-lang/rustup>.
-# APTO_INS="$APTO_INS scdoc" # Man-pages generation is a swhkd's compile time dependency.
+# Wayland swhkd is a simple hotkey daemon <https://github.com/waycrate/ewhkd>.
+# `make setup && make clean && make` <https://github.com/waycrate/swhkd/blob/main/INSTALL.md#compiling>.
+APTO_INS="$APTO_INS libevdev-dev libevdev2" # Evdev kernel module is a swhkd's runtime dependency.
+APTO_INS="$APTO_INS libudev-dev" # Is a swhkd's compile time dependency.
+APTO_INS="$APTO_INS policykit-1 polkitd" # Policy Kit Daemon (polkit) is a swhkd's runtime dependency.
+APTO_INS="$APTO_INS scdoc" # Man-pages generation is a swhkd's compile time dependency.
+BREW_INS="$BREW_INS rustup" # The Rust toolchain installer. Formerly known as `rustup-init`. <https://github.com/rust-lang/rustup>. # APTO_INS="$APTO_INS rustup-init" # swhkd's compile time dependency <https://github.com/rust-lang/rustup>.
+PACS_INS="$PACS_INS doas-git" # `doas` is an alternative to sudo. A port of OpenBSD doas which runs on FreeBSD, Linux, NetBSD, and illumos. <https://github.com/slicer69/doas>.
 
 # X11 xchainkeys <https://github.com/hbekel/xchainkeys>.
 APTO_INS="$APTO_INS automake" # xchainkeys compiltime dependency.
