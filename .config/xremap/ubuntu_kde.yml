@@ -82,8 +82,29 @@ keymap:
         remap:
           KEY_C:
             launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/sh", "-c", ". ~/.shrc && find-cursor --color=#ff0000 --size=700 --line-width=10 --distance=70"]
+  - name: Screen backlight control.
+    remap:
+      C-t:
+        remap:
+          KEY_B:
+            remap:
+              KEY_J:
+                launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/sh", "-c", ". ~/.shrc && screen-backlight-down"]
+              KEY_K:
+                launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/sh", "-c", ". ~/.shrc && screen-backlight-up"]
 
-  - name: Media Player control.
+  - name: Sound volume (alsa) control.
+    remap:
+      C-t:
+        remap:
+          KEY_V:
+            remap:
+              KEY_J:
+                launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/sh", "-c", ". ~/.shrc && audio-sound-volume-down"]
+              KEY_K:
+                launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/sh", "-c", ". ~/.shrc && audio-sound-volume-up"]
+
+  - name: Music Media Player control.
     remap:
       C-t:
         remap:
