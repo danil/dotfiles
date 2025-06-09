@@ -84,6 +84,10 @@ keymap:
             launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/sh", "-c", ". ~/.shrc && find-cursor --color=#ff0000 --size=700 --line-width=10 --distance=70"]
   - name: Screen backlight control.
     remap:
+      M-F5:
+        launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/sh", "-c", ". ~/.shrc && screen-backlight-down"]
+      M-F6:
+        launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/sh", "-c", ". ~/.shrc && screen-backlight-up"]
       C-t:
         remap:
           KEY_B:
@@ -95,6 +99,10 @@ keymap:
 
   - name: Sound volume (alsa) control.
     remap:
+      M-F2:
+        launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/sh", "-c", ". ~/.shrc && audio-sound-volume-down"]
+      M-F3:
+        launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/sh", "-c", ". ~/.shrc && audio-sound-volume-up"]
       C-t:
         remap:
           KEY_V:
