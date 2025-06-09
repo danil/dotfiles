@@ -82,6 +82,7 @@ keymap:
         remap:
           KEY_C:
             launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/sh", "-c", ". ~/.shrc && find-cursor --color=#ff0000 --size=700 --line-width=10 --distance=70"]
+
   - name: Screen backlight control.
     remap:
       M-F5:
