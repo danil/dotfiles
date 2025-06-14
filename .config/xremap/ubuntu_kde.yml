@@ -8,6 +8,11 @@ modmap:
       RightCtrl: RightAlt
       RightAlt:  RightCtrl
 
+  - name: Swapping F12 and Insert keys.
+    remap:
+     F12: Insert
+     Insert: F12
+
   - remap:
      CapsLock: Esc
 
@@ -85,9 +90,9 @@ keymap:
 
   - name: Screen backlight control.
     remap:
-      M-F5:
+      C-F5:
         launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/sh", "-c", ". ~/.shrc && screen-backlight-down"]
-      M-F6:
+      C-F6:
         launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/sh", "-c", ". ~/.shrc && screen-backlight-up"]
       C-t:
         remap:
@@ -100,9 +105,9 @@ keymap:
 
   - name: Sound volume (alsa) control.
     remap:
-      M-F2:
+      C-F2:
         launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/sh", "-c", ". ~/.shrc && audio-sound-volume-down"]
-      M-F3:
+      C-F3:
         launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/sh", "-c", ". ~/.shrc && audio-sound-volume-up"]
       C-t:
         remap:
