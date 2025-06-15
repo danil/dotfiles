@@ -382,15 +382,15 @@ BREW_INS="$BREW_INS erdtree" # Is a disk space usage a-la `ncdu`.
 BREW_INS="$BREW_INS htop" # APTO_INS="$APTO_INS htop" # A-la `top` <https://github.com/htop-dev/htop>.
 BREW_INS="$BREW_INS ncdu" # APTO_INS="$APTO_INS ncdu" # Disk space usage a-la `baobab` and `gt5` <https://en.wikipedia.org/wiki/Ncdu>.
 
-# # DevOps Performance Benchmarks utility tools a-la `ab`.
+# DevOps Performance Benchmarks utility tools a-la `ab`.
 # APTO_INS="$APTO_INS apache2-utils"
 # APTO_INS="$APTO_INS bonnie++"
 # APTO_INS="$APTO_INS dbench"
 # APTO_INS="$APTO_INS siege"
-# APTO_INS="$APTO_INS sysbench" # cpu and memory benchmarks.
 # APTO_INS="$APTO_INS tiobench" # TODO: find this package.
 # APTO_INS="$APTO_INS wrk" # c http benchmark tool <https://github.com/wg/wrk>.
 # ZIGL_INS="$ZIGL_INS github.com/andrewrk/poop" # poop is a CLI command line tool compares the performance of multiple commands <https://github.com/andrewrk/poop>.
+APTO_INS="$APTO_INS sysbench" # cpu and memory benchmarks.
 BREW_INS="$BREW_INS oha" # oha is a http benchmark tool <https://github.com/hatoo/oha>.
 
 # DevOps.
