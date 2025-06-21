@@ -321,7 +321,7 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][42][Applets][45][Configuration][General]
-launchers=file:///tmp/.mount_remp12924795013614832208/com.mitchellh.ghostty.desktop,applications:firefox.desktop,applications:mailspring_mailspring.desktop,applications:Alacritty.desktop,applications:google-chrome.desktop,applications:gimp.desktop,applications:org.kde.krita.desktop,preferred://filemanager,applications:org.kde.gwenview.desktop,applications:org.kde.spectacle.desktop,applications:org.kde.discover.desktop,applications:megasync.desktop,applications:dropbox.desktop,applications:albert.desktop,applications:com.github.hluk.copyq.desktop,applications:org.kde.plasmashell.desktop,applications:org.gnome.Calculator.desktop,applications:systemsettings.desktop,file:///tmp/appimage_extracted_12924795013614832208/com.mitchellh.ghostty.desktop
+launchers=file:///tmp/.mount_remp12924795013614832208/com.mitchellh.ghostty.desktop,applications:firefox.desktop,applications:mailspring_mailspring.desktop,applications:Alacritty.desktop,applications:google-chrome.desktop,applications:gimp.desktop,applications:org.kde.krita.desktop,preferred://filemanager,applications:org.kde.gwenview.desktop,applications:appimagekit-pcloud.desktop,applications:org.kde.spectacle.desktop,applications:org.kde.discover.desktop,applications:megasync.desktop,applications:dropbox.desktop,applications:albert.desktop,applications:com.github.hluk.copyq.desktop,applications:org.kde.plasmashell.desktop,applications:org.gnome.Calculator.desktop,applications:systemsettings.desktop,file:///tmp/appimage_extracted_12924795013614832208/com.mitchellh.ghostty.desktop
 minimizeActiveTaskOnClick=false
 showOnlyCurrentActivity=false
 showOnlyCurrentDesktop=false
@@ -465,7 +465,7 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][8][Applets][24][Configuration]
-PreloadWeight=2
+PreloadWeight=100
 
 [Containments][8][Applets][24][Configuration][General]
 showPercentage=true
