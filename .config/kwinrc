@@ -37,13 +37,40 @@ ActivitiesMode=0
 [Tiling]
 padding=4
 
+[Tiling][4e30d98b-f6ea-427f-a17a-67cc94fb2742][220e5ad5-36d0-4182-8bd4-3f2b4d0281aa]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][52168259-38de-4f13-b6c5-be32236bbf8b][220e5ad5-36d0-4182-8bd4-3f2b4d0281aa]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
 [Tiling][5ac86186-e3db-581e-9786-4dbfef723bc4]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][7dd91a25-dd0d-4bf7-9bdd-ff93da3bcf67][220e5ad5-36d0-4182-8bd4-3f2b4d0281aa]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][992280d9-52d8-4deb-9be8-ecd3438351ca][220e5ad5-36d0-4182-8bd4-3f2b4d0281aa]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Tiling][a2005962-8618-5dfb-ae91-f86495127e54]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
+[Tiling][a2fb8fb8-6650-4dac-b3d6-e0994b43ceb9][220e5ad5-36d0-4182-8bd4-3f2b4d0281aa]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
 [Tiling][c0226956-e547-5b09-bf11-f65835fa7abb]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][c77b7fde-1ad8-455a-a1b3-aa52edfa383d][220e5ad5-36d0-4182-8bd4-3f2b4d0281aa]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][e50844ba-4cae-4d3b-abba-f47c2ec0991e][220e5ad5-36d0-4182-8bd4-3f2b4d0281aa]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][edc9436b-87d4-443e-ab67-b78c314051b8][220e5ad5-36d0-4182-8bd4-3f2b4d0281aa]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][fe7d9d22-9a4a-4b6a-b04c-1bda516f0712][220e5ad5-36d0-4182-8bd4-3f2b4d0281aa]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Windows]
