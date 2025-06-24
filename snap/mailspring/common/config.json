@@ -3,7 +3,7 @@
     "env": "production",
     "core": {
       "themes": [
-        "ui-dark"
+        "ui-light"
       ],
       "disabledPackages": [
         "message-view-on-github",
@@ -53,7 +53,8 @@
         "disabled": [
           "ru",
           "lb",
-          "ca"
+          "ca",
+          "cs"
         ],
         "automatic": []
       },
