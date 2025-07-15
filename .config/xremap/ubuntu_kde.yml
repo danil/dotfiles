@@ -103,7 +103,7 @@ keymap:
               KEY_K:
                 launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/sh", "-c", ". ~/.shrc && screen-backlight-up"]
 
-  - name: Sound volume (alsa) control.
+  - name: Sound volume (PulseAudio) control.
     remap:
       C-F2:
         launch: ["sudo", "-u", "kutkevich.danil", "-i", "/bin/sh", "-c", ". ~/.shrc && audio-sound-volume-down"]
