@@ -316,6 +316,10 @@ BREW_INS="$BREW_INS http-server" # <https://github.com/http-party/http-server>.
 BREW_INS="$BREW_INS httpd" # provides htpasswd utility is an nginx/apache basic authentication password generator # APTO_INS="$APTO_INS apache2-utils" # provides htpasswd utility is an nginx/apache basic authentication password generator.
 BREW_INS="$BREW_INS nginx" # web/http server a-la apache # APTO_INS="$APTO_INS nginx" APTO_DIS="$APTO_DIS nginx" # web/http server a-la apache
 
+# # Kafka.
+# BREW_INS="$BREW_INS kafka" # <https://github.com/apache/kafka>.
+# BREW_INS="$BREW_INS redpanda" BREW_INS_SRC="$BREW_INS_SRC redpanda-data/tap" # streaming data platform a-la kafka <https://github.com/redpanda-data/redpanda>, <https://github.com/redpanda-data/homebrew-tap>, <https://redpanda.com/blog/homebrew>.
+
 # # PostgreSQL is a RDBMS a-la MySQL.
 # # <https://github.com/postgres/postgres>,
 # # <https://wiki.postgresql.org/wiki/Homebrew>.
@@ -325,18 +329,14 @@ BREW_INS="$BREW_INS nginx" # web/http server a-la apache # APTO_INS="$APTO_INS n
 # # PIP3_INS="$PIP3_INS pg_activity" # postgresql activity monitoring <https://github.com/julmon/pg_activity>.
 # BREW_INS="$BREW_INS postgresql@16"
 
-# MySQL Vitess.
-# BREW_INS="$BREW_INS mysql" # rdbms
-BREW_INS="$BREW_INS vitess" # horizontal scaled clustering <https://vitess.io/docs/contributing/build-on-macos>, <https://github.com/vitessio/vitess>, <https://en.wikipedia.org/wiki/Shard_(database_architecture)>.
+# # MySQL Vitess.
+# # BREW_INS="$BREW_INS mysql" # rdbms
+# BREW_INS="$BREW_INS vitess" # horizontal scaled clustering <https://vitess.io/docs/contributing/build-on-macos>, <https://github.com/vitessio/vitess>, <https://en.wikipedia.org/wiki/Shard_(database_architecture)>.
 
-# MongoDB.
-# APTO_INS="$APTO_INS gnupg" # required by mongodb <https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu>.
-# APTO_INS="$APTO_INS mongodb-org" APTO_DIS="$APTO_DIS mongod" # latest stable version of the mongodb server.
-BREW_INS="$BREW_INS mongodb-community" BREW_INS_SRC="$BREW_INS_SRC mongodb/brew"
-
-# Kafka.
-BREW_INS="$BREW_INS kafka" # <https://github.com/apache/kafka>.
-BREW_INS="$BREW_INS redpanda" BREW_INS_SRC="$BREW_INS_SRC redpanda-data/tap" # streaming data platform a-la kafka <https://github.com/redpanda-data/redpanda>, <https://github.com/redpanda-data/homebrew-tap>, <https://redpanda.com/blog/homebrew>.
+# # MongoDB.
+# # APTO_INS="$APTO_INS gnupg" # required by mongodb <https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu>.
+# # APTO_INS="$APTO_INS mongodb-org" APTO_DIS="$APTO_DIS mongod" # latest stable version of the mongodb server.
+# BREW_INS="$BREW_INS mongodb-community" BREW_INS_SRC="$BREW_INS_SRC mongodb/brew"
 
 # NATS Messaging.
 # BREW_INS="$BREW_INS nats-io/nats-tools/nats" BREW_INS_SRC="$BREW_INS_SRC nats-io/nats-tools" # <https://docs.nats.io/using-nats/nats-tools/nats_cli>, <https://github.com/nats-io/natscli>.
@@ -352,10 +352,10 @@ BREW_INS="$BREW_INS redpanda" BREW_INS_SRC="$BREW_INS_SRC redpanda-data/tap" # s
 # APTO_INS="$APTO_INS elasticsearch" # HOWTO `deb https://artifacts.elastic.co/packages/5.x/apt stable main` elasticsearch 5 <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>, # apt-transport-https required by elasticsearch ppa <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#deb-repo>.
 
 # Databases.
+# BREW_INS="$BREW_INS keydb"
+# BREW_INS="$BREW_INS tarantool"
 # PIP3_INS="$PIP3_INS stellar" # db (psql, mysql) snapshot and restore <https://github.com/fastmonkeys/stellar>.
-BREW_INS="$BREW_INS keydb"
 BREW_INS="$BREW_INS redis"
-BREW_INS="$BREW_INS tarantool"
 
 # Docker
 # OS-level virtualization to deliver software in packages called containers
