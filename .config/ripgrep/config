@@ -1,0 +1,6 @@
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+# rg <https://github.com/BurntSushi/ripgrep/blob/master/GUIDE.md#configuration-file>.
+
+# # Don't let ripgrep vomit really long lines to my terminal, and show a preview.
+# --max-columns=500
+# --max-columns-preview
