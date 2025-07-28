@@ -3,6 +3,6 @@
 
 # Don't let ripgrep vomit really long lines to my terminal, and show a preview.
 --max-columns-preview
---max-columns=1000
+--max-columns=5000
 
 --no-ignore-vcs
