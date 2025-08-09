@@ -26,6 +26,7 @@ desktopchangeosdEnabled=false
 hidecursorEnabled=true
 invertEnabled=true
 minimizeallEnabled=false
+zoomEnabled=false
 
 [TabBox]
 ActivitiesMode=0

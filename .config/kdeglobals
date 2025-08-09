@@ -137,7 +137,7 @@ DirSelectDialog Size=852,587
 Splitter State=\x00\x00\x00\xff\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x00\xac\x00\x00\x02\xa8\x00\xff\xff\xff\xff\x01\x00\x00\x00\x01\x00
 
 [General]
-ColorSchemeHash=0594cdbf8684a5ef175629572f86003b65badc3d
+ColorSchemeHash=8ff306d9a93379c74540e00506966df24df1798b
 XftHintStyle=hintslight
 XftSubPixel=rgb
 fixed=Monospace,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
@@ -168,6 +168,19 @@ Sort hidden files last=false
 Sort reversed=false
 Speedbar Width=164
 View Style=Simple
+
+[Shortcuts]
+ActualSize=
+AddBookmark=
+FullScreen=
+KeyBindings=
+OpenContextMenu=
+OpenMainMenu=
+Preferences=
+ShowHideHiddenFiles=
+ShowMenubar=
+ZoomIn=
+ZoomOut=
 
 [WM]
 activeBackground=227,229,231
