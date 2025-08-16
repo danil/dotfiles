@@ -68,13 +68,13 @@ vpnopt () {
     if [ "$OPT_UP" = 0 ] ; then
         OPTFLAGDRYRUN=-1
         vpnup
-        vpndnsup
+        # vpndnsup
     fi
 
     if [ "$OPT_DOWN" = 0 ] ; then
         OPTFLAGDRYRUN=-1
         vpndown
-        vpndnsdown
+        # vpndnsdown
     fi
 
     if [ "$OPT_STATUS" = 0 ] ; then
