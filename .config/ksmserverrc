@@ -3,13 +3,8 @@ count=0
 
 [Session: saved at previous logout]
 clientId1=1044f4603f4478000174838020100000031320015
-clientId2=1044f4603f4478000175462968300000031610020
-count=2
+count=1
 program1=/usr/bin/megasync
-program2=/home/kutkevich.danil/.dropbox-dist/dropbox-lnx.x86_64-229.4.5197/dropbox
-restartCommand1=/usr/bin/megasync,-session,1044f4603f4478000174838020100000031320015_1754677365_856726
-restartCommand2=/home/kutkevich.danil/.dropbox-dist/dropbox-lnx.x86_64-229.4.5197/dropbox,-session,1044f4603f4478000175462968300000031610020_1754677365_855536
+restartCommand1=/usr/bin/megasync,-session,1044f4603f4478000174838020100000031320015_1755351948_438951
 restartStyleHint1=0
-restartStyleHint2=0
 userId1=kutkevich.danil
-userId2=kutkevich.danil
