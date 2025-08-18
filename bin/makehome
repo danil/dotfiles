@@ -23,6 +23,7 @@
 # RUST_INS="$RUST_INS fselect" # Find files with SQL-like queries <https://github.com/jhspetersson/fselect>.
 # RUST_INS="$RUST_INS xsv" # CSV cli (indexing, slicing, analyzing, splitting and joining) <https://github.com/BurntSushi/xsv>.
 APTO_INS="$APTO_INS bind9-host" # Automatic/dependency: DNS/host lookup utility.
+APTO_INS="$APTO_INS fprintd libpam-fprintd" # Required by fingerprint authentication for sudo and so on.
 APTO_INS="$APTO_INS genius" # Calculator.
 APTO_INS="$APTO_INS libpci-dev libnl-3-dev libnl-genl-3-dev gettext libgettextpo-dev autopoint gettext libncurses5-dev libncursesw5-dev libtool-bin dh-autoreconf autoconf-archive pkg-config" # Required by powertop diagnoses power consumption <https://github.com/fenrus75/powertop#build-dependencies>.
 APTO_INS="$APTO_INS logrotate"
