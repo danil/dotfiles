@@ -2,6 +2,14 @@
 RepeatDelay=300
 RepeatRate=60
 
+[Libinput][1267][12926][ELAN06FA:00 04F3:327E Mouse]
+NaturalScroll=true
+
+[Libinput][1267][12926][ELAN06FA:00 04F3:327E Touchpad]
+NaturalScroll=true
+PointerAcceleration=0.800
+ScrollMethod=1
+
 [Libinput][1267][47][Elan Touchpad]
 NaturalScroll=true
 PointerAcceleration=0.800

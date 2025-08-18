@@ -1,4 +1,5 @@
 [Desktop Entry]
+Hidden=true
 Categories=Network;InstantMessaging;
 Comment=Chat over IM.  Supports AIM, Google Talk, Jabber/XMPP, MSN, Yahoo and more
 Exec=pidgin
@@ -8,5 +9,3 @@ Name=Pidgin Internet Messenger
 StartupNotify=true
 Terminal=false
 Type=Application
-Hidden=true
-

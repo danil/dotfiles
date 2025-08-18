@@ -1,4 +1,5 @@
 [Desktop Entry]
+Hidden=true
 Type=Application
 Name=Syncthing tray icon
 Icon=/home/danil/go/src/github.com/alex2108/syncthing-tray/img/icon_idle.ico
@@ -6,5 +7,3 @@ Exec=/home/danil/go/bin/syncthing-tray/syncthing-tray -target="http://localhost:
 Terminal=false
 StartupNotify=false
 X-GNOME-Autostart-enabled=false
-Hidden=true
-

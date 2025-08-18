@@ -8,6 +8,11 @@ modmap:
       RightCtrl: RightAlt
       RightAlt:  RightCtrl
 
+  - name: Swapping F12 and Insert keys.
+    remap:
+     F12: Insert
+     Insert: F12
+
   - remap:
      CapsLock: Esc
 
@@ -23,7 +28,7 @@ keymap:
       C-t:
         remap:
           KEY_C:
-            launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && alacritty"]
+            launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && ghostty"]
           KEY_G:
             launch: ["bash", "-c", "dbus-send --session --type=method_call --dest=org.freedesktop.Notifications /org/freedesktop/Notifications org.xfce.Notifyd.Quit"]
           Shift-1:
@@ -31,7 +36,7 @@ keymap:
           KEY_U:
             remap:
               KEY_C:
-                launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && wezterm"]
+                launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && alacritty"]
               Shift-1:
                 launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && albert show"]
             KEY_U:
@@ -55,11 +60,11 @@ keymap:
           KEY_U:
             remap:
               KEY_L:
-                launch: ["xflock4"]
+                launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && sleep 0.1 && qdbus org.freedesktop.ScreenSaver /ScreenSaver Lock"]
               KEY_U:
                 remap:
                   KEY_L:
-                    launch: ["xfce4-session-logout --suspend && xfce4-screensaver"]
+                    launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && sleep 0.1 && dbus-send --session --type=method_call --dest=org.kde.kglobalaccel  /component/org_kde_powerdevil org.kde.kglobalaccel.Component.invokeShortcut string:'Sleep'"]
 
   - name: Sleep/suspend or dim screen backlight.
     remap:
@@ -74,7 +79,7 @@ keymap:
               KEY_U:
                 remap:
                   KEY_S:
-                    launch: ["xfce4-session-logout --suspend"]
+                    launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && sleep 0.1 && dbus-send --session --type=method_call --dest=org.kde.kglobalaccel  /component/org_kde_powerdevil org.kde.kglobalaccel.Component.invokeShortcut string:'Sleep'"]
 
   - name: Find cursor a-la "shake to find Cursor" <https://github.com/arp242/find-cursor>.
     remap:
@@ -83,7 +88,37 @@ keymap:
           KEY_C:
             launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && find-cursor --color=#ff0000 --size=700 --line-width=10 --distance=70"]
 
-  - name: Media Player control.
+  - name: Screen backlight control.
+    remap:
+      C-F5:
+        launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && screen-backlight-down"]
+      C-F6:
+        launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && screen-backlight-up"]
+      C-t:
+        remap:
+          KEY_B:
+            remap:
+              KEY_J:
+                launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && screen-backlight-down"]
+              KEY_K:
+                launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && screen-backlight-up"]
+
+  - name: Sound volume (PulseAudio) control.
+    remap:
+      C-F2:
+        launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && audio-sound-volume-down"]
+      C-F3:
+        launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && audio-sound-volume-up"]
+      C-t:
+        remap:
+          KEY_V:
+            remap:
+              KEY_J:
+                launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && audio-sound-volume-down"]
+              KEY_K:
+                launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && audio-sound-volume-up"]
+
+  - name: Music Media Player control.
     remap:
       C-t:
         remap:

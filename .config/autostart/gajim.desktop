@@ -1,4 +1,5 @@
 [Desktop Entry]
+Hidden=true
 Categories=Network;InstantMessaging;GTK;GNOME;
 Comment=A GTK+ Jabber client
 Exec=gajim
@@ -12,5 +13,3 @@ Terminal=false
 Type=Application
 Version=1.0
 X-GNOME-Autostart-enabled=false
-Hidden=true
-

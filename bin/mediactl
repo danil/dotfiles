@@ -1,0 +1,27 @@
+#!/usr/bin/env sh
+# Thanks to Tony Garnock-Jones! <https://gist.github.com/tonyg/1aaf3b62bcb63dc6d626df9d12356125>.
+
+USAGE="usage: ${CMD:=${0##*/}} { Play | Pause | Next | Previous | PlayPause | Stop | ... }"
+
+if [ -z "$1" ]; then
+    printf >&2 "%s\n" "$USAGE"
+    exit 1
+fi
+
+fail=false
+
+while true; do
+    dest=$(dbus-send --session --dest=org.freedesktop.DBus --print-reply /org/freedesktop/DBus  org.freedesktop.DBus.ListNames | grep -F org.mpris.MediaPlayer2. | head -1 | awk '{print $2}' | sed -e 's:"::g' )
+
+    [ -n "$dest" ] && break
+
+    if [ $fail = true ]; then
+        printf >&2 "error: couldn't start a media player\n"
+        exit 1
+    fi
+
+    fail=true
+    sleep 3
+done
+
+dbus-send --print-reply --dest="$dest" /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player."$1"

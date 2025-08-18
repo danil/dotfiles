@@ -2,4 +2,4 @@
 
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-amixer sset Master 2%+ unmute
+pactl set-sink-volume @DEFAULT_SINK@ +1%

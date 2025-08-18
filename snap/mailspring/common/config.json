@@ -1,0 +1,342 @@
+{
+  "*": {
+    "env": "production",
+    "core": {
+      "themes": [
+        "ui-light"
+      ],
+      "disabledPackages": [
+        "message-view-on-github",
+        "personal-level-indicators",
+        "phishing-detection",
+        "nylas-private-salesforce",
+        "github-contact-card",
+        "keybase",
+        "composer-markdown",
+        "composer-scheduler",
+        "composer-mail-merge",
+        "send-and-archive",
+        "main-calendar"
+      ],
+      "workspace": {
+        "mode": "split",
+        "use24HourClock": true,
+        "interfaceZoom": 1.35,
+        "trayIconStyle": "red",
+        "hiddenLocations": {
+          "MessageListSidebar": {
+            "id": "MessageListSidebar",
+            "Toolbar": {
+              "id": "MessageListSidebar:Toolbar"
+            }
+          }
+        }
+      },
+      "keymapTemplate": "Gmail",
+      "theme": "ui-light",
+      "reading": {
+        "detailedNames": true
+      },
+      "composing": {
+        "html": false
+      },
+      "tutorial": {
+        "seen": [
+          "ThreadSearchBar",
+          "ActivityListButton",
+          "ModeToggle",
+          "ToolbarSnooze",
+          "SendRemindersPopoverButton"
+        ]
+      },
+      "translation": {
+        "disabled": [
+          "ru",
+          "lb",
+          "ca",
+          "cs",
+          "af"
+        ],
+        "automatic": []
+      },
+      "sending": {
+        "sounds": false
+      },
+      "notifications": {
+        "sounds": false
+      }
+    },
+    "credentials": {
+      "type": "Buffer",
+      "data": [
+        118,
+        49,
+        49,
+        162,
+        14,
+        64,
+        44,
+        22,
+        132,
+        244,
+        12,
+        181,
+        188,
+        149,
+        99,
+        217,
+        74,
+        31,
+        80,
+        29,
+        57,
+        146,
+        112,
+        138,
+        157,
+        188,
+        47,
+        2,
+        190,
+        212,
+        196,
+        34,
+        220,
+        113,
+        1,
+        19,
+        138,
+        156,
+        15,
+        189,
+        53,
+        113,
+        224,
+        26,
+        226,
+        180,
+        6,
+        91,
+        48,
+        157,
+        84,
+        242,
+        54,
+        223,
+        190,
+        39,
+        249,
+        79,
+        29,
+        16,
+        26,
+        125,
+        71,
+        172,
+        138,
+        125,
+        241,
+        216,
+        8,
+        137,
+        238,
+        111,
+        33,
+        81,
+        155,
+        34,
+        78,
+        245,
+        81,
+        167,
+        228,
+        240,
+        180,
+        68,
+        148,
+        78,
+        142,
+        59,
+        63,
+        67,
+        51,
+        42,
+        215,
+        69,
+        76,
+        176,
+        119,
+        137,
+        141,
+        238,
+        229,
+        69,
+        195,
+        239,
+        104,
+        199,
+        56,
+        161,
+        205,
+        179,
+        62,
+        183,
+        78,
+        174,
+        242,
+        180,
+        96,
+        207,
+        153,
+        146,
+        220,
+        167,
+        158,
+        94,
+        119,
+        156,
+        153,
+        146,
+        69,
+        136,
+        208,
+        64,
+        128,
+        15,
+        116,
+        134,
+        46,
+        152,
+        206,
+        96,
+        167,
+        165,
+        131,
+        70,
+        214,
+        110,
+        62,
+        196,
+        82,
+        103,
+        38,
+        144,
+        231,
+        184,
+        198,
+        17,
+        65,
+        6,
+        94,
+        218,
+        251,
+        214,
+        4
+      ]
+    },
+    "identity": {
+      "id": "7c124511-90bc-432b-b0ad-710eadef3c3d",
+      "firstName": "Danil",
+      "lastName": "Kutkevich",
+      "emailAddress": "danil@kutkevich.org",
+      "object": "identity",
+      "createdAt": "2022-08-10T22:36:14.000Z",
+      "stripePlan": "Basic",
+      "stripePlanEffective": "Basic",
+      "stripeCustomerId": "cus_MDp9A1KpCyIYcP",
+      "stripePeriodEnd": "2025-09-10T22:36:14.000Z",
+      "featureUsage": {
+        "snooze": {
+          "quota": 15,
+          "period": "weekly",
+          "usedInPeriod": 0,
+          "featureLimitName": "basic-limit"
+        },
+        "send-later": {
+          "quota": 5,
+          "period": "weekly",
+          "usedInPeriod": 0,
+          "featureLimitName": "basic-limit"
+        },
+        "thread-sharing": {
+          "quota": 3,
+          "period": "weekly",
+          "usedInPeriod": 0,
+          "featureLimitName": "basic-limit"
+        },
+        "link-tracking": {
+          "quota": 5,
+          "period": "weekly",
+          "usedInPeriod": 0,
+          "featureLimitName": "basic-limit"
+        },
+        "open-tracking": {
+          "quota": 5,
+          "period": "weekly",
+          "usedInPeriod": 0,
+          "featureLimitName": "basic-limit"
+        },
+        "contact-profiles": {
+          "quota": 3,
+          "period": "weekly",
+          "usedInPeriod": 0,
+          "featureLimitName": "basic-limit"
+        },
+        "send-reminders": {
+          "quota": 5,
+          "period": "weekly",
+          "usedInPeriod": 0,
+          "featureLimitName": "basic-limit"
+        },
+        "translation": {
+          "quota": 50,
+          "period": "weekly",
+          "usedInPeriod": 0,
+          "featureLimitName": "basic-limit"
+        }
+      }
+    },
+    "accounts": [
+      {
+        "id": "8841eeab",
+        "metadata": [],
+        "name": "Данила Куткевич",
+        "provider": "imap",
+        "emailAddress": "kutkevich.danil@rwb.ru",
+        "settings": {
+          "imap_host": "mail.rwb.ru",
+          "imap_port": 993,
+          "imap_username": "sdp_K0",
+          "imap_security": "SSL / TLS",
+          "imap_allow_insecure_ssl": false,
+          "smtp_host": "mail.rwb.ru",
+          "smtp_port": 465,
+          "smtp_username": "sdp_K0",
+          "smtp_security": "SSL / TLS",
+          "smtp_allow_insecure_ssl": false,
+          "container_folder": ""
+        },
+        "label": "kutkevich.danil@rwb.ru",
+        "autoaddress": {
+          "type": "bcc",
+          "value": ""
+        },
+        "aliases": [],
+        "syncState": "ok",
+        "syncError": {
+          "code": 134,
+          "error": {
+            "stack": "Error: null2245684 [2025-07-24 17:31:04.683] [background] [critical] \n***\n*** Mailspring Sync \n*** An exception occurred during program execution: \n*** {\"debuginfo\":\"syncFoldersAndLabels - fetchAllFolders\",\"key\":\"ErrorAuthentication\",\"retryable\":false,\"what\":\"std::exception\"}\n***\n\n/snap/mailspring/549/usr/share/mailspring/resources/app.asar.unpacked/mailsync: line 5: 2245684 Aborted                 (core dumped) SASL_PATH=\"$SCRIPTPATH\" LD_LIBRARY_PATH=\"$SCRIPTPATH;$LD_LIBRARY_PATH\" \"$SCRIPTPATH/mailsync.bin\" \"$@\"\n\n    at ChildProcess.onStreamCloseOrExit (file:///tmp/nylas-build/electron-packager/tmp-6ez6Em/resources/app/src/mailsync-process.ts:320:17)\n    at ChildProcess.emit (node:events:518:28)\n    at ChildProcess.emit (node:domain:489:12)\n    at Process.ChildProcess._handle.onexit (node:internal/child_process:293:12)",
+            "message": "null2245684 [2025-07-24 17:31:04.683] [background] [critical] \n***\n*** Mailspring Sync \n*** An exception occurred during program execution: \n*** {\"debuginfo\":\"syncFoldersAndLabels - fetchAllFolders\",\"key\":\"ErrorAuthentication\",\"retryable\":false,\"what\":\"std::exception\"}\n***\n\n/snap/mailspring/549/usr/share/mailspring/resources/app.asar.unpacked/mailsync: line 5: 2245684 Aborted                 (core dumped) SASL_PATH=\"$SCRIPTPATH\" LD_LIBRARY_PATH=\"$SCRIPTPATH;$LD_LIBRARY_PATH\" \"$SCRIPTPATH/mailsync.bin\" \"$@\"\n"
+          },
+          "signal": null
+        },
+        "authedAt": 1753367519.095,
+        "color": "",
+        "__cls": "Account"
+      }
+    ],
+    "accountsVersion": 23,
+    "containerFolderDefault": ""
+  }
+}

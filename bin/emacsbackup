@@ -58,7 +58,7 @@ arcbak() {
         > "$dst" \
         || exit 1
 
-    OPT_DRY=-1
+    OPTFLAGDRYRUN=-1
 }
 
 if [ "$OPT_CLONE" = 0 ]; then
@@ -71,7 +71,7 @@ fi
 
 
 # Dry run.
-if [ "$OPT_DRY" = 0 ]; then
+if [ "$OPTFLAGDRYRUN" = 0 ]; then
     printf "%s\n" "$USAGE"
     exit 1
 fi

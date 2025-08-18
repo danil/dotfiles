@@ -1,0 +1,125 @@
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
+# Ghostty Configuration
+# <https://ghostty.org/docs/config#xdg-configuration-path-(all-platforms):>.
+
+# <https://github.com/ghostty-org/ghostty/discussions/3663#discussioncomment-11696943>.
+# Window decoration [ auto client server false ].
+# window-decoration = auto
+# gtk-titlebar = false
+
+# <https://ghostty.org/docs/config/reference#link>,
+# <https://github.com/ghostty-org/ghostty/issues/1972#issuecomment-2240048536>,
+# <https://reddit.com/r/Ghostty/comments/1hwh9f9/linkurl_doesnt_work_with_tmux>.
+link-url = false
+
+# <https://ghostty.org/docs/config/reference#mouse-hide-while-typing>.
+mouse-hide-while-typing = true
+
+# <https://ghostty.org/docs/config/reference#copy-on-select>.
+# copy-on-select = clipboard
+
+font-family = "Monospace"
+# font-family = "PragmataPro Mono Liga"
+# Iosevka SS08 is a PragmataPro variant
+# <https://github.com/ghostty-org/ghostty/discussions/4495#discussioncomment-12200250>.
+# font-family = "Iosevka SS08"
+# font-feature = "-dlig"
+# font-family = "Iosevka"
+# font-family = "Fantasque Sans Mono"
+font-size = "19"
+
+# <https://ghostty.org/docs/config/reference#cursor-style>.
+cursor-style = "block"
+# # <https://ghostty.org/docs/config/reference#cursor-invert-fg-bg>.
+# cursor-invert-fg-bg = true
+
+# <https://ghostty.org/docs/features/theme>,
+# <https://ghostty.org/docs/config/reference#theme>.
+# <https://ghostty.org/docs/config/reference#palette>,
+# <https://wiki.gentoo.org/wiki/Ghostty#Custom_themes>,
+# <https://github.com/ghostty-org/ghostty/issues/2685>.
+theme = light:light.conf,dark:dark.conf
+
+# Disabling default keymap
+# <https://github.com/ghostty-org/ghostty/discussions/5415#discussioncomment-11991891>.
+keybind = clear
+
+keybind = ctrl+zero=reset_font_size
+keybind = ctrl+minus=decrease_font_size:1
+keybind = ctrl+plus=increase_font_size:1
+keybind = ctrl+equal=increase_font_size:1
+
+keybind = ctrl+insert=copy_to_clipboard
+keybind = shift+insert=paste_from_selection
+
+# keybind = ctrl+enter=toggle_fullscreen
+
+# keybind = ctrl+shift+t=new_tab
+# keybind = ctrl+shift+w=close_tab
+# keybind = ctrl+shift+right=next_tab
+# keybind = ctrl+shift+left=previous_tab
+# keybind = ctrl+shift+tab=previous_tab
+# keybind = ctrl+page_up=previous_tab
+# keybind = ctrl+page_down=next_tab
+# keybind = ctrl+tab=next_tab
+# keybind = alt+one=goto_tab:1
+# keybind = alt+two=goto_tab:2
+# keybind = alt+three=goto_tab:3
+# keybind = alt+four=goto_tab:4
+# keybind = alt+five=goto_tab:5
+# keybind = alt+six=goto_tab:6
+# keybind = alt+seveng=oto_tab:7
+# keybind = alt+eight=goto_tab:8
+# keybind = alt+nine=last_tab
+
+# "Physical" key binding fix <https://github.com/ghostty-org/ghostty/discussions/3584#discussioncomment-11685931>.
+# Ctrl+C - Interrupt (Cancel)
+keybind = ctrl+physical:c=text:\x03
+# Ctrl+D - Delete character / EOF
+keybind = ctrl+physical:d=text:\x04
+# Ctrl+W - Delete previous word
+keybind = ctrl+physical:w=text:\x17
+# Ctrl+A - Move cursor to the beginning of the line
+keybind = ctrl+physical:a=text:\x01
+# Ctrl+E - Move cursor to the end of the line
+keybind = ctrl+physical:e=text:\x05
+# Ctrl+Z - Suspend process
+keybind = ctrl+physical:z=text:\x1A
+# Ctrl+L - Clear screen
+keybind = ctrl+physical:l=text:\x0C
+# Ctrl+H - Backspace (delete previous character)
+keybind = ctrl+physical:h=text:\x08
+# Ctrl+G - Abort current command
+keybind = ctrl+physical:g=text:\x07
+# Ctrl+U - Kill (clear) the current line
+keybind = ctrl+physical:u=text:\x15
+# Ctrl+Y - Yank (paste last killed text)
+keybind = ctrl+physical:y=text:\x19
+# Ctrl+F - Move cursor forward one character
+keybind = ctrl+physical:f=text:\x06
+# Ctrl+B - Move cursor backward one character
+keybind = ctrl+physical:b=text:\x02
+# Ctrl+N - Move to the next command in history
+keybind = ctrl+physical:n=text:\x0E
+# Ctrl+P - Move to the previous command in history
+keybind = ctrl+physical:p=text:\x10
+# Ctrl+R - Search history backward
+keybind = ctrl+physical:r=text:\x12
+# Ctrl+S - Search history forward
+keybind = ctrl+physical:s=text:\x13
+# Ctrl+T - Transpose characters
+keybind = ctrl+physical:t=text:\x14
+# Ctrl+K - Kill text from cursor to end of line
+keybind = ctrl+physical:k=text:\x0B
+# Ctrl+Q - Resume terminal output (if paused with Ctrl+S)
+keybind = ctrl+physical:q=text:\x11
+# Ctrl+V - Insert next character literally
+keybind = ctrl+physical:v=text:\x16
+
+# # <https://ghostty.org/docs/config/keybind/reference#toggle_quick_terminal>,
+# # <https://github.com/ghostty-org/ghostty/discussions/3733>.
+# keybind = global:shift+enter=toggle_quick_terminal
+# quick-terminal-position = "top"
+# quick-terminal-screen = "mouse"
+# quick-terminal-animation-duration = 0

@@ -31,14 +31,14 @@ optflag "$@"
 ctl_title () {
     [ -z "$OPT_TITLE" ] && [ "$OPT_TITLE" = " " ] && return
 
-    OPT_DRY=-1
+    OPTFLAGDRYRUN=-1
     printf "\e]2;%s\007" "$OPT_TITLE"
 }
 
 ctl_title
 
 # Dry run.
-if [ "$OPT_DRY" = 0 ]; then
+if [ "$OPTFLAGDRYRUN" = 0 ]; then
     printf >&2 "error: alacrittyctl dry run\n"
     opthelp
     exit 2
