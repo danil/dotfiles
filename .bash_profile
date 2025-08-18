@@ -5,11 +5,6 @@
 # Configuration of Login shells.
 # <https://redswitches.com/blog/bashrc-vs-bash_profile-in-linux/#bashrc2>.
 
-
-
-
-
-
 # /etc/skel/.bash_profile
 
 # This file is sourced by bash for login shells.  The following line
