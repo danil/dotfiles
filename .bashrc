@@ -1,3 +1,6 @@
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+# <https://redswitches.com/blog/bashrc-vs-bash_profile-in-linux/#bashrc2>.
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples

@@ -1,3 +1,6 @@
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+# <https://redswitches.com/blog/bashrc-vs-bash_profile-in-linux/#bashrc2>.
+
 # ~/.profile: executed by the command interpreter for login shells.
 # This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
 # exists.
