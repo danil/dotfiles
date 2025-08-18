@@ -8,11 +8,6 @@ modmap:
       RightCtrl: RightAlt
       RightAlt:  RightCtrl
 
-  - name: Swapping F12 and Insert keys.
-    remap:
-     F12: Insert
-     Insert: F12
-
   - remap:
      CapsLock: Esc
 
