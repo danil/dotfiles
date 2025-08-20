@@ -2,5 +2,5 @@
 
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-# qdbus org.kde.kglobalaccel /component/kmix invokeShortcut "decrease_volume"
-pactl set-sink-volume @DEFAULT_SINK@ -1%
+qdbus org.kde.kglobalaccel /component/kmix invokeShortcut "decrease_volume"
+# pactl set-sink-volume @DEFAULT_SINK@ -1%
