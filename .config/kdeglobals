@@ -140,11 +140,11 @@ Splitter State=\x00\x00\x00\xff\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x00\xac\
 ColorSchemeHash=0594cdbf8684a5ef175629572f86003b65badc3d
 XftHintStyle=hintslight
 XftSubPixel=rgb
-fixed=Monospace,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
-font=Sans Serif,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
-menuFont=Sans Serif,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
-smallestReadableFont=Sans Serif,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
-toolBarFont=Sans Serif,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+fixed=Monospace,13,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+font=Sans Serif,14,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+menuFont=Sans Serif,13,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+smallestReadableFont=Sans Serif,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+toolBarFont=Sans Serif,13,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 
 [KDE]
 AnimationDurationFactor=0.08838834764831843
@@ -185,7 +185,7 @@ ZoomOut=
 [WM]
 activeBackground=227,229,231
 activeBlend=227,229,231
-activeFont=Sans Serif,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+activeFont=Sans Serif,13,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 activeForeground=35,38,41
 inactiveBackground=239,240,241
 inactiveBlend=239,240,241

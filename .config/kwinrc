@@ -1,5 +1,5 @@
 [Activities][LastVirtualDesktop]
-eb70e3e8-3d8b-43c9-af2e-8db10633dfbf=a2fb8fb8-6650-4dac-b3d6-e0994b43ceb9
+eb70e3e8-3d8b-43c9-af2e-8db10633dfbf=4e30d98b-f6ea-427f-a17a-67cc94fb2742
 fb4ab9ca-f90f-43d9-a42c-f469aa8eb958=a2fb8fb8-6650-4dac-b3d6-e0994b43ceb9
 
 [Desktops]
@@ -109,7 +109,7 @@ ElectricBorderDelay=100
 Placement=Smart
 
 [Xwayland]
-Scale=1.25
+Scale=1
 
 [org.kde.kdecoration2]
 BorderSize=None

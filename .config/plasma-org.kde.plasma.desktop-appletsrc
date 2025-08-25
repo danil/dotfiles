@@ -262,7 +262,7 @@ widgetElements=windowCloseButton,windowMinimizeButton,windowMaximizeButton,windo
 widgetElementsDisabledMode=HideKeepSpace
 widgetFillWidth=true
 windowTitleFontBold=false
-windowTitleFontSize=10
+windowTitleFontSize=13
 
 [Containments][2][Applets][68][Configuration][ConfigDialog]
 DialogHeight=540
@@ -487,6 +487,7 @@ global=
 [Containments][77]
 ItemGeometries-1536x864=
 ItemGeometries-1536x960=
+ItemGeometries-1920x1080=
 ItemGeometriesHorizontal=
 activityId=eb70e3e8-3d8b-43c9-af2e-8db10633dfbf
 formfactor=0
