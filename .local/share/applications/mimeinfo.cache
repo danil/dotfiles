@@ -15,6 +15,7 @@ text/xml=chrome.desktop;
 x-scheme-handler/callto=AM-skypeforlinux.desktop;
 x-scheme-handler/http=chrome.desktop;
 x-scheme-handler/https=chrome.desktop;
+x-scheme-handler/mattermost=AM-mattermost-desktop.desktop;
 x-scheme-handler/skype=AM-skypeforlinux.desktop;
 x-scheme-handler/tel=AM-skypeforlinux.desktop;AM-zoom.desktop;
 x-scheme-handler/tg=AM-telegram.desktop;org.telegram.desktop._288e7f609a7d599e01eab790c46dc4fc.desktop;

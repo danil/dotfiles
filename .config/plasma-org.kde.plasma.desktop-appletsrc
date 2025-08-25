@@ -115,7 +115,7 @@ DialogWidth=720
 
 [Containments][2][Applets][3][Configuration][General]
 favoritesPortedToKAstats=true
-icon=preferences-system-linux
+icon=system-shutdown
 systemFavorites=suspend\\,hibernate\\,reboot\\,shutdown
 
 [Containments][2][Applets][30]
@@ -373,7 +373,7 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][2][Applets][7][Applets][24][Configuration]
-PreloadWeight=80
+PreloadWeight=32
 
 [Containments][2][Applets][7][Applets][24][Configuration][General]
 showPercentage=true
@@ -424,9 +424,9 @@ DialogWidth=720
 PreloadWeight=100
 
 [Containments][2][Applets][7][General]
-extraItems=org.kde.plasma.cameraindicator,org.kde.plasma.battery,org.kde.plasma.keyboardlayout,org.kde.plasma.keyboardindicator,org.kde.plasma.notifications,org.kde.plasma.vault,org.kde.plasma.networkmanagement,org.kde.plasma.printmanager,org.kde.plasma.brightness,org.kde.plasma.bluetooth,org.kde.plasma.volume,org.kde.plasma.mediacontroller,org.kde.plasma.devicenotifier,org.kde.kscreen,org.kde.plasma.clipboard,org.kde.plasma.manage-inputmethod,org.kde.kdeconnect,org.kde.plasma.weather
+extraItems=org.kde.plasma.cameraindicator,org.kde.plasma.battery,org.kde.plasma.keyboardlayout,org.kde.plasma.notifications,org.kde.plasma.vault,org.kde.plasma.networkmanagement,org.kde.plasma.printmanager,org.kde.plasma.brightness,org.kde.plasma.bluetooth,org.kde.plasma.volume,org.kde.plasma.mediacontroller,org.kde.plasma.devicenotifier,org.kde.kscreen,org.kde.plasma.clipboard,org.kde.plasma.manage-inputmethod,org.kde.kdeconnect
 hiddenItems=Discover Notifier_org.kde.DiscoverNotifier,ibus-ui-gtk3
-knownItems=org.kde.plasma.cameraindicator,org.kde.plasma.battery,org.kde.plasma.keyboardlayout,org.kde.plasma.keyboardindicator,org.kde.plasma.notifications,org.kde.plasma.vault,org.kde.plasma.networkmanagement,org.kde.plasma.printmanager,org.kde.plasma.brightness,org.kde.plasma.bluetooth,org.kde.plasma.volume,org.kde.plasma.mediacontroller,org.kde.plasma.devicenotifier,org.kde.kscreen,org.kde.plasma.clipboard,org.kde.plasma.manage-inputmethod,org.kde.kdeconnect,org.kde.plasma.weather
+knownItems=org.kde.plasma.cameraindicator,org.kde.plasma.battery,org.kde.plasma.keyboardlayout,org.kde.plasma.notifications,org.kde.plasma.vault,org.kde.plasma.networkmanagement,org.kde.plasma.printmanager,org.kde.plasma.brightness,org.kde.plasma.bluetooth,org.kde.plasma.volume,org.kde.plasma.mediacontroller,org.kde.plasma.devicenotifier,org.kde.kscreen,org.kde.plasma.clipboard,org.kde.plasma.manage-inputmethod,org.kde.kdeconnect
 scaleIconsToFit=true
 shownItems=org.kde.plasma.battery
 
@@ -441,21 +441,8 @@ DialogWidth=720
 [Containments][2][Applets][88][Configuration][General]
 show_requestLogoutScreen=false
 
-[Containments][2][Applets][91]
-immutability=1
-plugin=org.kde.plasma.lock_logout
-
-[Containments][2][Applets][91][Configuration][ConfigDialog]
-DialogHeight=540
-DialogWidth=720
-
-[Containments][2][Applets][91][Configuration][General]
-show_lockScreen=false
-show_requestLogoutScreen=false
-show_suspendToRam=true
-
 [Containments][2][General]
-AppletOrder=3;68;4;6;30;27;29;34;36;7;22;21;91;88;33
+AppletOrder=3;68;4;6;30;27;29;34;36;7;22;21;33;88
 
 [Containments][42]
 activityId=
@@ -475,7 +462,7 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][42][Applets][45][Configuration][General]
-launchers=file:///tmp/.mount_remp12924795013614832208/com.mitchellh.ghostty.desktop,applications:firefox.desktop,applications:mailspring_mailspring.desktop,applications:Alacritty.desktop,applications:google-chrome.desktop,applications:gimp.desktop,applications:org.kde.krita.desktop,preferred://filemanager,applications:org.kde.gwenview.desktop,applications:appimagekit-pcloud.desktop,applications:org.kde.spectacle.desktop,applications:org.kde.discover.desktop,applications:megasync.desktop,applications:dropbox.desktop,applications:albert.desktop,applications:com.github.hluk.copyq.desktop,applications:org.kde.plasmashell.desktop,applications:org.gnome.Calculator.desktop,applications:systemsettings.desktop,file:///tmp/appimage_extracted_12924795013614832208/com.mitchellh.ghostty.desktop
+launchers=file:///tmp/.mount_remp11964330886889973817/com.mitchellh.ghostty.desktop,applications:firefox.desktop,applications:mailspring_mailspring.desktop,applications:Alacritty.desktop,applications:google-chrome.desktop,applications:gimp.desktop,applications:org.kde.krita.desktop,preferred://filemanager,applications:org.kde.gwenview.desktop,applications:appimagekit-pcloud.desktop,applications:org.kde.spectacle.desktop,applications:org.kde.discover.desktop,applications:megasync.desktop,applications:dropbox.desktop,applications:albert.desktop,applications:com.github.hluk.copyq.desktop,applications:org.kde.plasmashell.desktop,applications:org.gnome.Calculator.desktop,applications:systemsettings.desktop,file:///tmp/appimage_extracted_12924795013614832208/com.mitchellh.ghostty.desktop,file:///tmp/appimage_extracted_11964330886889973817/com.mitchellh.ghostty.desktop
 minimizeActiveTaskOnClick=false
 showOnlyCurrentActivity=false
 showOnlyCurrentDesktop=false
@@ -498,6 +485,7 @@ AppletOrder=45;70;46
 global=
 
 [Containments][77]
+ItemGeometries-1536x864=
 ItemGeometries-1536x960=
 ItemGeometriesHorizontal=
 activityId=eb70e3e8-3d8b-43c9-af2e-8db10633dfbf
@@ -509,7 +497,7 @@ plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
 
 [Containments][77][General]
-positions={"1536x960":[]}
+positions={"1536x864":[],"1536x960":[]}
 
 [Containments][77][Wallpaper][org.kde.image][General]
 Image=file:///home/danil/.local/share/backgrounds/2021-07-29.18.50.41-v2.jpg
