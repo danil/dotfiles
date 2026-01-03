@@ -137,7 +137,8 @@ DirSelectDialog Size=852,587
 Splitter State=\x00\x00\x00\xff\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x00\xac\x00\x00\x02\xa8\x00\xff\xff\xff\xff\x01\x00\x00\x00\x01\x00
 
 [General]
-ColorSchemeHash=0594cdbf8684a5ef175629572f86003b65badc3d
+BrowserApplication=google-chrome.desktop
+ColorSchemeHash=9f63c7711a13123582e720791ea0f8c0172977d2
 XftHintStyle=hintslight
 XftSubPixel=rgb
 fixed=Monospace,13,-1,5,400,0,0,0,0,0,0,0,0,0,0,1

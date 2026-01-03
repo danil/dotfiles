@@ -10,6 +10,16 @@ Switch to Last-Used Keyboard Layout=none,Meta+Alt+L,Switch to Last-Used Keyboard
 Switch to Next Keyboard Layout=none,Meta+Alt+K,Switch to Next Keyboard Layout
 _k_friendly_name=Keyboard Layout Switcher
 
+[com.google.Chrome]
+655BBA207B14CF0CB411CC5E00C1C7FC-command_toggle_global=,none,Toggle Deluminate on/off
+655BBA207B14CF0CB411CC5E00C1C7FC-command_toggle_site=,none,Toggle inversion on a site
+7F29CA740BFB1190C47FBF957BE9D74A-openManage=,none,Manage
+7F29CA740BFB1190C47FBF957BE9D74A-reload=,none,Reload
+7F29CA740BFB1190C47FBF957BE9D74A-styleDisableAll=,none,Turn all styles off
+9B3C814552EA2E917215B02E9488895C-ctrl-shift-s=,none,Save article
+F4FBAF32DA40E3CBBDF06A8F37509602-save-to-pocket-action=,none,Save page to Pocket
+_k_friendly_name=Google Chrome
+
 [kaccess]
 Toggle Screen Reader On and Off=none,Meta+Alt+S,Toggle Screen Reader On and Off
 _k_friendly_name=Accessibility
@@ -147,7 +157,7 @@ Window One Screen Down=none,,Move Window One Screen Down
 Window One Screen Up=none,,Move Window One Screen Up
 Window One Screen to the Left=none,,Move Window One Screen to the Left
 Window One Screen to the Right=none,,Move Window One Screen to the Right
-Window Operations Menu=none,Alt+F3,Window Operations Menu
+Window Operations Menu=none,Alt+F3,Window Menu
 Window Pack Down=none,,Move Window Down
 Window Pack Left=none,,Move Window Left
 Window Pack Right=none,,Move Window Right
@@ -162,7 +172,7 @@ Window Quick Tile Top Left=none,,Quick Tile Window to the Top Left
 Window Quick Tile Top Right=none,,Quick Tile Window to the Top Right
 Window Raise=none,,Raise Window
 Window Resize=none,,Resize Window
-Window Shade=none,,Shade Window
+Window Shade=none,none,Shade Window
 Window Shrink Horizontal=none,,Shrink Window Horizontally
 Window Shrink Vertical=none,,Shrink Window Vertically
 Window to Desktop 1=none,,Window to Desktop 1
@@ -231,6 +241,7 @@ _k_friendly_name=Power Management
 powerProfile=none,Battery\tMeta+B,Switch Power Profile
 
 [plasmashell]
+Slideshow Wallpaper Next Image=none,,Next Wallpaper Image
 _k_friendly_name=plasmashell
 activate application launcher=Meta\tAlt+F1,Meta\tAlt+F1,Activate Application Launcher
 activate task manager entry 1=Meta+1,Meta+1,Activate Task Manager Entry 1
@@ -260,7 +271,6 @@ repeat_action=none,,Manually Invoke Action on Current Clipboard
 show dashboard=none,Ctrl+F12,Show Desktop
 show-barcode=none,,Show Barcode…
 show-on-mouse-pos=none,Meta+V,Show Clipboard Items at Mouse Position
-stop current activity=none,Meta+S,Stop Current Activity
 switch to next activity=none,,Switch to Next Activity
 switch to previous activity=none,,Switch to Previous Activity
 toggle do not disturb=none,,Toggle do not disturb
