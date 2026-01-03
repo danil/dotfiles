@@ -19,7 +19,7 @@
   directory = /etc
   directory = /root/example
   directory = /root/.ssh
-  directory = /home/danil
+	directory = /home/danil
 
 # [color]
 #     diff = always
@@ -75,3 +75,6 @@
 
 # [include]
 #   path = ~/.gitconfig.a5g
+[gui]
+	fontui = -family \"nimbus sans l\" -size 18 -weight normal -slant roman -underline 0 -overstrike 0
+	fontdiff = -family \"nimbus mono l\" -size 18 -weight normal -slant roman -underline 0 -overstrike 0

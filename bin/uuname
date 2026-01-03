@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
+. /home/danil/bin/binpath.sh
+
+# uname --all
+# lsb_release
+"$BREWBINDIR"/fastfetch "$@" # Fastfetch is a system information tool. <https://github.com/fastfetch-cli/fastfetch>.

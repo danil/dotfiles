@@ -1,4 +1,5 @@
 ! This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+! DEPRECATED: Use xremap instead!~~~~<danil@kutkevich.org>
 ! `xmodmap ~/.Xmodmap`
 ! Disable forward and back keys on ThinkPad T400
 ! <http://streamreader.org/askubuntu/questions/24412/disable-xf86back-and-xf86forward-(back/forward-on->,

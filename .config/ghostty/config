@@ -5,7 +5,10 @@
 
 # <https://github.com/ghostty-org/ghostty/discussions/3663#discussioncomment-11696943>.
 # Window decoration [ auto client server false ].
+# # Wayland title bar configuration compatible with KDE Plasma.
 # window-decoration = auto
+# X11 title bar configuration compatible with KDE Plasma.
+window-decoration = server
 # gtk-titlebar = false
 
 # <https://ghostty.org/docs/config/reference#link>,

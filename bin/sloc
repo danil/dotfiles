@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-# /home/linuxbrew/.linuxbrew/bin/scc "$@"
-/home/linuxbrew/.linuxbrew/bin/tokei "$@" # <https://github.com/xampprocky/tokei>.
+. /home/danil/bin/binpath.sh
+
+# "$BREWBINDIR"/scc "$@"
+"$BREWBINDIR"/tokei "$@" # <https://github.com/xampprocky/tokei>.

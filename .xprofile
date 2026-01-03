@@ -9,11 +9,11 @@ setxkbmap -model pc105 -layout us,ru -option grp:shifts_toggle
 
 # Merge in defaults and keymaps.
 userresources=$HOME/.Xresources
-usermodmap=$HOME/.Xmodmap
 if [ -f "$userresources" ]; then
     # xrdb -merge "$userresources"
     xrdb -load "$userresources"
 fi
+usermodmap=$HOME/.Xmodmap
 if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
 fi

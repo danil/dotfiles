@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-VPNUSAGE="usage: ${CMD:=${0##*/}} { --up | --down } [ --force ] [ --status ] [ --verbose ]"
+VPNUSAGE="usage: ${CMD:=${0##*/}} { --up | --down } | { --dns-setup | --dns-unset } [ --force ] [ --status ] [ --verbose ]"
 
 vpnup () {
     # nmcli connection up WB passwd-file /root/openvpn/wbr/password
@@ -14,18 +14,26 @@ vpndown () {
     sudo systemctl stop wb_vpn.service || exit 1
 }
 
-vpndnsup () {
-    if ! grep --quiet "nameserver.*10.15.12.200" /etc/resolv.conf; then
-        sudo sed -i -z 's/\(nameserver.*127.0.0.53\n\)/nameserver 10.15.12.200\n\1/g' /etc/resolv.conf
+vpndnssetup () {
+    if ! grep --quiet "nameserver[ ]*8.8.8.8" /etc/resolv.conf; then
+        sudo sed --null-data --in-place --follow-symlinks 's/\(nameserver[ ]*127.0.0.53\n\)/nameserver 8.8.8.8\n\1/g' /etc/resolv.conf
     fi
-    if ! grep --quiet "nameserver 10.15.12.100" /etc/resolv.conf; then
-        sudo sed -i -z 's/\(nameserver 127.0.0.53\n\)/nameserver 10.15.12.100\n\1/g' /etc/resolv.conf
+    if ! grep --quiet "nameserver[ ]*77.88.8.8" /etc/resolv.conf; then
+        sudo sed --null-data --in-place --follow-symlinks 's/\(nameserver[ ]*127.0.0.53\n\)/nameserver 77.88.8.8\n\1/g' /etc/resolv.conf
     fi
+    # if ! grep --quiet "nameserver[ ]*10.15.12.200" /etc/resolv.conf; then
+    #     sudo sed --null-data --in-place --follow-symlinks 's/\(nameserver[ ]*127.0.0.53\n\)/nameserver 10.15.12.200\n\1/g' /etc/resolv.conf
+    # fi
+    # if ! grep --quiet "nameserver 10.15.12.100" /etc/resolv.conf; then
+    #     sudo sed --null-data --in-place --follow-symlinks 's/\(nameserver 127.0.0.53\n\)/nameserver 10.15.12.100\n\1/g' /etc/resolv.conf
+    # fi
 }
 
-vpndnsdown () {
-    sudo sed -i -z 's/nameserver.*10.15.12.100\n//g' /etc/resolv.conf
-    sudo sed -i -z 's/nameserver.*10.15.12.200\n//g' /etc/resolv.conf
+vpndnsunset () {
+    sudo sed --null-data --in-place --follow-symlinks 's/nameserver[ ]*77.88.8.8\n//g' /etc/resolv.conf
+    sudo sed --null-data --in-place --follow-symlinks 's/nameserver[ ]*8.8.8.8\n//g' /etc/resolv.conf
+    # sudo sed --null-data --in-place --follow-symlinks 's/nameserver[ ]*10.15.12.100\n//g' /etc/resolv.conf
+    # sudo sed --null-data --in-place --follow-symlinks 's/nameserver[ ]*10.15.12.200\n//g' /etc/resolv.conf
 }
 
 optflagcheck () { { [ "$1" != "$EOL" ] && [ "$1" != '--' ]; } || { printf >&2 "missing argument %s\n" "$2"; return 2; } } # Avoid infinite loop.
@@ -38,9 +46,11 @@ vpnopt () {
         local OPTFLAG="$1"; shift
 
         case "$OPTFLAG" in
-            --up     ) local OPT_UP=0;;
-            --down   ) local OPT_DOWN=0;;
-            --status ) local OPT_STATUS=0;;
+            --up          ) local OPT_UP=0;;
+            --down        ) local OPT_DOWN=0;;
+            --dns-setup   ) local OPT_DNSSETUP=0;;
+            --dns-unset   ) local OPT_DNSUNSET=0;;
+            --status      ) local OPT_STATUS=0;;
             -v | --verbose ) local OPT_VERBOSE=0;;
             -h | --help    ) printf "%s\n" "$VPNUSAGE"; exit 0;;
 
@@ -68,13 +78,23 @@ vpnopt () {
     if [ "$OPT_UP" = 0 ] ; then
         OPTFLAGDRYRUN=-1
         vpnup
-        # vpndnsup
+        # vpndnssetup
     fi
 
     if [ "$OPT_DOWN" = 0 ] ; then
         OPTFLAGDRYRUN=-1
         vpndown
-        # vpndnsdown
+        # vpndnsunset
+    fi
+
+    if [ "$OPT_DNSSETUP" = 0 ] ; then
+        OPTFLAGDRYRUN=-1
+        vpndnssetup
+    fi
+
+    if [ "$OPT_DNSUNSET" = 0 ] ; then
+        OPTFLAGDRYRUN=-1
+        vpndnsunset
     fi
 
     if [ "$OPT_STATUS" = 0 ] ; then

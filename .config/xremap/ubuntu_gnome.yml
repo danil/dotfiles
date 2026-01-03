@@ -9,7 +9,7 @@ modmap:
       RightAlt:  RightCtrl
 
   - remap:
-     CapsLock: Esc
+     CapsLock: Shift_R
 
 keymap:
   - name: Escape.
@@ -31,7 +31,7 @@ keymap:
           KEY_U:
             remap:
               KEY_C:
-                launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && wezterm"]
+                launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && ghostty"]
               Shift-1:
                 launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && albert show"]
             KEY_U:
@@ -83,7 +83,37 @@ keymap:
           KEY_C:
             launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && find-cursor --color=#ff0000 --size=700 --line-width=10 --distance=70"]
 
-  - name: Media Player control.
+  - name: Screen backlight control.
+    remap:
+      C-F5:
+        launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && screen-backlight-down"]
+      C-F6:
+        launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && screen-backlight-up"]
+      C-t:
+        remap:
+          KEY_B:
+            remap:
+              KEY_J:
+                launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && screen-backlight-down"]
+              KEY_K:
+                launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && screen-backlight-up"]
+
+  - name: Sound volume (PulseAudio) control.
+    remap:
+      C-F2:
+        launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && audio-sound-volume-down"]
+      C-F3:
+        launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && audio-sound-volume-up"]
+      C-t:
+        remap:
+          KEY_V:
+            remap:
+              KEY_J:
+                launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && audio-sound-volume-down"]
+              KEY_K:
+                launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && audio-sound-volume-up"]
+
+  - name: Music Media Player control.
     remap:
       C-t:
         remap:
@@ -123,7 +153,11 @@ keymap:
                     launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'Expose'"]
                   KEY_C:
                     launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'ExposeClass'"]
-                  KEY_D:
+          KEY_U:
+            remap:
+              KEY_W:
+                remap:
+                  KEY_W:
                     launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'ExposeClassCurrentdesktop'"]
 
   - name: Window manager.
