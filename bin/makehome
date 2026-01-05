@@ -522,12 +522,12 @@ APTO_INS="$APTO_INS xcalib" # `xcalib -i -a` invert colors on xorg/xrandr <https
 # APTO_INS="$APTO_INS xfce4-xkb-plugin" # keyboard language switcher.
 
 # X11 MATE DE Desktop Environment.
-# APTO_INS="$APTO_INS atril" # instead installed from snap # pdf viewer (remembers last page) for mate de (desktop environment) https://github.com/mate-desktop/atril
 # APTO_INS="$APTO_INS mate"
 # APTO_INS="$APTO_INS mate-notification-daemon"
 # APTO_INS="$APTO_INS mate-power-manager"
 # APTO_INS="$APTO_INS mate-screensaver"
 # APTO_INS="$APTO_INS mate-tweak"
+APTO_INS="$APTO_INS atril" # SNAP_INS="$SNAP_INS atril" # PDF viewer (remembers last page) for Mate DE (desktop environment) <https://github.com/mate-desktop/atril>.
 APTO_INS="$APTO_INS caja" # file manager <https://github.com/mate-desktop/caja>.
 APTO_INS="$APTO_INS engrampa" # archiver.
 APTO_INS="$APTO_INS evince-" # remove: pdf viewer remembers last page https://github.com/mate-desktop/atril
@@ -688,7 +688,6 @@ BREW_INS="$BREW_INS mpv" # APTO_INS="$APTO_INS mpv" # A-la mplayer replacement.
 BREW_INS="$BREW_INS xdotool"
 FLAT_INS="$FLAT_INS com.github.hluk.copyq" # Clipboard manager <https://github.com/hluk/copyq>.
 PACS_INS="$PACS_INS ventoy-bin" # Create bootable/live usb/iso a-la usb-creator-gtk <https://ventoy.net>.
-SNAP_INS="$SNAP_INS atril" # PDF viewer (remembers last page) for Mate DE (desktop environment) <https://github.com/mate-desktop/atril>.
 
 # Er Wbr.
 # BREW_INS="$BREW_INS teleport" # NOTE: Instead you should install an old version of tsh using script `curl https://goteleport.com/static/install.sh | bash -s 1.23.31`. Teleport TSH is SSH client for the Teleport, a modern SSH server for teams managing distributed infrastructure <https://github.com/gravitational/teleport>.
