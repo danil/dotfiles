@@ -19,7 +19,7 @@
   directory = /etc
   directory = /root/example
   directory = /root/.ssh
-	directory = /home/danil
+  directory = /home/danil
 
 # [color]
 #     diff = always
