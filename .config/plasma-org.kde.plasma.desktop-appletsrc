@@ -396,7 +396,7 @@ immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][2][Applets][7][Applets][26][Configuration]
-PreloadWeight=16
+PreloadWeight=8
 
 [Containments][2][Applets][7][Applets][37]
 immutability=1
@@ -462,7 +462,7 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][42][Applets][45][Configuration][General]
-launchers=file:///tmp/.mount_remp11964330886889973817/com.mitchellh.ghostty.desktop,applications:google-chrome.desktop,applications:mailspring_mailspring.desktop,applications:Alacritty.desktop,applications:firefox.desktop,applications:gimp.desktop,applications:org.kde.krita.desktop,preferred://filemanager,applications:org.kde.gwenview.desktop,applications:appimagekit-pcloud.desktop,applications:org.kde.spectacle.desktop,applications:org.kde.discover.desktop,applications:megasync.desktop,applications:dropbox.desktop,applications:albert.desktop,applications:com.github.hluk.copyq.desktop,applications:org.kde.plasmashell.desktop,applications:org.gnome.Calculator.desktop,applications:systemsettings.desktop,file:///tmp/appimage_extracted_12924795013614832208/com.mitchellh.ghostty.desktop,file:///tmp/appimage_extracted_11964330886889973817/com.mitchellh.ghostty.desktop
+launchers=file:///tmp/.mount_remp11964330886889973817/com.mitchellh.ghostty.desktop,applications:google-chrome.desktop,applications:mailspring_mailspring.desktop,applications:Alacritty.desktop,applications:firefox.desktop,applications:gimp.desktop,applications:org.kde.krita.desktop,preferred://filemanager,applications:org.kde.gwenview.desktop,applications:appimagekit-pcloud.desktop,applications:org.kde.spectacle.desktop,applications:org.kde.discover.desktop,applications:megasync.desktop,applications:dropbox.desktop,applications:albert.desktop,applications:org.kde.plasmashell.desktop,applications:org.gnome.Calculator.desktop,applications:systemsettings.desktop,file:///tmp/appimage_extracted_12924795013614832208/com.mitchellh.ghostty.desktop,file:///tmp/appimage_extracted_11964330886889973817/com.mitchellh.ghostty.desktop
 minimizeActiveTaskOnClick=false
 showOnlyCurrentActivity=false
 showOnlyCurrentDesktop=false

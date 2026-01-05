@@ -11,13 +11,13 @@ Switch to Next Keyboard Layout=none,Meta+Alt+K,Switch to Next Keyboard Layout
 _k_friendly_name=Keyboard Layout Switcher
 
 [com.google.Chrome]
-655BBA207B14CF0CB411CC5E00C1C7FC-command_toggle_global=,none,Toggle Deluminate on/off
-655BBA207B14CF0CB411CC5E00C1C7FC-command_toggle_site=,none,Toggle inversion on a site
-7F29CA740BFB1190C47FBF957BE9D74A-openManage=,none,Manage
-7F29CA740BFB1190C47FBF957BE9D74A-reload=,none,Reload
-7F29CA740BFB1190C47FBF957BE9D74A-styleDisableAll=,none,Turn all styles off
-9B3C814552EA2E917215B02E9488895C-ctrl-shift-s=,none,Save article
-F4FBAF32DA40E3CBBDF06A8F37509602-save-to-pocket-action=,none,Save page to Pocket
+655BBA207B14CF0CB411CC5E00C1C7FC-command_toggle_global=none,none,Toggle Deluminate on/off
+655BBA207B14CF0CB411CC5E00C1C7FC-command_toggle_site=none,none,Toggle inversion on a site
+7F29CA740BFB1190C47FBF957BE9D74A-openManage=none,none,Manage
+7F29CA740BFB1190C47FBF957BE9D74A-reload=none,none,Reload
+7F29CA740BFB1190C47FBF957BE9D74A-styleDisableAll=none,none,Turn all styles off
+9B3C814552EA2E917215B02E9488895C-ctrl-shift-s=none,none,Save article
+F4FBAF32DA40E3CBBDF06A8F37509602-save-to-pocket-action=none,none,Save page to Pocket
 _k_friendly_name=Google Chrome
 
 [kaccess]
@@ -36,14 +36,14 @@ mic_mute=none,Microphone Mute\tMeta+Volume Mute,Mute Microphone
 mute=none,Volume Mute,Mute
 
 [ksmserver]
-Halt Without Confirmation=none,,Shut Down Without Confirmation
+Halt Without Confirmation=none,none,Shut Down Without Confirmation
 Lock Session=none,Meta+L\tScreensaver,Lock Session
 Log Out=Ctrl+Alt+Del,Ctrl+Alt+Del,Show Logout Screen
-Log Out Without Confirmation=none,,Log Out Without Confirmation
-LogOut=none,,Log Out
-Reboot=none,,Reboot
-Reboot Without Confirmation=none,,Reboot Without Confirmation
-Shut Down=none,,Shut Down
+Log Out Without Confirmation=none,none,Log Out Without Confirmation
+LogOut=none,none,Log Out
+Reboot=none,none,Reboot
+Reboot Without Confirmation=none,none,Reboot Without Confirmation
+Shut Down=none,none,Shut Down
 _k_friendly_name=Session Management
 
 [kwin]
@@ -215,11 +215,11 @@ view_zoom_out=none,Meta+-,Zoom Out
 
 [mediacontrol]
 _k_friendly_name=Media Controller
-mediavolumedown=none,,Media volume down
-mediavolumeup=none,,Media volume up
+mediavolumedown=none,none,Media volume down
+mediavolumeup=none,none,Media volume up
 nextmedia=none,Media Next,Media playback next
 pausemedia=none,Media Pause,Pause media playback
-playmedia=none,,Play media playback
+playmedia=none,none,Play media playback
 playpausemedia=none,Media Play,Play/Pause media playback
 previousmedia=none,Media Previous,Media playback previous
 stopmedia=none,Media Stop,Stop media playback
