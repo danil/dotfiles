@@ -157,7 +157,7 @@ BREW_INS="$BREW_INS ccls" # ccls implementing LSP Language Server Protocol, used
 BREW_INS="$BREW_INS gcc"
 
 # Clang compiler front end for the C, C++, Objective-C (depends on LLVM).
-BREW_INS="$BREW_INS clang-format" # APTO_INS="$APTO_INS clang" # used by emacs (company-clang backend) # c, c++ and objective-c compiler based on llvm <https://github.com/llvm/llvm-project>.
+# BREW_INS="$BREW_INS clang-format" # APTO_INS="$APTO_INS clang" # used by emacs (company-clang backend) # c, c++ and objective-c compiler based on llvm <https://github.com/llvm/llvm-project>.
 BREW_INS="$BREW_INS llvm" # <https://github.com/llvm/llvm-project>.
 
 # Markdown markup languag <https://en.wikipedia.org/wiki/Markdown>.
@@ -195,9 +195,9 @@ GOLN_INS="$GOLN_INS go.uber.org/mock/mockgen@latest" # <https://github.com/uber-
 # APTO_INS="$APTO_INS libudev-dev" # required by fclones, is an duplicate file finder https://github.com/pkolaczk/fclones
 # APTO_INS="$APTO_INS libwebkit2gtk-4.0-dev" # required by fontfinder https://github.com/mmstick/fontfinder
 # APTO_INS="$APTO_INS libxcb-composite0-dev" # required by gitui a-la tig https://github.com/extrawurst/gitui
+# BREW_INS="$BREW_INS rustup" # The Rust toolchain installer. Formerly known as `rustup-init`. <https://github.com/rust-lang/rustup>.
 # RUST_INS="$RUST_INS rustfmt" # rust code pretty formating <https://github.com/rust-lang-nursery/rustfmt>.
 BREW_INS="$BREW_INS rust"
-BREW_INS="$BREW_INS rustup" # The Rust toolchain installer. Formerly known as `rustup-init`. <https://github.com/rust-lang/rustup>.
 
 # JS/JavaScript/Nodejs.
 # APTO_INS="$APTO_INS curl dirmngr apt-transport-https lsb-release ca-certificates" # required by nodesource.com's ppa
