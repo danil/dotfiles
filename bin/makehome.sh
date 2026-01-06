@@ -8,11 +8,49 @@ APTO_INS_CLI="sudo aptitude install --without-recommends"
 APTO_UNI_CLI="sudo aptitude remove"
 # APTO_DIS_CLI="systemctl disable"
 
+makebrewinst () {
+    export HOMEBREW_NO_AUTO_UPDATE=1 && brew install "$@"
+}
+
+makebrewreinst () {
+    export HOMEBREW_NO_AUTO_UPDATE=1
+    export HOMEBREW_COLOR=1
+
+    printf "\nMAKEBREWREINST: brew install %s\n" "$@"
+    ins_out="$(brew install "$@" 2>&1)"
+    printf "%s\n" "$ins_out"
+
+    # rin_out=""
+
+    case "$ins_out" in
+        *"is already installed and up-to-date."*|*"is already installed."*)
+        printf "MAKEBREWREINST: brew reinstall %s\n" "$@"
+        rin_out="$(brew reinstall "$@" 2>&1)"
+        printf "%s\n" "$rin_out"
+        ;;
+    esac
+
+    case "$ins_out" in
+        *"is already installed, it's just not linked."*)
+        printf "MAKEBREWREINST: brew link %s\n" "$@"
+        brew link $@
+        ;;
+    esac
+
+    case "$rin_out" in
+        *"Error: Could not rename"*"keg! Check/fix its permissions:"*)
+        printf "MAKEBREWREINST: brew link %s\n" "$@"
+        brew link $@
+        ;;
+    esac
+}
+
 # Homebrew
 # <https://github.com/Homebrew/brew>.
 BREW_INS_SRC_CLI="brew tap"
 BREW_UNI_SRC_CLI="brew untap"
-BREW_INS_CLI="export HOMEBREW_NO_AUTO_UPDATE=1 && brew install"
+BREW_INS_CLI="makebrewinst"
+BREW_RIN_CLI="makebrewreinst"
 BREW_UPD_CLI="brew install"
 
 # AppImage
@@ -75,8 +113,8 @@ PIP3_UPD_CLI="pip3 install --user --upgrade"
 NPMJ_INS_CLI="npm install"
 NPMJ_UPD_CLI="npm update"
 
-# MAKEHOMEUSAGE="usage: ${CMD:=${0##*/}} { --install | --update | --config  } [--apt] [--homebrew] [--appimage] [--pacstall] [--snap] [--flatpak] [--go] [--rust] [--python2] [--python3] [--update] [--etc] [--root] [--home=\"\$HOME\"]"
-MAKEHOMEUSAGE="usage: makehome { --install | --update | --config  } [--apt] [--homebrew] [--appimage] [--pacstall] [--snap] [--flatpak] [--go] [--rust] [--python2] [--python3] [--npm] [--update] [--etc] [--root] [--home=\"\$HOME\"]"
+# MAKEHOMEUSAGE="usage: ${CMD:=${0##*/}} { --install | --reinstall | --update | --config  } [--apt] [--homebrew] [--appimage] [--pacstall] [--snap] [--flatpak] [--go] [--rust] [--python2] [--python3] [--update] [--etc] [--root] [--home=\"\$HOME\"]"
+MAKEHOMEUSAGE="usage: makehome { --install | --reinstall | --update | --config  } [--apt] [--homebrew] [--appimage] [--pacstall] [--snap] [--flatpak] [--go] [--rust] [--python2] [--python3] [--npm] [--update] [--etc] [--root] [--home=\"\$HOME\"]"
 
 makehome () {
     local OPT_ALL_PACKAGES=-1
@@ -89,24 +127,25 @@ makehome () {
         local OPTFLAG="$1"; shift
 
         case "$OPTFLAG" in
-            --install  ) local OPT_INSTALL=0;;
-            --update   ) local OPT_UPDATE=0;;
-            --config   ) local OPT_CONFIG=0;;
-            --apt      ) local OPT_APTO=0; OPT_ALL_PACKAGES=-1;;
-            --homebrew ) local OPT_BREW=0; OPT_ALL_PACKAGES=-1;;
-            --appimage ) local OPT_APPL=0; local OPT_APPM=0; OPT_ALL_PACKAGES=-1;;
-            --pacstall ) local OPT_PACS=0; OPT_ALL_PACKAGES=-1;;
-            --snap     ) local OPT_SNAP=0; local OPT_SNAC=0; OPT_ALL_PACKAGES=-1;;
-            --flatpak  ) local OPT_FLAT=0; OPT_ALL_PACKAGES=-1;;
-            --go       ) local OPT_GOLN=0; OPT_ALL_PACKAGES=-1;;
-            --rust     ) local OPT_RUST=0; OPT_ALL_PACKAGES=-1;;
-            --python2  ) local OPT_PIP2=0; OPT_ALL_PACKAGES=-1;;
-            --python3  ) local OPT_PIP3=0; OPT_ALL_PACKAGES=-1;;
-            --npm      ) local OPT_NPMJ=0; OPT_ALL_PACKAGES=-1;;
-            --home     ) optflagcheck "$1" "$OPTFLAG"; OPTFLAGEXIT=$?; local OPT_HOME="$1"; OPT_ALL_PACKAGES=-1; shift;;
-            --etc      ) local OPT_ETCE="/etc"; OPT_ALL_PACKAGES=-1;;
-            --root     ) local OPT_ROOT="/"; OPT_ALL_PACKAGES=-1;;
-            --jobs     ) optflagcheck "$1" "$OPTFLAG"; OPTFLAGEXIT=$?; OPT_JOBS="$1"; shift;;
+            --install   ) local OPT_INSTALL=0;;
+            --reinstall ) local OPT_REINSTALL=0;;
+            --update    ) local OPT_UPDATE=0;;
+            --config    ) local OPT_CONFIG=0;;
+            --apt       ) local OPT_APTO=0; OPT_ALL_PACKAGES=-1;;
+            --homebrew  ) local OPT_BREW=0; OPT_ALL_PACKAGES=-1;;
+            --appimage  ) local OPT_APPL=0; local OPT_APPM=0; OPT_ALL_PACKAGES=-1;;
+            --pacstall  ) local OPT_PACS=0; OPT_ALL_PACKAGES=-1;;
+            --snap      ) local OPT_SNAP=0; local OPT_SNAC=0; OPT_ALL_PACKAGES=-1;;
+            --flatpak   ) local OPT_FLAT=0; OPT_ALL_PACKAGES=-1;;
+            --go        ) local OPT_GOLN=0; OPT_ALL_PACKAGES=-1;;
+            --rust      ) local OPT_RUST=0; OPT_ALL_PACKAGES=-1;;
+            --python2   ) local OPT_PIP2=0; OPT_ALL_PACKAGES=-1;;
+            --python3   ) local OPT_PIP3=0; OPT_ALL_PACKAGES=-1;;
+            --npm       ) local OPT_NPMJ=0; OPT_ALL_PACKAGES=-1;;
+            --home      ) optflagcheck "$1" "$OPTFLAG"; OPTFLAGEXIT=$?; local OPT_HOME="$1"; OPT_ALL_PACKAGES=-1; shift;;
+            --etc       ) local OPT_ETCE="/etc"; OPT_ALL_PACKAGES=-1;;
+            --root      ) local OPT_ROOT="/"; OPT_ALL_PACKAGES=-1;;
+            --jobs      ) optflagcheck "$1" "$OPTFLAG"; OPTFLAGEXIT=$?; OPT_JOBS="$1"; shift;;
             -v | --verbose ) local OPT_VERBOSE=0;;
             -h | --help    ) printf "%s\n" "$MAKEHOMEUSAGE"; exit 0;;
 
@@ -124,13 +163,40 @@ makehome () {
     [ "$OPTFLAGEXIT" != 0 ] && printf >&2 "%s\n" "$MAKEHOMEUSAGE" && exit "$OPTFLAGEXIT"
 
     local cmd_count=0
-    [ "$OPT_INSTALL" = 0 ] && cmd_count=$((cmd_count+1)) 
-    [ "$OPT_UPDATE"  = 0 ] && cmd_count=$((cmd_count+1)) 
-    [ "$OPT_CONFIG"  = 0 ] && cmd_count=$((cmd_count+1)) 
+    [ "$OPT_INSTALL"   = 0 ] && cmd_count=$((cmd_count+1))
+    [ "$OPT_REINSTALL" = 0 ] && cmd_count=$((cmd_count+1))
+    [ "$OPT_UPDATE"    = 0 ] && cmd_count=$((cmd_count+1))
+    [ "$OPT_CONFIG"    = 0 ] && cmd_count=$((cmd_count+1))
     [ "$cmd_count" -lt 1 ] && printf >&2 "error: missing command\n" && printf >&2 "%s\n" "$MAKEHOMEUSAGE" && exit 2
     [ "$cmd_count" -gt 1 ] && printf >&2 "error: ambiguous command\n" && printf >&2 "%s\n" "$MAKEHOMEUSAGE" && exit 2
 
     local OPTFLAGDRYRUN=0
+
+    if [ "$OPT_INSTALL" = 0 ]; then
+        BREW_RIN_CLI=""
+        APPM_RIN_CLI=""
+        SNAP_RIN_CLI=""
+        PACS_RIN_CLI=""
+        GOLN_RIN_CLI=""
+        GOLN_RIN_CLI=""
+        RUST_RIN_CLI=""
+        PIP2_RIN_CLI=""
+        PIP3_RIN_CLI=""
+        NPMJ_RIN_CLI=""
+    fi
+
+    if [ "$OPT_REINSTALL" = 0 ]; then
+        BREW_INS_CLI=""
+        APPM_INS_CLI=""
+        SNAP_INS_CLI=""
+        PACS_INS_CLI=""
+        GOLN_INS_CLI=""
+        GOLN_INS_CLI=""
+        RUST_INS_CLI=""
+        PIP2_INS_CLI=""
+        PIP3_INS_CLI=""
+        NPMJ_INS_CLI=""
+    fi
 
     if [ "$OPT_UPDATE" = 0 ]; then
         BREW_INS_CLI="$BREW_UPD_CLI"
@@ -151,7 +217,7 @@ makehome () {
 
     # makeinst --description="AppImageLauncher AppImage packages" --make="$OPT_APPL" --install-fast-exit-loop "$APPL_INS_CLI" "$APPL_INS" # AppImageLauncher install AppImages <https://github.com/theassassin/appimagelauncher>, <https://github.com/appimage/appimagekit>
     makeinst --description="APT packages"             --make="$OPT_APTO" --install-command="$APTO_INS_CLI" --install-packages="$APTO_INS" --install-line-fast-exit --uninstall-command="$APTO_UNI_CLI" --uninstall-packages="$APTO_UNI" --uninstall-line-fast-exit # FIXME: sh -c "sudo $APTO_DIS_CLI $APTO_DIS" || exit 1 # Advanced package tool (APT/deb/dpkg/apt-get/aptitude) <https://en.wikipedia.org/wiki/APT_(software)>.
-    makeinst --description="Homebrew packages"        --make="$OPT_BREW" --install-command="$BREW_INS_CLI" --install-packages="$BREW_INS" --install-line-fast-exit --install-source-command="$BREW_INS_SRC_CLI" --install-source-packages="${BREW_INS_SRC}" --install-source-loop-fast-exit # FIXME: for src in ${BREW_UNI_SRC}; do sh -c "$BREW_UNI_SRC_CLI $src" || exit 1; done # Homebrew <https://brew.sh>.
+    makeinst --description="Homebrew packages"        --make="$OPT_BREW" --install-command="$BREW_INS_CLI" --install-packages="$BREW_INS" --install-line-fast-exit --reinstall-command="$BREW_RIN_CLI" --reinstall-packages="$BREW_INS" --reinstall-loop-skip-exit --install-source-command="$BREW_INS_SRC_CLI" --install-source-packages="${BREW_INS_SRC}" --install-source-loop-fast-exit # FIXME: for src in ${BREW_UNI_SRC}; do sh -c "$BREW_UNI_SRC_CLI $src" || exit 1; done # Homebrew <https://brew.sh>.
     makeinst --description="AppMan AppImage packages" --make="$OPT_APPM" --install-command="$APPM_INS_CLI" --install-packages="$APPM_INS" --install-line-skip-exit # AppMan install AppImages <https://github.com/ivan-hc/appman>, <https://github.com/appimage/appimagekit>.
     makeinst --description="Snap packages"            --make="$OPT_SNAP" --install-command="$SNAP_INS_CLI" --install-packages="$SNAP_INS" --install-loop-fast-exit --uninstall-command="$SNAP_UNI_CLI" --uninstall-packages="$SNAP_UNI" --uninstall-line-fast-exit # Snap <https://github.com/snapcore/snapd>.
     makeinst --description="Snap classic packages"    --make="$OPT_SNAC" --install-command="$SNAC_INS_CLI" --install-packages="$SNAC_INS" --install-loop-fast-exit --uninstall-command="$SNAC_UNI_CLI" --uninstall-packages="$SNAC_UNI" --uninstall-line-fast-exit # Snap <https://github.com/snapcore/snapd>.
@@ -199,6 +265,13 @@ makeinst () {
             --uninstall-loop-fast-exit ) local UNI_FAST_EXIT_LOOP=0;;
             --uninstall-loop-skip-exit ) local UNI_SKIP_EXIT_LOOP=0;;
 
+            --reinstall-command        ) optflagcheck "$1" "$OPTFLAG"; OPTFLAGEXIT=$?; local RIN_CLI="$1"; shift;;
+            --reinstall-packages       ) optflagcheck "$1" "$OPTFLAG"; OPTFLAGEXIT=$?; local RIN_PKG="$1"; shift;;
+            --reinstall-line-fast-exit ) local RIN_FAST_EXIT_LINE=0;;
+            --reinstall-line-skip-exit ) local RIN_SKIP_EXIT_LINE=0;;
+            --reinstall-loop-fast-exit ) local RIN_FAST_EXIT_LOOP=0;;
+            --reinstall-loop-skip-exit ) local RIN_SKIP_EXIT_LOOP=0;;
+
             --install-source-command        ) optflagcheck "$1" "$OPTFLAG"; OPTFLAGEXIT=$?; local SRC_CLI="$1"; shift;;
             --install-source-packages       ) optflagcheck "$1" "$OPTFLAG"; OPTFLAGEXIT=$?; local SRC_PKG="$1"; shift;;
             --install-source-line-fast-exit ) local SRC_FAST_EXIT_LINE=0;;
@@ -228,6 +301,13 @@ makeinst () {
     [ "$INS_SKIP_EXIT_LINE" = 0 ] && ins_typ_count=$((ins_typ_count+1))
     [ "$ins_typ_count" -gt 1 ] && printf >&2 "error: ambiguous install command type\n" && printf "%s\n" "$MAKEINSTUSAGE" && exit 2
 
+    local rin_typ_count=0
+    [ "$RIN_FAST_EXIT_LOOP" = 0 ] && rin_typ_count=$((rin_typ_count+1))
+    [ "$RIN_SKIP_EXIT_LOOP" = 0 ] && rin_typ_count=$((rin_typ_count+1))
+    [ "$RIN_FAST_EXIT_LINE" = 0 ] && rin_typ_count=$((rin_typ_count+1))
+    [ "$RIN_SKIP_EXIT_LINE" = 0 ] && rin_typ_count=$((rin_typ_count+1))
+    [ "$rin_typ_count" -gt 1 ] && printf >&2 "error: ambiguous reinstall command type\n" && printf "%s\n" "$MAKEINSTUSAGE" && exit 2
+
     local uni_typ_count=0
     [ "$UNI_FAST_EXIT_LOOP" = 0 ] && uni_typ_count=$((uni_typ_count+1)) 
     [ "$UNI_SKIP_EXIT_LOOP" = 0 ] && uni_typ_count=$((uni_typ_count+1)) 
@@ -253,10 +333,10 @@ makeinst () {
 
         printf "uninstalling %s ...\n\n" "$DESCRIPTION"
 
-        if [ "$UNI_FAST_EXIT_LOOP" = 0 ]; then for x in ${UNI_PKG}; do sh -c "$UNI_CLI $x" || exit 1; done; fi
-        if [ "$UNI_SKIP_EXIT_LOOP" = 0 ]; then for x in ${UNI_PKG}; do sh -c "$UNI_CLI $x"; done; fi
-        if [ "$UNI_FAST_EXIT_LINE" = 0 ]; then sh -c "$UNI_CLI $UNI_PKG" || exit 1; fi
-        if [ "$UNI_SKIP_EXIT_LINE" = 0 ]; then sh -c "$UNI_CLI $UNI_PKG"; fi
+        if [ "$UNI_FAST_EXIT_LOOP" = 0 ]; then for x in ${UNI_PKG}; do $UNI_CLI $x || exit 1; done; fi
+        if [ "$UNI_SKIP_EXIT_LOOP" = 0 ]; then for x in ${UNI_PKG}; do $UNI_CLI $x; done; fi
+        if [ "$UNI_FAST_EXIT_LINE" = 0 ]; then $UNI_CLI $UNI_PKG || exit 1; fi
+        if [ "$UNI_SKIP_EXIT_LINE" = 0 ]; then $UNI_CLI $UNI_PKG; fi
 
         printf "\n"
     fi
@@ -270,10 +350,10 @@ makeinst () {
 
         printf "adding source for %s ...\n\n" "$DESCRIPTION"
 
-        if [ "$SRC_FAST_EXIT_LOOP" = 0 ]; then for x in ${SRC_PKG}; do sh -c "$SRC_CLI $x" || exit 1; done; fi
-        if [ "$SRC_SKIP_EXIT_LOOP" = 0 ]; then for x in ${SRC_PKG}; do sh -c "$SRC_CLI $x"; done; fi
-        if [ "$SRC_FAST_EXIT_LINE" = 0 ]; then sh -c "$SRC_CLI $SRC_PKG" || exit 1; fi
-        if [ "$SRC_SKIP_EXIT_LINE" = 0 ]; then sh -c "$SRC_CLI $SRC_PKG"; fi
+        if [ "$SRC_FAST_EXIT_LOOP" = 0 ]; then for x in ${SRC_PKG}; do $SRC_CLI $x || exit 1; done; fi
+        if [ "$SRC_SKIP_EXIT_LOOP" = 0 ]; then for x in ${SRC_PKG}; do $SRC_CLI $x; done; fi
+        if [ "$SRC_FAST_EXIT_LINE" = 0 ]; then $SRC_CLI $SRC_PKG || exit 1; fi
+        if [ "$SRC_SKIP_EXIT_LINE" = 0 ]; then $SRC_CLI $SRC_PKG; fi
 
         printf "\n"
     fi
@@ -300,10 +380,40 @@ makeinst () {
 
         printf "\n\n"
 
-        if [ "$INS_FAST_EXIT_LOOP" = 0 ]; then for x in ${INS_PKG}; do sh -c "$INS_CLI $x" || exit 1; done; fi
-        if [ "$INS_SKIP_EXIT_LOOP" = 0 ]; then for x in ${INS_PKG}; do sh -c "$INS_CLI $x"; done; fi
-        if [ "$INS_FAST_EXIT_LINE" = 0 ]; then sh -c "$INS_CLI $INS_PKG" || exit 1; fi
-        if [ "$INS_SKIP_EXIT_LINE" = 0 ]; then sh -c "$INS_CLI $INS_PKG"; fi
+        if [ "$INS_FAST_EXIT_LOOP" = 0 ]; then for x in ${INS_PKG}; do $INS_CLI $x || exit 1; done; fi
+        if [ "$INS_SKIP_EXIT_LOOP" = 0 ]; then for x in ${INS_PKG}; do $INS_CLI $x; done; fi
+        if [ "$INS_FAST_EXIT_LINE" = 0 ]; then $INS_CLI $INS_PKG || exit 1; fi
+        if [ "$INS_SKIP_EXIT_LINE" = 0 ]; then $INS_CLI $INS_PKG; fi
+
+        printf "\n"
+    fi
+
+    if [ "$rin_typ_count" -eq 1 ] && [ -n "$RIN_CLI" ]; then
+        OPTFLAGDRYRUN=-1
+
+        if printf "%s" "$RIN_CLI" | grep -q "^[[:space:]]*sudo[[:space:]]"; then
+            sudo cat /dev/null || exit 1
+        fi
+
+        if [ "$OPT_UPDATE" = 0 ]; then
+            printf "updating"
+        else
+            printf "reinstalling"
+        fi
+
+        printf " %s ..." "$DESCRIPTION"
+
+        if [ -z "$RIN_PKG" ] || [ "$RIN_PKG" = " " ]; then
+            printf " packages are not provided\n\n"
+            return
+        fi
+
+        printf "\n\n"
+
+        if [ "$RIN_FAST_EXIT_LOOP" = 0 ]; then for x in ${RIN_PKG}; do $RIN_CLI $x || exit 1; done; fi
+        if [ "$RIN_SKIP_EXIT_LOOP" = 0 ]; then for x in ${RIN_PKG}; do $RIN_CLI $x; done; fi
+        if [ "$RIN_FAST_EXIT_LINE" = 0 ]; then $RIN_CLI $RIN_PKG || exit 1; fi
+        if [ "$RIN_SKIP_EXIT_LINE" = 0 ]; then $RIN_CLI $RIN_PKG; fi
 
         printf "\n"
     fi
