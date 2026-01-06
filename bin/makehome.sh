@@ -16,15 +16,13 @@ makebrewreinst () {
     export HOMEBREW_NO_AUTO_UPDATE=1
     export HOMEBREW_COLOR=1
 
-    printf "\nMAKEBREWREINST: brew install %s\n" "$@"
+    printf "\nMAKEHOME: brew install %s\n" "$@"
     ins_out="$(brew install "$@" 2>&1)"
     printf "%s\n" "$ins_out"
 
-    # rin_out=""
-
     case "$ins_out" in
         *"is already installed and up-to-date."*|*"is already installed."*)
-        printf "MAKEBREWREINST: brew reinstall %s\n" "$@"
+        printf "MAKEHOME: brew reinstall %s\n" "$@"
         rin_out="$(brew reinstall "$@" 2>&1)"
         printf "%s\n" "$rin_out"
         ;;
@@ -32,17 +30,35 @@ makebrewreinst () {
 
     case "$ins_out" in
         *"is already installed, it's just not linked."*)
-        printf "MAKEBREWREINST: brew link %s\n" "$@"
+        printf "MAKEHOME: brew link %s\n" "$@"
         brew link $@
         ;;
     esac
 
-    case "$rin_out" in
-        *"Error: Could not rename"*"keg! Check/fix its permissions:"*)
-        printf "MAKEBREWREINST: brew link %s\n" "$@"
-        brew link $@
+    case "$ins_out" in
+        *"is already installed"*"To install"*"first run:"*"brew unlink"*)
+        echo "xxxxxxxxxxxxxxxxxxxx"
+        printf "MAKEHOME: brew unlink %s\n" "$@"
+        brew unlink $@
+        printf "MAKEHOME: brew install %s\n" "$@"
+        brew install $@
         ;;
     esac
+
+    case "$rin_out" in
+        *"Could not rename"*"keg! Check/fix its permissions:"*)
+        printf "MAKEHOME: brew link %s\n" "$@"
+        lin_out="$(brew link "$@" 2>&1)"
+        printf "%s\n" "$lin_out"
+        ;;
+    esac
+
+    # case "$lin_out" in
+    #     *"is keg-only and must be linked with \`--force\`."*)
+    #     printf "MAKEHOME: brew link --force %s\n" "$@"
+    #     brew link --force $@
+    #     ;;
+    # esac
 }
 
 # Homebrew
