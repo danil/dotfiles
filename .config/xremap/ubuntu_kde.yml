@@ -23,7 +23,7 @@ keymap:
       C-t:
         remap:
           KEY_C:
-            launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && ghostty"]
+            launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && alacritty"]
           KEY_G:
             launch: ["bash", "-c", "dbus-send --session --type=method_call --dest=org.freedesktop.Notifications /org/freedesktop/Notifications org.xfce.Notifyd.Quit"]
           Shift-1:
@@ -31,7 +31,7 @@ keymap:
           KEY_U:
             remap:
               KEY_C:
-                launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && alacritty"]
+                launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && ghostty"]
               Shift-1:
                 launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && albert show"]
             KEY_U:
