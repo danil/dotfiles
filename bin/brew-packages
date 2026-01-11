@@ -22,6 +22,9 @@ install="$install the_silver_searcher" # ag <https://github.com/ggreer/the_silve
 install="$install tig" # git interactive cli
 install="$install tmux" # a-la gnu screen
 
+# # Server.
+# install="$install netdata" # a-la metric/monitoring prometheus
+
 # Data compression algorithms.
 install="$install lz4" # a-la gz/xz compression, required by gnupg, ffmpeg and mpv
 install="$install snappy" # a-la gz/xz compression, required by ffmpeg and mpv
@@ -34,8 +37,9 @@ install="$install zstd" # a-la gz/xz compression, required by gcc, curl, git, gn
 # install="$install scc" # a-la sloc/cloc
 
 # Nginx.
-# install="$install nginx" # web/http server
+install="$install certbot" # Certbot is EFF's tool to obtain certs from Let's Encrypt <https://github.com/certbot/certbot>, <https://github.com/EFForg>.
 install="$install httpd" # provides htpasswd utility is an nginx/apach basic authentication password generator
+install="$install nginx" # web/http server
 
 if [ ! -z "$delrepo" ] && [ "$delrepo" != " " ]; then
     for repo in "$delrepo"; do
