@@ -46,6 +46,8 @@ fi
 alias ls='ls --color'
 # alias less=$PAGER
 alias ag='ag --width=5000'
+alias gg='ug' # ll='grep'
+alias ll='lsd' # ll='eza'
 
 # Aliases.
 # <http://askubuntu.com/questions/22037/aliases-not-available-when-using-sudo#22043>.
