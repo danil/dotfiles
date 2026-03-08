@@ -138,7 +138,7 @@ Splitter State=\x00\x00\x00\xff\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x00\xac\
 
 [General]
 BrowserApplication=google-chrome.desktop
-ColorSchemeHash=2c3f86428c11011a7c64ee1e7f47c274d498ff10
+ColorSchemeHash=9f63c7711a13123582e720791ea0f8c0172977d2
 XftHintStyle=hintslight
 XftSubPixel=rgb
 fixed=Monospace,13,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
