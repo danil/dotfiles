@@ -9,18 +9,6 @@ panelVisibility=0
 [PlasmaViews][Panel 2][Defaults]
 thickness=32
 
-[PlasmaViews][Panel 38]
-floating=1
-
-[PlasmaViews][Panel 38][Defaults]
-thickness=27
-
-[PlasmaViews][Panel 40]
-floating=1
-
-[PlasmaViews][Panel 40][Defaults]
-thickness=27
-
 [PlasmaViews][Panel 42]
 floating=1
 panelLengthMode=1
