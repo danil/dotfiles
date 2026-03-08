@@ -161,6 +161,7 @@ BREW_INS="$BREW_INS gcc"
 BREW_INS="$BREW_INS llvm" # <https://github.com/llvm/llvm-project>.
 
 # Markdown markup languag <https://en.wikipedia.org/wiki/Markdown>.
+BREW_INS="$BREW_INS html2markdown" # Convert HTML to Markdown `cat path/to/file.html | html2markdown` <https://html-to-markdown.com/api/demo-convert>, <https://github.com/JohannesKaufmann/html-to-markdown>.
 BREW_INS="$BREW_INS markdownlint-cli" # Required used by Emacs Flycheck <https://github.com/igorshubovych/markdownlint-cli>.
 BREW_INS="$BREW_INS marksman" # Marksman implementing LSP Markdown Language Server Protocol, used by Emacs `xref-find-definitions` <https://github.com/artempyanykh/marksman>.
 
@@ -201,8 +202,8 @@ BREW_INS="$BREW_INS rust"
 
 # JS/JavaScript/Nodejs.
 # APTO_INS="$APTO_INS curl dirmngr apt-transport-https lsb-release ca-certificates" # required by nodesource.com's ppa
-BREW_INS="$BREW_INS deno" # RUST_INS="$RUST_INS deno --locked" # js programming language, runtime a-la node.js <https://deno.land>, <https://github.com/denoland/deno>.
-BREW_INS="$BREW_INS node" # APTO_INS="$APTO_INS nodejs" # js programming language <https://github.com/nodejs/node>.
+BREW_INS="$BREW_INS deno" # RUST_INS="$RUST_INS deno --locked" # JavaScript (JS) programming language, runtime a-la node.js <https://deno.land>, <https://github.com/denoland/deno>.
+BREW_INS="$BREW_INS node" # APTO_INS="$APTO_INS nodejs" # JavaScript (JS) programming language <https://github.com/nodejs/node>.
 
 # Python programming language
 # <https://github.com/python/cpython>,
@@ -311,6 +312,11 @@ BREW_INS="$BREW_INS nginx" # web/http server a-la apache # APTO_INS="$APTO_INS n
 # # APTO_INS="$APTO_INS postgresql-server-dev-14" # required by pg_activity is an postgresql activity monitoring <https://github.com/dalibo/pg_activity>.
 # # PIP3_INS="$PIP3_INS pg_activity" # postgresql activity monitoring <https://github.com/julmon/pg_activity>.
 # BREW_INS="$BREW_INS postgresql@16"
+
+# # MySQL is a RDBMS a-la PostgreSQL.
+# # <https://en.wikipedia.org/wiki/MySQL>.
+# BREW_INS="$BREW_INS mysql" # Oracle's MySQL <https://github.com/mysql/mysql-server>.
+# BREW_INS="$BREW_INS mariadb" # MariaDB MySQL <https://github.com/MariaDB/server>.
 
 # # MySQL Vitess.
 # # BREW_INS="$BREW_INS mysql" # rdbms
@@ -423,6 +429,12 @@ BREW_INS="$BREW_INS netdata" # Netdata is a metrics monitoring <https://github.c
 # HOWTO Download <https://google.com/chrome> & on [Ubuntu][] `apt install ~/Downloads/google-chrome-stable_current_amd64.deb`. # Google Chrome browser <https://google.com/chrome>. # APPM_INS="$APPM_INS google-chrome" # FLAT_INS="$FLAT_INS com.google.Chrome" # APTO_INS="$APTO_INS google-chrome-stable" APTO_INS="$APTO_INS apt-transport-https"
 PACS_INS="$PACS_INS firefox-deb" SNAP_UNI="$SNAP_UNI firefox" # APTO_UNI="$APTO_UNI firefox" # APPM_INS="$APPM_INS firefox" # FAIL: Firefox installed from Snap uses Gnome cursor instead of KDE cursor. # APTO_INS="$APTO_INS firefox" # FLAT_INS="$FLAT_INS org.mozilla.firefox" # SNAP_INS="$SNAP_INS firefox" # X11 Firefox browser <https://mozilla.org/firefox>.
 
+# # X Brave browser a-la google chrome <https://github.com/brave>.
+# APTO_INS="$APTO_INS apt-transport-https"
+# APTO_INS="$APTO_INS brave-browser" # A-la google chrome
+# APTO_INS="$APTO_INS curl"
+# APTO_INS="$APTO_INS gnupg"
+
 # X Wayland/desktop.
 # APTO_INS="$APTO_INS libevdev-dev pkg-config" # `evremap` dependency <https://github.com/wez/evremap>.
 APTO_INS="$APTO_INS brightnessctl" # `brightnessctl` command line control brightness `brightnessctl set 42%+ && brightnessctl set 42%-` <https://github.com/Hummer12007/brightnessctl>.
@@ -501,7 +513,7 @@ APTO_INS="$APTO_INS xcalib" # `xcalib -i -a` invert colors on xorg/xrandr <https
 # APTO_INS="$APTO_INS elementary-xfce-icon-theme"
 # APTO_INS="$APTO_INS gir1.2-xapp-1.0" # `xfce4-sensors-plugin` runtime dependency. # without gir1.2-xapp-1.0 get `xfce4-sensors` FAIL: Failed to load module "xapp-gtk3-module".
 # APTO_INS="$APTO_INS lm-sensors" # A-la `sensors` # FIXME: is the cpu temperate used by xfce4-sensors-plugin?
-# APTO_INS="$APTO_INS mousepad" # simple text editor for xfce <https://github.com/codebrainz/mousepad>.
+# APTO_INS="$APTO_INS mousepad" # Simple text editor for Xfce <https://github.com/xfce-mirror/mousepad>.
 # APTO_INS="$APTO_INS orage" # xfce date time panel plugin with calendar.
 # APTO_INS="$APTO_INS ristretto" # Is a `Xfce` image viewer <https://github.com/xfce-mirror/ristretto>.
 # APTO_INS="$APTO_INS thunar" # file manager.
@@ -583,12 +595,6 @@ APTO_INS="$APTO_INS gnome-tweaks" # former gnome-tweak-tool (in addition to gnom
 # APTO_UNI="$APTO_UNI thunderbird-locale-ru"
 # APTO_UNI="$APTO_UNI thunderbird-locale-zh-hant"
 SNAP_INS="$SNAP_INS mailspring"
-
-# # X Brave browser a-la google chrome <https://github.com/brave>.
-# APTO_INS="$APTO_INS apt-transport-https"
-# APTO_INS="$APTO_INS brave-browser" # A-la google chrome
-# APTO_INS="$APTO_INS curl"
-# APTO_INS="$APTO_INS gnupg"
 
 # X Fonts.
 # # APTO_INS="$APTO_INS font-manager" # list bitmap ??? fonts
@@ -698,6 +704,7 @@ PACS_INS="$PACS_INS ventoy-bin" # Create bootable/live usb/iso a-la usb-creator-
 # # # # # # # * HOWTO Install VER3 from <https://goteleport.com/download> on [Ubuntu][] `curl -v -O -C - -L https://cdn.teleport.dev/teleport_0.1.23_amd64.deb` & `apt install teleport_0.1.23_amd64.deb`.
 # BREW_INS="$BREW_INS logstash" # Logstash is a logger from the ELK stack, composed of Elasticsearch, Logstash, and Kibana, called Elastic Stack <https://github.com/elastic/logstash>.
 # NPMJ_INS="$NPMJ_INS postman-cli" # <https://github.com/postmanlabs>, <https://en.wikipedia.org/wiki/Postman_(software)>.
+# SNAP_INS="$SNAP_INS outlook-ew"
 APTO_INS="$APTO_INS openvpn-systemd-resolved openvpn-dco-dkms" # OpenVPN3 dependency.
 BREW_INS="$BREW_INS etcd" # Distributed key-value store <https://github.com/etcd-io/etcd>.
 BREW_INS="$BREW_INS go"
@@ -709,6 +716,9 @@ GOLN_INS="$GOLN_INS github.com/onsi/ginkgo/v2/ginkgo@v2.23.4" # Ginkgo is a Test
 # BREW_INS="$BREW_INS kafka" # <https://github.com/apache/kafka>.
 # # # # # # # # # # # # https://docs.altinity.com/altinitycloud/altinity-cloud-connections/clickhouseclient
 # # # # # # # # # # # # https://altinity.com/blog/altinity-introduces-macos-homebrew-tap-for-clickhouse
+# Nutsbasket.
+BREW_INS="$BREW_INS node" # JavaScript (JS) programming language <https://github.com/nodejs/node>.
+BREW_INS="$BREW_INS yarn" # JavaScript (JS) programming language <https://github.com/nodejs/node>.
 
 # # Er Ozn.
 # # BREW_INS="$BREW_INS openvpn" # APTO_INS="$APTO_INS openvpn" APTO_DIS="$APTO_DIS openvpn openvpn@client" # openvpn client <https://confluence.ozon.ru/pages/viewpage.action?spaceKey=CORPIT&title=OpenVPN+for+Linux>.
