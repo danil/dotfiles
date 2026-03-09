@@ -83,7 +83,7 @@ APTO_INS="$APTO_INS ubuntu-advantage-tools" # Fixing error message on `apt updat
 # KDE Plasma desktop and Qt GUI framework for Wayland and X11 <https://github.com/KDE> <sup><sub>KDE Plasma 5 and Plasma 6.</sub></sup>
 # # APTO_INS="$APTO_INS neon-desktop" # DEPRECATED KDE Neon Linux <https://github.com/KDE/neon-neon-repositories>. <sup><sub>KDE Plasma 6 desktop for Wayland and X11.</sub></sup>
 # # APTO_INS="$APTO_INS neon-keyring signon-kwallet-extension" # FAIL? DEPRECATED KDE Neon Linux <https://github.com/KDE/neon-neon-repositories>.
-APTO_INS="$APTO_INS kde-plasma-desktop" # KDE Plasma 5 desktop for X11.
+# APTO_INS="$APTO_INS kde-plasma-desktop" # FAIL: Freeze while starting. KDE Plasma 5 desktop for X11.
 # APTO_INS="$APTO_INS krita" # Krita is a pixel-based image manipulation program a-la GIMP <https://github.com/KDE/krita>.
 # APTO_INS="$APTO_INS lm-sensors" # A-la `sensors` # FIXME: Is the CPU temperate used by plain status or by slstatus?
 APTO_INS="$APTO_INS breeze" # Breeze icon theme and cursor theme.
