@@ -80,10 +80,12 @@ BREW_INS="$BREW_INS rhash" # Provides `crc32`/`md5`/`sha1`/`sha256` utility <htt
 APTO_INS="$APTO_INS apt-transport-https" # Required by custom ppa.
 APTO_INS="$APTO_INS ubuntu-advantage-tools" # Fixing error message on `apt update`: `Failed to start apt-news.service: Unit apt-news.service not found.`.
 
-# KDE Neon Linxu/Wayland/KDE Plasma/Neon desktop.
-# FIXME APTO_INS="$APTO_INS neon-keyring signon-kwallet-extension"
-APTO_INS="$APTO_INS lm-sensors" # A-la `sensors` # FIXME: Is the CPU temperate used by plain status or by slstatus?
-APTO_INS="$APTO_INS neon-desktop"
+# KDE Plasma desktop and Qt GUI framework for Wayland and X11 <https://github.com/KDE>.
+# APTO_INS="$APTO_INS lm-sensors" # A-la `sensors` # FIXME: Is the CPU temperate used by plain status or by slstatus?
+# # APTO_INS="$APTO_INS neon-desktop" # DEPRECATED KDE Neon Linux <https://github.com/KDE/neon-neon-repositories>. <sup><sub>KDE Plasma desktop for Wayland and X11.</sub></sup>
+# # APTO_INS="$APTO_INS neon-keyring signon-kwallet-extension" # FAIL? DEPRECATED KDE Neon Linux <https://github.com/KDE/neon-neon-repositories>.
+APTO_INS="$APTO_INS breeze" # Breeze icon theme and cursor theme.
+APTO_INS="$APTO_INS breeze-gtk-theme gtk3-engines-breeze" # Breeze icon theme and cursor theme.
 
 # Portable/standalone package management system (cross Linux distribution).
 # APTO_INS="$APTO_INS bash coreutils" # Basher runtime dependency. # Basher is a bash/shell/functions package manager <https://github.com/basherpm/basher>.
@@ -503,7 +505,7 @@ APTO_INS="$APTO_INS xcalib" # `xcalib -i -a` invert colors on xorg/xrandr <https
 # # APTO_INS="$APTO_INS libasound2-dev libglib2.0-dev libgtk-3-dev" # volumeicon-alsa compiltime dependency.
 # APTO_INS="$APTO_INS volumeicon-alsa"
 
-# # X11 Xfce4 DE Desktop Environment.
+# X11 Xfce4 DE Desktop Environment.
 # # APPM_INS="$APPM_INS conky" # removed due to extra configuration # system monitoring <https://github.com/brndnmtthws/conky>.
 # # APTO_INS="$APTO_INS libxfce4panel-2.0-dev libxfce4ui-2-dev" # compiltime dependency of text plugin <https://github.com/daveriesz/xfce-text-plugin>.
 # # APTO_INS="$APTO_INS thunar-megasync" # not using.
@@ -516,10 +518,6 @@ APTO_INS="$APTO_INS xcalib" # `xcalib -i -a` invert colors on xorg/xrandr <https
 # APTO_INS="$APTO_INS mousepad" # Simple text editor for Xfce <https://github.com/xfce-mirror/mousepad>.
 # APTO_INS="$APTO_INS orage" # xfce date time panel plugin with calendar.
 # APTO_INS="$APTO_INS ristretto" # Is a `Xfce` image viewer <https://github.com/xfce-mirror/ristretto>.
-# APTO_INS="$APTO_INS thunar" # file manager.
-# APTO_INS="$APTO_INS thunar-archive-plugin"
-# APTO_INS="$APTO_INS thunar-dropbox-plugin"
-# APTO_INS="$APTO_INS thunar-volman"
 # APTO_INS="$APTO_INS xfce4"
 # APTO_INS="$APTO_INS xfce4-datetime-plugin" # A-la clock panel plugin.
 # APTO_INS="$APTO_INS xfce4-diskperf-plugin" # disk io performance panel plugin.
@@ -532,6 +530,10 @@ APTO_INS="$APTO_INS xcalib" # `xcalib -i -a` invert colors on xorg/xrandr <https
 # APTO_INS="$APTO_INS xfce4-taskmanager"
 # APTO_INS="$APTO_INS xfce4-windowck-plugin" # put maximized window title on the panel <https://github.com/takinoy/xfce4-windowck-plugin>.
 # APTO_INS="$APTO_INS xfce4-xkb-plugin" # keyboard language switcher.
+APTO_INS="$APTO_INS thunar" # file manager.
+APTO_INS="$APTO_INS thunar-archive-plugin"
+APTO_INS="$APTO_INS thunar-dropbox-plugin"
+APTO_INS="$APTO_INS thunar-volman"
 
 # X11 MATE DE Desktop Environment.
 # APTO_INS="$APTO_INS mate"
@@ -682,7 +684,7 @@ BREW_INS="$BREW_INS webp" # The WebP is abbreviated WEB Pictures is a raster gra
 APTO_INS="$APTO_INS gparted" # format/create partition/disk/usb
 APTO_INS="$APTO_INS libnotify-bin" # A-la notify-osd
 APTO_INS="$APTO_INS libx11-dev" # c/c++ compile/make x11 dependencies.
-APTO_INS="$APTO_INS lxappearance" # change/switch gtk2/gtk3 themes.
+APTO_INS="$APTO_INS lxappearance" # LXDE GTK+ theme switcher <https://github.com/lxde/lxappearance> <sup><sub>Change GTK2 and GTK3 themes.</sub></sup>
 APTO_INS="$APTO_INS maim" # takes screenshots of desktop.
 APTO_INS="$APTO_INS mesa-utils" # Provides glxgears util for the 3d compositor testing.
 APTO_INS="$APTO_INS transmission" # torrent client # APTO_UNI="$APTO_UNI transmission-gtk"
