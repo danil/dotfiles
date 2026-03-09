@@ -80,10 +80,12 @@ BREW_INS="$BREW_INS rhash" # Provides `crc32`/`md5`/`sha1`/`sha256` utility <htt
 APTO_INS="$APTO_INS apt-transport-https" # Required by custom ppa.
 APTO_INS="$APTO_INS ubuntu-advantage-tools" # Fixing error message on `apt update`: `Failed to start apt-news.service: Unit apt-news.service not found.`.
 
-# KDE Plasma desktop and Qt GUI framework for Wayland and X11 <https://github.com/KDE>.
-# APTO_INS="$APTO_INS lm-sensors" # A-la `sensors` # FIXME: Is the CPU temperate used by plain status or by slstatus?
-# # APTO_INS="$APTO_INS neon-desktop" # DEPRECATED KDE Neon Linux <https://github.com/KDE/neon-neon-repositories>. <sup><sub>KDE Plasma desktop for Wayland and X11.</sub></sup>
+# KDE Plasma desktop and Qt GUI framework for Wayland and X11 <https://github.com/KDE> <sup><sub>KDE Plasma 5 and Plasma 6.</sub></sup>
+# # APTO_INS="$APTO_INS neon-desktop" # DEPRECATED KDE Neon Linux <https://github.com/KDE/neon-neon-repositories>. <sup><sub>KDE Plasma 6 desktop for Wayland and X11.</sub></sup>
 # # APTO_INS="$APTO_INS neon-keyring signon-kwallet-extension" # FAIL? DEPRECATED KDE Neon Linux <https://github.com/KDE/neon-neon-repositories>.
+APTO_INS="$APTO_INS kde-plasma-desktop" # KDE Plasma 5 desktop for X11.
+# APTO_INS="$APTO_INS krita" # Krita is a pixel-based image manipulation program a-la GIMP <https://github.com/KDE/krita>.
+# APTO_INS="$APTO_INS lm-sensors" # A-la `sensors` # FIXME: Is the CPU temperate used by plain status or by slstatus?
 APTO_INS="$APTO_INS breeze" # Breeze icon theme and cursor theme.
 APTO_INS="$APTO_INS breeze-gtk-theme gtk3-engines-breeze" # Breeze icon theme and cursor theme.
 
@@ -647,7 +649,6 @@ APTO_INS="$APTO_INS gimp"
 
 # X image/picture.
 # APTO_INS="$APTO_INS imagemagick" # <https://github.com/imagemagick/imagemagick>.
-APTO_INS="$APTO_INS krita" # Krita is a pixel-based image manipulation program a-la GIMP <https://github.com/KDE/krita>.
 BREW_INS="$BREW_INS feh" # APTO_INS="$APTO_INS feh" # feh is a command line image viewer <https://github.com/derf/feh>.
 BREW_INS="$BREW_INS webp" # The WebP is abbreviated WEB Pictures is a raster graphics file of image and picture a-la JPEG, PNG, and GIF file formats and supports both lossy and lossless compression, as well as animation and alpha transparency.
 
