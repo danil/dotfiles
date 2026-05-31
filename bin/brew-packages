@@ -36,10 +36,11 @@ install="$install zstd" # a-la gz/xz compression, required by gcc, curl, git, gn
 # install="$install golangci-lint" # used by emacs a-la gometalinter
 # install="$install scc" # a-la sloc/cloc
 
-# Nginx.
-install="$install certbot" # Certbot is EFF's tool to obtain certs from Let's Encrypt <https://github.com/certbot/certbot>, <https://github.com/EFForg>.
+# Web/HTTPd server.
+# install="$install certbot" # Certbot is EFF's tool to obtain certs from Let's Encrypt <https://github.com/certbot/certbot>, <https://github.com/EFForg>.
+# install="$install nginx" # FAIL: Use Caddy instead. # web/http server
+install="$install caddy" # The Caddy is a web server a-la nginx <https://github.com/caddyserver/caddy>.
 install="$install httpd" # provides htpasswd utility is an nginx/apach basic authentication password generator
-install="$install nginx" # web/http server
 
 if [ ! -z "$delrepo" ] && [ "$delrepo" != " " ]; then
     for repo in "$delrepo"; do
