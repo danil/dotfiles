@@ -757,8 +757,10 @@ BREW_INS="$BREW_INS node" # JavaScript (JS) programming language <https://github
 BREW_INS="$BREW_INS yarn" # JavaScript (JS) programming language <https://github.com/nodejs/node>.
 BREW_INS="$BREW_INS openapi" # Speakeasy OpenAPI and Swagger validation linter `openapi spec validate path/to/your/openapi.json` and `openapi swagger validate path/to/your/openapi.json` <https://github.com/speakeasy-api/openapi>.
 
+################################################################################
 BREW_INS="$BREW_INS pre-commit" # The pre-commit git hook <https://github.com/pre-commit/pre-commit>.
 
+################################################################################
 BREW_INS="$BREW_INS jwt-cli" # XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 BREW_INS="$BREW_INS websocat" # websocat is a [WebSocket][] [command-line client][CLI] for [WS](https://en.wikipedia.org/wiki/WebSocket) and [WSS](https://en.wikipedia.org/wiki/WebSocket_Secure) a-la [netcat][] or [curl][] <https://github.com/vi/websocat>.
 
