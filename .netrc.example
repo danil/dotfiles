@@ -1,0 +1,3 @@
+machine your.tld
+  login your_user
+  password your_password

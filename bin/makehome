@@ -83,11 +83,11 @@ APTO_INS="$APTO_INS ubuntu-advantage-tools" # Fixing error message on `apt updat
 # KDE Plasma desktop and Qt GUI framework for Wayland and X11 <https://github.com/KDE> <sup><sub>KDE Plasma 5 and Plasma 6.</sub></sup>
 # # APTO_INS="$APTO_INS neon-desktop" # DEPRECATED KDE Neon Linux <https://github.com/KDE/neon-neon-repositories>. <sup><sub>KDE Plasma 6 desktop for Wayland and X11.</sub></sup>
 # # APTO_INS="$APTO_INS neon-keyring signon-kwallet-extension" # FAIL? DEPRECATED KDE Neon Linux <https://github.com/KDE/neon-neon-repositories>.
-# APTO_INS="$APTO_INS kde-plasma-desktop" # FAIL: Freeze while starting. KDE Plasma 5 desktop for X11.
 # APTO_INS="$APTO_INS krita" # Krita is a pixel-based image manipulation program a-la GIMP <https://github.com/KDE/krita>.
 # APTO_INS="$APTO_INS lm-sensors" # A-la `sensors` # FIXME: Is the CPU temperate used by plain status or by slstatus?
 APTO_INS="$APTO_INS breeze" # Breeze icon theme and cursor theme.
 APTO_INS="$APTO_INS breeze-gtk-theme gtk3-engines-breeze" # Breeze icon theme and cursor theme.
+APTO_INS="$APTO_INS kde-plasma-desktop" # FIXME: Only used to run `krunner` in `GNOME`. KDE Plasma 5 desktop for X11.
 
 # Portable/standalone package management system (cross Linux distribution).
 # APTO_INS="$APTO_INS bash coreutils" # Basher runtime dependency. # Basher is a bash/shell/functions package manager <https://github.com/basherpm/basher>.
@@ -106,6 +106,7 @@ APTO_INS="$APTO_INS gnome-software-plugin-flatpak" # Flatpak support for GNOME s
 FLAT_INS="$FLAT_INS com.github.tchx84.Flatseal" # Is a GUI permissions manager which offers simple point-and-click permissions operations.
 
 # Git.
+# BREW_INS="$BREW_INS pre-commit" # The pre-commit git hook <https://github.com/pre-commit/pre-commit>.
 # RUST_INS="$RUST_INS gitui" # Git TUI a-la `tig` <https://github.com/extrawurst/gitui>.
 BREW_INS="$BREW_INS git" # Distributed version/revision control system <https://github.com/git/git>. # APTO_INS="$APTO_INS git"
 BREW_INS="$BREW_INS git-delta" # Syntax-highlighting pager for git and diff output <https://github.com/dandavison/delta>.
@@ -114,10 +115,12 @@ BREW_INS="$BREW_INS git-flow" # <https://github.com/nvie/gitflow>.
 BREW_INS="$BREW_INS git-gui" # Git GUI provides this functionality under the diff view. Just right click the line(s) you're interested in and you should see a "stage this line to commit" menu item. <https://stackoverflow.com/questions/1085162/commit-only-part-of-a-files-changes-in-git#1085202>, <https://en.wikipedia.org/wiki/Tk_(software)>.
 BREW_INS="$BREW_INS git-lfs" # <https://git-lfs.com>.
 BREW_INS="$BREW_INS git-who" # Git contributors list by lines number `git-who -l` <https://github.com/sinclairtarget/git-who>.
-BREW_INS="$BREW_INS tig" # APTO_INS="$APTO_INS tig" # TUI Git interactive client <https://github.com/jonas/tig>, <https://en.wikipedia.org/wiki/Tig_(software)>.
+BREW_INS="$BREW_INS lazygit" # lazygit - TUI Git interactive client <https://github.com/jesseduffield/lazygit>.
+BREW_INS="$BREW_INS tig" # APTO_INS="$APTO_INS tig" # Tig - TUI Git interactive client <https://github.com/jonas/tig>, <https://en.wikipedia.org/wiki/Tig_(software)>.
 
 # Tmux is a terminal multiplexer a-la GNU Screen
 # <https://github.com/tmux/tmux>.
+# HOWTO Install from <https://github.com/pkgforge-dev/alacritty-AppImage/releases> by [AppImage][] `curl -OL https://github.com/pkgforge-dev/alacritty-AppImage/releases/download/v0.12.3@1970-01-01_0000000000/Alacritty-v0.12.3-anylinux-x86_64.AppImage` to `~/Applications/alacritty` also `chmod +x`. # SNAC_INS_CLI="$SNAC_INS_CLI alacritty" # PACS_INS="$PACS_INS alacritty" # RUST_INS="$RUST_INS alacritty" # APTO_INS="$APTO_INS cmake libfontconfig1-dev libfreetype6-dev libxcb-xfixes0-dev libxkbcommon-dev pkg-config" # Alacritty dependency. # Alacritty Terminal/console emulator a-la st/xterm <https://github.com/alacritty/alacritty>.
 # APTO_INS="$APTO_INS automake pkg-config libevent-dev libncurses-dev" # Tmux compiltime dependency.
 # APTO_INS="$APTO_INS byacc" # Also `byacc`: preventing compiltime dependency FAIL: `./etc/ylwrap: line 175: yacc: command not found`.
 # BREW_INS="$BREW_INS xclip" # APTO_INS="$APTO_INS xclip" # Integration of X11/xorg clipboard/copy/past and tmux and so on <https://github.com/astrand/xclip>, <https://github.com/tmux-plugins/tmux-yank#linux-requirements>. CONS: Wayland is not supporting.
@@ -136,11 +139,14 @@ BREW_INS="$BREW_INS tmux"
 # RUST_INS="$RUST_INS racer" # compilation failing all the time <https://github.com/racer-rust/racer/issues/868#issuecomment-459017685>, rust code completion https://github.com/phildawes/racer
 APTO_INS="$APTO_INS xterm" # backup/fallback terminal additional to the st/stterm/alacritty
 BREW_INS="$BREW_INS xsel" # APTO_INS="$APTO_INS xsel" # copy selection in termina to the xorg clipboard (used by emacs and urxvt) <https://wiki.archlinux.org/index.php/rxvt-unicode#Automatic_Script_Management>.
-PACS_INS="$PACS_INS alacritty" # RUST_INS="$RUST_INS alacritty" # APTO_INS="$APTO_INS cmake libfontconfig1-dev libfreetype6-dev libxcb-xfixes0-dev libxkbcommon-dev pkg-config" # Alacritty dependency. # Alacritty Terminal/console emulator a-la st/xterm <https://github.com/alacritty/alacritty>.
 PACS_INS="$PACS_INS ghostty-app" # SNAC_INS="$SNAC_INS ghostty" # FAIL: Has no titlebar and has no window border at all <https://reddit.com/r/Ghostty/comments/1iiep2j>. # Ghostty terminal <https://github.com/ghostty-org/ghostty>.
 
 # InfoSec (information security).
+# BREW_INS="$BREW_INS bearer" BREW_INS_SRC="$BREW_INS_SRC bearer/tap" # FAIL: Useless. # Code security scanners CLI <https://github.com/bearer/bearer>.
+# BREW_INS="$BREW_INS betterleaks" # FAIL: Use gitleaks instead of betterleaks. # Code security scanners CLI <https://github.com/betterleaks/betterleaks>.
+# BREW_INS="$BREW_INS trufflehog" # FAIL: Useless. # Code security scanners CLI <https://github.com/trufflesecurity/trufflehog>.
 APTO_INS="$APTO_INS libpam-u2f" # YubiKey dependency <https://support.yubico.com/hc/en-us/articles/360016649099-Ubuntu-Linux-Login-Guide-U2F>.
+BREW_INS="$BREW_INS gitleaks" # Code security scanners CLI <https://github.com/gitleaks/gitleaks>.
 
 # Shell script programing language.
 BREW_INS="$BREW_INS bash" APTO_INS="$APTO_INS bash" # Bourne again shell <https://gnu.org/software/bash>.
@@ -237,6 +243,7 @@ BREW_INS="$BREW_INS ruby"
 BREW_INS="$BREW_INS dart-sdk" # APTO_INS="$APTO_INS dart" # APTO_INS="$APTO_INS apt-transport-https" # Dart programming language <https://github.com/dart-lang/sdk>, <https://dart.dev/get-dart#install-using-apt-get>.
 BREW_INS="$BREW_INS java" # Java programming language [OpenJDK](https://github.com/openjdk/jdk).
 BREW_INS="$BREW_INS lua" # Newer than APT version. # Lua programming language <https://github.com/lua/lua>.
+BREW_INS="$BREW_INS openapi" # Speakeasy OpenAPI and Swagger validation linter `openapi spec validate path/to/your/openapi.json` and `openapi swagger validate path/to/your/openapi.json` <https://github.com/speakeasy-api/openapi>.
 BREW_INS="$BREW_INS sbcl" # Steel Bank Common Lisp (SBCL) <https://github.com/sbcl/sbcl>.
 BREW_INS="$BREW_INS scc" # A-la sloc/cloc (count lines of code) <https://github.com/boyter/scc>.
 BREW_INS="$BREW_INS tokei" # RUST_INS="$RUST_INS tokei" # Tokei is an a-la sloc/cloc metric (count lines of code) <https://github.com/xampprocky/tokei>.
@@ -297,12 +304,13 @@ BREW_INS="$BREW_INS sql-lint" # Used by Emacs Flycheck.
 # GOLN_INS="$GOLN_INS google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.0.1" # NOTE: The v1.20 protoc-gen-go does not support generating gRPC service definitions. gRPC service generation supported by the protoc-gen-go-grpc plugin provided by the Go gRPC project <https://github.com/protocolbuffers/protobuf-go/releases/tag/v1.20.0#v1.20-grpc-support>.
 
 # Web/HTTPd server.
-# BREW_INS="$BREW_INS goaccess" # APTO_INS="$APTO_INS goaccess" # analyze apache/nginx log in real-time.
+# BREW_INS="$BREW_INS certbot" # Certbot is EFF's tool to obtain certs from Let's Encrypt <https://github.com/certbot/certbot>, <https://github.com/EFForg>.
+# BREW_INS="$BREW_INS nginx" # FAIL: Use Caddy instead. # The web server a-la Apache <https://github.com/nginx/nginx>. # APTO_INS="$APTO_INS nginx" APTO_DIS="$APTO_DIS nginx" # web/http server a-la apache
 # PIP3_INS="$PIP3_INS ngxtop" # real-time metrics for nginx server <https://github.com/lebinh/ngxtop>.
-BREW_INS="$BREW_INS certbot" # Certbot is EFF's tool to obtain certs from Let's Encrypt <https://github.com/certbot/certbot>, <https://github.com/EFForg>.
+BREW_INS="$BREW_INS caddy" # The Caddy is a web server a-la nginx <https://github.com/caddyserver/caddy>.
+BREW_INS="$BREW_INS goaccess" # APTO_INS="$APTO_INS goaccess" # analyze apache/nginx/caddy log in real-time.
 BREW_INS="$BREW_INS http-server" # <https://github.com/http-party/http-server>.
 BREW_INS="$BREW_INS httpd" # provides htpasswd utility is an nginx/apache basic authentication password generator # APTO_INS="$APTO_INS apache2-utils" # provides htpasswd utility is an nginx/apache basic authentication password generator.
-BREW_INS="$BREW_INS nginx" # web/http server a-la apache # APTO_INS="$APTO_INS nginx" APTO_DIS="$APTO_DIS nginx" # web/http server a-la apache
 
 # # Kafka.
 # BREW_INS="$BREW_INS kafka" # <https://github.com/apache/kafka>.
@@ -354,12 +362,33 @@ BREW_INS="$BREW_INS redis"
 # OS-level virtualization to deliver software in packages called containers
 # <https://github.com/moby/moby>,
 # <https://docs.docker.com/install/linux/docker-ce/ubuntu>.
-# HOWTO Install from <https://linuxtuto.com/how-to-install-docker-on-ubuntu-24-04> on [Ubuntu][] `apt remove docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc` and then `sudo apt update` and then `sudo apt install apt-transport-https ca-certificates curl software-properties-common` and then `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -` and then `sudo sh -c "echo 'deb [arch=$(dpkg --print-architecture)] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable' > /etc/apt/sources.list.d/docker.list"` and then `sudo apt install docker-ce docker-ce-cli` and then `gpasswd --add your-usr-nm docker` # NOTE: Official instruction from the Docker Inc of install Docker Engine on Ubuntu <https://docs.docker.com/engine/install/ubuntu>.
+# HOWTO Install VER2 from <https://linuxtuto.com/how-to-install-docker-on-ubuntu-24-04> on [Ubuntu][] `apt remove docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc` and then `sudo apt update` and then `sudo apt install apt-transport-https ca-certificates curl software-properties-common` and then `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -` and then `sudo sh -c "echo 'deb [arch=$(dpkg --print-architecture)] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable' > /etc/apt/sources.list.d/docker.list"` and then `sudo apt install docker-ce docker-ce-cli` and then `gpasswd --add your-usr-nm docker` # NOTE: Official instruction from the Docker Inc of install Docker Engine on Ubuntu <https://docs.docker.com/engine/install/ubuntu>.
 # APTO_INS="$APTO_INS golang-docker-credential-helpers" # Credential helper stores encrypted passwords in d-bus secret service instead of unencrypted password in plain file <https://docs.docker.com/engine/reference/commandline/login/#credentials-store>.
 # BREW_INS="$BREW_INS docker" # APTO_INS="$APTO_INS docker-ce" APTO_DIS="docker" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`.
 # BREW_INS="$BREW_INS docker-compose" # DONT: Instead using Docker plugin (`docker compose` instead of `docker-compose`). NOTE: Compose is a tool for defining/running multi-container applications <https://github.com/docker/compose>.
-# BREW_INS="$BREW_INS docker-machine" # Provides docker daemon <https://docs.docker.com/desktop>.
+# BREW_INS="$BREW_INS docker-machine" # Provides docker daemon <https://github.com/docker>.
 BREW_INS="$BREW_INS docker-credential-helper" # Docker login credential <https://github.com/docker/docker-credential-helpers>, <https://stackoverflow.com/questions/67642620/docker-credential-desktop-not-installed-or-not-available-in-path#72888813>.
+BREW_INS="$BREW_INS hadolint" # Dockerfile linter <https://github.com/hadolint/hadolint>.
+
+################################################################################
+################################################################################
+################################################################################
+# sudo apt remove docker-ce docker-ce-cli 
+
+# <https://docs.docker.com/desktop>
+
+ # HOWTO Install VER1 from <https://docs.docker.com/desktop/setup/install/linux/ubuntu/#install-docker-desktop> on [Ubuntu][] 
+
+
+
+# HOWTO Install from <https://linuxtuto.com/how-to-install-docker-on-ubuntu-24-04> on [Ubuntu][] `apt remove docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc` and then `sudo apt update` and then `sudo apt install apt-transport-https ca-certificates curl software-properties-common` and then `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -` and then `sudo sh -c "echo 'deb [arch=$(dpkg --print-architecture)] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable' > /etc/apt/sources.list.d/docker.list"` and then `sudo apt install docker-ce docker-ce-cli` and then `gpasswd --add your-usr-nm docker` # NOTE: Official instruction from the Docker Inc of install Docker Engine on Ubuntu <https://docs.docker.com/engine/install/ubuntu>.
+
+# sudo apt install ~/Downloads/docker-desktop-amd64.deb
+BREW_INS="$BREW_INS pass" # Password manager for command line <https://passwordstore.org>.
+
+################################################################################
+################################################################################
+################################################################################
 
 # DevOps localhost.
 # PIP3_INS="$PIP3_INS glances" # instead using btop # A-la htop <https://github.com/nicolargo/glances>.
@@ -418,20 +447,21 @@ APTO_INS="$APTO_INS sysbench" # cpu and memory benchmarks.
 BREW_INS="$BREW_INS oha" # oha is a http benchmark tool <https://github.com/hatoo/oha>.
 
 # DevOps.
-# BREW_INS="$BREW_INS vault"# FAIL: Error: vault has been disabled because it will change its license to BUSL on the next release! It was disabled on 2024-09-27. # FIXME: BREW_INS="$BREW_INS hashicorp/tap/vault" BREW_INS_SRC="$BREW_INS_SRC hashicorp/tap" # APTO_INS="$APTO_INS vault" # vault util (hashicorp) # curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - && sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main", <https://vaultproject.io/downloads>.
+# HOWTO Vault install from <https://developer.hashicorp.com/vault/install#linux> on [Ubuntu][] `aria2c https://releases.hashicorp.com/vault/0.12.3/vault_0.12.3_linux_amd64.zip` to `~/Applications/vault` also `chmod +x`. # BREW_INS="$BREW_INS vault"# FAIL: Error: vault has been disabled because it will change its license to BUSL on the next release! It was disabled on 2024-09-27. # FIXME: BREW_INS="$BREW_INS hashicorp/tap/vault" BREW_INS_SRC="$BREW_INS_SRC hashicorp/tap" # APTO_INS="$APTO_INS vault" # vault util (hashicorp) # curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - && sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main", <https://vaultproject.io/downloads>.
 # PIP2_INS="$PIP2_INS cloudflare" # wrapper for the cloudflare client api v4: `CF_API_EMAIL=your.name@example.org CF_API_KEY=your_api_key cli4 /zones`.
 # PIP3_INS="$PIP3_INS boto" # PIP2_INS="$PIP2_INS boto" # ansible amazon aws dependency.
 BREW_INS="$BREW_INS ansible" # <https://github.com/ansible/ansible> # PIP3_INS="$PIP3_INS ansible>=2.9" # PIP2_INS="$PIP2_INS ansible>=2.8.1" # ansible prior to version 2 (uses python 2).
 BREW_INS="$BREW_INS awscli" # PIP3_INS="$PIP3_INS awscli" # `aws --version` # s3 command line client # default amazon aws ec2 client <https://github.com/aws/aws-cli>.
+BREW_INS="$BREW_INS helm" # Helm is a  [package manager][PMS] for [Kubernetes][K8s] <https://github.com/helm/helm>.
 BREW_INS="$BREW_INS k9s" # derailed/k9s/k9s:, k8s/kubernetes client <https://github.com/derailed/k9s>.
 BREW_INS="$BREW_INS kubernetes-cli" # APTO_INS="$APTO_INS kubectl" # provides k8s/kubernetes kubectl util `deb https://apt.kubernetes.io kubernetes-xenial main` <https://kubernetes.io/docs/tasks/tools/install-kubectl> # APTO_INS="$APTO_INS gnupg2" # required by kubectl
 BREW_INS="$BREW_INS netdata" # Netdata is a metrics monitoring <https://github.com/netdata/netdata>.
 
 # X web browser.
 # FAIL: Freeze while updating. <sup><sub>Hang while updating by `aptitude full-upgrade`.</sub></sup>
-# HOWTO Download <https://browser.yandex.ru> & on [Ubuntu][] `apt install ~/Downloads/Yandex.deb`. # X11 Yandex (Google Chrome based) browser. # FLAT_INS="$FLAT_INS ru.yandex.Browser"
+# HOWTO Download <https://browser.yandex.ru> & on [Ubuntu][] `apt install ~/Downloads/Yandex.deb`. # X Yandex (Google Chrome based) browser. # FLAT_INS="$FLAT_INS ru.yandex.Browser"
 # HOWTO Download <https://google.com/chrome> & on [Ubuntu][] `apt install ~/Downloads/google-chrome-stable_current_amd64.deb`. # Google Chrome browser <https://google.com/chrome>. # APPM_INS="$APPM_INS google-chrome" # FLAT_INS="$FLAT_INS com.google.Chrome" # APTO_INS="$APTO_INS google-chrome-stable" APTO_INS="$APTO_INS apt-transport-https"
-PACS_INS="$PACS_INS firefox-deb" SNAP_UNI="$SNAP_UNI firefox" # APTO_UNI="$APTO_UNI firefox" # APPM_INS="$APPM_INS firefox" # FAIL: Firefox installed from Snap uses Gnome cursor instead of KDE cursor. # APTO_INS="$APTO_INS firefox" # FLAT_INS="$FLAT_INS org.mozilla.firefox" # SNAP_INS="$SNAP_INS firefox" # X11 Firefox browser <https://mozilla.org/firefox>.
+SNAP_INS="$SNAP_INS firefox" # PACS_INS="$PACS_INS firefox-deb" SNAP_UNI="$SNAP_UNI firefox" # APTO_UNI="$APTO_UNI firefox" # APPM_INS="$APPM_INS firefox" # FAIL: Firefox installed from Snap uses Gnome cursor instead of KDE cursor. # APTO_INS="$APTO_INS firefox" # FLAT_INS="$FLAT_INS org.mozilla.firefox" # X Firefox browser <https://mozilla.org/firefox>.
 
 # # X Brave browser a-la google chrome <https://github.com/brave>.
 # APTO_INS="$APTO_INS apt-transport-https"
@@ -619,9 +649,11 @@ APTO_INS="$APTO_INS libfuse2" # APPL_INS="$APPL_INS ~/Applications/pcloud-x86_64
 # APTO_INS="$APTO_INS dropbox" # APTO_UNI="$APTO_UNI nautilus-dropbox" # FAIL: Conflicts with Dropbox deb file. # Dropbox <https://github.com/dropbox>.
 # HOWTO Download <https://mega.io/desktop#download> and on [Ubuntu][] `sudo dpkg --install ~/Downloads/megasync-xUbuntu_01.23_amd64.deb` # APTO_INS="$APTO_INS megasync" # <https://help.mega.io/ru/installs-apps/desktop-syncing/linux> # APTO_INS="$APTO_INS libmediainfo0v5 libqt5x11extras5 libzen0v5 libmediainfo0v5 libqt5x11extras5 libzen0v5" # MEGA runtime dependency <https://mega.io>. # FLAT_INS="$FLAT_INS nz.mega.MEGAsync" # FAIL: MEGA's Flatpak package crashed after clicking on tray icon. # <https://github.com/flathub/nz.mega.MEGAsync>, <https://flathub.org/ru/apps/nz.mega.MEGAsync> # MEGA is a end-to-end encrypted a cloud file storage <https://mega.io>, <https://mega.nz>, <https://mega.io/ru/desktop#downloadapps>.
 # PACS_INS="$PACS_INS yandex-disk-deb"
-BREW_INS="$BREW_INS rclone" # Is a command-line program to sync to and from different cloud providers <https://github.com/rclone/rclone>.
+BREW_INS="$BREW_INS rclone" # Is a [command-line client][CLI]-line program to sync to and from different cloud providers like rsync a-la restic <https://github.com/rclone/rclone>.
+# BREW_INS="$BREW_INS restic" # Is a [command-line client][CLI]-line program to sync to and from different cloud providers like rsync a-la rclone  <https://github.com/restic/restic>.
 
-# X text/audio/video group communication chat.
+# X group communication chat <sup><sub>Text. Audio. Video.</sub></sup>
+# HOWTO Install [Max][] on [Ubuntu][] from <https://download.max.ru/linux-repos> by `sudo mkdir --parents /etc/apt/keyrings ; curl -fsSL https://download.max.ru/linux/deb/public.asc | sudo gpg --dearmor -o /etc/apt/keyrings/max.gpg >/dev/null && echo "deb [signed-by=/etc/apt/keyrings/max.gpg] https://download.max.ru/linux/deb stable main" | sudo tee /etc/apt/sources.list.d/max.list && sudo apt update && sudo apt install max` # APTO_INS="$APTO_INS max" # Max messenger <https://github.com/max-messenger>.
 # APPM_INS="$APPM_INS mattermost-desktop" # FLAT_INS="$FLAT_INS com.mattermost.Desktop" # SNAC_INS="$SNAC_INS mattermost-desktop" # mattermost chat a-la slack <https://github.com/mattermost/mattermost>.
 # APPM_INS="$APPM_INS skype" # FLAT_INS="$FLAT_INS com.skype.Client"
 # APPM_INS="$APPM_INS telegram" # SNAP_INS="$SNAP_INS telegram-desktop" # telegram <https://github.com/telegramdesktop/tdesktop>.
@@ -677,7 +709,7 @@ BREW_INS="$BREW_INS webp" # The WebP is abbreviated WEB Pictures is a raster gra
 # APTO_UNI="$APTO_UNI gnome-mahjongg" # classic eastern tile game for gnome
 # APTO_UNI="$APTO_UNI xserver-xorg-video-intel" # instead of intel using modesetting <https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/1867668>.
 # BREW_INS="$BREW_INS duplicity" # APTO_INS="$APTO_INS duplicity" # backuping.
-# HOWTO Download <https://software.opensuse.org/download/package.iframe?project=home:manuelschneid3r&package=albert> & on [Ubuntu][] `sudo apt install --fix-broken ./albert_0.1.23_amd64.deb`. # Albert is a application launcher a-la rofi X11.
+# HOWTO Download from <https://software.opensuse.org/download/package.iframe?project=home:manuelschneid3r&package=albert> or from <https://software.opensuse.org/package/albert> & on [Ubuntu][] `sudo apt install --fix-broken ./albert_0.1.23_amd64.deb`. # Albert is a application launcher a-la rofi X11.
 # PIP3_INS="$PIP3_INS WeasyPrint" # converts web documents (html with css, svg) to pdf <http://weasyprint.org>.
 # SNAP_INS="$SNAP_INS cheese" APTO_UNI="$APTO_UNI cheese" # Cheese is a GNOME webcam application <https://en.wikipedia.org/wiki/Cheese_(software)>.
 # SNAP_INS="$SNAP_INS clvc" # A-la mplayer replacement <https://github.com/videolan/vlc>.
@@ -699,12 +731,13 @@ FLAT_INS="$FLAT_INS com.github.hluk.copyq" # Clipboard manager <https://github.c
 PACS_INS="$PACS_INS ventoy-bin" # Create bootable/live usb/iso a-la usb-creator-gtk <https://ventoy.net>.
 
 # Er Wbr.
-# BREW_INS="$BREW_INS teleport" # NOTE: Instead you should install an old version of tsh using script `curl https://goteleport.com/static/install.sh | bash -s 1.23.31`. Teleport TSH is SSH client for the Teleport, a modern SSH server for teams managing distributed infrastructure <https://github.com/gravitational/teleport>.
+# BREW_INS="$BREW_INS teleport" # NOTE: Instead you should install an old version of tsh using script `curl https://goteleport.com/static/install.sh | bash -s 0.12.3`. Teleport TSH is SSH client for the Teleport, a modern SSH server for teams managing distributed infrastructure <https://github.com/gravitational/teleport>.
 # FLAT_INS="$FLAT_INS org.gnome.Evolution" # APTO_INS="$APTO_INS evolution-ews" # MS Exchange Mail and Calendar.
 # SNAP_INS="$SNAP_INS rocketchat-desktop"
 # HOWTO OpenVPN 3 client `sudo sh -c 'curl -sSfL https://packages.openvpn.net/packages-repo.gpg > /etc/apt/keyrings/openvpn.asc && echo "deb [signed-by=/etc/apt/keyrings/openvpn.asc] https://packages.openvpn.net/openvpn3/debian YOUR_UBUNTU_DISTRIBUTION_NM main" >> /etc/apt/sources.list.d/openvpn3.list'` <https://community.openvpn.net/openvpn/wiki/OpenVPN3Linux>, <https://github.com/OpenVPN/openvpn3>. # APTO_INS="$APTO_INS openvpn3" # BREW_INS="$BREW_INS openvpn"
 # HOWTO Band mattermost client install from <https://band.wb.ru/download> `curl -O https://band.wb.ru/download/bin/band-desktop_release_5.9.0-rc.2-1_amd64.deb && apt install band-desktop_release_5.9.0-rc.2-1_amd64.deb` # Mattermost chat a-la Slack <https://github.com/mattermost/mattermost>.
 # # # # # # # * HOWTO Install VER3 from <https://goteleport.com/download> on [Ubuntu][] `curl -v -O -C - -L https://cdn.teleport.dev/teleport_0.1.23_amd64.deb` & `apt install teleport_0.1.23_amd64.deb`.
+# HOWTO Install from <https://github.com/ksysoev/wsget/releases> `curl -OL https://github.com/ksysoev/wsget/releases/download/v0.1.23/wsget_0.1.23_linux_amd64.deb && apt install wsget_0.1.23_linux_amd64.deb` # BREW_INS="$BREW_INS wsget" BREW_INS_SRC="$BREW_INS_SRC ksysoev/wsget" # wsget is a [WebSocket][WS] [CLI][] client <https://github.com/ksysoev/wsget>.
 # BREW_INS="$BREW_INS logstash" # Logstash is a logger from the ELK stack, composed of Elasticsearch, Logstash, and Kibana, called Elastic Stack <https://github.com/elastic/logstash>.
 # BREW_INS="$BREW_INS postgresql@14"
 # NPMJ_INS="$NPMJ_INS postman-cli" # <https://github.com/postmanlabs>, <https://en.wikipedia.org/wiki/Postman_(software)>.
@@ -722,6 +755,12 @@ GOLN_INS="$GOLN_INS github.com/onsi/ginkgo/v2/ginkgo@v2.23.4" # Ginkgo is a Test
 # Nutsbasket.
 BREW_INS="$BREW_INS node" # JavaScript (JS) programming language <https://github.com/nodejs/node>.
 BREW_INS="$BREW_INS yarn" # JavaScript (JS) programming language <https://github.com/nodejs/node>.
+BREW_INS="$BREW_INS openapi" # Speakeasy OpenAPI and Swagger validation linter `openapi spec validate path/to/your/openapi.json` and `openapi swagger validate path/to/your/openapi.json` <https://github.com/speakeasy-api/openapi>.
+
+BREW_INS="$BREW_INS pre-commit" # The pre-commit git hook <https://github.com/pre-commit/pre-commit>.
+
+BREW_INS="$BREW_INS jwt-cli" # XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+BREW_INS="$BREW_INS websocat" # websocat is a [WebSocket][] [command-line client][CLI] for [WS](https://en.wikipedia.org/wiki/WebSocket) and [WSS](https://en.wikipedia.org/wiki/WebSocket_Secure) a-la [netcat][] or [curl][] <https://github.com/vi/websocat>.
 
 # # Er Ozn.
 # # BREW_INS="$BREW_INS openvpn" # APTO_INS="$APTO_INS openvpn" APTO_DIS="$APTO_DIS openvpn openvpn@client" # openvpn client <https://confluence.ozon.ru/pages/viewpage.action?spaceKey=CORPIT&title=OpenVPN+for+Linux>.
@@ -752,6 +791,7 @@ BREW_INS="$BREW_INS yarn" # JavaScript (JS) programming language <https://github
 # APTO_INS="$APTO_INS vpnc" # cisco vpn client.
 # BREW_INS="$BREW_INS docker docker-machine docker-compose" # APTO_INS="$APTO_INS docker-ce" APTO_DIS="$APTO_DIS docker" # `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb arch=amd64 https://download.docker.com/linux/ubuntu bionic stable"`.
 
+# [appimage]: https://github.com/appimage/appimagekit "AppImage"
 # [ubuntu]: https://github.com/ubuntu
 
 # TODO: Install ntp.

@@ -8,19 +8,24 @@ modmap:
       RightCtrl: RightAlt
       RightAlt:  RightCtrl
 
-  - remap:
-     CapsLock: Shift_R
+  # - remap:
+  #    CapsLock: Shift_R
 
 keymap:
   - name: Escape.
     remap:
-      C-t:
+      Ctrl-t:
         remap:
-          C-t: { escape_next_key: true }
+          Ctrl-t: { escape_next_key: true }
+
+  - name: Layout toggle and language toggle.
+    remap:
+      CapsLock:
+        launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && layout_toggle_gnome36.sh"]
 
   - name: Common keybindings.
     remap:
-      C-t:
+      Ctrl-t:
         remap:
           KEY_C:
             launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && alacritty"]
@@ -41,44 +46,44 @@ keymap:
 
   - name: Invert colors on xorg/xrandr.
     remap:
-      C-t:
+      Ctrl-t:
         remap:
           KEY_I:
             launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'Invert'"]
 
   - name: Lock or lock and sleep/suspend or dim screen backlight <https://askubuntu.com/questions/1233858/xubuntu-20-04-suspend-waits-30-seconds>.
     remap:
-      C-t:
+      Ctrl-t:
         remap:
           KEY_L:
-            launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && sleep 0.1 && dbus-send --session --type=method_call --dest=org.kde.kglobalaccel  /component/org_kde_powerdevil org.kde.kglobalaccel.Component.invokeShortcut string:'Turn Off Screen'"]
+            launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && sleep 0.1 && screen-backlight-off-gnome"]
           KEY_U:
             remap:
               KEY_L:
-                launch: ["xflock4"]
+                launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && sleep 0.1 && screen-lock-gnome"]
               KEY_U:
                 remap:
                   KEY_L:
-                    launch: ["xfce4-session-logout --suspend && xfce4-screensaver"]
+                    launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && sleep 0.1 && systemctl suspend"]
 
   - name: Sleep/suspend or dim screen backlight.
     remap:
-      C-t:
+      Ctrl-t:
         remap:
           KEY_S:
-            launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && sleep 0.1 && dbus-send --session --type=method_call --dest=org.kde.kglobalaccel  /component/org_kde_powerdevil org.kde.kglobalaccel.Component.invokeShortcut string:'Turn Off Screen'"]
+            launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && sleep 0.1 && screen-backlight-off-gnome"]
           KEY_U:
             remap:
               KEY_S:
-                launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && sleep 0.1 && dbus-send --session --type=method_call --dest=org.kde.kglobalaccel  /component/org_kde_powerdevil org.kde.kglobalaccel.Component.invokeShortcut string:'Turn Off Screen'"]
+                launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && sleep 0.1 && screen-backlight-off-gnome"]
               KEY_U:
                 remap:
                   KEY_S:
-                    launch: ["xfce4-session-logout --suspend"]
+                    launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && sleep 0.1 && systemctl suspend"]
 
   - name: Find cursor a-la "shake to find Cursor" <https://github.com/arp242/find-cursor>.
     remap:
-      C-t:
+      Ctrl-t:
         remap:
           KEY_C:
             launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && find-cursor --color=#ff0000 --size=700 --line-width=10 --distance=70"]
@@ -89,7 +94,7 @@ keymap:
         launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && screen-backlight-down"]
       C-F6:
         launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && screen-backlight-up"]
-      C-t:
+      Ctrl-t:
         remap:
           KEY_B:
             remap:
@@ -104,7 +109,7 @@ keymap:
         launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && audio-sound-volume-down"]
       C-F3:
         launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && audio-sound-volume-up"]
-      C-t:
+      Ctrl-t:
         remap:
           KEY_V:
             remap:
@@ -115,7 +120,7 @@ keymap:
 
   - name: Music Media Player control.
     remap:
-      C-t:
+      Ctrl-t:
         remap:
           KEY_M:
             remap:
@@ -130,7 +135,7 @@ keymap:
 
   - name: Screen shot.
     remap:
-      C-t:
+      Ctrl-t:
         remap:
           KEY_P:
             remap:
@@ -141,7 +146,7 @@ keymap:
 
   - name: ExposeAll a-la compiz scale/gnome overview/osx expose/skippy-xd.
     remap:
-      C-t:
+      Ctrl-t:
         remap:
           KEY_W:
             remap:
@@ -162,26 +167,26 @@ keymap:
 
   - name: Window manager.
     remap:
-      C-t:
+      Ctrl-t:
         remap:
           KEY_W:
             remap:
               KEY_C:
                 launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && wmctrl -c :ACTIVE:"]
               KEY_F:
-                launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && mctrl -r :ACTIVE: -b add,fullscreen"]
+                launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && wmctrl -r :ACTIVE: -b toggle,maximized_vert,maximized_horz"]
               KEY_M:
-                launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && mctrl -r :ACTIVE: -b remove,fullscreen"]
+                launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && wmctrl -r :ACTIVE: -b toggle,maximized_vert,maximized_horz"]
 
   - name: Show desktop <http://ubuntuforums.org/showthread.php?t=1615199#td_post_10083165>.
     remap:
-      C-t:
+      Ctrl-t:
         remap:
           KEY_D: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && showdesktop.sh"] }
 
   - name: GNOME workspace.
     remap:
-      C-t:
+      Ctrl-t:
         remap:
           KEY_1: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && wmctrl -s 0"] }
           KEY_2: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && wmctrl -s 1"] }
@@ -195,7 +200,7 @@ keymap:
 
   - name: GNOME move window to workspace.
     remap:
-      C-t:
+      Ctrl-t:
         remap:
           KEY_W:
             remap:

@@ -1,4 +1,3 @@
-
 [env]
 TERM = "xterm-256color"
 
@@ -28,7 +27,7 @@ family = "Monospace"
 
 [cursor]
 # Cursor blinking interval in milliseconds.
-blink_interval = 150
+blink_interval = 110
 
 [cursor.style]
 blinking = "Always"
@@ -389,6 +388,206 @@ mods = "Command"
 chars = "\u0002/"
 key = "F"
 mods = "Command"
+
+# Russian Cyrillic.
+
+# Send Control-g.
+[[keyboard.bindings]]
+chars = "\x07"
+key = "п"
+mods = "Control"
+
+# Send Control-k.
+[[keyboard.bindings]]
+chars = "\u000b"
+key = "л"
+mods = "Control"
+
+# Send Control-h.
+[[keyboard.bindings]]
+chars = "\u007F"
+key = "р"
+mods = "Control"
+
+# Send Control-Alt-h.
+[[keyboard.bindings]]
+chars = "\u001b\u0008"
+key = "р"
+mods = "Control|Alt"
+
+# Send Control-d.
+[[keyboard.bindings]]
+chars = "\x04"
+key = "в"
+mods = "Control"
+
+# Send Alt-d.
+[[keyboard.bindings]]
+chars = "\x1bd"
+key = "в"
+mods = "Alt"
+
+# Send Control-w.
+[[keyboard.bindings]]
+chars = "\x17"
+key = "ц"
+mods = "Control"
+
+# Send Control-i.
+[[keyboard.bindings]]
+chars = "\x09"
+key = "ш"
+mods = "Control"
+
+# Send Control-Alt-i.
+[[keyboard.bindings]]
+chars = "\x1b\x09"
+key = "ш"
+mods = "Control|Alt"
+
+# Send Control-x.
+[[keyboard.bindings]]
+chars = "\x18"
+key = "ч"
+mods = "Control"
+
+# Send Alt-x.
+[[keyboard.bindings]]
+chars = "\x1bx"
+key = "ч"
+mods = "Alt"
+
+# Send Control-s.
+[[keyboard.bindings]]
+chars = "\x13"
+key = "ы"
+mods = "Control"
+
+# Send Alt-c.
+[[keyboard.bindings]]
+chars = "\u001bc"
+key = "с"
+mods = "Alt"
+
+# Send Alt-l.
+[[keyboard.bindings]]
+chars = "\x1bl"
+key = "д"
+mods = "Alt"
+
+# Send Control-u.
+[[keyboard.bindings]]
+chars = "\u0015"
+key = "г"
+mods = "Control"
+
+# Send Alt-u.
+[[keyboard.bindings]]
+chars = "\x1bu"
+key = "г"
+mods = "Alt"
+
+# Send Control-r.
+[[keyboard.bindings]]
+chars = "\x12"
+key = "к"
+mods = "Control"
+
+# Send Control-f.
+[[keyboard.bindings]]
+chars = "\x06"
+key = "а"
+mods = "Control"
+
+# Send Alt-f.
+[[keyboard.bindings]]
+chars = "\u001bf"
+key = "а"
+mods = "Alt"
+
+# Send Control-Alt-f.
+[[keyboard.bindings]]
+chars = "\u001b\u001b[102;6u"
+key = "а"
+mods = "Control|Alt"
+
+# Send Control-b.
+[[keyboard.bindings]]
+chars = "\x02"
+key = "и"
+mods = "Control"
+
+# Send Alt-b.
+[[keyboard.bindings]]
+chars = "\x1bb"
+key = "и"
+mods = "Alt"
+
+# Send Control-Alt-b.
+[[keyboard.bindings]]
+chars = "\u001b\u0002"
+key = "и"
+mods = "Control|Alt"
+
+# Send Control-p.
+[[keyboard.bindings]]
+chars = "\x10"
+key = "з"
+mods = "Control"
+
+# Send Alt-p.
+[[keyboard.bindings]]
+chars = "\x1bp"
+key = "з"
+mods = "Alt"
+
+# Send Control-Alt-p.
+[[keyboard.bindings]]
+chars = "\\u001b\\u0010"
+key = "з"
+mods = "Control|Alt"
+
+# Send Control-n.
+[[keyboard.bindings]]
+chars = "\x0e"
+key = "т"
+mods = "Control"
+
+# Send Alt-n.
+[[keyboard.bindings]]
+chars = "\x1bn"
+key = "т"
+mods = "Alt"
+
+# Send Control-Alt-n.
+[[keyboard.bindings]]
+chars = "\x1b\x0e"
+key = "т"
+mods = "Control|Alt"
+
+# Send Control-a.
+[[keyboard.bindings]]
+chars = "\u0001"
+key = "ф"
+mods = "Control"
+
+# Send Control-e.
+[[keyboard.bindings]]
+chars = "\x05"
+key = "у"
+mods = "Control"
+
+# Send Alt-y.
+[[keyboard.bindings]]
+chars = "\x1by"
+key = "н"
+mods = "Alt"
+
+# Send Control-z.
+[[keyboard.bindings]]
+chars = "\x1a"
+key = "я"
+mods = "Control"
 
 [general]
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.

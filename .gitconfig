@@ -3,42 +3,42 @@
 # <http://stackoverflow.com/questions/267761/what-does-your-gitconfig-contain>.
 
 [user]
-  email = danil@kutkevich.org
-  name = Danil Kutkevich
+	email = danil@kutkevich.org
+	name = Danil Kutkevich
 
 [diff]
-  renameLimit = 16384
-  colorMoved = default # Syntax-highlighting pager for git and diff output <https://github.com/dandavison/delta>.
+	renameLimit = 16384
+	colorMoved = default # Syntax-highlighting pager for git and diff output <https://github.com/dandavison/delta>.
 
 [merge]
-  renamelimit = 16384
-  conflictstyle = diff3 # Syntax-highlighting pager for git and diff output <https://github.com/dandavison/delta>.
+	renamelimit = 16384
+	conflictstyle = diff3 # Syntax-highlighting pager for git and diff output <https://github.com/dandavison/delta>.
 
 [safe]
-  directory = /
-  directory = /etc
-  directory = /root/example
-  directory = /root/.ssh
-  directory = /home/danil
+	directory = /
+	directory = /etc
+	directory = /root/example
+	directory = /root/.ssh
+	directory = /home/danil
 
 # [color]
-#     diff = always
-#     ui = true
+# 	diff = always
+# 	ui = true
 # [diff]
-#   external = meld
+# 	external = meld
 
 # Global .gitignore
 # <https://help.github.com/articles/ignoring-files#global-gitignore>,
 # <http://stackoverflow.com/questions/7335420/global-git-ignore#7335487>.
 # Emacs eshell <https://hexmode.com/2016/05/making-git-and-emacs-eshell-work-together>.
 [core]
-  # Committing only a file's permissions
-  # <https://stackoverflow.com/questions/10516201/updating-and-committing-only-a-files-permissions-using-git-version-control#10516406>.
-  filemode = true
-  excludesfile = ~/.gitignore.global
-  editor = emacs
-  # pager = `test \"$TERM\" = \"dumb\" && echo cat || echo less --IGNORE-CASE --LONG-PROMPT`
-  pager = delta # Syntax-highlighting pager for git and diff output <https://github.com/dandavison/delta>.
+	# Committing only a file's permissions
+	# <https://stackoverflow.com/questions/10516201/updating-and-committing-only-a-files-permissions-using-git-version-control#10516406>.
+	filemode = true
+	excludesfile = ~/.gitignore.global
+	editor = emacs
+	# pager = `test \"$TERM\" = \"dumb\" && echo cat || echo less --IGNORE-CASE --LONG-PROMPT`
+	pager = delta # Syntax-highlighting pager for git and diff output <https://github.com/dandavison/delta>.
 
 [advice]
 	addIgnoredFile = false
@@ -47,34 +47,36 @@
     diffFilter = delta --color-only # Syntax-highlighting pager for git and diff output <https://github.com/dandavison/delta>.
 
 [delta]
-    navigate = true # Use n and N to move between diff sections. Syntax-highlighting pager for git and diff output <https://github.com/dandavison/delta>.
-    line-numbers = true # <https://github.com/dandavison/delta?tab=readme-ov-file#line-numbers>.
-    # side-by-side = true # <https://github.com/dandavison/delta?tab=readme-ov-file#side-by-side-view>.
-    # dark = true # Delta detects terminal colors automatically; set one of these to disable auto-detection. Syntax-highlighting pager for git and diff output <https://github.com/dandavison/delta>.
-    # light = true # Syntax-highlighting pager for git and diff output <https://github.com/dandavison/delta>.
+	navigate = true # Use n and N to move between diff sections. Syntax-highlighting pager for git and diff output <https://github.com/dandavison/delta>.
+	line-numbers = true # <https://github.com/dandavison/delta?tab=readme-ov-file#line-numbers>.
+	# side-by-side = true # <https://github.com/dandavison/delta?tab=readme-ov-file#side-by-side-view>.
+	# dark = true # Delta detects terminal colors automatically; set one of these to disable auto-detection. Syntax-highlighting pager for git and diff output <https://github.com/dandavison/delta>.
+	# light = true # Syntax-highlighting pager for git and diff output <https://github.com/dandavison/delta>.
 
 [url "git@github.com:danil/"]
-  insteadOf = https://github.com/danil/
+	insteadOf = https://github.com/danil/
 
 # <https://git-scm.com/docs/git-config#Documentation/git-config.txt-codegitdircode>.
 
+# [includeIf "hasconfig:remote.*.url:git@*.wildberries.ru*/**"]
 [includeIf "gitdir:~/src_er_wbr/"]
-  path = ~/.gitconfig.wbr.local
+	path = ~/.gitconfig.wbr.local
 
 # [include]
-#   path = ~/.gitconfig.ozn
+# 	path = ~/.gitconfig.ozn
 
 # [includeIf "gitdir:~/**vendor/ozn/"]
-#   path = ~/.gitconfig.ozn.local
+# 	path = ~/.gitconfig.ozn.local
 
 # [include]
-#   path = ~/.gitconfig.bro
+# 	path = ~/.gitconfig.bro
 
 # [include]
-#   path = ~/.gitconfig.rkt
+# 	path = ~/.gitconfig.rkt
 
 # [include]
-#   path = ~/.gitconfig.a5g
+# 	path = ~/.gitconfig.a5g
+
 [gui]
 	fontui = -family \"nimbus sans l\" -size 18 -weight normal -slant roman -underline 0 -overstrike 0
 	fontdiff = -family \"nimbus mono l\" -size 18 -weight normal -slant roman -underline 0 -overstrike 0

@@ -1,0 +1,4 @@
+your.tld:5432:your_db:your_usr:your-pwd
+your.tld:*:your_db:your_usr:your-pwd
+*:*:your_db:your_usr:your-pwd
+*:*:*:your_usr:your-pwd

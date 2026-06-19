@@ -31,6 +31,7 @@ export TERMINAL="xterm-256color" # "xterm" # safe fallback/backup terminal
 # [ -x "$(command -v emacs)" ] && export ALTERNATE_EDITOR="/usr/bin/emacs"
 
 # export PATH="$HOME"/.cask/bin:"$PATH" # emacs cask <https://github.com/cask/cask>
+export PATH="$HOME"/Applications:"$PATH" # clib c package manager installs here <https://github.com/clibs/clib> run `c-install-all`
 export PATH="$HOME"/.local/bin:"$PATH" # tmux make installs here and pip (python package management system) run `python-install-all`
 export PATH="$HOME"/.local/sbin:"$PATH"
 export PATH="$HOME"/.local/usr/bin:"$PATH" # xxkb make installs here

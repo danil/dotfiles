@@ -1,2 +1,2 @@
 [Context]
-filesystems=/home/danil/.icons:ro;
+filesystems=xdg-config/gtk-3.0:ro;xdg-config/gtk-4.0:ro;xdg-config/kdeglobals:ro;/home/danil/.icons:ro;xdg-data/color-schemes:ro;
