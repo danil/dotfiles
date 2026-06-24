@@ -684,6 +684,9 @@ APTO_INS="$APTO_INS gimp"
 BREW_INS="$BREW_INS feh" # APTO_INS="$APTO_INS feh" # feh is a command line image viewer <https://github.com/derf/feh>.
 BREW_INS="$BREW_INS webp" # The WebP is abbreviated WEB Pictures is a raster graphics file of image and picture a-la JPEG, PNG, and GIF file formats and supports both lossy and lossless compression, as well as animation and alpha transparency.
 
+# # AI Artificial intelligence.
+# BREW_INS="$BREW_INS ollama" # <https://github.com/ollama/ollama>.
+
 # X/Wayland/X11/xorg/desktop.
 # APPM_INS="$APPM_INS flameshot" # FLAT_INS="$FLAT_INS org.flameshot.Flameshot" # SNAP_INS="$SNAP_INS flameshot" # Screen shot util <https://github.com/flameshot-org/flameshot>.
 # APPM_INS="$APPM_INS popsicle" # Create bootable/live usb/iso a-la usb-creator-gtk <https://github.com/pop-os/popsicle>. # PACS_INS="$PACS_INS popsicle"
