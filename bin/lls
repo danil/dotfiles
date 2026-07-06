@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-# /home/linuxbrew/.linuxbrew/bin/eza "$@"
-/home/linuxbrew/.linuxbrew/bin/lsd "$@"
+. /home/danil/bin/binpath.sh
+
+# "$BREWBINDIR"/eza "$@"
+"$BREWBINDIR"/lsd "$@"
