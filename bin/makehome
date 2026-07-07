@@ -19,8 +19,6 @@
 # PIP3_INS="$PIP3_INS mps-youtube" # Network youtube player <https://github.com/np1/mps-youtube>.
 # PIP3_INS="$PIP3_INS pythonpy" # Evaluate Python expression like `py 2*2` <https://github.com/russell91/pythonpy>.
 # PIP3_INS="$PIP3_INS thefuck" # Corrects previous console command <https://github.com/nvbn/thefuck>.
-# PIP3_INS="$PIP3_INS you-get" # Network video downloader (universal) <https://github.com/soimort/you-get>.
-# PIP3_INS="$PIP3_INS youtube-dl" # Network youtube downloader <https://github.com/rg3/youtube-dl>.
 # RUST_INS="$RUST_INS czkawka_cli" # Find duplicates, empty folders.
 # RUST_INS="$RUST_INS ddh" # Duplicate file finder <https://github.com/darakian/ddh>.
 # RUST_INS="$RUST_INS exa" # List files/directories, is an ls replacement <https://github.com/ogham/exa>.
@@ -93,10 +91,10 @@ APTO_INS="$APTO_INS breeze" # Breeze icon theme and cursor theme.
 APTO_INS="$APTO_INS breeze-gtk-theme gtk3-engines-breeze" # Breeze icon theme and cursor theme.
 APTO_INS="$APTO_INS kde-plasma-desktop" # FIXME: Only used to run `krunner` in `GNOME`. KDE Plasma 5 desktop for X11.
 
-# Portable/standalone package management system (cross Linux distribution).
+# Portable package management system <sup><sub>Standalone cross Linux distribution</sub></sup>.
 # APTO_INS="$APTO_INS bash coreutils" # Basher runtime dependency. # Basher is a bash/shell/functions package manager <https://github.com/basherpm/basher>.
+# BREW_INS="$BREW_INS clib" # Package manager for C program language libraries <https://github.com/clibs/clib>.
 APTO_INS="$APTO_INS build-essential curl file git procps" # The `procps` provides `/proc` file system utilities. # Homebrew <https://github.com/Linuxbrew/brew#debian-or-ubuntu>, <https://docs.brew.sh/Homebrew-on-Linux#requirements>.
-BREW_INS="$BREW_INS clib" # Package manager for C program language libraries <https://github.com/clibs/clib>.
 
 # AppImage
 # <https://github.com/appimage/appimagekit>.
@@ -111,14 +109,13 @@ FLAT_INS="$FLAT_INS com.github.tchx84.Flatseal" # Is a GUI permissions manager w
 
 # Git.
 # BREW_INS="$BREW_INS pre-commit" # The pre-commit git hook <https://github.com/pre-commit/pre-commit>.
-# RUST_INS="$RUST_INS gitui" # Git TUI a-la `tig` <https://github.com/extrawurst/gitui>.
 BREW_INS="$BREW_INS git" # Distributed version/revision control system <https://github.com/git/git>. # APTO_INS="$APTO_INS git"
-BREW_INS="$BREW_INS git-delta" # Syntax-highlighting pager for git and diff output <https://github.com/dandavison/delta>.
 BREW_INS="$BREW_INS git-delta" # Syntax-highlighting pager for git and diff output <https://github.com/dandavison/delta>.
 BREW_INS="$BREW_INS git-flow" # <https://github.com/nvie/gitflow>.
 BREW_INS="$BREW_INS git-gui" # Git GUI provides this functionality under the diff view. Just right click the line(s) you're interested in and you should see a "stage this line to commit" menu item. <https://stackoverflow.com/questions/1085162/commit-only-part-of-a-files-changes-in-git#1085202>, <https://en.wikipedia.org/wiki/Tk_(software)>.
 BREW_INS="$BREW_INS git-lfs" # <https://git-lfs.com>.
 BREW_INS="$BREW_INS git-who" # Git contributors list by lines number `git-who -l` <https://github.com/sinclairtarget/git-who>.
+BREW_INS="$BREW_INS gitui" # Git TUI a-la tig <https://github.com/extrawurst/gitui>.
 BREW_INS="$BREW_INS lazygit" # lazygit - TUI Git interactive client <https://github.com/jesseduffield/lazygit>.
 BREW_INS="$BREW_INS tig" # APTO_INS="$APTO_INS tig" # Tig - TUI Git interactive client <https://github.com/jonas/tig>, <https://en.wikipedia.org/wiki/Tig_(software)>.
 
@@ -158,7 +155,7 @@ BREW_INS="$BREW_INS bash-language-server" # Bash language server implementing LS
 BREW_INS="$BREW_INS bc" APTO_INS="$APTO_INS bc" # Used by Bash prompt. # bc is a console-based calculator utility.
 BREW_INS="$BREW_INS dash" APTO_INS="$APTO_INS dash" # Dash (Debian Almquist shell) is POSIX-compliant implementation of `/bin/sh` <https://wiki.archlinux.org/title/Dash>.
 
-# C/C++ compile/make common dependencies.
+# C, C++, GCC compilers, make and so on.
 APTO_INS="$APTO_INS automake" # Required by `xchainkeys`.
 APTO_INS="$APTO_INS bison" # ???
 APTO_INS="$APTO_INS build-essential" # Compiler?
@@ -289,9 +286,9 @@ BREW_INS="$BREW_INS emacs" # APTO_INS="$APTO_INS emacs-nox" # Instead compiling 
 # PIP3_INS="$PIP3_INS bashate" # Instead using ShellCheck. # Bash scripts checker a-la pep8 <https://github.com/openstack/bashate>.
 # PIP3_INS="$PIP3_INS proselint" # Used by emacs Flycheck. # Linter for prose <https://github.com/amperser/proselint>, <http://proselint.com>.
 # PIP3_INS="$PIP3_INS pylint" # Used by emacs Flycheck
+# APTO_INS="$APTO_INS emacs-el" # Find/navigate ELisp function source code <https://unix.stackexchange.com/questions/73100/how-to-attach-elisp-function-source-code-in-emacs>.
 APTO_INS="$APTO_INS aspell-en" # Used by emacs auto Complete.
 APTO_INS="$APTO_INS aspell-ru" # Used by emacs auto Complete.
-APTO_INS="$APTO_INS emacs-el" # Find/navigate ELisp function source code <https://unix.stackexchange.com/questions/73100/how-to-attach-elisp-function-source-code-in-emacs>.
 BREW_INS="$BREW_INS fdupes" # Identify or delete duplicate files https://github.com/adrianlopezroche/fdupes (used by emacs package https://github.com/ShuguangSun/find-dupes-dired).
 BREW_INS="$BREW_INS jq" # JSON console formater (used by emacs counsel-jq) <https://github.com/jqlang/jq>, <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463> # APTO_INS="$APTO_INS jq" # json console formater (used by emacs counsel-jq) <http://stedolan.github.io/jq/tutorial>, <http://stackoverflow.com/questions/352098/how-can-i-pretty-print-json#15231463>.
 BREW_INS="$BREW_INS jsonlint" # Used by Emacs Flycheck <https://github.com/zaach/jsonlint>.
@@ -309,11 +306,11 @@ BREW_INS="$BREW_INS sql-lint" # Used by Emacs Flycheck.
 
 # Web/HTTPd server.
 # BREW_INS="$BREW_INS certbot" # Certbot is EFF's tool to obtain certs from Let's Encrypt <https://github.com/certbot/certbot>, <https://github.com/EFForg>.
+# BREW_INS="$BREW_INS http-server" # <https://github.com/http-party/http-server>.
 # BREW_INS="$BREW_INS nginx" # FAIL: Use Caddy instead. # The web server a-la Apache <https://github.com/nginx/nginx>. # APTO_INS="$APTO_INS nginx" APTO_DIS="$APTO_DIS nginx" # web/http server a-la apache
 # PIP3_INS="$PIP3_INS ngxtop" # real-time metrics for nginx server <https://github.com/lebinh/ngxtop>.
 BREW_INS="$BREW_INS caddy" # The Caddy is a web server a-la nginx <https://github.com/caddyserver/caddy>.
 BREW_INS="$BREW_INS goaccess" # APTO_INS="$APTO_INS goaccess" # analyze apache/nginx/caddy log in real-time.
-BREW_INS="$BREW_INS http-server" # <https://github.com/http-party/http-server>.
 BREW_INS="$BREW_INS httpd" # provides htpasswd utility is an nginx/apache basic authentication password generator # APTO_INS="$APTO_INS apache2-utils" # provides htpasswd utility is an nginx/apache basic authentication password generator.
 
 # # Kafka.
@@ -412,12 +409,16 @@ BREW_INS="$BREW_INS prometheus" # Prometheus is a database for the metrics monit
 
 # DevOps network.
 # BREW_INS="$BREW_INS bandwhich" # RUST_INS="$RUST_INS bandwhich" # bandwidth utilization tool https://github.com/imsnif/bandwhich
+# BREW_INS="$BREW_INS curl wcurl trurl curlie" # Is a curl wrapper.
 # BREW_INS="$BREW_INS doggo" # FAIL: doggo NOT respect of `dig` CLI arguments. Is a CLI DNS client a-la like dig <https://github.com/mr-karan/doggo>.
+# BREW_INS="$BREW_INS gping" # The graph (pinggraph) - ping utility <https://github.com/orf/gping>.
 # BREW_INS="$BREW_INS iftop" # Interface bandwidth usage a-la network top.
 # BREW_INS="$BREW_INS mtr" # A-la traceroute <https://github.com/traviscross/mtr>.
+# BREW_INS="$BREW_INS you-get" # Network video downloader (universal) <https://github.com/soimort/you-get>.
+# BREW_INS="$BREW_INS youtube-dl" # Network youtube downloader <https://github.com/rg3/youtube-dl>.
 # PIP3_INS="$PIP3_INS http-prompt" # interactive command-line http client with autocomplete.
 # PIP3_INS="$PIP3_INS httpie" # A-la curl <http://httpie.org> # FAIL: httpie 2.2.0 has requirement Pygments>=2.5.2, but you'll have pygments 2.3.1 which is incompatible.
-# PIP3_INS="$PIP3_INS pinggraph" # ping with graph <https://github.com/orf/gping>.
+# PIP3_INS="$PIP3_INS yamllint" # Used/required by emacs Flycheck.
 APTO_INS="$APTO_INS netcat-openbsd" # BREW_INS="$BREW_INS netcat" # FAIL: Brew's `netcat` does nothing. GNU Netcat <https://netcat.sourceforge.net>. # APTO_INS="$APTO_INS netcat-openbsd" # OpenBSD Netcat <https://github.com/openbsd/src/blob/master/usr.bin/nc/netcat.c>.
 APTO_INS="$APTO_INS traceroute"
 BREW_INS="$BREW_INS aria2" # Download client a-la curl/wget `aria2c https://your.tld/path/to/your.file`.
@@ -435,7 +436,7 @@ BREW_INS="$BREW_INS mosh" # APTO_INS="$APTO_INS mosh" # ssh replacement <https:/
 BREW_INS="$BREW_INS nethogs" # Top for network bandwidth per process <https://github.com/raboof/nethogs>.
 BREW_INS="$BREW_INS rsync-time-backup" # Time Machine style backup with Rsync <https://github.com/laurent22/rsync-time-backup>.
 BREW_INS="$BREW_INS syncthing" # APTO_INS="$APTO_INS syncthing" # dropbox replacement: deb <https://apt.syncthing.net> syncthing release.
-BREW_INS="$BREW_INS wget" # A-la curl
+BREW_INS="$BREW_INS wget" # A-la curl.
 BREW_INS="$BREW_INS whois"
 NPMJ_INS="$NPMJ_INS curlconverter" # Generate HTTP client code by `curl` command `echo "curl https://your.tld" | curlconverter --language c -` <https://github.com/curlconverter/curlconverter>.
 
