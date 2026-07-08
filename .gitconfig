@@ -13,6 +13,7 @@
 	directory = /
 	directory = /etc
 	directory = /root/example
+	directory = /home/git
 
 # [color]
 #     diff = always
