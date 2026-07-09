@@ -19,6 +19,7 @@ ZYPP_INS="$ZYPP_INS sudo" # The super user do.
 # Server.
 BREW_INS="$BREW_INS pure-ftpd" # ZYPP_INS="$ZYPP_INS pure-ftpd" # Pure-FTPd should be used because vsftpd is annoying <https://en.wikipedia.org/wiki/Pure-FTPd> <https://github.com/jedisct1/pure-ftpd>.
 ZYPP_INS="$ZYPP_INS fail2ban"
+ZYPP_INS="$ZYPP_INS firewalld" # The firewalld used instead of SuSEfirewall2 <https://github.com/openSUSE/susefirewall2>, <https://en.opensuse.org/Firewalld>, <https://en.wikipedia.org/wiki/Firewalld>, <https://github.com/firewalld/firewalld>.
 ZYPP_INS="$ZYPP_INS knot" # DNS server.
 
 # Data compression algorithms.
