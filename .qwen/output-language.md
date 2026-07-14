@@ -1,8 +1,8 @@
-# Output language preference: English
-<!-- qwen-code:llm-output-language: English -->
+# Output language preference: Russian
+<!-- qwen-code:llm-output-language: Russian -->
 
 ## Rule
-You MUST always respond in **English** regardless of the user's input language.
+You MUST always respond in **Russian** regardless of the user's input language.
 This is a mandatory requirement, not a preference.
 
 ## Exception
