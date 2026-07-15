@@ -693,6 +693,7 @@ BREW_INS="$BREW_INS webp" # The WebP is abbreviated WEB Pictures is a raster gra
 # LLM (Large Language Model) and AI (Artificial intelligence).
 BREW_INS="$BREW_INS ollama" # <https://github.com/ollama/ollama>.
 BREW_INS="$BREW_INS qwen-code" # <https://github.com/QwenLM/qwen-code>.
+BREW_INS="$BREW_INS reasonix" BREW_INS_SRC="$BREW_INS_SRC esengine/reasonix" # Reasonix is an AI coding agent for DeepSeak LLM <https://github.com/esengine/deepseek-reasonix>.
 
 # X/Wayland/X11/xorg/desktop.
 # APPM_INS="$APPM_INS flameshot" # FLAT_INS="$FLAT_INS org.flameshot.Flameshot" # SNAP_INS="$SNAP_INS flameshot" # Screen shot util <https://github.com/flameshot-org/flameshot>.
