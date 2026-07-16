@@ -466,7 +466,7 @@ BREW_INS="$BREW_INS netdata" # Netdata is a metrics monitoring <https://github.c
 # FAIL: Freeze while updating. <sup><sub>Hang while updating by `aptitude full-upgrade`.</sub></sup>
 # HOWTO Download <https://browser.yandex.ru> & on [Ubuntu][] `apt install ~/Downloads/Yandex.deb`. # X Yandex (Google Chrome based) browser. # FLAT_INS="$FLAT_INS ru.yandex.Browser"
 # HOWTO Download <https://google.com/chrome> & on [Ubuntu][] `apt install ~/Downloads/google-chrome-stable_current_amd64.deb`. # Google Chrome browser <https://google.com/chrome>. # APPM_INS="$APPM_INS google-chrome" # FLAT_INS="$FLAT_INS com.google.Chrome" # APTO_INS="$APTO_INS google-chrome-stable" APTO_INS="$APTO_INS apt-transport-https"
-SNAP_INS="$SNAP_INS falkon" # Falkon is a KDE lightweight web browser <https://github.com/KDE/falkon>.
+# SNAP_INS="$SNAP_INS falkon" # Falkon is a KDE lightweight web browser <https://github.com/KDE/falkon>.
 SNAP_INS="$SNAP_INS firefox" # PACS_INS="$PACS_INS firefox-deb" SNAP_UNI="$SNAP_UNI firefox" # APTO_UNI="$APTO_UNI firefox" # APPM_INS="$APPM_INS firefox" # FAIL: Firefox installed from Snap uses Gnome cursor instead of KDE cursor. # APTO_INS="$APTO_INS firefox" # FLAT_INS="$FLAT_INS org.mozilla.firefox" # X Firefox browser <https://mozilla.org/firefox>.
 
 # # X Brave browser a-la google chrome <https://github.com/brave>.
