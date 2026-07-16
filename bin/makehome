@@ -692,6 +692,7 @@ BREW_INS="$BREW_INS webp" # The WebP is abbreviated WEB Pictures is a raster gra
 
 # LLM (Large Language Model) and AI (Artificial intelligence).
 BREW_INS="$BREW_INS ollama" # <https://github.com/ollama/ollama>.
+BREW_INS="$BREW_INS pi-coding-agent" # Pi Agent Harness - AI coding agent <https://github.com/earendil-works/pi>
 BREW_INS="$BREW_INS qwen-code" # <https://github.com/QwenLM/qwen-code>.
 BREW_INS="$BREW_INS reasonix" BREW_INS_SRC="$BREW_INS_SRC esengine/reasonix" # Reasonix is an AI coding agent for DeepSeak LLM <https://github.com/esengine/deepseek-reasonix>.
 
