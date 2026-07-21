@@ -4,8 +4,8 @@
 
 # APT (deb/dpkg/apt-get/aptitude)
 # <https://en.wikipedia.org/wiki/APT_(software)>.
-APTO_INS_CLI="sudo aptitude install --without-recommends"
-APTO_UNI_CLI="sudo aptitude remove"
+APTO_INS_CLI="sudo apt install --no-install-recommends"
+APTO_UNI_CLI="sudo apt remove"
 # APTO_DIS_CLI="systemctl disable"
 
 makebrewinst () {

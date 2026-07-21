@@ -1,13 +1,12 @@
 #!/usr/bin/env sh
 
-# FIXME: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX aptitude install pipewire-audio ubuntu-desktop-minimal python3-distupgrade ubuntu-release-upgrader-core python3-distupgrade ubuntu-release-upgrader-core ubuntu-release-upgrader-gtk update-manager update-notifier update-manager-core python3-update-manager
-
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
 # Common packages.
 # APTO_INS="$APTO_INS inxi" # inxi --graphics <https://github.com/smxi/inxi>.
 # APTO_INS="$APTO_INS linux-generic-hwe-20.04-edge" # Linux/kernel 5.11 for Ubuntu 20.04.
 # APTO_INS="$APTO_INS makepasswd" # Password generator.
+# APTO_INS="$APTO_INS opensmtpd" # FAIL: `dpkg: error processing package opensmtpd (--configure): /var/lib/dpkg/info/opensmtpd.config: 88: return: Illegal number: old opensmtpd package postinst maintainer script subprocess failed with exit status 255`. # Send mail via /usr/bin/sendmail and deliver local mail to /var/mail a-la Exim replacement.
 # APTO_INS="$APTO_INS protobuf-compiler" # Version is to old/outdated(
 # BREW_INS="$BREW_INS coreutils" # Provides `tac` sort utility <https://unix.stackexchange.com/questions/114041/how-can-i-get-the-tac-command-on-os-x#114043>, <https://github.com/coreutils/coreutils>.
 # BREW_INS="$BREW_INS flatbuffers" # A-la protobuf <https://github.com/google/flatbuffers>.
@@ -27,13 +26,11 @@
 # RUST_INS="$RUST_INS fselect" # Find files with SQL-like queries <https://github.com/jhspetersson/fselect>.
 # RUST_INS="$RUST_INS xsv" # CSV cli (indexing, slicing, analyzing, splitting and joining) <https://github.com/BurntSushi/xsv>.
 APTO_INS="$APTO_INS bind9-host" # Automatic/dependency: DNS/host lookup utility.
-APTO_INS="$APTO_INS fprintd libpam-fprintd" # Required by fingerprint authentication for sudo and so on.
 APTO_INS="$APTO_INS genius" # Calculator.
 APTO_INS="$APTO_INS libpci-dev libnl-3-dev libnl-genl-3-dev gettext libgettextpo-dev autopoint gettext libncurses5-dev libncursesw5-dev libtool-bin dh-autoreconf autoconf-archive pkg-config" # Required by powertop diagnoses power consumption <https://github.com/fenrus75/powertop#build-dependencies>.
 APTO_INS="$APTO_INS logrotate"
 APTO_INS="$APTO_INS lynx" # HTML to plain text `curl https://your.tld/ | lynx --stdin --dump`.
 APTO_INS="$APTO_INS net-tools" # `ifconfig` cli.
-APTO_INS="$APTO_INS opensmtpd" # Send mail via /usr/bin/sendmail and deliver local mail to /var/mail a-la Exim replacement.
 APTO_INS="$APTO_INS openssh-server"
 APTO_INS="$APTO_INS plocate" # `plocate` provides `locate` and `updatedb` which are faster than `mlocate` <https://plocate.sesse.net>. # APTO_INS="$APTO_INS mlocate" # `mlocate` provides `locate` and `updatedb` which are faster than `findutils`. # BREW_INS="$BREW_INS findutils" # `findutils` provides `locate` and `updatedb`.
 BREW_INS="$BREW_INS awk" # Text processing scripting language <https://en.wikipedia.org/wiki/AWK>.
@@ -80,16 +77,8 @@ BREW_INS="$BREW_INS rhash" # Provides `crc32`/`md5`/`sha1`/`sha256` utility <htt
 
 # Ubuntu packages.
 APTO_INS="$APTO_INS apt-transport-https" # Required by custom ppa.
+APTO_INS="$APTO_INS aptitude" # Aptitude is an APT (Advanced Package Tool) front end <https://en.wikipedia.org/wiki/Aptitude_(software)>.
 APTO_INS="$APTO_INS ubuntu-advantage-tools" # Fixing error message on `apt update`: `Failed to start apt-news.service: Unit apt-news.service not found.`.
-
-# KDE Plasma desktop and Qt GUI framework for Wayland and X11 <https://github.com/KDE> <sup><sub>KDE Plasma 5 and Plasma 6.</sub></sup>
-# # APTO_INS="$APTO_INS neon-desktop" # DEPRECATED KDE Neon Linux <https://github.com/KDE/neon-neon-repositories>. <sup><sub>KDE Plasma 6 desktop for Wayland and X11.</sub></sup>
-# # APTO_INS="$APTO_INS neon-keyring signon-kwallet-extension" # FAIL? DEPRECATED KDE Neon Linux <https://github.com/KDE/neon-neon-repositories>.
-# APTO_INS="$APTO_INS krita" # Krita is a pixel-based image manipulation program a-la GIMP <https://github.com/KDE/krita>.
-# APTO_INS="$APTO_INS lm-sensors" # A-la `sensors` # FIXME: Is the CPU temperate used by plain status or by slstatus?
-APTO_INS="$APTO_INS breeze" # Breeze icon theme and cursor theme.
-APTO_INS="$APTO_INS breeze-gtk-theme gtk3-engines-breeze" # Breeze icon theme and cursor theme.
-APTO_INS="$APTO_INS kde-plasma-desktop" # FIXME: Only used to run `krunner` in `GNOME`. KDE Plasma 5 desktop for X11.
 
 # Portable package management system <sup><sub>Standalone cross Linux distribution</sub></sup>.
 # APTO_INS="$APTO_INS bash coreutils" # Basher runtime dependency. # Basher is a bash/shell/functions package manager <https://github.com/basherpm/basher>.
@@ -462,6 +451,10 @@ BREW_INS="$BREW_INS k9s" # derailed/k9s/k9s:, k8s/kubernetes client <https://git
 BREW_INS="$BREW_INS kubernetes-cli" # APTO_INS="$APTO_INS kubectl" # provides k8s/kubernetes kubectl util `deb https://apt.kubernetes.io kubernetes-xenial main` <https://kubernetes.io/docs/tasks/tools/install-kubectl> # APTO_INS="$APTO_INS gnupg2" # required by kubectl
 BREW_INS="$BREW_INS netdata" # Netdata is a metrics monitoring <https://github.com/netdata/netdata>.
 
+# Fingerprint <https://en.wikipedia.org/wiki/Fingerprint>.
+# APTO_INS="$APTO_INS fprintd libpam-fprintd" # FAIL: Works on Thinkpad T490s but does not work on T480s. # Required by fingerprint authentication for sudo and so on.
+APTO_INS="$APTO_INS fprintd-clients  open-fprintd  python3-validity" # `sudo add-apt-repository ppa:ubuntuhandbook1/open-fprintd`. Required by fingerprint authentication for sudo and so on.
+
 # X web browser.
 # FAIL: Freeze while updating. <sup><sub>Hang while updating by `aptitude full-upgrade`.</sub></sup>
 # HOWTO Download <https://browser.yandex.ru> & on [Ubuntu][] `apt install ~/Downloads/Yandex.deb`. # X Yandex (Google Chrome based) browser. # FLAT_INS="$FLAT_INS ru.yandex.Browser"
@@ -477,17 +470,21 @@ SNAP_INS="$SNAP_INS firefox" # PACS_INS="$PACS_INS firefox-deb" SNAP_UNI="$SNAP_
 
 # X Wayland/desktop.
 # APTO_INS="$APTO_INS libevdev-dev pkg-config" # `evremap` dependency <https://github.com/wez/evremap>.
+# APTO_INS="$APTO_INS libwlroots-dev meson ninja-build" # FAIL: `Error: Unable to locate package libwlroots-dev`. # `wl-gammactl` compile time dependency.
 APTO_INS="$APTO_INS brightnessctl" # `brightnessctl` command line control brightness `brightnessctl set 42%+ && brightnessctl set 42%-` <https://github.com/Hummer12007/brightnessctl>.
-APTO_INS="$APTO_INS libwlroots-dev meson ninja-build" # `wl-gammactl` compile time dependency.
 
-# Wayland swhkd is a simple hotkey daemon <https://github.com/waycrate/ewhkd>.
-# `make setup && make clean && make` <https://github.com/waycrate/swhkd/blob/main/INSTALL.md#compiling>.
-APTO_INS="$APTO_INS libevdev-dev libevdev2" # Evdev kernel module is a swhkd's runtime dependency.
-APTO_INS="$APTO_INS libudev-dev" # Is a swhkd's compile time dependency.
-APTO_INS="$APTO_INS policykit-1 polkitd" # Policy Kit Daemon (polkit) is a swhkd's runtime dependency.
-APTO_INS="$APTO_INS scdoc" # Man-pages generation is a swhkd's compile time dependency.
-BREW_INS="$BREW_INS rustup" # The Rust toolchain installer. Formerly known as `rustup-init`. <https://github.com/rust-lang/rustup>. # APTO_INS="$APTO_INS rustup-init" # swhkd's compile time dependency <https://github.com/rust-lang/rustup>.
-PACS_INS="$PACS_INS doas-git" # `doas` is an alternative to sudo. A port of OpenBSD doas which runs on FreeBSD, Linux, NetBSD, and illumos. <https://github.com/slicer69/doas>.
+# # Wayland swhkd is a simple hotkey daemon <https://github.com/waycrate/ewhkd>.
+# # `make setup && make clean && make` <https://github.com/waycrate/swhkd/blob/main/INSTALL.md#compiling>.
+# APTO_INS="$APTO_INS libevdev-dev libevdev2" # Evdev kernel module is a swhkd's runtime dependency.
+# APTO_INS="$APTO_INS libudev-dev" # Is a swhkd's compile time dependency.
+# APTO_INS="$APTO_INS policykit-1 polkitd" # FAIL: `Error: Package 'policykit-1' has no installation candidate`. # Policy Kit Daemon (polkit) is a swhkd's runtime dependency.
+# APTO_INS="$APTO_INS scdoc" # Man-pages generation is a swhkd's compile time dependency.
+# BREW_INS="$BREW_INS rustup" # The Rust toolchain installer. Formerly known as `rustup-init`. <https://github.com/rust-lang/rustup>. # APTO_INS="$APTO_INS rustup-init" # swhkd's compile time dependency <https://github.com/rust-lang/rustup>.
+# PACS_INS="$PACS_INS doas-git" # `doas` is an alternative to sudo. A port of OpenBSD doas which runs on FreeBSD, Linux, NetBSD, and illumos. <https://github.com/slicer69/doas>.
+
+# # xkb-monitor utility that monitors keyboard state on Wayland compositors <https://github.com/drougas/xkb-monitor>.
+# APTO_INS="$APTO_INS libwayland-dev libxkbcommon-dev" # xkb-monitor runtime dependency.
+# APTO_INS="$APTO_INS wayland-protocols curl" # xkb-monitor runtime dependency optional (for accurate initial layout).
 
 # X11 xchainkeys <https://github.com/hbekel/xchainkeys>.
 APTO_INS="$APTO_INS automake" # xchainkeys compiltime dependency.
@@ -498,6 +495,66 @@ APTO_INS="$APTO_INS wmctrl" # used by xchainkeys
 # <https://superuser.com/questions/208746/invert-colors-on-x-or-xfce4#1494872#209083>.
 APTO_INS="$APTO_INS libxcb-randr0-dev"
 APTO_INS="$APTO_INS xcalib" # `xcalib -i -a` invert colors on xorg/xrandr <https://superuser.com/questions/208746/invert-colors-on-x-or-xfce4#1494872#209083>.
+
+# X Gnome Desktop Environment.
+# APTO_INS="$APTO_INS chrome-gnome-shell" # chrome/gnome extension integration.
+# APTO_INS="$APTO_INS gnome-shell-extension-appindicator-" remove.
+# APTO_INS="$APTO_INS gnome-shell-extension-impatience" # speed up the gnome-shell animation speed.
+# APTO_INS="$APTO_INS gnome-shell-extension-move-clock" # move clock extension for GNOME shell.
+# APTO_INS="$APTO_INS gnome-shell-extension-ubuntu-dock-" # remove.
+# APTO_INS="$APTO_INS ubuntu-desktop-" # remove.
+APTO_INS="$APTO_INS gnome-shell-extension-manager" # extension installer.
+APTO_INS="$APTO_INS gnome-tweaks" # former gnome-tweak-tool (in addition to gnome-control-center).
+
+# KDE Plasma desktop and Qt GUI framework for Wayland and X11 <https://github.com/KDE> <sup><sub>KDE Plasma 5 and Plasma 6.</sub></sup>
+# # APTO_INS="$APTO_INS neon-desktop" # DEPRECATED KDE Neon Linux <https://github.com/KDE/neon-neon-repositories>. <sup><sub>KDE Plasma 6 desktop for Wayland and X11.</sub></sup>
+# # APTO_INS="$APTO_INS neon-keyring signon-kwallet-extension" # FAIL? DEPRECATED KDE Neon Linux <https://github.com/KDE/neon-neon-repositories>.
+# APTO_INS="$APTO_INS krita" # Krita is a pixel-based image manipulation program a-la GIMP <https://github.com/KDE/krita>.
+# APTO_INS="$APTO_INS breeze-gtk-theme gtk3-engines-breeze" # FAIL: `Error: Unable to locate package gtk3-engines-breeze` # Breeze icon theme and cursor theme.
+APTO_INS="$APTO_INS breeze" # Breeze icon theme and cursor theme.
+APTO_INS="$APTO_INS kde-plasma-desktop" # FIXME: Only used to run `krunner` in `GNOME`. KDE Plasma 5 desktop for X11.
+APTO_INS="$APTO_INS lm-sensors" # A-la `sensors` # FIXME: Is the CPU temperate used by plain status or by slstatus?
+
+# X11 Xfce4 DE Desktop Environment.
+# # APPM_INS="$APPM_INS conky" # removed due to extra configuration # system monitoring <https://github.com/brndnmtthws/conky>.
+# # APTO_INS="$APTO_INS libxfce4panel-2.0-dev libxfce4ui-2-dev" # compiltime dependency of text plugin <https://github.com/daveriesz/xfce-text-plugin>.
+# # APTO_INS="$APTO_INS thunar-megasync" # not using.
+# # APTO_INS="$APTO_INS xfce4-notifyd" # notifications daemon (used by dwm).
+# # APTO_INS="$APTO_INS xfdashboard" # Instead installed skippy-xd.
+# APTO_INS="$APTO_INS elementary-icon-theme"
+# APTO_INS="$APTO_INS elementary-xfce-icon-theme"
+# APTO_INS="$APTO_INS gir1.2-xapp-1.0" # `xfce4-sensors-plugin` runtime dependency. # without gir1.2-xapp-1.0 get `xfce4-sensors` FAIL: Failed to load module "xapp-gtk3-module".
+# APTO_INS="$APTO_INS lm-sensors" # A-la `sensors` # FIXME: is the cpu temperate used by xfce4-sensors-plugin?
+# APTO_INS="$APTO_INS mousepad" # Simple text editor for Xfce <https://github.com/xfce-mirror/mousepad>.
+# APTO_INS="$APTO_INS orage" # xfce date time panel plugin with calendar.
+# APTO_INS="$APTO_INS ristretto" # Is a `Xfce` image viewer <https://github.com/xfce-mirror/ristretto>.
+# APTO_INS="$APTO_INS xfce4"
+# APTO_INS="$APTO_INS xfce4-datetime-plugin" # A-la clock panel plugin.
+# APTO_INS="$APTO_INS xfce4-diskperf-plugin" # disk io performance panel plugin.
+# APTO_INS="$APTO_INS xfce4-genmon-plugin" # script-based monitoring pluging a-la la/load average and temperature.
+# APTO_INS="$APTO_INS xfce4-power-manager"
+# APTO_INS="$APTO_INS xfce4-screensaver"
+# APTO_INS="$APTO_INS xfce4-screenshooter"
+# APTO_INS="$APTO_INS xfce4-sensors-plugin" # cpu temperate for panel plugin?
+# APTO_INS="$APTO_INS xfce4-systemload-plugin" # system cpu/mem/net/swap load monitor.
+# APTO_INS="$APTO_INS xfce4-taskmanager"
+# APTO_INS="$APTO_INS xfce4-windowck-plugin" # put maximized window title on the panel <https://github.com/takinoy/xfce4-windowck-plugin>.
+# APTO_INS="$APTO_INS xfce4-xkb-plugin" # keyboard language switcher.
+APTO_INS="$APTO_INS thunar" # file manager.
+APTO_INS="$APTO_INS thunar-archive-plugin"
+APTO_INS="$APTO_INS thunar-dropbox-plugin"
+APTO_INS="$APTO_INS thunar-volman"
+
+# X11 MATE DE Desktop Environment.
+# APTO_INS="$APTO_INS mate"
+# APTO_INS="$APTO_INS mate-notification-daemon"
+# APTO_INS="$APTO_INS mate-power-manager"
+# APTO_INS="$APTO_INS mate-screensaver"
+# APTO_INS="$APTO_INS mate-tweak"
+APTO_INS="$APTO_INS atril" # SNAP_INS="$SNAP_INS atril" # PDF viewer (remembers last page) for Mate DE (desktop environment) <https://github.com/mate-desktop/atril>.
+APTO_INS="$APTO_INS caja" # file manager <https://github.com/mate-desktop/caja>.
+APTO_INS="$APTO_INS engrampa" # archiver.
+APTO_INS="$APTO_INS evince-" # remove: pdf viewer remembers last page https://github.com/mate-desktop/atril
 
 ## X11 Suckless dwm.
 # # APTO_INS="$APTO_INS gxkb" # A-la xxkb (destroy xchainkeys).
@@ -543,57 +600,6 @@ APTO_INS="$APTO_INS xcalib" # `xcalib -i -a` invert colors on xorg/xrandr <https
 # # APTO_INS="$APTO_INS libasound2-dev libglib2.0-dev libgtk-3-dev" # volumeicon-alsa compiltime dependency.
 # APTO_INS="$APTO_INS volumeicon-alsa"
 
-# X11 Xfce4 DE Desktop Environment.
-# # APPM_INS="$APPM_INS conky" # removed due to extra configuration # system monitoring <https://github.com/brndnmtthws/conky>.
-# # APTO_INS="$APTO_INS libxfce4panel-2.0-dev libxfce4ui-2-dev" # compiltime dependency of text plugin <https://github.com/daveriesz/xfce-text-plugin>.
-# # APTO_INS="$APTO_INS thunar-megasync" # not using.
-# # APTO_INS="$APTO_INS xfce4-notifyd" # notifications daemon (used by dwm).
-# # APTO_INS="$APTO_INS xfdashboard" # Instead installed skippy-xd.
-# APTO_INS="$APTO_INS elementary-icon-theme"
-# APTO_INS="$APTO_INS elementary-xfce-icon-theme"
-# APTO_INS="$APTO_INS gir1.2-xapp-1.0" # `xfce4-sensors-plugin` runtime dependency. # without gir1.2-xapp-1.0 get `xfce4-sensors` FAIL: Failed to load module "xapp-gtk3-module".
-# APTO_INS="$APTO_INS lm-sensors" # A-la `sensors` # FIXME: is the cpu temperate used by xfce4-sensors-plugin?
-# APTO_INS="$APTO_INS mousepad" # Simple text editor for Xfce <https://github.com/xfce-mirror/mousepad>.
-# APTO_INS="$APTO_INS orage" # xfce date time panel plugin with calendar.
-# APTO_INS="$APTO_INS ristretto" # Is a `Xfce` image viewer <https://github.com/xfce-mirror/ristretto>.
-# APTO_INS="$APTO_INS xfce4"
-# APTO_INS="$APTO_INS xfce4-datetime-plugin" # A-la clock panel plugin.
-# APTO_INS="$APTO_INS xfce4-diskperf-plugin" # disk io performance panel plugin.
-# APTO_INS="$APTO_INS xfce4-genmon-plugin" # script-based monitoring pluging a-la la/load average and temperature.
-# APTO_INS="$APTO_INS xfce4-power-manager"
-# APTO_INS="$APTO_INS xfce4-screensaver"
-# APTO_INS="$APTO_INS xfce4-screenshooter"
-# APTO_INS="$APTO_INS xfce4-sensors-plugin" # cpu temperate for panel plugin?
-# APTO_INS="$APTO_INS xfce4-systemload-plugin" # system cpu/mem/net/swap load monitor.
-# APTO_INS="$APTO_INS xfce4-taskmanager"
-# APTO_INS="$APTO_INS xfce4-windowck-plugin" # put maximized window title on the panel <https://github.com/takinoy/xfce4-windowck-plugin>.
-# APTO_INS="$APTO_INS xfce4-xkb-plugin" # keyboard language switcher.
-APTO_INS="$APTO_INS thunar" # file manager.
-APTO_INS="$APTO_INS thunar-archive-plugin"
-APTO_INS="$APTO_INS thunar-dropbox-plugin"
-APTO_INS="$APTO_INS thunar-volman"
-
-# X11 MATE DE Desktop Environment.
-# APTO_INS="$APTO_INS mate"
-# APTO_INS="$APTO_INS mate-notification-daemon"
-# APTO_INS="$APTO_INS mate-power-manager"
-# APTO_INS="$APTO_INS mate-screensaver"
-# APTO_INS="$APTO_INS mate-tweak"
-APTO_INS="$APTO_INS atril" # SNAP_INS="$SNAP_INS atril" # PDF viewer (remembers last page) for Mate DE (desktop environment) <https://github.com/mate-desktop/atril>.
-APTO_INS="$APTO_INS caja" # file manager <https://github.com/mate-desktop/caja>.
-APTO_INS="$APTO_INS engrampa" # archiver.
-APTO_INS="$APTO_INS evince-" # remove: pdf viewer remembers last page https://github.com/mate-desktop/atril
-
-# X Gnome Desktop Environment.
-# APTO_INS="$APTO_INS chrome-gnome-shell" # chrome/gnome extension integration.
-# APTO_INS="$APTO_INS gnome-shell-extension-appindicator-" remove.
-# APTO_INS="$APTO_INS gnome-shell-extension-impatience" # speed up the gnome-shell animation speed.
-# APTO_INS="$APTO_INS gnome-shell-extension-move-clock" # move clock extension for GNOME shell.
-# APTO_INS="$APTO_INS gnome-shell-extension-ubuntu-dock-" # remove.
-# APTO_INS="$APTO_INS ubuntu-desktop-" # remove.
-APTO_INS="$APTO_INS gnome-shell-extension-manager" # extension installer.
-APTO_INS="$APTO_INS gnome-tweaks" # former gnome-tweak-tool (in addition to gnome-control-center).
-
 # # X11 dmenu
 # # application launcher a-la rofi
 # # <https://tools.suckless.org/dmenu>.
@@ -625,16 +631,16 @@ APTO_INS="$APTO_INS gnome-tweaks" # former gnome-tweak-tool (in addition to gnom
 # APTO_INS="$APTO_INS libxkbcommon-dev"
 # APTO_INS="$APTO_INS libxkbcommon-x11-dev"
 
-# X Mailspring is a GUI mail client written in C/C++ programming language
-# <https://github.com/foundry376/mailspring>.
-# APTO_UNI="$APTO_UNI thunderbird"
-# APTO_UNI="$APTO_UNI thunderbird-gnome-support"
-# APTO_UNI="$APTO_UNI thunderbird-locale-en"
-# APTO_UNI="$APTO_UNI thunderbird-locale-en-gb"
-# APTO_UNI="$APTO_UNI thunderbird-locale-en-us"
-# APTO_UNI="$APTO_UNI thunderbird-locale-ru"
-# APTO_UNI="$APTO_UNI thunderbird-locale-zh-hant"
-SNAP_INS="$SNAP_INS mailspring"
+# # X Mailspring is a GUI mail client written in C/C++ programming language
+# # <https://github.com/foundry376/mailspring>.
+# # APTO_UNI="$APTO_UNI thunderbird"
+# # APTO_UNI="$APTO_UNI thunderbird-gnome-support"
+# # APTO_UNI="$APTO_UNI thunderbird-locale-en"
+# # APTO_UNI="$APTO_UNI thunderbird-locale-en-gb"
+# # APTO_UNI="$APTO_UNI thunderbird-locale-en-us"
+# # APTO_UNI="$APTO_UNI thunderbird-locale-ru"
+# # APTO_UNI="$APTO_UNI thunderbird-locale-zh-hant"
+# SNAP_INS="$SNAP_INS mailspring"
 
 # X Fonts.
 # # APTO_INS="$APTO_INS font-manager" # list bitmap ??? fonts
@@ -695,7 +701,7 @@ BREW_INS="$BREW_INS ollama" # <https://github.com/ollama/ollama>.
 # BREW_INS="$BREW_INS openclaw-cli" # OpenClaw - AI agent (assistant). <https://github.com/openclaw/openclaw>.
 BREW_INS="$BREW_INS pi-coding-agent" # Pi Agent Harness - AI coding agent <https://github.com/earendil-works/pi>
 BREW_INS="$BREW_INS qwen-code" # <https://github.com/QwenLM/qwen-code>.
-BREW_INS="$BREW_INS reasonix" BREW_INS_SRC="$BREW_INS_SRC esengine/reasonix" # Reasonix is an AI coding agent for DeepSeak LLM <https://github.com/esengine/deepseek-reasonix>.
+# BREW_INS="$BREW_INS reasonix" BREW_INS_SRC="$BREW_INS_SRC esengine/reasonix" # Reasonix is an AI coding agent for DeepSeak LLM <https://github.com/esengine/deepseek-reasonix>.
 
 # X/Wayland/X11/xorg/desktop.
 # APPM_INS="$APPM_INS flameshot" # FLAT_INS="$FLAT_INS org.flameshot.Flameshot" # SNAP_INS="$SNAP_INS flameshot" # Screen shot util <https://github.com/flameshot-org/flameshot>.
@@ -735,11 +741,12 @@ APTO_INS="$APTO_INS maim" # takes screenshots of desktop.
 APTO_INS="$APTO_INS mesa-utils" # Provides glxgears util for the 3d compositor testing.
 APTO_INS="$APTO_INS transmission" # torrent client # APTO_UNI="$APTO_UNI transmission-gtk"
 APTO_INS="$APTO_INS ubuntu-restricted-extras" # Playing video in browser instead of download <https://askubuntu.com/questions/1122579/firefox-downloads-the-video-instead-of-playing-it#1122668>, <https://askubuntu.com/questions/56446/how-do-i-install-the-ubuntu-restricted-extras-package#56448>.
+APTO_INS="$APTO_INS ydotool" # The ydotool a-la xdotool <https://github.com/ReimuNotMoe/ydotool>.
 APTO_UNI="$APTO_UNI remmina" # gtk+ remote desktop client.
 BREW_INS="$BREW_INS ffmpeg" # Watch webcam `ffplay -fs /dev/video0` <https://github.com/ffmpeg/ffmpeg>.
 BREW_INS="$BREW_INS marp-cli" # Markdown to presentation (PDF) from command line <https://github.com/marp-team/marp>.
 BREW_INS="$BREW_INS mpv" # APTO_INS="$APTO_INS mpv" # A-la mplayer replacement.
-BREW_INS="$BREW_INS xdotool"
+BREW_INS="$BREW_INS xdotool" # The xdotool is an a-la ydotool <https://github.com/jordansissel/xdotool>.
 FLAT_INS="$FLAT_INS com.github.hluk.copyq" # Clipboard manager <https://github.com/hluk/copyq>.
 PACS_INS="$PACS_INS ventoy-bin" # Create bootable/live usb/iso a-la usb-creator-gtk <https://ventoy.net>.
 
@@ -769,13 +776,9 @@ GOLN_INS="$GOLN_INS github.com/onsi/ginkgo/v2/ginkgo@v2.23.4" # Ginkgo is a Test
 BREW_INS="$BREW_INS node" # JavaScript (JS) programming language <https://github.com/nodejs/node>.
 BREW_INS="$BREW_INS yarn" # JavaScript (JS) programming language <https://github.com/nodejs/node>.
 BREW_INS="$BREW_INS openapi" # Speakeasy OpenAPI and Swagger validation linter `openapi spec validate path/to/your/openapi.json` and `openapi swagger validate path/to/your/openapi.json` <https://github.com/speakeasy-api/openapi>.
-
-################################################################################
-BREW_INS="$BREW_INS pre-commit" # The pre-commit git hook <https://github.com/pre-commit/pre-commit>.
-
-################################################################################
 BREW_INS="$BREW_INS jwt-cli" # XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 BREW_INS="$BREW_INS websocat" # websocat is a [WebSocket][] [command-line client][CLI] for [WS](https://en.wikipedia.org/wiki/WebSocket) and [WSS](https://en.wikipedia.org/wiki/WebSocket_Secure) a-la [netcat][] or [curl][] <https://github.com/vi/websocat>.
+# BREW_INS="$BREW_INS pre-commit" # The pre-commit git hook <https://github.com/pre-commit/pre-commit>.
 
 # # Er Ozn.
 # # BREW_INS="$BREW_INS openvpn" # APTO_INS="$APTO_INS openvpn" APTO_DIS="$APTO_DIS openvpn openvpn@client" # openvpn client <https://confluence.ozon.ru/pages/viewpage.action?spaceKey=CORPIT&title=OpenVPN+for+Linux>.

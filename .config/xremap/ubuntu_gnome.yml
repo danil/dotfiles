@@ -21,7 +21,7 @@ keymap:
   - name: Layout toggle and language toggle.
     remap:
       CapsLock:
-        launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && layout_toggle_gnome36.sh"]
+        launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && layout_toggle_gnome50.sh"]
 
   - name: Common keybindings.
     remap:
