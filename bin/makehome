@@ -118,7 +118,6 @@ BREW_INS="$BREW_INS tmux"
 # GOLN_INS="$GOLN_INS github.com/danil/statusline0example/statusline2h28@v0.0.6" # ERROR: statusline2h28@v0.0.6: invalid version. # Used as status line `set -g status-right '"#{=48:pane_title}" #($(echo ~danil)/bin/statusline2 -1)'`.
 
 # *nix interactive shell & terminal emulator & multiplexer.
-# APTO_INS="$APTO_INS wl-clipboard" # Copy/Past on Wayland `wl-copy`/`wl-paste` a-la `xsel` <https://github.com/bugaevc/wl-clipboard>.
 # BREW_INS="$BREW_INS bash-completion" # FAIL: Conflicts with util-linux. # Programmable completion.
 # BREW_INS="$BREW_INS fish" # Fish shell a-la Bash shell.
 # BREW_INS="$BREW_INS nnn" # terminal file manager a-la mc/midnight commander https://github.com/jarun/nnn
@@ -128,6 +127,7 @@ BREW_INS="$BREW_INS tmux"
 # RUST_INS="$RUST_INS bat" # print file lines with syntax highlighting, is an cat replacement.
 # RUST_INS="$RUST_INS racer" # compilation failing all the time <https://github.com/racer-rust/racer/issues/868#issuecomment-459017685>, rust code completion https://github.com/phildawes/racer
 APTO_INS="$APTO_INS xterm" # backup/fallback terminal additional to the st/stterm/alacritty
+BREW_INS="$BREW_INS wl-clipboard" # APTO_INS="$APTO_INS wl-clipboard" # Copy/Past on Wayland `wl-copy`/`wl-paste` a-la `xsel` <https://github.com/bugaevc/wl-clipboard>.
 BREW_INS="$BREW_INS xsel" # APTO_INS="$APTO_INS xsel" # copy selection in termina to the xorg clipboard (used by emacs and urxvt) <https://wiki.archlinux.org/index.php/rxvt-unicode#Automatic_Script_Management>.
 PACS_INS="$PACS_INS ghostty-app" # SNAC_INS="$SNAC_INS ghostty" # FAIL: Has no titlebar and has no window border at all <https://reddit.com/r/Ghostty/comments/1iiep2j>. # Ghostty terminal <https://github.com/ghostty-org/ghostty>.
 
@@ -505,6 +505,7 @@ APTO_INS="$APTO_INS xcalib" # `xcalib -i -a` invert colors on xorg/xrandr <https
 # APTO_INS="$APTO_INS ubuntu-desktop-" # remove.
 APTO_INS="$APTO_INS gnome-shell-extension-manager" # extension installer.
 APTO_INS="$APTO_INS gnome-tweaks" # former gnome-tweak-tool (in addition to gnome-control-center).
+APTO_INS="$APTO_INS ubuntu-desktop-minimal"
 
 # KDE Plasma desktop and Qt GUI framework for Wayland and X11 <https://github.com/KDE> <sup><sub>KDE Plasma 5 and Plasma 6.</sub></sup>
 # # APTO_INS="$APTO_INS neon-desktop" # DEPRECATED KDE Neon Linux <https://github.com/KDE/neon-neon-repositories>. <sup><sub>KDE Plasma 6 desktop for Wayland and X11.</sub></sup>
