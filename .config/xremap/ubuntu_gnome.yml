@@ -64,7 +64,7 @@ keymap:
               KEY_U:
                 remap:
                   KEY_L:
-                    launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && sleep 0.1 && systemctl suspend"]
+                    launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && sleep 0.1 && sudo systemctl suspend"]
 
   - name: Sleep/suspend or dim screen backlight.
     remap:
@@ -79,7 +79,7 @@ keymap:
               KEY_U:
                 remap:
                   KEY_S:
-                    launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && sleep 0.1 && systemctl suspend"]
+                    launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && sleep 0.1 && sudo systemctl suspend"]
 
   - name: Find cursor a-la "shake to find Cursor" <https://github.com/arp242/find-cursor>.
     remap:
