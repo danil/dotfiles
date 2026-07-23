@@ -94,9 +94,9 @@ SNAC_UNI_CLI="sudo snap remove"
 
 # Flatpak
 # <https://github.com/flatpak/flatpak>.
-FLAT_INS_SRC_CLI="flatpak remote-add --if-not-exists"
-FLAT_UNI_SRC_CLI="flatpak remote-delete"
-FLAT_INS_CLI="flatpak install flathub"
+FLAT_INS_SRC_CLI="flatpak remote-add --user --if-not-exists"
+FLAT_UNI_SRC_CLI="flatpak remote-delete --user"
+FLAT_INS_CLI="flatpak install --user flathub"
 
 # # Zig package
 # # <https://ziglang.org>.
