@@ -512,8 +512,9 @@ APTO_INS="$APTO_INS gnome-tweaks" # former gnome-tweak-tool (in addition to gnom
 # APTO_INS="$APTO_INS krita" # Krita is a pixel-based image manipulation program a-la GIMP <https://github.com/KDE/krita>.
 # APTO_INS="$APTO_INS breeze-gtk-theme gtk3-engines-breeze" # FAIL: `Error: Unable to locate package gtk3-engines-breeze` # Breeze icon theme and cursor theme.
 APTO_INS="$APTO_INS breeze" # Breeze icon theme and cursor theme.
-APTO_INS="$APTO_INS kde-plasma-desktop" # FIXME: Only used to run `krunner` in `GNOME`. KDE Plasma 5 desktop for X11.
+APTO_INS="$APTO_INS kubuntu-desktop" # APTO_INS="$APTO_INS kde-plasma-desktop" # APTO_INS="$APTO_INS kde-standard" # APTO_INS="$APTO_INS kde-full"
 APTO_INS="$APTO_INS lm-sensors" # A-la `sensors` # FIXME: Is the CPU temperate used by plain status or by slstatus?
+FLAT_INS="$FLAT_INS com.github.hluk.copyq" # QopyQ fixes emacs copy to clipboard behavior. QopyQ is a clipboard manager <https://github.com/hluk/copyq>.
 
 # X11 Xfce4 DE Desktop Environment.
 # # APPM_INS="$APPM_INS conky" # removed due to extra configuration # system monitoring <https://github.com/brndnmtthws/conky>.
@@ -747,7 +748,6 @@ BREW_INS="$BREW_INS ffmpeg" # Watch webcam `ffplay -fs /dev/video0` <https://git
 BREW_INS="$BREW_INS marp-cli" # Markdown to presentation (PDF) from command line <https://github.com/marp-team/marp>.
 BREW_INS="$BREW_INS mpv" # APTO_INS="$APTO_INS mpv" # A-la mplayer replacement.
 BREW_INS="$BREW_INS xdotool" # The xdotool is an a-la ydotool <https://github.com/jordansissel/xdotool>.
-FLAT_INS="$FLAT_INS com.github.hluk.copyq" # Clipboard manager <https://github.com/hluk/copyq>.
 PACS_INS="$PACS_INS ventoy-bin" # Create bootable/live usb/iso a-la usb-creator-gtk <https://ventoy.net>.
 
 # Er Wbr.
