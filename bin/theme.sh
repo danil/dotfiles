@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-USAGE="usage: ${CMD:=${0##*/}} { --light | --dark } [--gnome] [--kde] [--alacritty] [--wezterm] [--tmux] [--emacs] [--btop] [--rofi] [--lsd] [--mailspring]"
+USAGE="usage: ${CMD:=${0##*/}} { --light | --dark } [--gnome] [--kde] [--alacritty] [--wezterm] [--tmux] [--emacs] [--btop] [--rofi] [--lsd]"
 
 OPT_ALL=0
 
@@ -26,7 +26,6 @@ optflag () {
             --btop      ) OPT_BTOP=0; OPT_ALL=-1;;
             --rofi      ) OPT_ROFI=0; OPT_ALL=-1;;
             --lsd       ) OPT_LSD=0; OPT_ALL=-1;;
-            --mailspring ) OPT_MAILSPRING=0; OPT_ALL=-1;;
             -h | --help ) opthelp; exit 0;;
 
             # Process special cases.
@@ -52,7 +51,6 @@ if [ "$OPT_ALL" = 0 ]; then
     OPT_TMUX=0
     OPT_EMACS=0
     OPT_BTOP=0
-    OPT_MAILSPRING=0
 fi
 
 . /home/danil/bin/binpath.sh
@@ -306,26 +304,6 @@ theme_lsd () {
     cd - > /dev/null || exit 1
 }
 
-theme_mailspring () {
-    [ "$OPT_MAILSPRING" != 0 ] && return
-
-    OPTFLAGDRYRUN=-1
-
-    if [ ! -f "$SNAPDIR"/mailspring/common/config.json ]; then
-        printf >&2 "error: missing the mailspring theme file\n"
-    fi
-
-    cd "$SNAPDIR"/mailspring/common || exit 1
-
-    if [ "$OPT_LIGHT" = 0 ]; then
-        sed --in-place 's/"ui-dark"/"ui-light"/g' config.json || exit 1
-    elif [ "$OPT_DARK" = 0 ]; then
-        sed --in-place 's/"ui-light"/"ui-dark"/g' config.json || exit 1
-    fi
-
-    cd - > /dev/null || exit 1
-}
-
 theme_wallpaper
 theme_gnome
 theme_kde
@@ -336,7 +314,6 @@ theme_emacs
 theme_btop
 theme_rofi
 theme_lsd
-theme_mailspring
 
 # Dry run.
 if [ "$OPTFLAGDRYRUN" = 0 ]; then
