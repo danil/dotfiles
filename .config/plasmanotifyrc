@@ -1,5 +1,8 @@
 [Applications][firefox]
 Seen=true
 
+[Applications][firefox_firefox]
+Seen=true
+
 [Applications][google-chrome]
 Seen=true
