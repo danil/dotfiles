@@ -42,14 +42,15 @@ keymap:
             KEY_U:
               remap:
                 Shift-1:
-                  launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /kickoff"]
+                  # kickoff.
+                  launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell activateLauncherMenu"]
 
   - name: Invert colors on xorg/xrandr.
     remap:
       Ctrl-t:
         remap:
           KEY_I:
-            launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'Invert'"]
+            launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Invert'"]
 
   - name: Lock or lock and sleep/suspend or dim screen backlight <https://askubuntu.com/questions/1233858/xubuntu-20-04-suspend-waits-30-seconds>.
     remap:
@@ -60,7 +61,7 @@ keymap:
           KEY_U:
             remap:
               KEY_L:
-                launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && sleep 0.1 && qdbus org.freedesktop.ScreenSaver /ScreenSaver Lock"]
+                launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && sleep 0.1 && busctl --user call org.freedesktop.ScreenSaver /ScreenSaver org.freedesktop.ScreenSaver Lock"]
               KEY_U:
                 remap:
                   KEY_L:
@@ -151,19 +152,19 @@ keymap:
           KEY_W:
             remap:
               KEY_W:
-                launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'ExposeAll'"]
+                launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut 'ExposeAll'"]
               KEY_E:
                 remap:
                   KEY_E:
-                    launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'Expose'"]
+                    launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut 'Expose'"]
                   KEY_C:
-                    launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'ExposeClass'"]
+                    launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut 'ExposeClass'"]
           KEY_U:
             remap:
               KEY_W:
                 remap:
                   KEY_W:
-                    launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'ExposeClassCurrentdesktop'"]
+                    launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut 'ExposeClassCurrentdesktop'"]
 
   - name: Window manager.
     remap:
@@ -172,31 +173,31 @@ keymap:
           KEY_W:
             remap:
               KEY_C:
-                launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'Window Close'"]
+                launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut 'Window Close'"]
               KEY_F:
-                launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'Window Fullscreen'"]
+                launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut 'Window Fullscreen'"]
               KEY_M:
-                launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'Window Maximize'"]
+                launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut 'Window Maximize'"]
 
   - name: Show desktop <http://ubuntuforums.org/showthread.php?t=1615199#td_post_10083165>.
     remap:
       Ctrl-t:
         remap:
-          KEY_D: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'Show Desktop'"] }
+          KEY_D: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut 'Show Desktop'"] }
 
   - name: KDE Plasma workspace.
     remap:
       Ctrl-t:
         remap:
-          KEY_1: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'Switch to Desktop 1'"] }
-          KEY_2: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'Switch to Desktop 2'"] }
-          KEY_3: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'Switch to Desktop 3'"] }
-          KEY_4: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'Switch to Desktop 4'"] }
-          KEY_5: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'Switch to Desktop 5'"] }
-          KEY_6: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'Switch to Desktop 6'"] }
-          KEY_7: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'Switch to Desktop 7'"] }
-          KEY_8: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'Switch to Desktop 8'"] }
-          KEY_9: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'Switch to Desktop 9'"] }
+          KEY_1: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Switch to Desktop 1'"] }
+          KEY_2: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Switch to Desktop 2'"] }
+          KEY_3: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Switch to Desktop 3'"] }
+          KEY_4: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Switch to Desktop 4'"] }
+          KEY_5: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Switch to Desktop 5'"] }
+          KEY_6: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Switch to Desktop 6'"] }
+          KEY_7: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Switch to Desktop 7'"] }
+          KEY_8: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Switch to Desktop 8'"] }
+          KEY_9: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Switch to Desktop 9'"] }
 
   - name: KDE Plasma move window to workspace.
     remap:
@@ -204,12 +205,12 @@ keymap:
         remap:
           KEY_W:
             remap:
-              KEY_1: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'Window to Desktop 1'"] }
-              KEY_2: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'Window to Desktop 2'"] }
-              KEY_3: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'Window to Desktop 3'"] }
-              KEY_4: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'Window to Desktop 4'"] }
-              KEY_5: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'Window to Desktop 5'"] }
-              KEY_6: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'Window to Desktop 6'"] }
-              KEY_7: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'Window to Desktop 7'"] }
-              KEY_8: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'Window to Desktop 8'"] }
-              KEY_9: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut 'Window to Desktop 9'"] }
+              KEY_1: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Window to Desktop 1'"] }
+              KEY_2: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Window to Desktop 2'"] }
+              KEY_3: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Window to Desktop 3'"] }
+              KEY_4: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Window to Desktop 4'"] }
+              KEY_5: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Window to Desktop 5'"] }
+              KEY_6: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Window to Desktop 6'"] }
+              KEY_7: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Window to Desktop 7'"] }
+              KEY_8: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Window to Desktop 8'"] }
+              KEY_9: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Window to Desktop 9'"] }
