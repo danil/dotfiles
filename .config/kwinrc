@@ -23,6 +23,7 @@ desktopchangeosdEnabled=false
 hidecursorEnabled=true
 invertEnabled=true
 minimizeallEnabled=false
+wobblywindowsEnabled[$d]
 zoomEnabled=false
 
 [TabBox]

@@ -1,6 +1,6 @@
 [AC][Display]
 DisplayBrightness=75
-TurnOffDisplayIdleTimeoutSec=2700
+TurnOffDisplayIdleTimeoutSec=420
 
 [AC][SuspendAndShutdown]
 AutoSuspendAction=0
@@ -9,7 +9,7 @@ LidAction=64
 [Battery][Display]
 DimDisplayIdleTimeoutSec=300
 DisplayBrightness=10
-TurnOffDisplayIdleTimeoutSec=2700
+TurnOffDisplayIdleTimeoutSec=420
 
 [Battery][SuspendAndShutdown]
 AutoSuspendIdleTimeoutSec=1800
