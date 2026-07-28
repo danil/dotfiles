@@ -1,22 +1,22 @@
 # This file is part of Danil <danil@kutkevich.org> home.
 
-modmap:
-  - name: Swapping Alt and Control keys <https://github.com/xremap/xremap/issues/445#issue-2204409094>, <https://github.com/xremap/xremap/issues/37#issuecomment-1001074006>.
-    remap:
-      LeftCtrl: LeftAlt
-      LeftAlt:  LeftCtrl
-      RightCtrl: RightAlt
-      RightAlt:  RightCtrl
+# modmap:
+#   - name: Swapping Alt and Control keys <https://github.com/xremap/xremap/issues/445#issue-2204409094>, <https://github.com/xremap/xremap/issues/37#issuecomment-1001074006>.
+#     remap:
+#       LeftCtrl: LeftAlt
+#       LeftAlt:  LeftCtrl
+#       RightCtrl: RightAlt
+#       RightAlt:  RightCtrl
 
-  # - remap:
-  #    CapsLock: Shift_R
+#   # - remap:
+#   #    CapsLock: Shift_R
 
 keymap:
   - name: Escape.
     remap:
-      Ctrl-t:
+      Alt-t:
         remap:
-          Ctrl-t: { escape_next_key: true }
+          Alt-t: { escape_next_key: true }
 
   - name: Layout toggle and language toggle.
     remap:
@@ -25,7 +25,7 @@ keymap:
 
   - name: Common keybindings.
     remap:
-      Ctrl-t:
+      Alt-t:
         remap:
           KEY_C:
             launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && alacritty"]
@@ -47,14 +47,14 @@ keymap:
 
   - name: Invert colors on xorg/xrandr.
     remap:
-      Ctrl-t:
+      Alt-t:
         remap:
           KEY_I:
             launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Invert'"]
 
   - name: Lock or lock and sleep/suspend or dim screen backlight <https://askubuntu.com/questions/1233858/xubuntu-20-04-suspend-waits-30-seconds>.
     remap:
-      Ctrl-t:
+      Alt-t:
         remap:
           KEY_L:
             launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && sleep 0.1 && dbus-send --session --type=method_call --dest=org.kde.kglobalaccel  /component/org_kde_powerdevil org.kde.kglobalaccel.Component.invokeShortcut string:'Turn Off Screen'"]
@@ -69,7 +69,7 @@ keymap:
 
   - name: Sleep/suspend or dim screen backlight.
     remap:
-      Ctrl-t:
+      Alt-t:
         remap:
           KEY_S:
             launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && sleep 0.1 && dbus-send --session --type=method_call --dest=org.kde.kglobalaccel  /component/org_kde_powerdevil org.kde.kglobalaccel.Component.invokeShortcut string:'Turn Off Screen'"]
@@ -84,7 +84,7 @@ keymap:
 
   - name: Find cursor a-la "shake to find Cursor" <https://github.com/arp242/find-cursor>.
     remap:
-      Ctrl-t:
+      Alt-t:
         remap:
           KEY_C:
             launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && find-cursor --color=#ff0000 --size=700 --line-width=10 --distance=70"]
@@ -95,7 +95,7 @@ keymap:
         launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && screen-backlight-down"]
       C-F6:
         launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && screen-backlight-up"]
-      Ctrl-t:
+      Alt-t:
         remap:
           KEY_B:
             remap:
@@ -110,7 +110,7 @@ keymap:
         launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && audio-sound-volume-down"]
       C-F3:
         launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && audio-sound-volume-up"]
-      Ctrl-t:
+      Alt-t:
         remap:
           KEY_V:
             remap:
@@ -121,7 +121,7 @@ keymap:
 
   - name: Music Media Player control.
     remap:
-      Ctrl-t:
+      Alt-t:
         remap:
           KEY_M:
             remap:
@@ -136,7 +136,7 @@ keymap:
 
   - name: Screen shot.
     remap:
-      Ctrl-t:
+      Alt-t:
         remap:
           KEY_P:
             remap:
@@ -147,7 +147,7 @@ keymap:
 
   - name: ExposeAll a-la compiz scale/gnome overview/osx expose/skippy-xd.
     remap:
-      Ctrl-t:
+      Alt-t:
         remap:
           KEY_W:
             remap:
@@ -168,7 +168,7 @@ keymap:
 
   - name: Window manager.
     remap:
-      Ctrl-t:
+      Alt-t:
         remap:
           KEY_W:
             remap:
@@ -181,13 +181,13 @@ keymap:
 
   - name: Show desktop <http://ubuntuforums.org/showthread.php?t=1615199#td_post_10083165>.
     remap:
-      Ctrl-t:
+      Alt-t:
         remap:
           KEY_D: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Show Desktop'"] }
 
   - name: KDE Plasma workspace.
     remap:
-      Ctrl-t:
+      Alt-t:
         remap:
           KEY_1: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Switch to Desktop 1'"] }
           KEY_2: { launch: ["sudo", "-u", "danil", "-i", "/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Switch to Desktop 2'"] }
@@ -201,7 +201,7 @@ keymap:
 
   - name: KDE Plasma move window to workspace.
     remap:
-      Ctrl-t:
+      Alt-t:
         remap:
           KEY_W:
             remap:
