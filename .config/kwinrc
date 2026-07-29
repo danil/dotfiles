@@ -148,7 +148,7 @@ ElectricBorderDelay=100
 Placement=Smart
 
 [Xwayland]
-Scale=1.25
+Scale=1
 
 [org.kde.kdecoration2]
 BorderSize=None

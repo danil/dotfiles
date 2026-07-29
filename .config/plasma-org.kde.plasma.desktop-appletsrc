@@ -413,7 +413,7 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][42][Applets][45][Configuration][General]
-launchers=file:///tmp/.mount_Alacrremp5257470634216894496/Alacritty.desktop,applications:google-chrome.desktop,file:///tmp/.mount_remp11964330886889973817/com.mitchellh.ghostty.desktop,applications:org.kde.konsole.desktop,applications:org.gnome.Ptyxis.desktop,applications:firefox_firefox.desktop,applications:com.github.hluk.copyq.desktop,applications:gimp.desktop,applications:thunar.desktop,preferred://filemanager,applications:org.kde.gwenview.desktop,applications:org.kde.spectacle.desktop,applications:org.kde.discover.desktop,applications:dropbox.desktop,applications:systemsettings.desktop
+launchers=file:///tmp/.mount_Alacrremp5257470634216894496/Alacritty.desktop,applications:google-chrome.desktop,file:///tmp/.mount_remp11964330886889973817/com.mitchellh.ghostty.desktop,applications:org.kde.konsole.desktop,applications:org.gnome.Ptyxis.desktop,applications:firefox_firefox.desktop,applications:com.github.hluk.copyq.desktop,applications:thunar.desktop,preferred://filemanager,applications:gimp.desktop,applications:org.kde.gwenview.desktop,applications:org.kde.spectacle.desktop,applications:org.kde.discover.desktop,applications:dropbox.desktop,applications:systemsettings.desktop
 minimizeActiveTaskOnClick=false
 showOnlyCurrentActivity=false
 showOnlyCurrentDesktop=false
