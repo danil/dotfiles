@@ -68,6 +68,36 @@ semantic_escape_chars = ",│`|:;\"' ()[]{}<>\t·⌑"
 # mods = "Control|Shift"
 
 [[keyboard.bindings]]
+key = "Equals"
+mods = "Control"
+action = "IncreaseFontSize"
+
+[[keyboard.bindings]]
+key = "Equals"
+mods = "Alt"
+action = "IncreaseFontSize"
+
+[[keyboard.bindings]]
+key = "Minus"
+mods = "Control"
+action = "DecreaseFontSize"
+
+[[keyboard.bindings]]
+key = "Minus"
+mods = "Alt"
+action = "DecreaseFontSize"
+
+[[keyboard.bindings]]
+key = "Key0"
+mods = "Control"
+action = "ResetFontSize"
+
+[[keyboard.bindings]]
+key = "Key0"
+mods = "Alt"
+action = "ResetFontSize"
+
+[[keyboard.bindings]]
 chars = "\u0013"
 key = "Space"
 mods = "Super"
