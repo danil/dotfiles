@@ -1,19 +1,42 @@
-providers:
-  - name: deepseek
-    openai:
-      base_url: https://api.deepseek.com
-      api_key: ${DEEPSEEK_API_KEY}  # environment variable
+apiVersion: aigateway.envoyproxy.io/v1alpha1
+kind: AIGatewayRoute
+metadata:
+  name: deepseek-route
+spec:
+  llmRoutes:
+    # Route to deepseek-chat
+    - name: deepseek-chat
+      inputSchema:
+        schema: OpenAI
+      provider:
+        name: deepseek-provider
+        model: deepseek-chat
+    # Route to deepseek-reasoner
+    - name: deepseek-reasoner
+      inputSchema:
+        schema: OpenAI
+      provider:
+        name: deepseek-provider
+        model: deepseek-reasoner
+---
+apiVersion: aigateway.envoyproxy.io/v1alpha1
+kind: LLMProvider
+metadata:
+  name: deepseek-provider
+spec:
+  type: OpenAI
+  openAISettings:
+    baseURL: https://api.deepseek.com
+    apiKeySecretRef:
+      name: deepseek-api-key
+      namespace: default
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: deepseek-api-key
+  namespace: default
+type: Opaque
+stringData:
+  apiKey: ${DEEPSEEK_API_KEY}  # environment variable
 
-rules:
-  # Any request to model "deepseek-chat" or "deepseek-reasoner" proxied to DeepSeek.
-  - match:
-      model: deepseek-chat
-    route_to:
-      provider: deepseek
-      model: deepseek-chat
-
-  - match:
-      model: deepseek-reasoner
-    route_to:
-      provider: deepseek
-      model: deepseek-reasoner
