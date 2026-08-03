@@ -706,6 +706,7 @@ BREW_INS="$BREW_INS openclaw-cli" # OpenClaw - AI agent (assistant) <https://git
 BREW_INS="$BREW_INS pi-coding-agent" # Pi Agent Harness - AI coding agent <https://github.com/earendil-works/pi>.
 BREW_INS="$BREW_INS qwen-code" # Qwen Code is an AI codding agent <https://github.com/QwenLM/qwen-code>.
 BREW_INS="$BREW_INS reasonix" BREW_INS_SRC="$BREW_INS_SRC esengine/reasonix" # Reasonix is an AI coding agent for DeepSeak LLM <https://github.com/esengine/deepseek-reasonix>.
+GOLN_INS="$GOLN_INS github.com/envoyproxy/ai-gateway/cmd/aigw@v1.0.0" # Envoy AI Gateway - AI proxy <sup><sub>Proxy or router or gateway.</sub></sup> <https://github.com/envoyproxy/ai-gateway>.
 
 # X/Wayland/X11/xorg/desktop.
 # APPM_INS="$APPM_INS flameshot" # FLAT_INS="$FLAT_INS org.flameshot.Flameshot" # SNAP_INS="$SNAP_INS flameshot" # Screen shot util <https://github.com/flameshot-org/flameshot>.

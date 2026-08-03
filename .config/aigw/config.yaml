@@ -1,0 +1,19 @@
+providers:
+  - name: deepseek
+    openai:
+      base_url: https://api.deepseek.com
+      api_key: ${DEEPSEEK_API_KEY}  # environment variable
+
+rules:
+  # Any request to model "deepseek-chat" or "deepseek-reasoner" proxied to DeepSeek.
+  - match:
+      model: deepseek-chat
+    route_to:
+      provider: deepseek
+      model: deepseek-chat
+
+  - match:
+      model: deepseek-reasoner
+    route_to:
+      provider: deepseek
+      model: deepseek-reasoner
