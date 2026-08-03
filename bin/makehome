@@ -698,12 +698,14 @@ APTO_INS="$APTO_INS gimp"
 BREW_INS="$BREW_INS feh" # APTO_INS="$APTO_INS feh" # feh is a command line image viewer <https://github.com/derf/feh>.
 BREW_INS="$BREW_INS webp" # The WebP is abbreviated WEB Pictures is a raster graphics file of image and picture a-la JPEG, PNG, and GIF file formats and supports both lossy and lossless compression, as well as animation and alpha transparency.
 
-# LLM (Large Language Model) and AI (Artificial intelligence).
-BREW_INS="$BREW_INS ollama" # <https://github.com/ollama/ollama>.
-# BREW_INS="$BREW_INS openclaw-cli" # OpenClaw - AI agent (assistant). <https://github.com/openclaw/openclaw>.
-BREW_INS="$BREW_INS pi-coding-agent" # Pi Agent Harness - AI coding agent <https://github.com/earendil-works/pi>
-BREW_INS="$BREW_INS qwen-code" # <https://github.com/QwenLM/qwen-code>.
-# BREW_INS="$BREW_INS reasonix" BREW_INS_SRC="$BREW_INS_SRC esengine/reasonix" # Reasonix is an AI coding agent for DeepSeak LLM <https://github.com/esengine/deepseek-reasonix>.
+# LLM (Large Language Model) and ML (Machine Learning) and AI (Artificial intelligence).
+# NPMJ_INS="$NPMJ_INS omniroute" # FAIL: Missing configuration file. OmniRoute - AI proxy <sup><sub>Proxy or router or gateway.</sub></sup> <https://github.com/diegosouzapw/OmniRoute>.
+BREW_INS="$BREW_INS hf" # The hf or huggingface-cli - LLM downloader <https://github.com/huggingface/huggingface_hub>.
+BREW_INS="$BREW_INS ollama" # Ollama <https://github.com/ollama/ollama>.
+BREW_INS="$BREW_INS openclaw-cli" # OpenClaw - AI agent (assistant) <https://github.com/openclaw/openclaw>.
+BREW_INS="$BREW_INS pi-coding-agent" # Pi Agent Harness - AI coding agent <https://github.com/earendil-works/pi>.
+BREW_INS="$BREW_INS qwen-code" # Qwen Code is an AI codding agent <https://github.com/QwenLM/qwen-code>.
+BREW_INS="$BREW_INS reasonix" BREW_INS_SRC="$BREW_INS_SRC esengine/reasonix" # Reasonix is an AI coding agent for DeepSeak LLM <https://github.com/esengine/deepseek-reasonix>.
 
 # X/Wayland/X11/xorg/desktop.
 # APPM_INS="$APPM_INS flameshot" # FLAT_INS="$FLAT_INS org.flameshot.Flameshot" # SNAP_INS="$SNAP_INS flameshot" # Screen shot util <https://github.com/flameshot-org/flameshot>.

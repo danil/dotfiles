@@ -1,0 +1,133 @@
+{
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "ollama/DeepSeek-R1-Distill-Llama-8B-Q4_K_M:latest"
+      },
+      "workspace": "/home/danil/.openclaw/workspace"
+    }
+  },
+  "gateway": {
+    "auth": {
+      "mode": "token",
+      "token": "e7304625c2a7849f6816ef4b7c434a4f0bfca728229c7170"
+    },
+    "bind": "loopback",
+    "mode": "local",
+    "port": 18789,
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    }
+  },
+  "hooks": {
+    "internal": {
+      "entries": {
+        "session-memory": {
+          "enabled": true
+        }
+      }
+    }
+  },
+  "meta": {
+    "lastTouchedAt": "2026-07-30T11:25:41.526Z",
+    "lastTouchedVersion": "2026.7.1"
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "ollama": {
+        "api": "ollama",
+        "apiKey": "OLLAMA_API_KEY",
+        "baseUrl": "http://127.0.0.1:11434",
+        "models": [
+          {
+            "compat": {
+              "supportsTools": true,
+              "supportsUsageInStreaming": true
+            },
+            "contextWindow": 128000,
+            "cost": {
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "input": 0,
+              "output": 0
+            },
+            "id": "gemma4",
+            "input": [
+              "text"
+            ],
+            "maxTokens": 8192,
+            "name": "gemma4",
+            "reasoning": false
+          },
+          {
+            "compat": {
+              "supportsTools": true,
+              "supportsUsageInStreaming": true
+            },
+            "contextWindow": 131072,
+            "cost": {
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "input": 0,
+              "output": 0
+            },
+            "id": "DeepSeek-R1-Distill-Llama-8B-Q4_K_M:latest",
+            "input": [
+              "text"
+            ],
+            "maxTokens": 8192,
+            "name": "DeepSeek-R1-Distill-Llama-8B-Q4_K_M:latest",
+            "reasoning": true
+          },
+          {
+            "compat": {
+              "supportsTools": true,
+              "supportsUsageInStreaming": true
+            },
+            "contextWindow": 262144,
+            "cost": {
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "input": 0,
+              "output": 0
+            },
+            "id": "Qwen_Qwen3.5-9B-Q4_K_M:latest",
+            "input": [
+              "text"
+            ],
+            "maxTokens": 8192,
+            "name": "Qwen_Qwen3.5-9B-Q4_K_M:latest",
+            "reasoning": true
+          }
+        ]
+      }
+    }
+  },
+  "plugins": {
+    "entries": {
+      "ollama": {
+        "enabled": true
+      }
+    }
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "tools": {
+    "profile": "coding",
+    "web": {
+      "search": {
+        "enabled": true,
+        "provider": "ollama"
+      }
+    }
+  },
+  "wizard": {
+    "lastRunAt": "2026-07-30T11:25:41.398Z",
+    "lastRunCommand": "onboard",
+    "lastRunMode": "local",
+    "lastRunVersion": "2026.7.1"
+  }
+}
