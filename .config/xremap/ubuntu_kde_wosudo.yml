@@ -1,0 +1,216 @@
+# This file is part of Danil <danil@kutkevich.org> home.
+
+# modmap:
+#   - name: Swapping Alt and Control keys <https://github.com/xremap/xremap/issues/445#issue-2204409094>, <https://github.com/xremap/xremap/issues/37#issuecomment-1001074006>.
+#     remap:
+#       LeftCtrl: LeftAlt
+#       LeftAlt:  LeftCtrl
+#       RightCtrl: RightAlt
+#       RightAlt:  RightCtrl
+
+#   # - remap:
+#   #    CapsLock: Shift_R
+
+keymap:
+  - name: Escape.
+    remap:
+      Alt-t:
+        remap:
+          Alt-t: { escape_next_key: true }
+
+  - name: Layout toggle and language toggle.
+    remap:
+      CapsLock:
+        launch: ["/bin/sh", "-c", ". ~/.shrc && layout_toggle_kde6.sh"]
+
+  - name: Common keybindings.
+    remap:
+      Alt-t:
+        remap:
+          KEY_C:
+            launch: ["/bin/sh", "-c", ". ~/.shrc && alacritty"]
+          KEY_G:
+            launch: ["bash", "-c", "dbus-send --session --type=method_call --dest=org.freedesktop.Notifications /org/freedesktop/Notifications org.xfce.Notifyd.Quit"]
+          Shift-1:
+            launch: ["/bin/sh", "-c", ". ~/.shrc && krunner"]
+          KEY_U:
+            remap:
+              KEY_C:
+                launch: ["/bin/sh", "-c", ". ~/.shrc && ghostty"]
+              Shift-1:
+                launch: ["/bin/sh", "-c", ". ~/.shrc && albert show"]
+            KEY_U:
+              remap:
+                Shift-1:
+                  # kickoff.
+                  launch: ["/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell activateLauncherMenu"]
+
+  - name: Invert colors on xorg/xrandr.
+    remap:
+      Alt-t:
+        remap:
+          KEY_I:
+            launch: ["/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Invert'"]
+
+  - name: Lock or lock and sleep/suspend or dim screen backlight <https://askubuntu.com/questions/1233858/xubuntu-20-04-suspend-waits-30-seconds>.
+    remap:
+      Alt-t:
+        remap:
+          KEY_L:
+            launch: ["/bin/sh", "-c", ". ~/.shrc && sleep 0.1 && dbus-send --session --type=method_call --dest=org.kde.kglobalaccel  /component/org_kde_powerdevil org.kde.kglobalaccel.Component.invokeShortcut string:'Turn Off Screen'"]
+          KEY_U:
+            remap:
+              KEY_L:
+                launch: ["/bin/sh", "-c", ". ~/.shrc && sleep 0.1 && busctl --user call org.freedesktop.ScreenSaver /ScreenSaver org.freedesktop.ScreenSaver Lock"]
+              KEY_U:
+                remap:
+                  KEY_L:
+                    launch: ["/bin/sh", "-c", ". ~/.shrc && sleep 0.1 && dbus-send --session --type=method_call --dest=org.kde.kglobalaccel  /component/org_kde_powerdevil org.kde.kglobalaccel.Component.invokeShortcut string:'Sleep'"]
+
+  - name: Sleep/suspend or dim screen backlight.
+    remap:
+      Alt-t:
+        remap:
+          KEY_S:
+            launch: ["/bin/sh", "-c", ". ~/.shrc && sleep 0.1 && dbus-send --session --type=method_call --dest=org.kde.kglobalaccel  /component/org_kde_powerdevil org.kde.kglobalaccel.Component.invokeShortcut string:'Turn Off Screen'"]
+          KEY_U:
+            remap:
+              KEY_S:
+                launch: ["/bin/sh", "-c", ". ~/.shrc && sleep 0.1 && dbus-send --session --type=method_call --dest=org.kde.kglobalaccel  /component/org_kde_powerdevil org.kde.kglobalaccel.Component.invokeShortcut string:'Turn Off Screen'"]
+              KEY_U:
+                remap:
+                  KEY_S:
+                    launch: ["/bin/sh", "-c", ". ~/.shrc && sleep 0.1 && dbus-send --session --type=method_call --dest=org.kde.kglobalaccel  /component/org_kde_powerdevil org.kde.kglobalaccel.Component.invokeShortcut string:'Sleep'"]
+
+  - name: Find cursor a-la "shake to find Cursor" <https://github.com/arp242/find-cursor>.
+    remap:
+      Alt-t:
+        remap:
+          KEY_C:
+            launch: ["/bin/sh", "-c", ". ~/.shrc && find-cursor --color=#ff0000 --size=700 --line-width=10 --distance=70"]
+
+  - name: Screen backlight control.
+    remap:
+      C-F5:
+        launch: ["/bin/sh", "-c", ". ~/.shrc && screen-backlight-down"]
+      C-F6:
+        launch: ["/bin/sh", "-c", ". ~/.shrc && screen-backlight-up"]
+      Alt-t:
+        remap:
+          KEY_B:
+            remap:
+              KEY_J:
+                launch: ["/bin/sh", "-c", ". ~/.shrc && screen-backlight-down"]
+              KEY_K:
+                launch: ["/bin/sh", "-c", ". ~/.shrc && screen-backlight-up"]
+
+  - name: Sound volume (PulseAudio) control.
+    remap:
+      C-F2:
+        launch: ["/bin/sh", "-c", ". ~/.shrc && audio-sound-volume-down"]
+      C-F3:
+        launch: ["/bin/sh", "-c", ". ~/.shrc && audio-sound-volume-up"]
+      Alt-t:
+        remap:
+          KEY_V:
+            remap:
+              KEY_J:
+                launch: ["/bin/sh", "-c", ". ~/.shrc && audio-sound-volume-down"]
+              KEY_K:
+                launch: ["/bin/sh", "-c", ". ~/.shrc && audio-sound-volume-up"]
+
+  - name: Music Media Player control.
+    remap:
+      Alt-t:
+        remap:
+          KEY_M:
+            remap:
+              KEY_H:
+                launch: ["/bin/sh", "-c", ". ~/.shrc && mediactl Previous"]
+              KEY_J:
+                launch: ["/bin/sh", "-c", ". ~/.shrc && mediactl Play"]
+              KEY_K:
+                launch: ["/bin/sh", "-c", ". ~/.shrc && mediactl Pause"]
+              KEY_L:
+                launch: ["/bin/sh", "-c", ". ~/.shrc && mediactl Next"]
+
+  - name: Screen shot.
+    remap:
+      Alt-t:
+        remap:
+          KEY_P:
+            remap:
+              KEY_P:
+                launch: ["/bin/sh", "-c", ". ~/.shrc && maim ~/Pictures/Screenshots/screenshot-$(date +%Y%m%d%H%M%S).png"]
+              KEY_S:
+                launch: ["/bin/sh", "-c", ". ~/.shrc && maim --select ~/Pictures/Screenshots/screenshot-$(date +%Y%m%d%H%M%S).png"]
+
+  - name: ExposeAll a-la compiz scale/gnome overview/osx expose/skippy-xd.
+    remap:
+      Alt-t:
+        remap:
+          KEY_W:
+            remap:
+              KEY_W:
+                launch: ["/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'ExposeAll'"]
+              KEY_E:
+                remap:
+                  KEY_E:
+                    launch: ["/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Expose'"]
+                  KEY_C:
+                    launch: ["/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'ExposeClass'"]
+          KEY_U:
+            remap:
+              KEY_W:
+                remap:
+                  KEY_W:
+                    launch: ["/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'ExposeClassCurrentdesktop'"]
+
+  - name: Window manager.
+    remap:
+      Alt-t:
+        remap:
+          KEY_W:
+            remap:
+              KEY_C:
+                launch: ["/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Window Close'"]
+              KEY_F:
+                launch: ["/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Window Fullscreen'"]
+              KEY_M:
+                launch: ["/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Window Maximize'"]
+
+  - name: Show desktop <http://ubuntuforums.org/showthread.php?t=1615199#td_post_10083165>.
+    remap:
+      Alt-t:
+        remap:
+          KEY_D: { launch: ["/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Show Desktop'"] }
+
+  - name: KDE Plasma workspace.
+    remap:
+      Alt-t:
+        remap:
+          KEY_1: { launch: ["/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Switch to Desktop 1'"] }
+          KEY_2: { launch: ["/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Switch to Desktop 2'"] }
+          KEY_3: { launch: ["/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Switch to Desktop 3'"] }
+          KEY_4: { launch: ["/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Switch to Desktop 4'"] }
+          KEY_5: { launch: ["/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Switch to Desktop 5'"] }
+          KEY_6: { launch: ["/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Switch to Desktop 6'"] }
+          KEY_7: { launch: ["/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Switch to Desktop 7'"] }
+          KEY_8: { launch: ["/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Switch to Desktop 8'"] }
+          KEY_9: { launch: ["/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Switch to Desktop 9'"] }
+
+  - name: KDE Plasma move window to workspace.
+    remap:
+      Alt-t:
+        remap:
+          KEY_W:
+            remap:
+              KEY_1: { launch: ["/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Window to Desktop 1'"] }
+              KEY_2: { launch: ["/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Window to Desktop 2'"] }
+              KEY_3: { launch: ["/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Window to Desktop 3'"] }
+              KEY_4: { launch: ["/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Window to Desktop 4'"] }
+              KEY_5: { launch: ["/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Window to Desktop 5'"] }
+              KEY_6: { launch: ["/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Window to Desktop 6'"] }
+              KEY_7: { launch: ["/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Window to Desktop 7'"] }
+              KEY_8: { launch: ["/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Window to Desktop 8'"] }
+              KEY_9: { launch: ["/bin/sh", "-c", ". ~/.shrc && busctl --user call org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component invokeShortcut s 'Window to Desktop 9'"] }
