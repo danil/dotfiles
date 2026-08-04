@@ -1,0 +1,18 @@
+{
+  "providers": [
+    {
+      "id": "deepseek",
+      "provider": "deepseek",
+      "api_key": "${DEEPSEEK_API_KEY}",
+      "base_url": "https://api.deepseek.com"
+    }
+  ],
+  "apps": [
+    {
+      "id": "deepseek-app",
+      "provider": "deepseek",
+      "model": "deepseek-chat",
+      "virtual_keys": ["${PORTKEY_API_KEY}"]
+    }
+  ]
+}
