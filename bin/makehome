@@ -702,6 +702,7 @@ BREW_INS="$BREW_INS webp" # The WebP is abbreviated WEB Pictures is a raster gra
 # LLM (Large Language Model) and ML (Machine Learning) and AI (Artificial intelligence).
 # GOLN_INS="$GOLN_INS github.com/envoyproxy/ai-gateway/cmd/aigw@v1.0.0" # FAIL: `panic: runtime error: index out of range [0] with length 0 \n goroutine 1 [running]: \n cmd/aigw/run.go:334 +0x17eb \n cmd/aigw/run.go:160 +0xb51 \n cmd/aigw/main.go:202 +0x432 \n cmd/aigw/main.go:170`. The aigw (Envoy AI Gateway) - AI proxy <sup><sub>Proxy or router or gateway.</sub></sup> <https://github.com/envoyproxy/ai-gateway>.
 # NPMJ_INS="$NPMJ_INS @maximhq/bifrost"# FAIL: `Failed to start Bifrost. Error: spawnSync /home/danil/.cache/bifrost/v1.6.7/bin/bifrost-http-0 EACCES \n Error code: EACCES \n System error: -13`. # Bifrost AI Gateway - AI proxy <sup><sub>Proxy or router or gateway.</sub></sup> <https://github.com/maximhq/bifrost>. 
+# NPMJ_INS="$NPMJ_INS @portkey-ai/gateway" # FAIL: `{"error":{"message":"openai error: Country, region, or territory not supported","type":"request_forbidden","param":null,"code":"unsupported_country_region_territory"},"provider":"openai"}`. Portkey AI Gateway - AI proxy <sup><sub>Proxy or router or gateway.</sub></sup>  https://github.com/portkey-ai/gateway>.
 # NPMJ_INS="$NPMJ_INS omniroute" # FAIL: Missing configuration file. OmniRoute - AI proxy <sup><sub>Proxy or router or gateway.</sub></sup> <https://github.com/diegosouzapw/OmniRoute>.
 BREW_INS="$BREW_INS hf" # The hf or huggingface-cli - LLM downloader <https://github.com/huggingface/huggingface_hub>.
 BREW_INS="$BREW_INS ollama" # Ollama <https://github.com/ollama/ollama>.
@@ -709,7 +710,6 @@ BREW_INS="$BREW_INS openclaw-cli" # OpenClaw - AI agent (assistant) <https://git
 BREW_INS="$BREW_INS pi-coding-agent" # Pi Agent Harness - AI coding agent <https://github.com/earendil-works/pi>.
 BREW_INS="$BREW_INS qwen-code" # Qwen Code is an AI codding agent <https://github.com/QwenLM/qwen-code>.
 BREW_INS="$BREW_INS reasonix" BREW_INS_SRC="$BREW_INS_SRC esengine/reasonix" # Reasonix is an AI coding agent for DeepSeak LLM <https://github.com/esengine/deepseek-reasonix>.
-NPMJ_INS="$NPMJ_INS @portkey-ai/gateway" # Portkey AI Gateway - AI proxy <sup><sub>Proxy or router or gateway.</sub></sup>  https://github.com/portkey-ai/gateway>.
 
 # X/Wayland/X11/xorg/desktop.
 # APPM_INS="$APPM_INS flameshot" # FLAT_INS="$FLAT_INS org.flameshot.Flameshot" # SNAP_INS="$SNAP_INS flameshot" # Screen shot util <https://github.com/flameshot-org/flameshot>.
