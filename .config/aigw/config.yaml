@@ -39,4 +39,3 @@ metadata:
 type: Opaque
 stringData:
   apiKey: ${DEEPSEEK_API_KEY}  # environment variable
-
