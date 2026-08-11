@@ -1,3 +1,6 @@
+[Applications][brave-browser]
+Seen=true
+
 [Applications][firefox]
 Seen=true
 
@@ -5,4 +8,7 @@ Seen=true
 Seen=true
 
 [Applications][google-chrome]
+Seen=true
+
+[Applications][yandex-browser]
 Seen=true

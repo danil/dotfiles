@@ -102,8 +102,8 @@ immutability=1
 plugin=org.kde.plasma.kickoff
 
 [Containments][2][Applets][3][Configuration]
-popupHeight=573
-popupWidth=797
+popupHeight=607
+popupWidth=811
 
 [Containments][2][Applets][3][Configuration][ConfigDialog]
 DialogHeight=540
@@ -200,7 +200,7 @@ plugin=org.kde.plasma.systemmonitor
 
 [Containments][2][Applets][36][Configuration]
 CurrentPreset=org.kde.plasma.systemmonitor
-popupHeight=104
+popupHeight=111
 popupWidth=187
 
 [Containments][2][Applets][36][Configuration][Appearance]
@@ -413,7 +413,7 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][42][Applets][45][Configuration][General]
-launchers=file:///tmp/.mount_Alacrremp5257470634216894496/Alacritty.desktop,applications:google-chrome.desktop,file:///tmp/.mount_remp11964330886889973817/com.mitchellh.ghostty.desktop,applications:org.kde.konsole.desktop,applications:org.gnome.Ptyxis.desktop,applications:firefox_firefox.desktop,applications:com.github.hluk.copyq.desktop,applications:thunar.desktop,preferred://filemanager,applications:gimp.desktop,applications:org.kde.gwenview.desktop,applications:org.kde.spectacle.desktop,applications:org.kde.discover.desktop,applications:dropbox.desktop,applications:systemsettings.desktop
+launchers=file:///tmp/.mount_Alacrremp5257470634216894496/Alacritty.desktop,applications:firefox_firefox.desktop,file:///tmp/.mount_remp11964330886889973817/com.mitchellh.ghostty.desktop,applications:org.kde.konsole.desktop,applications:org.gnome.Ptyxis.desktop,applications:yandex-browser.desktop,applications:google-chrome.desktop,applications:dropbox.desktop,applications:com.github.hluk.copyq.desktop,applications:org.kde.spectacle.desktop,applications:thunar.desktop,preferred://filemanager,applications:gimp.desktop,applications:org.kde.gwenview.desktop,applications:org.kde.discover.desktop,applications:systemsettings.desktop
 minimizeActiveTaskOnClick=false
 showOnlyCurrentActivity=false
 showOnlyCurrentDesktop=false
