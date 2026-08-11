@@ -7,7 +7,10 @@
     }
   },
   "model": {
-    "name": "qwen3.5:0.8b"
+    "name": "Qwen_Qwen3.5-9B-Q4_K_M"
   },
-  "$version": 4
+  "$version": 4,
+  "ui": {
+    "autoModeAcknowledged": true
+  }
 }
