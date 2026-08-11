@@ -73,28 +73,13 @@ mods = "Control"
 action = "IncreaseFontSize"
 
 [[keyboard.bindings]]
-key = "Equals"
-mods = "Alt"
-action = "IncreaseFontSize"
-
-[[keyboard.bindings]]
 key = "Minus"
 mods = "Control"
 action = "DecreaseFontSize"
 
 [[keyboard.bindings]]
-key = "Minus"
-mods = "Alt"
-action = "DecreaseFontSize"
-
-[[keyboard.bindings]]
 key = "Key0"
 mods = "Control"
-action = "ResetFontSize"
-
-[[keyboard.bindings]]
-key = "Key0"
-mods = "Alt"
 action = "ResetFontSize"
 
 [[keyboard.bindings]]
