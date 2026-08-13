@@ -706,6 +706,7 @@ BREW_INS="$BREW_INS webp" # The WebP is abbreviated WEB Pictures is a raster gra
 # NPMJ_INS="$NPMJ_INS @maximhq/bifrost"# FAIL: `Failed to start Bifrost. Error: spawnSync /home/danil/.cache/bifrost/v1.6.7/bin/bifrost-http-0 EACCES \n Error code: EACCES \n System error: -13`. # Bifrost AI Gateway - AI proxy <sup><sub>Proxy or router or gateway.</sub></sup> <https://github.com/maximhq/bifrost>. 
 # NPMJ_INS="$NPMJ_INS @portkey-ai/gateway" # FAIL: `{"error":{"message":"openai error: Country, region, or territory not supported","type":"request_forbidden","param":null,"code":"unsupported_country_region_territory"},"provider":"openai"}`. Portkey AI Gateway - AI proxy <sup><sub>Proxy or router or gateway.</sub></sup>  https://github.com/portkey-ai/gateway>.
 # NPMJ_INS="$NPMJ_INS omniroute" # FAIL: Missing configuration file. OmniRoute - AI proxy <sup><sub>Proxy or router or gateway.</sub></sup> <https://github.com/diegosouzapw/OmniRoute>.
+BREW_INS="$BREW_INS deepseek-tui" BREW_INS_SRC="$BREW_INS_SRC Hmbown/deepseek-tui" # CodeWhale (formerly DeepSeek TUI) is an AI coding agent for DeepSeak LLM <https://github.com/Hmbown/CodeWhale> <sup><sub>`codewhale --help`</sub></sup>.
 BREW_INS="$BREW_INS hf" # The hf or huggingface-cli - LLM downloader <https://github.com/huggingface/huggingface_hub>.
 BREW_INS="$BREW_INS ollama" # Ollama <https://github.com/ollama/ollama>.
 BREW_INS="$BREW_INS pi-coding-agent" # Pi Agent Harness - AI coding agent <https://github.com/earendil-works/pi>.
