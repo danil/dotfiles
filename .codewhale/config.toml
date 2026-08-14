@@ -7,7 +7,7 @@
 # base_url = "https://api.deepseek.com/beta"
 
 # Default model
-default_text_model = "deepseek-v4-pro"
+default_text_model = "gpt://b1gm9qe0hfaso7rmnk4m/qwen3-235b-a22b-fp8"
 
 # Thinking mode (DeepSeek V4 reasoning effort):
 # "auto" | "off" | "low" | "medium" | "high" | "max"
@@ -22,3 +22,29 @@ check_for_updates = true
 trust_level = "trusted"
 # check_interval_hours = 1
 # update_uri = "https://internal.mirror.example/codewhale/releases/latest"
+
+[[providers]]
+name = "proxyapi"
+kind = "openai"
+base_url = "https://openai.api.proxyapi.ru/v1"
+models = ["openrouter/qwen/qwen3-coder"]
+api_key_env = "PROXYAPIRU_API_KEY"
+balance_url = "https://api.deepseek.com/user/balance"
+context_window = 1000000
+price = { cache_hit = 0.003625, input = 0.435, output = 0.87, currency = "$" }
+billing_currency = "USD"
+
+[[providers]]
+name = "yandex"
+kind = "openai"
+base_url = "https://ai.api.cloud.yandex.net/v1"
+models = [
+  "gpt://b1gm9qe0hfaso7rmnk4m/qwen3-235b-a22b-fp8",
+  "gpt://b1gm9qe0hfaso7rmnk4m/qwen3.6-35b-a3b"
+]
+default = "gpt://b1gm9qe0hfaso7rmnk4m/qwen3-235b-a22b-fp8"
+api_key_env = "YANDEX_API_KEY"
+context_window = 262144
+
+[network]
+proxy_mode = "auto"
