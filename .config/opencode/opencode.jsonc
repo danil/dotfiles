@@ -1,0 +1,71 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  // =========================================
+  // PROVIDERS
+  // =========================================
+  "provider": {
+    
+    // --- ProxyAPI (OpenAI-compatible gateway) ---
+    "proxyapi": {
+      "npm": "@ai-sdk/openai-compatible", // Universal adapter for OpenAI-compatible APIs
+      "name": "ProxyAPI (RU)",            // Display name in the TUI
+      "options": {
+        "baseURL": "https://openai.api.proxyapi.ru/v1",
+        // The API key is fetched from the PROXYAPIRU_API_KEY environment variable
+        "apiKey": "{env:PROXYAPIRU_API_KEY}",
+      },
+      "models": {
+        // The key must exactly match the model ID expected by the provider's API
+        "openrouter/qwen/qwen3-coder": {
+          "name": "Qwen3 Coder (ProxyAPI)",
+          "limit": {
+            "context": 1000000, // 1M tokens (matching your reasonix example)
+            "output": 65536,    // ~64K tokens per response (heavy reasoning / long tool loops)
+          },
+        },
+      },
+    },
+
+    // --- Yandex Cloud (DataSphere / Foundation Models) ---
+    "yandex": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Yandex Cloud",
+      "options": {
+        // Base URL for the Yandex Cloud endpoint
+        "baseURL": "https://ai.api.cloud.yandex.net/v1",
+        // NOTE: Yandex Cloud requires an IAM token.
+        // If OpenCode prepends "Bearer " automatically, pass the token without it.
+        // Otherwise, include "Bearer y0_AgA..." directly in the environment variable.
+        "apiKey": "{env:YANDEX_API_KEY}",
+      },
+      "models": {
+        // Yandex URI format for models: gpt://<folder-id>/<model-name>
+        "gpt://b1gm9qe0hfaso7rmnk4m/qwen3-235b-a22b-fp8": {
+          "name": "Yandex Qwen3 235B",
+          "limit": {
+            "context": 262144, // 256K tokens
+            "output": 32768,
+          },
+        },
+        "gpt://b1gm9qe0hfaso7rmnk4m/qwen3.6-35b-a3b": {
+          "name": "Yandex Qwen3.6 35B",
+          "limit": {
+            "context": 262144,
+            "output": 32768,
+          },
+        },
+      },
+    },
+  },
+
+  // =========================================
+  // GLOBAL AGENT SETTINGS
+  // =========================================
+  
+  // Main model for coding tasks (format: provider_id/model_id)
+  "model": "yandex/gpt://b1gm9qe0hfaso7rmnk4m/qwen3-235b-a22b-fp8",
+
+  // Lightweight model for background tasks (e.g., title generation, summarization)
+  "small_model": "proxyapi/openrouter/qwen/qwen3-coder",
+}

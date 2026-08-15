@@ -709,6 +709,7 @@ BREW_INS="$BREW_INS webp" # The WebP is abbreviated WEB Pictures is a raster gra
 BREW_INS="$BREW_INS deepseek-tui" BREW_INS_SRC="$BREW_INS_SRC Hmbown/deepseek-tui" # CodeWhale (formerly DeepSeek TUI) is an AI coding agent for DeepSeak LLM <https://github.com/Hmbown/CodeWhale> <sup><sub>`codewhale --help`</sub></sup>.
 BREW_INS="$BREW_INS hf" # The hf or huggingface-cli - LLM downloader <https://github.com/huggingface/huggingface_hub>.
 BREW_INS="$BREW_INS ollama" # Ollama <https://github.com/ollama/ollama>.
+BREW_INS="$BREW_INS opencode" # OpenCode is an AI codding agent `YOUR_ENV=~/.config/opencode/.env && export $(grep -v '^#' "$YOUR_ENV" | xargs -d '\n') && opencode` <https://github.com/anomalyco/opencode>.
 BREW_INS="$BREW_INS pi-coding-agent" # Pi Agent Harness - AI coding agent <https://github.com/earendil-works/pi>.
 BREW_INS="$BREW_INS qwen-code" # Qwen Code is an AI codding agent <https://github.com/QwenLM/qwen-code>.
 BREW_INS="$BREW_INS reasonix" BREW_INS_SRC="$BREW_INS_SRC esengine/reasonix" # Reasonix is an AI coding agent for DeepSeak LLM <https://github.com/esengine/deepseek-reasonix>.
