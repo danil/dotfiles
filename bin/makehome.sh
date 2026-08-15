@@ -1,5 +1,4 @@
 #!/usr/bin/env sh
-
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
 # APT (deb/dpkg/apt-get/aptitude)
