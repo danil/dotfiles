@@ -58,19 +58,45 @@ gitbundlearchive () {
     printf "GITBUNDLEARCHIVE:  in %s\n" "$OPT_IN_PATH"
     printf "GITBUNDLEARCHIVE: out %s\n" "$OPT_OUT_PATH"
 
-    find "$OPT_IN_PATH" -type d -name ".git" | while read -r GIT_DOT_DIR; do
-        local REPO_FULL_PATH="$(dirname "$GIT_DOT_DIR")"
+    find "$OPT_IN_PATH" -type f -path "*.git/HEAD" | while read -r GIT_HEAD_FILE; do
+        local GIT_DOT_DIR_PATH="$(dirname "$GIT_HEAD_FILE")"
+        local GIT_DOT_DIR="$(basename "$GIT_DOT_DIR_PATH")"
+        local REPO_FULL_PATH
+
+        if [ "$GIT_DOT_DIR" = ".git" ]; then
+            # This is repository with working directory.
+            REPO_FULL_PATH="$(dirname "$GIT_DOT_DIR_PATH")"
+        else
+            # This is bare repository.
+            REPO_FULL_PATH="$GIT_DOT_DIR_PATH"
+        fi
+
         local REPO_NAME="$(basename "$REPO_FULL_PATH")"
         local REPO_PATH="${REPO_FULL_PATH#"$OPT_IN_PATH"}"
         local REPO_PATH="${REPO_PATH#/}"
         local REPO_PARENT_PATH="${REPO_PATH%"$REPO_NAME"}"
         local REPO_PARENT_PATH="${REPO_PARENT_PATH%/}"
-        local BUNDLE_NAME="${REPO_NAME}.bundle"
+        local BUNDLE_NAME
 
-        printf "\nGITBUNDLEARCHIVE: %s -> %s/%s\n" "$REPO_PATH".git "$REPO_PARENT_PATH" "$BUNDLE_NAME"
+        if [ "$GIT_DOT_DIR" = ".git" ]; then
+            # This is repository with working directory.
+            BUNDLE_NAME="${REPO_NAME}.bundle"
+        else
+            # This is bare repository.
+            REPO_NAME="${REPO_NAME%.git}"
+            BUNDLE_NAME="${REPO_NAME}.bundle"
+        fi
+
+        if [ "$REPO_PARENT_PATH" = "" ]; then
+            # Without parent path.
+            printf "\nGITBUNDLEARCHIVE: %s -> %s\n" "$REPO_NAME".git "$BUNDLE_NAME"
+        else
+            # With parent path.
+            printf "\nGITBUNDLEARCHIVE: %s/%s -> %s/%s\n" "$REPO_PARENT_PATH" "$REPO_NAME".git "$REPO_PARENT_PATH" "$BUNDLE_NAME"
+        fi
 
         if [ -f "$OPT_OUT_PATH"/"$REPO_PARENT_PATH"/"$BUNDLE_NAME" ] ; then
-            printf "already exist %s/%s/%s\n" "$OPT_OUT_PATH" "$REPO_PARENT_PATH" "$BUNDLE_NAME" >&2
+            printf "GITBUNDLEARCHIVE: WARNING: already exist %s/%s/%s\n" "$OPT_OUT_PATH" "$REPO_PARENT_PATH" "$BUNDLE_NAME" >&2
 
             continue
         fi
