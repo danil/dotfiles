@@ -3,7 +3,7 @@
 
 . /home/danil/bin/binpath.sh
 
-SCRIPT_NAME="$HOMEBINDIR"/gitmirror
+SCRIPT_NAME="$HOMEBINDIR"/gitpushmirror
 
 dash -n "$SCRIPT_NAME"
 bash -n "$SCRIPT_NAME"

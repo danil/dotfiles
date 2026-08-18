@@ -1,9 +1,9 @@
 #!/usr/bin/env sh
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-log=/var/log/gitmirror.log
+log=/var/log/gitpushmirror.log
 
-gitmirror () {
+gitpush () {
     local folder=$1
     local vendors=$2
     local branches=$3
