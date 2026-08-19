@@ -1,9 +1,10 @@
 #!/usr/bin/env sh
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
+SCRIPT_NAME=makehome
+
 . /home/danil/bin/binpath.sh
 
-SCRIPT_NAME=makehome
 SCRIPT_PATH="$HOMEBINDIR"/"$SCRIPT_NAME"
 
 dash -n        "$SCRIPT_PATH"
