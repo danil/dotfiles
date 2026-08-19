@@ -145,8 +145,8 @@ makehome () {
     local OPT_JOBS=$(grep -c ^processor /proc/cpuinfo)
     OPT_JOBS=${OPT_JOBS:-1}
 
-    set -- "$@" "${EOL:=$(printf '\1\3\3\7')}" # End-of-list marker.
     local OPTFLAGEXIT=0
+    set -- "$@" "${EOL:=$(printf '\1\3\3\7')}" # End-of-list marker.
     while [ "$1" != "$EOL" ]; do
         local OPTFLAG="$1"; shift
 

@@ -3,13 +3,11 @@
 GITBUNDLEARCHIVE_USAGE="usage: gitbundlearchive.sh --in=your/dir --out=your/dir2"
 
 gitbundlearchive () {
-    set -- "$@" "${EOL:=$(printf '\1\3\3\7')}" # End-of-list marker.
-
-    local OPTFLAGEXIT=0
-
     local OPT_IN_PATH=""
     local OPT_OUT_PATH=""
 
+    local OPTFLAGEXIT=0
+    set -- "$@" "${EOL:=$(printf '\1\3\3\7')}" # End-of-list marker.
     while [ "$1" != "$EOL" ]; do
         local OPTFLAG="$1"; shift
 
@@ -28,6 +26,15 @@ gitbundlearchive () {
 
         [ "$OPTFLAGEXIT" != 0 ] && break
     done; shift
+
+        # printf "%s=%s\n" "GIT_HEAD_FILE"     "$GIT_HEAD_FILE"    ################################################################################ 
+        # printf "%s=%s\n" "GIT_DOT_DIR_PATH"  "$GIT_DOT_DIR_PATH" ################################################################################ 
+        # printf "%s=%s\n" "REPO_FULL_PATH"    "$REPO_FULL_PATH"   ################################################################################ 
+        # printf "%s=%s\n" "REPO_NAME"         "$REPO_NAME"        ################################################################################ 
+        # printf "%s=%s\n" "REPO_PATH"         "$REPO_PATH"        ################################################################################ 
+        # printf "%s=%s\n" "REPO_PARENT_PATH" "$REPO_PARENT_PATH"  ################################################################################
+        # printf "%s=%s\n" "BUNDLE_NAME"       "$BUNDLE_NAME"      ################################################################################      
+
 
     [ "$OPTFLAGEXIT" != 0 ] && printf >&2 "%s\n" "$GITBUNDLEARCHIVE_USAGE" && exit "$OPTFLAGEXIT"
 
