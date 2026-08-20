@@ -4,17 +4,16 @@
 SCRIPT_NAME=theme.sh
 
 . /home/danil/bin/binpath.sh
+. "$HOMEBINDIR"/main_test.sh
 
-SCRIPT_PATH="$HOMEBINDIR"/"$SCRIPT_NAME"
+$DASH  -n "$SCRIPT_PATH"
+$BASH  -n "$SCRIPT_PATH"
+$BASH3 -n "$SCRIPT_PATH"
+$BASH4 -n "$SCRIPT_PATH"
+$SH    -n "$SCRIPT_PATH"
 
-dash -n        "$SCRIPT_PATH"
-bash -n        "$SCRIPT_PATH"
-bash-3.2.57 -n "$SCRIPT_PATH"
-bash-4.4.18 -n "$SCRIPT_PATH"
-sh -n          "$SCRIPT_PATH"
-
-dash        "$SCRIPT_PATH" --help
-bash        "$SCRIPT_PATH" --help
-bash-3.2.57 "$SCRIPT_PATH" --help
-bash-4.4.18 "$SCRIPT_PATH" --help
-sh          "$SCRIPT_PATH" --help
+$DASH  "$SCRIPT_PATH" --help
+$BASH  "$SCRIPT_PATH" --help
+$BASH3 "$SCRIPT_PATH" --help
+$BASH4 "$SCRIPT_PATH" --help
+$SH    "$SCRIPT_PATH" --help
