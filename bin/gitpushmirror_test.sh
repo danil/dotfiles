@@ -1,14 +1,13 @@
 #!/usr/bin/env sh
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-SCRIPT_NAME=gitpushmirror
+SCRIPT_NAME=gitpushmirror.sh
 
 . /home/danil/bin/binpath.sh
+. "$HOMEBINDIR"/main_test.sh
 
-SCRIPT_PATH="$HOMEBINDIR"/"$SCRIPT_NAME"
-
-dash -n        "$SCRIPT_PATH"
-bash -n        "$SCRIPT_PATH"
-bash-3.2.57 -n "$SCRIPT_PATH"
-bash-4.4.18 -n "$SCRIPT_PATH"
-sh -n          "$SCRIPT_PATH"
+$DASH  -n "$SCRIPT_PATH"
+$BASH  -n "$SCRIPT_PATH"
+$BASH3 -n "$SCRIPT_PATH"
+$BASH4 -n "$SCRIPT_PATH"
+$SH    -n "$SCRIPT_PATH"
