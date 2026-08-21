@@ -71,4 +71,12 @@
 
   // Instructions for all agents
   "instructions": ["AGENTS.md"],
+
+  // // Enable session history and compaction
+  // "compaction": {
+  //   "auto": true,
+  //   "prune": true,
+  //   "reserved": 10000
+  // },
+  // "snapshot": true
 }
