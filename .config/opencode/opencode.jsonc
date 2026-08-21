@@ -68,4 +68,7 @@
 
   // Lightweight model for background tasks (e.g., title generation, summarization)
   "small_model": "proxyapi/openrouter/qwen/qwen3-coder",
+
+  // Instructions for all agents
+  "instructions": ["AGENTS.md"],
 }
