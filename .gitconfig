@@ -14,6 +14,17 @@
 	directory = /etc
 	directory = /root/example
 	directory = /home/git
+	directory = /home/git/dotfiles.git
+	directory = /home/git/el/init.el.git
+	directory = /home/git/etc.git
+	directory = /home/git/go/sqltee.git
+	directory = /home/git/kernels.git
+	directory = /home/git/keys.git
+	directory = /home/git/md/rc.git
+	directory = /home/git/root.git
+	directory = /home/git/sh/rsa_signature_example.git
+	directory = /home/git/utils.git
+	directory = /home/git/vimrc.git
 
 # [color]
 #     diff = always
