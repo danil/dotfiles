@@ -1,8 +1,0 @@
-// <http://docs.syncthing.net/users/ignoring.html>.
-*#
-*.#*
-*.swp
-*~
-.git
-.gitignore
-/TAGS

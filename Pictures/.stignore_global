@@ -1,7 +1,0 @@
-// <http://docs.syncthing.net/users/ignoring.html>.
-*#
-*.#*
-*.swp
-*~
-/TAGS
-/projectile-bookmarks.eld
