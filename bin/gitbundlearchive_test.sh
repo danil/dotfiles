@@ -1,31 +1,28 @@
 #!/usr/bin/env sh
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-SCRIPT_NAME=gitbundlearchive.sh
+. "$(cd -- "$(dirname -- "$0")" >/dev/null 2>&1 && pwd -P)/stdt.sh"
 
-. /home/danil/bin/binpath.sh
-. "$HOMEBINDIR"/main_test.sh
+$TESTDASH  -n "$TESTED_PATH"
+$TESTBASH  -n "$TESTED_PATH"
+$TESTBASH3 -n "$TESTED_PATH"
+$TESTBASH4 -n "$TESTED_PATH"
+$TESTSH    -n "$TESTED_PATH"
 
-$DASH  -n "$SCRIPT_PATH"
-$BASH  -n "$SCRIPT_PATH"
-$BASH3 -n "$SCRIPT_PATH"
-$BASH4 -n "$SCRIPT_PATH"
-$SH    -n "$SCRIPT_PATH"
+$TESTDASH  "$TESTED_PATH" --help
+$TESTBASH  "$TESTED_PATH" --help
+$TESTBASH3 "$TESTED_PATH" --help
+$TESTBASH4 "$TESTED_PATH" --help
+$TESTSH    "$TESTED_PATH" --help
 
-$DASH  "$SCRIPT_PATH" --help
-$BASH  "$SCRIPT_PATH" --help
-$BASH3 "$SCRIPT_PATH" --help
-$BASH4 "$SCRIPT_PATH" --help
-$SH    "$SCRIPT_PATH" --help
+tempin=$(mktemp --directory /tmp/"$TESTED_NAME"_in.XXXXXX)
+tempout=$(mktemp --directory /tmp/"$TESTED_NAME"_out.XXXXXX)
 
-tempin=$(mktemp --directory /tmp/"$SCRIPT_NAME"_in.XXXXXX)
-tempout=$(mktemp --directory /tmp/"$SCRIPT_NAME"_out.XXXXXX)
-
-$DASH  "$SCRIPT_PATH" --in="$tempin" --out="$tempout"
-$BASH  "$SCRIPT_PATH" --in="$tempin" --out="$tempout"
-$BASH3 "$SCRIPT_PATH" --in="$tempin" --out="$tempout"
-# $BASH4 "$SCRIPT_PATH" --in="$tempin" --out="$tempout" # FIXME: Fix infinity loop error.~~~~<danil@kutkevich.org>
-# $SH    "$SCRIPT_PATH" --in="$tempin" --out="$tempout" # FIXME: Fix infinity loop error.~~~~<danil@kutkevich.org>
+$TESTDASH  "$TESTED_PATH" --in="$tempin" --out="$tempout"
+$TESTBASH  "$TESTED_PATH" --in="$tempin" --out="$tempout"
+$TESTBASH3 "$TESTED_PATH" --in="$tempin" --out="$tempout"
+# $TESTBASH4 "$TESTED_PATH" --in="$tempin" --out="$tempout" # FIXME: Fix infinity loop error.~~~~<danil@kutkevich.org>
+# $TESTSH    "$TESTED_PATH" --in="$tempin" --out="$tempout" # FIXME: Fix infinity loop error.~~~~<danil@kutkevich.org>
 
 rmdir "$tempin"
 rmdir "$tempout"

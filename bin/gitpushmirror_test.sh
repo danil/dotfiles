@@ -1,13 +1,10 @@
 #!/usr/bin/env sh
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-SCRIPT_NAME=gitpushmirror.sh
+. "$(cd -- "$(dirname -- "$0")" >/dev/null 2>&1 && pwd -P)/stdt.sh"
 
-. /home/danil/bin/binpath.sh
-. "$HOMEBINDIR"/main_test.sh
-
-$DASH  -n "$SCRIPT_PATH"
-$BASH  -n "$SCRIPT_PATH"
-$BASH3 -n "$SCRIPT_PATH"
-$BASH4 -n "$SCRIPT_PATH"
-$SH    -n "$SCRIPT_PATH"
+$TESTDASH  -n "$TESTED_PATH"
+$TESTBASH  -n "$TESTED_PATH"
+$TESTBASH3 -n "$TESTED_PATH"
+$TESTBASH4 -n "$TESTED_PATH"
+$TESTSH    -n "$TESTED_PATH"
