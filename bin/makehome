@@ -147,4 +147,4 @@ BREW_INS="$BREW_INS wget" # A-la curl.
 BREW_INS="$BREW_INS whois"
 ZYPP_INS="$ZYPP_INS bind" # DNS lookup utility.
 
-. makehome.sh
+. "$(cd -- "$(dirname -- "$0")" >/dev/null 2>&1 && pwd -P)/makehome.sh"
