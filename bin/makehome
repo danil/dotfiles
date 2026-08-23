@@ -832,4 +832,4 @@ BREW_INS="$BREW_INS websocat" # websocat is a [WebSocket][] [command-line client
 # rabbitmq
 # sqlite
 
-. makehome.sh
+. "$(cd -- "$(dirname -- "$0")" >/dev/null 2>&1 && pwd -P)/makehome.sh"
