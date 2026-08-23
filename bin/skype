@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-. binpath.sh
+. "$(cd -- "$(dirname -- "$0")" >/dev/null 2>&1 && pwd -P)/path.sh"
 
 "$LOCALBINDIR"/skypeforlinux "$@"

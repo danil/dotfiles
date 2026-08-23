@@ -53,7 +53,7 @@ if [ "$OPT_ALL" = 0 ]; then
     OPT_BTOP=0
 fi
 
-. /home/danil/bin/binpath.sh
+. "$(cd -- "$(dirname -- "$0")" >/dev/null 2>&1 && pwd -P)/path.sh"
 
 theme_wallpaper () {
     [ "$OPT_WAL" != 0 ] && return
