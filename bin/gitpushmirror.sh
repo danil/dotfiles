@@ -1,12 +1,68 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-log=/var/log/gitpushmirror.log
+GITPUSHMIRRORUSAGE="usage: gitpushmirror [--repository=\"your.git|your2.git\"] [--mirror=\"github|gitverse\"] [--log=\"path/to/your.log\"]"
 
-gitpush () {
+gitpushmconfig () {
+    local OPTFLAGEXIT=0
+    set -- "$@" "${EOL:=$(printf '\1\3\3\7')}" # End-of-list marker.
+    while [ "$1" != "$EOL" ]; do
+        local OPTFLAG="$1"; shift
+
+        case "$OPTFLAG" in
+            --repository ) optflagcheck "$1" "$OPTFLAG"; OPTFLAGEXIT=$?; OPT_REPOSITORY="$1"; shift;;
+            --mirror     ) optflagcheck "$1" "$OPTFLAG"; OPTFLAGEXIT=$?; OPT_MIRROR="$1"; shift;;
+            --log        ) optflagcheck "$1" "$OPTFLAG"; OPTFLAGEXIT=$?; OPT_LOG="$1"; shift;;
+            -h | --help    ) printf "%s\n" "$GITPUSHMIRRORUSAGE"; exit 0;;
+
+            # Process special cases.
+            --) while [ "$1" != "$EOL" ]; do set -- "$@" "$1"; shift; done;;                              # Parse remaining as positional.
+            --[!=]*=*) set -- "${OPTFLAG%%=*}" "${OPTFLAG#*=}" "$@";;                                     # "--OPTFLAG=arg"  ->  "--OPTFLAG" "arg"
+            -[A-Za-z0-9] | -*[!A-Za-z0-9]*) printf >&2 "unknown option: %s\n" "$OPTFLAG"; OPTFLAGEXIT=2;; # Anything invalid like "-*".
+            -?*) other="${OPTFLAG#-?}"; set -- "${OPTFLAG%$other}" "-${other}" "$@";;                     # "-abc"  ->  "-a" "-bc"
+            *) set -- "$@" "$OPTFLAG";;                                                                   # Positional, rotate to the end.
+        esac
+
+        [ "$OPTFLAGEXIT" != 0 ] && break
+    done; shift
+
+    [ "$OPTFLAGEXIT" != 0 ] && printf >&2 "%s\n" "$GITPUSHMIRRORUSAGE" && exit "$OPTFLAGEXIT"
+}
+
+optflagcheck () { { [ "$1" != "$EOL" ] && [ "$1" != '--' ]; } || { printf >&2 "missing argument %s\n" "$2"; return 2; } } # Avoid infinite loop.
+
+gitpushm () {
+    sudo cat /dev/null || exit 1
+
     local dir=$1
     local vendors=$2
     local branches=$3
+
+    local usr
+
+    case "$dir" in
+        */danil/* ) usr=danil ;;
+        */git/*   ) usr=git ;;
+        *) printf >&2 "GITPUSHMIRROR: error: unknown user for directory %s\n" "$dir"; exit 1 ;;
+    esac
+
+    local repo_path="${dir#/home/"$usr"/}"
+    local repo_path="${repo_path#git/}"
+    local repo_name="$(basename "$repo_path")"
+    local repo_dir="${repo_path%"$repo_name"}"
+    local repo_dir="${repo_dir%/}"
+    [ -z "$repo_dir" ] && repo_dir="$usr" || repo_dir="$usr/$repo_dir"
+
+    if [ -n "$OPT_REPOSITORY" ]; then
+        if ! echo "$dir" | egrep --quiet "$OPT_REPOSITORY"; then
+            echo "$(date --utc '+%d/%I/%Y %H:%M:%S') skipping repository ~$repo_dir $repo_name"
+            return 0
+        fi
+        # case "$dir" in
+        #     "$OPT_REPOSITORY") ;;
+        #     *) echo "$(date --utc '+%d/%I/%Y %H:%M:%S') skipping repository ~$repo_dir $repo_name"; return 0 ;;
+        # esac
+    fi
 
     sudo cat /dev/null || exit 1
 
@@ -14,28 +70,25 @@ gitpush () {
     # <http://unix.stackexchange.com/questions/47557/in-a-bash-shell-script-writing-a-for-loop-that-iterates-over-string-values#47560>,
     # <http://stackoverflow.com/questions/17249665/splitting-a-comma-separated-string-into-multiple-words-so-that-i-can-loop-throug#17249721>.
     for vendor in $vendors; do
-        if printf "%s" "$UNI_CLI" | grep -q "^[[:space:]]*sudo[[:space:]]"; then
-            sudo cat /dev/null || exit 1
+        if [ -n "$OPT_MIRROR" ]; then
+            if ! echo "$vendor" | egrep --quiet "$OPT_MIRROR"; then
+                echo "$(date --utc '+%d/%I/%Y %H:%M:%S') skipping mirror $vendor: ~$repo_dir $repo_name"
+                continue
+            fi
+            # case "$vendor" in
+            #     "$OPT_MIRROR") ;;
+            #     *) echo "$(date --utc '+%d/%I/%Y %H:%M:%S') skipping mirror $vendor: ~$repo_dir $repo_name"; continue;;
+            # esac
         fi
 
-        local usr
-
-        case "$dir" in
-            */danil/* ) usr=danil ;;
-            */git/*   ) usr=git ;;
-            *) printf >&2 "GITPUSHMIRROR: error: unknown user for directory %s\n" "$dir"; exit 1 ;;
-        esac
+        echo "$(date --utc '+%d/%I/%Y %H:%M:%S') ~$repo_dir $repo_name $vendor: $branches"
 
         cmd="git -C "$dir" push --quiet --tags $vendor $branches"
-        repo_path="${dir#/home/"$usr"/}"
-        repo_path="${repo_path#git/}"
-        repo_name="$(basename "$repo_path")"
-        repo_dir="${repo_path%"$repo_name"}"
-        repo_dir="${repo_dir%/}"
-        [ -z "$repo_dir" ] && repo_dir="$usr" || repo_dir="$usr/$repo_dir"
 
-        echo "$(date --utc '+%d/%I/%Y %H:%M:%S') ~$repo_dir $repo_name $vendor: $branches" >>$log 2>&1
-
-        sudo -u "$usr" bash -c "$cmd >>$log 2>&1"
+        if [ -n "$OPT_LOG" ]; then
+            sudo -u "$usr" bash -c "$cmd >>$OPT_LOG 2>&1"
+        else
+            sudo -u "$usr" bash -c "$cmd"
+        fi
     done
 }

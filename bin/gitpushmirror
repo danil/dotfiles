@@ -1,24 +1,26 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-. gitpushmirror.sh
+. "$(cd -- "$(dirname -- "$0")" >/dev/null 2>&1 && pwd -P)/gitpushmirror.sh"
 
-# gitpush "$(eval echo '~danil')/git/instapaper.git"               "github" "master"
-# gitpush "$(eval echo '~git')/example.git"                        "bitbucket"     "a c b10"
-# gitpush "$(eval echo '~git')/sh/rsa_signature_example.git"       "bitbucket"     "master"
-gitpush "$(eval echo '~danil')/git/md/rcc.git"                   "github gitflic" "master"
-gitpush "$(eval echo '~danil')/git/md/textsync.git"              "github" "master"
-gitpush "$(eval echo '~git')/dotfiles.git"                       "github gitlab" "h27-suse-danil h36-ubuntu-danil h41-ubuntu-danil"
-gitpush "$(eval echo '~git')/el/init.el.git"                     "github gitlab gitflic" "master trash"
-gitpush "$(eval echo '~git')/etc.git"                            "github gitlab" "h27-suse h36-ubuntu h41-ubuntu"
-gitpush "$(eval echo '~git')/go/sqltee.git"                      "github"        "master"
-gitpush "$(eval echo '~git')/kernels.git"                        "github gitlab" "h10-gentoo"
-gitpush "$(eval echo '~git')/keys.git"                           "github gitlab" "master"
-gitpush "$(eval echo '~git')/md/rc.git"                          "github gitlab gitflic gitverse" "master"
-gitpush "$(eval echo '~git')/root.git"                           "github"        "h27-suse h36-ubuntu h41-ubuntu"
-gitpush "$(eval echo '~git')/utils.git"                          "github gitlab" "master"
-gitpush "$(eval echo '~git')/vimrc.git"                          "github"        "master"
+gitpushmconfig "$@"
+
+# gitpushm "$(eval echo '~danil')/git/instapaper.git"               "github" "master"
+# gitpushm "$(eval echo '~git')/example.git"                        "bitbucket"     "a c b10"
+# gitpushm "$(eval echo '~git')/sh/rsa_signature_example.git"       "bitbucket"     "master"
+gitpushm "$(eval echo '~danil')/git/md/rcc.git"                   "github gitflic" "master"
+gitpushm "$(eval echo '~danil')/git/md/textsync.git"              "github" "master"
+gitpushm "$(eval echo '~git')/dotfiles.git"                       "github gitlab" "h27-suse-danil h36-ubuntu-danil h41-ubuntu-danil"
+gitpushm "$(eval echo '~git')/el/init.el.git"                     "github gitlab gitflic" "master trash"
+gitpushm "$(eval echo '~git')/etc.git"                            "github gitlab" "h27-suse h36-ubuntu h41-ubuntu"
+gitpushm "$(eval echo '~git')/go/sqltee.git"                      "github"        "master"
+gitpushm "$(eval echo '~git')/kernels.git"                        "github gitlab" "h10-gentoo"
+gitpushm "$(eval echo '~git')/keys.git"                           "github gitlab" "master"
+gitpushm "$(eval echo '~git')/md/rc.git"                          "github gitlab gitflic gitverse" "master"
+gitpushm "$(eval echo '~git')/root.git"                           "github"        "h27-suse h36-ubuntu h41-ubuntu"
+gitpushm "$(eval echo '~git')/utils.git"                          "github gitlab" "master"
+gitpushm "$(eval echo '~git')/vimrc.git"                          "github"        "master"
 
 # cv
-# gitpush "$(eval echo '~git')/cv.git"                             "gitlab github" "gh-pages"
-# gitpush "$(eval echo '~git')/danil.git"                          "github"        "master"
+# gitpushm "$(eval echo '~git')/cv.git"                             "gitlab github" "gh-pages"
+# gitpushm "$(eval echo '~git')/danil.git"                          "github"        "master"
