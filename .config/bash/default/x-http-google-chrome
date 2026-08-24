@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
+export CHROME_PATH="${CHROME_PATH:-"$HOME"/bin/chrome}"

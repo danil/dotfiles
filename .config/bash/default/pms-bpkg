@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
+# bpkg is a bash package manager
+# run `bash-install-all`
+# <https://github.com/bpkg/bpkg#installing-packages>.
+export PATH="$HOME"/deps/bin:"$PATH"

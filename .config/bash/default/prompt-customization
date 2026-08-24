@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
 # Bash prompt.
 # Colors
@@ -10,8 +12,10 @@
 # 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
 # Background color codes:
 # 40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
-# <https://wiki.archlinux.org/index.php/Color_Bash_Prompt#List_of_colors_for_prompt_and_Bash>
-# <http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html>.
+# <https://wiki.archlinux.org/index.php/Color_Bash_Prompt#List_of_colors_for_prompt_and_Bash>,
+# <http://tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html>,
+# <https://unix.stackexchange.com/questions/124407/what-color-codes-can-i-use-in-my-ps1-prompt#124409>,
+# <https://en.wikipedia.org/wiki/ANSI_escape_code#Colors>.
 ps1_blue="\[\033[01;34m\]"
 ps1_cyan="\[\033[1;36m\]"
 ps1_green="\[\033[01;32m\]"
@@ -27,7 +31,7 @@ ps1_user="${ps1_user_color}\u@\h${ps1_plain}"
 ps1_pwd=" ${ps1_blue}\w${ps1_plain}"
 
 [[ "$EUID" -eq 0 ]] && ps1_timestamp_color="${ps1_red}" || ps1_timestamp_color="${ps1_white}"
-ps1_timestamp="${ps1_timestamp_color} \D{%d-%b-%Y %H:%M:%S%Z}"
+ps1_timestamp="${ps1_timestamp_color} \D{%Y%m%dT%H%M%S%Z}"
 
 [[ "$EUID" -eq 0 ]] && ps1_prompt_color="${ps1_red}" || ps1_prompt_color="${ps1_cyan}"
 [[ "$EUID" -eq 0 ]] && ps1_prompt_char="#" || ps1_prompt_char="\$"
@@ -51,7 +55,7 @@ function ps1_load {
     local load_string="$(uptime)"
     local load_string=${load_string/#*average: }
     local load_string=${load_string%%,*}
-    local tmp=$(echo ${load_string}*100 | bc)
+    local tmp=$(echo ${load_string}*100)
     let load100=${tmp%.*}
     if [[ ${load100} -ge 100 ]]; then
         echo -n " load:${load_string}"
@@ -68,7 +72,9 @@ function ps1_outdated_packages {
 function ps1_unread_mails {
     if [ -s /var/mail/$(whoami) ] ; then
         # <http://serverfault.com/questions/171833/display-number-of-messages-in-linux-mail-queue#289177>
-        let mails_count=$(gnu-mail --file /var/mail/$(whoami) --headers | grep '^>* *[0-9]' | wc -l)
+        let mails_count=$(mail --file /var/mail/$(whoami) --headers \
+                                 | sed '/^>* *[0-9]/d' \
+                                 | wc -l)
 
     else
         let mails_count=0
@@ -111,11 +117,11 @@ function my_ps1_timer_show {
         mongo*) return 0 ;;
     esac
 
-    if command -v play >/dev/null 2>&1 && #how to check if a program exists <http://stackoverflow.com/questions/592620/how-to-check-if-a-program-exists-from-a-bash-script#677212>
-           [ -f $(eval echo ~$(whoami))/local/share/sounds/complete.oga ]; then
+    if command -v play >/dev/null 2>&1 && # how to check if a program exists <http://stackoverflow.com/questions/592620/how-to-check-if-a-program-exists-from-a-bash-script#677212>
+           [ -f $(eval echo ~$(whoami))/.local/usr/local/share/sounds/complete.oga ]; then
         # <http://en.wikipedia.org/wiki/Nohup#Overcoming_hanging>.
         nohup play -q --no-show-progress \
-              $(eval echo ~$(whoami))/local/share/sounds/complete.oga \
+              $(eval echo ~$(whoami))/.local/usr/local/share/sounds/complete.oga \
               > /dev/null 2> /dev/null < /dev/null &
     fi
 
@@ -157,8 +163,8 @@ if [ -f $(eval echo ~$(whoami))/.git-prompt.sh ]; then
     source $(eval echo ~$(whoami))/.git-prompt.sh
 fi
 function my_ps1_dynamic_variables {
-    my_exit_code=$? #exit status error <http://brettterpstra.com/2009/11/17/my-new-favorite-bash-prompt>
-    if [[ $my_exit_code -eq 0 || $my_exit_code -ge 128 ]]; then #set an error string for the prompt, if applicable (ignore kill e. g. 130 script terminated by control-c <http://www.tldp.org/LDP/abs/html/exitcodes.html>)
+    my_exit_code=$? # exit status error <http://brettterpstra.com/2009/11/17/my-new-favorite-bash-prompt>
+    if [[ $my_exit_code -eq 0 || $my_exit_code -ge 128 ]]; then # set an error string for the prompt, if applicable (ignore kill e. g. 130 script terminated by control-c <http://www.tldp.org/LDP/abs/html/exitcodes.html>)
         ps1_exit_code=""
     else
         ps1_exit_code=" ${my_exit_code}!" # ☢ ⚠ ☠ ☹ ☣
@@ -170,22 +176,22 @@ function my_ps1_dynamic_variables {
     ps1_outdated_packages="$(ps1_outdated_packages)"
 
     # History between sessions <http://briancarper.net/blog/248>.
-    # history -an #write and read
-    history -a #write only
+    # history -an # write and read
+    history -a # write only
 
     my_ps1_timer_show="$(my_ps1_timer_show)"
     unset my_ps1_timer_seconds
 }
 my_trap='my_ps1_timer_start;'
-my_trap+='my_previous_command=$my_current_command; my_current_command=$BASH_COMMAND' #echo last command <http://stackoverflow.com/questions/6109225/bash-echoing-the-last-command-run#6110446>.
+my_trap+='my_previous_command=$my_current_command; my_current_command=$BASH_COMMAND' # echo last command <http://stackoverflow.com/questions/6109225/bash-echoing-the-last-command-run#6110446>.
 trap "$my_trap" DEBUG
-PROMPT_COMMAND=my_ps1_dynamic_variables #assign PS1 variables dynamically <http://stackoverflow.com/questions/3058325/what-is-the-difference-between-ps1-and-prompt-command#3058390>
+PROMPT_COMMAND=my_ps1_dynamic_variables # assign PS1 variables dynamically <http://stackoverflow.com/questions/3058325/what-is-the-difference-between-ps1-and-prompt-command#3058390>
 PS1="${ps1_user}"
 PS1+="${ps1_time}"
 PS1+="${ps1_red}"
 PS1+='${ps1_exit_code}'
 PS1+="${ps1_yellow}"
-PS1+='${my_ps1_timer_show}' #prompt last command time <http://stackoverflow.com/questions/1862510/how-can-the-last-commands-wall-time-be-put-in-the-bash-prompt#1862762>
+PS1+='${my_ps1_timer_show}' # prompt last command time <http://stackoverflow.com/questions/1862510/how-can-the-last-commands-wall-time-be-put-in-the-bash-prompt#1862762>
 PS1+="${ps1_white}"
 PS1+='${ps1_unread_mails}'
 PS1+='${ps1_outdated_packages}'

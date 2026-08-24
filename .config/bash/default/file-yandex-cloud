@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# This file is part of Danil Kutkevich <danil@kutkevich.org> home.
+
+# Updates PATH for Yandex Cloud CLI.
+[ -f "$HOME"/yandex-cloud/path.bash.inc ] && source "$HOME"/yandex-cloud/path.bash.inc
+# Enables shell command completion for yc (Yandex Cloud).
+[ -f "$HOME"/yandex-cloud/completion.bash.inc ] && source "$HOME"/yandex-cloud/completion.bash.inc
