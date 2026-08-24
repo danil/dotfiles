@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-GITPUSHMIRRORUSAGE="usage: gitpushmirror [--repository=\"your.git|your2.git\"] [--mirror=\"github|gitverse\"] [--log=\"path/to/your.log\"]"
+GITPUSHMIRRORUSAGE="usage: gitpushmirror [--repository=\"your.git|your2.git\"] [--mirror=\"github|gitverse\"]"
 
 gitpushmconfig () {
     local OPTFLAGEXIT=0
@@ -12,7 +12,6 @@ gitpushmconfig () {
         case "$OPTFLAG" in
             --repository ) optflagcheck "$1" "$OPTFLAG"; OPTFLAGEXIT=$?; OPT_REPOSITORY="$1"; shift;;
             --mirror     ) optflagcheck "$1" "$OPTFLAG"; OPTFLAGEXIT=$?; OPT_MIRROR="$1"; shift;;
-            --log        ) optflagcheck "$1" "$OPTFLAG"; OPTFLAGEXIT=$?; OPT_LOG="$1"; shift;;
             -h | --help    ) printf "%s\n" "$GITPUSHMIRRORUSAGE"; exit 0;;
 
             # Process special cases.
@@ -55,12 +54,12 @@ gitpushm () {
 
     if [ -n "$OPT_REPOSITORY" ]; then
         if ! echo "$dir" | egrep --quiet "$OPT_REPOSITORY"; then
-            echo "$(date --utc '+%d/%I/%Y %H:%M:%S') skipping repository ~$repo_dir $repo_name"
+            printf "GITPUSHMIRROR: warning: skipping repository ~%s %s\n" "$repo_dir" "$repo_name"
             return 0
         fi
         # case "$dir" in
         #     "$OPT_REPOSITORY") ;;
-        #     *) echo "$(date --utc '+%d/%I/%Y %H:%M:%S') skipping repository ~$repo_dir $repo_name"; return 0 ;;
+        #     *) printf "GITPUSHMIRROR: warning: skipping repository ~%s %s\n" "$repo_dir" "$repo_name"; return 0 ;;
         # esac
     fi
 
@@ -72,23 +71,16 @@ gitpushm () {
     for vendor in $vendors; do
         if [ -n "$OPT_MIRROR" ]; then
             if ! echo "$vendor" | egrep --quiet "$OPT_MIRROR"; then
-                echo "$(date --utc '+%d/%I/%Y %H:%M:%S') skipping mirror $vendor: ~$repo_dir $repo_name"
+                printf "GITPUSHMIRROR: warning: skipping mirror %s: ~%s %s\n" "$vendor" "$repo_dir" "$repo_name"
                 continue
             fi
             # case "$vendor" in
             #     "$OPT_MIRROR") ;;
-            #     *) echo "$(date --utc '+%d/%I/%Y %H:%M:%S') skipping mirror $vendor: ~$repo_dir $repo_name"; continue;;
+            #     *) printf "GITPUSHMIRROR: warning: skipping mirror %s: ~%s %s\n" "$vendor" "$repo_dir" "$repo_name"; continue;;
             # esac
         fi
 
-        echo "$(date --utc '+%d/%I/%Y %H:%M:%S') ~$repo_dir $repo_name $vendor: $branches"
-
-        cmd="git -C "$dir" push --quiet --tags $vendor $branches"
-
-        if [ -n "$OPT_LOG" ]; then
-            sudo -u "$usr" bash -c "$cmd >>$OPT_LOG 2>&1"
-        else
-            sudo -u "$usr" bash -c "$cmd"
-        fi
+        printf "GITPUSHMIRROR: ~%s %s %s: %s\n" "$repo_dir" "$repo_name" "$vendor" "$branches"
+        sudo -u "$usr" bash -c "git -C "$dir" push --quiet --tags $vendor $branches"
     done
 }
