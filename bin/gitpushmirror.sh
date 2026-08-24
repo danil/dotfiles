@@ -57,10 +57,6 @@ gitpushm () {
             printf "GITPUSHMIRROR: warning: skipping repository ~%s %s\n" "$repo_dir" "$repo_name"
             return 0
         fi
-        # case "$dir" in
-        #     "$OPT_REPOSITORY") ;;
-        #     *) printf "GITPUSHMIRROR: warning: skipping repository ~%s %s\n" "$repo_dir" "$repo_name"; return 0 ;;
-        # esac
     fi
 
     sudo cat /dev/null || exit 1
@@ -74,10 +70,6 @@ gitpushm () {
                 printf "GITPUSHMIRROR: warning: skipping mirror %s: ~%s %s\n" "$vendor" "$repo_dir" "$repo_name"
                 continue
             fi
-            # case "$vendor" in
-            #     "$OPT_MIRROR") ;;
-            #     *) printf "GITPUSHMIRROR: warning: skipping mirror %s: ~%s %s\n" "$vendor" "$repo_dir" "$repo_name"; continue;;
-            # esac
         fi
 
         printf "GITPUSHMIRROR: ~%s %s %s: %s\n" "$repo_dir" "$repo_name" "$vendor" "$branches"
