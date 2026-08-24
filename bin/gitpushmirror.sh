@@ -12,6 +12,7 @@ gitpushmconfig () {
         case "$OPTFLAG" in
             --repository ) optflagcheck "$1" "$OPTFLAG"; OPTFLAGEXIT=$?; OPT_REPOSITORY="$1"; shift;;
             --mirror     ) optflagcheck "$1" "$OPTFLAG"; OPTFLAGEXIT=$?; OPT_MIRROR="$1"; shift;;
+            --force      ) OPT_FORCE=0;;
             -h | --help    ) printf "%s\n" "$GITPUSHMIRRORUSAGE"; exit 0;;
 
             # Process special cases.
@@ -31,6 +32,11 @@ gitpushmconfig () {
 optflagcheck () { { [ "$1" != "$EOL" ] && [ "$1" != '--' ]; } || { printf >&2 "missing argument %s\n" "$2"; return 2; } } # Avoid infinite loop.
 
 gitpushm () {
+    if [ "$OPT_FORCE" = 0 ] && [ -z "$OPT_REPOSITORY" ] ; then
+        printf >&2 "GITPUSHMIRROR: error: git push force available only with repository regexp\n"
+        exit 1
+    fi
+
     sudo cat /dev/null || exit 1
 
     local dir=$1
@@ -72,7 +78,19 @@ gitpushm () {
             fi
         fi
 
-        printf "GITPUSHMIRROR: ~%s %s %s: %s\n" "$repo_dir" "$repo_name" "$vendor" "$branches"
+        if [ "$OPT_FORCE" = 0 ] ; then
+            if [ -z "$OPT_REPOSITORY" ] ; then
+                printf >&2 "GITPUSHMIRROR: error: git force available only with repository regexp\n"
+                exit 1
+            fi
+
+            printf "GITPUSHMIRROR: force ~%s %s %s: %s\n" "$repo_dir" "$repo_name" "$vendor" "$branches"
+            sudo -u "$usr" bash -c "git -C "$dir" push --force-with-lease --quiet --tags $vendor $branches"
+
+            continue
+        fi
+
+        printf "GITPUSHMIRROR: push ~%s %s %s: %s\n" "$repo_dir" "$repo_name" "$vendor" "$branches"
         sudo -u "$usr" bash -c "git -C "$dir" push --quiet --tags $vendor $branches"
     done
 }
