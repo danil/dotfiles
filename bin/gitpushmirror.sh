@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
 GITPUSHMIRRORUSAGE="usage: gitpushmirror [--repository=\"your.git|your2.git\"] [--mirror=\"github|gitverse\"]"
@@ -12,6 +12,7 @@ gitpushmconfig () {
         case "$OPTFLAG" in
             --repository ) optflagcheck "$1" "$OPTFLAG"; OPTFLAGEXIT=$?; OPT_REPOSITORY="$1"; shift;;
             --mirror     ) optflagcheck "$1" "$OPTFLAG"; OPTFLAGEXIT=$?; OPT_MIRROR="$1"; shift;;
+            --user       ) optflagcheck "$1" "$OPTFLAG"; OPTFLAGEXIT=$?; OPT_USER="$1"; shift;;
             --force      ) OPT_FORCE=0;;
             -h | --help    ) printf "%s\n" "$GITPUSHMIRRORUSAGE"; exit 0;;
 
@@ -37,8 +38,6 @@ gitpushm () {
         exit 1
     fi
 
-    sudo cat /dev/null || exit 1
-
     local dir=$1
     local vendors=$2
     local branches=$3
@@ -50,6 +49,19 @@ gitpushm () {
         */git/*   ) usr=git ;;
         *) printf >&2 "GITPUSHMIRROR: error: unknown user for directory %s\n" "$dir"; exit 1 ;;
     esac
+
+    if [ -z "$OPT_USER" ]; then
+        sudo cat /dev/null || exit 1
+    else
+        case "$OPT_USER" in
+            danil|git ) ;;
+            *) printf >&2 "GITPUSHMIRROR: error: unknown user for argument %s\n" "$OPT_USER"; exit 1 ;;
+        esac
+
+        if [ "$OPT_USER" != "$usr" ]; then
+            return 0
+        fi
+    fi
 
     local repo_path="${dir#/home/"$usr"/}"
     local repo_path="${repo_path#git/}"
@@ -64,8 +76,6 @@ gitpushm () {
             return 0
         fi
     fi
-
-    sudo cat /dev/null || exit 1
 
     # <http://stackoverflow.com/questions/1469849/how-to-split-one-string-into-multiple-strings-separated-by-at-least-one-space-in#1469863>,
     # <http://unix.stackexchange.com/questions/47557/in-a-bash-shell-script-writing-a-for-loop-that-iterates-over-string-values#47560>,
@@ -85,12 +95,20 @@ gitpushm () {
             fi
 
             printf "GITPUSHMIRROR: force ~%s %s %s: %s\n" "$repo_dir" "$repo_name" "$vendor" "$branches"
-            sudo -u "$usr" bash -c "git -C "$dir" push --force-with-lease --quiet --tags $vendor $branches"
+            if [ -z "$OPT_USER" ]; then
+                sudo su - "$usr" -c "git -C $dir push --force-with-lease --quiet --tags $vendor $branches"
+            else
+                git -C $dir push --force-with-lease --quiet --tags $vendor $branches
+            fi
 
             continue
         fi
 
         printf "GITPUSHMIRROR: push ~%s %s %s: %s\n" "$repo_dir" "$repo_name" "$vendor" "$branches"
-        sudo -u "$usr" bash -c "git -C "$dir" push --quiet --tags $vendor $branches"
+        if [ -z "$OPT_USER" ]; then
+            sudo su - "$usr" -c "git -C $dir push --quiet --tags $vendor $branches"
+        else
+            git -C $dir push --quiet --tags $vendor $branches
+        fi
     done
 }
