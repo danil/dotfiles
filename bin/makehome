@@ -528,7 +528,6 @@ FLAT_INS="$FLAT_INS com.github.hluk.copyq" # QopyQ fixes emacs copy to clipboard
 # APTO_INS="$APTO_INS elementary-xfce-icon-theme"
 # APTO_INS="$APTO_INS gir1.2-xapp-1.0" # `xfce4-sensors-plugin` runtime dependency. # without gir1.2-xapp-1.0 get `xfce4-sensors` FAIL: Failed to load module "xapp-gtk3-module".
 # APTO_INS="$APTO_INS lm-sensors" # A-la `sensors` # FIXME: is the cpu temperate used by xfce4-sensors-plugin?
-# APTO_INS="$APTO_INS mousepad" # Simple text editor for Xfce <https://github.com/xfce-mirror/mousepad>.
 # APTO_INS="$APTO_INS orage" # xfce date time panel plugin with calendar.
 # APTO_INS="$APTO_INS ristretto" # Is a `Xfce` image viewer <https://github.com/xfce-mirror/ristretto>.
 # APTO_INS="$APTO_INS xfce4"
@@ -543,6 +542,7 @@ FLAT_INS="$FLAT_INS com.github.hluk.copyq" # QopyQ fixes emacs copy to clipboard
 # APTO_INS="$APTO_INS xfce4-taskmanager"
 # APTO_INS="$APTO_INS xfce4-windowck-plugin" # put maximized window title on the panel <https://github.com/takinoy/xfce4-windowck-plugin>.
 # APTO_INS="$APTO_INS xfce4-xkb-plugin" # keyboard language switcher.
+APTO_INS="$APTO_INS mousepad" # Simple text editor for Xfce <https://github.com/xfce-mirror/mousepad>. # SNAP_INS="$SNAP_INS leafpad" # Leafpad text editor for GTK <https://github.com/tarot231/leafpad>.
 APTO_INS="$APTO_INS thunar" # file manager.
 APTO_INS="$APTO_INS thunar-archive-plugin"
 APTO_INS="$APTO_INS thunar-dropbox-plugin"
