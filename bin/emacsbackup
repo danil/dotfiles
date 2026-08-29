@@ -41,6 +41,7 @@ fi
 
 LVL=13
 FILETMPL=$(hostname | tr '[:lower:]' '[:upper:]')D$(date --utc +%Y%m%dT%H%M%SZ)
+VER="$(emacs --version | grep -oE '[0-9]+\.[0-9]+' | head -n1)"
 
 arcbak() {
     local opt="${1}"
@@ -62,11 +63,11 @@ arcbak() {
 }
 
 if [ "$OPT_CLONE" = 0 ]; then
-    arcbak "$OPT_EDOT" ".config" "emacs"       "emacsclone$FILETMPL.tar.zst"
+    arcbak "$OPT_EDOT" ".config" "emacs"       "emacs${VER}clone${FILETMPL}.tar.zst"
 else
-    arcbak "$OPT_EDOT" ".config" "emacs"       "emacs$FILETMPL.tar.zst" "--exclude=emacs/.cask --exclude=emacs/var"
-    arcbak "$OPT_EVAR" ".config" "emacs/var"   "emacs.var$FILETMPL.tar.zst"
-    arcbak "$OPT_ECAS" ".config" "emacs/.cask" "emacs.d.cask$FILETMPL.tar.zst"
+    arcbak "$OPT_EDOT" ".config" "emacs"       "emacs${VER}${FILETMPL}.tar.zst" "--exclude=emacs/.cask --exclude=emacs/var"
+    arcbak "$OPT_EVAR" ".config" "emacs/var"   "emacs${VER}.var${FILETMPL}.tar.zst"
+    arcbak "$OPT_ECAS" ".config" "emacs/.cask" "emacs${VER}.d.cask${FILETMPL}.tar.zst"
 fi
 
 
