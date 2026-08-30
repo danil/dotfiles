@@ -15,6 +15,10 @@ ZYPP_UNI_CLI="sudo zypper remove"
 ZYPA_INS_CLI="sudo zypper install --no-recommends --type pattern"
 ZYPA_UNI_CLI="sudo zypper remove"
 
+# Termux PKG <https://github.com/termux/termux-app>.
+TRMX_INS_CLI="pkg install"
+TRMX_UNI_CLI="pkg remove"
+
 makebrewinst () {
     export HOMEBREW_NO_AUTO_UPDATE=1 && brew install "$@"
 }
@@ -136,8 +140,8 @@ PIP3_UPD_CLI="pip3 install --user --upgrade"
 NPMJ_INS_CLI="npm install"
 NPMJ_UPD_CLI="npm update"
 
-# MAKEHOMEUSAGE="usage: ${CMD:=${0##*/}} { --install | --reinstall | --update | --config  } [--apt] [--zypper] [--homebrew] [--appimage] [--pacstall] [--snap] [--flatpak] [--go] [--rust] [--python2] [--python3] [--update] [--etc] [--root] [--home=\"\$HOME\"]"
-MAKEHOMEUSAGE="usage: makehome { --install | --reinstall | --update | --config  } [--apt] [--zypper] [--homebrew] [--appimage] [--pacstall] [--snap] [--flatpak] [--go] [--rust] [--python2] [--python3] [--npm] [--update] [--etc] [--root] [--home=\"\$HOME\"]"
+# MAKEHOMEUSAGE="usage: ${CMD:=${0##*/}} { --install | --reinstall | --update | --config  } [--apt] [--zypper] [--homebrew] [--appimage] [--pacstall] [--snap] [--flatpak] [--go] [--rust] [--python2] [--python3] [--termux] [--update] [--etc] [--root] [--home=\"\$HOME\"]"
+MAKEHOMEUSAGE="usage: makehome { --install | --reinstall | --update | --config  } [--apt] [--zypper] [--homebrew] [--appimage] [--pacstall] [--snap] [--flatpak] [--go] [--rust] [--python2] [--python3] [--npm] [--termux] [--update] [--etc] [--root] [--home=\"\$HOME\"]"
 
 makehome () {
     local OPT_ALL_PACKAGES=-1
@@ -166,6 +170,7 @@ makehome () {
             --python2   ) local OPT_PIP2=0; OPT_ALL_PACKAGES=-1;;
             --python3   ) local OPT_PIP3=0; OPT_ALL_PACKAGES=-1;;
             --npm       ) local OPT_NPMJ=0; OPT_ALL_PACKAGES=-1;;
+            --termux    ) local OPT_TRMX=0; OPT_ALL_PACKAGES=-1;;
             --home      ) optflagcheck "$1" "$OPTFLAG"; OPTFLAGEXIT=$?; local OPT_HOME="$1"; OPT_ALL_PACKAGES=-1; shift;;
             --etc       ) local OPT_ETCE="/etc"; OPT_ALL_PACKAGES=-1;;
             --root      ) local OPT_ROOT="/"; OPT_ALL_PACKAGES=-1;;
@@ -254,6 +259,7 @@ makehome () {
     makeinst --description="Python2 pip packages"     --make="$OPT_PIP2" --install-command="$PIP2_INS_CLI" --install-packages="$PIP2_INS" --install-line-fast-exit # Python2 PIP <https://github.com/pypa/pip>.
     makeinst --description="Python3 pip packages"     --make="$OPT_PIP3" --install-command="$PIP3_INS_CLI" --install-packages="$PIP3_INS" --install-line-fast-exit # Python3 PIP <https://github.com/pypa/pip>.
     makeinst --description="NPM JavaScript packages"  --make="$OPT_NPMJ" --install-command="$NPMJ_INS_CLI" --install-packages="$NPMJ_INS" --install-line-fast-exit # NPM JavaScript package <https://github.com/npm>.
+    makeinst --description="Termux packages"          --make="$OPT_TRMX" --install-command="$TRMX_INS_CLI" --install-packages="$TRMX_INS" --install-line-fast-exit --uninstall-command="$TRMX_UNI_CLI" --uninstall-packages="$TRMX_UNI" --uninstall-line-fast-exit # Termux PKG <https://github.com/termux/termux-app>.
 
     makeconf "$OPT_HOME" # $HOME user home directory <https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard#Directory_structure>.
     makeconf "$OPT_ETCE" # /etc of host-specific system-wide configuration <https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard#Directory_structure>.

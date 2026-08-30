@@ -98,7 +98,7 @@ FLAT_INS="$FLAT_INS com.github.tchx84.Flatseal" # Is a GUI permissions manager w
 
 # Git.
 # BREW_INS="$BREW_INS pre-commit" # The pre-commit git hook <https://github.com/pre-commit/pre-commit>.
-BREW_INS="$BREW_INS git" # Distributed version/revision control system <https://github.com/git/git>. # APTO_INS="$APTO_INS git"
+BREW_INS="$BREW_INS git" # Distributed version/revision control system <https://github.com/git/git>. # APTO_INS="$APTO_INS git" # TRMX_INS="$TRMX_INS git"
 BREW_INS="$BREW_INS git-delta" # Syntax-highlighting pager for git and diff output <https://github.com/dandavison/delta>.
 BREW_INS="$BREW_INS git-flow" # <https://github.com/nvie/gitflow>.
 BREW_INS="$BREW_INS git-gui" # Git GUI provides this functionality under the diff view. Just right click the line(s) you're interested in and you should see a "stage this line to commit" menu item. <https://stackoverflow.com/questions/1085162/commit-only-part-of-a-files-changes-in-git#1085202>, <https://en.wikipedia.org/wiki/Tk_(software)>.
