@@ -228,9 +228,9 @@ theme_emacs () {
     fi
 
     if [ "$OPT_LIGHT" = 0 ]; then
-        "$HOMEBINDIR"/emacsclient --eval "(progn (setq frame-background-mode 'light) (load-file user-init-file))" --quiet -no-wait --suppress-output -a true
+        "$HOMEBINDIR"/emacsclient --eval "(progn (setq frame-background-mode 'light) (frame-set-background-mode nil) (load-file user-init-file))" --quiet -no-wait --suppress-output -a true
     elif [ "$OPT_DARK" = 0 ]; then
-        "$HOMEBINDIR"/emacsclient --eval "(progn (setq frame-background-mode 'dark) (load-file user-init-file))" --quiet -no-wait --suppress-output -a true
+        "$HOMEBINDIR"/emacsclient --eval "(progn (setq frame-background-mode 'dark) (frame-set-background-mode nil) (load-file user-init-file))" --quiet -no-wait --suppress-output -a true
     fi
 }
 
