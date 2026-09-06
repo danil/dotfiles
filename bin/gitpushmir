@@ -5,12 +5,12 @@
 
 gitpushmircfg "$@"
 
-# gitpushmir -c -d "$(eval echo '~danil')/git/instapaper.git"               -p "github"        -b "master"
-# gitpushmir -c -d "$(eval echo '~git')/example.git"                        -p "bitbucket"     -b "a c b10"
-# gitpushmir -c -d "$(eval echo '~git')/go/sqltee.git"                      -p "github"        -b "master"
-# gitpushmir -c -d "$(eval echo '~git')/sh/rsa_signature_example.git"       -p "bitbucket"     -b "master"
-# gitpushmir -c -d "$(eval echo '~git')/utils.git"                          -p "github gitlab" -b "master"
+# gitpushmir    -d "$(eval echo '~danil')/git/instapaper.git"               -p "github"        -b "master"
 gitpushmir    -d "$(eval echo '~git')/cv.git"                             -p "github gitverse gitflic gitlab" -b "v3 v2 v1"
+gitpushmir    -d "$(eval echo '~git')/example.git"                        -p "bitbucket"     -b "a c b10"
+gitpushmir    -d "$(eval echo '~git')/go/sqltee.git"                      -p "github"        -b "master"
+gitpushmir    -d "$(eval echo '~git')/sh/rsa_signature_example.git"       -p "bitbucket"     -b "master"
+gitpushmir    -d "$(eval echo '~git')/utils.git"                          -p "github gitlab" -b "master"
 gitpushmir -c -d "$(eval echo '~danil')/git/md/rcc.git"                   -p "github gitverse gitflic gitlab" -b "master"
 gitpushmir -c -d "$(eval echo '~danil')/git/md/textsync.git"              -p "github gitverse gitflic gitlab" -b "master"
 gitpushmir -c -d "$(eval echo '~git')/dotfiles.git"                       -p "github gitverse gitlab"         -b "h41-ubuntu-danil h36-ubuntu-danil h27-suse-danil" # gitpushmir -d "$(eval echo '~git')/dotfiles.git" -p "gitflic" -b "h41-ubuntu-danil h36-ubuntu-danil h27-suse-danil" # FAIL: error: remote unpack failed: error Pack exceeds the limit of 104 857 600 bytes, rejecting the pack (n/a (unpacker error))
