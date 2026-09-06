@@ -1,6 +1,11 @@
 #!/usr/bin/env sh
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
+# systemctl daemon-reload
+# sudo systemctl enable gitpushmirpub.timer && sudo systemctl enable gitpushmirpvt.timer
+# sudo systemctl start  gitpushmirpub.timer && sudo systemctl start  gitpushmirpvt.timer
+# systemctl status gitpushmirpub.timer ;  systemctl status gitpushmirpvt.timer
+
 GITPUSHMIRCFGUSAGE="usage: gitpushmir [--repository=\"your.git|your2.git\"] [--mirror=\"github|gitverse\"] [--user=\"\$USER\" ] [ --cron ] [ --force ]"
 
 optflagcheck () { { [ "$1" != "$EOL" ] && [ "$1" != '--' ]; } || { printf >&2 "missing argument %s\n" "$2"; return 2; } } # Avoid infinite loop.
@@ -98,9 +103,15 @@ gitpushmir () {
     local repo_dir="${repo_dir%/}"
     [ -z "$repo_dir" ] && repo_dir="$usr" || repo_dir="$usr/$repo_dir"
 
-    if [ "$CFG_CRON" = 0 ] && [ "$OPT_CRON" = -1 ]; then
-        printf "GITPUSHMIR: warning: skip interactive repository ~%s %s\n" "$repo_dir" "$repo_name"
-        return 0
+    local kind="interactive"
+
+    if [ "$CFG_CRON" = 0 ]; then
+        local kind="batch"
+
+        if [ "$OPT_CRON" = -1 ]; then
+            printf "GITPUSHMIR: warning: skip interactive repository ~%s %s\n" "$repo_dir" "$repo_name"
+            return 0
+        fi
     fi
 
     if [ -n "$CFG_REPOSITORY" ]; then
@@ -127,7 +138,7 @@ gitpushmir () {
                 exit 1
             fi
 
-            printf "GITPUSHMIR: force ~%s %s %s: %s\n" "$repo_dir" "$repo_name" "$provider" "$OPT_BRANCHES"
+            printf "GITPUSHMIR: force push %s ~%s %s %s: %s\n" "$repo_dir" "$kind" "$repo_name" "$provider" "$OPT_BRANCHES"
             if [ -z "$CFG_USER" ]; then
                 sudo su - "$usr" -c "git -C $OPT_DIRECTORY push --force-with-lease --quiet --tags $provider $OPT_BRANCHES"
             else
@@ -137,7 +148,7 @@ gitpushmir () {
             continue
         fi
 
-        printf "GITPUSHMIR: push ~%s %s %s: %s\n" "$repo_dir" "$repo_name" "$provider" "$OPT_BRANCHES"
+        printf "GITPUSHMIR: %s push ~%s %s %s: %s\n" "$kind" "$repo_dir" "$repo_name" "$provider" "$OPT_BRANCHES"
         if [ -z "$CFG_USER" ]; then
             sudo su - "$usr" -c "git -C $OPT_DIRECTORY push --quiet --tags $provider $OPT_BRANCHES"
         else
