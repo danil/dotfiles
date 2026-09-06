@@ -24,7 +24,8 @@ gitpushmircfg () {
             --user       ) optflagcheck "$1" "$OPTFLAG"; OPTFLAGEXIT=$?; CFG_USER="$1"; shift;;
             --cron       ) CFG_CRON=0;;
             --force      ) OPT_FORCE=0;;
-            -h | --help  ) printf "%s\n" "$GITPUSHMIRCFGUSAGE"; exit 0;;
+            -v | --verbose ) CFG_VERBOSE=0;;
+            -h | --help    ) printf "%s\n" "$GITPUSHMIRCFGUSAGE"; exit 0;;
 
             # Process special cases.
             --) while [ "$1" != "$EOL" ]; do set -- "$@" "$1"; shift; done;;                              # Parse remaining as positional.
@@ -109,14 +110,20 @@ gitpushmir () {
         local kind="batch"
 
         if [ "$OPT_CRON" = -1 ]; then
-            printf "GITPUSHMIR: warning: skip interactive repository ~%s %s\n" "$repo_dir" "$repo_name"
+            if [ "$CFG_VERBOSE" = 0 ]; then
+               printf "GITPUSHMIR: warning: skip interactive repository ~%s %s\n" "$repo_dir" "$repo_name"
+            fi
+
             return 0
         fi
     fi
 
     if [ -n "$CFG_REPOSITORY" ]; then
         if ! echo "$OPT_DIRECTORY" | egrep --quiet "$CFG_REPOSITORY"; then
-            printf "GITPUSHMIR: warning: skip masked repository ~%s %s\n" "$repo_dir" "$repo_name"
+            if [ "$CFG_VERBOSE" = 0 ]; then
+                printf "GITPUSHMIR: warning: skip masked repository ~%s %s\n" "$repo_dir" "$repo_name"
+            fi
+
             return 0
         fi
     fi
@@ -127,7 +134,10 @@ gitpushmir () {
     for provider in $OPT_PROVIDERS; do
         if [ -n "$CFG_MIRROR" ]; then
             if ! echo "$provider" | egrep --quiet "$CFG_MIRROR"; then
-                printf "GITPUSHMIR: warning: skip masked mirror %s: ~%s %s\n" "$provider" "$repo_dir" "$repo_name"
+                if [ "$CFG_VERBOSE" = 0 ]; then
+                    printf "GITPUSHMIR: warning: skip masked mirror %s: ~%s %s\n" "$provider" "$repo_dir" "$repo_name"
+                fi
+
                 continue
             fi
         fi
