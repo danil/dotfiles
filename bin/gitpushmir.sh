@@ -148,7 +148,7 @@ gitpushmir () {
                 exit 1
             fi
 
-            printf "GITPUSHMIR: force push %s ~%s %s %s: %s\n" "$repo_dir" "$kind" "$repo_name" "$provider" "$OPT_BRANCHES"
+            printf "GITPUSHMIR: force push %s ~%s %s %s: %s\n" "$kind" "$repo_dir" "$repo_name" "$provider" "$OPT_BRANCHES"
             if [ -z "$CFG_USER" ]; then
                 sudo su - "$usr" -c "git -C $OPT_DIRECTORY push --force-with-lease --quiet --tags $provider $OPT_BRANCHES"
             else
@@ -158,7 +158,7 @@ gitpushmir () {
             continue
         fi
 
-        printf "GITPUSHMIR: %s push ~%s %s %s: %s\n" "$kind" "$repo_dir" "$repo_name" "$provider" "$OPT_BRANCHES"
+        printf "GITPUSHMIR: push %s ~%s %s %s: %s\n" "$kind" "$repo_dir" "$repo_name" "$provider" "$OPT_BRANCHES"
         if [ -z "$CFG_USER" ]; then
             sudo su - "$usr" -c "git -C $OPT_DIRECTORY push --quiet --tags $provider $OPT_BRANCHES"
         else
