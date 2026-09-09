@@ -207,12 +207,12 @@ theme_tmux () {
     if [ "$OPT_LIGHT" = 0 ]; then
         "$HOMEBINDIR"/tmux -S /tmp/tmux-pair set -t $(hostname) status-bg brightwhite
         "$HOMEBINDIR"/tmux -S /tmp/tmux-pair set -t $(hostname) status-fg black
-        "$HOMEBINDIR"/tmux -S /tmp/tmux-pair set -t $(hostname) status-left "#[bg=brightred]#S#[bg=default]#(echo $USER)@#(hostname)#[bg=default]#[bg=brightmagenta]Ctl-t#[bg=default]"
+        "$HOMEBINDIR"/tmux -S /tmp/tmux-pair set -t $(hostname) status-left "#[bg=brightred]#S#[bg=default]#(echo $USER)@#(hostname)#[bg=default]#[bg=brightmagenta]Alt-t#[bg=default]"
         "$HOMEBINDIR"/tmux -S /tmp/tmux-pair set-window-option -t $(hostname) window-status-current-style bg=brightblue
     elif [ "$OPT_DARK" = 0 ]; then
         "$HOMEBINDIR"/tmux -S /tmp/tmux-pair set -t $(hostname) status-bg black
         "$HOMEBINDIR"/tmux -S /tmp/tmux-pair set -t $(hostname) status-fg brightwhite
-        "$HOMEBINDIR"/tmux -S /tmp/tmux-pair set -t $(hostname) status-left "#[bg=red]#S#[bg=default]#(echo $USER)@#(hostname)#[bg=default]#[bg=magenta]Ctl-t#[bg=default]"
+        "$HOMEBINDIR"/tmux -S /tmp/tmux-pair set -t $(hostname) status-left "#[bg=red]#S#[bg=default]#(echo $USER)@#(hostname)#[bg=default]#[bg=magenta]Alt-t#[bg=default]"
         "$HOMEBINDIR"/tmux -S /tmp/tmux-pair set-window-option -t $(hostname) window-status-current-style bg=brightblue
     fi
 }
