@@ -41,7 +41,7 @@ gitmircfg () {
     [ "$OPTFLAGEXIT" != 0 ] && printf >&2 "%s\n" "$GITMIRCFGUSAGE" && exit "$OPTFLAGEXIT"
 }
 
-GITMIRUSAGE="usage: gitmir [-d --directory=\"$(eval echo '~git')/your.git\"] [-p --providers=\"github gitverse\"] [-b --branches=\"master your-branch2\" ]"
+GITMIRUSAGE="usage: gitmir [-d --directory=\"$(eval echo '~git')/your.git\"] [-m --mirror=\"github gitverse\"] [-b --branch=\"master your-branch2\" ]"
 
 gitmir () {
     OPT_CRON=-1
@@ -53,8 +53,8 @@ gitmir () {
 
         case "$OPTFLAG" in
             -d | --directory ) optflagcheck "$1" "$OPTFLAG"; OPTFLAGEXIT=$?; local OPT_DIRECTORY="$1"; shift;;
-            -p | --providers ) optflagcheck "$1" "$OPTFLAG"; OPTFLAGEXIT=$?; local OPT_PROVIDERS="$1"; shift;;
-            -b | --branches  ) optflagcheck "$1" "$OPTFLAG"; OPTFLAGEXIT=$?; local OPT_BRANCHES="$1"; shift;;
+            -m | --mirror    ) optflagcheck "$1" "$OPTFLAG"; OPTFLAGEXIT=$?; local OPT_MIRROR="$1"; shift;;
+            -b | --branch    ) optflagcheck "$1" "$OPTFLAG"; OPTFLAGEXIT=$?; local OPT_BRANCH="$1"; shift;;
             -c | --cron      ) OPT_CRON=0;;
             -h | --help      ) printf "%s\n" "$GITMIRUSAGE"; exit 0;;
 
@@ -131,11 +131,11 @@ gitmir () {
     # <http://stackoverflow.com/questions/1469849/how-to-split-one-string-into-multiple-strings-separated-by-at-least-one-space-in#1469863>,
     # <http://unix.stackexchange.com/questions/47557/in-a-bash-shell-script-writing-a-for-loop-that-iterates-over-string-values#47560>,
     # <http://stackoverflow.com/questions/17249665/splitting-a-comma-separated-string-into-multiple-words-so-that-i-can-loop-throug#17249721>.
-    for provider in $OPT_PROVIDERS; do
+    for mirror in $OPT_MIRROR; do
         if [ -n "$CFG_MIRROR" ]; then
-            if ! echo "$provider" | egrep --quiet "$CFG_MIRROR"; then
+            if ! echo "$mirror" | egrep --quiet "$CFG_MIRROR"; then
                 if [ "$CFG_VERBOSE" = 0 ]; then
-                    printf "GITMIR: warning: skip masked mirror %s: ~%s %s\n" "$provider" "$repo_dir" "$repo_name"
+                    printf "GITMIR: warning: skip masked mirror %s: ~%s %s\n" "$mirror" "$repo_dir" "$repo_name"
                 fi
 
                 continue
@@ -148,21 +148,21 @@ gitmir () {
                 exit 1
             fi
 
-            printf "GITMIR: force push %s ~%s %s %s: %s\n" "$kind" "$repo_dir" "$repo_name" "$provider" "$OPT_BRANCHES"
+            printf "GITMIR: force push %s ~%s %s %s: %s\n" "$kind" "$repo_dir" "$repo_name" "$mirror" "$OPT_BRANCH"
             if [ -z "$CFG_USER" ]; then
-                sudo su - "$usr" -c "git -C $OPT_DIRECTORY push --force-with-lease --quiet --tags $provider $OPT_BRANCHES"
+                sudo su - "$usr" -c "git -C $OPT_DIRECTORY push --force-with-lease --quiet --tags $mirror $OPT_BRANCH"
             else
-                git -C $OPT_DIRECTORY push --force-with-lease --quiet --tags $provider $OPT_BRANCHES
+                git -C $OPT_DIRECTORY push --force-with-lease --quiet --tags $mirror $OPT_BRANCH
             fi
 
             continue
         fi
 
-        printf "GITMIR: push %s ~%s %s %s: %s\n" "$kind" "$repo_dir" "$repo_name" "$provider" "$OPT_BRANCHES"
+        printf "GITMIR: push %s ~%s %s %s: %s\n" "$kind" "$repo_dir" "$repo_name" "$mirror" "$OPT_BRANCH"
         if [ -z "$CFG_USER" ]; then
-            sudo su - "$usr" -c "git -C $OPT_DIRECTORY push --quiet --tags $provider $OPT_BRANCHES"
+            sudo su - "$usr" -c "git -C $OPT_DIRECTORY push --quiet --tags $mirror $OPT_BRANCH"
         else
-            git -C $OPT_DIRECTORY push --quiet --tags $provider $OPT_BRANCHES
+            git -C $OPT_DIRECTORY push --quiet --tags $mirror $OPT_BRANCH
         fi
     done
 }
