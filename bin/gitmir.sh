@@ -1,16 +1,16 @@
 #!/usr/bin/env sh
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
-# systemctl daemon-reload
-# sudo systemctl enable gitpushmirpub.timer && sudo systemctl enable gitpushmirpvt.timer
-# sudo systemctl start  gitpushmirpub.timer && sudo systemctl start  gitpushmirpvt.timer
-# systemctl status gitpushmirpub.timer ;  systemctl status gitpushmirpvt.timer
+# sudo systemctl daemon-reload
+# sudo systemctl enable gitmirpub.timer && sudo systemctl enable gitmirpvt.timer
+# sudo systemctl start  gitmirpub.timer && sudo systemctl start  gitmirpvt.timer
+# systemctl status gitmirpub.timer ;  systemctl status gitmirpvt.timer
 
-GITPUSHMIRCFGUSAGE="usage: gitpushmir [--repository=\"your.git|your2.git\"] [--mirror=\"github|gitverse\"] [--user=\"\$USER\" ] [ --cron ] [ --force ]"
+GITMIRCFGUSAGE="usage: gitmir [--repository=\"your.git|your2.git\"] [--mirror=\"github|gitverse\"] [--user=\"\$USER\" ] [ --cron ] [ --force ]"
 
 optflagcheck () { { [ "$1" != "$EOL" ] && [ "$1" != '--' ]; } || { printf >&2 "missing argument %s\n" "$2"; return 2; } } # Avoid infinite loop.
 
-gitpushmircfg () {
+gitmircfg () {
     CFG_CRON=-1
 
     local OPTFLAGEXIT=0
@@ -25,7 +25,7 @@ gitpushmircfg () {
             --cron       ) CFG_CRON=0;;
             --force      ) OPT_FORCE=0;;
             -v | --verbose ) CFG_VERBOSE=0;;
-            -h | --help    ) printf "%s\n" "$GITPUSHMIRCFGUSAGE"; exit 0;;
+            -h | --help    ) printf "%s\n" "$GITMIRCFGUSAGE"; exit 0;;
 
             # Process special cases.
             --) while [ "$1" != "$EOL" ]; do set -- "$@" "$1"; shift; done;;                              # Parse remaining as positional.
@@ -38,12 +38,12 @@ gitpushmircfg () {
         [ "$OPTFLAGEXIT" != 0 ] && break
     done; shift
 
-    [ "$OPTFLAGEXIT" != 0 ] && printf >&2 "%s\n" "$GITPUSHMIRCFGUSAGE" && exit "$OPTFLAGEXIT"
+    [ "$OPTFLAGEXIT" != 0 ] && printf >&2 "%s\n" "$GITMIRCFGUSAGE" && exit "$OPTFLAGEXIT"
 }
 
-GITPUSHMIRUSAGE="usage: gitpushmir [-d --directory=\"$(eval echo '~git')/your.git\"] [-p --providers=\"github gitverse\"] [-b --branches=\"master your-branch2\" ]"
+GITMIRUSAGE="usage: gitmir [-d --directory=\"$(eval echo '~git')/your.git\"] [-p --providers=\"github gitverse\"] [-b --branches=\"master your-branch2\" ]"
 
-gitpushmir () {
+gitmir () {
     OPT_CRON=-1
 
     local OPTFLAGEXIT=0
@@ -56,7 +56,7 @@ gitpushmir () {
             -p | --providers ) optflagcheck "$1" "$OPTFLAG"; OPTFLAGEXIT=$?; local OPT_PROVIDERS="$1"; shift;;
             -b | --branches  ) optflagcheck "$1" "$OPTFLAG"; OPTFLAGEXIT=$?; local OPT_BRANCHES="$1"; shift;;
             -c | --cron      ) OPT_CRON=0;;
-            -h | --help      ) printf "%s\n" "$GITPUSHMIRUSAGE"; exit 0;;
+            -h | --help      ) printf "%s\n" "$GITMIRUSAGE"; exit 0;;
 
             # Process special cases.
             --) while [ "$1" != "$EOL" ]; do set -- "$@" "$1"; shift; done;;                              # Parse remaining as positional.
@@ -69,10 +69,10 @@ gitpushmir () {
         [ "$OPTFLAGEXIT" != 0 ] && break
     done; shift
 
-    [ "$OPTFLAGEXIT" != 0 ] && printf >&2 "%s\n" "$GITPUSHMIRUSAGE" && exit "$OPTFLAGEXIT"
+    [ "$OPTFLAGEXIT" != 0 ] && printf >&2 "%s\n" "$GITMIRUSAGE" && exit "$OPTFLAGEXIT"
 
     if [ "$OPT_FORCE" = 0 ] && [ -z "$CFG_REPOSITORY" ] ; then
-        printf >&2 "GITPUSHMIR: error: git push force available only with repository regexp\n"
+        printf >&2 "GITMIR: error: git push force available only with repository regexp\n"
         exit 1
     fi
 
@@ -81,7 +81,7 @@ gitpushmir () {
     case "$OPT_DIRECTORY" in
         */danil/* ) usr=danil ;;
         */git/*   ) usr=git ;;
-        *) printf >&2 "GITPUSHMIR: error: unknown user for directory %s\n" "$OPT_DIRECTORY"; exit 1 ;;
+        *) printf >&2 "GITMIR: error: unknown user for directory %s\n" "$OPT_DIRECTORY"; exit 1 ;;
     esac
 
     if [ -z "$CFG_USER" ]; then
@@ -89,7 +89,7 @@ gitpushmir () {
     else
         case "$CFG_USER" in
             danil|git ) ;;
-            *) printf >&2 "GITPUSHMIR: error: unknown user for argument %s\n" "$CFG_USER"; exit 1 ;;
+            *) printf >&2 "GITMIR: error: unknown user for argument %s\n" "$CFG_USER"; exit 1 ;;
         esac
 
         if [ "$CFG_USER" != "$usr" ]; then
@@ -111,7 +111,7 @@ gitpushmir () {
 
         if [ "$OPT_CRON" = -1 ]; then
             if [ "$CFG_VERBOSE" = 0 ]; then
-               printf "GITPUSHMIR: warning: skip interactive repository ~%s %s\n" "$repo_dir" "$repo_name"
+               printf "GITMIR: warning: skip interactive repository ~%s %s\n" "$repo_dir" "$repo_name"
             fi
 
             return 0
@@ -121,7 +121,7 @@ gitpushmir () {
     if [ -n "$CFG_REPOSITORY" ]; then
         if ! echo "$OPT_DIRECTORY" | egrep --quiet "$CFG_REPOSITORY"; then
             if [ "$CFG_VERBOSE" = 0 ]; then
-                printf "GITPUSHMIR: warning: skip masked repository ~%s %s\n" "$repo_dir" "$repo_name"
+                printf "GITMIR: warning: skip masked repository ~%s %s\n" "$repo_dir" "$repo_name"
             fi
 
             return 0
@@ -135,7 +135,7 @@ gitpushmir () {
         if [ -n "$CFG_MIRROR" ]; then
             if ! echo "$provider" | egrep --quiet "$CFG_MIRROR"; then
                 if [ "$CFG_VERBOSE" = 0 ]; then
-                    printf "GITPUSHMIR: warning: skip masked mirror %s: ~%s %s\n" "$provider" "$repo_dir" "$repo_name"
+                    printf "GITMIR: warning: skip masked mirror %s: ~%s %s\n" "$provider" "$repo_dir" "$repo_name"
                 fi
 
                 continue
@@ -144,11 +144,11 @@ gitpushmir () {
 
         if [ "$OPT_FORCE" = 0 ] ; then
             if [ -z "$CFG_REPOSITORY" ] ; then
-                printf >&2 "GITPUSHMIR: error: git force available only with repository regexp\n"
+                printf >&2 "GITMIR: error: git force available only with repository regexp\n"
                 exit 1
             fi
 
-            printf "GITPUSHMIR: force push %s ~%s %s %s: %s\n" "$kind" "$repo_dir" "$repo_name" "$provider" "$OPT_BRANCHES"
+            printf "GITMIR: force push %s ~%s %s %s: %s\n" "$kind" "$repo_dir" "$repo_name" "$provider" "$OPT_BRANCHES"
             if [ -z "$CFG_USER" ]; then
                 sudo su - "$usr" -c "git -C $OPT_DIRECTORY push --force-with-lease --quiet --tags $provider $OPT_BRANCHES"
             else
@@ -158,7 +158,7 @@ gitpushmir () {
             continue
         fi
 
-        printf "GITPUSHMIR: push %s ~%s %s %s: %s\n" "$kind" "$repo_dir" "$repo_name" "$provider" "$OPT_BRANCHES"
+        printf "GITMIR: push %s ~%s %s %s: %s\n" "$kind" "$repo_dir" "$repo_name" "$provider" "$OPT_BRANCHES"
         if [ -z "$CFG_USER" ]; then
             sudo su - "$usr" -c "git -C $OPT_DIRECTORY push --quiet --tags $provider $OPT_BRANCHES"
         else
