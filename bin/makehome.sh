@@ -192,8 +192,8 @@ makehome () {
     [ "$OPT_REINSTALL" = 0 ] && cmd_count=$((cmd_count+1))
     [ "$OPT_UPDATE"    = 0 ] && cmd_count=$((cmd_count+1))
     [ "$OPT_CONFIG"    = 0 ] && cmd_count=$((cmd_count+1))
-    [ "$cmd_count" -lt 1 ] && printf >&2 "error: missing command\n" && printf >&2 "%s\n" "$MAKEHOMEUSAGE" && exit 2
-    [ "$cmd_count" -gt 1 ] && printf >&2 "error: ambiguous command\n" && printf >&2 "%s\n" "$MAKEHOMEUSAGE" && exit 2
+    [ "$cmd_count" -lt 1 ] && printf >&2 "error: missing command action\n" && printf >&2 "%s\n" "$MAKEHOMEUSAGE" && exit 2
+    [ "$cmd_count" -gt 1 ] && printf >&2 "error: ambiguous command action\n" && printf >&2 "%s\n" "$MAKEHOMEUSAGE" && exit 2
 
     local OPTFLAGDRYRUN=0
 
