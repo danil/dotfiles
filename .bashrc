@@ -120,4 +120,4 @@ if ! shopt -oq posix; then
   fi
 fi
 
-source "$HOME"/.config/bash/conf
+. "$HOME"/.config/bash/conf

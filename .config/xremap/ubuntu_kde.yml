@@ -1,16 +1,5 @@
 # This file is part of Danil <danil@kutkevich.org> home.
 
-# modmap:
-#   - name: Swapping Alt and Control keys <https://github.com/xremap/xremap/issues/445#issue-2204409094>, <https://github.com/xremap/xremap/issues/37#issuecomment-1001074006>.
-#     remap:
-#       LeftCtrl: LeftAlt
-#       LeftAlt:  LeftCtrl
-#       RightCtrl: RightAlt
-#       RightAlt:  RightCtrl
-
-#   # - remap:
-#   #    CapsLock: Shift_R
-
 keymap:
   - name: Escape.
     remap:

@@ -1,12 +1,23 @@
 #!/usr/bin/env sh
-
 # This file is part of Danil Kutkevich <danil@kutkevich.org> home.
 
 # APT (deb/dpkg/apt-get/aptitude)
 # <https://en.wikipedia.org/wiki/APT_(software)>.
-APTO_INS_CLI="sudo aptitude install --without-recommends"
-APTO_UNI_CLI="sudo aptitude remove"
+APTO_INS_CLI="sudo apt install --no-install-recommends"
+APTO_UNI_CLI="sudo apt remove"
 # APTO_DIS_CLI="systemctl disable"
+
+# Zypper <https://github.com/openSUSE/zypper>.
+ZYPP_INS_CLI="sudo zypper install --no-recommends"
+ZYPP_UNI_CLI="sudo zypper remove"
+
+# Zypper pattern <https://github.com/openSUSE/zypper>.
+ZYPA_INS_CLI="sudo zypper install --no-recommends --type pattern"
+ZYPA_UNI_CLI="sudo zypper remove"
+
+# Termux PKG <https://github.com/termux/termux-app>.
+TRMX_INS_CLI="pkg install"
+TRMX_UNI_CLI="pkg remove"
 
 makebrewinst () {
     export HOMEBREW_NO_AUTO_UPDATE=1 && brew install "$@"
@@ -94,9 +105,9 @@ SNAC_UNI_CLI="sudo snap remove"
 
 # Flatpak
 # <https://github.com/flatpak/flatpak>.
-FLAT_INS_SRC_CLI="flatpak remote-add --if-not-exists"
-FLAT_UNI_SRC_CLI="flatpak remote-delete"
-FLAT_INS_CLI="flatpak install flathub"
+FLAT_INS_SRC_CLI="flatpak remote-add --user --if-not-exists"
+FLAT_UNI_SRC_CLI="flatpak remote-delete --user"
+FLAT_INS_CLI="flatpak install --user flathub"
 
 # # Zig package
 # # <https://ziglang.org>.
@@ -129,16 +140,16 @@ PIP3_UPD_CLI="pip3 install --user --upgrade"
 NPMJ_INS_CLI="npm install"
 NPMJ_UPD_CLI="npm update"
 
-# MAKEHOMEUSAGE="usage: ${CMD:=${0##*/}} { --install | --reinstall | --update | --config  } [--apt] [--homebrew] [--appimage] [--pacstall] [--snap] [--flatpak] [--go] [--rust] [--python2] [--python3] [--update] [--etc] [--root] [--home=\"\$HOME\"]"
-MAKEHOMEUSAGE="usage: makehome { --install | --reinstall | --update | --config  } [--apt] [--homebrew] [--appimage] [--pacstall] [--snap] [--flatpak] [--go] [--rust] [--python2] [--python3] [--npm] [--update] [--etc] [--root] [--home=\"\$HOME\"]"
+# MAKEHOMEUSAGE="usage: ${CMD:=${0##*/}} { --install | --reinstall | --update | --config  } [--apt] [--zypper] [--homebrew] [--appimage] [--pacstall] [--snap] [--flatpak] [--go] [--rust] [--python2] [--python3] [--termux] [--update] [--etc] [--root] [--home=\"\$HOME\"]"
+MAKEHOMEUSAGE="usage: makehome { --install | --reinstall | --update | --config  } [--apt] [--zypper] [--homebrew] [--appimage] [--pacstall] [--snap] [--flatpak] [--go] [--rust] [--python2] [--python3] [--npm] [--termux] [--update] [--etc] [--root] [--home=\"\$HOME\"]"
 
 makehome () {
     local OPT_ALL_PACKAGES=-1
     local OPT_JOBS=$(grep -c ^processor /proc/cpuinfo)
     OPT_JOBS=${OPT_JOBS:-1}
 
+    local OPTFLAGEXIT=0
     set -- "$@" "${EOL:=$(printf '\1\3\3\7')}" # End-of-list marker.
-    local OPTFLAGEXIT=0 
     while [ "$1" != "$EOL" ]; do
         local OPTFLAG="$1"; shift
 
@@ -148,6 +159,7 @@ makehome () {
             --update    ) local OPT_UPDATE=0;;
             --config    ) local OPT_CONFIG=0;;
             --apt       ) local OPT_APTO=0; OPT_ALL_PACKAGES=-1;;
+            --zypper    ) local OPT_ZYPP=0; OPT_ZYPA=0; OPT_ALL_PACKAGES=-1;;
             --homebrew  ) local OPT_BREW=0; OPT_ALL_PACKAGES=-1;;
             --appimage  ) local OPT_APPL=0; local OPT_APPM=0; OPT_ALL_PACKAGES=-1;;
             --pacstall  ) local OPT_PACS=0; OPT_ALL_PACKAGES=-1;;
@@ -158,6 +170,7 @@ makehome () {
             --python2   ) local OPT_PIP2=0; OPT_ALL_PACKAGES=-1;;
             --python3   ) local OPT_PIP3=0; OPT_ALL_PACKAGES=-1;;
             --npm       ) local OPT_NPMJ=0; OPT_ALL_PACKAGES=-1;;
+            --termux    ) local OPT_TRMX=0; OPT_ALL_PACKAGES=-1;;
             --home      ) optflagcheck "$1" "$OPTFLAG"; OPTFLAGEXIT=$?; local OPT_HOME="$1"; OPT_ALL_PACKAGES=-1; shift;;
             --etc       ) local OPT_ETCE="/etc"; OPT_ALL_PACKAGES=-1;;
             --root      ) local OPT_ROOT="/"; OPT_ALL_PACKAGES=-1;;
@@ -233,6 +246,8 @@ makehome () {
 
     # makeinst --description="AppImageLauncher AppImage packages" --make="$OPT_APPL" --install-fast-exit-loop "$APPL_INS_CLI" "$APPL_INS" # AppImageLauncher install AppImages <https://github.com/theassassin/appimagelauncher>, <https://github.com/appimage/appimagekit>
     makeinst --description="APT packages"             --make="$OPT_APTO" --install-command="$APTO_INS_CLI" --install-packages="$APTO_INS" --install-line-fast-exit --uninstall-command="$APTO_UNI_CLI" --uninstall-packages="$APTO_UNI" --uninstall-line-fast-exit # FIXME: sh -c "sudo $APTO_DIS_CLI $APTO_DIS" || exit 1 # Advanced package tool (APT/deb/dpkg/apt-get/aptitude) <https://en.wikipedia.org/wiki/APT_(software)>.
+    makeinst --description="Zypper packages"          --make="$OPT_ZYPP" --install-command="$ZYPP_INS_CLI" --install-packages="$ZYPP_INS" --install-line-fast-exit --uninstall-command="$ZYPP_UNI_CLI" --uninstall-packages="$ZYPP_UNI" --uninstall-line-fast-exit # Zypper packages <https://github.com/openSUSE/zypper>.
+    makeinst --description="Zypper package patterns"  --make="$OPT_ZYPA" --install-command="$ZYPA_INS_CLI" --install-packages="$ZYPA_INS" --install-line-fast-exit --uninstall-command="$ZYPA_UNI_CLI" --uninstall-packages="$ZYPA_UNI" --uninstall-line-fast-exit # Zypper patterns <https://github.com/openSUSE/zypper>.
     makeinst --description="Homebrew packages"        --make="$OPT_BREW" --install-command="$BREW_INS_CLI" --install-packages="$BREW_INS" --install-line-fast-exit --reinstall-command="$BREW_RIN_CLI" --reinstall-packages="$BREW_INS" --reinstall-loop-skip-exit --install-source-command="$BREW_INS_SRC_CLI" --install-source-packages="${BREW_INS_SRC}" --install-source-loop-fast-exit # FIXME: for src in ${BREW_UNI_SRC}; do sh -c "$BREW_UNI_SRC_CLI $src" || exit 1; done # Homebrew <https://brew.sh>.
     makeinst --description="AppMan AppImage packages" --make="$OPT_APPM" --install-command="$APPM_INS_CLI" --install-packages="$APPM_INS" --install-line-skip-exit # AppMan install AppImages <https://github.com/ivan-hc/appman>, <https://github.com/appimage/appimagekit>.
     makeinst --description="Snap packages"            --make="$OPT_SNAP" --install-command="$SNAP_INS_CLI" --install-packages="$SNAP_INS" --install-loop-fast-exit --uninstall-command="$SNAP_UNI_CLI" --uninstall-packages="$SNAP_UNI" --uninstall-line-fast-exit # Snap <https://github.com/snapcore/snapd>.
@@ -244,6 +259,7 @@ makehome () {
     makeinst --description="Python2 pip packages"     --make="$OPT_PIP2" --install-command="$PIP2_INS_CLI" --install-packages="$PIP2_INS" --install-line-fast-exit # Python2 PIP <https://github.com/pypa/pip>.
     makeinst --description="Python3 pip packages"     --make="$OPT_PIP3" --install-command="$PIP3_INS_CLI" --install-packages="$PIP3_INS" --install-line-fast-exit # Python3 PIP <https://github.com/pypa/pip>.
     makeinst --description="NPM JavaScript packages"  --make="$OPT_NPMJ" --install-command="$NPMJ_INS_CLI" --install-packages="$NPMJ_INS" --install-line-fast-exit # NPM JavaScript package <https://github.com/npm>.
+    makeinst --description="Termux packages"          --make="$OPT_TRMX" --install-command="$TRMX_INS_CLI" --install-packages="$TRMX_INS" --install-line-fast-exit --uninstall-command="$TRMX_UNI_CLI" --uninstall-packages="$TRMX_UNI" --uninstall-line-fast-exit # Termux PKG <https://github.com/termux/termux-app>.
 
     makeconf "$OPT_HOME" # $HOME user home directory <https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard#Directory_structure>.
     makeconf "$OPT_ETCE" # /etc of host-specific system-wide configuration <https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard#Directory_structure>.
@@ -325,17 +341,17 @@ makeinst () {
     [ "$rin_typ_count" -gt 1 ] && printf >&2 "error: ambiguous reinstall command type\n" && printf "%s\n" "$MAKEINSTUSAGE" && exit 2
 
     local uni_typ_count=0
-    [ "$UNI_FAST_EXIT_LOOP" = 0 ] && uni_typ_count=$((uni_typ_count+1)) 
-    [ "$UNI_SKIP_EXIT_LOOP" = 0 ] && uni_typ_count=$((uni_typ_count+1)) 
-    [ "$UNI_FAST_EXIT_LINE" = 0 ] && uni_typ_count=$((uni_typ_count+1)) 
-    [ "$UNI_SKIP_EXIT_LINE" = 0 ] && uni_typ_count=$((uni_typ_count+1)) 
+    [ "$UNI_FAST_EXIT_LOOP" = 0 ] && uni_typ_count=$((uni_typ_count+1))
+    [ "$UNI_SKIP_EXIT_LOOP" = 0 ] && uni_typ_count=$((uni_typ_count+1))
+    [ "$UNI_FAST_EXIT_LINE" = 0 ] && uni_typ_count=$((uni_typ_count+1))
+    [ "$UNI_SKIP_EXIT_LINE" = 0 ] && uni_typ_count=$((uni_typ_count+1))
     [ "$uni_typ_count" -gt 1 ] && printf >&2 "error: ambiguous uninstall command type\n" && printf "%s\n" "$MAKEINSTUSAGE" && exit 2
 
     local src_typ_count=0
-    [ "$SRC_FAST_EXIT_LOOP" = 0 ] && src_typ_count=$((src_typ_count+1)) 
-    [ "$SRC_SKIP_EXIT_LOOP" = 0 ] && src_typ_count=$((src_typ_count+1)) 
-    [ "$SRC_FAST_EXIT_LINE" = 0 ] && src_typ_count=$((src_typ_count+1)) 
-    [ "$SRC_SKIP_EXIT_LINE" = 0 ] && src_typ_count=$((src_typ_count+1)) 
+    [ "$SRC_FAST_EXIT_LOOP" = 0 ] && src_typ_count=$((src_typ_count+1))
+    [ "$SRC_SKIP_EXIT_LOOP" = 0 ] && src_typ_count=$((src_typ_count+1))
+    [ "$SRC_FAST_EXIT_LINE" = 0 ] && src_typ_count=$((src_typ_count+1))
+    [ "$SRC_SKIP_EXIT_LINE" = 0 ] && src_typ_count=$((src_typ_count+1))
     [ "$src_typ_count" -gt 1 ] && printf >&2 "error: ambiguous source command type\n" && printf "%s\n" "$MAKEINSTUSAGE" && exit 2
 
     [ "$MAKEINST" != 0 ] && return

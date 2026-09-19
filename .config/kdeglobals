@@ -137,18 +137,19 @@ DirSelectDialog Size=852,587
 Splitter State=\x00\x00\x00\xff\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x00\xac\x00\x00\x02\xa8\x00\xff\xff\xff\xff\x01\x00\x00\x00\x01\x00
 
 [General]
-BrowserApplication=firefox_firefox.desktop
+BrowserApplication=google-chrome.desktop
 ColorSchemeHash=9f63c7711a13123582e720791ea0f8c0172977d2
 XftHintStyle=hintslight
 XftSubPixel=rgb
-fixed=Monospace,13,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
-font=Sans Serif,14,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
-menuFont=Sans Serif,13,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
-smallestReadableFont=Sans Serif,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
-toolBarFont=Sans Serif,13,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+fixed=Monospace,15,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+font=Sans Serif,16,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+menuFont=Sans Serif,15,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+smallestReadableFont=Sans Serif,13,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+toolBarFont=Sans Serif,15,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 
 [KDE]
 AnimationDurationFactor=0.08838834764831843
+LookAndFeelPackage=org.kde.breeze.desktop
 contrast=4
 frameContrast=0.2
 
@@ -157,9 +158,6 @@ Allow Expansion=false
 Automatically select filename extension=true
 Breadcrumb Navigation=false
 Decoration position=2
-LocationCombo Completionmode=5
-PathCombo Completionmode=5
-Show Bookmarks=false
 Show Full Path=false
 Show Inline Previews=true
 Show Preview=false
@@ -188,7 +186,7 @@ ZoomOut=
 [WM]
 activeBackground=227,229,231
 activeBlend=227,229,231
-activeFont=Sans Serif,13,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+activeFont=Sans Serif,15,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 activeForeground=35,38,41
 inactiveBackground=239,240,241
 inactiveBlend=239,240,241

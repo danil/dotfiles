@@ -10,6 +10,11 @@ NaturalScroll=true
 PointerAcceleration=0.800
 ScrollMethod=1
 
+[Libinput][1267][32][Elan Touchpad]
+NaturalScroll=true
+PointerAcceleration=0.600
+ScrollFactor=3
+
 [Libinput][1267][47][Elan Touchpad]
 NaturalScroll=true
 PointerAcceleration=0.800
