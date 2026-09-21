@@ -451,10 +451,6 @@ BREW_INS="$BREW_INS k9s" # derailed/k9s/k9s:, k8s/kubernetes client <https://git
 BREW_INS="$BREW_INS kubernetes-cli" # APTO_INS="$APTO_INS kubectl" # provides k8s/kubernetes kubectl util `deb https://apt.kubernetes.io kubernetes-xenial main` <https://kubernetes.io/docs/tasks/tools/install-kubectl> # APTO_INS="$APTO_INS gnupg2" # required by kubectl
 BREW_INS="$BREW_INS netdata" # Netdata is a metrics monitoring <https://github.com/netdata/netdata>.
 
-# Fingerprint <https://en.wikipedia.org/wiki/Fingerprint>.
-# APTO_INS="$APTO_INS fprintd libpam-fprintd" # FAIL: Works on Thinkpad T490s but does not work on T480s. # Required by fingerprint authentication for sudo and so on.
-APTO_INS="$APTO_INS fprintd-clients  open-fprintd  python3-validity" # `sudo add-apt-repository ppa:ubuntuhandbook1/open-fprintd`. Required by fingerprint authentication for sudo and so on.
-
 # X web browser.
 # FAIL: Freeze while updating. <sup><sub>Hang while updating by `aptitude full-upgrade`.</sub></sup>
 # HOWTO Download <https://browser.yandex.ru> & on [Ubuntu][] `apt install ~/Downloads/Yandex.deb`. # X Yandex (Google Chrome based) browser. # FLAT_INS="$FLAT_INS ru.yandex.Browser"
@@ -543,7 +539,7 @@ FLAT_INS="$FLAT_INS com.github.hluk.copyq" # QopyQ fixes emacs copy to clipboard
 # APTO_INS="$APTO_INS xfce4-windowck-plugin" # put maximized window title on the panel <https://github.com/takinoy/xfce4-windowck-plugin>.
 # APTO_INS="$APTO_INS xfce4-xkb-plugin" # keyboard language switcher.
 APTO_INS="$APTO_INS mousepad" # Simple text editor for Xfce <https://github.com/xfce-mirror/mousepad>. # SNAP_INS="$SNAP_INS leafpad" # Leafpad text editor for GTK <https://github.com/tarot231/leafpad>.
-APTO_INS="$APTO_INS thunar" # file manager.
+APTO_INS="$APTO_INS thunar" # File manager.
 APTO_INS="$APTO_INS thunar-archive-plugin"
 APTO_INS="$APTO_INS thunar-dropbox-plugin"
 APTO_INS="$APTO_INS thunar-volman"
