@@ -283,6 +283,7 @@ BREW_INS="$BREW_INS jq" # JSON console formater (used by emacs counsel-jq) <http
 BREW_INS="$BREW_INS jsonlint" # Used by Emacs Flycheck <https://github.com/zaach/jsonlint>.
 BREW_INS="$BREW_INS shellcheck" # APTO_INS="$APTO_INS shellcheck" # Used by Emacs Flycheck <https://github.com/koalaman/shellcheck>.
 BREW_INS="$BREW_INS sql-lint" # Used by Emacs Flycheck.
+BREW_INS="$BREW_INS xclip" # APTO_INS="$APTO_INS xclip" # Integration of X11/xorg clipboard/copy/past and tmux and so on <https://github.com/astrand/xclip>, <https://github.com/tmux-plugins/tmux-yank#linux-requirements>. CONS: Wayland is not supporting.
 
 # # Protocol Buffers, Protobuf, protoc, gRPC
 # # <https://github.com/protocolbuffers/protobuf>,
@@ -507,12 +508,14 @@ APTO_INS="$APTO_INS ubuntu-desktop-minimal"
 # KDE Plasma desktop and Qt GUI framework for Wayland and X11 <https://github.com/KDE> <sup><sub>KDE Plasma 5 and Plasma 6.</sub></sup>
 # # APTO_INS="$APTO_INS neon-desktop" # DEPRECATED KDE Neon Linux <https://github.com/KDE/neon-neon-repositories>. <sup><sub>KDE Plasma 6 desktop for Wayland and X11.</sub></sup>
 # # APTO_INS="$APTO_INS neon-keyring signon-kwallet-extension" # FAIL? DEPRECATED KDE Neon Linux <https://github.com/KDE/neon-neon-repositories>.
-# APTO_INS="$APTO_INS krita" # Krita is a pixel-based image manipulation program a-la GIMP <https://github.com/KDE/krita>.
 # APTO_INS="$APTO_INS breeze-gtk-theme gtk3-engines-breeze" # FAIL: `Error: Unable to locate package gtk3-engines-breeze` # Breeze icon theme and cursor theme.
+# APTO_INS="$APTO_INS krita" # Krita is a pixel-based image manipulation program a-la GIMP <https://github.com/KDE/krita>.
+# FLAT_INS="$FLAT_INS com.github.hluk.copyq" # QopyQ fixes emacs copy to clipboard behavior. QopyQ is a clipboard manager <https://github.com/hluk/copyq>.
 APTO_INS="$APTO_INS breeze" # Breeze icon theme and cursor theme.
+APTO_INS="$APTO_INS dolphin" # File manager.
+APTO_INS="$APTO_INS konsole" # Terminal.
 APTO_INS="$APTO_INS kubuntu-desktop" # APTO_INS="$APTO_INS kde-plasma-desktop" # APTO_INS="$APTO_INS kde-standard" # APTO_INS="$APTO_INS kde-full"
 APTO_INS="$APTO_INS lm-sensors" # A-la `sensors` # FIXME: Is the CPU temperate used by plain status or by slstatus?
-FLAT_INS="$FLAT_INS com.github.hluk.copyq" # QopyQ fixes emacs copy to clipboard behavior. QopyQ is a clipboard manager <https://github.com/hluk/copyq>.
 
 # X11 Xfce4 DE Desktop Environment.
 # # APPM_INS="$APPM_INS conky" # removed due to extra configuration # system monitoring <https://github.com/brndnmtthws/conky>.
