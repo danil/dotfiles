@@ -514,6 +514,8 @@ APTO_INS="$APTO_INS ubuntu-desktop-minimal"
 # APTO_INS="$APTO_INS krita" # Krita is a pixel-based image manipulation program a-la GIMP <https://github.com/KDE/krita>.
 # APTO_INS="$APTO_INS breeze-gtk-theme gtk3-engines-breeze" # FAIL: `Error: Unable to locate package gtk3-engines-breeze` # Breeze icon theme and cursor theme.
 APTO_INS="$APTO_INS breeze" # Breeze icon theme and cursor theme.
+APTO_INS="$APTO_INS dolphin # File manager."
+APTO_INS="$APTO_INS konsole" # Terminal.
 APTO_INS="$APTO_INS kubuntu-desktop" # APTO_INS="$APTO_INS kde-plasma-desktop" # APTO_INS="$APTO_INS kde-standard" # APTO_INS="$APTO_INS kde-full"
 APTO_INS="$APTO_INS lm-sensors" # A-la `sensors` # FIXME: Is the CPU temperate used by plain status or by slstatus?
 FLAT_INS="$FLAT_INS com.github.hluk.copyq" # QopyQ fixes emacs copy to clipboard behavior. QopyQ is a clipboard manager <https://github.com/hluk/copyq>.
@@ -543,7 +545,7 @@ FLAT_INS="$FLAT_INS com.github.hluk.copyq" # QopyQ fixes emacs copy to clipboard
 # APTO_INS="$APTO_INS xfce4-windowck-plugin" # put maximized window title on the panel <https://github.com/takinoy/xfce4-windowck-plugin>.
 # APTO_INS="$APTO_INS xfce4-xkb-plugin" # keyboard language switcher.
 APTO_INS="$APTO_INS mousepad" # Simple text editor for Xfce <https://github.com/xfce-mirror/mousepad>. # SNAP_INS="$SNAP_INS leafpad" # Leafpad text editor for GTK <https://github.com/tarot231/leafpad>.
-APTO_INS="$APTO_INS thunar" # file manager.
+APTO_INS="$APTO_INS thunar" # File manager.
 APTO_INS="$APTO_INS thunar-archive-plugin"
 APTO_INS="$APTO_INS thunar-dropbox-plugin"
 APTO_INS="$APTO_INS thunar-volman"
