@@ -39,4 +39,4 @@ x-scheme-handler/http=google-chrome.desktop
 x-scheme-handler/https=google-chrome.desktop
 x-scheme-handler/mailto=firefox.desktop;
 x-scheme-handler/tg=org.telegram.desktop._288e7f609a7d599e01eab790c46dc4fc.desktop
-x-scheme-handler/unknown=firefox_firefox.desktop
+x-scheme-handler/unknown=google-chrome.desktop

@@ -374,9 +374,9 @@ DialogHeight=739
 DialogWidth=921
 
 [Containments][2][Applets][7][General]
-extraItems=org.kde.plasma.cameraindicator,org.kde.plasma.keyboardlayout,org.kde.plasma.notifications,org.kde.plasma.mediacontroller,org.kde.plasma.devicenotifier,org.kde.plasma.clipboard,org.kde.plasma.manage-inputmethod,org.kde.plasma.volume,org.kde.plasma.weather,org.kde.plasma.keyboardindicator,org.kde.plasma.networkmanagement,org.kde.kscreen,org.kde.plasma.printmanager,org.kde.kdeconnect,org.kde.kupapplet,org.kde.plasma.vault,org.kde.plasma.battery,org.kde.plasma.brightness,org.kde.plasma.bluetooth
+extraItems=org.kde.plasma.cameraindicator,org.kde.plasma.keyboardlayout,org.kde.plasma.notifications,org.kde.plasma.mediacontroller,org.kde.plasma.devicenotifier,org.kde.plasma.clipboard,org.kde.plasma.manage-inputmethod,org.kde.plasma.volume,org.kde.kscreen,org.kde.plasma.battery,org.kde.plasma.brightness,org.kde.plasma.bluetooth
 hiddenItems=Discover Notifier_org.kde.DiscoverNotifier,ibus-ui-gtk3
-knownItems=org.kde.plasma.cameraindicator,org.kde.plasma.keyboardlayout,org.kde.plasma.notifications,org.kde.plasma.mediacontroller,org.kde.plasma.devicenotifier,org.kde.plasma.clipboard,org.kde.plasma.manage-inputmethod,org.kde.plasma.volume,org.kde.plasma.weather,org.kde.plasma.keyboardindicator,org.kde.plasma.networkmanagement,org.kde.kscreen,org.kde.plasma.printmanager,org.kde.kdeconnect,org.kde.kupapplet,org.kde.plasma.vault,org.kde.plasma.battery,org.kde.plasma.brightness,org.kde.plasma.bluetooth
+knownItems=org.kde.plasma.cameraindicator,org.kde.plasma.keyboardlayout,org.kde.plasma.notifications,org.kde.plasma.mediacontroller,org.kde.plasma.devicenotifier,org.kde.plasma.clipboard,org.kde.plasma.manage-inputmethod,org.kde.plasma.volume,org.kde.kscreen,org.kde.plasma.battery,org.kde.plasma.brightness,org.kde.plasma.bluetooth
 scaleIconsToFit=true
 shownItems=org.kde.plasma.battery
 
@@ -413,7 +413,7 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][42][Applets][45][Configuration][General]
-launchers=file:///tmp/.mount_Alacrremp5257470634216894496/Alacritty.desktop,applications:google-chrome.desktop,applications:firefox_firefox.desktop,file:///tmp/.mount_remp11964330886889973817/com.mitchellh.ghostty.desktop,applications:org.kde.konsole.desktop,applications:org.gnome.Ptyxis.desktop,applications:yandex-browser.desktop,applications:dropbox.desktop,applications:com.github.hluk.copyq.desktop,applications:org.kde.spectacle.desktop,applications:thunar.desktop,preferred://filemanager,applications:gimp.desktop,applications:org.kde.gwenview.desktop,applications:org.kde.discover.desktop,applications:systemsettings.desktop
+launchers=file:///tmp/.mount_Alacrremp5257470634216894496/Alacritty.desktop,applications:google-chrome.desktop,applications:firefox_firefox.desktop,file:///tmp/.mount_remp11964330886889973817/com.mitchellh.ghostty.desktop,applications:org.kde.konsole.desktop,applications:org.gnome.Ptyxis.desktop,applications:yandex-browser.desktop,applications:dropbox.desktop,applications:org.xfce.mousepad.desktop,applications:org.kde.spectacle.desktop,applications:thunar.desktop,preferred://filemanager,applications:gimp.desktop,applications:org.kde.gwenview.desktop,applications:org.kde.discover.desktop,applications:systemsettings.desktop
 minimizeActiveTaskOnClick=false
 showOnlyCurrentActivity=false
 showOnlyCurrentDesktop=false
