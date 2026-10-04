@@ -516,6 +516,7 @@ APTO_INS="$APTO_INS dolphin" # File manager.
 APTO_INS="$APTO_INS konsole" # Terminal.
 APTO_INS="$APTO_INS kubuntu-desktop" # APTO_INS="$APTO_INS kde-plasma-desktop" # APTO_INS="$APTO_INS kde-standard" # APTO_INS="$APTO_INS kde-full"
 APTO_INS="$APTO_INS lm-sensors" # A-la `sensors` # FIXME: Is the CPU temperate used by plain status or by slstatus?
+APTO_INS="$APTO_INS plasma-nm" # Network manager.
 
 # X11 Xfce4 DE Desktop Environment.
 # # APPM_INS="$APPM_INS conky" # removed due to extra configuration # system monitoring <https://github.com/brndnmtthws/conky>.
