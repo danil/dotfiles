@@ -230,7 +230,7 @@ BREW_INS="$BREW_INS ruby"
 
 # Programming.
 # BREW_INS="$BREW_INS cloc" # A-la sloc/cloc (count lines of code) <https://github.com/AlDanial/cloc>.
-BREW_INS="$BREW_INS dart-sdk" # APTO_INS="$APTO_INS dart" # APTO_INS="$APTO_INS apt-transport-https" # Dart programming language <https://github.com/dart-lang/sdk>, <https://dart.dev/get-dart#install-using-apt-get>.
+# BREW_INS="$BREW_INS dart-sdk" # APTO_INS="$APTO_INS dart" # APTO_INS="$APTO_INS apt-transport-https" # Dart programming language <https://github.com/dart-lang/sdk>, <https://dart.dev/get-dart#install-using-apt-get>.
 BREW_INS="$BREW_INS java" # Java programming language [OpenJDK](https://github.com/openjdk/jdk).
 BREW_INS="$BREW_INS lua" # Newer than APT version. # Lua programming language <https://github.com/lua/lua>.
 BREW_INS="$BREW_INS openapi" # Speakeasy OpenAPI and Swagger validation linter `openapi spec validate path/to/your/openapi.json` and `openapi swagger validate path/to/your/openapi.json` <https://github.com/speakeasy-api/openapi>.
